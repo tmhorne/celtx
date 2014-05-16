@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Ingen tittel)">
+<!ENTITY  newTab.label           "Ny fane">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "Lukk fane">
+<!ENTITY  closeTab.accesskey         "L">
+<!ENTITY  closeOtherTabs.accesskey  "a">
+<!ENTITY  closeOtherTabs.label   "Lukk andre faner">
+<!ENTITY  reloadAllTabs.label    "Oppdater alle faner">
+<!ENTITY  reloadAllTabs.accesskey         "d">
+<!ENTITY  reloadTab.label        "Oppdater fane">
+<!ENTITY  reloadTab.accesskey         "O">
+<!ENTITY  listAllTabs.label      "List alle faner">
+<!ENTITY  bookmarkAllTabs.label       "Bokmerk alle faner …">
+<!ENTITY  bookmarkAllTabs.accesskey   "o">
+<!ENTITY  bookmarkThisTab.label       "Bokmerk denne fanen">
+<!ENTITY  bookmarkThisTab.accesskey   "k">
+<!ENTITY  undoCloseTab.label          "Angre lukking av fane">
+<!ENTITY  undoCloseTab.accesskey      "n">

@@ -1,0 +1,65 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsIDOMEventListener.idl"
+
+interface nsIRDFResource;
+interface nsIRDFDataSource;
+interface nsIDOMDocument;
+interface nsIScriptEditor;
+
+[scriptable, uuid(039b47b2-03be-4730-b274-e6c507d59f3b)]
+interface nsISceneTrackerObserver : nsISupports
+{
+  void sceneListChanged();
+  void sceneChanged(in nsIRDFResource sceneres);
+  void sceneContentChanged(in nsIRDFResource sceneres);
+};
+
+[scriptable, uuid(3d889014-2c51-4e06-8899-994ffead8838)]
+interface nsISceneTracker : nsIDOMEventListener
+{
+  attribute boolean suppressEvents;
+
+  void init (in nsIRDFDataSource ds, in nsIRDFResource docres,
+    in nsIScriptEditor editor);
+
+  void shutdown ();
+
+  void update ();
+
+  void addObserver (in nsISceneTrackerObserver aObserver);
+  void removeObserver (in nsISceneTrackerObserver aObserver);
+
+  nsIRDFResource actForActID (in DOMString actid);
+  nsIRDFResource sceneForSceneID (in DOMString sceneid);
+  nsIRDFResource shotForShotID (in DOMString shotid);
+};
+
+[scriptable, uuid(3f6d7412-173f-4b29-8477-8d663116979c)]
+interface nsILockingSceneTracker : nsISceneTracker
+{
+  void resetSceneNumbers ();
+  void sceneOmitted (in DOMString sceneid);
+};

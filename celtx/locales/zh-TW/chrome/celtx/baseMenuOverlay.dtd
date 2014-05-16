@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "最小化">
+<!ENTITY bringAllToFront.label "全部移至最上層">
+<!ENTITY zoomWindow.label "縮放">
+<!ENTITY windowMenu.label "視窗">
+
+<!ENTITY helpMenu.label "說明">
+<!ENTITY helpMenu.accesskey "H">
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label "說明">
+<!ENTITY helpMenuWin.accesskey "H">
+<!ENTITY aboutCmd.label "關於 &brandFullName;">
+<!ENTITY aboutCmd.accesskey "A">
+<!ENTITY helpContents.label "使用說明">
+<!ENTITY helpContents.accesskey "H">
+<!ENTITY helpContentsMac.label "&brandShortName; 說明">
+<!ENTITY helpForIEUsers.label "給 IE 使用者">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+
+<!ENTITY helpReleaseNotes.label "版本資訊">
+<!ENTITY helpReleaseNotes.accesskey "N">
+<!ENTITY updateCmd.label "檢查更新…">
+<!ENTITY updateCmd.accesskey "o">
+
+<!ENTITY preferencesCmdMac.label "偏好設定…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+
+<!ENTITY servicesMenuMac.label "服務">
+
+<!ENTITY hideThisAppCmdMac.label "隱藏 &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label "隱藏其他視窗">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label "全部顯示">

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        id="shoteditor"
+        onload="loaded();">
+
+#include ../celtx-sets.inc
+  <commandset id="shotCommandset">
+    <command id="cmd-lower-to-bottom"
+             disabled="true"
+             oncommand="goDoCommand('cmd-lower-to-bottom')" />
+    <command id="cmd-lower"
+             disabled="true"
+             oncommand="goDoCommand('cmd-lower')" />
+    <command id="cmd-raise"
+             disabled="true"
+             oncommand="goDoCommand('cmd-raise')" />
+    <command id="cmd-raise-to-top"
+             disabled="true"
+             oncommand="goDoCommand('cmd-raise-to-top')" />
+    <command id="cmd-group"
+             disabled="true"
+             oncommand="goDoCommand('cmd-group')" />
+    <command id="cmd-ungroup"
+             disabled="true"
+             oncommand="goDoCommand('cmd-ungroup')" />
+    <command id="cmd-set-stroke-colour"
+             disabled="true"
+             oncommand="goDoCommand('cmd-set-stroke-colour')" />
+    <command id="cmd-set-fill-colour"
+             disabled="true"
+             oncommand="goDoCommand('cmd-set-fill-colour')" />
+  </commandset>
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/editorcontroller.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/txmgr.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/shottxs.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/shotselection.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/shoteditor.js" />
+
+  <toolbar id="shottoolbar">
+    <toolbarbutton id="shotpointerbutton"
+                   class="shotbutton pointerbutton"
+                   type="radio"
+                   group="cursormode"
+                   checked="true"
+                   oncommand="gController.setToolMode(0);" />
+    <toolbarbutton id="shotlinebutton"
+                   class="shotbutton linebutton"
+                   type="radio"
+                   group="cursormode"
+                   oncommand="gController.setToolMode(1);" />
+    <toolbarbutton id="shotarrowbutton"
+                   class="shotbutton arrowbutton"
+                   type="radio"
+                   group="cursormode"
+                   oncommand="gController.setToolMode(2);" />
+    <toolbarbutton id="shotrectanglebutton"
+                   class="shotbutton rectanglebutton"
+                   type="radio"
+                   group="cursormode"
+                   oncommand="gController.setToolMode(3);" />
+    <toolbarbutton id="shotellipsebutton"
+                   class="shotbutton ellipsebutton"
+                   type="radio"
+                   group="cursormode"
+                   oncommand="gController.setToolMode(4);" />
+    <toolbarbutton id="shottextbutton"
+                   class="shotbutton textbutton"
+                   type="radio"
+                   group="cursormode"
+                   oncommand="gController.setToolMode(5);" />
+    <toolbarseparator />
+    <toolbarbutton class="shotbutton strokebutton"
+                   type="menu"
+                   tooltiptext="&sketch.strokeColour.tooltip;"
+                   command="cmd-set-stroke-colour"
+                   onselect="goDoCommand(this.command);">
+      <menupopup>
+        <colorpicker id="strokepicker" />
+      </menupopup>
+    </toolbarbutton>
+    <toolbarbutton class="shotbutton fillbutton"
+                   type="menu"
+                   tooltiptext="&sketch.fillColour.tooltip;"
+                   command="cmd-set-fill-colour"
+                   onselect="goDoCommand(this.command);">
+      <menupopup>
+        <colorpicker id="fillpicker" />
+      </menupopup>
+    </toolbarbutton>
+    <toolbarseparator />
+    <toolbarbutton class="shotbutton lowertobottombutton"
+                   tooltiptext="&sketch.lowerToBottom.tooltip;"
+                   command="cmd-lower-to-bottom" />
+    <toolbarbutton class="shotbutton lowerbutton"
+                   tooltiptext="&sketch.lower.tooltip;"
+                   command="cmd-lower" />
+    <toolbarbutton class="shotbutton raisebutton"
+                   tooltiptext="&sketch.raise.tooltip;"
+                   command="cmd-raise" />
+    <toolbarbutton class="shotbutton raisetotopbutton"
+                   tooltiptext="&sketch.raiseToTop.tooltip;"
+                   command="cmd-raise-to-top" />
+    <toolbarseparator />
+    <toolbarbutton class="shotbutton groupbutton"
+                   tooltiptext="&sketch.group.tooltip;"
+                   command="cmd-group" />
+    <toolbarbutton class="shotbutton ungroupbutton"
+                   tooltiptext="&sketch.ungroup.tooltip;"
+                   command="cmd-ungroup" />
+    <toolbarseparator />
+    <toolbarbutton class="celtx-undo-button format-toolbar-button"
+                   tooltiptext="&undoCmd.label;"
+                   command="cmd_undo" />
+    <toolbarbutton class="celtx-redo-button format-toolbar-button"
+                   tooltiptext="&redoCmd.label;"
+                   command="cmd_redo" />
+    <toolbarseparator />
+    <toolbarbutton class="celtx-cut-button format-toolbar-button"
+                   tooltiptext="&cutCmd.label;"
+                   command="cmd_cut" />
+    <toolbarbutton class="celtx-copy-button format-toolbar-button"
+                   tooltiptext="&copyCmd.label;"
+                   command="cmd_copy" />
+    <toolbarbutton class="celtx-paste-button format-toolbar-button"
+                   tooltiptext="&pasteCmd.label;"
+                   command="cmd_paste" />
+    <toolbarseparator />
+    <toolbarbutton label="&exportSketch.label;&ellipsis;"
+                   oncommand="gController.cmdExportShot();" />
+  </toolbar>
+  <hbox flex="1">
+    <iframe id="shotframe"
+            flex="1"
+            src="chrome://celtx/content/shot_images/shotframe.svg"
+            type="content"
+            style="background-color: white; border: 1px solid black;" />
+    <vbox id="palette"
+          width="200">
+      <hbox class="panelheader" align="center">
+        <label value="&palettes.label;" />
+      </hbox>
+      <toolbar pack="start">
+        <toolbarbutton label="+ &addPaletteObjects.label;"
+                       oncommand="openObjectsLink();" />
+      </toolbar>
+      <tree id="palettetree"
+            flex="1"
+            hidecolumnpicker="true"
+            seltype="single">
+        <treecols>
+          <treecol primary="true"
+                   flex="1"
+                   hideheader="true" />
+        </treecols>
+        <treechildren tooltiptext="&paletteTree.tooltip;" />
+      </tree>
+    </vbox>
+  </hbox>
+
+</window>

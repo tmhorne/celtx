@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="additemdialog"
+        title="&addItem.label;"
+        buttons="accept,cancel"
+        onload="loaded();"
+        ondialogaccept="return accepted();"
+        ondialogcancel="return canceled();">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/catadditem.js"/>
+
+  <grid style="padding: 5px;">
+    <columns>
+      <column/>
+      <column flex="1"/>
+    </columns>
+    <rows>
+      <row align="start">
+        <label value="&category.label;&colon;"/>
+        <listbox id="deptlist"
+                 datasources="chrome://celtx/content/schema.rdf
+                              chrome://celtx/content/doctypes.rdf"
+                 ref="&ns_cx;Prefs/Categories"
+                 sortResource="&ns_rdfs;label"
+                 sortDirection="ascending"
+                 height="200">
+          <template>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?dept"/>
+                <triple subject="?dept"
+                        predicate="&ns_rdfs;label"
+                        object="?label"/>
+                <triple subject="?doctype"
+                        predicate="&ns_cx;category"
+                        object="?dept"/>
+                <triple subject="?doctype"
+                        predicate="&ns_cx;thumbnail"
+                        object="?thumbnail"/>
+              </conditions>
+              <action>
+                <listitem uri="?dept"
+                          class="listitem-iconic"
+                          label="?label"
+                          image="?thumbnail"
+                          value="?dept"/>
+              </action>
+            </rule>
+          </template>
+        </listbox>
+      </row>
+      <row align="center">
+        <label value="&name.label;&colon;"/>
+        <textbox id="namebox"
+                 flex="1"
+                 oninput="validate();"/>
+      </row>
+    </rows>
+  </grid>
+
+</dialog>

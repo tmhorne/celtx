@@ -1,0 +1,81 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url(chrome://celtx/content/style/film/film.css);
+
+@media print {
+  body {
+    font-size: 12pt;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  /* All settings adjusted for an invisible left margin of 0.3125
+     and right margin of 0.1875in */
+
+  p {
+    margin-left: 1.1875in;
+    margin-right: 0.8125in;
+  }
+
+  p.character {
+    margin-left: 3.1875in;
+  }
+
+  p.parenthetical {
+    margin-left: 2.6875in;
+    margin-right: 2.3125in;
+  }
+
+  p.dialog {
+    margin-left: 2.1875in;
+%ifdef XP_MACOSX
+    margin-right: 2.19in;
+%else
+    margin-right: 2.2in;
+%endif
+  }
+
+  p.sceneheading:before {
+    margin-left: -0.75in;
+%ifndef XP_MACOSX
+    margin-bottom: -13pt !important;
+%endif
+  }
+
+  p.sceneheading:after {
+    margin-right: -0.25in;
+%ifndef XP_MACOSX
+    margin-top: -13pt !important;
+%endif
+  }
+
+  .softbreak:after, .hardbreak:after {
+    margin-right: 0.5625in;
+  }
+
+  .firstpage:after {
+    margin-right: 0.5625in;
+  }
+}

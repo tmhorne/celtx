@@ -1,0 +1,289 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+.addlabel {
+  font-family: sans-serif;
+  font-size: 14pt;
+  color: grey;
+  position: relative;
+  top: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.addcontainer {
+  height: 175px;
+}
+
+.duplicateshot {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  background-color: silver;
+}
+
+.deleteshot {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  /*
+  background-color: silver;
+  */
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+p {
+  font-family: serif;
+  font-size: 10pt;
+}
+
+textarea {
+  margin-top: 5px;
+  padding: 2px;
+}
+
+.selectiontoolbar {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.selectiononly {
+  display: none;
+}
+.selectiononly[suppress="true"] {
+  display: none;
+}
+.shotcell[selected="true"] .selectiononly {
+  display: inherit;
+}
+
+
+#dropshadow {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px dotted black;
+  width: 256px;
+  height: 256px;
+}
+
+#dropshadow[hidden="true"] {
+  display: none;
+}
+
+.seqheader {
+  margin: 4px;
+  background-color: #555;
+  -moz-border-radius: 3px;
+  padding: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.seqheader input[type=text] {
+  background: white;
+  border: 1px solid white;
+  opacity: 0.8;
+  height: 14px;
+  padding: 3px;
+  -moz-border-radius: 5px;
+}
+
+/* Delete button */
+
+.seqheader input[type=button] {
+  -moz-border-radius: 3px;
+  background: #777;
+  color: white;
+  height: 23px;
+  border: 2px solid #777;
+  margin-top: 2px;
+  padding: 0 7px;
+}
+
+.seqheader input[type=text]:hover, .seqheader input[type=text]:focus {
+  opacity: 1.0;
+}
+
+.seqheader input[type=text]:selected {
+  border-color: highlight;
+}
+
+.seqfooter {
+  padding: 5px;
+}
+
+.seqheader  > input[type="text"],
+.seqheader > div {
+  width: 80%;
+  margin: 2px;
+}
+
+.shotcell {
+  padding: 5px;
+  -moz-border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+td {
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+td[dropbefore="true"] {
+  border-left: 2px solid gray;
+}
+
+td[dropafter="true"] {
+  border-right: 2px solid gray;
+}
+
+.imgcontainer {
+  width: 100%;
+  max-height: 206px;
+}
+
+.placeholder {
+  border: 1px dashed black;
+  padding: 10%;
+  width: 75%;
+  height: 140px;
+  position: relative;
+  top: 0px;
+}
+
+.shotimg {
+  padding: 5px 5px 9px 5px;
+  /*background: white url(chrome://celtx/skin/shade_bottom.png) repeat-x bottom left;*/
+ /* border-left: 1px solid #dcd7c8;
+  border-right: 1px solid #dcd7c8;*/
+  background: white;
+  border: 1px solid #ddc7c9;
+  max-width: 95%;
+  max-height: 175px;
+  margin-bottom: 4px;
+  width: 97%;
+}
+
+.shotnumber {
+  font-size: 10pt;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.shotcell textarea {
+  width: 97%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  border: 1px solid #ddc7c9;
+  margin-bottom: 2px;
+}
+
+.sequence {
+  clear: both;
+  margin-bottom: 3em;
+  margin: 12px;
+  padding-top: 3px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.imageBox {
+  width: 27%;
+  float: right;
+  padding: 0px 2% 0px 1%;
+}
+
+.textBox {
+  width: 40%; /* float: left; */
+}
+
+@media screen {
+  .shotcell[selected="true"] {
+    background-color: #e6e6e6;
+    border: 1px solid #bbb;
+  }
+
+  body[edit="true"] .viewonly {
+    display: none !important;
+  }
+
+  body[edit="false"] .editonly {
+    display: none !important;
+  }
+}
+
+@media print {
+
+  table {
+    width: 100%;
+  }
+
+  .seqheader {
+    background-color: white;
+    color: black;
+    border-top: none;
+    border-bottom: 1px solid black;
+    padding: 0in;
+    margin-bottom: 0.1in;
+  }
+
+  .sequence {
+    background: white;
+    border: none;
+  }
+
+  *[pagebreak="after"] {
+    page-break-after: always;
+  }
+
+  .seqfooter {
+    display: none;
+  }
+
+  input [type="button"] {
+    display: none;
+  }
+
+  .editonly, .placeholder, .selectiontoolbar {
+    display: none !important;
+  }
+
+  input[type=button] {
+    display: none;
+  }
+
+}

@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(Неименуван)">
+<!ENTITY newTab.label "Нов подпрозорец">
+<!ENTITY newTab.accesskey "Н">
+<!ENTITY closeTab.label "Затваряне на подпрозореца">
+<!ENTITY closeTab.accesskey "т">
+<!ENTITY closeOtherTabs.accesskey "д">
+<!ENTITY closeOtherTabs.label "Затваряне на другите подпрозорци">
+<!ENTITY reloadAllTabs.label "Презареждане на всички подпрозорци">
+<!ENTITY reloadAllTabs.accesskey "в">
+<!ENTITY reloadTab.label "Презареждане на подпрозореца">
+<!ENTITY reloadTab.accesskey "з">
+<!ENTITY listAllTabs.label "Списък на всички подпрозорци">
+<!ENTITY bookmarkAllTabs.label "Отмятане на всички подпрозорци…">
+<!ENTITY bookmarkAllTabs.accesskey "п">
+<!ENTITY bookmarkThisTab.label "Отмятане на този подпрозорец">
+<!ENTITY bookmarkThisTab.accesskey "О">
+<!ENTITY undoCloseTab.label "Отмяна (затваряне на подпрозорец)">
+<!ENTITY undoCloseTab.accesskey "я">

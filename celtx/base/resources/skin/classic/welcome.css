@@ -1,0 +1,89 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  padding-left: 30px;
+  font-size: 9pt;
+  font-family: sans-serif;
+}
+
+.headerbox {
+  /*width: 622px;*/ width: 90%;
+  border: 1px solid rgb(140,166,213);
+  background-image: url("chrome://celtx/skin/welcome.png");
+}
+
+.header {
+  padding: 6px 0px 2px 16px;
+  font-weight: bold;
+}
+
+.itembox {
+  /*width: 598px;*/ width: 90%;
+  min-height: 4em;
+  margin-bottom: 1em;
+  border: 1px solid rgb(140,166,213);
+  background-color: rgb(205,219,241);
+}
+
+.itembox > div {
+  margin: 20px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
+
+.floatitem {
+  float: left;
+  width: 160px;
+}
+
+.floatitem, .item {
+  margin-bottom: 1em;
+}
+
+.floatitem > img, .item > img {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-right: 5px;
+}
+
+#notifier {
+  border: none;
+  max-height: 80px;
+  width: 640px;
+  max-width: 640px;
+  overflow: hidden;
+}
+
+.communityfeed {
+  width: 100%;
+  /*background-color: white;*/
+}

@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Névtelen)">
+<!ENTITY  newTab.label           "Új lap">
+<!ENTITY newTab.accesskey       "l">
+<!ENTITY  closeTab.label         "Lap bezárása">
+<!ENTITY closeTab.accesskey         "b">
+<!ENTITY closeOtherTabs.accesskey  "T">
+<!ENTITY  closeOtherTabs.label   "Többi lap bezárása">
+<!ENTITY  reloadAllTabs.label    "Összes lap frissítése">
+<!ENTITY reloadAllTabs.accesskey         "s">
+<!ENTITY  reloadTab.label        "Lap frissítése">
+<!ENTITY reloadTab.accesskey         "r">
+<!ENTITY  listAllTabs.label      "Minden lap felsorolása">
+<!ENTITY  bookmarkAllTabs.label       "Minden lap egy könyvjelzőbe...">
+<!ENTITY bookmarkAllTabs.accesskey   "M">
+<!ENTITY  bookmarkThisTab.label       "Aktuális lap könyvjelzőbe">
+<!ENTITY bookmarkThisTab.accesskey   "A">
+<!ENTITY  undoCloseTab.label          "Lapbezárás visszavonása">
+<!ENTITY undoCloseTab.accesskey      "v">

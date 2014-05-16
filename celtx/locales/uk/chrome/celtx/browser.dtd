@@ -1,0 +1,393 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+
+<!ENTITY mainWindow.title "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+
+<!ENTITY tabCmd.label "Нова вкладка">
+<!ENTITY tabCmd.accesskey "Н">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Відкрити адресу…">
+<!ENTITY openLocationCmd.accesskey "а">
+<!ENTITY openFileCmd.label "Відкрити файл…">
+<!ENTITY openFileCmd.accesskey "ф">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Макет сторінки…">
+<!ENTITY printSetupCmd.accesskey "М">
+<!ENTITY printPreviewCmd.label "Попередній перегляд">
+<!ENTITY printPreviewCmd.accesskey "р">
+<!ENTITY printCmd.label "Друкувати…">
+<!ENTITY printCmd.accesskey "у">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Імпорт…">
+<!ENTITY import.accesskey "І">
+
+<!ENTITY goOfflineCmd.label "Працювати автономно">
+<!ENTITY goOfflineCmd.accesskey "ю">
+
+<!ENTITY navbarCmd.label "Панель навігації">
+<!ENTITY navbarCmd.accesskey "в">
+<!ENTITY personalbarCmd.label "Панель закладок">
+<!ENTITY personalbarCmd.accesskey "к">
+<!ENTITY bookmarksToolbarItem.label "Елементи панелі закладок">
+<!ENTITY taskbarCmd.label "Рядок стану">
+<!ENTITY taskbarCmd.accesskey "я">
+
+<!ENTITY pageSourceCmd.label "Початковий код сторінки">
+<!ENTITY pageSourceCmd.accesskey "а">
+<!ENTITY pageSourceCmd.commandkey "u">
+<!ENTITY pageInfoCmd.label "Інформація про сторінку">
+<!ENTITY pageInfoCmd.accesskey "І">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "Повноекранний режим">
+<!ENTITY fullScreenCmd.accesskey "е">
+
+<!ENTITY fullScreenMinimize.tooltip "Згорнути">
+<!ENTITY fullScreenRestore.tooltip "Відновити">
+<!ENTITY fullScreenClose.tooltip "Закрити">
+<!ENTITY fullScreenAutohide.label "Приховати панелі">
+<!ENTITY fullScreenAutohide.accesskey "П">
+<!ENTITY fullScreenExit.label "Вийти з повноекранного режиму">
+<!ENTITY fullScreenExit.accesskey "В">
+
+<!ENTITY closeWindow.label "Закрити вікно">
+<!ENTITY closeWindow.accesskey "а">
+
+<!ENTITY bookmarksMenu.label "Закладки">
+<!ENTITY bookmarksMenu.accesskey "З">
+<!ENTITY bookmarkThisPageCmd.label "Додати сторінку в закладки">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Підписатися на цю сторінку">
+<!ENTITY subscribeToPageMenuitem.label "Підписатися на цю сторінку…">
+<!ENTITY addCurPagesCmd.label "Додати всі вкладки в закладки…">
+<!ENTITY organizeBookmarks.label "Впорядкувати закладки…">
+<!ENTITY bookmarkAllCmd.label "Додати всі вкладки в закладки…">
+
+<!ENTITY backCmd.label "Назад">
+<!ENTITY backCmd.accesskey "Н">
+<!ENTITY backButton.tooltip "Назад на одну сторінку">
+<!ENTITY forwardCmd.label "Вперед">
+<!ENTITY forwardCmd.accesskey "В">
+<!ENTITY forwardButton.tooltip "Вперед на одну сторінку">
+<!ENTITY backForwardMenu.tooltip "Недавні сторінки">
+<!ENTITY reloadCmd.label "Оновити">
+<!ENTITY reloadCmd.accesskey "О">
+<!ENTITY reloadButton.tooltip "Оновити поточну сторінку">
+<!ENTITY stopCmd.label "Зупинити">
+<!ENTITY stopCmd.accesskey "З">
+<!ENTITY stopCmd.macCommandKey ".">
+<!ENTITY stopButton.tooltip "Зупинити завантаження поточної сторінки">
+<!ENTITY goEndCap.tooltip "Перейти за адресою з панелі адреси">
+<!ENTITY printButton.label "Друкувати">
+<!ENTITY printButton.tooltip "Надрукувати поточну сторінку">
+
+<!ENTITY locationItem.title "Розташування">
+<!ENTITY searchItem.title "Пошук">
+<!ENTITY throbberItem.title "Індикатор діяльності">
+<!ENTITY bookmarksItem.title "Закладки">
+<!-- Toolbar items --> 
+
+<!ENTITY homeButton.label "Домашня сторінка">
+
+<!ENTITY bookmarksButton.label "Закладки">
+<!ENTITY bookmarksButton.tooltip "Показати ваші закладки">
+<!ENTITY bookmarksSidebarCmd.accesskey "З">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+
+<!ENTITY historyButton.label "Журнал">
+<!ENTITY historyButton.tooltip "Показати список недавно переглянутих сторінок">
+<!ENTITY historySidebarCmd.accesskey "Ж">
+<!ENTITY historySidebarCmd.commandKey "h">
+
+<!ENTITY toolsMenu.label "Інструменти">
+<!ENTITY toolsMenu.accesskey "І">
+
+<!ENTITY keywordfield.label "Створити скорочення для цього пошуку…">
+<!ENTITY keywordfield.accesskey "д">
+<!ENTITY search.label "Пошук в інтернеті">
+<!ENTITY search.accesskey "ш">
+<!ENTITY downloads.label "Завантаження">
+<!ENTITY downloads.tooltip "Показати хід поточних завантажень">
+<!ENTITY downloads.accesskey "З">
+<!ENTITY downloads.commandkey "j">
+<!ENTITY downloadsUnix.commandkey "y">
+<!ENTITY addons.label "Додатки">
+<!ENTITY addons.tooltip "Відображення і управління встановленими додатками">
+<!ENTITY addons.accesskey "Д">
+
+<!ENTITY errorConsoleCmd.label "Консоль помилок">
+<!ENTITY errorConsoleCmd.accesskey "м">
+<!ENTITY errorConsoleCmd.commandkey "j">
+
+<!ENTITY fileMenu.label "Файл">
+<!ENTITY fileMenu.accesskey "Ф">
+<!ENTITY newNavigatorCmd.label "Нове вікно">
+<!ENTITY newNavigatorCmd.key "N">
+<!ENTITY newNavigatorCmd.accesskey "Н">
+
+<!ENTITY editMenu.label "Правка">
+<!ENTITY editMenu.accesskey "П">
+<!ENTITY undoCmd.label "Повернути">
+<!ENTITY undoCmd.key "Z">
+<!ENTITY undoCmd.accesskey "н">
+<!ENTITY redoCmd.label "Повторити">
+<!ENTITY redoCmd.key "Y">
+<!ENTITY redoCmd.accesskey "в">
+<!ENTITY cutCmd.label "Вирізати">
+<!ENTITY cutCmd.key "X">
+<!ENTITY cutCmd.accesskey "и">
+<!ENTITY copyCmd.label "Копіювати">
+<!ENTITY copyCmd.key "C">
+<!ENTITY copyCmd.accesskey "п">
+<!ENTITY pasteCmd.label "Вставити">
+<!ENTITY pasteCmd.key "V">
+<!ENTITY pasteCmd.accesskey "т">
+<!ENTITY deleteCmd.label "Стерти">
+<!ENTITY deleteCmd.key "D">
+<!ENTITY deleteCmd.accesskey "С">
+<!ENTITY selectAllCmd.label "Виділити все">
+<!ENTITY selectAllCmd.key "A">
+<!ENTITY selectAllCmd.accesskey "с">
+<!ENTITY preferencesCmd.label "Налаштування…">
+<!ENTITY preferencesCmd.accesskey "Н">
+<!ENTITY preferencesCmdUnix.label "Налаштування">
+<!ENTITY preferencesCmdUnix.accesskey "Н">
+
+<!ENTITY clearPrivateDataCmd.label "Стерти особисті дані">
+<!ENTITY clearPrivateDataCmd.accesskey "С">
+
+<!ENTITY viewMenu.label "Вигляд">
+<!ENTITY viewMenu.accesskey "В">
+<!ENTITY viewToolbarsMenu.label "Панелі інструментів">
+<!ENTITY viewToolbarsMenu.accesskey "П">
+<!ENTITY viewSidebarMenu.label "Бічна панель">
+<!ENTITY viewSidebarMenu.accesskey "ч">
+<!ENTITY viewCustomizeToolbar.label "Налаштувати панелі інструментів">
+<!ENTITY viewCustomizeToolbar.accesskey "ш">
+
+<!ENTITY historyMenu.label "Журнал">
+<!ENTITY historyMenu.accesskey "Ж">
+<!ENTITY historyUndoMenu.label "Недавно закриті вкладки">
+
+<!ENTITY historyHomeCmd.label "Домашня сторінка">
+<!ENTITY showAllHistoryCmd2.label "Показати всю історію">
+<!ENTITY showAllHistoryCmd.commandkey "H">
+
+<!ENTITY openCmd.commandkey "l">
+<!ENTITY urlbar.emptyText "Шукати в закладках та історії">
+<!ENTITY urlbar.accesskey "d">
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+
+<!ENTITY searchFocus.commandkey "k">
+<!ENTITY searchFocus.commandkey2 "e">
+<!ENTITY searchFocusUnix.commandkey "j">
+
+<!ENTITY openLinkCmd.label "Відкрити посилання в новому вікні">
+<!ENTITY openLinkCmd.accesskey "к">
+<!ENTITY openLinkCmdInTab.label "Відкрити посилання в новій вкладці">
+<!ENTITY openLinkCmdInTab.accesskey "л">
+<!ENTITY openFrameCmd.label "Відкрити фрейм в новому вікні">
+<!ENTITY openFrameCmd.accesskey "ф">
+<!ENTITY openFrameCmdInTab.label "Відкрити фрейм в новій вкладці">
+<!ENTITY openFrameCmdInTab.accesskey "ц">
+<!ENTITY showOnlyThisFrameCmd.label "Показати тільки цей фрейм">
+<!ENTITY showOnlyThisFrameCmd.accesskey "з">
+<!ENTITY reloadCmd.commandkey "r">
+<!ENTITY reloadFrameCmd.label "Оновити фрейм">
+<!ENTITY reloadFrameCmd.accesskey "в">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Перегляд початкового коду виділеного фрагмента">
+<!ENTITY viewPartialSourceForMathMLCmd.label "Перегляд початкового коду MathML">
+<!ENTITY viewPartialSourceCmd.accesskey "е">
+<!ENTITY viewPageSourceCmd.label "Перегляд початкового коду сторінки">
+<!ENTITY viewPageSourceCmd.accesskey "р">
+<!ENTITY viewFrameSourceCmd.label "Перегляд початкового коду фрейма">
+<!ENTITY viewFrameSourceCmd.accesskey "й">
+<!ENTITY viewPageInfoCmd.label "Інформація про сторінку">
+<!ENTITY viewPageInfoCmd.accesskey "І">
+<!ENTITY viewFrameInfoCmd.label "Інформація про фрейм">
+<!ENTITY viewFrameInfoCmd.accesskey "ф">
+<!ENTITY showImageCmd.label "Показати зображення">
+<!ENTITY showImageCmd.accesskey "з">
+<!ENTITY viewImageCmd.label "Переглянути зображення">
+<!ENTITY viewImageCmd.accesskey "г">
+<!ENTITY viewBGImageCmd.label "Переглянути зображення тла">
+<!ENTITY viewBGImageCmd.accesskey "т">
+<!ENTITY setDesktopBackgroundCmd.label "Встановити як тло робочого столу…">
+<!ENTITY setDesktopBackgroundCmd.accesskey "с">
+<!ENTITY bookmarkPageCmd2.label "Додати цю сторінку в закладки">
+<!ENTITY bookmarkPageCmd2.accesskey "з">
+<!ENTITY bookmarkThisLinkCmd.label "Додати в закладки це посилання">
+<!ENTITY bookmarkThisLinkCmd.accesskey "Д">
+<!ENTITY bookmarkThisFrameCmd.label "Додати цей фрейм до закладок">
+<!ENTITY bookmarkThisFrameCmd.accesskey "ф">
+<!ENTITY sendPageCmd.label "Відіслати посилання…">
+<!ENTITY sendPageCmd.accesskey "с">
+<!ENTITY savePageCmd.label "Зберегти як…">
+<!ENTITY savePageCmd.accesskey "я">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2 "б">
+<!ENTITY savePageCmd.commandkey "s">
+<!ENTITY saveFrameCmd.label "Зберегти фрейм як…">
+<!ENTITY saveFrameCmd.accesskey "ф">
+<!ENTITY printFrameCmd.label "Друкувати фрейм…">
+<!ENTITY printFrameCmd.accesskey "ф">
+<!ENTITY saveLinkCmd.label "Зберегти посилання як…">
+<!ENTITY saveLinkCmd.accesskey "п">
+<!ENTITY sendLinkCmd.label "Відіслати посилання…">
+<!ENTITY sendLinkCmd.accesskey "с">
+<!ENTITY saveImageCmd.label "Зберегти зображення як…">
+<!ENTITY saveImageCmd.accesskey "б">
+<!ENTITY sendImageCmd.label "Відіслати зображення…">
+<!ENTITY sendImageCmd.accesskey "ж">
+<!ENTITY copyLinkCmd.label "Копіювати посилання">
+<!ENTITY copyLinkCmd.accesskey "п">
+<!ENTITY copyLinkTextCmd.label "Копіювати текст посилання">
+<!ENTITY copyLinkTextCmd.accesskey "т">
+<!ENTITY copyImageCmd.label "Копіювати посилання на зображення">
+<!ENTITY copyImageCmd.accesskey "р">
+<!ENTITY copyImageContentsCmd.label "Копіювати зображення">
+<!ENTITY copyImageContentsCmd.accesskey "з">
+<!ENTITY blockImageCmd.accesskey "о">
+<!ENTITY metadataCmd.label "Властивості">
+<!ENTITY metadataCmd.accesskey "с">
+<!ENTITY copyEmailCmd.label "Копіювати адресу електронної пошти">
+<!ENTITY copyEmailCmd.accesskey "п">
+<!ENTITY thisFrameMenu.label "У цьому фреймі">
+<!ENTITY thisFrameMenu.accesskey "ь">
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+
+<!ENTITY fullZoomEnlargeCmd.label "Збільшити">
+<!ENTITY fullZoomEnlargeCmd.accesskey "л">
+<!ENTITY fullZoomEnlargeCmd.commandkey "+">
+<!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "=">
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label "Зменшити">
+<!ENTITY fullZoomReduceCmd.accesskey "н">
+<!ENTITY fullZoomReduceCmd.commandkey "-">
+<!ENTITY fullZoomReduceCmd.commandkey2 "">
+
+<!ENTITY fullZoomResetCmd.label "Звичайний">
+<!ENTITY fullZoomResetCmd.accesskey "ч">
+<!ENTITY fullZoomResetCmd.commandkey "0">
+<!ENTITY fullZoomResetCmd.commandkey2 "">
+
+<!ENTITY fullZoomToggleCmd.label "Збільшувати лише текст">
+<!ENTITY fullZoomToggleCmd.accesskey "т">
+<!ENTITY fullZoom.label "Масштаб">
+<!ENTITY fullZoom.accesskey "ш">
+
+<!ENTITY newTabButton.tooltip "Відкрити нову вкладку">
+<!ENTITY newWindowButton.tooltip "Відкрити нове вікно">
+<!ENTITY sidebarCloseButton.tooltip "Закрити бічну панель">
+
+<!ENTITY cutButton.tooltip "Вирізати">
+<!ENTITY copyButton.tooltip "Копіювати">
+<!ENTITY pasteButton.tooltip "Вставити">
+
+<!ENTITY quitApplicationCmdWin.label "Вийти">
+<!ENTITY quitApplicationCmdWin.accesskey "й">
+<!ENTITY goBackCmd.commandKey "[">
+<!ENTITY goForwardCmd.commandKey "]">
+<!ENTITY quitApplicationCmd.label "Вийти">
+<!ENTITY quitApplicationCmd.accesskey "В">
+<!ENTITY quitApplicationCmdMac.label "Вийти з &brandShortName;">
+<!ENTITY quitApplicationCmdMac.key "Q">
+
+<!ENTITY closeCmd.label "Закрити">
+<!ENTITY closeCmd.key "W">
+<!ENTITY closeCmd.accesskey "к">
+
+<!ENTITY pageStyleMenu.label "Стиль сторінки">
+<!ENTITY pageStyleMenu.accesskey "С">
+<!ENTITY pageStyleNoStyle.label "Без стилю">
+<!ENTITY pageStyleNoStyle.accesskey "Б">
+<!ENTITY pageStylePersistentOnly.label "Основний стиль сторінки">
+<!ENTITY pageStylePersistentOnly.accesskey "О">
+
+<!ENTITY pageReportIcon.tooltip "Змінити параметри блокування виринаючих вікон для цього сайта">
+
+<!ENTITY allowPopups.accesskey "о">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label "Змінити налаштування блокування виринаючих вікон…">
+<!ENTITY editPopupSettings.label "Змінити налаштування блокування виринаючих вікон…">
+<!ENTITY editPopupSettings.accesskey "З">
+<!ENTITY dontShowMessage.accesskey "е">
+
+<!ENTITY bidiSwitchPageDirectionItem.label "Перемкнути напрям тексту на сторінці">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey "м">
+<!ENTITY bidiSwitchTextDirectionItem.label "Перемкнути напрям тексту на сторінці">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey "к">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey "X">
+
+<!ENTITY findOnCmd.label "Знайти на цій сторінці…">
+<!ENTITY findOnCmd.accesskey "ц">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label "Знайти наступне">
+<!ENTITY findAgainCmd.accesskey "т">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Додати словники…">
+<!ENTITY spellAddDictionaries.accesskey "л">
+
+<!ENTITY editBookmark.done.label "Готово">
+<!ENTITY editBookmark.cancel.label "Скасувати">
+<!ENTITY editBookmark.removeBookmark.label "Прибрати">
+<!ENTITY editBookmark.removeBookmark.accessKey "П">
+<!ENTITY editBookmark.undo.label "Повернути">
+<!ENTITY editBookmark.undo.accessKey "о">
+<!ENTITY editBookmark.edit.label "Редагувати…">
+<!ENTITY editBookmark.edit.accessKey "Р">
+
+<!ENTITY identity.unverifiedsite2 "Цей сайт не надає інформації про себе.">
+<!ENTITY identity.connectedTo "Ви під’єднані до">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "котрий запущено">
+
+<!ENTITY identity.moreInfoLinkText "Розкажіть мені про цей сайт…">
+
+<!ENTITY downloadMonitor2.tooltip "Клацніть щоб відкрити вікно завантажень">

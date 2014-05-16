@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="editbookmark"
+        title="Dialog Title"
+        minwidth="400"
+        buttons="accept,cancel"
+        onload="loaded()"
+        ondialogaccept="return accepted()"
+        ondialogcancel="return canceled()">
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editbookmark.js"/>
+
+  <grid flex="1">
+    <columns>
+      <column/>
+      <column flex="1"/>
+    </columns>
+    <rows>
+      <row>
+        <hbox align="center">
+          <label value="&name.label;&colon;"/>
+        </hbox>
+        <textbox id="bmtitle"
+                 flex="1"
+                 value=""/>
+      </row>
+      <row>
+        <hbox align="center">
+          <label value="URL&colon;"/>
+        </hbox>
+        <textbox id="bmurl"
+                 flex="1"
+                 value="http://"/>
+      </row>
+    </rows>
+  </grid>
+
+</dialog>
+

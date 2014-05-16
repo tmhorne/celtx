@@ -1,0 +1,969 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Email">
+
+<!ENTITY export.label "Εξαγωγή">
+<!ENTITY exportSketch.label "Εξαγωγή Σκετς">
+<!ENTITY chapter.label "Κεφάλαιο">
+<!ENTITY chapters.label "Κεφάλαια">
+<!ENTITY chapter.toolbarlabel "Κεφ">
+<!ENTITY editor.label "Σύνταξη">
+<!ENTITY showContents.label "Περιεχόμενα">
+<!ENTITY exportCatalog.label "Εξαγωγή Καταλόγου">
+<!ENTITY novel.desc "Προσθέστε ένα μυθιστόρημα, με κάρτες ευρετηρίου και σημειώσεις.">
+<!ENTITY novel.label "Μυθιστόρημα">
+<!ENTITY showBreakdownInScript.label "Εμφάνισε την ανάλυση στο σενάριο">
+<!ENTITY showDialogNumbers.label "Εμφάνισε αριθμούς διαλόγων">
+
+<!ENTITY timer.settings.label "Ρυθμίσεις">
+<!ENTITY timer.autostart.label "Αρχίστε την συνεδρία όταν ανοίγει το σενάριο.">
+<!ENTITY timer.schedule.label "Πρόγραμμα">
+<!ENTITY timer.useSchedule.label "Χρήση προγραμματισμένων διακοπών">
+<!ENTITY timer.workMinutes.label "Εργασία (λεπτά):">
+<!ENTITY timer.breakMinutes.label "Διακοπή (λεπτά):">
+<!ENTITY timer.alertType.label "Είδος ειδοποίησης όταν αρχίζει/τελειώνει η διακοπή">
+<!ENTITY timer.showDialog.label "Εμφάνισε διάλογο">
+<!ENTITY timer.endSession.label "Τέλος συνεδρίας">
+<!ENTITY timer.flashTimer.label "Αναβόσβηνε το χρονόμετρο">
+<!ENTITY timer.resetSession.label "Επαναρρύθμιση Συνεδρίας">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Αναφορές">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Αρχή Συνεδρίας:">
+<!ENTITY timer.totalWritingTime.label "Συνολικός Χρόνος Συγγραφής:">
+<!ENTITY timer.totalBreakTime.label "Συνολικός Χρόνος Διακοπής:">
+<!ENTITY timer.totalTime.label "Συνολικός Χρόνος:">
+<!ENTITY timer.wordsWritten.label "Γραμμένες Λέξεις">
+
+<!ENTITY timer.allSessions.label "Όλες οι Συνεδρίες">
+<!ENTITY timer.sessionDetail.label "Λεπτομέρειες Συνεδρίας">
+<!ENTITY timer.scriptSummary.label "Σύνοψη Σεναρίου">
+<!ENTITY timer.writingGoals.label "Στόχοι Συγγραφής">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Πρακτικά Συνεδρίας">
+<!ENTITY timer.totalSessionTime.header "Συνολικός Χρόνος Συνεδρίας">
+<!ENTITY timer.totalSessionTime.label "Συνολικός Χρόνος Συνεδρίας">
+<!ENTITY timer.totalWordsWritten.header "Σύνολο λέξεων">
+<!ENTITY timer.totalWordsWritten.label "Σύνολο λέξεων">
+<!ENTITY timer.noSessionsToDisplay.label "Δεν υπάρχουν συνεδρίες προς εμφάνιση.">
+<!ENTITY timer.sessionNo.label "Συνεδρία #">
+<!ENTITY timer.date.label "Ημερομηνία">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Ημερομηνία Αρχής">
+<!ENTITY timer.startTime.label "Ώρα Αρχής">
+<!ENTITY timer.endTime.label "Ώρα Τέλους">
+<!ENTITY timer.breakTime.label "Ώρα Διακοπής">
+
+<!ENTITY timer.sessionStartWords.label "Λέξεις στην αρχή της συνεδρίας">
+<!ENTITY timer.sessionEndWords.label "Λέξεις στο τέλος της συνεδρίας">
+<!ENTITY timer.newWords.header "Νέες Λέξεις">
+<!ENTITY timer.noNewWords.label "Καμία αύξηση στον αριθμό των λέξεων.">
+<!ENTITY timer.newDialog.header "Νέος Διάλογος">
+<!ENTITY timer.noNewDialog.label "Καμία αύξηση στον αριθμό των διαλόγων.">
+<!ENTITY timer.newCharacters.header "Νέοι Χαρακτήρες">
+<!ENTITY timer.noNewCharacters.label "Δεν προστέθηκαν νέοι Χαρακτήρες.">
+<!ENTITY timer.newPages.header "Νέες Σελίδες">
+<!ENTITY timer.newScenes.header "Νέες Σκηνές">
+<!ENTITY timer.newPanels.header "Νέοι Πίνακες">
+<!ENTITY timer.shotWords.header "Λέξεις Πλάνων">
+<!ENTITY timer.actionWords.header "Λέξεις Δράσης">
+<!ENTITY timer.dialogWords.header "Λέξεις Διαλόγου">
+<!ENTITY timer.soundVoiceMusicWords.header "Λέξεις Ήχος/Φωνή/Μουσική">
+<!ENTITY timer.stageDirWords.header "Λέξεις Δ/σης Σκηνής">
+
+<!ENTITY timer.name.label "Όνομα">
+<!ENTITY timer.words.label "Λέξεις">
+<!ENTITY timer.percentage.label "Επί τοις εκατό">
+
+<!ENTITY timer.summaryReport.label "Αναφορά σύνοψης">
+<!ENTITY timer.contributionsByAuthor.label "Κείμενο από τον Συγγραφέα">
+<!ENTITY timer.weekdaySessions.label "Συνεδρίες από την Ημέρα της Εβδομάδας">
+<!ENTITY timer.weekdayWords.label "Λέξεις από την Ημέρα της Εβδομάδας">
+<!ENTITY timer.numberOfSessions.label "Αριθμός Συνεδριών">
+<!ENTITY timer.longest.label "Μακρύτερη">
+<!ENTITY timer.shortest.label "Κοντύτερη">
+<!ENTITY timer.averageDuration.label "Μέση διάρκεια">
+<!ENTITY timer.mostWords.label "Περισσότερες λέξεις">
+<!ENTITY timer.leastWords.label "Ελάχιστες λέξεις">
+<!ENTITY timer.averageWords.label "Μέσος όρος λέξεων">
+<!ENTITY timer.wordCounts.header "Αριθμός λέξεων">
+<!ENTITY timer.element.label "Στοιχείο">
+<!ENTITY timer.totalWords.header "Σύνολο λέξεων">
+<!ENTITY timer.totalDialogWords.header "Σύνολο λέξεων διαλόγου">
+<!ENTITY timer.character.label "Χαρακτήρας">
+<!ENTITY timer.weekday.label "Ημέρα εβδομάδας">
+<!ENTITY timer.sessions.label "Συνεδρίες">
+<!ENTITY timer.pctOfTotal.label "&#37; του Συνόλου">
+<!ENTITY timer.author.label "Συγγραφέας">
+
+<!ENTITY timer.writingGoalReport.label "Αναφορά στόχου συγγραφής">
+<!ENTITY timer.goalSession.header "Στόχος Συνεδρίας">
+<!ENTITY timer.goalSession.label "Στόχος Συνεδρίας">
+<!ENTITY timer.goalDaily.header "Ημερήσιος Στόχος">
+<!ENTITY timer.goalDaily.label "Ημερήσιος Στόχος">
+<!ENTITY timer.goalScript.header "Στόχος Σεναρίου">
+<!ENTITY timer.goalScript.label "Στόχος Σεναρίου">
+<!ENTITY timer.wordGoal.label "Στόχος Λέξεων">
+
+<!ENTITY timer.message.label "Μήνυμα">
+<!ENTITY timer.tags.label "Ετικέτες">
+<!ENTITY timer.mostRecentSession.label "Τελευταία Συνεδρία">
+
+<!ENTITY timer.alertDialog.title "Χρονόμετρο Συνεδρίας">
+<!ENTITY timer.timerMenu.tooltip "Πατήστε για Επιλογές">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Χρώμα Επιφάνειας">
+<!ENTITY fullscreen.backgroundColour.tooltip "Χρώμα Φόντου">
+<!ENTITY fullscreen.fullscreen.tooltip "Ολόκληρη Οθόνη">
+
+<!ENTITY bbc.options.label "Επιλογές BBC">
+<!ENTITY bbc.showTitle.label "Τίτλος Show">
+<!ENTITY bbc.sketchTitle.label "Τίτλος Σκετς">
+<!ENTITY editText.title "Επεξεργασία κειμένου">
+<!ENTITY sketch.fillColour.tooltip "Χρώμα Γεμίσματος">
+<!ENTITY sketch.group.tooltip "Ομάδα">
+<!ENTITY sketch.lower.tooltip "Χαμήλωσε">
+<!ENTITY sketch.lowerToBottom.tooltip "Χαμήλωσε στο κάτω μέρος">
+<!ENTITY sketch.raise.tooltip "Ανέβασε">
+<!ENTITY sketch.raiseToTop.tooltip "Ανέβασε στην κορυφή">
+<!ENTITY sketch.strokeColour.tooltip "Βάλε Χρώμα">
+<!ENTITY sketch.ungroup.tooltip "Εκτός ομάδας">
+
+<!ENTITY custom.label "Προσαρμογή">
+<!ENTITY saveAsPreset.label "Αποθήκευσε σαν Προεπιλογή">
+<!ENTITY sceneLocking.title "Κλείδωμα Σκηνής">
+<!ENTITY sceneNumbering.label "Αρίθμηση Σκηνής">
+<!ENTITY scenenumber.after.label "Μετά">
+<!ENTITY scenenumber.before.label "Πριν">
+<!ENTITY scenenumber.example.label "Παράδειγμα">
+<!ENTITY scenenumber.letter.label "Γράμμα">
+<!ENTITY scenenumber.number.label "Αριθμός">
+<!ENTITY scenenumber.position.label "Θέση">
+<!ENTITY scenenumber.prefix.label "Πρόθεμα">
+<!ENTITY scenenumbers.resetAll.label "Επαναφορά όλων των Αριθμών">
+<!ENTITY scenenumber.suffix.label "Επίθημα">
+<!ENTITY scenenumber.type.label "Είδος">
+<!ENTITY style.label "Στυλ">
+
+<!ENTITY project.film.label "Κινηματογραφικό έργο">
+<!ENTITY project.av.label "Οπτικοακουστικό έργο">
+<!ENTITY project.theatre.label "Θεατρικό έργο">
+<!ENTITY project.audioplay.label "Ακουστικό Έργο">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Προσθήκη Εικόνας">
+<!ENTITY addPaletteObjects.label "Απόκτηση των Art packs">
+<!ENTITY addShot.label "Προσθήκη Πλάνου">
+<!ENTITY bbcCueStyle.label "Ατάκα σε στυλ BBC">
+<!ENTITY bbcSceneStyle.label "Σκηνή σε στυλ BBC">
+<!ENTITY bdc.cameras "Κάμερες">
+<!ENTITY chat.label "Συνομιλία">
+<!ENTITY colour.blue "Μπλε">
+<!ENTITY colour.cherry "Κόκκινο">
+<!ENTITY colour.gold "Χρυσό">
+<!ENTITY colour.green "Πράσινο">
+<!ENTITY colour.pink "Ροζ">
+<!ENTITY colour.salmon "Σωμόν">
+<!ENTITY colour.white "Άσπρο">
+<!ENTITY colour.yellow "Κίτρινο">
+<!ENTITY currentRevision.label "Τρέχουσα έκδοση">
+<!ENTITY createNewRevision.tooltip "Δημιουργία νέας έκδοσης">
+<!ENTITY default.label "Εξ' ορισμού">
+<!ENTITY enableSceneLocking.label "Κλείδωμα σκηνών">
+<!ENTITY fixNumbers.label "Διόρθωση">
+<!ENTITY furniture.label "Επίπλωση">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Διάχυτο">
+<!ENTITY light.spot.label "Σπότ">
+<!ENTITY linesBetweenScenes.label "Κείμενο ανάμεσα στις σκηνές">
+<!ENTITY man.label "Άντρας">
+<!ENTITY numbers.bothNos "Αμφότερα #">
+<!ENTITY numbers.leftNo "Αριστερό νούμερο #">
+<!ENTITY numbers.none "Κανένα νούμερο">
+<!ENTITY numbers.rightNo "Δεξιό νούμερο #">
+<!ENTITY omitScene.label "Παράλειψη σκηνής">
+<!ENTITY palette.label "Παλέτα">
+<!ENTITY palettes.label "Παλέτες">
+<!ENTITY paletteTree.tooltip "Σύρετε τα αντικείμενα επάνω στο σχέδιο">
+<!ENTITY people.label "Άνθρωποι">
+<!ENTITY person.label "Άτομο">
+<!ENTITY preventEditing.label "Κλείδωμα κειμένου">
+<!ENTITY resetRevisionMode.label "Επαναφορά λειτουργίας αναθεώρησης">
+<!ENTITY revisionColour.desc "Αυτό θα χρησιμοποιηθεί ως εξ' ορισμού χρώμα για όσες αλλαγές γίνουν στο σενάριο.">
+<!ENTITY revisionColour.label "Χρώμα αναθεωρημένου κειμένου">
+<!ENTITY revisionMarks.all "Όλα τα σημάδια">
+<!ENTITY revisionMarks.current "Τωρινά σημάδια">
+<!ENTITY revisionMarks.hide "Απόκρυψη σημαδιών">
+<!ENTITY revisionMarks.mark.label "Σημάδι">
+<!ENTITY revisionMarks.unmark.label "Αφαίρεση σημαδιού">
+<!ENTITY revisionMode.label "Λειτουργία αναθεώρησης">
+<!ENTITY revisionName.label "Τίτλος αναθεώρησης">
+<!ENTITY revisionOptions.title "Επιλογές αναθεώρησης">
+<!ENTITY shotSetup.label "Σχέδιο">
+<!ENTITY shotSetup.desc "Προσθήκη σχεδίου στο έργο.">
+<!ENTITY showScriptHeader.label "Εμφάνιση επικεφαλίδας του σεναρίου">
+<!ENTITY standard.label "Πρότυπο">
+<!ENTITY startNewRevision.label "Εκκίνηση νέας αναθεώρησης">
+<!ENTITY storyboard.showImages.label "Εμφάνιση εικόνων">
+<!ENTITY storyboard.showSetups.label "Εμφάνιση σχεδίων">
+<!ENTITY storyboard.showBoth.label "Εμφάνιση και των δύο">
+<!ENTITY woman.label "Γυναίκα">
+
+<!ENTITY light.bank.label "Προβολέας">
+<!ENTITY bathtub.label "Μπανιέρα">
+<!ENTITY boy.label "Αγόρι">
+<!ENTITY car.label "Αυτοκίνητο">
+<!ENTITY chair.label "Καρέκλα">
+<!ENTITY coffeetable.label "Τραπέζι του καφέ">
+<!ENTITY couch.label "Καναπές">
+<!ENTITY crowd.label "Πλήθος">
+<!ENTITY endtable.label "Τραπεζάκι">
+<!ENTITY girl.label "Κορίτσι">
+<!ENTITY group.label "Ομάδα"> <!-- Ομάδα ανθρώπων -->
+<!ENTITY house.label "Σπίτι">
+<!ENTITY building.label "Κτίριο"> <!-- π.χ. Κτίριο με γραφεία -->
+<!ENTITY pickuptruck.label "Φορτηγάκι">
+<!ENTITY sink.label "Νιπτήρας"> <!-- Νιπτήρας στην κουζίνα -->
+<!ENTITY spotlight.label "Σπότ">
+<!ENTITY street.label "Δρόμος">
+<!ENTITY toilet.label "Τουαλέττα">
+<!ENTITY tree.label "Δένδρο">
+<!ENTITY van.label "Φορτηγό">
+<!ENTITY videocamera.label "Βιντεοκάμερα">
+
+<!ENTITY adaptTo.label "Προσαρμογή Σε">
+<!ENTITY addImages.label "Προσθήκη Εικόνων">
+<!ENTITY addNote.label "Προσθήκη Σημειώσεων">
+<!ENTITY allShootDays.label "Όλες οι Μέρες Γυρίσματος">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY callSheet.label "Όρντινο">
+<!ENTITY catalog.desc "Προσθέστε έναν κατάλογο παραγωγής στο έργο σας.">
+<!ENTITY catalog.label "Κατάλογος">
+<!ENTITY catalogAddItem.tooltip "Προσθέστε Είδος στον Κατάλογο">
+<!ENTITY catalogDeleteItem.tooltip "Διαγράψτε Είδος από τον Κατάλογο">
+<!ENTITY comicBook.desc "Δημιουργήστε σενάριο από κόμικς.">
+<!ENTITY comicBook.label "Κόμικς">
+<!ENTITY contactName.label "Όνομα Επαφής">
+<!ENTITY create.label "Δημιουργήστε">
+<!ENTITY createCatalogFromSelection.label "Δημιουργήστε Κατάλογο από Επιλογές">
+<!ENTITY createTemplate.label "Δημιουργήστε Πρότυπο">
+<!ENTITY crew.desc "Προσθέστε ένα έγγραφο συνεργείου.">
+<!ENTITY crew.label "Συνεργείο">
+<!ENTITY date.label "Ημερομηνία">
+<!ENTITY datePicker.label "Επιλογέας Ημερομηνίας">
+<!ENTITY daysOff.label "Ρεπό">
+<!ENTITY duplicate.label "Αντιγράψτε">
+<!ENTITY edit.label "Επεξεργαστείτε">
+<!ENTITY editDates.label "Επεξεργαστείτε Ημερομηνίες">
+<!ENTITY eighths.label "Όγδοα">
+<!ENTITY eighthsSuffix.label "8α">
+<!ENTITY end.label "Τέλος">
+<!ENTITY endOfShooting.label "Τέλος Γυρίσματος">
+<!ENTITY exportList "Εξαγωγή Λίστας">
+<!ENTITY fetchingList.label "Λίστα Αναγκών">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filter.label "Φίλτρο">
+<!ENTITY findAllCharacters.label "Προσθέστε Χαρακτήρες στον Κατάλογο">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.inScenes "Εντός Σκηνών">
+<!ENTITY form.jobTitle "Τίτλος">
+<!ENTITY formatBalloon.label  "Πλαίσιο Διαλόγου">
+<!ENTITY formatBalloonType.label "Τύπος Πλαισίου Διαλόγου">
+<!ENTITY formatCaption.label  "Λεζάντα">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;"> <!-- μεγ. 7 χαρακτήρες -->
+<!ENTITY formatPage.label     "Σελίδα">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;"> <!-- μεγ. 5 χαρακτήρες -->
+<!ENTITY formatPanel.label    "Πίναξ">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;"> <!-- μεγ. 5 χαρακτήρες -->
+<!ENTITY freeAndSecure.label "Δωρεάν και Ασφαλή">
+<!ENTITY getCeltxTools.label "Αποκτήστε τα Celtx Tools">
+<!ENTITY indexCardTitle.label " Επικεφαλίδα Καρτών Ευρετηρίου ">
+<!ENTITY myStudio.label "Το Celtx μου">
+<!ENTITY notes.label "Σημειώσεις">
+<!ENTITY numberOfCharacters.label "Πλήθος Χαρακτήρων">
+<!ENTITY numberOfScenes.label "Πλήθος Σκηνών">
+<!ENTITY oneLineSchedule.label "Πρόγραμμα μιας γραμμής">
+<!ENTITY open.label "Άνοιγμα αρχείου">
+<!ENTITY openFromStudio.label "Άνοιγμα αρχείο από το Celtx">
+<!ENTITY owner.label "Ιδιοκτήτης">
+<!ENTITY personal.label "Προσωπικό">
+<!ENTITY principalFunction.label "Κυρίως Λειτουργία">
+<!ENTITY rename.label "Μετονομασία">
+<!ENTITY saveAsHTML.label "Αποθηκεύση ως HTML">
+<!ENTITY saveCommentCheckbox.label "Ρώτησε με για τυχόν σχόλιο όταν αποθηκεύω στο Celtx.">
+<!ENTITY saveToStudio.label "Αποθηκεύστε στο Celtx">
+<!ENTITY savedBy.label "Αποθηκεύθηκε από">
+<!ENTITY scenePageBreaks.label "Αλλαγή Σελίδας Μετά από Κάθε Σκηνή">
+<!ENTITY sceneSummary.label "Σύνοψη Σκηνής">
+<!ENTITY scheduleID.label "ID Προγράμματος">
+<!ENTITY scratchpad.label "Πρόχειρο">
+<!ENTITY script.desc "Πρόσθεσε ένα σενάριο στο έργο σου.">
+<!ENTITY scriptDay.label "Ημέρα Σεναρίου">
+<!ENTITY selectCatalogType.label "Επέλεξε τύπο καταλόγου.">
+<!ENTITY selectCatalogType.label "Επέλεξε τύπο καταλόγου.">
+<!ENTITY shootDay.label "Ημέρα Γυρίσματος">
+<!ENTITY shootDays.label "Ημέρες Γυρίσματος">
+<!ENTITY shootingSchedule.label "Πρόγραμμα Γυρίσματος">
+<!ENTITY start.label "Αρχή">
+<!ENTITY startOfShooting.label "Αρχή Γυρίσματος">
+<!ENTITY stripboard.label "Πίνακας Σκίτσων">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Πιστοποίηση Αυθεντικότητας του Celtx">
+<!ENTITY studioAuthDialog.desc "Είσοδος μελών του Celtx">
+<!ENTITY studioProjects.label "Έργα στο Celtx">
+<!ENTITY summary.label "Σύνοψη">
+<!ENTITY tags.label "Ετικέτες">
+<!ENTITY toggleEditing.label "Εναλλαγή Τροποποιήσεων">
+<!ENTITY toolbox.label "Εργαλειοθήκη">
+<!ENTITY update.label "Ενημέρωση">
+<!ENTITY webPanelIntro.createAnAccount "Δημιουργήστε ένα Λογαριασμό Celtx">
+<!ENTITY webPanelIntro.text1 "Εκμεταλλευτείτε πλήρως το Celtx εγγραφόμενοι για δωρεάν και ασφαλείς υπηρεσίες.">
+<!ENTITY webPanelIntro.text2 "*Κάντε αντίγραφο ασφαλείας* ολόκληρου του έργου σας στον απομακρυσμένο και ασφαλή διακομιστή Celtx για να το έχετε σε περίπτωση κλοπής ή βλάβης του σκληρού σας δίσκου.">
+<!ENTITY webPanelIntro.text3 "*Συνεργαστείτε* με τα μέλη της ομάδας σας συμμετέχοντας στο έργο και δημιουργώντας εντός του, προσωπικό χώρο εργασίας.">
+<!ENTITY webPanelIntro.text4 "*Δημοσιεύστε* το έργο σας στο Project Central για σχόλια και αξιολογήσεις και πάρτε μέρος στην διαρκώς αυξανόμενη κοινότητα των δημιουργών του θεάματος.">
+<!ENTITY webPanelIntro.text5 "Δες το έργο σου στο Celtx σε βελτιστοποιημένη μορφή για το *iPhone* σου.">
+
+<!ENTITY access.label "Πρόσβαση">
+<!ENTITY actorProfile.desc      "Προσθήκη περιγραφής για ηθοποιό.">
+<!ENTITY actorProfile.label     "Ηθοποιός">
+<!ENTITY add.label    "Προσθήκη">
+<!ENTITY addCardCmd.label "Πρόσθεσε κάρτα">
+<!ENTITY addCmd.label "Προσθήκη">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Λεπτομέρειες Αντικειμένου">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Επιλέξτε Αντικείμενο">
+<!ENTITY addFolder.label "Προσθήκη Φακέλου...">
+<!ENTITY addFolderCmd.label "Προσθήκη Φακέλου">
+<!ENTITY addItem.label "Προσθήκη Αντικειμένου...">
+<!ENTITY addItemCmd.label "Προσθήκη Αντικειμένου">
+<!ENTITY addSequenceCmd.toolbarlabel "Προσθήκη Ομάδας Σκηνών">
+<!ENTITY advanced.label       "Για προχωρημένους">
+<!ENTITY alignCenter.label "Στοίχιση στο κέντρο">
+<!ENTITY alignJustified.label "Πλήρης στοίχιση">
+<!ENTITY alignLeft.label "Στοίχιση αριστερά">
+<!ENTITY alignRight.label "Στοίχιση δεξιά">
+<!ENTITY allUppercase.label "ΟΛΑ">
+<!ENTITY american.label "Αμερικάνικος">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Αυτά τα χαρακτηριστικά είναι διαθέσιμα μόνο για δημιουργία PDF.">
+<!ENTITY audioplay.desc "Προσθέστε ένα ηχητικό έργο στο έργο σας.">
+<!ENTITY audioplay.label "Ηχητικό έργο">
+<!ENTITY authDialog.description "Αυτή η ενέργεια απαιτεί τη σύνδεση με τον λογαριασμό σας στο Celtx">
+<!ENTITY authDialog.title       "Πιστοποίηση Celtx">
+<!ENTITY author.label "Συγγραφέας">
+<!ENTITY autoCharContinueds.label   "Εμφάνισε την συνέχεια των χαρακτήρων">
+<!ENTITY autoSaveProject.label "Αυτόματη αποθήκευση εργασίας">
+<!ENTITY autoparenthesize.label "Δημιουργία παρενθετικού όταν πληκτρολογηθεί '(' ">
+<!ENTITY avScript.desc "Προσθέστε ένα Οπτικοακουστικό σενάριο στην εργασία σας.">
+<!ENTITY avScript.label "Οπτικοακουστικό Σενάριο">
+<!ENTITY basedOn.label "Βασισμένο σε">
+<!ENTITY bdc.actor        "Ηθοποιός">
+<!ENTITY bdc.addlabour    "Πρόσθετη Εργασία">
+<!ENTITY bdc.animals      "Ζώα">
+<!ENTITY bdc.camera       "Κινηματογραφική Μηχανή">
+<!ENTITY bdc.cast         "Ηθοποιοί">
+<!ENTITY bdc.cgi          "Ψηφιακά Εφέ">
+<!ENTITY bdc.construction "Κατασκευές">
+<!ENTITY bdc.electrics    "Ηλεκτρολογικά">
+<!ENTITY bdc.equip        "Ειδικός Εξοπλισμός">
+<!ENTITY bdc.extras       "Κομπάρσοι">
+<!ENTITY bdc.greenery     "Φυτά">
+<!ENTITY bdc.hair         "Κόμμωση">
+<!ENTITY bdc.handler      "Εκπαιδευτής Ζώων">
+<!ENTITY bdc.lights       "Φωτισμός">
+<!ENTITY bdc.livestock    "Εκτρεφόμενα ζώα">
+<!ENTITY bdc.location     "Τοποθεσία">
+<!ENTITY bdc.makeup       "Μακιγιάζ">
+<!ENTITY bdc.mechfx       "Μηχανικά Εφέ">
+<!ENTITY bdc.misc         "Διάφορα">
+<!ENTITY bdc.music        "Μουσική">
+<!ENTITY bdc.opticalfx    "Οπτικά Εφέ">
+<!ENTITY bdc.painting     "Βαφή">
+<!ENTITY bdc.prodnotes    "Σημειώσεις Παραγωγής">
+<!ENTITY bdc.props        "Εφόδια">
+<!ENTITY bdc.security     "Ασφάλεια">
+<!ENTITY bdc.set          "Σκηνικά">
+<!ENTITY bdc.setdressing  "Διακόσμηση Σκηνικών">
+<!ENTITY bdc.sound        "Ήχος">
+<!ENTITY bdc.soundfx      "Ηχητικά Εφέ">
+<!ENTITY bdc.specialfx    "Ειδικά Εφέ">
+<!ENTITY bdc.storyboard   "Storyboard">
+<!ENTITY bdc.stunts       "Επικίνδυνες Σκηνές">
+<!ENTITY bdc.vehicles     "Οχήματα">
+<!ENTITY bdc.wardrobe     "Γκαρνταρόμπα">
+<!ENTITY bdc.weapons      "Όπλα">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Έντονη Γραφή">
+<!ENTITY bookmark.desc      "Προσθήκη ενός συνδέσμου Διαδικτύου.">
+<!ENTITY bookmark.label     "Σύνδεσμος Διαδικτύου">
+<!ENTITY both.label   "Και τα δύο">
+<!ENTITY bottomOfPage.label   "Κατώτατο σημείο σελίδας">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Προσθήκη πληροφοριών ανάλυσης για ένα σενάριο.">
+<!ENTITY breakdown.label    "Ανάλυση">
+<!ENTITY breakdownReport.label "Αναφορά Ανάλυσης">
+<!ENTITY brokenSceneEventWarning.label "Το γεγονός αναφέρεται σε σκηνή που δεν υπάρχει πλέον.">
+<!ENTITY browseCmd.label      "Αναζήτηση">
+<!ENTITY byline.label "από">
+<!ENTITY calendar.desc      "Προσθήκη ημερολογίου στο έργο σας.">
+<!ENTITY calendar.label     "Ημερολόγιο">
+<!ENTITY cast.label "Διανομή">
+<!ENTITY castOfCharacters.label "Διανομή χαρακτήρων">
+<!ENTITY categories.label "Κατηγορίες">
+<!ENTITY category.label     "Κατηγορία">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; Λογαριασμός...">
+<!ENTITY celtxError.title       "Λάθος του Celtx">
+<!ENTITY celtxTagline.label "#1 επιλογή για την προπαραγωγή θεαμάτων.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Σύνοψη των χαρακτήρων και των μεταξύ τους σχέσεων.">
+<!ENTITY charOutline.label "Περιγραφή Χαρακτήρα">
+<!ENTITY character.label        "Χαρακτήρας">
+<!ENTITY characterProfile.desc  "Προσθήκη περιγραφής για ένα νέο χαρακτήρα.">
+<!ENTITY characterProfile.existing "Μπορείτε επίσης να περιγράψετε έναν υπάρχοντα χαρακτήρα από την παρακάτω λίστα.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "Επιλέξτε έναν χαρακτήρα.">
+<!ENTITY characters.label       "Χαρακτήρες">
+<!ENTITY clearCmd.label "Καθαρισμός">
+<!ENTITY colon ":">
+<!ENTITY comment.label "Σχόλιο">
+<!ENTITY completed.label "Ολοκληρώθηκε">
+<!ENTITY contact.label "Επικοινωνία">
+<!ENTITY contactInformation.label "Πληροφορίες επικοινωνίας">
+<!ENTITY contacts.label "Επαφές">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Συνέχεια">
+<!ENTITY copyProject.title    "Αντιγραφή έργου">
+<!ENTITY copyProjectCmd.label "Αντιγραφή έργου">
+<!ENTITY copyright.label "Copyright">
+<!ENTITY createAccount.label "Δημιουργία ενός Λογαριασμού">
+<!ENTITY createProject.label  "Δημιουργία μιας εργασίας">
+<!ENTITY createProject.title  "Δημιουργία Έργου">
+<!ENTITY createdCol.label  "Δημιουργήθηκε">
+<!ENTITY creatorCol.label  "Δημιουργός">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY daynightHeader.label "Η/Ν">
+<!ENTITY daynightWarning.label "Η κεφαλίδα της σκηνής δεν τελειώνει με έγκυρη λέξη ΗΜΕΡΑ/ΝΥΧΤΑ. Για να διορθώσετε αυτό το πρόβλημα, επεξεργαστείτε την κεφαλίδα της σκηνής στο σενάριο ή τροποποιήστε την λίστα ΗΜΕΡΑ/ΝΥΧΤΑ στην καρτέλα Σενάριο στις επιλογές Προτιμήσεων.">
+<!ENTITY daynightWords.label "λέξεις ΗΜΕΡΑ/ΝΥΧΤΑ">
+<!ENTITY dayoff.label "Ρεπό">
+<!ENTITY decreaseDelayCmd.tooltip "Μειώστε την απόσταση.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Μείωση μεγέθους γραμματοσειράς">
+<!ENTITY decreaseIndentCmd.label "Μείωση παραγράφου">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Προεπιλεγμένη διάρκεια σκηνής">
+<!ENTITY delayLabel.tooltip "Καθυστέρηση (δευτερόλεπτα) ανάμεσα στις εικόνες">
+<!ENTITY deleteCardCmd.label "Διαγραφή κάρτας">
+<!ENTITY deleteItem.label "Διαγραφή Αντικειμένου">
+<!ENTITY deleteItemCmd.label        "Διαγραφή">
+<!ENTITY department.label   "Τμήμα">
+<!ENTITY description.label  "Περιγραφή">
+<!ENTITY details.label          "Λεπτομέρειες">
+<!ENTITY dialog.label           "Διάλογος">
+<!ENTITY director.label "Σκηνοθέτης">
+<!ENTITY disabled.label "Απενεργοποιημένο">
+<!ENTITY displayMedia.label "Παρουσίαση Μέσων">
+<!ENTITY downloadProjectCmd.label "Κατέβασμα Έργου...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Κατέβασμα">
+<!ENTITY downloadingPDF.label       "Μετατροπή σε PDF...">
+<!ENTITY dragToSchedule.tooltip "Σύρετε και αποθέσατε για προγραμματισμό.">
+<!ENTITY dualDialogCmd.label "Διπλός Διάλογος">
+<!ENTITY dualDialogCmd.tooltip "Διπλός Διάλογος">
+<!ENTITY duplicateItemCmd.label "Αντίγραφο">
+<!ENTITY editProfile.label "Επεξεργασία Online προφίλ">
+<!ENTITY editSceneDialog.title "Επεξεργασία σκηνής">
+<!ENTITY editTitlePageCmd.label "Επεξεργασία Σελίδας Τίτλου...">
+<!ENTITY editlabel.tooltip "Κλικ για επεξεργασία">
+<!ENTITY element.label          "Στοιχείο">
+<!ENTITY elements.label         "Στοιχεία">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Αυτή η διαδικασία έχει σκοπό την καταμέτρηση των ενεργών χρηστών του Celtx. Κανένα στοιχείο που προσδιορίζει την ταυτότητα ή τα δεδομένα του έργου δεν μεταδίδεται κατά τη διάρκεια αυτής της διαδικασίας.">
+<!ENTITY enableStats.label    "Αποστολή στατιστικών χρήσης στο Celtx.">
+<!ENTITY enableStats.label    "Επιτρέψτε στο Celtx να κάνει PING στο Διακομιστή Celtx κατά τη διάρκεια της Εκκίνησης.">
+<!ENTITY enabled.label "Ενεργοποιημένο">
+<!ENTITY enterEmbedTagPrompt.label "Εισάγετε μία ετικέτα EMBED ή OBJECT εδώ:">
+<!ENTITY eventDetails.label "Λεπτομέρειες Γεγονότος">
+<!ENTITY every15Minutes.label "Κάθε 15 λεπτά">
+<!ENTITY every30Minutes.label "Κάθε μισή ώρα">
+<!ENTITY every5Minutes.label "Κάθε 5 λεπτά">
+<!ENTITY everyHour.label "Κάθε ώρα">
+<!ENTITY everyMinute.label "Κάθε Λεπτό">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label      "Εξαγωγή Σεναρίου">
+<!ENTITY externalFile.desc  "Προσθήκη οποιουδήποτε υπάρχοντος αρχείου στο έργο σας.">
+<!ENTITY externalFile.label "Αρχείο">
+<!ENTITY filmScript.desc    "Προσθήκη ενός μορφοποιημένου σεναρίου ταινίας.">
+<!ENTITY filmScript.label   "Σενάριο">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Εύρεση...">
+<!ENTITY findPreviousCmd.label "Εύρεση Προηγούμενου">
+<!ENTITY findTab.label "Εύρεση">
+<!ENTITY folder.label "Φάκελλος">
+<!ENTITY forceOverwrite.label "Επέβαλε την εγγραφή εάν η έκδοση στον Διακομιστή είναι νεώτερη">
+<!ENTITY form.actorLink "Σύνδεσμος Ηθοποιού">
+<!ENTITY form.actorProfile "Προφίλ Ηθοποιού">
+<!ENTITY form.address "Διεύθυνση">
+<!ENTITY form.affectEvent "Πώς επηρεάζει αυτό το γεγονός τη συνολική πλοκή;">
+<!ENTITY form.age "Ηλικία">
+<!ENTITY form.alternate "Εναλλακτικό Όνομα">
+<!ENTITY form.antag "ανταγωνιστής">
+<!ENTITY form.antagWho "Ποιος είναι ο ανταγωνιστής σε αυτή την σκηνή;">
+<!ENTITY form.availability "Διαθεσιμότητα">
+<!ENTITY form.bestFriend "καλύτερος φίλος">
+<!ENTITY form.borrow "Δανεισμός">
+<!ENTITY form.build "Κατασκευή">
+<!ENTITY form.buy "Αγορά">
+<!ENTITY form.catalyst "καταλύτης">
+<!ENTITY form.cell "Κινητό Τηλέφωνο #">
+<!ENTITY form.centralEvent "Ποιο είναι το κεντρικό γεγονός της σκηνής;">
+<!ENTITY form.charBackground "Παρελθόν Χαρακτήρα">
+<!ENTITY form.charGoal "Ποιος είναι ο Σκοπός αυτού του Χαρακτήρα;">
+<!ENTITY form.charPlan "Ποιο είναι το σχέδιο του Χαρακτήρα για την επίτευξη του σκοπού του;">
+<!ENTITY form.charTraits "Προσωπικότητα Χαρακτήρων">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Χαρακτήρες που χρησιμοποιούνται από">
+<!ENTITY form.color "Χρώμα">
+<!ENTITY form.comicRelief "κωμική νότα">
+<!ENTITY form.comments "Σχόλια">
+<!ENTITY form.confidante "έμπιστος">
+<!ENTITY form.contactInfo "Στοιχεία Επικοινωνίας">
+<!ENTITY form.cost "Κόστος">
+<!ENTITY form.dateAvail "Ημερομηνίες Διαθεσιμότητας">
+<!ENTITY form.dateNeed "Ημερομηνίες που Απαιτείται">
+<!ENTITY form.dateReturn "Ημερομηνία Επιστροφής">
+<!ENTITY form.description "Περιγραφή">
+<!ENTITY form.details "Λεπτομέρειες">
+<!ENTITY form.dislikes "Αντιπάθειες">
+<!ENTITY form.distFeatures "Ιδιαίτερα Χαρακτηριστικά Γνωρίσματα">
+<!ENTITY form.dob "Ημερομηνία Γέννησης">
+<!ENTITY form.dress "Φόρεμα">
+<!ENTITY form.education "Μόρφωση">
+<!ENTITY form.elevator "Ανελκυστήρας">
+<!ENTITY form.email "Διεύθυνση Email">
+<!ENTITY form.endDate "Ημερομηνία Λήξης">
+<!ENTITY form.era "Εποχή">
+<!ENTITY form.eyes "Μάτια">
+<!ENTITY form.facilityInfo "Πληροφορίες Εγκαταστάσεων">
+<!ENTITY form.familyBack "Οικογενειακό Υπόβαθρο">
+<!ENTITY form.fullName "Πλήρες Όνομα">
+<!ENTITY form.generic "Γενικά">
+<!ENTITY form.genericForm "Γενική Φόρμα">
+<!ENTITY form.habits "Συνήθειες/Αδυναμίες">
+<!ENTITY form.hair "Μαλλιά">
+<!ENTITY form.hat "Καπέλο">
+<!ENTITY form.height "Ύψος">
+<!ENTITY form.jacket "Σακάκι">
+<!ENTITY form.keyCharTraits "Θεμελιώδη Γνωρίσματα Χαρακτήρων">
+<!ENTITY form.lightSources "Πηγές Φωτισμού">
+<!ENTITY form.likes "Προτιμήσεις">
+<!ENTITY form.locationMap "Χάρτης Τοποθεσίας">
+<!ENTITY form.locationProfile "Προφίλ Τοποθεσίας">
+<!ENTITY form.loveInterest "πρόσωπο ερωτικού ενδιαφέροντος">
+<!ENTITY form.media "Μέσα">
+<!ENTITY form.mentor "μέντορας">
+<!ENTITY form.motiv "Κίνητρο">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Όχι">
+<!ENTITY form.noise "Ζητήματα Θορύβου">
+<!ENTITY form.other "άλλο">
+<!ENTITY form.pants "Παντελόνι">
+<!ENTITY form.parking "Πληροφορίες Στάθμευσης">
+<!ENTITY form.partner "σύντροφος">
+<!ENTITY form.person "Προσωπικότητα">
+<!ENTITY form.phone "Τηλέφωνο #">
+<!ENTITY form.physicalDesc "Λεπτομερής Φυσική Περιγραφή">
+<!ENTITY form.powerCapa "Υποστήριξη Ηλεκτρικής Τροφοδοσίας">
+<!ENTITY form.princFunction "Ποια είναι η Κύρια Λειτουργία αυτού του Χαρακτήρα;">
+<!ENTITY form.procure "Προμήθεια">
+<!ENTITY form.propProfile "Εφόδιο">
+<!ENTITY form.protag "Πρωταγωνιστής">
+<!ENTITY form.protagAntag "Πρωταγωνιστής/Ανταγωνιστής">
+<!ENTITY form.protagWho "Ποιος είναι ο πρωταγωνιστής της σκηνής;">
+<!ENTITY form.rent "Ενοικίαση">
+<!ENTITY form.rentalCost "Κόστος Ενοικίασης">
+<!ENTITY form.role "Ρόλος">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Πώς επιτυγχάνει το σκοπό του ο ανταγωνιστής;">
+<!ENTITY form.sceneAntagGoal "Ποιος είναι ο σκοπός του ανταγωνιστή σ' αυτή τη σκηνή;">
+<!ENTITY form.sceneChars "Ποιοι χαρακτήρες λαμβάνουν μέρος στη σκηνή;">
+<!ENTITY form.sceneDetails "Λεπτομέρειες Σκηνής">
+<!ENTITY form.sceneMood "Ποια είναι η ατμόσφαιρα της σκηνής;">
+<!ENTITY form.sceneProtagAchieve "Πώς επιτυγχάνει το σκοπό του ο πρωταγωνιστής;">
+<!ENTITY form.sceneProtagGoal "Ποιος είναι ο σκοπός του πρωταγωνιστή σ' αυτή τη σκηνή;">
+<!ENTITY form.sceneSetting "Ποιο είναι το σκηνικό της;">
+<!ENTITY form.sceneWhen "Πότε λαμβάνει χώρα αυτή η σκηνή;">
+<!ENTITY form.scenesUsed "Σκηνές που χρησιμοποιούνται">
+<!ENTITY form.scoutSelect "Ρεπεράζ και Επιλογή">
+<!ENTITY form.scoutedFor "Ρεπεράζ Σκηνών">
+<!ENTITY form.scriptName "Όνομα Σεναρίου">
+<!ENTITY form.selectedFor "Επιλεγμένο για Σκηνές">
+<!ENTITY form.sex "Φύλλο">
+<!ENTITY form.shirt "Πουκάμισο">
+<!ENTITY form.shoes "Παπούτσια">
+<!ENTITY form.size "Μέγεθος">
+<!ENTITY form.squareFoot "Απαιτούμενα Τετραγωνικά">
+<!ENTITY form.startDate "Ημερομηνία Έναρξης">
+<!ENTITY form.wardProfile "Ενδυματολογικό Προφίλ">
+<!ENTITY form.wardrobeSizes "Μέγεθος Ενδυμάτων">
+<!ENTITY form.washroom "Τοποθεσίες Τουαλέτας">
+<!ENTITY form.weight "Βάρος">
+<!ENTITY form.wornBy "Φορεμένος από">
+<!ENTITY form.yes "Ναι">
+<!ENTITY format.label "Φορμάρισμα">
+<!ENTITY formatAct.label      "Πράξη">
+<!ENTITY formatAction.label   "Δράση">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "Επικεφάλίδα Σκηνής">
+<!ENTITY formatMusic.label    "Μουσική">
+<!ENTITY formatParen.label    "Παρενθετικά">
+<!ENTITY formatProductionNote.label "Παρατήρηση παραγωγής">
+<!ENTITY formatShot.label     "Πλάνο">
+<!ENTITY formatSound.label    "Ήχος">
+<!ENTITY formatStagedir.label "Σκηνοθεσία Σκηνής">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "Μετάβαση">
+<!ENTITY formatVoice.label    "Φωνή">
+<!ENTITY fourHours.label "4 ώρες">
+<!ENTITY general.label "Γενικά">
+<!ENTITY generatePDFCmd.label "Δημιουργία PDF...">
+<!ENTITY generateReportCmd.label "Δημιουργία Αναφοράς">
+<!ENTITY generateReportCmd.toolbarlabel "Αναφορά">
+<!ENTITY getProjDialog.caption "Διαθέσιμα Έργα">
+<!ENTITY getProjDialog.title   "Κατέβασμα Έργου">
+<!ENTITY gotoItemCmd.label          "Μετάβαση Σε">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Σχετικά με &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Αναφορά ενός Προβλήματος">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Online Υποστήριξη">
+<!ENTITY icons.label "Εικονίδια">
+<!ENTITY iconsAndText.label "Εικονίδια και Κείμενο">
+<!ENTITY image.label "Εικόνα">
+<!ENTITY images.label "Εικόνες">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Εισαγωγή Σεναρίου">
+<!ENTITY importScriptCmd.toolbarLabel "Εισαγωγή">
+<!ENTITY includeInWorkweek.label "Συμπεριλάβετε αυτές τις ημέρες στην εργάσιμη εβδομάδα">
+<!ENTITY includeTitlePage.label     "Να συμπεριληφθεί η Σελίδα Τίτλου">
+<!ENTITY increaseDelayCmd.tooltip "Αυξήστε την καθυστέρηση.">
+<!ENTITY increaseFontSizeCmd.tooltip "Αύξηση μεγέθους γραμματοσειράς">
+<!ENTITY increaseIndentCmd.label "Αύξηση Εσοχής">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCards.label "Κάρτες ευρετηρίου">
+<!ENTITY inlineSpellCheckCmd.label "Ορθογραφικός Έλεγχος κατά την πληκτρολόγηση">
+<!ENTITY insertNoteCmd.toolbarLabel "Σημείωση...">
+<!ENTITY international.label "Διεθνής">
+<!ENTITY intextHeader.label "ΕΣ/EΞ">
+<!ENTITY intextWarning.label "Η κεφαλίδα της σκηνής δεν τελειώνει με έγκυρη λέξη ΕΣΩΤ/ΕΞΩΤ. Για να διορθώσετε αυτό το πρόβλημα, επεξεργαστείτε την κεφαλίδα της σκηνής στο σενάριο ή τροποποιήστε την λίστα ΕΣΩΤ/ΕΞΩΤ στην καρτέλα Σενάριο στις επιλογές Προτιμήσεων.">
+<!ENTITY intextWords.label "Λέξεις ΕΣΩΤ/ΕΞΩΤ">
+<!ENTITY invalidLogin.label   "Λάθος Όνομα Χρήστη ή Κωδικός Πρόσβασης.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Πλάγια Γραφή">
+<!ENTITY item.label         "Αντικείμενο">
+<!ENTITY language.label "Γλώσσα">
+<!ENTITY left.label   "Αριστερά">
+<!ENTITY linesPerPage.label "Γραμμές ανά σελίδα">
+<!ENTITY list.label "Λίστα...">
+<!ENTITY location.desc          "Προσθήκη περιγραφής για μια Τοποθεσία.">
+<!ENTITY location.label         "Τοποθεσία">
+<!ENTITY loginOnStartup.label "Συνδεθείτε κατά την Εκκίνηση">
+<!ENTITY lowercaseCmd.label "Πεζά Γράμματα">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Μέσα">
+<!ENTITY mediaViewer.title "Επισκόπηση Μέσων">
+<!ENTITY modified.label "Τροποποιήθηκε">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label          "Μετακίνηση Κάτω">
+<!ENTITY moveUpCmd.label            "Μετακίνηση Πάνω">
+<!ENTITY moving.label "Μετακίνηση">
+<!ENTITY name.label         "Όνομα">
+<!ENTITY network.label "Δίκτυο">
+<!ENTITY never.label "Ποτέ">
+<!ENTITY newMarkupItem.label        "&lt;Νέο ...&gt;">
+<!ENTITY newProjectCmd.label "Νέο Έργο...">
+<!ENTITY newProjectCmd.toolbarlabel "Νέο">
+<!ENTITY noFileSelected.label   "&lt;δεν επιλέχθηκε αρχείο&gt;">
+<!ENTITY noImageSelected.label "Δεν επιλέχθηκε εικόνα">
+<!ENTITY noScriptSelected.label "Δεν επιλέχθηκε σενάριο">
+<!ENTITY none.label "Κανένα">
+<!ENTITY noteDialog.title           "Επεξεργασία Σημείωσης">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY oneHour.label "1 ώρα">
+<!ENTITY openItemCmd.label "Άνοιγμα Αντικειμένου">
+<!ENTITY openProjectCmd.label "Άνοιγμα Έργου...">
+<!ENTITY openProjectCmd.toolbarlabel "Άνοιγμα">
+<!ENTITY openProjectFolder.label "Άνοιγμα Φακέλου Έργου">
+<!ENTITY openRecentCmd.label "Άνοιγμα Προσφάτων">
+<!ENTITY options.label "Επιλογές">
+<!ENTITY orderedList.label "Κατάλογος σε σειρά">
+<!ENTITY outline.desc       "Προσθήκη ενός εγγράφου σύντομης περιγραφής.">
+<!ENTITY outline.label      "Σύντομη περιγραφή.">
+<!ENTITY over14.label "Είμαι 14 ετών ή μεγαλύτερος.">
+<!ENTITY pageAndSceneNumbering.label  "Αρίθμηση Σελίδων και Σκηνών">
+<!ENTITY paperSize.label        "Μέγεθος Χαρτιού">
+<!ENTITY password.label "Κωδικός Πρόσβασης">
+<!ENTITY passwordAgain.label "Εισάγετε εκ νέου τον Κωδικό Πρόσβασης">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title    "Μετατροπή σε PDF">
+<!ENTITY pdfErrorHeader "Oops!">
+<!ENTITY pdfErrorText1 "Πρέπει να είστε συνδεδεμένοι για να κάνετε χρήση αυτού του προηγμένου χαρακτηριστικού.">
+<!ENTITY pdfErrorText2 "Ασφαλής και ιδιωτική, αυτή η προηγμένη διαδικτυακή υπηρεσία του Celtx,φορμάρει το σενάριό σας σύμφωνα με πρότυπα του επαγγέλματος (σενάριο ταινίας, θεατρικό, ηχητικό σενάριο ή διπλής στήλης (AV).">
+<!ENTITY pdfOptions.title           "Επιλογές PDF">
+<!ENTITY pdfOptionsCmd.label "Περισσότερα και Συνεχίζεται">
+<!ENTITY pdfWarningHeader "Καλώστον!">
+<!ENTITY pdfWarningText "Ασφαλής και αυστηρά προσωπική, αυτή η προχωρημένη δικτυακή υπηρεσία του CeltX μορφοποιεί αυτόματα το κείμενο σας σε τυποποιημένο κείμενο για Ταινία, Θέατρο, Ραδιόφωνο ή Διπλή Στήλη (AV).">
+<!ENTITY picklist.label "Λίστα Διαλογής">
+<!ENTITY printBackgroundColour.label "Εκτύπωση Χρωμάτων Φόντου">
+<!ENTITY printCardBorders.label "Εκτύπωση περιθωρίων Καρτών">
+<!ENTITY printCardsDialog.title "Εκτύπωση Καρτών">
+<!ENTITY printStoryboardDialog.title "Εκτύπωση Storyboard">
+<!ENTITY privacy.label "Εμπιστευτικότητα">
+<!ENTITY producer.label "Παραγωγός">
+<!ENTITY productionItems.label "Αντικείμενα Παραγωγής">
+<!ENTITY progressDialog.title "Διαδικασία">
+<!ENTITY project.label "Έργο">
+<!ENTITY projectItems.label   "Τα Νέα έργα περιέχουν">
+<!ENTITY projectLibrary.label "Βιβλιοθήκη Έργων">
+<!ENTITY projectProperties.label "Ρυθμίσεις Έργου">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Πρότυπα Έργου">
+<!ENTITY propSheet.desc         "Προσθήκη περιγραφής για ένα καινούριο εφόδιο.">
+<!ENTITY propSheet.existing "Μπορείτε επίσης να περιγράψετε ένα υπάρχων εφόδιο από την παρακάτω λίστα.">
+<!ENTITY propSheet.label        "Εφόδιο">
+<!ENTITY propSheet.select       "Επιλέξτε ένα εφόδιο">
+<!ENTITY properties.label "Ιδιότητες">
+<!ENTITY publishDialog.findUsers    "Εύρεση Χρηστών">
+<!ENTITY publishDialog.ownerLabel   "Ιδιοκτήτης έργου">
+<!ENTITY publishDialog.privateDesc "Προσωπικό: Περιορισμός πρόσβασης μόνο σε μένα">
+<!ENTITY publishDialog.privateLabel "Προσωπικό">
+<!ENTITY publishDialog.publicDesc "Κοινό: Δημοσίευση έργου στο Project Central">
+<!ENTITY publishDialog.publicLabel  "Κοινό">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Καταμερισμός: Μοίρασμα έργου με επιλεγμένους χρήστες">
+<!ENTITY publishDialog.sharedLabel  "Κοινός με">
+<!ENTITY publishDialog.title        "Δημοσίευση Έργου">
+<!ENTITY publishDialog.userList     "Λίστα Χρηστών">
+<!ENTITY publishMode.label "Κατάσταση Δημοσίευσης">
+<!ENTITY recent.label "Πρόσφατος">
+<!ENTITY recentProjects.label "Πρόσφατα Έργα">
+<!ENTITY recoverPassword.label "Ανάκτηση Κωδικού Πρόσβασης">
+<!ENTITY recycleCmd.label           "Αποστολή στο σημειωματάριο">
+<!ENTITY regWiz.aboutThis "Μόλις καταστεί ενεργός ο λογαριασμός σας, θα συνδεθείτε αυτόματα γι' αυτή τη συνεδρία εργασίας.">
+<!ENTITY regWiz.accountInstructions "Παρακαλώ διαλέξτε ένα Όνομα Χρήστη και Κωδικό Πρόσβασης για τον &appName; λογαριασμό σας. (Παρακαλώ σημειώστε: τα Ονόματα Χρήστη και οι Κωδικοί Πρόσβασης είναι διακριτά μεταξύ κεφαλαίων και μικρών.)">
+<!ENTITY regWiz.accountLabel "Λογαρισμός Χρήστη (3/5)">
+<!ENTITY regWiz.bullet1 "Απομακρυσμένα Αντίγραφα Ασφαλείας">
+<!ENTITY regWiz.bullet2 "Χώροι Συνεργασίας">
+<!ENTITY regWiz.bullet3 "Δημοσίευση στο Project Central">
+<!ENTITY regWiz.bullet4 "Προβολή Έργου σε iPhone">
+<!ENTITY regWiz.checkLabel "Έλεγχος Πληροφοριών Λογαριασμού">
+<!ENTITY regWiz.clickFinish "Ευχαριστούμε που γίνατε μέλος της &appName; κοινότητας.">
+<!ENTITY regWiz.clickFinish1 "Είστε τώρα συνδεδεμένοι με τον &appName; Διακομιστή και έχετε πρόσβαση στις δωρεάν online δυνατότητές μας">
+<!ENTITY regWiz.clickFinish2 "Δοκιμάστε τις δυνατότητες Κατεβάσματος/Ανεβάσματος για να δημιουργήσετε ένα προστατευμένο αντίγραφο ασφαλείας του έργου σας, ή, αν γνωρίζετε κάποιον άλλον με έναν &appName; λογαριασμό, χρησιμοποιήστε τη δυνατότητα καταμερισμού του έργου για να συνεργαστείτε σε ένα κοινό έργο.">
+<!ENTITY regWiz.clickNext "Όλα μας φαίνονται καλά! Επιλέξτε 'Επόμενο' για να ολοκληρώσετε την εγγραφή σας.">
+<!ENTITY regWiz.conclusion "Ολοκλήρωση (5/5)">
+<!ENTITY regWiz.confirmIntro "Έχετε εισάγει τα κάτωθι:">
+<!ENTITY regWiz.confirmLabel "Επιβεβαίωση Ρυθμίσεων (4/5)">
+<!ENTITY regWiz.createNewAccountLabel "Δημιουργήστε ένα νέο λογαριασμό.">
+<!ENTITY regWiz.createYourAccountLabel "Αποκτήστε το δικό σας &appName; Λογαριασμό! (1/5)">
+<!ENTITY regWiz.emailLabel "Email:">
+<!ENTITY regWiz.finish "Τέλος">
+<!ENTITY regWiz.identityInstructions "Παρακαλώ εισάγετε το όνομά σας, τον οργανισμό και την διεύθυνση email.">
+<!ENTITY regWiz.identityLabel "Ταυτότητα (2/5)">
+<!ENTITY regWiz.intro "Δημιουργήστε ένα λογαριασμό στον &appName; Διακομιστή και επωφεληθείτε από αυτά τα δωρεάν χαρακτηριστικά του Ιστού:">
+<!ENTITY regWiz.loginSuccessfulLabel "Ευχαριστούμε, έχετε τώρα συνδεθεί στο &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Δημιουργήστε ένα νέο λογαριασμό ή χρησιμοποιήστε έναν ήδη υπάρχοντα:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; τα Ονόματα Χρηστών των λογαριασμών και οι Κωδικοί Πρόσβασης είναι διακριτά μεταξύ κεφαλαίων και μικρών.">
+<!ENTITY regWiz.notePassword "Ο Κωδικός Πρόσβασής σας πρέπει να έχει μήκος τουλάχιστον 5 χαρακτήρων.">
+<!ENTITY regWiz.noteUsername "Το Όνομα Χρήστη πρέπει να έχει μήκος τουλάχιστον 3 χαρακτήρων, και μπορεί να περιλαμβάνει μόνο γράμματα και αριθμούς.">
+<!ENTITY regWiz.orgLabel   "Οργανισμός:">
+<!ENTITY regWiz.title "Οδηγός Εγγραφής Celtx">
+<!ENTITY regWiz.uidLabel   "&appName; Όνομα Χρήστη:">
+<!ENTITY regWiz.useExistingAccountLabel "Χρησιμοποιήστε έναν υπάρχοντα λογαριασμό.">
+<!ENTITY regWiz.warn "Θα πρέπει να δημιουργήσετε ένα &appName; λογαριασμό ώστε να έχετε πρόσβαση σε αυτό το χαρακτηριστικό.">
+<!ENTITY remove.label "Απαλοιφή">
+<!ENTITY removeCmd.label "Απαλοιφή">
+<!ENTITY removeMarkupCmd.label "Απαλοιφή Διατύπωσης">
+<!ENTITY renameItem.label "Μετονομασία Αντικειμένου...">
+<!ENTITY replaceCmd.label "Αντικατάσταση...">
+<!ENTITY reportThisBug.label    "Αναφέρετε αυτό το Πρόβλημα">
+<!ENTITY reportThisBug.tooltip  "Στείλτε μας μία ανώνυμη Αναφορά Προβλήματος.">
+<!ENTITY reports.label "Αναφορές">
+<!ENTITY right.label  "Δεξιά">
+<!ENTITY sampleProjects.label "Δείγματα Έργων">
+<!ENTITY samples.label "Δείγματα">
+<!ENTITY saveAsTemplate.label "Αποθήκευση ως Πρότυπο">
+<!ENTITY savePDFCmd.label "Αποθήκευση PDF">
+<!ENTITY savePDFCmd.tooltip "Αποθήκευση Έργου ως PDF">
+<!ENTITY saveProjectAsCmd.label "Αποθήκευση Έργου ως...">
+<!ENTITY saveProjectCmd.label "Αποθήκευση Έργου">
+<!ENTITY saveProjectCmd.toolbarlabel "Αποθήκευση">
+<!ENTITY scene.label "Σκηνή">
+<!ENTITY sceneBreakdown.label "Ανάλυση Σκηνών">
+<!ENTITY sceneBreakdownWithDesc.label "Ανάλυση Σκηνών με Περιγραφή">
+<!ENTITY sceneDetails.desc      "Προσθήκη περιγραφής για μια νέα σκηνή.">
+<!ENTITY sceneDetails.existing "Μπορείτε επίσης να περιγράψετε μια υπάρχουσα σκηνή από την παρακάτω λίστα.">
+<!ENTITY sceneDetails.label     "Λεπτομέρειες σκηνής">
+<!ENTITY sceneDetails.select    "Επιλέξτε μία σκηνή">
+<!ENTITY sceneTag.label "Επισήμανση Σκηνής">
+<!ENTITY sceneTagDialog.title "Διαλέξτε Χρώμα">
+<!ENTITY scenes.label           "Σκηνές">
+<!ENTITY schedule.desc      "Προσθέστε Πρόγραμμα γυρισμάτων για ένα σενάριο.">
+<!ENTITY schedule.label     "Πρόγραμμα Παραγωγής">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Προγραμματίστε το Σενάριο">
+<!ENTITY scheduled.label "Προγραμματισμένο">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.label "Σενάριο">
+<!ENTITY scriptEditor.label "Σύνταξη Σεναρίου">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Επιλογές Μορφοποίησης">
+<!ENTITY scriptHeader.label "Κεφαλίδα Σεναρίου">
+<!ENTITY scriptReport.desc  "Μια αυτόματα δημιουργημένη αναφορά σεναρίου.">
+<!ENTITY scriptReport.label "Αναφορά σεναρίου.">
+<!ENTITY scriptWithNotes.label  "Σενάριο με Σημειώσεις">
+<!ENTITY sequence.label "Σεκάνς">
+<!ENTITY sequences.label "Σεκάνς">
+<!ENTITY server.label   "Διακομιστής">
+<!ENTITY setting.label "Ρυθμίσεις">
+<!ENTITY sharing.label "Κοινή Χρήση">
+<!ENTITY shotList.label "Κατάλογος Πλάνων">
+<!ENTITY shotWords.label "Λέξεις Πλάνων">
+<!ENTITY shotholder.label "Διπλό κλικ για προσθήκη εικόνας.">
+<!ENTITY showContinuedCount.label   "Εμφάνισε συνεχή αρίθμηση σελίδων">
+<!ENTITY showDialogBreaks.label     "Εμφάνισε αλλαγές διαλόγου">
+<!ENTITY showFirstPageNumber.label    "Εμφάνισε αριθμό σελίδας στην πρώτη σελίδα">
+<!ENTITY showIDNumbers.label "Εμφάνιση Αριθμών Ταυτότητας">
+<!ENTITY showNotes.label "Εμφάνισε σημειώσεις">
+<!ENTITY showPageNumbers.label        "Σελιδοποίηση">
+<!ENTITY showProjectFileCmd.label "Εμφάνιση Αρχείου Έργου">
+<!ENTITY showSceneBreaks.label      "Εμφάνισε αλλαγές σκηνών">
+<!ENTITY showSceneHeaders.label "Εμφάνιση Κεφαλίδων Σκηνών">
+<!ENTITY showSceneNumbers.label       "Εμφάνισε αρίθμηση σκηνών">
+<!ENTITY showScript.label "Εμφάνισε το σενάριο">
+<!ENTITY showTagNames.label "Εμφάνιση Ετικετών στις Κάρτες">
+<!ENTITY showTitlePage.label "Εμφάνιση Σελίδας Τίτλου">
+<!ENTITY showWorkdaysOnly.label "Εμφάνιση μόνο εργάσιμων ημερών">
+<!ENTITY signIn.label "Σύνδεση">
+<!ENTITY signOut.label "Αποσύνδεση">
+<!ENTITY signedOut.label "Αποσυνδεμένος/η">
+<!ENTITY slideshowCmd.toolbarlabel "Αναπαραραγωγή">
+<!ENTITY source.label "Πηγή">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "Προσθήκη στο Λεξικό">
+<!ENTITY spellCheckCmd.label "Ορθογραφικός Έλεγχος...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Αγνόησε Λέξη">
+<!ENTITY spellCheckNoSuggestions.label "Δεν Βρέθηκαν Εισηγήσεις">
+<!ENTITY splash.celtxCentral      "celtx central">
+<!ENTITY splash.celtxCentral      "σύνδεση με το project central">
+<!ENTITY splash.celtxCentralDesc  "Χρησιμοποιήστε το celtx central για αλλαγή του κωδικού πρόσβασής σας ή ενημέρωση του προφίλ σας">
+<!ENTITY splash.celtxCentralDesc  "Χρησιμοποιήστε το project central για αλλαγή του κωδικού πρόσβασής σας ή ενημέρωση του προφίλ ">
+<!ENTITY splash.discussion      "Συζήτηση">
+<!ENTITY splash.downloadProject     "κατεβάστε ένα έργο">
+<!ENTITY splash.downloadProjectDesc "Κατεβάστε ένα έργο από τον διακομιστή του celtx">
+<!ENTITY splash.featureTour         "παρουσίαση χαρακτηριστικών">
+<!ENTITY splash.forums      "forums">
+<!ENTITY splash.forumsDesc  "Λάβετε μέρος στις συζητήσεις στο forum του celtx">
+<!ENTITY splash.gettingStarted  "Ας αρχίσουμε">
+<!ENTITY splash.guide               "οδηγίες χρήσης του celtx">
+<!ENTITY splash.help            "Βοήθεια">
+<!ENTITY splash.helpAccount     "δημιουργήστε ένα λογαριασμό">
+<!ENTITY splash.helpAccountDesc "Δημιουργώντας ένα λογαριασμό έχετε πρόσβαση σε επιπρόσθετες δυνατότητες του διακομιστή που περιλαμβάνουν συνεργασία και δημιουργία αρχείων PDF">
+<!ENTITY splash.helpDesc        "Οι σύνδεσμοι στα αριστερά τονίζουν αρκετές πηγές πληροφοριών σχετικά με το celtx.">
+<!ENTITY splash.helpOptions         "επιλογές βοήθειας">
+<!ENTITY splash.inbox           "Γραμματοκιβώτιο">
+<!ENTITY splash.logIn "Σύνδεση">
+<!ENTITY splash.newProject      "ξεκινήστε ένα νέο έργο">
+<!ENTITY splash.newProjectDesc  "Δημιουργήστε ένα νέο έργο">
+<!ENTITY splash.openProject     "ανοίξτε ένα υπάρχον έργο">
+<!ENTITY splash.openProjectDesc "Πρόσβαση ή προσθήκη σε υπάρχοντα έργα.">
+<!ENTITY splash.options             "επιλογές">
+<!ENTITY splash.projectCentral  "Project Central">
+<!ENTITY splash.projects        "έργα">
+<!ENTITY splash.recentProjects      "πρόσφατα έργα">
+<!ENTITY splash.sampleDesc      "Χρησιμοποιήσαμε το σενάριο The Wizard of Oz για να επεξηγήσουμε τα διάφορα χαρακτηριστικά στο celtx. τα διάφορα έγγραφα χρησιμοποιούνται για να δείξουν τι ακριβώς χρειάζεται η δημιουργία μιας και μόνης σκηνής. Σ' αυτό το δείγμα περιλαμβάνονται ένα σενάριο, λεπτομέρειες φόρμας χαρακτήρων και σκηνών, πληροφορίες ταξινόμησης και κάποιες πληροφορίες χρονοδιαγράμματος.">
+<!ENTITY splash.sampleProject   "δείγμα έργου">
+<!ENTITY splash.videoWalkthrus      "περιηγήσεις βήμα προς βήμα με video">
+<!ENTITY splash.videoWalkthrusDesc  "Σύντομα σεμινάρια χαρακτηριστικών με προβολή video για γρήγορη εκμάθηση και χρήση του προγράμματος">
+<!ENTITY splash.walkthru            "περιήγηση βήμα προς βήμα 3 λεπτών">
+<!ENTITY splash.webServices     "υπηρεσίες διαδικτύου">
+<!ENTITY splash.welcomePrefix     "Καλώς ήρθατε στο Celtx">
+<!ENTITY splash.welcomePrefixDesc "Media Pre-Production">
+<!ENTITY splash.wiki      "οδηγός wiki">
+<!ENTITY splash.wikiDesc  "Η πηγή για να γνωρίσετε το celtx">
+<!ENTITY splashScreen.label "Splash Screen">
+<!ENTITY stackTrace.desc        "Ακολουθούν κάποιες πληροφορίες που μπορούν να μας φανούν χρήσιμες. Παρακαλούμε περιλάβετέ τις αν αποφασίσετε να αναφέρετε αυτό το πρόβλημα.">
+<!ENTITY stageplay.desc  "Προσθέστε θεατρικό Σενάριο με διεθνή μορφοποίηση.">
+<!ENTITY stageplay.label    "Παράσταση">
+<!ENTITY startOfDay.label "Έναρξη Ημέρας">
+<!ENTITY startOfWeek.label "Έναρξη Εβδομάδας">
+<!ENTITY statistics.label "Στατιστικά">
+<!ENTITY storyboard.desc    "Οργανώστε τις εικόνες του storyboard σε σεκάνς για λήψη.">
+<!ENTITY storyboard.label   "Storyboard">
+<!ENTITY strikethrough.label "Διαγραφή">
+<!ENTITY subject.label "Αντικείμενο">
+<!ENTITY syncDialog.title "Συγχρονισμός">
+<!ENTITY tagItemCmd.label           "Ετικέτα">
+<!ENTITY tagline.label      "Γραμμή Ετικέτας">
+<!ENTITY text.label "Κείμενο">
+<!ENTITY textDocument.desc "Προσθήκη κειμένου εγγράφου. Χρήσιμο για σύντομη περιγραφή, επεξεργασία σεναρίου ή συνοπτική επισκόπηση.">
+<!ENTITY textDocument.label "Κείμενο">
+<!ENTITY theatreTmplActTitle "ΠΡΑΞΗ Ι">
+<!ENTITY theatreTmplSceneTitle "Σκηνή 1">
+<!ENTITY thirtyMinutes.label "30 λεπτά">
+<!ENTITY threeHours.label "3 ώρες">
+<!ENTITY time.label "Χρόνος">
+<!ENTITY title.label        "Τίτλος">
+<!ENTITY titlePage.label "Σελίδα Τίτλου">
+<!ENTITY togglePaginationCmd.label    "Επέτρεψε Σελιδοποίηση">
+<!ENTITY toggleScratchpadCmd.label  "Άνοιγμα/Κλείσιμο Σημειωματάριου">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Πλαϊνή Μπάρα">
+<!ENTITY topOfNextPage.label  "Αρχή επόμενης σελίδας">
+<!ENTITY tryAgain.label "Ξαναπροσπαθήστε">
+<!ENTITY twoColumns.label "Δυο Στήλες">
+<!ENTITY twoHours.label "2 ώρες">
+<!ENTITY typeset.label "Γραμματοσειρά">
+<!ENTITY under14.label "Είμαι κάτω των 14.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Υπογράμμιση">
+<!ENTITY unorderedList.label "Αταξινόμητος Κατάλογος">
+<!ENTITY untitled.label "Δίχως Τίτλο">
+<!ENTITY updateInbox.label "Ενημέρωση Γραμματοκιβωτίου">
+<!ENTITY uploadDialog.title         "Ανέβασμα Έργου">
+<!ENTITY uploadProjectCmd.label "Ανέβασμα Έργου...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Ανέβασμα">
+<!ENTITY uppercaseCmd.label "Κεφαλαία Γράμματα">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Όνομα Χρήστη">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Σεμινάριο με Video">
+<!ENTITY viewProjectOnline.label "Επισκόπηση έργου με σύνδεση">
+<!ENTITY wardrobeSheet.desc     "Προσθήκη περιγραφής για ένα νέο αντικείμενο ενδυματολογίου.">
+<!ENTITY wardrobeSheet.existing "Μπορείτε επίσης να περιγράψετε ένα υπάρχον αντικείμενο ενδυματολογίου από την παρακάτω λίστα.">
+<!ENTITY wardrobeSheet.label    "Ενδυματολόγιο">
+<!ENTITY wardrobeSheet.select   "Επιλέξτε ενδυματολόγιο.">
+<!ENTITY webPanel.desc              "Δικτυακές υπηρεσίες Celtx.">
+<!ENTITY webPanel.label             "Δικτυακές Υπηρεσίες">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY wiz.clickFinish "Κάντε κλικ στο πλήκτρο 'Τέλος' για να ολοκληρωθεί ο Οδηγός.">
+<!ENTITY wiz.clickNext "Κάντε κλικ στο πλήκτρο 'Επόμενο' για να ξεκινήσετε.">
+<!ENTITY workweek.label "Εργάσιμη Εβδομάδα">
+<!ENTITY writer.label "Συγγραφέας">
+<!ENTITY zoom.label "Ζουμ">

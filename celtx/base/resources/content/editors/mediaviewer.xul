@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  title="&mediaViewer.title;"
+  id="media-viewer"
+  onload="loaded()">
+
+#include ../celtx-sets.inc
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/mediaviewer.js"/>
+
+#ifdef XP_MACOSX
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include ../celtx-menubar.inc
+  </toolbar>
+#endif
+
+  <deck id='media-deck'>
+    <box>
+      <html:embed id='media-embed' flex='1'
+                  width='480' height='360'
+                  controller='TRUE' autoplay='true'
+                  uiMode='full' autoStart='1'/>
+    </box>
+    <box pack='center' align='center' flex='1'>
+      <image id='media-image' onload='window.sizeToContent()'/>
+    </box>
+    <browser id="print-frame"
+             type="content-primary"/>
+  </deck>
+</window>
+

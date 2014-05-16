@@ -1,0 +1,13 @@
+These are instructions for building on Snow Leopard with GCC 4.0 and 4.2 installed.
+
+1. Set the following environment variables:
+
+C_INCLUDE_PATH=~/Development/celtx/debugdir/dist/include/nspr/
+DYLD_LIBRARY_PATH=~/Development/celtx/debugdir/dist/bin/
+LIBRARY_PATH=~/Development/celtx/debugdir/dist/bin/
+
+2. Do a make in coreconf
+
+3. Do a make in dbm
+
+4. Do a make in nss

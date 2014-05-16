@@ -1,0 +1,68 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsIController.idl"
+
+interface nsIArray;
+interface celtxIDocument;
+
+/*
+ * Editors can be sent the following events via their nsIController.onEvent
+ * method:
+ *
+ * focus
+ * blur
+ * willSaveProject
+ * didSaveProject
+ * willSyncProject
+ * didSyncProject
+ */
+
+[scriptable, uuid(d2cb52f2-c0ba-47e4-848b-87a9754489ca)]
+interface celtxIEditor : nsIController
+{
+  readonly attribute celtxIDocument document;
+  readonly attribute boolean readOnly;
+  readonly attribute boolean modified;
+  readonly attribute boolean supportsPrint;
+  readonly attribute boolean inPrintPreview;
+
+  void open (in celtxIDocument aDocument, in boolean aReadonly);
+  void close ();
+
+  void lock ();
+  void unlock ();
+
+  void save ();
+  void reload ();
+
+  void showPageSetup ();
+  void print ();
+  void printPreview ();
+
+/*
+  readonly attribute celtxIBreakdownContext selectedBreakdownUnit;
+  nsIArray getBreakdownContexts ();
+*/
+};

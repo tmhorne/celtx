@@ -1,0 +1,393 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+
+<!ENTITY mainWindow.title "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+
+<!ENTITY tabCmd.label "Nov zavihek">
+<!ENTITY tabCmd.accesskey "Z">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Odpri mesto ...">
+<!ENTITY openLocationCmd.accesskey "M">
+<!ENTITY openFileCmd.label "Odpri datoteko ...">
+<!ENTITY openFileCmd.accesskey "O">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Priprava strani ...">
+<!ENTITY printSetupCmd.accesskey "r">
+<!ENTITY printPreviewCmd.label "Predogled tiskanja">
+<!ENTITY printPreviewCmd.accesskey "d">
+<!ENTITY printCmd.label "Natisni ...">
+<!ENTITY printCmd.accesskey "N">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Uvozi ...">
+<!ENTITY import.accesskey "I">
+
+<!ENTITY goOfflineCmd.label "Delaj v brezpovezavnem načinu">
+<!ENTITY goOfflineCmd.accesskey "b">
+
+<!ENTITY navbarCmd.label "Orodna vrstica za brskanje">
+<!ENTITY navbarCmd.accesskey "N">
+<!ENTITY personalbarCmd.label "Orodna vrstica zaznamkov">
+<!ENTITY personalbarCmd.accesskey "Z">
+<!ENTITY bookmarksToolbarItem.label "Predmeti orodne vrstice z zaznamki">
+<!ENTITY taskbarCmd.label "Vrstica stanja">
+<!ENTITY taskbarCmd.accesskey "V">
+
+<!ENTITY pageSourceCmd.label "Izvorna koda strani">
+<!ENTITY pageSourceCmd.accesskey "o">
+<!ENTITY pageSourceCmd.commandkey "u">
+<!ENTITY pageInfoCmd.label "Podatki o strani">
+<!ENTITY pageInfoCmd.accesskey "I">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "Celozaslonski način">
+<!ENTITY fullScreenCmd.accesskey "C">
+
+<!ENTITY fullScreenMinimize.tooltip "Minimiziraj">
+<!ENTITY fullScreenRestore.tooltip "V običajen način">
+<!ENTITY fullScreenClose.tooltip "Zapri">
+<!ENTITY fullScreenAutohide.label "Skrij orodne vrstice">
+<!ENTITY fullScreenAutohide.accesskey "S">
+<!ENTITY fullScreenExit.label "Izhod iz celozaslonskega načina">
+<!ENTITY fullScreenExit.accesskey "C">
+
+<!ENTITY closeWindow.label "Zapri okno">
+<!ENTITY closeWindow.accesskey "o">
+
+<!ENTITY bookmarksMenu.label "Zaznamki">
+<!ENTITY bookmarksMenu.accesskey "Z">
+<!ENTITY bookmarkThisPageCmd.label "Dodaj stran med zaznamke">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Naroči se na to stran">
+<!ENTITY subscribeToPageMenuitem.label "Naroči se na to stran ...">
+<!ENTITY addCurPagesCmd.label "Dodaj vse zavihke med zaznamke ...">
+<!ENTITY organizeBookmarks.label "Upravljanje z zaznamki...">
+<!ENTITY bookmarkAllCmd.label "Dodaj vse zavihke med zaznamke ...">
+
+<!ENTITY backCmd.label "Nazaj">
+<!ENTITY backCmd.accesskey "N">
+<!ENTITY backButton.tooltip "Pojdi na prejšnjo stran">
+<!ENTITY forwardCmd.label "Naprej">
+<!ENTITY forwardCmd.accesskey "P">
+<!ENTITY forwardButton.tooltip "Pojdi na naslednjo stran">
+<!ENTITY backForwardMenu.tooltip "Nedavne strani">
+<!ENTITY reloadCmd.label "Ponovno naloži">
+<!ENTITY reloadCmd.accesskey "P">
+<!ENTITY reloadButton.tooltip "Ponovno naloži trenutno stran">
+<!ENTITY stopCmd.label "Ustavi">
+<!ENTITY stopCmd.accesskey "S">
+<!ENTITY stopCmd.macCommandKey ".">
+<!ENTITY stopButton.tooltip "Prenehaj z nalaganjem te strani">
+<!ENTITY goEndCap.tooltip "Odpri mesto v naslovnem polju">
+<!ENTITY printButton.label "Natisni">
+<!ENTITY printButton.tooltip "Natisni to stran">
+
+<!ENTITY locationItem.title "Lokacija">
+<!ENTITY searchItem.title "Iskanje">
+<!ENTITY throbberItem.title "Merilnik dejavnosti">
+<!ENTITY bookmarksItem.title "Zaznamki">
+<!-- Toolbar items --> 
+
+<!ENTITY homeButton.label "Domov">
+
+<!ENTITY bookmarksButton.label "Zaznamki">
+<!ENTITY bookmarksButton.tooltip "Prikaže vaše zaznamke">
+<!ENTITY bookmarksSidebarCmd.accesskey "Z">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+
+<!ENTITY historyButton.label "Zgodovina">
+<!ENTITY historyButton.tooltip "Prikaže strani, ki ste jih obiskali v bližnji preteklosti">
+<!ENTITY historySidebarCmd.accesskey "Z">
+<!ENTITY historySidebarCmd.commandKey "h">
+
+<!ENTITY toolsMenu.label "Orodja">
+<!ENTITY toolsMenu.accesskey "R">
+
+<!ENTITY keywordfield.label "Dodaj ključno besedo k iskanju ...">
+<!ENTITY keywordfield.accesskey "K">
+<!ENTITY search.label "Spletno iskanje">
+<!ENTITY search.accesskey "O">
+<!ENTITY downloads.label "Prenosi">
+<!ENTITY downloads.tooltip "Prikaži napredek trenutnih prenosov">
+<!ENTITY downloads.accesskey "P">
+<!ENTITY downloads.commandkey "j">
+<!ENTITY downloadsUnix.commandkey "y">
+<!ENTITY addons.label "Dodatki">
+<!ENTITY addons.tooltip "Upravljanje z dodatki">
+<!ENTITY addons.accesskey "D">
+
+<!ENTITY errorConsoleCmd.label "Konzola JavaScript">
+<!ENTITY errorConsoleCmd.accesskey "C">
+<!ENTITY errorConsoleCmd.commandkey "j">
+
+<!ENTITY fileMenu.label "Datoteka">
+<!ENTITY fileMenu.accesskey "D">
+<!ENTITY newNavigatorCmd.label "Novo okno">
+<!ENTITY newNavigatorCmd.key "N">
+<!ENTITY newNavigatorCmd.accesskey "N">
+
+<!ENTITY editMenu.label "Urejanje">
+<!ENTITY editMenu.accesskey "E">
+<!ENTITY undoCmd.label "Razveljavi ...">
+<!ENTITY undoCmd.key "Z">
+<!ENTITY undoCmd.accesskey "Z">
+<!ENTITY redoCmd.label "Ponovi">
+<!ENTITY redoCmd.key "Y">
+<!ENTITY redoCmd.accesskey "O">
+<!ENTITY cutCmd.label "Izreži">
+<!ENTITY cutCmd.key "X">
+<!ENTITY cutCmd.accesskey "i">
+<!ENTITY copyCmd.label "Kopiraj">
+<!ENTITY copyCmd.key "c">
+<!ENTITY copyCmd.accesskey "K">
+<!ENTITY pasteCmd.label "Prilepi">
+<!ENTITY pasteCmd.key "V">
+<!ENTITY pasteCmd.accesskey "P">
+<!ENTITY deleteCmd.label "Izbriši">
+<!ENTITY deleteCmd.key "D">
+<!ENTITY deleteCmd.accesskey "B">
+<!ENTITY selectAllCmd.label "Izberi vse">
+<!ENTITY selectAllCmd.key "A">
+<!ENTITY selectAllCmd.accesskey "V">
+<!ENTITY preferencesCmd.label "Možnosti ...">
+<!ENTITY preferencesCmd.accesskey "M">
+<!ENTITY preferencesCmdUnix.label "Nastavitve">
+<!ENTITY preferencesCmdUnix.accesskey "n">
+
+<!ENTITY clearPrivateDataCmd.label "Počisti zasebne podatke ...">
+<!ENTITY clearPrivateDataCmd.accesskey "Z">
+
+<!ENTITY viewMenu.label "Pogled">
+<!ENTITY viewMenu.accesskey "P">
+<!ENTITY viewToolbarsMenu.label "Orodne vrstice">
+<!ENTITY viewToolbarsMenu.accesskey "T">
+<!ENTITY viewSidebarMenu.label "Stranska vrstica">
+<!ENTITY viewSidebarMenu.accesskey "v">
+<!ENTITY viewCustomizeToolbar.label "Po meri ...">
+<!ENTITY viewCustomizeToolbar.accesskey "P">
+
+<!ENTITY historyMenu.label "Zgodovina">
+<!ENTITY historyMenu.accesskey "i">
+<!ENTITY historyUndoMenu.label "Pred kratkim zaprti zavihki">
+
+<!ENTITY historyHomeCmd.label "Domov">
+<!ENTITY showAllHistoryCmd2.label "Prikaži vso zgodovino">
+<!ENTITY showAllHistoryCmd.commandkey "S">
+
+<!ENTITY openCmd.commandkey "l">
+<!ENTITY urlbar.emptyText "Iskanje po zaznamkih in zgodovini">
+<!ENTITY urlbar.accesskey "d">
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+
+<!ENTITY searchFocus.commandkey "k">
+<!ENTITY searchFocus.commandkey2 "e">
+<!ENTITY searchFocusUnix.commandkey "j">
+
+<!ENTITY openLinkCmd.label "Odpri povezavo v novem oknu">
+<!ENTITY openLinkCmd.accesskey "N">
+<!ENTITY openLinkCmdInTab.label "Odpri povezavo v novem zavihku">
+<!ENTITY openLinkCmdInTab.accesskey "Z">
+<!ENTITY openFrameCmd.label "Odpri okvir v novem oknu">
+<!ENTITY openFrameCmd.accesskey "V">
+<!ENTITY openFrameCmdInTab.label "Odpri okvir v novem zavihku">
+<!ENTITY openFrameCmdInTab.accesskey "Z">
+<!ENTITY showOnlyThisFrameCmd.label "Pokaži le ta okvir">
+<!ENTITY showOnlyThisFrameCmd.accesskey "L">
+<!ENTITY reloadCmd.commandkey "r">
+<!ENTITY reloadFrameCmd.label "Ponovno naloži okvir">
+<!ENTITY reloadFrameCmd.accesskey "R">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Pokaži izvorno kodo izbora">
+<!ENTITY viewPartialSourceForMathMLCmd.label "Pokaži izvorno kodo MathML">
+<!ENTITY viewPartialSourceCmd.accesskey "r">
+<!ENTITY viewPageSourceCmd.label "Pokaži izvorno kodo strani">
+<!ENTITY viewPageSourceCmd.accesskey "V">
+<!ENTITY viewFrameSourceCmd.label "Pokaži izvorno kodo okvirja">
+<!ENTITY viewFrameSourceCmd.accesskey "V">
+<!ENTITY viewPageInfoCmd.label "Pokaži podatke o strani">
+<!ENTITY viewPageInfoCmd.accesskey "I">
+<!ENTITY viewFrameInfoCmd.label "Pokaži podatke o okvirju">
+<!ENTITY viewFrameInfoCmd.accesskey "I">
+<!ENTITY showImageCmd.label "Prikaži sliko">
+<!ENTITY showImageCmd.accesskey "P">
+<!ENTITY viewImageCmd.label "Pokaži sliko">
+<!ENTITY viewImageCmd.accesskey "I">
+<!ENTITY viewBGImageCmd.label "Pokaži sliko za ozadje">
+<!ENTITY viewBGImageCmd.accesskey "o">
+<!ENTITY setDesktopBackgroundCmd.label "Nastavi za sliko ozadja namizja">
+<!ENTITY setDesktopBackgroundCmd.accesskey "S">
+<!ENTITY bookmarkPageCmd2.label "Dodaj stran med zaznamke">
+<!ENTITY bookmarkPageCmd2.accesskey "m">
+<!ENTITY bookmarkThisLinkCmd.label "Dodaj povezavo med zaznamke">
+<!ENTITY bookmarkThisLinkCmd.accesskey "Z">
+<!ENTITY bookmarkThisFrameCmd.label "Dodaj okvir med zaznamke">
+<!ENTITY bookmarkThisFrameCmd.accesskey "m">
+<!ENTITY sendPageCmd.label "Pošlji stran ...">
+<!ENTITY sendPageCmd.accesskey "s">
+<!ENTITY savePageCmd.label "Shrani stran kot ...">
+<!ENTITY savePageCmd.accesskey "A">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2 "s">
+<!ENTITY savePageCmd.commandkey "s">
+<!ENTITY saveFrameCmd.label "Shrani okvir kot ...">
+<!ENTITY saveFrameCmd.accesskey "T">
+<!ENTITY printFrameCmd.label "Natisni okvir ...">
+<!ENTITY printFrameCmd.accesskey "N">
+<!ENTITY saveLinkCmd.label "Shrani povezavo kot ...">
+<!ENTITY saveLinkCmd.accesskey "k">
+<!ENTITY sendLinkCmd.label "Pošlji povezavo ...">
+<!ENTITY sendLinkCmd.accesskey "v">
+<!ENTITY saveImageCmd.label "Shrani sliko kot ...">
+<!ENTITY saveImageCmd.accesskey "s">
+<!ENTITY sendImageCmd.label "Pošlji sliko ...">
+<!ENTITY sendImageCmd.accesskey "k">
+<!ENTITY copyLinkCmd.label "Kopiraj mesto povezave">
+<!ENTITY copyLinkCmd.accesskey "i">
+<!ENTITY copyLinkTextCmd.label "Kopiraj besedilo povezave">
+<!ENTITY copyLinkTextCmd.accesskey "b">
+<!ENTITY copyImageCmd.label "Kopiraj mesto slike">
+<!ENTITY copyImageCmd.accesskey "o">
+<!ENTITY copyImageContentsCmd.label "Kopiraj sliko">
+<!ENTITY copyImageContentsCmd.accesskey "a">
+<!ENTITY blockImageCmd.accesskey "k">
+<!ENTITY metadataCmd.label "Lastnosti">
+<!ENTITY metadataCmd.accesskey "L">
+<!ENTITY copyEmailCmd.label "Kopiraj e-poštni naslov">
+<!ENTITY copyEmailCmd.accesskey "E">
+<!ENTITY thisFrameMenu.label "Ta okvir">
+<!ENTITY thisFrameMenu.accesskey "a">
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+
+<!ENTITY fullZoomEnlargeCmd.label "Povečaj">
+<!ENTITY fullZoomEnlargeCmd.accesskey "V">
+<!ENTITY fullZoomEnlargeCmd.commandkey "+">
+<!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "=">
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label "Pomanjšaj">
+<!ENTITY fullZoomReduceCmd.accesskey "M">
+<!ENTITY fullZoomReduceCmd.commandkey "-">
+<!ENTITY fullZoomReduceCmd.commandkey2 "">
+
+<!ENTITY fullZoomResetCmd.label "Ponastavi">
+<!ENTITY fullZoomResetCmd.accesskey "N">
+<!ENTITY fullZoomResetCmd.commandkey "0">
+<!ENTITY fullZoomResetCmd.commandkey2 "">
+
+<!ENTITY fullZoomToggleCmd.label "Povečaj samo besedilo">
+<!ENTITY fullZoomToggleCmd.accesskey "B">
+<!ENTITY fullZoom.label "Povečevanje">
+<!ENTITY fullZoom.accesskey "P">
+
+<!ENTITY newTabButton.tooltip "Odpri nov zavihek">
+<!ENTITY newWindowButton.tooltip "Odpri novo okno">
+<!ENTITY sidebarCloseButton.tooltip "Zapri stransko vrstico">
+
+<!ENTITY cutButton.tooltip "Izreži">
+<!ENTITY copyButton.tooltip "Kopiraj">
+<!ENTITY pasteButton.tooltip "Prilepi">
+
+<!ENTITY quitApplicationCmdWin.label "Izhod">
+<!ENTITY quitApplicationCmdWin.accesskey "i">
+<!ENTITY goBackCmd.commandKey "[">
+<!ENTITY goForwardCmd.commandKey "]">
+<!ENTITY quitApplicationCmd.label "Izhod">
+<!ENTITY quitApplicationCmd.accesskey "I">
+<!ENTITY quitApplicationCmdMac.label "Izhod">
+<!ENTITY quitApplicationCmdMac.key "Q">
+
+<!ENTITY closeCmd.label "Zapri">
+<!ENTITY closeCmd.key "W">
+<!ENTITY closeCmd.accesskey "Z">
+
+<!ENTITY pageStyleMenu.label "Slog strani">
+<!ENTITY pageStyleMenu.accesskey "g">
+<!ENTITY pageStyleNoStyle.label "Ni sloga">
+<!ENTITY pageStyleNoStyle.accesskey "n">
+<!ENTITY pageStylePersistentOnly.label "Osnovni slog strani">
+<!ENTITY pageStylePersistentOnly.accesskey "o">
+
+<!ENTITY pageReportIcon.tooltip "Spremeni nastavitve prepovedovanja nezahtevanih oken za to stran">
+
+<!ENTITY allowPopups.accesskey "d">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label "Uredi nastavitve blokiranja nezahtevanih oken ...">
+<!ENTITY editPopupSettings.label "Uredi možnosti blokiranja nezahtevanih oken ...">
+<!ENTITY editPopupSettings.accesskey "U">
+<!ENTITY dontShowMessage.accesskey "N">
+
+<!ENTITY bidiSwitchPageDirectionItem.label "Spremeni smer strani">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey "s">
+<!ENTITY bidiSwitchTextDirectionItem.label "Spremeni smer besedila">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey "b">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey "X">
+
+<!ENTITY findOnCmd.label "Najdi na tej strani ...">
+<!ENTITY findOnCmd.accesskey "D">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label "Ponovno najdi">
+<!ENTITY findAgainCmd.accesskey "j">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Dodaj slovarje ...">
+<!ENTITY spellAddDictionaries.accesskey "A">
+
+<!ENTITY editBookmark.done.label "Končaj">
+<!ENTITY editBookmark.cancel.label "Prekliči">
+<!ENTITY editBookmark.removeBookmark.label "Odstrani zaznamek">
+<!ENTITY editBookmark.removeBookmark.accessKey "R">
+<!ENTITY editBookmark.undo.label "Razveljavi ...">
+<!ENTITY editBookmark.undo.accessKey "Z">
+<!ENTITY editBookmark.edit.label "Urejanje...">
+<!ENTITY editBookmark.edit.accessKey "E">
+
+<!ENTITY identity.unverifiedsite2 "Spletna stran ne vsebuje podatkov o identiteti.">
+<!ENTITY identity.connectedTo "Povezani ste na">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "ki ga poganja">
+
+<!ENTITY identity.moreInfoLinkText "Več podatkov...">
+
+<!ENTITY downloadMonitor2.tooltip "Kliknite za odpiranje okna prenosov">

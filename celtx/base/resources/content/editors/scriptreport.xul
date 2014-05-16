@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="scriptreport"
+        title="Window Title"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptreport.js"/>
+
+  <vbox class="celtxtoolbar" flex="1">
+  <hbox pack="center">
+    <label id="reporttitle"
+           style="font-size: 12pt;"/>
+  </hbox>
+
+  <hbox id="columnbox">
+    <vbox flex="1">
+    <label value="&scene.label;"/>
+    <tree id="scene-listbox"
+          flex="1"
+          rows="6"
+          flags="dont-build-content"
+          seltype="multiple"
+          ref="http://celtx.com/NS/v1/Scene"
+          hidecolumnpicker="true"
+          datasources="rdf:null"
+          onselect="if (gReportController._focused) goDoCommand('cmd-report-scene-changed');">
+      <treecols>
+        <!-- I haven't found a way to disable cycling the sort
+             direction on the column header, so I'm hiding the
+             header and replacing it with a label instead. -->
+        <treecol id="report-scene-title-col"
+                 hideheader="true"
+                 sortActive="true"
+                 sortDirection="ascending"
+                 sort="?ordinal"
+                 flex="1"/>
+      </treecols>
+      <template>
+        <!-- XXX: Kludge -->
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <!--
+            <member container="?uri"
+                    child="?scene"/>
+            -->
+            <triple subject="?scene"
+                    predicate="&ns_rdf;type"
+                    object="?uri"/>
+            <triple subject="?scene"
+                    predicate="&ns_dc;title"
+                    object="ALL"/>
+            <triple subject="?scene"
+                    predicate="&ns_cx;ordinal"
+                    object="?ordinal"/>
+          </conditions>
+          <action>
+            <treechildren>
+              <treeitem uri="?scene">
+                <treerow>
+                  <treecell label="&allUppercase.label;"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <!--
+            <member container="?uri"
+                    child="?scene"/>
+            -->
+            <triple subject="?scene"
+                    predicate="&ns_rdf;type"
+                    object="?uri"/>
+            <triple subject="?scene"
+                    predicate="&ns_dc;title"
+                    object="?title"/>
+            <triple subject="?scene"
+                    predicate="&ns_cx;ordinal"
+                    object="?ordinal"/>
+          </conditions>
+          <action>
+            <treechildren>
+              <treeitem uri="?scene">
+                <treerow>
+                  <treecell label="?ordinal ?title"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+      </template>
+    </tree>
+    </vbox>
+    <deck id="columndeck" flex="2">
+      <!-- Breakdown Columns -->
+      <hbox id="bdcolumns" flex="1">
+        <vbox flex="1">
+        <label value="&department.label;"/>
+        <tree id="dept-listbox"
+              flex="1"
+              flags="dont-build-content"
+              rows="6"
+              seltype="multiple"
+              hidecolumnpicker="true"
+              ref="chrome://celtx/content/schema.rdf#default-markup"
+              datasources="chrome://celtx/content/schema.rdf"
+              onselect="if (gReportController._focused)
+                          goDoCommand('cmd-report-dept-changed');">
+          <treecols>
+            <treecol id="report-dept-title-col"
+                     hideheader="true"
+                     sortActive="true"
+                     sortDirection="ascending"
+                     sort="?title"
+                     flex="1"/>
+          </treecols>
+          <treechildren/>
+          <template>
+            <!-- XXX: Kludge -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <triple subject="?uri"
+                        predicate="http://celtx.com/NS/v1/member"
+                        object="?markup"/>
+                <triple subject="?markup"
+                    predicate="http://www.w3.org/2000/01/rdf-schema#label"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?markup">
+                    <treerow>
+                      <treecell label="&allUppercase.label;"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?markup"/>
+                <triple subject="?markup"
+                    predicate="http://www.w3.org/2000/01/rdf-schema#label"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?markup">
+                    <treerow>
+                      <treecell label="?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+        </vbox>
+        <vbox flex="1">
+        <label value="&item.label;"/>
+        <tree id="item-listbox"
+              flex="1"
+              rows="6"
+              flags="dont-build-content"
+              seltype="multiple"
+              hidecolumnpicker="true"
+              ref="http://celtx.com/selection/scenes"
+              datasources="rdf:null"
+              onselect="if (gReportController._focused)
+                          goDoCommand('cmd-report-item-changed')">
+          <treecols>
+            <treecol id="report-item-title-col"
+                     hideheader="true"
+                     flex="1"/>
+          </treecols>
+          <treechildren/>
+          <template>
+            <!-- XXX: Kludge -->
+            <!--
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <triple subject="?uri"
+                        predicate="&ns_cx;member"
+                        object="?item"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?item">
+                    <treerow>
+                      <treecell label="&allUppercase.label;"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?scene"/>
+                <triple subject="?scene"
+                        predicate="&ns_cx;members"
+                        object="?deptlist"/>
+                <member container="?deptlist"
+                        child="?deptseq"/>
+                <triple subject="?deptseq"
+                        predicate="&ns_cx;department"
+                        object="?dept"/>
+                <triple subject="http://celtx.com/selection/departments"
+                        predicate="&ns_cx;member"
+                        object="?dept"/>
+                <member container="?deptseq"
+                        child="?item"/>
+                <triple subject="?item"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?item">
+                    <treerow>
+                      <treecell label="?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+        </vbox>
+      </hbox>
+      <!-- Dialog Columns -->
+      <vbox id="dialogcolumns" flex="1">
+        <label value="&character.label;"/>
+        <tree id="charlist"
+              flex="1"
+              rows="6"
+              hidecolumnpicker="true"
+              flags="dont-build-content"
+              seltype="multiple"
+              ref="http://celtx.com/NS/v1/Cast"
+              datasources="rdf:null"
+              onselect="if (gReportController._focused)
+                          goDoCommand('cmd-report-speaker-changed')">
+          <treecols>
+            <treecol hideheader="true"
+                     sortActive="true"
+                     sortDirection="ascending"
+                     sort="?title"
+                     flex="1"/>
+          </treecols>
+          <template>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <triple subject="?cast"
+            predicate="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                        object="?uri"/>
+                <triple subject="?cast"
+                        predicate="http://purl.org/dc/elements/1.1/title"
+                        object="0ALL"/>
+                <triple subject="?cast"
+                        predicate="http://purl.org/dc/elements/1.1/title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?cast">
+                    <treerow>
+                      <treecell label="&allUppercase.label;"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <triple subject="?cast"
+            predicate="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                        object="?uri"/>
+                <triple subject="?cast"
+                        predicate="http://purl.org/dc/elements/1.1/title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?cast">
+                    <treerow>
+                      <treecell label="?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+      </vbox>
+      <!-- Element Columns -->
+      <vbox id="elemcolumns" flex="1">
+        <label value="&element.label;"/>
+        <tree id="elemlist"
+              flex="1"
+              rows="6"
+              hidecolumnpicker="true"
+              seltype="multiple"
+              ref="http://celtx.com/NS/v1/Formats"
+              datasources="chrome://celtx/content/schema.rdf"
+              onselect="if (gReportController._focused)
+                          goDoCommand('cmd-report-element-changed')">
+          <treecols>
+            <treecol hideheader="true"
+                     flex="1"/>
+          </treecols>
+          <template>
+            <!-- Disguise sceneheading as the ALL element -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?format"/>
+                <triple subject="?format"
+                        predicate="http://celtx.com/NS/v1/element"
+                        object="sceneheading"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?format">
+                    <treerow>
+                      <treecell label="&allUppercase.label;"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?format"/>
+                <triple subject="?format"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?format">
+                    <treerow>
+                      <treecell label="?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+      </vbox>
+    </deck>
+  </hbox>
+  <toolbar>
+    <toolbarspacer flex="1"/>
+    <toolbaritem>
+      <checkbox id="media-checkbox"
+                label="&displayMedia.label;"
+                checked="false"
+                oncommand="goDoCommand('cmd-report-toggle-media')"/>
+    </toolbaritem>
+  </toolbar>
+  <browser id="reportframe"
+           type="content"
+           flex="1"
+           src="about:blank"/>
+  </vbox>
+
+</window>
+

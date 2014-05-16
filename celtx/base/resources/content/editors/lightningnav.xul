@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+
+<?xml-stylesheet href="chrome://calendar/content/calendar-view-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-views.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-decorated-views.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/widgets/calendar-widget-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/datetimepickers/minimonth.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/datetimepickers/datetimepickers.css" type="text/css"?>
+
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+<!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %dtd2;
+<!ENTITY % dtd3 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd3;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="ltnnav"
+        title="Window Title"
+        onload="loaded()">
+
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendarCreation.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/mouseoverPreviews.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-item-editing.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/import-export.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/publish.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/lightningnav.js"/>
+
+  <commandset id="calendar_commands">
+    <command id="publish_calendar" oncommand="ltnPublishCalendar()"/>
+    <command id="import_command" oncommand="loadEventsFromFile()"/>
+    <command id="export_command" oncommand="exportEntireCalendar()"/>
+    <command id="reload_remote_calendars" oncommand="getCompositeCalendar().refresh();"/>
+  </commandset>
+
+  <popupset>
+    <!-- Popup for Calendars tab -->
+    <popup id="calendartree-context-menu">
+      <menuitem id="calpopup-new"
+                label="&calendar.context.newserver.label;" 
+                accesskey="&calendar.context.newserver.accesskey;"
+                oncommand="ltnNewCalendar();"/>
+      <menuitem id="calpopup-delete"
+                label="&calendar.context.deleteserver.label;" 
+                accesskey="&calendar.context.deleteserver.accesskey;"
+                oncommand="ltnDeleteSelectedCalendar();"/>
+      <menuseparator/>
+      <menuitem id="calpopup-export"
+                label="&calendar.context.export.label;" 
+                accesskey="&calendar.context.export.accesskey;"
+                oncommand="exportEntireCalendar(ltnSelectedCalendar())"/>
+      <menuitem id="calpopup-publish"
+                label="&calendar.context.publish.label;" 
+                accesskey="&calendar.context.publish.accesskey;"
+                observes="publish_calendar"/>
+      <menuseparator/>
+      <menuitem id="calpopup-reload"
+                label="&calendar.context.reloadserver.label;"
+                accesskey="&calendar.context.reloadserver.accesskey;"
+                observes="reload_remote_calendars"/>
+      <menuseparator/>
+      <menuitem id="calpopup-edit"
+                label="&calendar.context.properties.label;" 
+                accesskey="&calendar.context.properties.accesskey;"
+                oncommand="ltnEditSelectedCalendar();"/>
+    </popup>
+  </popupset>
+
+  <vbox id="ltnSidebar" height="350" persist="height">
+    <hbox id="ltnMinimonthBox">
+      <spacer flex="1"/>
+      <minimonth id="ltnMinimonth" onchange="ltnMinimonthPick(this);" flex="2"/>
+      <spacer flex="1"/>
+    </hbox>
+    <hbox id="ltnDateTextPickerBox">
+      <spacer width="10"/>
+      <datetextpicker flex="1"
+                      id="ltnDateTextPicker"
+                      oncommand="ltnGoToDate()"/>
+    </hbox>
+
+<!--
+    <tabbox id="ltnTabpanelBox" flex="1">
+      <tabs>
+        <tab label="&lightning.sidebar.agenda.label;"/>
+        <tab label="&lightning.sidebar.todo.label;"/>
+        <tab label="&lightning.sidebar.calendars.label;"
+             collapsed="true"/>
+      </tabs>
+      <tabpanels flex="1">
+        <vbox id="agenda-tab-panel">
+          <hbox>
+            <spacer flex="1"/>
+            <label value="&agenda.treeview.label;"/>
+            <menulist oncommand="agendaTreeView.updateFilter(this);">
+              <menupopup>
+                <menuitem label="&agenda.treeview.all.label;" value="all"/>
+                <menuitem label="&agenda.treeview.events.label;" value="events"/>
+                <menuitem label="&agenda.treeview.tasks.label;" value="tasks"/>
+-->
+                <!-- menuitem label="&agenda.treeview.reminders.label;"/ -->
+<!--
+                <menuseparator id="calendar-list-start"/>
+-->
+                <!--menuseparator id="calendar-list-end"/>
+                <menuitem value="customize" label="&agenda.treeview.customize.label;"/ -->
+<!--
+              </menupopup>
+            </menulist>
+            <spacer/>
+          </hbox>
+          <deck id="agenda-viewcustomize-deck" selectedIndex="0" flex="1">
+            <tree id="agenda-tree" hidecolumnpicker="true" flex="1"
+                  ondblclick="agendaTreeView.onDoubleClick(event);">
+              <treecols>
+                <treecol id="col-agenda-item" primary="true"
+                         persist="hidden ordinal width"
+                         label="&agenda.treeview.item.label;" flex="1"/>
+                <splitter class="tree-splitter"/>
+                <treecol id="col-agenda-when"
+                         persist="hidden ordinal width"  
+                         label="" flex="1"/>
+              </treecols>
+              <treechildren/>
+            </tree>
+            <label value="&agenda.treeview.description;"/>
+          </deck>
+        </vbox>    
+        <vbox id="todo-tab-panel" flex="1">
+          <calendar-todo-list id="calendar-todo-list" flex="1"/>
+        </vbox>
+        <vbox id="calendar-tab-panel" flex="1">
+          <hbox id="ltnCalendarButtonsBox" collapsed="true">
+            <button id="cal-sidebar-new-calendar" label="&calendar.context.newserver.label;" 
+                    oncommand="ltnNewCalendar();"/>
+            <button id="cal-sidebar-edit-calendar" label="&calendar.context.properties.label;" 
+                    oncommand="ltnEditSelectedCalendar();"/>
+            <spacer orient="horizontal" flex="5"/>
+            <button id="cal-sidebar-delete-calendar" label="&calendar.context.deleteserver.label;" 
+                    oncommand="ltnDeleteSelectedCalendar();"/>
+          </hbox>
+          <tree id="calendarTree" hidecolumnpicker="true" seltype="single"
+                onfocus="selectedCalendarPane(event)" flex="1"
+                onselect="ltnSidebarCalendarSelected(this);"
+                ondblclick="ltnCalendarTreeView.onDoubleClick(event);"
+                context="calendartree-context-menu">
+            <treecols>
+              <treecol id="col-calendar-Checkbox" cycler="true" fixed="true" width="18" >
+                <image />
+              </treecol>
+              <treecol id="col-calendar-Calendar" label="&lightning.calendar.label;" flex="1"/>
+            </treecols>
+            <treechildren>
+            </treechildren>
+          </tree>
+        </vbox>
+      </tabpanels>
+    </tabbox>
+-->
+  </vbox>
+
+</window>

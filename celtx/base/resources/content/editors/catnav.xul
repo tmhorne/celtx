@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/editors.css"
+                 type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/catnav.js"/>
+
+  <vbox flex="1"
+        class="celtxtoolbar">
+    <hbox class="panelheader" align="center">
+      <label value="&catalog.label;"/>
+    </hbox>
+    <toolbar class="celtxtoolbar"
+             collapsed="true">
+      <toolbarbutton id="listviewbtn"
+                     class="view-list"
+                     checked="true"
+                     oncommand="setView('tree');"/>
+      <toolbarbutton id="iconviewbtn"
+                     class="view-icons"
+                     oncommand="setView('icons');"/>
+    </toolbar>
+    <toolbar class="celtxtoolbar"
+             collapsed="true">
+      <!-- TODO: Add toolbar icon -->
+      <toolbarbutton id="createbutton"
+                     label="&create.label;"
+                     type="menu-button"
+                     oncommand="gDelegate.cmdCreateItem(event)">
+        <menupopup id="createpopup"
+                   datasources="chrome://celtx/content/schema.rdf"
+                   ref="&ns_cx;Prefs/Categories"
+                   sortResource="&ns_rdfs;label"
+                   sortDirection="ascending">
+          <template>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?item"/>
+                <triple subject="?item"
+                        predicate="&ns_rdfs;label"
+                        object="?label"/>
+              </conditions>
+              <action>
+                <menuitem uri="?item"
+                          label="?label"
+                          value="?item"/>
+              </action>
+            </rule>
+          </template>
+        </menupopup>
+      </toolbarbutton>
+      <toolbarseparator/>
+      <toolbarbutton label="&remove.label;"
+                     oncommand="gDelegate.cmdRemoveItem()"/>
+    </toolbar>
+    <deck id="viewdeck"
+          flex="1">
+      <tree id="itemtree"
+            flex="1"
+            onselect="gDelegate.treeItemSelected()"
+            seltype="single">
+        <treecols>
+          <treecol label="&name.label;"
+                   flex="1"
+                   primary="true"/>
+        </treecols>
+        <treechildren/>
+      </tree>
+      <imagelist id="itemthumbs"
+                 flex="1"
+                 onselect="gDelegate.thumbnailSelected()"/>
+    </deck>
+    <toolbar class="celtxtoolbar">
+      <spacer flex="1"/>
+      <toolbaritem align="center">
+        <label value="&filter.label;&colon;"/>
+        <label id="filterlabel"
+               class="text-link"
+               value="Show All"
+               onclick="gDelegate.changeFilter()"/>
+      </toolbaritem>
+    </toolbar>
+  </vbox>
+</window>

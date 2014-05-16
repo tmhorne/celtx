@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          id="autotextbindings">
+
+  <binding id="autotext-popup"
+           extends="chrome://global/content/bindings/popup.xml#popup">
+
+    <content>
+      <xul:tree anonid="tree" class="autotext-tree plain"
+                hidecolumnpicker="true" flex="1">
+        <xul:treecols anonid="treecols">
+          <xul:treecol class="autotext-treecol" flex="1"/>
+        </xul:treecols>
+        <xul:treechildren class="autotext-treebody"/>
+      </xul:tree>
+    </content>
+
+    <implementation>
+      <field name="_open">false</field>
+      <field name="block"/>
+      <field name="editor"/>
+      <field name="lastBlock"/>
+      <field name="lastCompletion"/>
+
+      <property name="maxRows" readonly="true" onget="return 10"/>
+
+      <property name="tree" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, "anonid", "tree");
+        </getter>
+      </property>
+
+      <constructor>
+        this.setAttribute("ignorekeys", true);  // So we don't eat keypresses
+      </constructor>
+
+      <property name="isOpen" readonly="true" onget="return this._open"/>
+
+      <property name="view"
+                onget="return this._view">
+        <setter>
+        <![CDATA[
+          this._view = val;
+          var bx = this.tree.boxObject;
+          bx = bx.QueryInterface(Components.interfaces.nsITreeBoxObject);
+          bx.view = val;
+        ]]>
+        </setter>
+      </property>
+
+      <property name="selectedIndex"
+                onget="return this.tree.currentIndex">
+        <setter>
+        <![CDATA[
+        this.tree.view.selection.select(val);
+        if (this.tree.treeBoxObject.height > 0) {
+          this.tree.treeBoxObject.ensureRowIsVisible(val < 0 ? 0 : val);
+        }
+        return val;
+        ]]>
+        </setter>
+      </property>
+
+      <method name="open">
+        <parameter name="editor"/>
+        <parameter name="block"/>
+        <parameter name="view"/>
+        <body>
+        <![CDATA[
+          if (this.isOpen) return;
+
+          this.block  = block;
+          this.editor = editor;
+          this.view = view;
+
+          var doc = block.ownerDocument;
+          var box = doc.getBoxObjectFor(block);
+          var x = box.screenX;
+          var y = box.screenY + box.height;
+
+          this.invalidate();
+
+          this.removeAttribute('hidden');
+          this.setAttribute('width', 150);
+
+          document.popupNode = null;
+          this.showPopup(editor, x, y, 'popup', null, null);
+        ]]>
+        </body>
+      </method>
+
+      <method name="close">
+        <body>
+        <![CDATA[
+          if (! this.isOpen) return;
+          this.selectedIndex = -1;
+          this.hidePopup();
+          document.popupNode = null;
+          this.setAttribute('hidden', true);
+        ]]>
+        </body>
+      </method>
+
+      <method name="invalidate">
+        <body>
+        <![CDATA[
+          this.adjustHeight();
+          this.tree.treeBoxObject.invalidate();
+        ]]>
+        </body>
+      </method>
+
+      <method name="adjustHeight">
+        <body>
+        <![CDATA[
+          var view   = this.view;
+          var rows   = Math.min(view.rowCount, this.maxRows);
+          var height = rows * view.rowHeight;
+          
+          if (height == 0) {
+            this.tree.setAttribute('collapsed', true);
+          }
+          else {
+            if (this.tree.hasAttribute('collapsed')) {
+              this.tree.removeAttribute('collapsed');
+            }
+            this.tree.setAttribute('height', height);
+          }
+          this.tree.setAttribute('hidescrollbar', view.rowCount <= rows);
+        ]]>
+        </body>
+      </method>
+
+      <method name="selectBy">
+        <parameter name="reverse"/>
+        <parameter name="page"/>
+        <body>
+        <![CDATA[
+          try {
+            var max = this.tree.view.rowCount - 1;
+            if (max < 0) return;
+
+            var i = this.selectedIndex;
+            var n = i + (reverse ? -1 : 1) * (page ? 5 : 1);
+
+            if      (reverse && i == -1 || n > max && i != max) n = max;
+            else if (! reverse && i == -1 || n < 0 && i != 0)   n = 0;
+            else if (n < 0 && i == 0 || n > max && i == max)    n = -1;
+
+            this.selectedIndex = n;
+          }
+          catch (ex) {
+            // Ignore
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="clicked">
+        <parameter name="evt"/>
+        <body>
+          this.handleEnter();
+        </body>
+      </method>
+      
+
+      <method name="handleEnter">
+        <body>
+        <![CDATA[
+          if (this.selectedIndex == -1) {
+            // TODO: perhaps default to first item in list, if any?
+            this.close();
+            return true;
+          }
+          else {
+            var str = this.view.valueOf(this.selectedIndex);
+            // Avoid cursor trashing related to disconnects
+            if (this.block && this.block.parentNode) {
+              this.editor.replaceParagraphContents(this.block, str);
+              this.lastCompletion = str;
+              this.lastBlock = this.block;
+            }
+            this.close();
+            return true;
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="keyPressed">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          if (evt.ctrlKey || evt.altKey) return;
+
+          var cancel = false;
+          switch (evt.keyCode) {
+            case KeyEvent.DOM_VK_ESCAPE:
+              this.close();
+              break;
+            case KeyEvent.DOM_VK_TAB:
+            case KeyEvent.DOM_VK_DOWN:
+              this.selectBy(0, 0);
+              cancel = true;
+              break;
+            case KeyEvent.DOM_VK_UP:
+              this.selectBy(1, 0);
+              cancel = true;
+              break;
+            case KeyEvent.DOM_VK_LEFT:
+              this.close();
+              break;
+            case KeyEvent.DOM_VK_RIGHT:
+              this.close();
+              cancel = true;
+              break;
+            case KeyEvent.DOM_VK_RETURN:
+              cancel = this.handleEnter();
+              break;
+            default:
+              break;
+          }
+              
+          if (cancel) {
+            evt.stopPropagation();
+            evt.preventDefault();
+          }
+
+          return cancel;
+        ]]>
+        </body>
+      </method>
+
+    </implementation>
+
+
+    <handlers>
+      <handler event="popupshowing">
+        this.editor.popup = this;
+        this._open = true;
+      </handler>
+      <handler event="popuphiding">
+        setTimeout(function (self) {
+                     self._open = false;
+                     self.editor.popup = null;
+                     self.editor = null;
+                     self.block = null;
+                   }, 0, this);
+      </handler>
+    </handlers>
+
+  </binding>
+
+
+  <binding id="autotext-tree"
+           extends="chrome://global/content/bindings/tree.xml#tree">
+    <content>
+      <children includes="treecols"/>
+      <xul:treerows class="autotext-treerows tree-rows"
+                    xbl:inherits="hidescrollbar" flex="1">
+         <children/>
+       </xul:treerows>
+     </content>
+  </binding>
+
+
+  <binding id="autotext-treebody">
+    <implementation>
+      <field name="lastMoved">new Date()</field>
+ 
+      <method name="getHoverCell">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          var row = {}; var col = {}; var obj = {};
+          var bx = document.documentElement.boxObject;
+          var x = evt.screenX - bx.screenX;
+          var y = evt.screenY - bx.screenY;
+          this.parentNode.treeBoxObject.getCellAt(x, y, row, col, obj);
+          return row.value >= 0 ? { row: row.value } : null;
+        ]]>
+        </body>
+      </method>
+    </implementation>
+     
+     <handlers>
+       <!--
+            this.parentNode: tree
+            this.parentNode.parentNode: popup
+       -->
+       <handler event="mouseout"
+                action="this.parentNode.currentIndex = -1;"/>
+
+       <handler event="mouseup"
+                action="this.parentNode.parentNode.clicked(event);"/>
+ 
+       <handler event="mousemove">
+       <![CDATA[
+         if (new Date() - this.lastMoved > 30) {
+          var rc = this.getHoverCell(event);
+          if (rc && rc.row != this.parentNode.currentIndex)
+             this.parentNode.view.selection.select(rc.row);
+          this.lastMoved = new Date();
+         }
+       ]]>
+       </handler>
+     </handlers>
+
+  </binding>
+
+
+  <binding id="autotext-treerows">
+    <content onmousedown="event.preventDefault()">
+      <xul:hbox flex="1" class="tree-bodybox">
+
+      </xul:hbox>
+      <xul:scrollbar xbl:inherits="collapsed=hidescrollbar"
+                     class="tree-scrollbar"
+                     orient="vertical" />
+    </content>
+  </binding>
+
+</bindings>
+

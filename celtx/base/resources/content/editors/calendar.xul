@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/widgets/minimonth.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/widgets/calendar-widget-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/widgets/calendar-widgets.css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-view-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-views.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-bindings.css" type="text/css"?>
+
+<?xul-overlay href="chrome://calendar/content/calendar-common-sets.xul"?>
+<?xul-overlay href="chrome://calendar/content/calendar-unifinder-todo.xul"?>
+
+
+<!DOCTYPE window
+[
+  <!ENTITY % dtd1 SYSTEM "chrome://calendar/locale/global.dtd" > %dtd1;
+  <!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd2;
+  <!ENTITY % calendarMenuOverlayDTD SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %calendarMenuOverlayDTD;
+  <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" > %brandDTD;
+  <!ENTITY % globalRegionDTD SYSTEM "chrome://global-region/locale/region.dtd"> %globalRegionDTD;
+  <!ENTITY % calendar-event-dialogDTD SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd">
+  %calendar-event-dialogDTD;
+
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="loaded();">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendarWindow.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-dnd-listener.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-item-editing.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-ui-utils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-views.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-unifinder.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/mouseoverPreviews.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/calendarviewcontroller.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/calendarwindow.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/editorcontroller.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/calendar.js"/>
+
+<broadcasterset id="calendar_broadcasters">
+  <broadcaster id="modeBroadcaster" mode="calendar"/>
+</broadcasterset>
+
+<commandset id="calendar_commands">
+  <!-- These commands already exist in thunderbird -->
+  <command id="cmd_undo" oncommand="goDoCommand('cmd_undo')"/>
+  <command id="cmd_redo" oncommand="goDoCommand('cmd_redo')"/>
+  <command id="cmd_cut" oncommand="goDoCommand('cmd_cut')"/>
+  <command id="cmd_copy" oncommand="goDoCommand('cmd_copy')"/>
+  <command id="cmd_paste" oncommand="goDoCommand('cmd_paste')"/>
+  <command id="cmd_selectAll" oncommand="goDoCommand('cmd_selectAll')"/>
+  <command id="cmd_pageSetup" oncommand="goDoCommand('cmd_pageSetup')"/>
+  <command id="cmd_print" oncommand="goDoCommand('cmd_print')"/>
+
+  <command id="cmd_showStatusBar" oncommand="goToggleToolbar('status-bar', 'menu_showStatusBar');"/>
+  <command id="cmd_showTaskBox" oncommand="goToggleToolbar('todo-tab-panel', 'menu_showTaskBox'); goToggleToolbar('calendar-todo-splitter');"/>
+
+  <!-- Sunbird specific commands -->
+  <command id="open_local_calendar_command" oncommand="openLocalCalendar()"/>
+
+  <command id="go_date_command" oncommand="gCalendarWindow.pickAndGoToDate()"/>
+  <command id="cmd_quitApplication"     oncommand="goQuitApplication()"/>
+</commandset>
+
+  <keyset id="calendar-keys">
+    <!-- Supplement the default VK_DELETE bindings with VK_BAC ones. -->
+    <key id="calendar-delete-item-key"
+         keycode="VK_BACK"
+         observes="calendar_delete_event_command"/>
+    <key id="calendar-delete-todo-key"
+         keycode="VK_BACK"
+         observes="calendar_delete_todo_command"/>
+  </keyset>
+
+<!-- tooltips to show cropped text behave as a titletip: don't hide until mouse moved away -->
+  <tooltip id="eventTreeTooltip"
+           onpopupshowing="return onMouseOverEventTree( this, event )"
+           noautohide="true"/>
+
+  <tooltip id="itemTooltip"
+           noautohide="true"/>
+
+  <toolbar class="toolbar-primary chromeclass-toolbar"
+           id="calendar-bar"
+           iconsize="large"           defaultset="calendar-new-event-button,calendar-new-task-button,calendar-edit-button,calendar-delete-button,separator,calendar-go-to-today-button,separator,calendar-day-view-button,calendar-week-view-button,calendar-multiweek-view-button,calendar-month-view-button,separator,calendar-unifinder-button,spring,throbber-box"
+           mode="full"
+           toolbarname="&calendar.maintoolbar.name;" accesskey="&calendar.maintoolbar.accesskey;"
+           context="toolbar-context-menu">
+    <toolbarbutton id="calendar-new-event-button"
+                   mode="calendar"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.newevent.button.label;"
+                   tooltiptext="&calendar.newevent.button.tooltip;"
+                   observes="calendar_new_event_command"/>
+    <toolbarbutton id="calendar-new-task-button"
+                   mode="calendar"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.newtask.button.label;"
+                   tooltiptext="&calendar.newtask.button.tooltip;"
+                   observes="calendar_new_todo_command"/>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-edit-button"
+                   label="&calendar.edit.button.label;"
+                   tooltiptext="&calendar.edit.button.tooltip;"
+                   observes="calendar_modify_event_command"/>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-delete-button"
+                   label="&calendar.delete.button.label;"
+                   tooltiptext="&calendar.delete.button.tooltip;"
+                   observes="calendar_delete_event_command"/>
+    <toolbarseparator/>
+    <toolbarbutton id="calendar-go-to-today-button"
+                   mode="calendar"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.today.button.label;"
+                   tooltiptext="&calendar.today.button.tooltip;"
+                   observes="calendar_go_to_today_command"/>
+    <toolbarseparator/>
+    <toolbarbutton id="calendar-day-view-button"
+                   mode="calendar"
+                   type="radio"
+                   group="calendarViews"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.day.button.label;"
+                   tooltiptext="&calendar.day.button.tooltip;"
+                   observes="calendar_day-view_command"/>
+    <toolbarbutton id="calendar-week-view-button"
+                   mode="calendar"
+                   type="radio"
+                   group="calendarViews"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.week.button.label;"
+                   tooltiptext="&calendar.week.button.tooltip;"
+                   observes="calendar_week-view_command"/>
+    <!--
+    <toolbarbutton id="calendar-multiweek-view-button"
+                   mode="calendar"
+                   type="radio"
+                   group="calendarViews"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.multiweek.button.label;"
+                   tooltiptext="&calendar.multiweek.button.tooltip;"
+                   observes="calendar_multiweek-view_command"/>
+    -->
+    <toolbarbutton id="calendar-month-view-button"
+                   mode="calendar"
+                   type="radio"
+                   group="calendarViews"
+                   class="cal-toolbarbutton-1"
+                   label="&calendar.month.button.label;"
+                   tooltiptext="&calendar.month.button.tooltip;"
+                   observes="calendar_month-view_command"/>
+    <toolbarseparator/>
+    <toolbarbutton id="calendar-unifinder-button"
+                   mode="calendar"
+                   class="cal-toolbarbutton-1"
+                   type="checkbox"
+                   checked="true"
+                   label="&calendar.unifinder.button.label;"
+                   tooltiptext="&calendar.unifinder.button.tooltip;"
+                   command="calendar_show_unifinder_command"/>
+  </toolbar>
+
+  <vbox id="calendar-view-box" flex="1">
+    <vbox id="bottom-events-box" persist="height">
+      <hbox id="unifinder-searchBox" persist="collapsed">
+        <box align="center">
+          <menulist id="event-filter-menulist"
+                    value="next7Days"
+                    persist="value">
+            <menupopup id="event-filter-menupopup"
+                       oncommand="refreshEventTree()">
+              <menuitem id="event-filter-all"
+                        label="&calendar.events.filter.all.label;"
+                        value="all"/>
+              <menuitem id="event-filter-today"
+                        label="&calendar.events.filter.today.label;"
+                        value="today"/>
+              <menuitem id="event-filter-next7Days"
+                        label="&calendar.events.filter.next7Days.label;"
+                        value="next7Days"/>
+              <menuitem id="event-filter-next14Days"
+                        label="&calendar.events.filter.next14Days.label;"
+                        value="next14Days"/>
+              <menuitem id="event-filter-next31Days"
+                        label="&calendar.events.filter.next31Days.label;"
+                        value="next31Days"/>
+              <menuitem id="event-filter-thisCalendarMonth"
+                        label="&calendar.events.filter.thisCalendarMonth.label;"
+                        value="thisCalendarMonth"/>
+              <menuitem id="event-filter-future"
+                        label="&calendar.events.filter.future.label;"
+                        value="future"/>
+              <menuitem id="event-filter-current"
+                        label="&calendar.events.filter.current.label;"
+                        value="current"/>
+            </menupopup>
+          </menulist>
+        </box>
+        <box align="center" flex="1">
+          <label control="unifinder-search-field" value="&calendar.search.options.searchfor;"/>
+          <textbox id="unifinder-search-field"
+                   onkeypress="searchKeyPress( this, event )"
+                   flex="1"/>
+        </box>
+        <toolbarbutton id="unifinder-closer"
+                       class="unifinder-closebutton"
+                       command="calendar_show_unifinder_command"
+                       tooltiptext="&calendar.unifinder.close.tooltip;"/>
+      </hbox>
+      <tree id="unifinder-search-results-tree"
+            flex="1"
+            onselect="unifinderSelect(event); calendarController.onSelectionChanged()"
+            onkeypress="unifinderKeyPress(event)"
+            _selectDelay="500"
+            enableColumnDrag="true">
+        <treecols id="unifinder-search-results-tree-cols">
+          <treecol id="unifinder-search-results-tree-col-title"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   label="&calendar.unifinder.tree.title.label;" />
+          <splitter class="tree-splitter"/>
+          <treecol id="unifinder-search-results-tree-col-startdate"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   label="&calendar.unifinder.tree.startdate.label;"/>
+          <splitter class="tree-splitter"/>
+          <treecol id="unifinder-search-results-tree-col-enddate"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   label="&calendar.unifinder.tree.enddate.label;"/>
+          <splitter class="tree-splitter"/>
+          <treecol id="unifinder-search-results-tree-col-categories"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   label="&calendar.unifinder.tree.categories.label;"/>
+          <splitter class="tree-splitter"/>
+          <treecol id="unifinder-search-results-tree-col-location"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   hidden="true"
+                   label="&calendar.unifinder.tree.location.label;"/>
+          <splitter class="tree-splitter"/>
+          <treecol id="unifinder-search-results-tree-col-status"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   hidden="true"
+                   label="&calendar.unifinder.tree.status.label;"/>
+          <treecol id="unifinder-search-results-tree-col-calendarname"
+                   persist="hidden ordinal width sortDirection sortActive"
+                   flex="1"
+                   hidden="true"
+                   label="&calendar.unifinder.tree.calendarname.label;"/>
+        </treecols>
+
+        <!-- on mousedown here happens before onclick above -->
+        <treechildren tooltip="eventTreeTooltip"
+                      context="calendar-item-context-menu"
+                      onkeypress="if (event.keyCode == 13) unifinderEditCommand();"
+                      ondragover="return( false );"
+                      ondblclick="unifinderDoubleClick(event)"
+                      onfocus="focusFirstItemIfNoSelection( );"/>
+      </tree>
+    </vbox>
+    <splitter id="calendar-view-splitter"
+              insertbefore="view-deck"
+              collapse="before"
+              persist="state"
+              class="chromeclass-extrachrome sidebar-splitter"
+              orient="vertical"
+              onmouseup="setTimeout('refreshEventTree();', 10 );">
+      <grippy class="sidebar-splitter-grippy"/>
+    </splitter>
+    <deck id="view-deck" flex="1" persist="selectedIndex"
+      ondraggesture="nsDragAndDrop.startDrag(event,calendarViewDNDObserver);"
+      ondragover="nsDragAndDrop.dragOver(event,calendarViewDNDObserver);"
+      ondragdrop="nsDragAndDrop.drop(event,calendarViewDNDObserver);">
+        <calendar-decorated-day-view id="day-view" flex="1" 
+                                     context="calendar-view-context-menu"
+                                     item-context="calendar-item-context-menu"/>
+        <calendar-decorated-week-view id="week-view" flex="1" 
+                                      context="calendar-view-context-menu"
+                                      item-context="calendar-item-context-menu"/>
+        <!--
+        <calendar-decorated-multiweek-view id="multiweek-view" flex="1" 
+                                           context="calendar-view-context-menu"
+                                           item-context="calendar-item-context-menu"/>
+        -->
+        <calendar-decorated-month-view id="month-view" flex="1" 
+                                       context="calendar-view-context-menu"
+                                       item-context="calendar-item-context-menu"/>
+    </deck>
+  </vbox>
+
+</window>

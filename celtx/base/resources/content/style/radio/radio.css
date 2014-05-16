@@ -1,0 +1,154 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  font-family: monospace;
+  background-color: white;
+}
+
+@media screen {
+  .character[dual="true"] {
+    display: list-item;
+    list-style-image: url(chrome://celtx/skin/dd.png);
+  }
+}
+
+p {
+  margin-top: 0em;
+  margin-bottom: 1em;
+}
+
+p.sceneheading {
+  text-decoration: underline;
+}
+
+p.action {
+  text-transform: uppercase;
+}
+
+p.character {
+  text-transform: uppercase;
+  margin-bottom: 0em;
+}
+
+p.character:before,
+p.sound:before,
+p.music:before,
+p.voice:before {
+  content: counter(charcount) ". ";
+  counter-increment: charcount;
+}
+
+p.character + p.sceneheading {
+  margin-top: 1em;
+}
+
+p.sound, p.voice, p.music {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+p.parenthetical {
+  margin-bottom: 0em;
+  text-transform: uppercase;
+}
+
+p.dialog {
+  margin-bottom: 0em;
+}
+
+p.dialog + p:not([class='parenthetical']) {
+  margin-top: 1em;
+}
+
+p.sound, p.music, p.voice {
+  margin-bottom: 0em;
+}
+
+p.sound + p:not([class='dialog']),
+p.music + p:not([class='dialog']),
+p.voice + p:not([class='dialog']) {
+  margin-top: 1em;
+}
+
+p.sceneheading:before {
+  content: counter(scenecountl);
+  counter-increment: scenecountl;
+  display: block;
+  margin-bottom: -1em;
+}
+
+p.sceneheading:after {
+  content: counter(scenecountr);
+  counter-increment: scenecountr;
+  display: block;
+  margin-top: -1em;
+  text-align: right;
+}
+
+p.sceneheading[ordinal]:before,
+p.sceneheading[ordinal]:after {
+  content: attr(ordinal);
+}
+
+.softbreak:after, .hardbreak:after {
+  counter-increment: pages;
+  content: counter(pages) ".";
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+@media screen {
+  .softbreak {
+    border-top: 1px dashed black;
+    width: 100%;
+  }
+  .hardbreak {
+    border-top: 1px solid black;
+    width: 100%;
+  }
+  .firstpage, .firstpagespacer {
+    display: none;
+  }
+}
+
+@media print {
+  .softbreak, .hardbreak {
+    page-break-before: always;
+  }
+
+  .firstpage, .firstpagespacer {
+    height: 1em;
+    margin-bottom: 1em;
+  }
+
+  .firstpage:after {
+    content: "1.";
+    display: block;
+    text-align: right;
+  }
+}
+

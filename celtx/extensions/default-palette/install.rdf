@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+     xmlns:cx="http://celtx.com/NS/v1/">
+
+	<Description about="urn:mozilla:install-manifest">
+
+		<em:id>default-palette@celtx.com</em:id>
+		<em:name>Default Shot Palette</em:name>
+		<em:version>1.0</em:version>
+		<em:description>The default shot palette.</em:description>
+		<em:creator>Greyfirst Corp.</em:creator>
+		<em:homepageURL>http://www.celtx.com/</em:homepageURL>
+		<em:appManaged>true</em:appManaged>
+		<em:hidden>true</em:hidden>
+		<cx:paletteFile>chrome://default-palette/content/index.rdf</cx:paletteFile>
+
+		<em:targetApplication>
+			<Description>
+				<em:id>celtx@celtx.com</em:id>
+				<em:minVersion>2.5</em:minVersion>
+				<em:maxVersion>*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+	</Description>
+
+</RDF>

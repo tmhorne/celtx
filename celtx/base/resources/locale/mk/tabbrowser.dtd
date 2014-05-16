@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(Безимено)">
+<!ENTITY newTab.label "Ново јазиче">
+<!ENTITY newTab.accesskey "Н">
+<!ENTITY closeTab.label "Затвори го јазичето">
+<!ENTITY closeTab.accesskey "З">
+<!ENTITY closeOtherTabs.accesskey "о">
+<!ENTITY closeOtherTabs.label "Затвори ги другите јазичиња">
+<!ENTITY reloadAllTabs.label "Превчитај ги сите јазичиња">
+<!ENTITY reloadAllTabs.accesskey "а">
+<!ENTITY reloadTab.label "Превчитај го јазичето">
+<!ENTITY reloadTab.accesskey "р">
+<!ENTITY listAllTabs.label "Прикажи ги сите јазичиња">
+<!ENTITY bookmarkAllTabs.label "Обележи ги сите јазичиња">
+<!ENTITY bookmarkAllTabs.accesskey "ј">
+<!ENTITY bookmarkThisTab.label "Обележи го ова јазиче">
+<!ENTITY bookmarkThisTab.accesskey "ј">
+<!ENTITY undoCloseTab.label "Врати го затвореното јазиче">
+<!ENTITY undoCloseTab.accesskey "В">

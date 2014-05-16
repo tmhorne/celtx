@@ -1,0 +1,970 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "ელფოსტა">
+
+<!ENTITY export.label "ექსპორტი">
+<!ENTITY exportSketch.label "სკეტჩის ექსპორტი">
+<!ENTITY chapter.label "თავი">
+<!ENTITY chapters.label "თავი">
+<!ENTITY chapter.toolbarlabel "თავ">
+<!ENTITY editor.label "გამომცემელი">
+<!ENTITY showContents.label "სარჩევის ჩვენება">
+<!ENTITY exportCatalog.label "კატალოგის ექსპორტი">
+<!ENTITY novel.desc "ნოველის დამატება, სცენის ბარათებით და ანოტაციებით.">
+<!ENTITY novel.label "ნოველა">
+<!ENTITY showBreakdownInScript.label "სცენარში გაშლის ჩვენება">
+<!ENTITY showDialogNumbers.label "დიალოგის ნომრების ჩვენება">
+
+<!ENTITY timer.settings.label "პარამეტრები">
+<!ENTITY timer.autostart.label "სესიის დაწყება სცენარის გახსნისთანავე.">
+<!ENTITY timer.schedule.label "განრიგი">
+<!ENTITY timer.useSchedule.label "დათქმული პაუზების გამოყენება">
+<!ENTITY timer.workMinutes.label "მუშაობა (წუთებში):">
+<!ENTITY timer.breakMinutes.label "პაუზა (წუთებში):">
+<!ENTITY timer.alertType.label "შეტყობინების ტიპი პაუზის დაწყებისას/დასრულებისას">
+<!ENTITY timer.showDialog.label "დიალოგის ჩვენება">
+<!ENTITY timer.endSession.label "სესიის დასრულება">
+<!ENTITY timer.flashTimer.label "წამზომის ციმციმი">
+<!ENTITY timer.resetSession.label "სესიის დაბრუნება">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "შეჯამებები">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "სესიის დაწყების დრო:">
+<!ENTITY timer.totalWritingTime.label "სულ წერის დრო:">
+<!ENTITY timer.totalBreakTime.label "პაუზის ჯამური დრო:">
+<!ENTITY timer.totalTime.label "ჯამური დრო:">
+<!ENTITY timer.wordsWritten.label "დაწერილი სიტყვა">
+
+<!ENTITY timer.allSessions.label "ყველა სესია">
+<!ENTITY timer.sessionDetail.label "სესიის მონაცემები">
+<!ENTITY timer.scriptSummary.label "სცენარის შეჯამება">
+<!ENTITY timer.writingGoals.label "მიზნები">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "სესიის შეჯამება">
+<!ENTITY timer.totalSessionTime.header "სესიის ჯამური დრო">
+<!ENTITY timer.totalSessionTime.label "სესიის ჯამური დრო">
+<!ENTITY timer.totalWordsWritten.header "სულ დაწერილი სიტყვა">
+<!ENTITY timer.totalWordsWritten.label "სულ დაწერილი სიტყვა">
+<!ENTITY timer.noSessionsToDisplay.label "საჩვენებელი სესიაბი არ არის.">
+<!ENTITY timer.sessionNo.label "სესიის #">
+<!ENTITY timer.date.label "თარიღი">
+
+<!ENTITY timer.tweetThis.label "ტვიტერზე დაწერა!">
+<!ENTITY timer.startDate.label "დაწყების თარიღი">
+<!ENTITY timer.startTime.label "დაწყების დრო">
+<!ENTITY timer.endTime.label "დასრულების დრო">
+<!ENTITY timer.breakTime.label "პაუზის დრო">
+
+<!ENTITY timer.sessionStartWords.label "სიტყვები სესიის დაწყებისასა">
+<!ENTITY timer.sessionEndWords.label "სიტყვები სესიის დასრულებისას">
+<!ENTITY timer.newWords.header "დამატებული სიტყვა">
+<!ENTITY timer.noNewWords.label "სიტყვათა რაოდენობა არ გაზრდილა.">
+<!ENTITY timer.newDialog.header "დამატებული დიალოგი">
+<!ENTITY timer.noNewDialog.label "დიალოგის რაოდენობა არ გაზრდილა.">
+<!ENTITY timer.newCharacters.header "დამატებული პერსონაჟი">
+<!ENTITY timer.noNewCharacters.label "ახალი პერსონაჟები არ დამატებულა.">
+<!ENTITY timer.newPages.header "დამატებული გვერდი">
+<!ENTITY timer.newScenes.header "დამატებული სცენა">
+<!ENTITY timer.newPanels.header "ახალი ველები">
+<!ENTITY timer.shotWords.header "სცენის სათაურის სიტყვები">
+<!ENTITY timer.actionWords.header "სიტყვები მოქმედებაში">
+<!ENTITY timer.dialogWords.header "სიტყვები დიალოგში">
+<!ENTITY timer.soundVoiceMusicWords.header "ხმაურები/ხმა/მუსიკის სიტყვები">
+<!ENTITY timer.stageDirWords.header "სიტყვები რეჟის. მითითებებში">
+
+<!ENTITY timer.name.label "სახელი">
+<!ENTITY timer.words.label "სიტყვა">
+<!ENTITY timer.percentage.label "პროცენტი">
+
+<!ENTITY timer.summaryReport.label "შეჯამება">
+<!ENTITY timer.contributionsByAuthor.label "კონტრიბ. ავტორის მიხედვით">
+<!ENTITY timer.weekdaySessions.label "სესიები კვირის დღეების მიხედვით">
+<!ENTITY timer.weekdayWords.label "სიტყვები კვირის დღეების მიხედვით">
+<!ENTITY timer.numberOfSessions.label "სესიათა რაოდენობა">
+<!ENTITY timer.longest.label "უდიდესი">
+<!ENTITY timer.shortest.label "უმოკლესი">
+<!ENTITY timer.averageDuration.label "საშუალო ხანგრძლივობა">
+<!ENTITY timer.mostWords.label "უმეტესი სიტყვა">
+<!ENTITY timer.leastWords.label "ყველაზე ცოტა სიტყვა">
+<!ENTITY timer.averageWords.label "საშუალოდ სიტყვები">
+<!ENTITY timer.wordCounts.header "სიტყვები">
+<!ENTITY timer.element.label "ელემენტი">
+<!ENTITY timer.totalWords.header "სიტყვები სულ">
+<!ENTITY timer.totalDialogWords.header "დიალოგში სიტყვები სულ">
+<!ENTITY timer.character.label "პერსონაჟი">
+<!ENTITY timer.weekday.label "კვირის დღე">
+<!ENTITY timer.sessions.label "სესიები">
+<!ENTITY timer.pctOfTotal.label "&#37; ჯამური რაოდენობის">
+<!ENTITY timer.author.label "ავტორი">
+
+<!ENTITY timer.writingGoalReport.label "მიზნების შეჯამება">
+<!ENTITY timer.goalSession.header "სესიის მიზანი">
+<!ENTITY timer.goalSession.label "სესიის მიზანი">
+<!ENTITY timer.goalDaily.header "დღის მიზანი">
+<!ENTITY timer.goalDaily.label "დღის მიზანი">
+<!ENTITY timer.goalScript.header "სცენარის მიზანი">
+<!ENTITY timer.goalScript.label "სცენარის მიზანი">
+<!ENTITY timer.wordGoal.label "სიტყვ. სასურველი რ-ბა">
+
+<!ENTITY timer.message.label "შეტყობინება">
+<!ENTITY timer.tags.label "ტეგები">
+<!ENTITY timer.mostRecentSession.label "უახლესი სესია">
+
+<!ENTITY timer.alertDialog.title "სესიის წამზომი">
+<!ENTITY timer.timerMenu.tooltip "დააწკაპუნეთ პარამეტრებისათვის">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "წინა პლანის ფერი">
+<!ENTITY fullscreen.backgroundColour.tooltip "ფონის ფერი">
+<!ENTITY fullscreen.fullscreen.tooltip "მთელ ეკრანზე">
+
+<!ENTITY bbc.options.label "BBC-ს პარამეტრები">
+<!ENTITY bbc.showTitle.label "შოუს სათაური">
+<!ENTITY bbc.sketchTitle.label "სკეტჩის სათაური">
+<!ENTITY editText.title "ტექსტის შეცვლა">
+<!ENTITY sketch.fillColour.tooltip "ავსების ფერი">
+<!ENTITY sketch.group.tooltip "დაჯგუფება">
+<!ENTITY sketch.lower.tooltip "ერთი დონით უკან">
+<!ENTITY sketch.lowerToBottom.tooltip "ფონში გაგზავნა">
+<!ENTITY sketch.raise.tooltip "ერთი ფენით წინ">
+<!ENTITY sketch.raiseToTop.tooltip "ზედაპირზე გადმოტანა">
+<!ENTITY sketch.strokeColour.tooltip "ხაზის ფერი">
+<!ENTITY sketch.ungroup.tooltip "დაჯგუფების მოხსნა">
+
+<!ENTITY custom.label "მორგებული">
+<!ENTITY saveAsPreset.label "პარამეტრ. შენახვა">
+<!ENTITY sceneLocking.title "სცენების ჩაკეტვა">
+<!ENTITY sceneNumbering.label "სცენების დანომრვა">
+<!ENTITY scenenumber.after.label "შემდგომ">
+<!ENTITY scenenumber.before.label "მანამდე">
+<!ENTITY scenenumber.example.label "მაგალითი">
+<!ENTITY scenenumber.letter.label "ასო">
+<!ENTITY scenenumber.number.label "ნომერი">
+<!ENTITY scenenumber.position.label "მდებარეობა">
+<!ENTITY scenenumber.prefix.label "თავსართი">
+<!ENTITY scenenumbers.resetAll.label "ყველა ნომრის დაბრუნება">
+<!ENTITY scenenumber.suffix.label "ბოლოსართი">
+<!ENTITY scenenumber.type.label "ტიპი">
+<!ENTITY style.label "სტილი">
+
+<!ENTITY project.film.label "ფილმი">
+<!ENTITY project.av.label "აუდიოვიზუალი">
+<!ENTITY project.theatre.label "თეატრი">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "სურათის დამატება">
+<!ENTITY addPaletteObjects.label "ობიექტთა პაკეტების დამატება">
+<!ENTITY addShot.label "სცენის დამატება">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC-ს სცენა">
+<!ENTITY bdc.cameras "კამერები">
+<!ENTITY chat.label "ჩეთი">
+<!ENTITY colour.blue "ლურჯი">
+<!ENTITY colour.cherry "ალუბლისფერი">
+<!ENTITY colour.gold "ოქრო">
+<!ENTITY colour.green "მწვანე">
+<!ENTITY colour.pink "ვარდისფერი">
+<!ENTITY colour.salmon "ორაგულისფერი">
+<!ENTITY colour.white "თეთრი">
+<!ENTITY colour.yellow "ყვითელი">
+<!ENTITY currentRevision.label "მიმდინარე რევიზია">
+<!ENTITY createNewRevision.tooltip "ახალი რევიზიის შექმნა">
+<!ENTITY default.label "ნაგულისხმევი">
+<!ENTITY enableSceneLocking.label "სცენების ჩაკეტვა">
+<!ENTITY fixNumbers.label "ნომრების გამოყოფა">
+<!ENTITY furniture.label "ავეჯი">
+<!ENTITY hollywood.label "ჰოლივუდი">
+<!ENTITY light.flood.label "დიფუზიური">
+<!ENTITY light.spot.label "მიმართული">
+<!ENTITY linesBetweenScenes.label "სცენათა გამყოფი ხაზები">
+<!ENTITY man.label "კაცი">
+<!ENTITY numbers.bothNos "ორივე ნომერი">
+<!ENTITY numbers.leftNo "ნომრები მარცხნივ">
+<!ENTITY numbers.none "არაფერი">
+<!ENTITY numbers.rightNo "ნომრები მარჯვნივ">
+<!ENTITY omitScene.label "სცენის ამოღება">
+<!ENTITY palette.label "პალიტრა">
+<!ENTITY palettes.label "პალიტრა">
+<!ENTITY paletteTree.tooltip "გადაათრიეთ ობიექტები თქვენს სკეტჩზე">
+<!ENTITY people.label "ხალხი">
+<!ENTITY person.label "ადამიანი">
+<!ENTITY preventEditing.label "ტექსტის ჩაკეტვა">
+<!ENTITY resetRevisionMode.label "რევიზიის რეჟიმის დაბრუნება">
+<!ENTITY revisionColour.desc "ეს სცენარში განხორციელებული ნებისმიერი ცვლილებისას, რევიზიის სტანდარტულ ფერად გამოიყენება.">
+<!ENTITY revisionColour.label "რევიზიის ფერი">
+<!ENTITY revisionMarks.all "ყველა მონიშვნა">
+<!ENTITY revisionMarks.current "მიმდინარე მონიშვნები">
+<!ENTITY revisionMarks.hide "მონიშვნების დამალვა">
+<!ENTITY revisionMarks.mark.label "მონიშვნა">
+<!ENTITY revisionMarks.unmark.label "მონიშვნის მოშლა">
+<!ENTITY revisionMode.label "რევიზიის რეჟიმი">
+<!ENTITY revisionName.label "რევიზიის სახელი">
+<!ENTITY revisionOptions.title "რევიზიის პარამეტრები">
+<!ENTITY shotSetup.label "სკეტჩი">
+<!ENTITY shotSetup.desc "პროექტში სკეტჩის დამატება.">
+<!ENTITY showScriptHeader.label "სცენარის ჰედერის ჩვენება">
+<!ENTITY standard.label "სტანდარტული">
+<!ENTITY startNewRevision.label "ახალი რევიზიის დაწყება">
+<!ENTITY storyboard.showImages.label "სურათების ჩვენება">
+<!ENTITY storyboard.showSetups.label "სკეტჩების ჩვენება">
+<!ENTITY storyboard.showBoth.label "ორივეს ჩვენება">
+<!ENTITY woman.label "ქალი">
+
+<!ENTITY light.bank.label "სოფთბოქსი">
+<!ENTITY bathtub.label "აბაზანა">
+<!ENTITY boy.label "ბიჭი">
+<!ENTITY car.label "მანქანა">
+<!ENTITY chair.label "სკამი">
+<!ENTITY coffeetable.label "ყავის მაგიდა">
+<!ENTITY couch.label "ტახტი">
+<!ENTITY crowd.label "ხალხი">
+<!ENTITY endtable.label "ჟურნალების მაგიდა">
+<!ENTITY girl.label "გოგო">
+<!-- Group of people -->
+<!ENTITY group.label "ხალხის ჯგუფი">
+<!ENTITY house.label "სახლი">
+<!-- e.g., office building -->
+<!ENTITY building.label "შენობა">
+<!ENTITY pickuptruck.label "პიკაპი">
+<!-- Kitchen sink -->
+<!ENTITY sink.label "ბაკანი">
+<!ENTITY spotlight.label "მიმართული განათება">
+<!ENTITY street.label "ქუჩა">
+<!ENTITY toilet.label "ტუალეტი">
+<!ENTITY tree.label "ხე">
+<!ENTITY van.label "მიკროავტობუსი">
+<!ENTITY videocamera.label "ვიდეოკამერა">
+
+<!ENTITY access.label "წვდომა">
+<!ENTITY actorProfile.desc      "დაამატეთ მსახიობის აღწერილობა.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "მოარგე:">
+<!ENTITY add.label    "დამატება">
+<!ENTITY addCardCmd.label "ბარათის დამატება">
+<!ENTITY addCmd.label "დამატება">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "ელემენტის დეტალები">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "ელემენტის ამორჩევა">
+<!ENTITY addFolder.label "საქაღალდის დამატება...">
+<!ENTITY addFolderCmd.label "საქაღალდის დამატება">
+<!ENTITY addImages.label "სურათების დამატება">
+<!ENTITY addItem.label "ელემენტის დამატება...">
+<!ENTITY addItemCmd.label "ელემენტის დამატება">
+<!ENTITY addNote.label "შენიშვნის დამატება">
+<!ENTITY addSequenceCmd.toolbarlabel "სეგმენტის დამატება">
+<!ENTITY advanced.label       "დაწვრილებით">
+<!ENTITY alignCenter.label "ცენტრში სწორება">
+<!ENTITY alignJustified.label "ორმხრივი სწორება">
+<!ENTITY alignLeft.label "მარცხნივ სწორება">
+<!ENTITY alignRight.label "მარჯვნივ სწორება">
+<!ENTITY allShootDays.label "ყველა გადასაღები დღე">
+<!ENTITY allUppercase.label "ყველა">
+<!ENTITY american.label "ამერიკული">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label  "ეს ფუნქციები მხოლოდ PDF-ის შექმნისას არის ხელმისაწვდომი.">
+<!ENTITY audioplay.desc "პროექტში რადიოდადგმის სცენარის დამატება.">
+<!ENTITY audioplay.label "რადიოდადგმის სცენარი">
+<!ENTITY authDialog.description  "ეს ფუნქცია თქვენი Celtx-ის ანგარიშით სისტემაში შესვლას საჭიროებს">
+<!ENTITY authDialog.title       "Celtx-ის ავტორიზაცია">
+<!ENTITY author.label "ავტორი">
+<!ENTITY autoCharContinueds.label   "პერსონაჟებზე „CONTINUED“-ების ჩვენება">
+<!ENTITY autoSaveProject.label "პროექტის ავტომატურად შენახვა">
+<!ENTITY autoparenthesize.label "'(' აკრეფისას ფრჩხილების ელემენტად გადაკეთება">
+<!ENTITY avScript.desc "პროექტში აუდიოვიზუალური სცენარის დამატება.">
+<!ENTITY avScript.label "აუდიოვიზუალის (A/V) სცენარი">
+<!ENTITY basedOn.label "დაფუძნებულია ნაწარმოებზე">
+<!ENTITY bdc.actor        "მსახიობი">
+<!ENTITY bdc.addlabour    "დამატებითი დავალება">
+<!ENTITY bdc.animals      "ცხოველები">
+<!ENTITY bdc.camera       "კამერა">
+<!ENTITY bdc.cast         "პერსონაჟი">
+<!ENTITY bdc.cgi          "3-განზ. გრაფიკა">
+<!ENTITY bdc.construction "მშენებლობა">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics    "ტექნიკა">
+<!ENTITY bdc.equip        "სპეცაღჭურვილობა">
+<!ENTITY bdc.extras       "ფონის მსახიობები">
+<!ENTITY bdc.greenery     "მცენარეები">
+<!ENTITY bdc.hair         "თმა">
+<!ENTITY bdc.handler      "ცხოველთა მზედამხედველი">
+<!ENTITY bdc.lights       "განათება">
+<!ENTITY bdc.livestock    "ცხოველები">
+<!ENTITY bdc.location     "გადასაღები ადგილი">
+<!ENTITY bdc.makeup       "მაკიაჟი">
+<!ENTITY bdc.mechfx       "მექანიკური ეფექტები">
+<!ENTITY bdc.misc         "სხვადასხვა">
+<!ENTITY bdc.music        "მუსიკა">
+<!ENTITY bdc.opticalfx    "ოპტიკური ეფექტები">
+<!ENTITY bdc.painting     "ხატვა">
+<!ENTITY bdc.prodnotes    "წარმოების ჩანაწერები">
+<!ENTITY bdc.props        "რეკვიზიტები">
+<!ENTITY bdc.security     "უსაფრთხოება">
+<!ENTITY bdc.set          "პავილიონი">
+<!ENTITY bdc.setdressing  "პავილიონის დეკორირება">
+<!ENTITY bdc.sound        "ხმა">
+<!ENTITY bdc.soundfx      "ხმის ეფექტები">
+<!ENTITY bdc.specialfx    "სპეცეფექტები">
+<!ENTITY bdc.storyboard   "კადრირება">
+<!ENTITY bdc.stunts       "ტრიუკები">
+<!ENTITY bdc.vehicles     "მანქანები">
+<!ENTITY bdc.wardrobe     "კოსტიუმები">
+<!ENTITY bdc.weapons      "იარაღი">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "მუქი">
+<!ENTITY bookmark.desc      "ბმულის დამატება.">
+<!ENTITY bookmark.label     "სანიშნე">
+<!ENTITY both.label   "ორივე">
+<!ENTITY bottomOfPage.label         "გვერდი ბოლო">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "სცენარის გაშლის ინფორმაციის დამატება.">
+<!ENTITY breakdown.label    "სცენარის გაშლა">
+<!ENTITY breakdownReport.label "ჩაშლის შეჯამება">
+<!ENTITY brokenSceneEventWarning.label "სცენა, რომელზეც მოვლენაა მიბმული, აღარ არსებობს.">
+<!ENTITY browseCmd.label      "მოძიება">
+<!ENTITY byline.label "ავტორი:">
+<!ENTITY calendar.desc      "პროექტში კალენდრის დამატება.">
+<!ENTITY calendar.label     "კალენდარი">
+<!ENTITY callSheet.label "გამოცხადების ფურცელი">
+<!ENTITY cast.label "მსახიობები">
+<!ENTITY castOfCharacters.label "მსახიობთა გუნდი">
+<!ENTITY catalog.desc "პროექტში წარმოების ელემენტების კატალოგის დამატება.">
+<!ENTITY catalog.label "კატალოგი">
+<!ENTITY catalogAddItem.tooltip "ელემენტის კატალოგში დამატება">
+<!ENTITY catalogDeleteItem.tooltip "კატალოგიდან ელემენტის წაშლა">
+<!ENTITY categories.label "კატეგორიები">
+<!ENTITY category.label     "კატეგორია">
+<!ENTITY celtxAccountCmd.accessKey "ა">
+<!ENTITY celtxAccountCmd.label "&appName;-ის ანგარიში...">
+<!ENTITY celtxError.title       "Celtx-ის შეცდომა">
+<!ENTITY celtxTagline.label "№1 არჩევადი მედია პრე-პროდუქციაში.">
+<!ENTITY celtxWikiCmd.label "&appName;-ის ვიკი">
+<!ENTITY charOutline.desc "პერსონაჟების და მათი კავშირების მიმოხილვა.">
+<!ENTITY charOutline.label "პერსონაჟების მიმოხილვა">
+<!ENTITY character.label        "პერსონაჟი">
+<!ENTITY characterProfile.desc  "შეიყვანეთ ახალი პერსონაჟის აღწერილობა.">
+<!ENTITY characterProfile.existing  "ასევე შეგიძლიათ დაამატოთ არსებული ქვემორე პერსონაჟების აღწერილობა.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "ამოირჩიეთ პერსონაჟი">
+<!ENTITY characters.label       "პერსონაჟები">
+<!ENTITY clearCmd.label "გასუფთავება">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "კომიქსი-წიგნიდან სცენარის შექმნა.">
+<!ENTITY comicBook.label "კომიქსი">
+<!ENTITY comment.label "შენიშვნა">
+<!ENTITY completed.label "დასრულდა">
+<!ENTITY contact.label "კონტაქტი">
+<!ENTITY contactInformation.label "საკონტაქტო ინფორმაცია">
+<!ENTITY contactName.label "კონტაქტის სახელი">
+<!ENTITY contacts.label "საკონტაქტოები">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "გაგრძელება">
+<!ENTITY copyProject.title    "პროექტის გაორება">
+<!ENTITY copyProjectCmd.label "პროექტის გაორება">
+<!ENTITY copyright.label "საავტორო უფლებები">
+<!ENTITY create.label "შექმნა">
+<!ENTITY createAccount.label "ანგარიშის შექმნა">
+<!ENTITY createCatalogFromSelection.label "მონიშნულიდან კატალოგის შექმნა">
+<!ENTITY createProject.label  "პროექტის შექმნა">
+<!ENTITY createProject.title  "პროექტის შექმნა">
+<!ENTITY createTemplate.label "შაბლონის შექმნა">
+<!ENTITY createdCol.label  "შექმნილია">
+<!ENTITY creatorCol.label  "შემქმნელი">
+<!ENTITY crew.desc "პერსონალის დოკუმენტის დამატება.">
+<!ENTITY crew.label "პერსონალი">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "თარიღი">
+<!ENTITY datePicker.label "თარიღის ამორჩევა">
+<!ENTITY daynightHeader.label "დ/ღ">
+<!ENTITY daynightWarning.label "სცენის სათაური მართებული დღე/ღამის ტერმინით არ თავდება. პრობლემის მოსაგვარებლად ჩაასწორეთ სცენის სათაური სცენარში, ან გადახედეთ სცენის სათაურებში დაშვებული დღე/ღამის ტერმინების სიას, „პარამეტრების“ სარკმელის „სცენარის“ ჩანართში.">
+<!ENTITY daynightWords.label "დღე/ღამის ტერმინები">
+<!ENTITY dayoff.label "დასვენების დღე">
+<!ENTITY daysOff.label "დასვენების დღე">
+<!ENTITY decreaseDelayCmd.tooltip "დაყოვნების შემცირება.">
+<!ENTITY decreaseFontSizeCmd.tooltip "შრიფტის ზომის შემცირება">
+<!ENTITY decreaseIndentCmd.label "&decreaseIndentCmd.label;">
+<!ENTITY decreaseIndentCmd.tooltip "შეწევის შემცირება">
+<!ENTITY defaultSceneLength.label "სცენის ნაგულისხმევი ზომა">
+<!ENTITY delayLabel.tooltip "დაყოვნება (წამებში) სურათებს შორის">
+<!ENTITY deleteCardCmd.label "ბარათის წაშლა">
+<!ENTITY deleteItem.label "ელემენტის წაშლა">
+<!ENTITY deleteItemCmd.label        "წაშლა">
+<!ENTITY department.label   "განყოფილება">
+<!ENTITY description.label  "აღწერა">
+<!ENTITY details.label          "დეტალები">
+<!ENTITY dialog.label           "დიალოგი">
+<!ENTITY director.label "რეჟისორი">
+<!ENTITY disabled.label "გამორთულია">
+<!ENTITY displayMedia.label "მედიის ჩვენება">
+<!ENTITY downloadProjectCmd.label "პროექტის ჩამოტვირთვა...">
+<!ENTITY downloadProjectCmd.toolbarlabel "ჩამოტვირთვა">
+<!ENTITY downloadingPDF.label       "PDF-ში კონვერტაცია...">
+<!ENTITY dragToSchedule.tooltip "გადაათრიეთ განრიგში.">
+<!ENTITY dualDialogCmd.label "ორმაგი დიალოგი">
+<!ENTITY dualDialogCmd.tooltip "ორმაგი დიალოგი">
+<!ENTITY duplicate.label "გაორება">
+<!ENTITY duplicateItemCmd.label "ელემენტის გაორება">
+<!ENTITY edit.label "შეცვლა">
+<!ENTITY editDates.label "თარიღთა შეცვლა">
+<!ENTITY editProfile.label "ონლაინ-პროფილის შეცვკა">
+<!ENTITY editSceneDialog.title "სცენის შეცვლა">
+<!ENTITY editTitlePageCmd.label "თავფურცელის შეცვლა...">
+<!ENTITY editlabel.tooltip "დააწკაპუნეთ შესაცვლელად">
+<!ENTITY eighths.label "მერვედები">
+<!ENTITY eighthsSuffix.label "1/8-ები">
+<!ENTITY element.label          "ელემენტი">
+<!ENTITY elements.label         "ელემენტი">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "ეს მხოლოდ Celtx-ის აქტიურ მომხმარებელთა რიცხვის დადგენას ემსახურება. პროცესში რაიმე პერსონალური მონაცემი არ გადაიგზავნება.">
+<!ENTITY enableStats.label    "გაშვებისას Celtx-ის სერვერთან სიგნალის გაგზავნა.">
+<!ENTITY enabled.label "ჩართულია">
+<!ENTITY end.label "დასრულება">
+<!ENTITY endOfShooting.label "გადაღების დასრულება">
+<!ENTITY enterEmbedTagPrompt.label "შეიყვანეთ აქ „EMBED“ ან „OBJECT“ html ტეგი:">
+<!ENTITY eventDetails.label "მოვლენის დეტალები">
+<!ENTITY every15Minutes.label "ყოველ 15 წუთში">
+<!ENTITY every30Minutes.label "ყოველ ნახევარ საათში">
+<!ENTITY every5Minutes.label "ყოველ 5 წუთში">
+<!ENTITY everyHour.label "ყოველ საათში">
+<!ENTITY everyMinute.label "ყოველ წუთს">
+<!ENTITY exportList "სიის ექსპორტი">
+<!ENTITY exportScriptCmd.accesskey "ე">
+<!ENTITY exportScriptCmd.label      "სცენარის ექსპორტი">
+<!ENTITY externalFile.desc  "პროექტში არსებული ფაილის დამატება.">
+<!ENTITY externalFile.label "ფაილი">
+<!ENTITY fetchingList.label "სიის მოძიება">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "დაფორმატებული სცენარის დამატება.">
+<!ENTITY filmScript.label   "სცენარი">
+<!ENTITY filter.label "ფილტრი">
+<!ENTITY findAllCharacters.label "კატალოგში პერსონაჟების დამატება">
+<!ENTITY findCmd.accesskey "ი">
+<!ENTITY findCmd.label "ძიება...">
+<!ENTITY findPreviousCmd.label "წინას მოძებნა">
+<!ENTITY findTab.label "მოძებნა">
+<!ENTITY folder.label "საქაღალდე">
+<!ENTITY forceOverwrite.label "თავზე გადაწერის იძულება, თუ სერვერის ვერსია უფრო ახალია">
+<!ENTITY form.actorLink "URL-მისამართი">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "მისამართი">
+<!ENTITY form.affectEvent "ეს მოვლენა რა გავლენას ახდენს მთლიან სიუჟეტზე?">
+<!ENTITY form.age "ასაკი">
+<!ENTITY form.alternate "ალტერნატიული სახელი">
+<!ENTITY form.antag "ანტაგონისტი">
+<!ENTITY form.antagWho "ვინ არის ამ სცენის ანტაგონისტი?">
+<!ENTITY form.availability "მზადყოფნა">
+<!ENTITY form.bestFriend "საუკეთესო მეგობარი">
+<!ENTITY form.borrow "თხოვება">
+<!ENTITY form.build "აშენება">
+<!ENTITY form.buy "შესყიდვა">
+<!ENTITY form.catalyst "გამომწვევი ინციდენტი">
+<!ENTITY form.cell "მობ. #">
+<!ENTITY form.centralEvent "რა არის ამ სცენის ცენტრალური მოვლენა?">
+<!ENTITY form.charBackground "პერსონაჟის სარჩული">
+<!ENTITY form.charGoal "რა არის ამ პერსონაჟის მიზანი?">
+<!ENTITY form.charPlan "რა გეგმით აპირებს პერსონაჟი მიზნის მიღწევას?">
+<!ENTITY form.charTraits "პერსონაჟის ხასიათი">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "პერსონაჟებს იყენებს:">
+<!ENTITY form.color "ფერი">
+<!ENTITY form.comicRelief "კომიკური ფიგურა">
+<!ENTITY form.comments "შენიშვნები">
+<!ENTITY form.confidante "ნდობ. აღ. პირი">
+<!ENTITY form.contactInfo "საკონტაქტო ინფორმაცია">
+<!ENTITY form.cost "ხარჯი">
+<!ENTITY form.crewLink "მისამართი">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "ხელმისაწვდომი თარიღები">
+<!ENTITY form.dateNeed "საჭირო თარიღები">
+<!ENTITY form.dateReturn "დაბრუნების თარიღი">
+<!ENTITY form.description "აღწერა">
+<!ENTITY form.details "დეტალები">
+<!ENTITY form.dislikes "არ მოწონს">
+<!ENTITY form.distFeatures "გამორჩეული თვისებები">
+<!ENTITY form.dob "დაბადების თარიღი">
+<!ENTITY form.dress "ტანისამოსი">
+<!ENTITY form.education "განათლება">
+<!ENTITY form.elevator "ლიფტი">
+<!ENTITY form.email "ელფოსტის მისამართი">
+<!ENTITY form.endDate "დასრულების თარიღი">
+<!ENTITY form.era "ეპოქა">
+<!ENTITY form.eyes "თვალები">
+<!ENTITY form.facilityInfo "ინფორმაცია სტუდიაზე">
+<!ENTITY form.familyBack "ოჯახური მდგომარეობა">
+<!ENTITY form.fullName "სრული სახელი">
+<!ENTITY form.generic "სტანდარტული">
+<!ENTITY form.genericForm "სტანდარტული ფორმა">
+<!ENTITY form.habits "ჩვევები/ნაკლი">
+<!ENTITY form.hair "თმა">
+<!ENTITY form.hat "ქუდი">
+<!ENTITY form.height "სიმაღლე">
+<!ENTITY form.inScenes "სცენებში">
+<!ENTITY form.jacket "ქურთუკი">
+<!ENTITY form.jobTitle "სათაური">
+<!ENTITY form.keyCharTraits "პერსონაჟის მთავარი მახასიათებლები">
+<!ENTITY form.lightSources "სინათლის წყაროები">
+<!ENTITY form.likes "მოწონს">
+<!ENTITY form.locationMap "გად. ადგილის რუკა">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "სიყვარულის ობიექტი">
+<!ENTITY form.media "მედია">
+<!ENTITY form.mentor "მენტორი">
+<!ENTITY form.motiv "მოტივაცია">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "არა">
+<!ENTITY form.noise "ხმაურის პრობლემები">
+<!ENTITY form.other "სხვა">
+<!ENTITY form.pants "შარვალი">
+<!ENTITY form.parking "ინფორმაცია პარკინგზე">
+<!ENTITY form.partner "პარტნიორი">
+<!ENTITY form.person "პიროვნება">
+<!ENTITY form.phone "ტელეფონი">
+<!ENTITY form.physicalDesc "დაწვრ. ფიზიკური აღწერილობა">
+<!ENTITY form.powerCapa "ელენერგიის შესაძლებლობანი">
+<!ENTITY form.princFunction "რა არის ამ პერსონაჟის მთავარი ფუნქცია?">
+<!ENTITY form.procure "შესყიდვა">
+<!ENTITY form.propProfile "რეკვიზიტი">
+<!ENTITY form.protag "პროტაგონისტი">
+<!ENTITY form.protagAntag "პროტაგონისტი/ანტაგონისტი">
+<!ENTITY form.protagWho "ვინ არის ამ სცენის პროტაგონისტი?">
+<!ENTITY form.rent "დაქირავება">
+<!ENTITY form.rentalCost "ქირის ფასი">
+<!ENTITY form.role "როლი">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "როგორ აღწევს ანტაგონისტი ამ მიზანს?">
+<!ENTITY form.sceneAntagGoal "რა არის ამ სცენაში ანტაგონისტის მიზანი?">
+<!ENTITY form.sceneChars "რომელი პერსონაჟებია ამ სცენაში?">
+<!ENTITY form.sceneDetails "სცენის დეტალები">
+<!ENTITY form.sceneMood "როგორია სცენის განწყობა?">
+<!ENTITY form.sceneProtagAchieve "როგორ აღწევს პროტაგონისტი ამ მიზანს?">
+<!ENTITY form.sceneProtagGoal "რა არის პროტაგონისტის მიზანი ამ სცენაში?">
+<!ENTITY form.sceneSetting "როგორია სცენის პავილიონი?">
+<!ENTITY form.sceneWhen "სად ვითარდება ამ სცენის მოქმედება?">
+<!ENTITY form.scenesUsed "სცენა გამოიყენება:">
+<!ENTITY form.scoutSelect "სკაუტინგი და შერჩევა">
+<!ENTITY form.scoutedFor "სცენებისთვის დათვალიერებული">
+<!ENTITY form.scriptName "სცენარის სახელი">
+<!ENTITY form.selectedFor "სცენებისთვის შერჩეული">
+<!ENTITY form.sex "სექსი">
+<!ENTITY form.shirt "პერანგი">
+<!ENTITY form.shoes "ფეხსაცმელი">
+<!ENTITY form.size "ზომა">
+<!ENTITY form.squareFoot "ფართობი კვ/მ">
+<!ENTITY form.startDate "დაწყების თარიღი">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "კოსტიუმების ზომები">
+<!ENTITY form.washroom "საპირფარეშოების მდებარეობები">
+<!ENTITY form.weight "წონა">
+<!ENTITY form.wornBy "აცვია:">
+<!ENTITY form.yes "კი">
+<!ENTITY format.label         "ფორმატი">
+<!ENTITY formatAct.label      "მოქმედება">
+<!ENTITY formatAction.label   "მოქმედება">
+<!ENTITY formatBalloon.label  "დიალოგის ბუშტი">
+<!ENTITY formatBalloonType.label "ბუშტის ტიპი">
+<!ENTITY formatCaption.label  "წარწერა">
+<!-- max 7 chars -->
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "სცენის სათაური">
+<!ENTITY formatMusic.label    "მუსიკა">
+<!ENTITY formatPage.label     "გვერდი">
+<!-- max 5 chars -->
+<!ENTITY formatPage.shortlabel     "&formatPage.label;">
+<!ENTITY formatPanel.label    "პანელი">
+<!-- max 5 chars -->
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;">
+<!ENTITY formatParen.label    "ფრჩხილები">
+<!ENTITY formatProductionNote.label "წარმოების ჩანაწერი">
+<!ENTITY formatShot.label     "სცენის სათაური">
+<!ENTITY formatSound.label    "ხმა">
+<!ENTITY formatStagedir.label "სარეჟისორო მითითება">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "გადასვლა">
+<!ENTITY formatVoice.label    "ხმა">
+<!ENTITY fourHours.label "4 საათი">
+<!ENTITY freeAndSecure.label "უფასო და უსაფრთხო">
+<!ENTITY general.label "ძირითადი">
+<!ENTITY generatePDFCmd.label "PDF-ის შექმნა...">
+<!ENTITY generateReportCmd.label "შეჯამების შექმნა">
+<!ENTITY generateReportCmd.toolbarlabel "შეჯამება">
+<!ENTITY getCeltxTools.label "Celtx-ის ხელსაწყოების მოძიება">
+<!ENTITY getProjDialog.caption "არსებული პროექტები">
+<!ENTITY getProjDialog.title   "პროექტის ჩამოტვირთვა">
+<!ENTITY gotoItemCmd.label          "გადასვლა:">
+<!ENTITY helpAboutCmd.accessKey "ა">
+<!ENTITY helpAboutCmd.label "&appName;-ის შესახებ">
+<!ENTITY helpReportBugCmd.accessKey "რ">
+<!ENTITY helpReportBugCmd.label "ხარვეზის შეტყობინება">
+<!ENTITY helpSupportCmd.accessKey "ო">
+<!ENTITY helpSupportCmd.label "ონლაინ-დახმარება">
+<!ENTITY icons.label "ხატულები">
+<!ENTITY iconsAndText.label "ხატულები და ტექსტი">
+<!ENTITY image.label "სურათი">
+<!ENTITY images.label "სურათები ">
+<!ENTITY importScriptCmd.accesskey "ი">
+<!ENTITY importScriptCmd.label "სცენარის იმპორტი">
+<!ENTITY importScriptCmd.toolbarLabel "იმპორტი">
+<!ENTITY includeInWorkweek.label "ამ დღეების სამუშაო კვირაში ჩათვლა">
+<!ENTITY includeTitlePage.label     "თავფურცელის ჩათვლით">
+<!ENTITY increaseDelayCmd.tooltip "დაყოვნების გაზრდა.">
+<!ENTITY increaseFontSizeCmd.tooltip "შრიფტის ზომის გაზრდა">
+<!ENTITY increaseIndentCmd.label "შეწევის გაზრდა">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "სცენის ბარათის სათაური">
+<!ENTITY indexCards.label "სცენის ბარათები">
+<!ENTITY inlineSpellCheckCmd.label "მართლწერის შემოწმება ტექსტში">
+<!ENTITY insertNoteCmd.toolbarLabel "შენიშვნა...">
+<!ENTITY international.label "საერთაშორისო">
+<!ENTITY intextHeader.label "INT/EXT">
+<!ENTITY intextWarning.label "სცენის სათაური მართებული INT/EXT ტერმინით არ იწყება.  პრობლემის გადასაჭრელათ ჩაასწორეთ სცენის სათაური სცენარში, ან დაამატეთ დაშვებული ტერმინები (მაგ. ქართული „ინტ“ და „ექსტ“) „პარამეტრების“ სარკმელის „სცენარის“ ჩანართში.">
+<!ENTITY intextWords.label "INT/EXT ტერმინები">
+<!ENTITY invalidLogin.label   "მომხმარებლის სახელი ან პაროლი არასწორია.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "დახრილი">
+<!ENTITY item.label         "ელემენტი">
+<!ENTITY language.label "ენა">
+<!ENTITY left.label   "მარცხნივ">
+<!ENTITY linesPerPage.label "სტრიქონი/გვერდზე">
+<!ENTITY list.label "სია...">
+<!ENTITY location.desc          "შეიყვანეთ გადასაღები ადგილის აღწერილობა.">
+<!ENTITY location.label         "გადასაღები ადგილი">
+<!ENTITY loginOnStartup.label "დაწყებისას სისტემაში შესვლა">
+<!ENTITY lowercaseCmd.label "პატარა ასოებით">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "მედია">
+<!ENTITY mediaViewer.title "მედიის მნახველი">
+<!ENTITY modified.label "შეცვლილია">
+<!ENTITY modifiedCol.label "შეცვლილია">
+<!ENTITY moveDownCmd.label          "ქვევით ჩამოწევა">
+<!ENTITY moveUpCmd.label            "ზევით აწევა">
+<!ENTITY moving.label "გზაშია">
+<!ENTITY myStudio.label "ჩემი სტუდია">
+<!ENTITY name.label         "სახელი">
+<!ENTITY network.label "ქსელი">
+<!ENTITY never.label "არასდროს">
+<!ENTITY newMarkupItem.label        "&lt;ახალი ...&gt;">
+<!ENTITY newProjectCmd.label "ახალი პროექტი...">
+<!ENTITY newProjectCmd.toolbarlabel "ახალი">
+<!ENTITY noFileSelected.label   "&lt;აირჩიეთ ფაილი&gt;">
+<!ENTITY noImageSelected.label "სურათი ამორჩეული არ გახლავთ">
+<!ENTITY noScriptSelected.label "სცენარი ამორჩეული არ გახლავთ">
+<!ENTITY none.label "არაფერი">
+<!ENTITY noteDialog.title           "ჩანაწერის შეცვლა">
+<!ENTITY notes.label "ჩანაწერები">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "პერსონაჟთა რაოდენობა">
+<!ENTITY numberOfScenes.label "სცენათა რაოდენობა">
+<!ENTITY oneHour.label "1 საათი">
+<!ENTITY oneLineSchedule.label "ერთხაზიანი განრიგი">
+<!ENTITY open.label "გახსნა">
+<!ENTITY openFromStudio.label "Studio-დან გახსნა">
+<!ENTITY openItemCmd.label "ელემენტის გახსნა">
+<!ENTITY openProjectCmd.label "პროექტის გახსნა...">
+<!ENTITY openProjectCmd.toolbarlabel "გახსნა">
+<!ENTITY openProjectFolder.label "პროექტის საქაღალდის გახსნა">
+<!ENTITY openRecentCmd.label "ბოლოს გახსნა">
+<!ENTITY options.label "პარამეტრები">
+<!ENTITY orderedList.label "რიგითი სია">
+<!ENTITY outline.desc       "დოკუმენტის ბურთულებიანი სქემის შექმნა.">
+<!ENTITY outline.label      "სტრუქტურა">
+<!ENTITY over14.label "მე 14 წლის, ან უფროსი ვარ.">
+<!ENTITY owner.label "მფლობელი">
+<!ENTITY pageAndSceneNumbering.label  "გვერდების და სცენების დანომრვა">
+<!ENTITY paperSize.label              "ფურცლის ზომა">
+<!ENTITY password.label "პაროლი">
+<!ENTITY passwordAgain.label "პაროლი ხელახლა">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title    "PDF ფორმატში კონვერტაცია">
+<!ENTITY pdfErrorHeader "უკაცრავად!">
+<!ENTITY pdfErrorText1 "ამ მოწინავე ფუნქციის გამოსაყენებლად თქვენ ხაზზე ყოფნის რეჟიმში უნდა იყოთ.">
+<!ENTITY pdfErrorText2 "Celtx-ის ეს უსაფრთხო, დაცული და მოწინავე ვებ-სერვისი თქვენს სცენარის ავტომატურად მოარგებს კინოსცენარის, პიესის,  რადიოდადგმის ან ორსვეტიანის (AV) ინდუსტრიაში დამკვიდრებულ  ფორმატს.">
+<!ENTITY pdfOptions.title           "PDF-ის პარამეტრები">
+<!ENTITY pdfOptionsCmd.label "„გრძელდება“ და „განაგრძობს“">
+<!ENTITY pdfWarningHeader "გაუმარჯოს!">
+<!ENTITY pdfWarningText "Celtx-ის ეს უსაფრთხო, დაცული და მოწინავე ვებ-სერვისი თქვენს სცენარის ავტომატურად მოარგებს კინოსცენარის, პიესის,  რადიოდადგმის ან ორსვეტიანის (AV) ინდუსტრიაში დამკვიდრებულ  ფორმატს.">
+<!ENTITY personal.label "პირადი">
+<!ENTITY picklist.label "არჩევანის სია">
+<!ENTITY principalFunction.label "ძირითადი ფუნქცია">
+<!ENTITY printBackgroundColour.label "ფონის ფერის ბეჭდვა">
+<!ENTITY printCardBorders.label "ბარათების კანტის ბეჭდვა">
+<!ENTITY printCardsDialog.title "ბარათების ბეჭდვა">
+<!ENTITY printStoryboardDialog.title "კადრირების ბეჭდვა">
+<!ENTITY privacy.label "პირადი სფერო">
+<!ENTITY producer.label "პროდიუსერი">
+<!ENTITY productionItems.label "წარმოების ელემენტები">
+<!ENTITY progressDialog.title "პროგრესი">
+<!ENTITY project.label "პროექტი">
+<!ENTITY projectItems.label   "ახალი პროექტების შიგთავსი">
+<!ENTITY projectLibrary.label "პროექტთა ბიბლიოთეკა">
+<!ENTITY projectProperties.label "ატვირთვის პარამეტრები">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "პროექტის შაბლონები">
+<!ENTITY propSheet.desc         "შეიყვანეთ ახალი რეკვიზიტის აღწერილობა.">
+<!ENTITY propSheet.existing  "ასევე შეგიძლიათ დაამატოთ ინფორმაცია ქვემორე არსებულ რეკვიზიტებზე.">
+<!ENTITY propSheet.label        "რეკვიზიტები">
+<!ENTITY propSheet.select       "ამოირჩიეთ რეკვიზიტი">
+<!ENTITY properties.label "თვისებები">
+<!ENTITY publishDialog.findUsers    "მომხმარებელთა ძიება">
+<!ENTITY publishDialog.ownerLabel   "პროექტის მფლობელი">
+<!ENTITY publishDialog.privateDesc "პირადი: წვდომა მხოლოდ მე მქონდეს">
+<!ENTITY publishDialog.privateLabel "პირადი">
+<!ENTITY publishDialog.publicDesc "საჯარო: პროექტის Project Central-ზე გამოქვეყნება">
+<!ENTITY publishDialog.publicLabel  "საჯარო">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "საზიარო: პროექტის ამორჩეულ მომხმარებლებთან გაზიარება">
+<!ENTITY publishDialog.sharedLabel  "გაზიარებულია:">
+<!ENTITY publishDialog.title        "პროექტის გამოქვეყნება">
+<!ENTITY publishDialog.userList     "მომხმარებელთა სია">
+<!ENTITY publishMode.label "გაზიარების რეჟიმი">
+<!ENTITY recent.label "ბოლო">
+<!ENTITY recentProjects.label "ბოლო პროექტები">
+<!ENTITY recoverPassword.label "პაროლის აღდგენა">
+<!ENTITY recycleCmd.label           "ჩანაწერებში გაგზავნა">
+<!ENTITY regWiz.aboutThis "როგორც კი შეიქმნება თქვენი ანგარიში, მიმდინარე სესიისათვის თქვენ ავტომატურად შეხვალთ სისტემაში.">
+<!ENTITY regWiz.accountInstructions "ამოირჩიეთ მომხმარებლის სახელი და პაროლი თქვენი &appName;-ის ანგარიშისათვის. (გაითვალისწინეთ: მომხმარებლის სახელებზე და პაროლებზე დიდი/პატარა ასოები სხვადასხვად აღიქმება.)">
+<!ENTITY regWiz.accountLabel "მომხმარებლის ანგარიში (3/5)">
+<!ENTITY regWiz.bullet1 "დისტანციური დამარქაფება">
+<!ENTITY regWiz.bullet2 "კოლაბორაციის გარემო">
+<!ENTITY regWiz.bullet3 "Project Central-ზე გამოქვეყნება">
+<!ENTITY regWiz.bullet4 "პროექტის iPhone-ზე ნახვა">
+<!ENTITY regWiz.checkLabel "ანგარიში მონაცემების შემოწმება">
+<!ENTITY regWiz.clickFinish "დიდი მადლობა, რომ შემოუერთდით &appName;-ის მომხმარებელთა რიგებს.">
+<!ENTITY regWiz.clickFinish1 "თქვენ უკვე შემოსული ხართ &appName;-ის სერვერზე და შეგიძლიათ ისარგებლოთ ჩვენი უფასო ონლაინ-ფუნქციებით">
+<!ENTITY regWiz.clickFinish2 "გამოსცადეთ ჩამოტვირთვა/ატვირთვის ფუნქცია, რათა უსაფრთხოდ დააზღვიოთ პროექტი, ან, თუ თქვენს რომელიმე კოლეგას &appName;-ის ანგარიში გააჩნია, პროექტის გაზიარების ფუნქციით შეგიძლიათ მასთან სასურველ პროექტზე თანამშრომლობა.">
+<!ENTITY regWiz.clickNext "დიდი მადლობა! რეგისტრაციის დასასრულებლად დააწკაპუნეთ ღილაკზე „შემდეგი“.">
+<!ENTITY regWiz.conclusion "დასრულება (5/5)">
+<!ENTITY regWiz.confirmIntro "თქვენ შემდეგი ინფორმაცია შეიყვანეთ:">
+<!ENTITY regWiz.confirmLabel "პარამეტრების დასტური (4/5)">
+<!ENTITY regWiz.createNewAccountLabel  "ახალი ანგარიშის შექმნა.">
+<!ENTITY regWiz.createYourAccountLabel "მიიღეთ საკუთარი &appName;-ის ანგარიში! (1/5)">
+<!ENTITY regWiz.emailLabel "ელფოსტა:">
+<!ENTITY regWiz.finish "დასრულება">
+<!ENTITY regWiz.identityInstructions "გთხოვთ შეიყვანოთ თქვენი სახელი, ორგანიზაცია და ელფოსტის მისამართი.">
+<!ENTITY regWiz.identityLabel "იდენტობა (2/5)">
+<!ENTITY regWiz.intro "შეიქმენით ანგარიში &appName;-ის სერვერზე და ისარგებლეთ შემდეგი უფასო ვებ-ფუნქციებით:">
+<!ENTITY regWiz.loginSuccessfulLabel  "დიდი მადლობა, თქვენ წარმატებით შეხვედით &appName;-ის სისტემაში.">
+<!ENTITY regWiz.newOrExistingLabel  "შექმენით ახალი ანგარიში, ან გამოიყენეთ არსებული:">
+<!ENTITY regWiz.noteCaseSensitive "&appName;-ის ანგარიშის მომხმარებლის სახელები და პაროლები დიდ/პატარა ასოებს განასხვავებს.">
+<!ENTITY regWiz.notePassword "თქვენი პაროლი სულ ცოტა 5 სიმბოლოსგან უნდა შედგებოდეს.">
+<!ENTITY regWiz.noteUsername "თქვენი ანგარიშის სახელი უნდა შედგებოდეს სულ ცოტა 3 სიმბოლოსგან, მხოლოდ ასოებისგან და ციფრებისგან.">
+<!ENTITY regWiz.orgLabel   "ორგანიზაცია:">
+<!ENTITY regWiz.title "Celtx-ის რეგისტრაციის ოსტატი">
+<!ENTITY regWiz.uidLabel   "&appName;-ის მომხმარებლის სახელი:">
+<!ENTITY regWiz.useExistingAccountLabel  "არსებული ანგარიშის გამოყენება.">
+<!ENTITY regWiz.warn "ამ ფუნქციით სარგებლობისათვის აუცილებელია &appName;-ის ანგარიშის შექმნა.">
+<!ENTITY remove.label "ამოშლა">
+<!ENTITY removeCmd.label "ამოშლა">
+<!ENTITY removeMarkupCmd.label "ტექსტზე ფორმატის მოშორება">
+<!ENTITY rename.label "გადარქმევა">
+<!ENTITY renameItem.label "ელემენტის გადარქმევა...">
+<!ENTITY replaceCmd.label "ჩანაცვლება...">
+<!ENTITY reportThisBug.label    "ამ ხარვეზის შეტყობინება">
+<!ENTITY reportThisBug.tooltip  "გამოგვიგზავნეთ ხარვეზის შეტყობინება ანონიმურად.">
+<!ENTITY reports.label "შეჯამებები">
+<!ENTITY right.label  "მარჯვნივ">
+<!ENTITY sampleProjects.label "სანიმუშო პროექტები">
+<!ENTITY samples.label "ნიმუშები">
+<!ENTITY saveAsHTML.label "HTML-ად შენახვა">
+<!ENTITY saveAsTemplate.label "შაბლონად შენახვა">
+<!ENTITY saveCommentCheckbox.label "ფაილის Studio-ში ყოველ დამახსოვრებისას კომენტარის კითხვა.">
+<!ENTITY savePDFCmd.label "PDF-ის შენახვა">
+<!ENTITY savePDFCmd.tooltip "PDF-ის შენახვა">
+<!ENTITY saveProjectAsCmd.label "პროექტი შეინახე როგორც...">
+<!ENTITY saveProjectCmd.label "პროექტის შენახვა">
+<!ENTITY saveProjectCmd.toolbarlabel "შენახვა">
+<!ENTITY saveToStudio.label "Studio-ში შენახვა">
+<!ENTITY savedBy.label "შეინახა:">
+<!ENTITY scene.label "სცენა">
+<!ENTITY sceneBreakdown.label "სცენის გაშლა">
+<!ENTITY sceneBreakdownWithDesc.label "სცენის გაშლა აღწერილობით">
+<!ENTITY sceneDetails.desc      "შეიყვანეთ ახალი სცენის აღწერილობა.">
+<!ENTITY sceneDetails.existing  "ასევე შეგიძლიათ დაამატოთ ინფორმაცია ქვემორე არსებულ სცენას.">
+<!ENTITY sceneDetails.label     "სცენის დეტალები">
+<!ENTITY sceneDetails.select    "ამოირჩიეთ სცენა">
+<!ENTITY scenePageBreaks.label "გვერდის წყვეტა ყოველი სცენის შემდგომ.">
+<!ENTITY sceneSummary.label "სცენის შეჯამება">
+<!ENTITY sceneTag.label "სცენის თეგი">
+<!ENTITY sceneTagDialog.title "ამოირჩიეთ ფერი">
+<!ENTITY scenes.label           "სცენები">
+<!ENTITY schedule.desc      "სცენარზე გადაღების განრიგის დამატება.">
+<!ENTITY schedule.label     "წარმოების განრიგი">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "გადაღების დაგეგმვა">
+<!ENTITY scheduleID.label "განრიგის იდენტ.">
+<!ENTITY scheduled.label "დაგეგმილია">
+<!ENTITY scratchpad.label "ჩანაწერები">
+<!ENTITY script.accesskey "ს">
+<!ENTITY script.desc "პროექტში სცენარის დამატება.">
+<!ENTITY script.label "სცენარი">
+<!ENTITY scriptDay.label "სცენარის დღე">
+<!ENTITY scriptEditor.label "სცენარის რედაქტორი">
+<!ENTITY scriptFormatCmd.accesskey "ფ">
+<!ENTITY scriptFormatCmd.label "ფორმატის პარამეტრები">
+<!ENTITY scriptHeader.label "სცენარის ჰედერი">
+<!ENTITY scriptReport.desc  "სცენარის ავტომატურად შექმნილი შეჯამება.">
+<!ENTITY scriptReport.label "სცენარის შეჯამება">
+<!ENTITY scriptWithNotes.label  "სცენარი ჩანაწერებით">
+<!ENTITY selectCatalogType.label "ამოირჩიეთ კატალოგის ტიპი.">
+<!ENTITY sequence.label "სეგმენტი">
+<!ENTITY sequences.label "სეგმენტი">
+<!ENTITY server.label "სერვერი">
+<!ENTITY setting.label "სცენა">
+<!ENTITY sharing.label "გაზიარება">
+<!ENTITY shootDay.label "გადაღების დღე">
+<!ENTITY shootDays.label "გადაღების დღე">
+<!ENTITY shootingSchedule.label "გადაღების განრიგი">
+<!ENTITY shotList.label "სცენათა სია">
+<!ENTITY shotWords.label "სცენის სათ. სიტყვა">
+<!ENTITY shotholder.label "დააწკაპუნეთ ორჯერ სურათის დასამატებლად.">
+<!ENTITY showContinuedCount.label   "მიმდევარი გვერდების ჩვენება">
+<!ENTITY showDialogBreaks.label     "დიალოგების გამყოფების ჩვენება">
+<!ENTITY showFirstPageNumber.label    "გვერდის ნომრის პირველ გვერდზე ჩვენება">
+<!ENTITY showIDNumbers.label "იდენტ. ნომრების ჩვენება">
+<!ENTITY showNotes.label "ჩანიშვნების ჩვენება">
+<!ENTITY showPageNumbers.label        "გვერდების დანომრვა">
+<!ENTITY showProjectFileCmd.label "პროექტის ფაილის ჩვენება">
+<!ENTITY showSceneBreaks.label      "სცენის გამყოფების ჩვენება">
+<!ENTITY showSceneHeaders.label "სცენის ჰედერების ჩვენება">
+<!ENTITY showSceneNumbers.label       "სცენის ნომრების ჩვენება">
+<!ENTITY showScript.label "სცენარის ჩვენება">
+<!ENTITY showTagNames.label "ბარათებზე ტეგების ჩვენება">
+<!ENTITY showTitlePage.label "თავფურცელის ჩვენება">
+<!ENTITY showWorkdaysOnly.label "მხოლოდ სამუშაო დღეების ჩვენება">
+<!ENTITY signIn.label "შესვლა">
+<!ENTITY signOut.label "გასვლა">
+<!ENTITY signedOut.label "სისტემიდან გამოსული">
+<!ENTITY slideshowCmd.toolbarlabel "დაკვრა">
+<!ENTITY source.label "წყარო">
+<!ENTITY spellCheckAddToDictionary.accesskey "ლ">
+<!ENTITY spellCheckAddToDictionary.label "ლექსიკონში დამატება">
+<!ENTITY spellCheckCmd.label "მართლწერის შემოწმება...">
+<!ENTITY spellCheckIgnoreWord.accesskey "უ">
+<!ENTITY spellCheckIgnoreWord.label "სიტყვის უგულებელყოფა">
+<!ENTITY spellCheckNoSuggestions.label "შეთავაზება ვერ მოიძებნა">
+<!ENTITY splash.celtxCentral      "Project Central-ში შესვლა">
+<!ENTITY splash.celtxCentralDesc  "პაროლის შესაცვლელად ან პროფილის გასაახლებლად გამოიყენეთ Project Central">
+<!ENTITY splash.discussion      "განხილვა">
+<!ENTITY splash.downloadProject     "პროექტის გადმოწერა">
+<!ENTITY splash.downloadProjectDesc "პროექტის Celtx-ის სერვერიდან ჩამოტვირთვა">
+<!ENTITY splash.featureTour         "ფუნქციათა ჩვენება">
+<!ENTITY splash.forums      "ფორუმი">
+<!ENTITY splash.forumsDesc  "შემოუერთდით განხილვებს Celtx-ის ფორმზე">
+<!ENTITY splash.gettingStarted  "პირველი ნაბიჯები">
+<!ENTITY splash.guide               "Celtx-ის სახელმძღვანელო">
+<!ENTITY splash.help            "დახმარება">
+<!ENTITY splash.helpAccount     "ანგარიშის შექმნა">
+<!ENTITY splash.helpAccountDesc "ანგარიშის შექმნა სერვერული ფუნქციებით სარგებლობის საშუალებას გაძლევთ, როგორიცაა კოლაბორაცია და PDF-ის შექმნა">
+<!ENTITY splash.helpDesc        "მარცხენა ბმულები Celtx-ის სხვადასხვა რესურსს წარმოაჩენს">
+<!ENTITY splash.helpOptions         "დახმარების პარამეტრები">
+<!ENTITY splash.inbox           "შემოსული">
+<!ENTITY splash.logIn "შესვლა">
+<!ENTITY splash.newProject      "ახალი პროექტის დაწყება">
+<!ENTITY splash.newProjectDesc  "ახალი პროექტის შექმნა">
+<!ENTITY splash.openProject     "არსებულ პროექტის გახსნა">
+<!ENTITY splash.openProjectDesc "არსებულ პროექტებზე წვდომა ან ახლის დამატება.">
+<!ENTITY splash.options             "პარამეტრები">
+<!ENTITY splash.projectCentral  "Project Central">
+<!ENTITY splash.projects        "პროექტები">
+<!ENTITY splash.recentProjects      "ბოლო პროექტები">
+<!ENTITY splash.sampleDesc      "Celtx-ის ფუნქციების საჩვენებლად ჩვენ „ოზის ჯადოსანი“ (The Wizard of Oz) გამოვიყენეთ. ცალკეული სცენის წარმოებისათვის გამიზნულ სხვადასხვა სახის დოკუმენტებს იხილავთ. სამაგალითოთ ჩვენ დავურთეთ სცენარი, პერსონაჟების და სცენის მონაცემების ფორმები, სცენარის გაშლის ინფორმაცია და გადაღების გეგმის ნიმუში.">
+<!ENTITY splash.sampleProject   "სანიმუშო პროექტი">
+<!ENTITY splash.videoWalkthrus      "ვიდეო-სახელმძღვანელოები">
+<!ENTITY splash.videoWalkthrusDesc  "ფუნქციების მოკლე ვიდეო-სახელმძღვანელოები">
+<!ENTITY splash.walkthru            "სამწუთიანი სახელმძღვანელო">
+<!ENTITY splash.webServices     "ვებ-სერვისები">
+<!ENTITY splash.welcomePrefix     "კეთილი იყოს თქვენი მობრძანება Celtx-ში">
+<!ENTITY splash.welcomePrefixDesc "მედიის პრე-პროდუქცია">
+<!ENTITY splash.wiki      "ვიკი-გიდი">
+<!ENTITY splash.wikiDesc  "Celtx-ის ახლოს გაცნობის წყარო">
+<!ENTITY splashScreen.label "ბანერი გამოძახებისას">
+<!ENTITY stackTrace.desc        "ქვემორე მონაცემები შესაძლოა გამოგვადგეს. გთხოვთ შეიყვანოთ, თუ ხარვეზის შეტყობინებას აპირებთ.">
+<!ENTITY stageplay.desc  "საერთაშორისო ფორმატის მქონე პიესის დამატება.">
+<!ENTITY stageplay.label    "პიესა">
+<!ENTITY start.label "დაწყება">
+<!ENTITY startOfDay.label "დღის დასაწყისი">
+<!ENTITY startOfShooting.label "გადაღების დასაწყისი">
+<!ENTITY startOfWeek.label "კვირის დასაწყისი">
+<!ENTITY statistics.label "სტატისტიკა">
+<!ENTITY storyboard.desc    "კადრირების სურათების კადრთა სეგმენტებად ორგანიზება.">
+<!ENTITY storyboard.label   "კადრირება">
+<!ENTITY strikethrough.label "გადახაზული">
+<!ENTITY stripboard.label "წარმოების დაფა">
+<!ENTITY studio.label "Studio">
+<!ENTITY studioAuthDialog.title "ავტორიზაცია Celtx Studio-ში">
+<!ENTITY studioAuthDialog.desc "Celtx Studio-ში შესასვლელი">
+<!ENTITY studioProjects.label "Studio-ს პროექტები">
+<!ENTITY subject.label "თემა">
+<!ENTITY summary.label "შეჯამება">
+<!ENTITY syncDialog.title "სინქრონი">
+<!ENTITY tagItemCmd.label           "მონიშვნა">
+<!ENTITY tagline.label      "ტეგლაინი">
+<!ENTITY tags.label "ტეგები">
+<!ENTITY text.label "ტექსტი">
+<!ENTITY textDocument.desc  "ტექსტური დოკუმენტის დამატება. გამოსადეგია აუთლაინისთვის, თრითმენთისთვის ან სინოფსისისთვის.">
+<!ENTITY textDocument.label "ტექსტი">
+<!ENTITY theatreTmplActTitle "მოქმედება I">
+<!ENTITY theatreTmplSceneTitle "სცენა 1">
+<!ENTITY thirtyMinutes.label "30 წუთი">
+<!ENTITY threeHours.label "3 საათი">
+<!ENTITY time.label "დრო">
+<!ENTITY title.label        "სათაური">
+<!ENTITY titlePage.label "თავფურცელი">
+<!ENTITY toggleEditing.label "რედაქტირების შენაცვლება">
+<!ENTITY togglePaginationCmd.label    "გვერდების დანომვრის ჩართვა">
+<!ENTITY toggleScratchpadCmd.label  "ჩანაწერების გახნა/დაკეტვა">
+<!ENTITY toggleSidebarCmd.accesskey "გ">
+<!ENTITY toggleSidebarCmd.label "გვერდითი ზოლი">
+<!ENTITY toolbox.label "ხელსაწყოები">
+<!ENTITY topOfNextPage.label        "შემდეგი გვერდის თავზე">
+<!ENTITY tryAgain.label "შეეცადოთ ხელახლა">
+<!ENTITY twoColumns.label "ორი სვეტი">
+<!ENTITY twoHours.label "2 საათი">
+<!ENTITY typeset.label "დაფორმატება">
+<!ENTITY under14.label "14 წლის ჯერ არ ვარ.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "ხაზგასმა">
+<!ENTITY unorderedList.label "არარიგითი სია">
+<!ENTITY untitled.label "უსათაურო">
+<!ENTITY update.label "განახლება">
+<!ENTITY updateInbox.label "შემოსულის განახლება">
+<!ENTITY uploadDialog.title         "პროექტის ატვირთვა">
+<!ENTITY uploadProjectCmd.label "პროექტის ატვირთვა...">
+<!ENTITY uploadProjectCmd.toolbarlabel "ატვირთვა">
+<!ENTITY uppercaseCmd.label "დიდი ასოები">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "მომხმარებლის სახელი">
+<!ENTITY video.label "ვიდეო">
+<!ENTITY videoTutorialCmd.label "ვიდეო სახელმძღვანელო">
+<!ENTITY viewProjectOnline.label "პროექტის ონლაინ-დათვალიერება">
+<!ENTITY wardrobeSheet.desc     "შეიყვანეთ ახალი კოსტიუმის აღწერილობა.">
+<!ENTITY wardrobeSheet.existing  "ასევე შეგიძლიათ დაამატოთ ინფორმაცია ქვემორე არსებული კოსტიუმების შესახებ.">
+<!ENTITY wardrobeSheet.label    "კოსტიუმები">
+<!ENTITY wardrobeSheet.select   "ამოირჩიეთ კოსტიუმი">
+<!ENTITY webPanel.desc              "Celtx-ის ვებ-სერვისები.">
+<!ENTITY webPanel.label             "ვებ-სერვისები">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Celtx-ის ანგარიშის შექმნა">
+<!ENTITY webPanelIntro.text1 "ისარგებლეთ Celtx-ის ყველა ფუნქციით და დარეგისტრირდით უფასო და უსაფრთხო ვებ-სერვისებზე.">
+<!ENTITY webPanelIntro.text2 "*დაამარქაფეთ* თქვენი მთლიანი პროექტი Celtx-ის დისტანციურ, უსაფრთხო სერვერზე, რათა შეინარჩუნოთ უსაფრთხო ასლი თქვენი მყარი დისკის მოპარვის ან დაზიანების შემთხვევაში.">
+<!ENTITY webPanelIntro.text3 "*კოლაბორაცია* თქვენს კოლეგებთან პროექტის გაზიარების და პროექტის პირადი სივრცის შექმნის ფუნქციით.">
+<!ENTITY webPanelIntro.text4 "*გამოაქვეყნეთ* თქვენი მედია პროექტი Project Central-ზე და მიიღეთ რეცენზიები და შენიშვნები, ასევე შემოუერთდით მედიაშემქმნელების ჩვენს მზარდ, მსოფლიო საზოგადოებას.">
+<!ENTITY webPanelIntro.text5 "თქვენი Celtx პროექტის *iPhone*-ისათვის ოპტიმიზებულ ფორმატში ხილვა.">
+<!ENTITY wiz.clickFinish "ოსტატის დასასრულებლად დააწკაპუნეთ „დასრულება“-ზე.">
+<!ENTITY wiz.clickNext "დასაწყებად დააწკაპუნეთ ღილაკზე „შემდეგ”.">
+<!ENTITY workweek.label "სამუშაო კვირა">
+<!ENTITY writer.label "ავტორი">
+<!ENTITY zoom.label "მასშტაბი">

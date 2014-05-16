@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key       "M">
+<!ENTITY minimizeWindow.label     "Küçült">
+<!ENTITY bringAllToFront.label    "Hepsini önplana getir">
+<!ENTITY zoomWindow.label         "Odakla">
+<!ENTITY windowMenu.label         "Pencere">
+
+<!ENTITY helpMenu.label           "Yardım"> 
+<!ENTITY helpMenu.accesskey       "Y"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "Yardım"> 
+<!ENTITY helpMenuWin.accesskey    "Y">
+<!ENTITY aboutCmd.label           "&brandFullName; hakkında">
+<!ENTITY aboutCmd.accesskey       "H">
+<!ENTITY helpContents.label       "Yardım içeriği">
+<!ENTITY helpContents.accesskey   "m">
+<!ENTITY helpContentsMac.label    "&brandShortName; yardımı">
+<!ENTITY helpForIEUsers.label     "Internet Explorer kullanıcılarına...">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey   "/">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.accesskey     "R">
+<!ENTITY helpReleaseNotes.label         "Sürüm notları">
+<!ENTITY updateCmd.accesskey            "t">
+<!ENTITY updateCmd.label                "Güncellemeleri denetle...">
+
+<!ENTITY preferencesCmdMac.label        "Tercihler...">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Servisler">
+
+<!ENTITY hideThisAppCmdMac.label        "&brandShortName; uygulamasını gizle">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Diğerlerini gizle">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Tümünü göster">

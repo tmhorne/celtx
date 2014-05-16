@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE RDF [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<RDF:RDF xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cx="http://celtx.com/NS/v1/"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <cx:Palette RDF:about="urn:celtx:palette-index"
+              dc:title="&default.label;">
+    <cx:categories RDF:resource="#categories" />
+  </cx:Palette>
+
+  <RDF:Seq RDF:ID="categories">
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Cameras" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Lights" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/ArtPackSamples" />
+  </RDF:Seq>
+
+  <RDF:Seq RDF:about="http://celtx.com/NS/v1/Cameras">
+    <RDF:li RDF:resource="#camera" />
+  </RDF:Seq>
+
+  <RDF:Description RDF:ID="camera"
+                   dc:title="&bdc.camera;"
+                   cx:localFile="chrome://default-palette/content/camera.svg" />
+
+  <RDF:Seq RDF:about="http://celtx.com/NS/v1/Lights">
+    <RDF:li RDF:resource="#light1" />
+    <RDF:li RDF:resource="#light2" />
+  </RDF:Seq>
+
+  <RDF:Description RDF:ID="light1"
+                   dc:title="&light.spot.label;"
+                   cx:localFile="chrome://default-palette/content/light_spot.svg" />
+  <RDF:Description RDF:ID="light2"
+                   dc:title="&light.flood.label;"
+                   cx:localFile="chrome://default-palette/content/light_flood.svg" />
+
+<!--
+  <RDF:Seq RDF:about="http://celtx.com/NS/v1/People">
+    <RDF:li RDF:resource="#person" />
+  </RDF:Seq>
+
+  <RDF:Description RDF:ID="person"
+                   dc:title="&person.label;"
+                   cx:localFile="chrome://default-palette/content/person.svg" />
+-->
+
+  <RDF:Seq RDF:about="http://celtx.com/NS/v1/ArtPackSamples"
+           dc:title="Art Pack Samples">
+    <RDF:li RDF:resource="#sample1" />
+    <RDF:li RDF:resource="#sample2" />
+  </RDF:Seq>
+
+  <RDF:Description RDF:ID="sample1"
+                   dc:title="&man.label;"
+                   cx:localFile="chrome://default-palette/content/man.svg"
+                   cx:icon="chrome://celtx/skin/documents/character.png" />
+
+  <RDF:Description RDF:ID="sample2"
+                   dc:title="&woman.label;"
+                   cx:localFile="chrome://default-palette/content/woman.svg"
+                   cx:icon="chrome://celtx/skin/documents/character.png" />
+
+</RDF:RDF>

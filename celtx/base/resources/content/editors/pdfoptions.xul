@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/browser.css" type="text/css"?>
+<?xml-stylesheet href="chrome://mozapps/content/preferences/preferences.css"
+                 type="text/css"?>
+
+<!DOCTYPE prefwindow [
+#include ../celtx-entities.inc
+]>
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="pdfoptions"
+        title="&scriptFormatCmd.label;"
+        ondialogaccept="accepted()">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/pdfoptions.js"/>
+
+  <stringbundle id="bundlePreferences"
+          src="chrome://browser/locale/preferences/preferences.properties"/>
+
+  <prefpane id="panePDF"
+            onpaneload="loaded()"
+            label="&pdfOptions.title;">
+
+  <preferences>
+    <preference id="dialogBreaksEnabled"
+                name="celtx.pdf.dialog.breaks.enabled"
+                type="bool"/>
+    <preference id="dialogBreakBottomText"
+                name="celtx.pdf.dialog.breakbottom.text"
+                type="unichar"/>
+    <preference id="dialogBreakTopText"
+                name="celtx.pdf.dialog.breaktop.text"
+                type="unichar"/>
+    <preference id="dialogAutoCharContinueds"
+                name="celtx.pdf.dialog.autocharcontinueds"
+                type="bool"/>
+    <preference id="sceneBreaksEnabled"
+                name="celtx.pdf.scene.breaks.enabled"
+                type="bool"/>
+    <preference id="sceneBreakBottomText"
+                name="celtx.pdf.scene.breakbottom.text"
+                type="unichar"/>
+    <preference id="sceneBreakTopText"
+                name="celtx.pdf.scene.breaktop.text"
+                type="unichar"/>
+    <preference id="sceneContinuedsNumbered"
+                name="celtx.pdf.scene.continuedsnumbered"
+                type="bool"/>
+    <preference id="scenePageBreaks"
+                name="celtx.pdf.scene.pagebreaks"
+                type="bool"/>
+    <preference id="sceneLinesBetween"
+                name="celtx.pdf.scene.linesbetween"
+                type="int"/>
+    <preference id="audioFormat"
+                name="celtx.pdf.audio.format"
+                type="string"/>
+  </preferences>
+
+  <tabbox>
+    <hbox class="tabbrowser-strip">
+      <tabs id="pdftabs"
+            class="tabbrowser-tabs noalltabs"
+            closebutton="false"
+            setfocus="false"
+            flex="1">
+        <tab label="&general.label;"
+             class="tabbrowser-tab noimagetab noclosetab"/>
+        <tab id="morestab"
+             label="&pdfOptionsCmd.label;"
+             class="tabbrowser-tab noimagetab noclosetab"/>
+        <tab id="headertab"
+             label="&scriptHeader.label;"
+             class="tabbrowser-tab noimagetab noclosetab"/>
+        <tab id="bbctab"
+             label="&bbc.options.label;"
+             class="tabbrowser-tab noimagetab noclosetab"
+             hidden="true" />
+      </tabs>
+    </hbox>
+    <tabpanels class="tabbrowser-tabpanels">
+      <tabpanel orient="vertical">
+        <hbox align="center">
+          <label value="&paperSize.label;&colon;"/>
+          <menulist id="paperlist">
+            <menupopup>
+              <menuitem label="US Letter"
+                        value="USLetter"
+                        selected="true"/>
+              <menuitem label="A4"
+                        value="A4"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <groupbox id="formatgroupbox">
+          <caption label="&format.label;"/>
+          <radiogroup id="theatreformatgroup">
+            <radio label="&international.label;"
+                   value="stageplay"
+                   selected="true"/>
+            <radio label="&american.label;"
+                   value="amstageplay"/>
+          </radiogroup>
+          <radiogroup id="avformatgroup">
+            <radio label="&twoColumns.label;"
+                   value="columns"
+                   selected="true"/>
+            <radio label="&shotList.label;"
+                   value="shotlist"/>
+          </radiogroup>
+        </groupbox>
+        <hbox id="scenenumberbox"
+              align="center">
+          <label value="&showSceneNumbers.label;&colon;"/>
+          <menulist id="scenenumberlist">
+            <menupopup>
+              <menuitem label="&both.label;"
+                        value="both"
+                        selected="true"/>
+              <menuitem label="&left.label;"
+                        value="left"/>
+              <menuitem label="&right.label;"
+                        value="right"/>
+              <menuitem label="&none.label;"
+                        value="none"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox id="scenespacingbox"
+              align="center">
+          <label value="&linesBetweenScenes.label;&colon;"/>
+          <menulist id="scenespacinglist"
+                    preference="sceneLinesBetween">
+            <menupopup>
+              <menuitem label="1"
+                        value="1"/>
+              <menuitem label="2"
+                        value="2"/>
+              <menuitem label="3"
+                        value="3"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <checkbox id="scenePageBreaksBox"
+                  hidden="true"
+                  label="&scenePageBreaks.label;"
+                  preference="scenePageBreaks"/>
+        <checkbox id="avshowheaders"
+                  label="&showSceneHeaders.label;"/>
+        <checkbox id="showtitlepage"
+                  label="&showTitlePage.label;"
+                  checked="true"/>
+        <checkbox id="showcharnumbers"
+                  label="&showIDNumbers.label;"
+                  hidden="true"/>
+        <hbox id="audioformatbox"
+              align="center"
+              hidden="true">
+          <label value="&format.label;&colon;"/>
+          <menulist id="audioformatlist"
+                    preference="audioFormat">
+            <menupopup>
+              <menuitem label="&standard.label;"
+                        value="default"/>
+              <menuitem label="&bbcCueStyle.label;"
+                        value="bbc_cue"/>
+              <menuitem label="&bbcSceneStyle.label;"
+                        value="bbc_scene"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+      </tabpanel>
+
+
+      <tabpanel orient="vertical">
+        <hbox>
+          <checkbox id="dialogBreakCheckbox"
+                    label="&showDialogBreaks.label;&colon;"
+                    oncommand="doEnabling()"
+                    preference="dialogBreaksEnabled"/>
+        </hbox>
+        <grid style="margin-left: 30px;">
+          <cols>
+            <col/>
+            <col flex="1"/>
+          </cols>
+          <rows>
+            <row align="center">
+              <label id="dialogTopLabel"
+                     disabled="true"
+                     value="&bottomOfPage.label;&colon;"/>
+              <textbox id="dialogBottomTextbox"
+                       flex="1"
+                       disabled="true"
+                       preference="dialogBreakBottomText"/>
+            </row>
+            <row align="center">
+              <label id="dialogBottomLabel"
+                     disabled="true"
+                     value="&topOfNextPage.label;&colon;"/>
+              <textbox id="dialogTopTextbox"
+                       disabled="true"
+                       flex="1"
+                       preference="dialogBreakTopText"/>
+            </row>
+          </rows>
+        </grid>
+      
+        <hbox>
+          <checkbox id="charContinuedsCheckbox"
+                    label="&autoCharContinueds.label;"
+                    preference="dialogAutoCharContinueds"/>
+        </hbox>
+      
+        <hbox>
+          <checkbox id="sceneBreakCheckbox"
+                    label="&showSceneBreaks.label;&colon;"
+                    oncommand="doEnabling()"
+                    preference="sceneBreaksEnabled"/>
+        </hbox>
+      
+        <grid style="margin-left: 30px;">
+          <cols>
+            <col/>
+            <col flex="1"/>
+          </cols>
+          <rows>
+            <row align="center">
+              <label id="sceneBottomLabel"
+                     disabled="true"
+                     value="&bottomOfPage.label;&colon;"/>
+              <textbox id="sceneBottomTextbox"
+                       flex="1"
+                       disabled="true"
+                       preference="sceneBreakBottomText"/>
+            </row>
+            <row align="center">
+              <label id="sceneTopLabel"
+                     disabled="true"
+                     value="&topOfNextPage.label;&colon;"/>
+              <textbox id="sceneTopTextbox"
+                       disabled="true"
+                       flex="1"
+                       preference="sceneBreakTopText"/>
+            </row>
+          </rows>
+        </grid>
+
+        <hbox style="margin-left: 30px;">
+          <checkbox id="continuedNumbersCheckbox"
+                    label="&showContinuedCount.label;"
+                    disabled="true"
+                    preference="sceneContinuedsNumbered"/>
+        </hbox>
+      </tabpanel>
+
+
+      <tabpanel orient="vertical">
+        <checkbox id="avshowmainheader"
+                  label="&showScriptHeader.label;"
+                  oncommand="doEnabling()"/>
+        <grid>
+          <columns>
+            <column/>
+            <column flex="1"/>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows id="headerrows">
+            <row>
+              <label value="&project.label;&colon;"/>
+              <textbox id="headerfield1A"/>
+              <label value="&writer.label;&colon;"/>
+              <textbox id="headerfield1B"/>
+            </row>
+            <row>
+              <label value="&title.label;&colon;"/>
+              <textbox id="headerfield2A"/>
+              <label value="&producer.label;&colon;"/>
+              <textbox id="headerfield2B"/>
+            </row>
+            <row>
+              <label value="&subject.label;&colon;"/>
+              <textbox id="headerfield3A"/>
+              <label value="&director.label;&colon;"/>
+              <textbox id="headerfield3B"/>
+            </row>
+            <row>
+              <label value="&comment.label;&colon;"/>
+              <textbox id="headerfield4A"/>
+              <label value="&contact.label;&colon;"/>
+              <textbox id="headerfield4B"/>
+            </row>
+          </rows>
+        </grid>
+      </tabpanel>
+
+
+      <tabpanel orient="vertical">
+        <grid>
+          <columns>
+            <column />
+            <column flex="1" />
+          </columns>
+          <rows>
+            <row>
+              <label value="&bbc.showTitle.label;&colon;" />
+              <textbox id="bbcshowname" />
+            </row>
+            <row>
+              <label value="&bbc.sketchTitle.label;&colon;" />
+              <textbox id="bbcsketchname" />
+            </row>
+            <row>
+              <label value="&contactInformation.label;&colon;" />
+              <textbox id="bbccontact"
+                       multiline="true"
+                       rows="5" />
+            </row>
+          </rows>
+        </grid>
+      </tabpanel>
+    </tabpanels>
+  </tabbox>
+
+  </prefpane>
+
+</prefwindow>
+

@@ -1,0 +1,36 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "최소화">
+<!ENTITY bringAllToFront.label "맨 앞으로">
+<!ENTITY zoomWindow.label "창 확대">
+<!ENTITY windowMenu.label "창">
+<!ENTITY helpMenu.label "도움말">
+<!ENTITY helpMenu.accesskey "H">
+<!ENTITY helpMenuWin.label "도움말">
+<!ENTITY helpMenuWin.accesskey "H">
+<!ENTITY aboutCmd.label "&brandFullName; 정보">
+<!ENTITY aboutCmd.accesskey "A">
+<!ENTITY helpContents.label "도움말 목차">
+<!ENTITY helpContents.accesskey "H">
+<!ENTITY helpContentsMac.label "&brandShortName; 도움말">
+<!ENTITY helpForIEUsers.label "Internet Explorer 사용자">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+<!ENTITY helpReleaseNotes.label "온라인 제품 소개서">
+<!ENTITY helpReleaseNotes.accesskey "N">
+<!ENTITY updateCmd.label "업데이트 확인...">
+<!ENTITY updateCmd.accesskey "o">
+<!ENTITY preferencesCmdMac.label "환경 설정...">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+<!ENTITY servicesMenuMac.label "서비스">
+<!ENTITY hideThisAppCmdMac.label "&brandShortName; 숨기기">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+<!ENTITY hideOtherAppsCmdMac.label "모두 숨기기">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+<!ENTITY showAllAppsCmdMac.label "모두 보이기">

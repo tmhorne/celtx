@@ -1,0 +1,966 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Email">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Hoofdstuk">
+<!ENTITY chapters.label "Hoofdstukken">
+<!ENTITY chapter.toolbarlabel "Hs">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Toon Inhoud">
+<!ENTITY exportCatalog.label "Exporteer Catalogus">
+<!ENTITY novel.desc "Voeg een roman toe, met indexkaarten en annotaties.">
+<!ENTITY novel.label "Roman">
+<!ENTITY showBreakdownInScript.label "Toon Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Toon Dialoog Nummers">
+
+<!ENTITY timer.settings.label "Instellinen">
+<!ENTITY timer.autostart.label "Start de sessie als het script opent.">
+<!ENTITY timer.schedule.label "Tijdschema">
+<!ENTITY timer.useSchedule.label "Gebruik geplande pauzes">
+<!ENTITY timer.workMinutes.label "Werk (minuten):">
+<!ENTITY timer.breakMinutes.label "Pauze (minuten):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Toon een dialoog">
+<!ENTITY timer.endSession.label "Einde Sessie">
+<!ENTITY timer.flashTimer.label "Flash de timer">
+<!ENTITY timer.resetSession.label "Reset Sessie">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Rapporten">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Starttijd Sessie:">
+<!ENTITY timer.totalWritingTime.label "Totale Tijdsduur Schrijven:">
+<!ENTITY timer.totalBreakTime.label "Totale Tijdsduur Pauze:">
+<!ENTITY timer.totalTime.label "Totale Tijdsduur:">
+<!ENTITY timer.wordsWritten.label "Aantal Geschreven Woorden">
+
+<!ENTITY timer.allSessions.label "Alle Sessies">
+<!ENTITY timer.sessionDetail.label "Sessie Detail">
+<!ENTITY timer.scriptSummary.label "Script Samenvatting">
+<!ENTITY timer.writingGoals.label "Schrijf Doelen">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Sessie Rapportage">
+<!ENTITY timer.totalSessionTime.header "Totale Tijdsduur Sessie">
+<!ENTITY timer.totalSessionTime.label "Total tijdsduur sessie">
+<!ENTITY timer.totalWordsWritten.header "Totale Aantal Geschreven Woorden">
+<!ENTITY timer.totalWordsWritten.label "Totale aantal geschreven woorden">
+<!ENTITY timer.noSessionsToDisplay.label "Er zijn geen te tonen sessies">
+<!ENTITY timer.sessionNo.label "Sessie #">
+<!ENTITY timer.date.label "Datum">
+
+<!ENTITY timer.tweetThis.label "Tweet Dit!">
+<!ENTITY timer.startDate.label "Start datum">
+<!ENTITY timer.startTime.label "Start tijd">
+<!ENTITY timer.endTime.label "Einde tijd">
+<!ENTITY timer.breakTime.label "Pauze tijd">
+
+<!ENTITY timer.sessionStartWords.label "Woorden bij start van de sessie">
+<!ENTITY timer.sessionEndWords.label "Woorden bij einde van de sessie">
+<!ENTITY timer.newWords.header "Nieuwe Woorden">
+<!ENTITY timer.noNewWords.label "Geen toename van het aantal woorden.">
+<!ENTITY timer.newDialog.header "Nieuwe Dialoog">
+<!ENTITY timer.noNewDialog.label "Geen toename van de hoeveelheid dialoog.">
+<!ENTITY timer.newCharacters.header "Nieuwe Karakters">
+<!ENTITY timer.noNewCharacters.label "Geen nieuwe karakters toegevoegd.">
+<!ENTITY timer.newPages.header "Nieuwe Pagina's">
+<!ENTITY timer.newScenes.header "Nieuwe Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC Options">
+<!ENTITY bbc.showTitle.label "Title of Show">
+<!ENTITY bbc.sketchTitle.label "Title of Sketch">
+<!ENTITY editText.title "Edit Text">
+<!ENTITY sketch.fillColour.tooltip "Fill Colour">
+<!ENTITY sketch.group.tooltip "Group">
+<!ENTITY sketch.lower.tooltip "Lower">
+<!ENTITY sketch.lowerToBottom.tooltip "Lower to Bottom">
+<!ENTITY sketch.raise.tooltip "Raise">
+<!ENTITY sketch.raiseToTop.tooltip "Raise to Top">
+<!ENTITY sketch.strokeColour.tooltip "Stroke Colour">
+<!ENTITY sketch.ungroup.tooltip "Ungroup">
+
+<!ENTITY custom.label "Custom">
+<!ENTITY saveAsPreset.label "Save as Preset">
+<!ENTITY sceneLocking.title "Scene Locking">
+<!ENTITY sceneNumbering.label "Scene Numbering">
+<!ENTITY scenenumber.after.label "After">
+<!ENTITY scenenumber.before.label "Before">
+<!ENTITY scenenumber.example.label "Example">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Number">
+<!ENTITY scenenumber.position.label "Position">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Reset All Numbers">
+<!ENTITY scenenumber.suffix.label "Suffix">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "Film">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "Theater">
+<!ENTITY project.audioplay.label "Audio">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Add Image">
+<!ENTITY addPaletteObjects.label "Get Art Packs">
+<!ENTITY addShot.label "Add Shot">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC Scene">
+<!ENTITY bdc.cameras "Cameras">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Blue">
+<!ENTITY colour.cherry "Cherry">
+<!ENTITY colour.gold "Gold">
+<!ENTITY colour.green "Green">
+<!ENTITY colour.pink "Pink">
+<!ENTITY colour.salmon "Salmon">
+<!ENTITY colour.white "White">
+<!ENTITY colour.yellow "Yellow">
+<!ENTITY currentRevision.label "Current Revision">
+<!ENTITY createNewRevision.tooltip "Create New Revision">
+<!ENTITY default.label "Default">
+<!ENTITY enableSceneLocking.label "Lock Scenes">
+<!ENTITY fixNumbers.label "Fix">
+<!ENTITY furniture.label "Furniture">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Flood">
+<!ENTITY light.spot.label "Spot">
+<!ENTITY linesBetweenScenes.label "Lines between scenes">
+<!ENTITY man.label "Man">
+<!ENTITY numbers.bothNos "Both #s">
+<!ENTITY numbers.leftNo "Left #">
+<!ENTITY numbers.none "None">
+<!ENTITY numbers.rightNo "Right #">
+<!ENTITY omitScene.label "Omit Scene">
+<!ENTITY palette.label "Palette">
+<!ENTITY palettes.label "Palettes">
+<!ENTITY paletteTree.tooltip "Drag and drop objects onto your sketch">
+<!ENTITY people.label "People">
+<!ENTITY person.label "Person">
+<!ENTITY preventEditing.label "Text Lock">
+<!ENTITY resetRevisionMode.label "Reset Revision Mode">
+<!ENTITY revisionColour.desc "This will be used as the default revision colour for any edits made to the script.">
+<!ENTITY revisionColour.label "Revision Colour">
+<!ENTITY revisionMarks.all "All Marks">
+<!ENTITY revisionMarks.current "Current Marks">
+<!ENTITY revisionMarks.hide "Hide Marks">
+<!ENTITY revisionMarks.mark.label "Mark">
+<!ENTITY revisionMarks.unmark.label "Unmark">
+<!ENTITY revisionMode.label "Revision Mode">
+<!ENTITY revisionName.label "Revision Name">
+<!ENTITY revisionOptions.title "Revision Options">
+<!ENTITY shotSetup.label "Sketch">
+<!ENTITY shotSetup.desc "Add a sketch to your project.">
+<!ENTITY showScriptHeader.label "Show Script Header">
+<!ENTITY standard.label "Standard">
+<!ENTITY startNewRevision.label "Start a New Revision">
+<!ENTITY storyboard.showImages.label "Show Images">
+<!ENTITY storyboard.showSetups.label "Show Sketches">
+<!ENTITY storyboard.showBoth.label "Toon Beiden">
+<!ENTITY woman.label "Vrouw">
+
+<!ENTITY light.bank.label "Banklight">
+<!ENTITY bathtub.label "Badkuip">
+<!ENTITY boy.label "Jongen">
+<!ENTITY car.label "Auto">
+<!ENTITY chair.label "Stoel">
+<!ENTITY coffeetable.label "Koffietafel">
+<!ENTITY couch.label "Bank">
+<!ENTITY crowd.label "Menigte">
+<!ENTITY endtable.label "Einde Tafel">
+<!ENTITY girl.label "Meisje">
+<!ENTITY group.label "Groep"> <!-- Group of people -->
+<!ENTITY house.label "Huis">
+<!ENTITY building.label "Gebouw"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pickup Truck">
+<!ENTITY sink.label "Sink"> <!-- Gootsteen -->
+<!ENTITY spotlight.label "Spotlicht">
+<!ENTITY street.label "Straat">
+<!ENTITY toilet.label "Toilet">
+<!ENTITY tree.label "Boom">
+<!ENTITY van.label "Vrachtwagen">
+<!ENTITY videocamera.label "Videocamera">
+
+<!ENTITY createTemplate.label "Creëer een Template">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "Get Celtx Tools">
+<!ENTITY myStudio.label "My Celtx">
+<!ENTITY openFromStudio.label "Open from Celtx">
+<!ENTITY owner.label "Owner">
+<!ENTITY personal.label "Personal">
+<!ENTITY saveCommentCheckbox.label "Ask me for a comment when saving to Celtx.">
+<!ENTITY saveToStudio.label "Save to Celtx">
+<!ENTITY savedBy.label "Saved By">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx Authentication">
+<!ENTITY studioAuthDialog.desc "Celtx Login">
+<!ENTITY studioProjects.label "Celtx Projects">
+<!ENTITY toolbox.label "Toolbox">
+
+<!ENTITY access.label "Toegang">
+<!ENTITY actorProfile.desc "Voeg een acteursbeschrijving toe.">
+<!ENTITY actorProfile.label "Acteur">
+<!ENTITY adaptTo.label "Aanpassen aan">
+<!ENTITY add.label "Toevoegen">
+<!ENTITY addCardCmd.label "Voeg kaart toe">
+<!ENTITY addCmd.label "Toevoegen">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Details item">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Item selecteren">
+<!ENTITY addFolder.label "Map toevoegen...">
+<!ENTITY addFolderCmd.label "Map toevoegen">
+<!ENTITY addImages.label "Afbeeldingen toevoegen">
+<!ENTITY addItem.label "Item toevoegen...">
+<!ENTITY addItemCmd.label "Item toevoegen">
+<!ENTITY addNote.label "Notitie toevoegen">
+<!ENTITY addSequenceCmd.toolbarlabel "Sequentie toevoegen">
+<!ENTITY advanced.label "Gevorderd">
+<!ENTITY alignCenter.label "Opmaak Centraal">
+<!ENTITY alignJustified.label "Opmaak Uitgelijnd">
+<!ENTITY alignLeft.label "Opmaak Links">
+<!ENTITY alignRight.label "Opmaak Rechts">
+<!ENTITY allShootDays.label "Alle draaidagen">
+<!ENTITY allUppercase.label "ALLES">
+<!ENTITY american.label "Amerikaans">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Deze eigenschappen zijn alleen beschikbaar voor het aanmaken van een PDF.">
+<!ENTITY audioplay.desc "Voeg audio toe aan je project.">
+<!ENTITY audioplay.label "Speel audio">
+<!ENTITY authDialog.description "Deze actie vereist dat u inlogt op uw Celtx account">
+<!ENTITY authDialog.title "Celtx authentificatie">
+<!ENTITY author.label "Auteur">
+<!ENTITY autoCharContinueds.label "Toon voortgang karakter">
+<!ENTITY autoSaveProject.label "Automatisch opslaan project">
+<!ENTITY autoparenthesize.label "Maak nadruk wanneer  '(' is getypt">
+<!ENTITY avScript.desc "Voeg een audio-visual scenario toe aan je project.">
+<!ENTITY avScript.label "A/V scenario">
+<!ENTITY basedOn.label "Gebaseerd op">
+<!ENTITY bdc.actor        "Acteur">
+<!ENTITY bdc.addlabour "Extra werkzaamheden">
+<!ENTITY bdc.animals "Dieren">
+<!ENTITY bdc.camera "Camera">
+<!ENTITY bdc.cast "Cast">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "Bouw">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "Electriciteit">
+<!ENTITY bdc.equip "Speciale materialen">
+<!ENTITY bdc.extras "Figuranten">
+<!ENTITY bdc.greenery "Planten">
+<!ENTITY bdc.hair "Haar">
+<!ENTITY bdc.handler "Dierentrainer">
+<!ENTITY bdc.lights "Verlichting">
+<!ENTITY bdc.livestock "Vee">
+<!ENTITY bdc.location "Locatie">
+<!ENTITY bdc.makeup "Visagie">
+<!ENTITY bdc.mechfx "Mechanische effecten">
+<!ENTITY bdc.misc "Diversen">
+<!ENTITY bdc.music "Muziek">
+<!ENTITY bdc.opticalfx "Optische effecten">
+<!ENTITY bdc.painting "Schilderij">
+<!ENTITY bdc.prodnotes "Notities Productie">
+<!ENTITY bdc.props "Requisieten">
+<!ENTITY bdc.security "Beveiliging">
+<!ENTITY bdc.set "Decors">
+<!ENTITY bdc.setdressing "Aankleding Decors">
+<!ENTITY bdc.sound "Geluid">
+<!ENTITY bdc.soundfx "Geluidseffecten">
+<!ENTITY bdc.specialfx "Special Effects">
+<!ENTITY bdc.storyboard "Storyboard">
+<!ENTITY bdc.stunts "Stunts">
+<!ENTITY bdc.vehicles "Voertuigen">
+<!ENTITY bdc.wardrobe "Kleding">
+<!ENTITY bdc.weapons "Wapens">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Vet">
+<!ENTITY bookmark.desc "Voeg een weblink toe.">
+<!ENTITY bookmark.label "Favoriet">
+<!ENTITY both.label "Beide">
+<!ENTITY bottomOfPage.label "Onderkant van de pagina">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Voeg informatie breakdown toe voor een script.">
+<!ENTITY breakdown.label    "Breakdown">
+<!ENTITY breakdownReport.label "Rapportage Breakdown">
+<!ENTITY brokenSceneEventWarning.label "De gebeurtenis komt overeen met een scène die niet meer bestaat.">
+<!ENTITY browseCmd.label "Bladeren">
+<!ENTITY byline.label "door">
+<!ENTITY calendar.desc "Voeg een kalender toe aan je project.">
+<!ENTITY calendar.label "Kalender">
+<!ENTITY callSheet.label "Call Sheet">
+<!ENTITY cast.label "Rolverdeling">
+<!ENTITY castOfCharacters.label "Rolverdeling karakters">
+<!ENTITY catalog.desc "Voeg een lijst van productie-items toe aan je project.">
+<!ENTITY catalog.label "Lijst">
+<!ENTITY catalogAddItem.tooltip "Voeg item toe aan de lijst">
+<!ENTITY catalogDeleteItem.tooltip "Verwijder item van de lijst">
+<!ENTITY categories.label "Categoriën">
+<!ENTITY category.label "Categorie">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; Account...">
+<!ENTITY celtxError.title "Celtx storing">
+<!ENTITY celtxTagline.label "Het gaat allemaal om het verhaal.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Een overzicht van karakters en hun relatie tot elkaar.">
+<!ENTITY charOutline.label "Karakterschets">
+<!ENTITY character.label "Karakter">
+<!ENTITY characterProfile.desc "Voeg een beschrijving toe voor een nieuw karakter.">
+<!ENTITY characterProfile.existing "Je mag ook een bestaand karakter beschrijven uit onderstaande lijst.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "Selecteer een karakter">
+<!ENTITY characters.label "Karakters">
+<!ENTITY clearCmd.label "Wissen">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Maak een script voor een stripboek.">
+<!ENTITY comicBook.label "Stripboek">
+<!ENTITY comment.label "Commentaar">
+<!ENTITY completed.label "Voltooid">
+<!ENTITY contact.label "Contact">
+<!ENTITY contactInformation.label "Contactgegevens">
+<!ENTITY contactName.label "Naam contactpersoon">
+<!ENTITY contacts.label "Contacten">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Doorgaan">
+<!ENTITY copyProject.title "Kopieer project">
+<!ENTITY copyProjectCmd.label "Kopieer project">
+<!ENTITY copyright.label "Auteursrechten">
+<!ENTITY create.label "Maak">
+<!ENTITY createAccount.label "Account aanmaken">
+<!ENTITY createCatalogFromSelection.label "Maak een lijst van de selectie.">
+<!ENTITY createProject.label  "Maak een project">
+<!ENTITY createProject.title "Project aanmaken">
+<!ENTITY createdCol.label "Gemaakt">
+<!ENTITY creatorCol.label "Maker">
+<!ENTITY crew.desc "Voeg een crewdocument toe.">
+<!ENTITY crew.label "Crew">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Datum">
+<!ENTITY datePicker.label "Datumplukker">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "De scène koptitel eindigt niet met een geldig DAG/NACHT woord. Bewerk, om dit op te lossen, de scène koptitel in het scenario of pas de DAG/NACHT woordenlijst aan in het Celtx MENU onder VOORKEUREN, DRAAIBOEK.">
+<!ENTITY daynightWords.label "DAG/NACHT woorden">
+<!ENTITY dayoff.label "Vrije dag">
+<!ENTITY daysOff.label "Vrije dagen">
+<!ENTITY decreaseDelayCmd.tooltip "Vertraging verminderen.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Verklein lettertype">
+<!ENTITY decreaseIndentCmd.label "Inspringing verminderen">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Standaard scènelengte">
+<!ENTITY delayLabel.tooltip "Vertraging (seconden) tussen afbeeldingen">
+<!ENTITY deleteCardCmd.label "Verwijder kaart">
+<!ENTITY deleteItem.label "Item verwijderen">
+<!ENTITY deleteItemCmd.label "Verwijderen">
+<!ENTITY department.label "Afdeling">
+<!ENTITY description.label "Omschrijving">
+<!ENTITY details.label "Details">
+<!ENTITY dialog.label "Dialoog">
+<!ENTITY director.label "Regisseur">
+<!ENTITY disabled.label "Uitgeschakeld">
+<!ENTITY displayMedia.label "Toon Media">
+<!ENTITY downloadProjectCmd.label "Project downloaden...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Download">
+<!ENTITY downloadingPDF.label "Omzetten naar PDF...">
+<!ENTITY dragToSchedule.tooltip "Sleep en zet neer om in te plannen.">
+<!ENTITY dualDialogCmd.label "Dubbel dialoog">
+<!ENTITY dualDialogCmd.tooltip "Dubbel dialoog">
+<!ENTITY duplicate.label "Dupliceer">
+<!ENTITY duplicateItemCmd.label "Kopieer item">
+<!ENTITY edit.label "Bewerk">
+<!ENTITY editDates.label "Bewerk Data">
+<!ENTITY editProfile.label "Wijzig online profiel">
+<!ENTITY editSceneDialog.title "Wijzig scène">
+<!ENTITY editTitlePageCmd.label "Bewerk titelpagina...">
+<!ENTITY editlabel.tooltip "Klik om te bewerken">
+<!ENTITY eighths.label "Eighths">
+<!ENTITY eighthsSuffix.label "8ths">
+<!ENTITY element.label "Element">
+<!ENTITY elements.label "Elementen">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "Dit wordt gebruikt om de actieve gebruikers van Celtx te tellen. Er worden geen persoonlijke gegevens of projectgegevens verzonden.">
+<!ENTITY enableStats.label    "Sta Celtx toe om de server van Celtx te pingen bij het opstarten van Celtx.">
+<!ENTITY enableStats.label "Verstuur gebruikersstatistieken naar Celtx.">
+<!ENTITY enabled.label "Toegestaan">
+<!ENTITY end.label "Einde">
+<!ENTITY endOfShooting.label "Einde Opname">
+<!ENTITY enterEmbedTagPrompt.label "Voeg een EMBED of OBJECT opmerking toe:">
+<!ENTITY eventDetails.label "Details gebeurtenis">
+<!ENTITY every15Minutes.label "Elke 15 minuten">
+<!ENTITY every30Minutes.label "Elke 30 minuten">
+<!ENTITY every5Minutes.label "Elke 5 minuten">
+<!ENTITY everyHour.label "Elk uur">
+<!ENTITY everyMinute.label "Elke minuut">
+<!ENTITY exportList "Exporteer Lijst">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Exporteer scenario...">
+<!ENTITY externalFile.desc "Voeg een bestaand bestand toe aan je project.">
+<!ENTITY externalFile.label "Bestand">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "Voeg een geformatteerd scenario toe.">
+<!ENTITY filmScript.label "Scenario">
+<!ENTITY filter.label "Filter">
+<!ENTITY findAllCharacters.label "Voeg karakters toe aan overzicht">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Zoeken">
+<!ENTITY findPreviousCmd.label "Zoek vorige">
+<!ENTITY findTab.label "Zoek">
+<!ENTITY folder.label "Map">
+<!ENTITY forceOverwrite.label "Forceer overschrijven als de versie op de server nieuwer is.">
+<!ENTITY form.actorLink "Acteur link">
+<!ENTITY form.actorProfile "Acteur profiel">
+<!ENTITY form.address "Adres">
+<!ENTITY form.affectEvent "Hoe beïnvloedt deze gebeurtenis de gehele plot?">
+<!ENTITY form.age "Leeftijd">
+<!ENTITY form.alternate "Alternatieve naam">
+<!ENTITY form.antag "tegenspeler">
+<!ENTITY form.antagWho "Wie is de tegenspeler in deze scène?">
+<!ENTITY form.availability "Beschikbaarheid">
+<!ENTITY form.bestFriend "Beste vriend">
+<!ENTITY form.borrow "Lenen">
+<!ENTITY form.build "Bouwen">
+<!ENTITY form.buy "Kopen">
+<!ENTITY form.catalyst "Katalysator">
+<!ENTITY form.cell "Cell #">
+<!ENTITY form.centralEvent "Wat is de centrale gebeurtenis van deze scène?">
+<!ENTITY form.charBackground "Achtergrond Personage">
+<!ENTITY form.charGoal "Wat is het doel van dit personage?">
+<!ENTITY form.charPlan "Wat is het plan van dit personage om dit doel te bereiken?">
+<!ENTITY form.charTraits "Eigenaardigheden personage">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "Personageprofiel">
+<!ENTITY form.charactersUsed "Personages gebruikt bij">
+<!ENTITY form.color "Kleur">
+<!ENTITY form.comicRelief "Komische helper">
+<!ENTITY form.comments "Kommentaar">
+<!ENTITY form.confidante "vertrouweling">
+<!ENTITY form.contactInfo "Contact informatie">
+<!ENTITY form.cost "Kosten">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Beschikbare data">
+<!ENTITY form.dateNeed "Benodigde data">
+<!ENTITY form.dateReturn "Retour datum">
+<!ENTITY form.description "Beschrijving">
+<!ENTITY form.details "Details">
+<!ENTITY form.dislikes "Afkeer">
+<!ENTITY form.distFeatures "Onderscheidende eigenschappen">
+<!ENTITY form.dob "Geboortedatum">
+<!ENTITY form.dress "Kleding">
+<!ENTITY form.education "Opleiding">
+<!ENTITY form.elevator "Lift">
+<!ENTITY form.email "Email adres">
+<!ENTITY form.endDate "Eind datum">
+<!ENTITY form.era "Tijdperk">
+<!ENTITY form.eyes "Ogen">
+<!ENTITY form.facilityInfo "Informatie over de faciliteit">
+<!ENTITY form.familyBack "Achtergrond Familie">
+<!ENTITY form.fullName "Volledige naam">
+<!ENTITY form.generic "Generiek">
+<!ENTITY form.genericForm "Generiek formulier">
+<!ENTITY form.habits "Gewoonten/Ondeugden">
+<!ENTITY form.hair "Haar">
+<!ENTITY form.hat "Hoed">
+<!ENTITY form.height "Hoogte">
+<!ENTITY form.inScenes "In Scenes">
+<!ENTITY form.jacket "Jas">
+<!ENTITY form.jobTitle "Titel">
+<!ENTITY form.keyCharTraits "Belangrijke eigenschappen karakter">
+<!ENTITY form.lightSources "Lichtbronnen">
+<!ENTITY form.likes "Houdt van">
+<!ENTITY form.locationMap "Plattegrond">
+<!ENTITY form.locationProfile "Locatie profiel">
+<!ENTITY form.loveInterest "liefdesinteresse">
+<!ENTITY form.media "Media">
+<!ENTITY form.mentor "mentor">
+<!ENTITY form.motiv "Motivatie">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Nee">
+<!ENTITY form.noise "Geluidsoverlast">
+<!ENTITY form.other "Andere">
+<!ENTITY form.pants "Broek">
+<!ENTITY form.parking "Informatie Parkeren">
+<!ENTITY form.partner "Partner">
+<!ENTITY form.person "Persoonlijkheid">
+<!ENTITY form.phone "Telefoon #">
+<!ENTITY form.physicalDesc "Gedetailleerde fysieke beschrijving">
+<!ENTITY form.powerCapa "Stroomcapaciteit">
+<!ENTITY form.princFunction "Wat is de voornaamste functie van dit karakter?">
+<!ENTITY form.procure "Verwerving">
+<!ENTITY form.propProfile "Beschrijving rekwisiet">
+<!ENTITY form.protag "Hoofdpersoon">
+<!ENTITY form.protagAntag "Hoofdpersoon/Tegenspeler">
+<!ENTITY form.protagWho "Wie is de hoofdpersoon in deze scène?">
+<!ENTITY form.rent "Huur">
+<!ENTITY form.rentalCost "Huurkosten">
+<!ENTITY form.role "Rol">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Hoe bereikt de tegenspeler dit doel?">
+<!ENTITY form.sceneAntagGoal "Wat is het doel van de tegenspeler in deze scène?">
+<!ENTITY form.sceneChars "Welke personages zijn in deze scène?">
+<!ENTITY form.sceneDetails "Scène details">
+<!ENTITY form.sceneMood "Wat is de sfeer van deze scène?">
+<!ENTITY form.sceneProtagAchieve "Hoe bereikt de hoofdrolspeler dit doel?">
+<!ENTITY form.sceneProtagGoal "Wat is het doel van de hoofdrolspeler in deze scène?">
+<!ENTITY form.sceneSetting "Wat is de setting van deze scène?">
+<!ENTITY form.sceneWhen "Wanneer vindt deze scène plaats?">
+<!ENTITY form.scenesUsed "Scènes gebruikt in">
+<!ENTITY form.scoutSelect "Locaties zoeken en selecteren">
+<!ENTITY form.scoutedFor "Lokaties gezocht voor scènes">
+<!ENTITY form.scriptName "Scenario titel">
+<!ENTITY form.selectedFor "Geselecteerd voor scènes">
+<!ENTITY form.sex "Geslacht">
+<!ENTITY form.shirt "Hemd">
+<!ENTITY form.shoes "Shoenen">
+<!ENTITY form.size "Grootte">
+<!ENTITY form.squareFoot "Vierkante meter">
+<!ENTITY form.startDate "Start datum">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Kleding maten">
+<!ENTITY form.washroom "Badkamer locaties">
+<!ENTITY form.weight "Gewicht">
+<!ENTITY form.wornBy "Gedragen door">
+<!ENTITY form.yes "Ja">
+<!ENTITY format.label "Opmaak">
+<!ENTITY formatAct.label      "AKTE">
+<!ENTITY formatAction.label "Aktie">
+<!ENTITY formatBalloon.label  "Ballon">
+<!ENTITY formatBalloonType.label "Ballon Type">
+<!ENTITY formatCaption.label  "Caption">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Koptitel">
+<!ENTITY formatMusic.label    "Muziek">
+<!ENTITY formatPage.label     "Pagina">
+<!ENTITY formatPage.shortlabel     "Pag.">
+<!ENTITY formatPanel.label    "Panel">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;">
+<!ENTITY formatParen.label "Nadruk">
+<!ENTITY formatProductionNote.label "Productie aantekeningen">
+<!ENTITY formatShot.label "Shot">
+<!ENTITY formatSound.label    "Geluid">
+<!ENTITY formatStagedir.label "Regieaanwijzigingen">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Transport">
+<!ENTITY formatVoice.label    "Stem">
+<!ENTITY fourHours.label "4 uur">
+<!ENTITY freeAndSecure.label "Free and Secure">
+<!ENTITY general.label "Algemeen">
+<!ENTITY generatePDFCmd.label "PDF Aanmaken...">
+<!ENTITY generateReportCmd.label "Rapport aanmaken">
+<!ENTITY generateReportCmd.toolbarlabel "Rapport">
+<!ENTITY getProjDialog.caption "Beschikbare projecten">
+<!ENTITY getProjDialog.title "Project downloaden">
+<!ENTITY gotoItemCmd.label "Ga naar">
+<!ENTITY helpAboutCmd.accessKey "v">
+<!ENTITY helpAboutCmd.label "Over &appName;">
+<!ENTITY helpReportBugCmd.accessKey "M">
+<!ENTITY helpReportBugCmd.label "Meld een fout">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Online ondersteuning">
+<!ENTITY icons.label "Iconen">
+<!ENTITY iconsAndText.label "Iconen en tekst">
+<!ENTITY image.label "Afbeelding">
+<!ENTITY images.label "Afbeeldingen">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Importeer scenario">
+<!ENTITY importScriptCmd.toolbarLabel "Importeer">
+<!ENTITY includeInWorkweek.label "Deze dagen bijvoegen aan de werkweek">
+<!ENTITY includeTitlePage.label "Titelpagina toevoegen">
+<!ENTITY increaseDelayCmd.tooltip "Vertraging vermeerderen.">
+<!ENTITY increaseFontSizeCmd.tooltip "Vergroot lettertype">
+<!ENTITY increaseIndentCmd.label "Inspringing vermeerderen">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Index Card Heading">
+<!ENTITY indexCards.label "Index kaarten">
+<!ENTITY inlineSpellCheckCmd.label "Directe spellingscontrole">
+<!ENTITY insertNoteCmd.toolbarLabel "Aantekening">
+<!ENTITY international.label "Internationaal">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "De scène koptitel begint niet met een geldig INT/EXT woord. Bewerk, om dit op te lossen, de scène koptitel in het scenario of pas de INT/EXT woordenlijst aan in het scenario venster bij de voorkeuren.">
+<!ENTITY intextWords.label "INT/EXT woorden">
+<!ENTITY invalidLogin.label "Foute gebruikersnaam of wachtwoord.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Cursief">
+<!ENTITY item.label "Item">
+<!ENTITY language.label "Taal">
+<!ENTITY left.label "Links">
+<!ENTITY linesPerPage.label "Regels per pagina">
+<!ENTITY list.label "Lijst...">
+<!ENTITY location.desc "Voeg een beschrijving toe voor een lokatie.">
+<!ENTITY location.label "Lokatie">
+<!ENTITY loginOnStartup.label "Inloggen bij opstarten">
+<!ENTITY lowercaseCmd.label "kleine letters">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Media">
+<!ENTITY mediaViewer.title "Media bekijken">
+<!ENTITY modified.label "Gewijzigd">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Verplaats naar beneden">
+<!ENTITY moveUpCmd.label "Verplaats naar boven">
+<!ENTITY moving.label "Verplaats">
+<!ENTITY name.label "Naam">
+<!ENTITY network.label "Netwerk">
+<!ENTITY never.label "Nooit">
+<!ENTITY newMarkupItem.label "&lt;Nieuw ...&gt;">
+<!ENTITY newProjectCmd.label "Nieuw project...">
+<!ENTITY newProjectCmd.toolbarlabel "Nieuw">
+<!ENTITY noFileSelected.label "&lt;geen bestand geselecteerd&gt;">
+<!ENTITY noImageSelected.label "Geen afbeelding geselecteerd">
+<!ENTITY noScriptSelected.label "Geen scenario geselecteerd">
+<!ENTITY none.label "Geen">
+<!ENTITY noteDialog.title "Aantekeningen bewerken">
+<!ENTITY notes.label "Notities">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Aantal karakters">
+<!ENTITY numberOfScenes.label "Aantal Scenes">
+<!ENTITY oneHour.label "1 uur">
+<!ENTITY oneLineSchedule.label "Een regel planning">
+<!ENTITY open.label "Open">
+<!ENTITY openItemCmd.label "Open item">
+<!ENTITY openProjectCmd.label "Open project...">
+<!ENTITY openProjectCmd.toolbarlabel "Open">
+<!ENTITY openProjectFolder.label "Open project map">
+<!ENTITY openRecentCmd.label "Open vorige">
+<!ENTITY options.label "Opties">
+<!ENTITY orderedList.label "Opsommingstekens">
+<!ENTITY outline.desc "Voeg een overzichtdocument met opsomming toe.">
+<!ENTITY outline.label "Overzicht">
+<!ENTITY over14.label "Ik ben 14 jaar of ouder.">
+<!ENTITY pageAndSceneNumbering.label "Pagina en scènenummering">
+<!ENTITY paperSize.label "Papier grootte">
+<!ENTITY password.label "Wachtwoord">
+<!ENTITY passwordAgain.label "Herhaal wachtwoord">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "Omzetten naar PDF">
+<!ENTITY pdfErrorHeader "Oops!">
+<!ENTITY pdfErrorText1 "Je moet online om de uitgebreide eigenschappen te gebruiken.">
+<!ENTITY pdfErrorText2 "Veilig en Privé, de geavanceerde Celtx web service formatteert automatisch je scenario naar een industriële standaard filmscenario, toneelscenario, audio scenario of dubbele kolom (AV).">
+<!ENTITY pdfOptions.title "PDF opties">
+<!ENTITY pdfOptionsCmd.label "Voet- en Eindnoot">
+<!ENTITY pdfWarningHeader "Hallo Daar!">
+<!ENTITY pdfWarningText "Veilig en privé, de geavanceerde Celtx web service formatteert automatisch je scenario naar een industriële standaard filmscenario, toneelscenario, audio scenario of dubbele kolom (AV).">
+<!ENTITY picklist.label "Keuzelijst">
+<!ENTITY principalFunction.label "Principal Function">
+<!ENTITY printBackgroundColour.label "Print achtergrond kleur">
+<!ENTITY printCardBorders.label "Print kaart kaders">
+<!ENTITY printCardsDialog.title "Print kaarten">
+<!ENTITY printStoryboardDialog.title "Storyboard afdrukken">
+<!ENTITY privacy.label "Privacy">
+<!ENTITY producer.label "Producer">
+<!ENTITY productionItems.label "Productie items">
+<!ENTITY progressDialog.title "Vooruitgang">
+<!ENTITY project.label "Project">
+<!ENTITY projectItems.label "Nieuwe projecten bevatten">
+<!ENTITY projectLibrary.label "Project bibliotheek">
+<!ENTITY projectProperties.label "Project instellingen">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "start een nieuw project als:">
+<!ENTITY propSheet.desc "Voeg een beschrijving toe voor een nieuwe rekwisiet.">
+<!ENTITY propSheet.existing "Je mag ook een bestaande rekwisiet beschrijven uit onderstaande lijst.">
+<!ENTITY propSheet.label "Rekwisieten">
+<!ENTITY propSheet.select "Selecteer een rekwisiet">
+<!ENTITY properties.label "Eigenschappen">
+<!ENTITY publishDialog.findUsers "Zoek gebruikers">
+<!ENTITY publishDialog.ownerLabel "Project eigenaar">
+<!ENTITY publishDialog.privateDesc "Privaat: Beperk toegang tot mezelf">
+<!ENTITY publishDialog.privateLabel "Privé">
+<!ENTITY publishDialog.publicDesc "Publiek: Publiceer je project op project centraal">
+<!ENTITY publishDialog.publicLabel "Publiek">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Gedeeld: Deel je project met geselecteerde gebruikers">
+<!ENTITY publishDialog.sharedLabel "Gedeeld door">
+<!ENTITY publishDialog.title "Project publiceren">
+<!ENTITY publishDialog.userList "Gebruikerslijst">
+<!ENTITY publishMode.label "Publiceermodus">
+<!ENTITY recent.label "Resent">
+<!ENTITY recentProjects.label "Recente projecten">
+<!ENTITY recoverPassword.label "Wachtwoord opvragen">
+<!ENTITY recycleCmd.label "Verplaats naar kladblok">
+<!ENTITY regWiz.aboutThis "Deze Wizard zal de voor registratie benodigde gegevens verzamelen.">
+<!ENTITY regWiz.accountInstructions "Kies a.u.b. een gebruikersnaam en wachtwoord voor uw &appName; account.">
+<!ENTITY regWiz.accountLabel "Gebruikersaccount">
+<!ENTITY regWiz.bullet1 "Privé Back-ups">
+<!ENTITY regWiz.bullet2 "Samenwerking">
+<!ENTITY regWiz.bullet3 "Aanmaken van PDF">
+<!ENTITY regWiz.bullet4 "">
+<!ENTITY regWiz.checkLabel "Controle account informatie">
+<!ENTITY regWiz.clickFinish "Als u tevreden bent met deze waarden, klik dan op 'Volgende' om uw registratie te verzenden.">
+<!ENTITY regWiz.clickFinish1 "Je bent nu ingelogd in de &appName; server en kan gratis de online diensten raadplegen.">
+<!ENTITY regWiz.clickFinish2 "Probeer de Downoad/Upload diensten om een veilige back-up van uw project te maken, of, als je iemand anders kent met een &appName; account kan je de project uitwissel diensten gebruiken om samen te werken aan een gezamenlijk project.">
+<!ENTITY regWiz.clickNext "Indien u tevreden bent met deze waarden, klik dan op 'Volgende' om uw registratie te verzenden.">
+<!ENTITY regWiz.conclusion "Conclusie (5/5)">
+<!ENTITY regWiz.confirmIntro "U hebt het volgende ingevuld:">
+<!ENTITY regWiz.confirmLabel "Bevestig instellingen">
+<!ENTITY regWiz.createNewAccountLabel "Maak een nieuwe account.">
+<!ENTITY regWiz.createYourAccountLabel "Maak je eigen &appName; account! (1/5)">
+<!ENTITY regWiz.emailLabel "Email:">
+<!ENTITY regWiz.finish "Eindig">
+<!ENTITY regWiz.identityInstructions "Vul a.u.b. uw naam, organisatie- en email- adres in.">
+<!ENTITY regWiz.identityLabel "Persoonsgegevens">
+<!ENTITY regWiz.intro "Om van de online mogelijkheden van &appName; gebruik te kunnen maken, moet u eerst een &appName; account registreren.">
+<!ENTITY regWiz.loginSuccessfulLabel "Dank u, u bent nu aangemeld bij &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Maak een nieuwe account, of gebruik een bestaande:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; Account gebruikersnaam en wachtwoord zijn hoofdlettergevoelig.">
+<!ENTITY regWiz.notePassword "Uw wachtwoord moet uit ten minste 5 tekens bestaan.">
+<!ENTITY regWiz.noteUsername "Uw gebruikersnaam moet uit ten minste 3 tekens bestaan, en mag alleen letters en cijfers bevatten.">
+<!ENTITY regWiz.orgLabel "Organisatie:">
+<!ENTITY regWiz.title "&appName; Registratie Wizard">
+<!ENTITY regWiz.uidLabel "&appName; Gebruikersnaam:">
+<!ENTITY regWiz.useExistingAccountLabel "Gebruik een bestaande account.">
+<!ENTITY regWiz.warn "Je moet een &appName; account aanmaken om van deze dienst gebruik te maken.">
+<!ENTITY remove.label "Verwijderen">
+<!ENTITY removeCmd.label "Verwijderen">
+<!ENTITY removeMarkupCmd.label "Verbergen">
+<!ENTITY rename.label "Hernoem">
+<!ENTITY renameItem.label "Item hernoemen...">
+<!ENTITY replaceCmd.label "Vervangen">
+<!ENTITY reportThisBug.label "Deze bug rapporteren">
+<!ENTITY reportThisBug.tooltip "Stuur ons een anoniem bug rapport.">
+<!ENTITY reports.label "Rapporten">
+<!ENTITY right.label "Rechts">
+<!ENTITY sampleProjects.label "Voorbeelden">
+<!ENTITY samples.label "Voorbeelden">
+<!ENTITY saveAsHTML.label "Opslaan als HTML">
+<!ENTITY saveAsTemplate.label "Opslaan als template">
+<!ENTITY savePDFCmd.label "Bewaar PDF">
+<!ENTITY savePDFCmd.tooltip "Bewaar PDF">
+<!ENTITY saveProjectAsCmd.label "Bewaar project als...">
+<!ENTITY saveProjectCmd.label "Project opslaan">
+<!ENTITY saveProjectCmd.toolbarlabel "Opslaan">
+<!ENTITY scene.label "Scène">
+<!ENTITY sceneBreakdown.label "Scène uitsplitsing">
+<!ENTITY sceneBreakdownWithDesc.label "Scène uitsplitsing met omschrijvingen">
+<!ENTITY sceneDetails.desc "Voeg een beschrijving toe voor een nieuwe scène.">
+<!ENTITY sceneDetails.existing "Je mag ook een bestaande scène beschrijven uit onderstaande lijst.">
+<!ENTITY sceneDetails.label "Details scène">
+<!ENTITY sceneDetails.select "Selecteer een scène">
+<!ENTITY scenePageBreaks.label "Paginaovergang na iedere scene">
+<!ENTITY sceneSummary.label "Samevatting Scene ">
+<!ENTITY sceneTag.label "Scène label">
+<!ENTITY sceneTagDialog.title "Kies een kleur">
+<!ENTITY scenes.label "Scènes">
+<!ENTITY schedule.desc      "Voeg een opname planning toe aan een scenario.">
+<!ENTITY schedule.label     "Planning">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Maak opnameschema">
+<!ENTITY scheduleID.label "Planning ID">
+<!ENTITY scheduled.label "Ingepland">
+<!ENTITY scratchpad.label "Schetsboek">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Voeg een script toe aan project.">
+<!ENTITY script.label "Scenario">
+<!ENTITY scriptDay.label "Script dag">
+<!ENTITY scriptEditor.label "Scenario opmaak">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Pagina opties">
+<!ENTITY scriptHeader.label "Scenario koptitel">
+<!ENTITY scriptReport.desc "Een automatisch gegenereerd scenario rapport.">
+<!ENTITY scriptReport.label "Scenario rapport">
+<!ENTITY scriptWithNotes.label "Scenario met aantekeningen">
+<!ENTITY selectCatalogType.label "Select a catalog type.">
+<!ENTITY sequence.label "Volgorde">
+<!ENTITY sequences.label "Reeksen">
+<!ENTITY server.label "Server">
+<!ENTITY setting.label "Kader">
+<!ENTITY sharing.label "Delen">
+<!ENTITY shootDay.label "Draaidag">
+<!ENTITY shootDays.label "Draaidagen">
+<!ENTITY shootingSchedule.label "Draaischema">
+<!ENTITY shotList.label "Shot lijst">
+<!ENTITY shotWords.label "Shot woorden">
+<!ENTITY shotholder.label "Dubbelklik om een afbeelding toe te voegen.">
+<!ENTITY showContinuedCount.label "Toen opeenvolgende paginanummering">
+<!ENTITY showDialogBreaks.label "Toon dialoogonderbrekingen">
+<!ENTITY showFirstPageNumber.label "Toon paginanummer op eerste pagina.">
+<!ENTITY showIDNumbers.label "Toon ID nummers">
+<!ENTITY showNotes.label "Toon aantekeningen">
+<!ENTITY showPageNumbers.label "Paginanummering">
+<!ENTITY showProjectFileCmd.label "Toon project map">
+<!ENTITY showSceneBreaks.label "Toon scèneonderbrekingen">
+<!ENTITY showSceneHeaders.label "Toon scène koptitels">
+<!ENTITY showSceneNumbers.label "Toon scènenummers">
+<!ENTITY showScript.label "Toon scenario">
+<!ENTITY showTagNames.label "Toon gemerkte namen op kaarten">
+<!ENTITY showTitlePage.label "Toon titel pagina">
+<!ENTITY showWorkdaysOnly.label "Toon alleen werkdagen">
+<!ENTITY signIn.label "Inloggen">
+<!ENTITY signOut.label "Uitloggen">
+<!ENTITY signedOut.label "Uitloggen">
+<!ENTITY slideshowCmd.toolbarlabel "Afspelen">
+<!ENTITY source.label "Bron">
+<!ENTITY spellCheckAddToDictionary.accesskey "T">
+<!ENTITY spellCheckAddToDictionary.label "Toevoegen aan woordenboek">
+<!ENTITY spellCheckCmd.label "Spellingscontrole">
+<!ENTITY spellCheckIgnoreWord.accesskey "d">
+<!ENTITY spellCheckIgnoreWord.label "Woord negeren">
+<!ENTITY spellCheckNoSuggestions.label "Geen suggesties gevonden">
+<!ENTITY splash.celtxCentral "Celtx Centraal">
+<!ENTITY splash.celtxCentralDesc "Gebruik Celtx centraal om je wachtwoord te wijzigen of je profiel aan te passen.">
+<!ENTITY splash.discussion "Discussie">
+<!ENTITY splash.downloadProject "Download een project">
+<!ENTITY splash.downloadProjectDesc "Download een project van de Celtx server">
+<!ENTITY splash.featureTour "Rondleiding">
+<!ENTITY splash.forums "Celtx forums">
+<!ENTITY splash.forumsDesc "Sluit je aan bij de besprekingen op het Celtx forum">
+<!ENTITY splash.gettingStarted "Beginnen">
+<!ENTITY splash.guide "Celtx Gebruikershandleiding">
+<!ENTITY splash.help "Help">
+<!ENTITY splash.helpAccount "Creëer een account">
+<!ENTITY splash.helpAccountDesc "Een account aanmaken geeft je toegang tot server diensten zoals collaboratie en aanmaken van PDF bestanden">
+<!ENTITY splash.helpDesc "De links aan de linkerkant tonen enkele Celtx hulpbronnen">
+<!ENTITY splash.helpOptions "help opties">
+<!ENTITY splash.inbox           "Inbox">
+<!ENTITY splash.logIn "Log in">
+<!ENTITY splash.newProject "Start een nieuw project">
+<!ENTITY splash.newProjectDesc "Maak een nieuw project aan">
+<!ENTITY splash.openProject "Open een bestaand project">
+<!ENTITY splash.openProjectDesc "Krijg toegang of voeg bestaande projecten toe.">
+<!ENTITY splash.options "Opties">
+<!ENTITY splash.projectCentral "Project centraal">
+<!ENTITY splash.projects "Projecten">
+<!ENTITY splash.recentProjects "Recente projecten">
+<!ENTITY splash.sampleDesc      "We hebben The Wizard of Oz gebruikt om de verschillende mogelijkheden van Celtx te illustreren. De verschillende documenten zijn gebruikt om de productiebenodigdheden van één scène uit te diepen. In dit voorbeeld vind je een scenario, personage- en scènedetail formulieren, uitsplitsingsinformatie, en planningsinformatie.">
+<!ENTITY splash.sampleProject   "voorbeeld project">
+<!ENTITY splash.videoWalkthrus "video uitleg">
+<!ENTITY splash.videoWalkthrusDesc "Korte video fragmenten die je snel op weg helpen">
+<!ENTITY splash.walkthru "3 minuten uitleg">
+<!ENTITY splash.webServices "Web diensten">
+<!ENTITY splash.welcomePrefix "welkom bij Celtx">
+<!ENTITY splash.welcomePrefixDesc "Media Pre-Productie">
+<!ENTITY splash.wiki "wiki gids">
+<!ENTITY splash.wikiDesc "De bron om Celtx te leren kennen">
+<!ENTITY splashScreen.label "Welkomstscherm">
+<!ENTITY stackTrace.desc "Onderaan is informatie die voor ons nuttig kan zijn. Gelieve deze in te vullen als je deze bug wil rapporteren.">
+<!ENTITY stageplay.desc  "Voeg een toneelstuk scenario toe met internationale opmaak.">
+<!ENTITY stageplay.label    "Toneelstuk">
+<!ENTITY start.label "Start">
+<!ENTITY startOfDay.label "Start van de dag">
+<!ENTITY startOfShooting.label "Start of Shooting">
+<!ENTITY startOfWeek.label "Start van de week">
+<!ENTITY statistics.label "Statistieken">
+<!ENTITY storyboard.desc    "Organiseer storyboard afbeeldingen in sequenties.">
+<!ENTITY storyboard.label   "Storyboard">
+<!ENTITY strikethrough.label "Doorgestreept">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY subject.label "Onderwerp">
+<!ENTITY summary.label "Summary">
+<!ENTITY syncDialog.title "Synchroon">
+<!ENTITY tagItemCmd.label "Aanmerken">
+<!ENTITY tagline.label      "Slagzin">
+<!ENTITY tags.label "Tags">
+<!ENTITY text.label "Tekst">
+<!ENTITY textDocument.desc "Voeg een tekstdocument toe. Handig voor een overzicht, handeling of overzicht.">
+<!ENTITY textDocument.label "Tekst">
+<!ENTITY theatreTmplActTitle "AKTE I">
+<!ENTITY theatreTmplSceneTitle "Scène 1">
+<!ENTITY thirtyMinutes.label "30 minuten">
+<!ENTITY threeHours.label "3 uur">
+<!ENTITY time.label "Tijd">
+<!ENTITY title.label "Titel">
+<!ENTITY titlePage.label "Titel pagina">
+<!ENTITY toggleEditing.label "Toggle Editing">
+<!ENTITY togglePaginationCmd.label "Paginering toelaten">
+<!ENTITY toggleScratchpadCmd.label "Open/Sluit kladblok">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Werkbalk">
+<!ENTITY topOfNextPage.label "Bovenkant volgende pagina">
+<!ENTITY tryAgain.label "Probeer opnieuw">
+<!ENTITY twoColumns.label "Twee kolommen">
+<!ENTITY twoHours.label "2 uur">
+<!ENTITY typeset.label "Printversie">
+<!ENTITY under14.label "Ik ben jonger dan 14.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Onderstreept">
+<!ENTITY unorderedList.label "Nummering">
+<!ENTITY untitled.label "Naamloos">
+<!ENTITY update.label "Update">
+<!ENTITY updateInbox.label "Update inbox">
+<!ENTITY uploadDialog.title "Project publiceren">
+<!ENTITY uploadProjectCmd.label "Project uploaden...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Uploaden">
+<!ENTITY uppercaseCmd.label "Hoofdletters">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Gebruikersnaam">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Video Les">
+<!ENTITY viewProjectOnline.label "Bekijk project online">
+<!ENTITY wardrobeSheet.desc "Voeg een beschrijving toe voor een nieuw kleding item.">
+<!ENTITY wardrobeSheet.existing "Je mag ook een bestaand kleding item kiezen uit onderstaande lijst.">
+<!ENTITY wardrobeSheet.label "Kleding">
+<!ENTITY wardrobeSheet.select "Selecteer kleding">
+<!ENTITY webPanel.desc              "Celtx web diensten.">
+<!ENTITY webPanel.label             "Web diensten">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Maak een Celtx Account">
+<!ENTITY webPanelIntro.text1 "Haal het meeste uit Celtx door in te schrijven op de gratis en beveiligde web diensten.">
+<!ENTITY webPanelIntro.text2 "*Back up* je volledig project veiligheidshalve naar de Celtx server zodat je altijd over een kopie beschikt in geval van technische problemen met je harde schijf of dergelijke.">
+<!ENTITY webPanelIntro.text3 "*Samenwerken* met collega's kan! Door  een eigen private project werkruimte  te maken deel je je project via het web met anderen.">
+<!ENTITY webPanelIntro.text4 "*Publish* your media project to Project Central for reviews and comments, and join our growing world community of media creators.">
+<!ENTITY webPanelIntro.text5 "Bekijk je  Celtx project in een geoptimaliseerd formaat voor je  *iPhone*.">
+<!ENTITY wiz.clickFinish "Klik op 'Klaar' om deze Wizard te voltooien.">
+<!ENTITY wiz.clickNext "Klik op 'Volgende' om te beginnen.">
+<!ENTITY workweek.label "Werkweek">
+<!ENTITY writer.label "Schrijver">
+<!ENTITY zoom.label "Zoom">

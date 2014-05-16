@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE dialog [
+#include ../celtx-entities.inc
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/celtx.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/scriptnumbers.css" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&sceneLocking.title;"
+        buttons="accept,cancel"
+        onload="loaded();"
+        ondialogaccept="accepted();">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scenenumbers.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptnumbers.js" />
+
+  <groupbox flex="1">
+    <caption label="&sceneNumbering.label;" />
+
+    <hbox align="center">
+      <label value="&style.label;&colon; " />
+      <menulist id="presetmenu"
+                oncommand="presetSelected();">
+        <menupopup>
+          <menuseparator id="presetsep" />
+          <menuitem label="&custom.label;"
+                    value="custom" />
+          <menuitem label="&saveAsPreset.label;&ellipsis;"
+                    value="save_as_preset" />
+        </menupopup>
+      </menulist>
+    </hbox>
+
+    <separator />
+
+    <hbox align="center">
+      <image id="detailsbuttonimage"
+             class="button-icon"
+             src="chrome://celtx/skin/arrow_right.gif"
+             onclick="toggleDetails();" />
+      <label id="detailsbuttonlabel"
+             class="button-text"
+             value="&details.label;"
+             onclick="toggleDetails();" />
+    </hbox>
+
+    <separator />
+
+    <grid id="detailsgrid"
+          style="margin-left: 2em;">
+      <columns>
+        <column />
+        <column width="20" />
+        <column flex="1" />
+        <column width="20" />
+        <column flex="1" />
+      </columns>
+      <rows>
+        <row>
+          <label class="header" value="&scenenumber.position.label;" />
+          <label class="header" value="&scenenumber.prefix.label;" />
+          <label class="header" value="&scenenumber.type.label;" />
+          <label class="header" value="&scenenumber.suffix.label;" />
+          <label class="header" value="&scenenumber.example.label;" />
+        </row>
+
+        <row align="center">
+          <label />
+          <label />
+          <menulist id="num1numbering"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.number.label;"
+                        value="number"
+                        selected="true" />
+              <menuitem label="&scenenumber.letter.label;"
+                        value="letter" />
+            </menupopup>
+          </menulist>
+          <label />
+          <label id="num1example"
+                 value="68" />
+        </row>
+
+        <row align="center">
+          <menulist id="num2position"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.before.label;"
+                        value="before" />
+              <menuitem label="&scenenumber.after.label;"
+                        value="after"
+                        selected="true" />
+            </menupopup>
+          </menulist>
+          <textbox id="num2prefix"
+                   oninput="fieldsChanged();" />
+          <menulist id="num2numbering"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.number.label;"
+                        value="number" />
+              <menuitem label="&scenenumber.letter.label;"
+                        value="letter"
+                        selected="true" />
+            </menupopup>
+          </menulist>
+          <textbox id="num2suffix"
+                   oninput="fieldsChanged();" />
+          <label id="num2example"
+                 value="68A" />
+        </row>
+
+        <row align="center">
+          <menulist id="num3position"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.before.label;"
+                        value="before"
+                        selected="true" />
+              <menuitem label="&scenenumber.after.label;"
+                        value="after" />
+            </menupopup>
+          </menulist>
+          <textbox id="num3prefix"
+                   oninput="fieldsChanged();" />
+          <menulist id="num3numbering"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.number.label;"
+                        value="number" />
+              <menuitem label="&scenenumber.letter.label;"
+                        value="letter"
+                        selected="true" />
+            </menupopup>
+          </menulist>
+          <textbox id="num3suffix"
+                   oninput="fieldsChanged();" />
+          <label id="num3example"
+                 value="A68A" />
+        </row>
+
+        <row align="center">
+          <menulist id="num4position"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.before.label;"
+                        value="before" />
+              <menuitem label="&scenenumber.after.label;"
+                        value="after"
+                        selected="true" />
+            </menupopup>
+          </menulist>
+          <textbox id="num4prefix"
+                   value="-"
+                   oninput="fieldsChanged();" />
+          <menulist id="num4numbering"
+                    oncommand="fieldsChanged();">
+            <menupopup>
+              <menuitem label="&scenenumber.number.label;"
+                        value="number"
+                        selected="true" />
+              <menuitem label="&scenenumber.letter.label;"
+                        value="letter" />
+            </menupopup>
+          </menulist>
+          <textbox id="num4suffix"
+                   oninput="fieldsChanged();" />
+          <label id="num4example"
+                 value="A68A-1" />
+        </row>
+      </rows>
+    </grid>
+  </groupbox>
+
+  <groupbox>
+    <caption label="&scenes.label;" />
+    <richlistbox id="scenelist"
+                 width="300"
+                 height="160"
+                 onselect="sceneSelected();">
+    </richlistbox>
+    <hbox pack="start">
+      <button label="&scenenumbers.resetAll.label;"
+              oncommand="resetSceneNumbers();" />
+    </hbox>
+  </groupbox>
+
+</dialog>

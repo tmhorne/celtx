@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0">
+
+  <xsl:output method="html" version="4.0"/>
+  <xsl:param name="cardmode">desc</xsl:param>
+  <xsl:param name="showtags">0</xsl:param>
+  <xsl:param name="paraspercard">5</xsl:param>
+
+  <xsl:template match="html">
+    <html>
+      <head>
+        <title><xsl:value-of select="head/@title"/></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="chrome://celtx/skin/scenecards.css"
+              type="text/css" rel="stylesheet"/>
+      </head>
+      <body mode="{$cardmode}">
+        <xsl:apply-templates select="body/p[@class='sceneheading']"/>
+        <br style="clear: both;"/>
+        <div id="dragcard">
+          <xsl:text> </xsl:text>
+        </div>
+        <div id="dropindicator">
+          <xsl:text> </xsl:text>
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="p[@class='sceneheading']">
+    <xsl:variable name="pos"
+              select="count(preceding-sibling::p[@class='sceneheading'])+1"/>
+    <div id="{@id}" class="scenecard">
+      <xsl:if test="$pos mod 3 = 1">
+        <xsl:attribute name="pagestart">true</xsl:attribute>
+      </xsl:if>
+      <div class="sceneheader">
+        <xsl:variable name="header"
+                      select="normalize-space(string(.))"/>
+        <input id="{@id}title"
+               class="scenetitle uppercase"
+               value="{$header}"/>
+        <input id="{@id}alttitle"
+               class="scenealttitle"
+               value=""/>
+      </div>
+      <br/>
+      <hr/>
+      <div id="{@id}script" class="scenescript">
+        <xsl:call-template name="addparas">
+          <xsl:with-param name="p" select="."/>
+          <xsl:with-param name="depth" select="$paraspercard"/>
+        </xsl:call-template>
+        <xsl:text> </xsl:text>
+      </div>
+      <div class="scenedesc">
+        <textarea id="{@id}desc">
+          <xsl:text> </xsl:text>
+        </textarea>
+      </div>
+      <img class="pushpin"
+           src="chrome://celtx/skin/pin_black.png"/>
+      <xsl:if test="$showtags = 1">
+        <div id="{@id}tag" class="tagname">
+          <xsl:text> </xsl:text>
+        </div>
+      </xsl:if>
+    </div>
+  </xsl:template>
+
+  <xsl:template name="addparas">
+    <xsl:param name="p"/>
+    <xsl:param name="depth"/>
+    <xsl:if test="$depth &gt; 0">
+      <!-- Use this to push p as the context node -->
+      <xsl:for-each select="$p">
+        <xsl:variable name="next"
+                      select="following-sibling::p[position()=1]"/>
+        <xsl:if test="$next and $next/@class != 'sceneheading'">
+          <p><xsl:value-of select="normalize-space(string($next))"/></p>
+          <xsl:call-template name="addparas">
+            <xsl:with-param name="p" select="$next"/>
+            <xsl:with-param name="depth" select="$depth - 1"/>
+          </xsl:call-template>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:if>
+  </xsl:template>
+
+</xsl:stylesheet>

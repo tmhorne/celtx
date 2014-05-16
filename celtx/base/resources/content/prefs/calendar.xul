@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+<!ENTITY % calendarDTD SYSTEM "chrome://calendar/locale/global.dtd">
+%calendarDTD;
+<!ENTITY % calendarPrefsDTD SYSTEM "chrome://calendar/locale/preferences/views.dtd">
+%calendarPrefsDTD;
+<!ENTITY % calendarTzDTD SYSTEM "chrome://calendar/locale/preferences/timezones.dtd">
+%calendarTzDTD;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<overlay id="paneCalendarOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <prefpane id="paneCalendar"
+            onpaneload="calendarPaneLoaded()">
+    <preferences>
+      <preference id="calendar-timezone-local"
+                  name="calendar.timezone.local"
+                  type="string"/>
+      <preference id="calendar.view.daystarthour"
+                  name="calendar.view.daystarthour"
+                  type="int"/>
+      <preference id="calendar.view.dayendhour"
+                  name="calendar.view.dayendhour"
+                  type="int"/>
+      <preference id="celtx.calendar.scene.defaultlength"
+                  name="celtx.calendar.scene.defaultlength"
+                  type="int"/>
+      <preference id="celtx.calendar.workdaysonly"
+                  name="celtx.calendar.workdaysonly"
+                  type="bool"/>
+      <preference id="calendar.week.start"
+                  name="calendar.week.start"
+                  type="int"/>
+      <preference id="calendar.week.d0sundaysoff"
+                  name="calendar.week.d0sundaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d1mondaysoff"
+                  name="calendar.week.d1mondaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d2tuesdaysoff"
+                  name="calendar.week.d2tuesdaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d3wednesdaysoff"
+                  name="calendar.week.d3wednesdaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d4thursdaysoff"
+                  name="calendar.week.d4thursdaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d5fridaysoff"
+                  name="calendar.week.d5fridaysoff"
+                  type="bool"
+                  inverted="true"/>
+      <preference id="calendar.week.d6saturdaysoff"
+                  name="calendar.week.d6saturdaysoff"
+                  type="bool"
+                  inverted="true"/>
+    </preferences>
+    <script type="application/x-javascript">
+function readSceneLengthPref () {
+  var pref = document.getElementById("celtx.calendar.scene.defaultlength");
+  var menu = document.getElementById("scenelength");
+  menu.selectedItem = getItemByValue(menu, pref.value);
+}
+
+function writeSceneLengthPref () {
+  var menu = document.getElementById("scenelength");
+  var pref = document.getElementById("celtx.calendar.scene.defaultlength");
+  pref.value = menu.selectedItem.value;
+}
+
+function calendarPaneLoaded () {
+  dump("    calendar pane loaded\n");
+  /*
+  var jsloader = Components.classes["@mozilla.org/moz/jssubscript-loader;1"]
+    .getService(Components.interfaces.mozIJSSubScriptLoader);
+  jsloader.loadSubScript("chrome://calendar/content/preferences/timezones.js");
+  jsloader.loadSubScript("chrome://calendar/content/calendar-ui-utils.js");
+  jsloader.loadSubScript("chrome://calendar/content/calUtils.js");
+  gTimezonesPane.init();
+  */
+  readSceneLengthPref();
+}
+    </script>
+    <hbox pack="center">
+    <vbox>
+    <!--
+    <groupbox>
+      <caption label="&pref.calendar.timezones.list.caption;"/>
+      <menulist id="calendar-timezone-menulist"
+                preference="calendar-timezone-local">
+          <menupopup id="calendar-timezone-menupopup"/>
+      </menulist>
+    </groupbox>
+    -->
+    <groupbox>
+      <caption label="&general.label;"/>
+      <grid>
+        <columns>
+          <column/>
+          <column/>
+        </columns>
+        <rows>
+          <row>
+            <label value="&pref.calendar.view.daystart.label;"/>
+            <textbox preference="calendar.view.daystarthour"
+                     type="number"
+                     min="0"
+                     max="23"
+                     wraparound="true" />
+          </row>
+          <row>
+            <label value="&pref.calendar.view.dayend.label;"/>
+            <textbox preference="calendar.view.dayendhour"
+                     type="number"
+                     min="0"
+                     max="23"
+                     wraparound="true" />
+          </row>
+          <row>
+            <label value="&startOfWeek.label;&colon;"/>
+            <menulist id="weekstarts" preference="calendar.week.start">
+              <menupopup id="weekstarts">
+                <menuitem label="&day.1.name;" value="0"/>
+                <menuitem label="&day.2.name;" value="1"/>
+                <menuitem label="&day.3.name;" value="2"/>
+                <menuitem label="&day.4.name;" value="3"/>
+                <menuitem label="&day.5.name;" value="4"/>
+                <menuitem label="&day.6.name;" value="5"/>
+                <menuitem label="&day.7.name;" value="6" selected="true"/>
+              </menupopup>
+            </menulist>
+          </row>
+          <row>
+            <label value="&defaultSceneLength.label;&colon;"/>
+            <menulist id="scenelength"
+                      oncommand="writeSceneLengthPref();">
+              <menupopup>
+                <menuitem label="&thirtyMinutes.label;"
+                          value="30"/>
+                <menuitem label="&oneHour.label;"
+                          value="60"/>
+                <menuitem label="&twoHours.label;"
+                          value="120"/>
+                <menuitem label="&threeHours.label;"
+                          value="180"/>
+                <menuitem label="&fourHours.label;"
+                          value="240"/>
+              </menupopup>
+            </menulist>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    <groupbox>
+      <caption label="&workweek.label;"/>
+      <hbox>
+        <label value="&includeInWorkweek.label;&colon;"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.1.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d0sundaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.2.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d1mondaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.3.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d2tuesdaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.4.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d3wednesdaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.5.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d4thursdaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.6.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d5fridaysoff"/>
+        <checkbox class="dayOffCheckbox"
+                  label="&day.7.Ddd;"
+                  orient="vertical"
+                  preference="calendar.week.d6saturdaysoff"/>
+      </hbox>
+      <checkbox label="&showWorkdaysOnly.label;"
+                preference="celtx.calendar.workdaysonly"/>
+    </groupbox>
+    </vbox>
+    </hbox>
+  </prefpane>
+</overlay>

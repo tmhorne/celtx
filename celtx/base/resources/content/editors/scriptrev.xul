@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE dialog [
+#include ../celtx-entities.inc
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/celtx.css" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&revisionOptions.title;"
+        buttons="accept,cancel"
+        onload="loaded();"
+        ondialogaccept="accepted();">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scenenumbers.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptrev.js" />
+
+  <radiogroup id="modegroup"
+              hidden="true">
+    <radio id="modecurrent"
+           label="&currentRevision.label;"
+           oncommand="setMode('current');"
+           selected="true"/>
+    <radio id="modenew"
+           label="&startNewRevision.label;"
+           oncommand="setMode('new');"/>
+  </radiogroup>
+
+  <separator class="groove" hidden="true" />
+
+  <hbox align="center"
+        pack="start">
+    <label value="&revisionName.label;&colon;" />
+    <textbox id="name"
+             oninput="nameChanged();" />
+  </hbox>
+
+  <separator/>
+
+  <hbox align="center"
+        pack="start">
+    <label value="&revisionColour.label;&colon;" />
+    <menulist id="colour">
+      <menupopup>
+        <menuitem label="&colour.white;"
+                  value="0"
+                  selected="true" />
+        <menuitem label="&colour.blue;"
+                  value="1" />
+        <menuitem label="&colour.pink;"
+                  value="2" />
+        <menuitem label="&colour.yellow;"
+                  value="3" />
+        <menuitem label="&colour.green;"
+                  value="4" />
+        <menuitem label="&colour.gold;"
+                  value="5" />
+        <menuitem label="&colour.salmon;"
+                  value="6" />
+        <menuitem label="&colour.cherry;"
+                  value="7" />
+      </menupopup>
+    </menulist>
+  </hbox>
+
+  <description style="width: 250px; margin-left: 20px; font-size: 90%;">
+  &revisionColour.desc;
+  </description>
+
+  <separator/>
+
+  <checkbox id="lockscenes"
+            label="&enableSceneLocking.label;"
+            checked="true"/>
+
+</dialog>

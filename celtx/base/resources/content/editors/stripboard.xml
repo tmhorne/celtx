@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xbl="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+             id="stripboard-bindings">
+
+  <binding id="stripboard">
+    <content>
+      <xul:vbox flex="1" pack="start">
+        <children/>
+      </xul:vbox>
+    </content>
+    <implementation implements="calICalendarView,calIDecoratedView">
+      <field name="mObserver">
+      <![CDATA[({
+        QueryInterface: function (aIID) {
+          if (aIID.equals(Components.interfaces.calIObserver) ||
+              aIID.equals(Components.interfaces.nsISupports))
+            return this;
+          throw Components.results.NS_ERROR_NO_INTERFACE;
+        },
+
+        calView: this,
+
+        onStartBatch: function () {},
+        onEndBatch: function () {},
+
+        onLoad: function () {
+          this.calView.refresh();
+        },
+
+        onAddItem: function (aItem) {
+          if (aItem.hasProperty("X-CELTX-SHOOT-START") ||
+              aItem.hasProperty("X-CELTX-SHOOT-END"))
+            return;
+
+          var day = this.calView.getDayItemForDate(aItem.startDate);
+          if (day)
+            day.addItem(aItem);
+        },
+
+        onModifyItem: function (aNewItem, aOldItem) {
+          if (! aOldItem.hasProperty("X-CELTX-SHOOT-START") &&
+              ! aOldItem.hasProperty("X-CELTX-SHOOT-END")) {
+            var day = this.calView.getDayItemForDate(aOldItem.startDate);
+            if (day)
+              day.deleteItem(aOldItem);
+          }
+
+          if (! aNewItem.hasProperty("X-CELTX-SHOOT-START") &&
+              ! aNewItem.hasProperty("X-CELTX-SHOOT-END")) {
+            day = this.calView.getDayItemForDate(aNewItem.startDate);
+            if (day)
+              day.addItem(aNewItem);
+          }
+        },
+
+        onDeleteItem: function (aItem) {
+          if (aItem.hasProperty("X-CELTX-SHOOT-START") ||
+              aItem.hasProperty("X-CELTX-SHOOT-END"))
+            return;
+
+          var day = this.calView.getDayItemForDate(aItem.startDate);
+          if (day)
+            day.deleteItem(aItem);
+        },
+
+        onError: function (aErrNo, aMessage) {},
+        onPropertyChanged: function (aCalendar, aName, avalue, aOldValue) {},
+        onPropertyDeleting: function (aCalendar, aName) {},
+      })
+      ]]>
+      </field>
+        
+      <constructor>
+        <![CDATA[
+          this._calendar = null;
+          this._controller = null;
+          this._startDate = null;
+          this._endDate = null;
+          this._dateList = [];
+          this._workdaysOnly = false;
+          this._tasksInView = false;
+          this._showCompleted = false;
+          this._selectedItem = null;
+          this._selectedDay = null;
+
+          this._events = [];
+          this._timezone = UTC();
+        ]]>
+      </constructor>
+
+      <!-- calICalendarView implementation -->
+
+      <!-- calICalendar -->
+      <property name="displayCalendar">
+        <getter>
+          return this._calendar;
+        </getter>
+        <setter>
+          if (this._calendar)
+            this._calendar.removeObserver(this.mObserver);
+          this._calendar = val;
+          this._calendar.addObserver(this.mObserver);
+          this.refresh();
+          return val;
+        </setter>
+      </property>
+
+      <!-- calICalendarViewController -->
+      <property name="controller">
+        <getter>
+          return this._controller;
+        </getter>
+        <setter>
+          this._controller = val;
+          return val;
+        </setter>
+      </property>
+
+      <!-- calIDateTime -->
+      <property name="startDate" readonly="true">
+        <getter>
+          return this._startDate;
+        </getter>
+      </property>
+
+      <!-- calIDateTime -->
+      <property name="endDate" readonly="true">
+        <getter>
+          return this._endDate;
+        </getter>
+      </property>
+
+      <!-- boolean -->
+      <property name="supportsDisjointDates" readonly="true">
+        <getter>
+          return false;
+        </getter>
+      </property>
+
+      <!-- boolean -->
+      <property name="hasDisjointDates" readonly="true">
+        <getter>
+          <![CDATA[
+          return this._dateList.length > 1;
+          ]]>
+        </getter>
+      </property>
+
+      <!-- calIDateTime -->
+      <property name="selectedDay">
+        <getter>
+          return this._selectedDay;
+        </getter>
+        <setter>
+          if (this._selectedDay) {
+            var olditem = this.getDayItemForDate(this._selectedDay);
+            if (olditem)
+              olditem.removeAttribute("selected");
+          }
+          if (val) {
+            var dayitem = this.getDayItemForDate(val);
+            if (dayitem)
+              dayitem.setAttribute("selected", "true");
+          }
+          this._selectedDay = val;
+          return val;
+        </setter>
+      </property>
+
+      <!-- Convenience method for stripboard -->
+      <property name="selectedItem">
+        <getter>
+          return this._selectedItem;
+        </getter>
+        <setter>
+          if (val)
+            this.setSelectedItems(1, [ val ], false);
+          else
+            this.setSelectedItems(0, [], false);
+        </setter>
+      </property>
+
+      <!-- AUTF8String, setting does not refresh the view -->
+      <property name="timezone">
+        <getter>
+          return this._timezone;
+        </getter>
+        <setter>
+          this._timezone = val;
+          return val;
+        </setter>
+      </property>
+
+      <method name="showDate">
+        <!-- calIDateTime -->
+        <parameter name="aDate"/>
+        <body>
+        <![CDATA[
+          dump("--- stripboard.showDate\n");
+        ]]>
+        </body>
+      </method>
+
+      <method name="setDateRange">
+        <!-- calIDateTime -->
+        <parameter name="aStartDate"/>
+        <!-- calIDateTime -->
+        <parameter name="aEndDate"/>
+        <body>
+        <![CDATA[
+          this._startDate = aStartDate ? aStartDate.clone() : null;
+          this._endDate = aEndDate ? aEndDate.clone() : null;
+          this.refresh();
+        ]]>
+        </body>
+      </method>
+
+      <method name="setDateList">
+        <!-- unsigned -->
+        <parameter name="aCount"/>
+        <!-- array of calIDateTime -->
+        <parameter name="aDates"/>
+        <body>
+        <![CDATA[
+          dump("--- stripboard.setDateList\n");
+        ]]>
+        </body>
+      </method>
+
+      <method name="getDateList">
+        <!-- out unsigned -->
+        <parameter name="aCount"/>
+        <!-- returns array of calIDateTime -->
+        <body>
+        <![CDATA[
+          dump("--- stripboard.getDateList\n");
+          var dates = Array();
+          aCount.value = dates.length;
+          return dates;
+        ]]>
+        </body>
+      </method>
+
+      <method name="getSelectedItems">
+        <!-- out unsigned -->
+        <parameter name="aCount"/>
+        <!-- returns array of calIItemBase -->
+        <body>
+        <![CDATA[
+          dump("--- stripboard.getSelectedItems\n");
+          if (this._selectedItem) {
+            aCount.value = 1;
+            return [ this._selectedItem ];
+          }
+          else {
+            aCount.value = 0;
+            return [];
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="setSelectedItems">
+        <!-- unsigned -->
+        <parameter name="aCount"/>
+        <!-- array of calIItemBase -->
+        <parameter name="aItems"/>
+        <!-- if true, the 'itemselect' event will not be fired -->
+        <parameter name="aSuppressEvent"/>
+        <body>
+        <![CDATA[
+          if (this._selectedItem) {
+            var olditem = this.getItemForEvent(this._selectedItem);
+            if (olditem)
+              olditem.removeAttribute("selected");
+          }
+          if (aCount == 0) {
+            this._selectedItem = null;
+          }
+          else {
+            var calIEvent = Components.interfaces.calIEvent;
+            var firstitem = aItems[0];
+            if (! (firstitem instanceof calIEvent))
+              return;
+            this._selectedItem = firstitem.QueryInterface(calIEvent);
+            var item = this.getItemForEvent(this._selectedItem);
+            if (item) {
+              item.setAttribute("selected", "true");
+              this.selectedDay = this._selectedItem.startDate;
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- calIDecoratedView implementation -->
+
+      <!-- AUTF8String -->
+      <!-- From the IDL documentation, this seems to hold a fixed ID
+           of another element in the same DOM which should be enabled/disabled
+           whenever this view is selected. That sounds like work for a view
+           controller to me. We don't use this.
+      Oftentimes other elements in the DOM in which a calIDecoratedView is
+      used want to be aware of whether or not the view is selected.  An element
+      whose ID is observerID can be included in that DOM, and will be set to be
+      enabled or disabled depending on whether the view is selected.
+      -->
+      <property name="observerID" readonly="true">
+        <getter>
+          return "";
+        </getter>
+      </property>
+
+      <!-- boolean -->
+      <property name="initialized" readonly="true">
+        <getter>
+        <![CDATA[
+          return this._calendar && this._startDate && this._endDate;
+        ]]>
+        </getter>
+      </property>
+
+      <!-- boolean -->
+      <property name="workdaysOnly">
+        <getter>
+          return this._workdaysOnly;
+        </getter>
+        <setter>
+          this._workdaysOnly = val;
+          return val;
+        </setter>
+      </property>
+
+      <!-- boolean -->
+      <property name="tasksInView">
+        <getter>
+          return this._tasksInView;
+        </getter>
+        <setter>
+          this._tasksInView = val;
+          return val;
+        </setter>
+      </property>
+
+      <!-- boolean -->
+      <!-- We don't support rotation. -->
+      <property name="rotated">
+        <getter>
+          return false;
+        </getter>
+        <setter>
+          return false;
+        </setter>
+      </property>
+
+      <!-- boolean -->
+      <property name="showCompleted">
+        <getter>
+          return this._showCompleted;
+        </getter>
+        <setter>
+          this._showCompleted = val;
+          return val;
+        </setter>
+      </property>
+
+      <!-- calIDateTime -->
+      <!-- Why "Day" in calIDecoratedView and "Date" in calICalendarView? -->
+      <property name="startDay" readonly="true">
+        <getter>
+          return this.startDate;
+        </getter>
+      </property>
+
+      <!-- calIDateTime -->
+      <!-- Why "Day" in calIDecoratedView and "Date" in calICalendarView? -->
+      <property name="endDay" readonly="true">
+        <getter>
+          return this.endDate;
+        </getter>
+      </property>
+
+      <method name="goToDay">
+        <!-- calIDateTime -->
+        <parameter name="aDate"/>
+        <body>
+        <![CDATA[
+          this.selectedDay = aDate;
+          // TODO: Ensure day is scrolled into view
+        ]]>
+        </body>
+      </method>
+
+      <method name="moveView">
+        <!-- long, number of "pages" to move the view -->
+        <parameter name="aNumber"/>
+        <body>
+        <![CDATA[
+        ]]>
+        </body>
+      </method>
+
+      <method name="refresh">
+        <body>
+        <![CDATA[
+          if (this._refreshPending)
+            return;
+
+          this._refreshPending = true;
+
+          if (! this.initialized) {
+            this.relayout();
+            return;
+          }
+
+          var daydelta = this.endDate.subtractDate(this.startDate);
+          var numdays = daydelta.weeks * 7 + daydelta.days;
+
+          this._shootDays = new Array(numdays);
+          for (var i = 0; i < numdays; ++i) {
+            this._shootDays[i] = [];
+          }
+
+          var listener = {
+            calView: this,
+            QueryInterface: function (aIID) {
+              if (aIID.equals(Components.interfaces.calIOperationListener) ||
+                  aIID.equals(Components.interfaces.nsISupports))
+                return this;
+              throw Components.results.NS_ERROR_NO_INTERFACE;
+            },
+            onOperationComplete: function (aCalendar, aStatus, aOperationType,
+                                           aId, aDetail) {
+              var sortfn = function (a, b) {
+                return a.startDate.compare(b.startDate);
+              }
+              var days = this.calView._shootDays;
+              for (var i = 0; i < days.length; ++i)
+                days[i].sort(sortfn);
+              this.calView.relayout();
+            },
+            onGetResult: function (aCalendar, aStatus, aItemType, aDetail,
+                                   aCount, aItems) {
+              var ICal = Components.interfaces.calICalendar;
+              var IEvent = Components.interfaces.calIEvent;
+              var days = this.calView._shootDays;
+              var calstart = this.calView.startDate;
+              for (var i = 0; i < aItems.length; ++i) {
+                var item = aItems[i].QueryInterface(IEvent);
+
+                if (item.hasProperty("X-CELTX-SHOOT-START") ||
+                    item.hasProperty("X-CELTX-SHOOT-END"))
+                  continue;
+
+                var start = item.startDate;
+                if (! start.isDate) {
+                  start = start.clone();
+                  start.isDate = true;
+                }
+                var delta = start.subtractDate(calstart);
+                var offset = delta.weeks * 7 + delta.days;
+                days[offset].push(item);
+              }
+            }
+          };
+          var ICal = Components.interfaces.calICalendar;
+          var filter = ICal.ITEM_FILTER_CLASS_OCCURRENCES;
+
+          if (this.showCompleted)
+            filter |= ICal.ITEM_FILTER_COMPLETED_ALL;
+          else
+            filter |= ICal.ITEM_FILTER_COMPLETED_NO;
+
+          if (this.tasksInView)
+            filter |= ICal.ITEM_FILTER_TYPE_ALL;
+          else
+            filter |= ICal.ITEM_FILTER_TYPE_EVENT;
+          // Get all events from the beginning to the end of time
+
+          var startDate = this.startDate;
+          var endDate = this.endDate;
+
+          this._calendar.getItems(filter, 0, startDate, endDate, listener);
+        ]]>
+        </body>
+      </method>
+
+      <method name="relayout">
+        <body>
+        <![CDATA[
+          this._refreshPending = false;
+
+          while (this.hasChildNodes())
+            this.removeChild(this.lastChild);
+
+          if (! this.initialized) {
+            var message = document.createElementNS(Cx.NS_XUL, "description");
+            message.appendChild(document.createTextNode(
+              gApp.getText("StripboardDaysNotSetWarning")));
+            this.appendChild(message);
+            return;
+          }
+
+          var ds = this.controller.project.ds;
+          var df = Components.classes[
+            "@mozilla.org/calendar/datetime-formatter;1"]
+            .getService(Components.interfaces.calIDateTimeFormatter);
+          var rdfsvc = getRDFService();
+          var titlearc = rdfsvc.GetResource(Cx.NS_DC + "title");
+          var intextarc = rdfsvc.GetResource(Cx.NS_CX + "intext");
+          var daynightarc = rdfsvc.GetResource(Cx.NS_CX + "daynight");
+
+          var days = this._shootDays;
+          var curday = this.startDate.clone();
+          var oneday = Components.classes["@mozilla.org/calendar/duration;1"]
+            .createInstance(Components.interfaces.calIDuration);
+          oneday.days = 1;
+
+          var ps = getPrefService().getBranch("calendar.week.");
+          var daysOff = [
+            ps.getBoolPref("d0sundaysoff"), ps.getBoolPref("d1mondaysoff"),
+            ps.getBoolPref("d2tuesdaysoff"), ps.getBoolPref("d3wednesdaysoff"),
+            ps.getBoolPref("d4thursdaysoff"), ps.getBoolPref("d5fridaysoff"),
+            ps.getBoolPref("d6saturdaysoff")
+          ];
+
+          var daynum = 0;
+          for (var i = 0; i < days.length; ++i) {
+            var day = document.createElementNS(Cx.NS_XUL, "stripboardday");
+            day.date = curday.clone();
+            var datestr = df.formatDateLong(curday);
+
+            if (daysOff[curday.weekday]) {
+              day.setAttribute("startlabel", gApp.getText("DayOff")
+                + " - " + datestr);
+              day.setAttribute("endlabel", gApp.getText("DayOff")
+                + " - " + datestr);
+            }
+            else {
+              ++daynum;
+              day.setAttribute("startlabel",
+                gApp.getText("DayHeaderWithDate", [ daynum, datestr ]));
+              day.setAttribute("endlabel",
+                gApp.getText("DayEndHeaderWithDate", [ daynum, datestr ]));
+            }
+
+            this.appendChild(day);
+
+            for (var j = 0; j < days[i].length; ++j)
+              day.addItem(days[i][j]);
+
+            curday.addDuration(oneday);
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="getDayItemForDate">
+        <parameter name="aDate"/>
+        <body>
+        <![CDATA[
+          if (! this.initialized)
+            return null;
+
+          var dayDate = aDate.clone();
+          dayDate.isDate = true;
+          if (dayDate.compare(this.startDate) < 0)
+            return null;
+
+          if (dayDate.compare(this.endDate) >= 0)
+            return null;
+
+          var delta = dayDate.subtractDate(this.startDate);
+          var offset = delta.weeks * 7 + delta.days;
+          return this.childNodes[offset];
+        ]]>
+        </body>
+      </method>
+
+      <method name="getItemForEvent">
+        <parameter name="aEvent"/>
+        <body>
+        <![CDATA[
+          if (! this.initialized)
+            return null;
+
+          var dayitem = this.getDayItemForDate(aEvent.startDate);
+          if (! dayitem)
+            return null;
+
+          for (var i = 0; i < dayitem.childNodes.length; ++i) {
+            var item = dayitem.childNodes[i];
+            if (item.occurrence.hasSameIds(aEvent))
+              return item;
+          }
+
+          return null;
+        ]]>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+  <binding id="stripboardday">
+    <content>
+      <xul:vbox flex="1">
+        <xul:hbox class="stripboardheader">
+          <xul:label flex="1"
+                     xbl:inherits="value=startlabel"/>
+        </xul:hbox>
+        <children/>
+        <!--
+        <xul:hbox class="stripboardheader">
+          <xul:label flex="1"
+                     xbl:inherits="value=endlabel"/>
+        </xul:hbox>
+        -->
+      </xul:vbox>
+    </content>
+    <implementation>
+      <field name="mDate">null</field>
+      <field name="mItemData">[]</field>
+      <property name="date">
+        <getter>
+          return this.mDate;
+        </getter>
+        <setter>
+          this.mDate = val;
+          return val;
+        </setter>
+      </property>
+      <method name="addItem">
+        <parameter name="aItem"/>
+        <body>
+        <![CDATA[
+          var ds = this.parentNode.controller.project.ds;
+          var rdfsvc = getRDFService();
+          var ordarc = rdfsvc.GetResource(Cx.NS_CX + "ordinal");
+          var titlearc = rdfsvc.GetResource(Cx.NS_DC + "title");
+          var intextarc = rdfsvc.GetResource(Cx.NS_CX + "intext");
+          var settingarc = rdfsvc.GetResource(Cx.NS_CX + "setting");
+          var daynightarc = rdfsvc.GetResource(Cx.NS_CX + "daynight");
+          var event = document.createElementNS(Cx.NS_XUL, "stripboarditem");
+          event.occurrence = aItem;
+          var sceneuri = aItem.getProperty("X-CELTX-SCENE");
+          if (sceneuri) {
+            var sceneres = rdfsvc.GetResource(sceneuri);
+            var ordinal = getRDFString(ds, sceneres, ordarc);
+            var title = getRDFString(ds, sceneres, titlearc);
+            var setting = getRDFString(ds, sceneres, settingarc);
+            var intext = getRDFString(ds, sceneres, intextarc);
+            var daynight = getRDFString(ds, sceneres, daynightarc);
+            event.setAttribute("label", setting);
+            event.setAttribute("ordinal", ordinal);
+            event.setAttribute("intext", intext);
+            event.setAttribute("daynight", daynight);
+          }
+          else {
+            event.setAttribute("label", aItem.title);
+          }
+          for (var i = 0; i < this.childNodes.length; ++i) {
+            var next = this.childNodes[i];
+            if (aItem.startDate.compare(next.occurrence.startDate) < 0) {
+              this.insertBefore(event, next);
+              return;
+            }
+          }
+          this.appendChild(event);
+        ]]>
+        </body>
+      </method>
+      <method name="deleteItem">
+        <parameter name="aItem"/>
+        <body>
+        <![CDATA[
+          for (var i = 0; i < this.childNodes.length; ++i) {
+            if (this.childNodes[i].occurrence.hashId == aItem.hashId) {
+              this.childNodes[i].parentNode.removeChild(this.childNodes[i]);
+              break;
+            }
+          }
+        ]]>
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="click"
+               button="0">
+        this.parentNode.selectedDay = this.date;
+      </handler>
+      <handler event="dragenter">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = true;
+      ]]>
+      </handler>
+
+      <handler event="dragover">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = true;
+      ]]>
+      </handler>
+
+      <handler event="dragexit">
+      <![CDATA[
+        if (event.originalTarget != this) {
+            return;
+        }
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = false;
+      ]]>
+      </handler>
+
+      <handler event="dragdrop">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        var sourceNode = session.sourceNode;
+        var oldItem = sourceNode ? sourceNode.occurrence : null;
+
+        var transfer = Components.classes["@mozilla.org/widget/transferable;1"]
+          .createInstance(Components.interfaces.nsITransferable);
+        transfer.addDataFlavor("x-celtx/x-banner");
+        transfer.addDataFlavor("x-celtx/x-scene");
+        session.getData(transfer, 0);
+        var flavor = {};
+        var data = {};
+        var dataLen = {};
+
+        try {
+          transfer.getAnyTransferData(flavor, data, {});
+          data = data.value.QueryInterface(
+            Components.interfaces.nsISupportsString).toString();
+        }
+        catch (ex) {
+          dump("*** stripboardday.dragdrop: " + ex + "\n");
+          throw ex;
+        }
+        if (! flavor.value) {
+          dump("*** no flavor value obtained!\n");
+          return;
+        }
+
+        var calendar = this.parentNode.displayCalendar;
+        var duration = Components.classes["@mozilla.org/calendar/duration;1"]
+          .createInstance(Components.interfaces.calIDuration);
+        var item = oldItem ? oldItem.clone()
+          : Components.classes["@mozilla.org/calendar/event;1"]
+            .createInstance(Components.interfaces.calIEvent);
+        var action = oldItem ? "modify" : "add";
+
+        var allDay = (flavor.value == "x-celtx/x-banner" && data == "dayoff");
+
+        // All Day events are easy to add
+        if (allDay) {
+          if (! oldItem) {
+            if (data == "dayoff")
+              item.title = gApp.getText("DayOff");
+            else
+              item.title = gApp.getText("Untitled");
+          }
+          item.startDate = this.date.clone();
+          item.endDate = this.date.clone();
+          duration.days = 1;
+          item.endDate.addDuration(duration);
+          item.startDate.isDate = true;
+          item.endDate.isDate = true;
+          doTransaction(action, item, calendar, oldItem, null);
+          return;
+        }
+
+        // Decorate the item if it's new
+        if (! oldItem) {
+          if (flavor.value == "x-celtx/x-banner") {
+            if (data == "moving")
+              item.title = gApp.getText("Moving");
+            else
+              item.title = gApp.getText("Untitled");
+          }
+          else {
+            this.parentNode.controller.decorateEventForScene(item, data, true);
+          }
+        }
+
+        var pref = getPrefService().getBranch("celtx.calendar.");
+        // scene.defaultlength is measured in minutes
+        var scenelength = pref.getIntPref("scene.defaultlength");
+        // daystart is measured in seconds
+        var daystart = pref.getIntPref("daystart");
+
+        // Determine the duration
+        if (oldItem) {
+          // Existing items preserve their duration
+          duration = oldItem.endDate.subtractDate(oldItem.startDate);
+        }
+        else {
+          // New items get the default duration
+          duration.minutes = scenelength;
+          duration.normalize();
+        }
+
+        var startTime = null;
+
+        // Determine the start time
+        var insertBefore = null;
+        if (event.target.nodeName == "stripboarditem") {
+          // It starts when the item it was dropped onto starts
+          insertBefore = event.target;
+          startTime = insertBefore.occurrence.startDate.clone();
+        }
+        else if (this.childNodes.length > 0) {
+          // It starts when the last one ends
+          startTime = this.lastChild.occurrence.endDate.clone();
+        }
+        else {
+          // It starts at the default start of day
+          startTime = this.date.clone();
+          startTime.isDate = false;
+          var offset = Components.classes["@mozilla.org/calendar/duration;1"]
+            .createInstance(Components.interfaces.calIDuration);
+          offset.seconds = daystart;
+          offset.normalize();
+          startTime.addDuration(offset);
+        }
+
+        var endTime = startTime.clone();
+        endTime.addDuration(duration);
+
+        item.startDate = startTime;
+        item.endDate = endTime;
+
+        calendar.startBatch();
+        try {
+          doTransaction(action, item, calendar, oldItem, null);
+          // Shift any events that overlap
+          while (insertBefore) {
+            var itemToMove = insertBefore.occurrence;
+            // Stop shifting items if the next item is already fine
+            if (itemToMove.startDate.compare(endTime) >= 0)
+              break;
+            var movedItem = itemToMove.clone();
+            var offset = endTime.subtractDate(movedItem.startDate);
+            movedItem.startDate.addDuration(offset);
+            movedItem.endDate.addDuration(offset);
+            endTime = movedItem.endDate;
+            doTransaction("modify", movedItem, calendar, itemToMove, null);
+            insertBefore = insertBefore.nextSibling;
+          }
+        }
+        catch (ex) {
+          celtxBugAlert(ex, Components.stack, ex);
+        }
+        calendar.endBatch();
+      ]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="stripboarditem">
+    <content>
+      <xul:hbox flex="1"
+                class="scenebanner"
+                xbl:inherits="intext,daynight">
+        <xul:label flex="1"
+                   xbl:inherits="value=ordinal"/>
+        <xul:label flex="2"
+                   xbl:inherits="value=intext"/>
+        <xul:label flex="6"
+                   xbl:inherits="value=label"/>
+        <xul:label flex="2"
+                   xbl:inherits="value=daynight"/>
+        <xul:label flex="1"
+                   value="1/8"/>
+      </xul:hbox>
+    </content>
+    <handlers>
+      <handler event="click">
+        this.parentNode.parentNode.selectedItem = this.occurrence;
+      </handler>
+      <handler event="dblclick">
+        var item = this.occurrence;
+        this.parentNode.parentNode.controller.modifyOccurrence(item);
+      </handler>
+      <handler event="draggesture">
+        var item = this.occurrence;
+        if (item.calendar.readOnly)
+          return;
+
+        // TODO: Allow dragging of non-scene items too (e.g., Day Off, Moving)
+        var sceneuri = item.getProperty("X-CELTX-SCENE");
+        if (! sceneuri)
+          return;
+
+        var svc = Components.classes["@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var transfer = Components.classes["@mozilla.org/widget/transferable;1"]
+          .createInstance(Components.interfaces.nsITransferable);
+        transfer.addDataFlavor("x-celtx/x-scene");
+        transfer.setTransferData("x-celtx/x-scene",
+          createSupportsString(sceneuri), sceneuri.length * 2);
+
+        var txarray = createSupportsArray([transfer]);
+        svc.invokeDragSession(this, txarray, null, svc.DRAGDROP_ACTION_MOVE);
+      </handler>
+    </handlers>
+  </binding>
+
+</bindings>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xbl="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          id="datelabelbindings">
+
+  <binding id="datelabel">
+    <content>
+      <xul:label class="text-link"
+                 onclick="this.parentNode.onClick();"/>
+    </content>
+    <implementation>
+      <constructor>
+        this._label = document.getAnonymousNodes(this)[0];
+        if (this.hasAttribute("value")) {
+          try {
+            this.value = isoDateStringToDate(this.getAttribute("value"));
+          }
+          catch (ex) {
+            this.value = new Date();
+          }
+        }
+        else
+          this.value = new Date();
+        this._initialized = true;
+      </constructor>
+      <property name="value">
+        <getter>
+          return this._value;
+        </getter>
+        <setter>
+          this._value = val;
+          this._label.value = dateToISODateString(val).substring(0, 10);
+          if (! this._initialized)
+            return;
+          var event = document.createEvent("HTMLEvents");
+          event.initEvent("change", true, false);
+          this.dispatchEvent(event);
+        </setter>
+      </property>
+      <method name="onClick">
+        <body>
+        <![CDATA[
+          var config = {
+            date: this.value,
+            accepted: false
+          };
+          openDialog(Cx.CONTENT_PATH + "datepicker.xul", "_blank",
+            Cx.MODAL_DIALOG_FLAGS, config);
+          if (config.accepted)
+            this.value = config.date;
+        ]]>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+</bindings>

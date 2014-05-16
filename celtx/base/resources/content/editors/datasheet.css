@@ -1,0 +1,220 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url(chrome://celtx/skin/toolbar.css);
+
+medialist {
+  -moz-binding: url(chrome://celtx/content/editors/datasheet.xml#media-list);
+}
+
+img.plusminus {
+  border: none;
+  width: 11px;
+  height: 11px;
+}
+
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+removelink {
+  -moz-binding: url(chrome://celtx/content/editors/datasheet.xml#removelink);
+  font-size: 10px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+picklist {
+  -moz-binding: url(chrome://celtx/content/editors/datasheet.xml#picklist);
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+select {
+  font-size: 9pt;
+}
+
+.rm-label {
+  font-size: 10px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+/*
+
+
+	New additions
+
+
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial, helvetica, verdana;
+	font-size: 12px;
+}
+
+textarea {
+	height:100px;
+	width: 90%;
+}
+
+textarea[readonly=true], textarea[readonly=true]:hover, textarea[readonly=true]:focus {
+	border: 1px solid white;
+}
+
+input, textarea {
+	font-size: 12px;
+	font-family: arial, helvetica, verdana;
+	padding: 2px 1px;
+}
+
+input[type=text], textarea {
+	-moz-border-radius: 5px;
+	border: 1px solid #bbb;
+	padding: 4px;
+}
+
+input[type=text]:hover, input[type=text]:focus, textarea:hover, textarea:focus {
+	border: 1px solid #777;
+}
+
+.select input {
+	width: 15px;
+}
+
+p {
+	float: left;
+	width: 50%;
+	margin: 5px 0px;
+}
+
+tr {
+	width: 100%;
+}
+
+td {
+	width: 50%;
+	margin: 5px 0px;
+	vertical-align:top;
+}
+
+br {
+	clear: both;
+}
+
+.container1 {
+	width: 50%;
+	float: left;
+}
+
+.container1 .contents {
+	border-right: 1px dotted #bbb;
+}
+
+.container2 {
+	width: 50%;
+	float: right;
+}
+
+.container2 p {
+	width: 100%;
+}
+
+.container2 textarea {
+	height:78px;
+	width: 90%;
+	font-family: arial, helvetica, verdana;
+	font-size: 12px;
+	padding: 1px;
+}
+
+.scene {
+	background-image: url(chrome://celtx/skin/gloss-catalog.png);
+	background-repeat: repeat-x;
+	background-color: #444;
+	padding: 15px 2px 15px 15px;
+	font-weight: normal;
+	color: white;
+}
+
+.scene input[type=text] {
+	border: none;
+	background: white;
+	-moz-border-radius: 3px;
+	opacity: 0.7;
+}
+
+.scene input[type=text]:hover, .scene input[type=text]:focus {
+	opacity: 1.0;
+}
+
+.contents {
+	border-top: 0px;
+	background-color: #FFFFFF;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	padding: 8px 6px 23px 24px;
+}
+
+.print {
+	display:none;
+}
+
+@media print {
+	.print{
+		display: inline;
+		width:90%;
+	}
+	
+	textarea {
+		display:none;
+	}
+	
+	input {
+		display:none;
+	}
+	
+	select {
+		display:none;
+	}
+	
+	.button {
+		display:inline;
+	}
+	
+	.scene {
+		background: #ddd;
+		color: black;
+	}
+	
+	.plusminus {
+		display: none;
+	}
+}

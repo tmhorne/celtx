@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+                 
+<?xml-stylesheet href="chrome://calendar/skin/widgets/minimonth.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/widgets/calendar-widget-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/widgets/calendar-widgets.css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="shootdaysdialog"
+        title="&shootDays.label;"
+        buttons="accept,cancel"
+        onload="loaded();"
+        ondialogaccept="return accepted();"
+        ondialogcancel="return canceled();">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/shootdays.js"/>
+
+  <vbox id="msgbox"
+        collapsed="true">
+    <label id="msgheader"
+           class="header"/>
+    <label id="msgdesc"/>
+    <separator class="groove"/>
+  </vbox>
+
+  <hbox>
+    <vbox flex="1">
+      <label value="&startOfShooting.label;&colon;"/>
+      <minimonth id="startdate"
+                 onselect="startDateChanged();"/>
+    </vbox>
+    <separator/>
+    <vbox flex="1">
+      <label value="&endOfShooting.label;&colon;"/>
+      <minimonth id="enddate"
+                 onselect="endDateChanged();"/>
+    </vbox>
+  </hbox>
+
+  <hbox align="center"
+        pack="start">
+    <label value="&shootDays.label;&colon;"/>
+    <label id="shootdaycount"/>
+  </hbox>
+
+  <hbox align="center"
+        pack="start">
+    <label value="&daysOff.label;&colon;"/>
+    <label id="daysoffcount"/>
+  </hbox>
+
+  <label id="warninglabel"
+         value=""
+         style="color: red;"/>
+
+</dialog>

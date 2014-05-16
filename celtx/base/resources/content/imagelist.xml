@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          id="imagelistbindings">
+
+  <binding id="imagelist">
+    <content>
+      <xul:vbox flex="1"
+                class="imagelistcontainer"/>
+    </content>
+    <implementation implements="nsIRDFObserver,nsIDOMEventListener">
+
+      <field name="colwidth">96</field>
+      <property name="colwidth">
+        <getter>
+          return Number(this.getAttribute("colwidth"));
+        </getter>
+        <setter>
+          if (isNaN(Number(val)))
+            throw "colwidth must be a number";
+          this.setAttribute("colwidth", val);
+          return val;
+        </setter>
+      </property>
+
+      <constructor>
+        this._vbox = document.getAnonymousNodes(this)[0];
+
+        this._ds = Components.classes[
+          "@mozilla.org/rdf/datasource;1?name=composite-datasource"]
+          .createInstance(Components.interfaces.nsIRDFCompositeDataSource);
+        var ds = this._ds.QueryInterface(
+          Components.interfaces.nsIRDFDataSource);
+        ds.AddObserver(this);
+
+        this._rdf = Components.classes["@mozilla.org/rdf/rdf-service;1"]
+          .getService(Components.interfaces.nsIRDFService);
+        this._NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+        this._NS_RDFS = "http://www.w3.org/2000/01/rdf-schema#";
+        this._NS_CX = "http://celtx.com/NS/v1/";
+        this._NS_DC = "http://purl.org/dc/elements/1.1/";
+        this._NS_XUL =
+          "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+        // Cache how many items across we can support
+        this._itemsAcross = Math.floor(window.innerWidth / this.colwidth);
+        if (this._itemsAcross == 0) this._itemsAcross = 1;
+
+        this._items = [];
+
+        window.addEventListener("resize", this, false);
+      </constructor>
+
+      <destructor>
+        this._ds.RemoveObserver(this);
+        // Damned if I know whether or not this is necessary. I doubt it.
+        this._ds = null;
+
+        window.removeEventListener("resize", this, false);
+      </destructor>
+
+      <property name="value">
+        <getter>
+          if (this._selectedItem)
+            return this._selectedItem.getAttribute("uri");
+          else
+            return null;
+        </getter>
+        <setter>
+        <![CDATA[
+          if (val == this.value)
+            return;
+
+          if (! this._vbox.hasChildNodes())
+            return;
+          var hbox = this._vbox.firstChild;
+          while (hbox) {
+            if (! hbox.hasChildNodes()) {
+              hbox = hbox.nextSibling;
+              continue;
+            }
+            for (var i = 0; i < hbox.childNodes.length; ++i) {
+              if (hbox.childNodes[i].getAttribute("uri") == val) {
+                this.selectedItem = hbox.childNodes[i];
+                return;
+              }
+            }
+            hbox = hbox.nextSibling;
+          }
+        ]]>
+        </setter>
+      </property>
+
+      <property name="selectedItem">
+        <getter>
+          return this._selectedItem;
+        </getter>
+        <setter>
+          if (this._selectedItem == val) return;
+          if (this._selectedItem)
+            this._selectedItem.removeAttribute("selected");
+          this._selectedItem = val;
+          val.setAttribute("selected", "true");
+
+          var event = document.createEvent("Events");
+          event.initEvent("select", true, true);
+          this.dispatchEvent(event);
+        </setter>
+      </property>
+
+      <property name="imageFolder">
+        <getter>
+          return this._imageFolder;
+        </getter>
+        <setter>
+          this._imageFolder = val;
+          return val;
+        </setter>
+      </property>
+
+      <method name="addDataSource">
+        <parameter name="ds"/>
+        <body>
+          this._ds.AddDataSource(ds);
+        </body>
+      </method>
+
+      <method name="removeDataSource">
+        <parameter name="ds"/>
+        <body>
+          this._ds.RemoveDataSource(ds);
+        </body>
+      </method>
+
+      <method name="setListResource">
+        <parameter name="listres"/>
+        <body>
+          this._listres = listres;
+        </body>
+      </method>
+
+      <method name="refresh">
+        <body>
+        <![CDATA[
+          if (! this._listres)
+            return;
+
+          this._items = [];
+
+          var listres = this._rdf.GetResource(this._listres);
+          var seq = Components.classes["@mozilla.org/rdf/container;1"]
+            .createInstance(Components.interfaces.nsIRDFContainer);
+          seq.Init(this._ds, listres);
+
+          this._itemsAcross = Math.floor(window.innerWidth / this.colwidth);
+          if (this._itemsAcross == 0) this._itemsAcross = 1;
+          var totalrows = Math.ceil(seq.GetCount() / this._itemsAcross);
+
+          while (this._vbox.hasChildNodes() &&
+                 this._vbox.childNodes.length > totalrows)
+            this._vbox.removeChild(this._vbox.lastChild);
+
+          if (totalrows == 0)
+            return;
+
+          var hbox = null;
+          var elemcount = 0;
+          var rowcount = 0;
+          var elements = seq.GetElements();
+          while (elements.hasMoreElements()) {
+            if ((elemcount % this._itemsAcross) == 0) {
+              // Swap in the last box, if available
+              if (hbox) {
+                if (this._vbox.hasChildNodes() &&
+                    this._vbox.childNodes.length > rowcount) {
+                  this._vbox.replaceChild(hbox,
+                    this._vbox.childNodes[rowcount]);
+                }
+                else {
+                  this._vbox.appendChild(hbox);
+                }
+                ++rowcount;
+              }
+              hbox = document.createElementNS(this._NS_XUL, "hbox");
+              hbox.setAttribute("class", "imagerow");
+            }
+            var res = elements.getNext().QueryInterface(
+              Components.interfaces.nsIRDFResource);
+            var details = this.createDetailsForRes(res);
+            var item = document.createElementNS(this._NS_XUL, "itemthumbnail");
+            item.setAttribute("uri", res.Value);
+            item.setAttribute("label", details.title);
+            item.setAttribute("category", details.category);
+            item.setAttribute("image", details.thumbnail);
+            hbox.appendChild(item);
+            this._items.push(res.Value);
+            ++elemcount;
+          }
+
+          if (this._vbox.hasChildNodes() &&
+              this._vbox.childNodes.length > rowcount) {
+            this._vbox.replaceChild(hbox,
+              this._vbox.childNodes[rowcount]);
+          }
+          else {
+            this._vbox.appendChild(hbox);
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="createDetailsForRes">
+        <parameter name="res"/>
+        <body>
+        <![CDATA[
+          var IRes = Components.interfaces.nsIRDFResource;
+          var ILit = Components.interfaces.nsIRDFLiteral;
+
+          var typearc = this._rdf.GetResource(this._NS_RDF + "type");
+          var titlearc = this._rdf.GetResource(this._NS_DC + "title");
+          var labelarc = this._rdf.GetResource(this._NS_RDFS + "label");
+          var mediaarc = this._rdf.GetResource(this._NS_CX + "media");
+          var localfilearc = this._rdf.GetResource(this._NS_CX + "localFile");
+
+          var cu = Components.classes["@mozilla.org/rdf/container-utils;1"]
+            .getService(Components.interfaces.nsIRDFContainerUtils);
+
+          // Get the item's name
+          var title = this._ds.GetTarget(res, titlearc, true);
+          if (title && title instanceof ILit)
+            title = title.QueryInterface(ILit).Value;
+          else
+            title = "";
+
+          // Get the item's department name
+          var type = this._ds.GetTarget(res, typearc, true);
+          if (! (type && type instanceof IRes))
+            throw "*** addItem: type is not a valid resource";
+          type = type.QueryInterface(IRes);
+          var typelabel = this._ds.GetTarget(type, labelarc, true);
+          if (! (typelabel && typelabel instanceof ILit))
+            throw "*** addItem: type does not have a label";
+          typelabel = typelabel.QueryInterface(ILit).Value;
+
+          // Look for the (optional) image thumbnail
+          var thumbnail = null;
+          var media = this._ds.GetTarget(res, mediaarc, true);
+          if (media && media instanceof IRes) {
+            media = media.QueryInterface(IRes);
+            if (cu.IsSeq(this._ds, media)) {
+              var seq = Components.classes["@mozilla.org/rdf/container;1"]
+                .createInstance(Components.interfaces.nsIRDFContainer);
+              seq.Init(this._ds, media);
+              var images = seq.GetElements();
+              while (images.hasMoreElements()) {
+                var image = images.getNext().QueryInterface(IRes);
+                var imagetype = this._ds.GetTarget(image, typearc, true);
+                if (imagetype && imagetype instanceof IRes) {
+                  imagetype = imagetype.QueryInterface(IRes);
+                  if (imagetype.Value == this._NS_CX + "Image") {
+                    thumbnail = image;
+                    break;
+                  }
+                }
+              }
+            }
+          }
+          if (thumbnail) {
+            try {
+              var filename = this._ds.GetTarget(thumbnail, localfilearc, true);
+              if (! (filename && filename instanceof ILit))
+                throw "image has no local file";
+              filename = filename.QueryInterface(ILit).Value;
+              var file = null;
+              if (this._imageFolder) {
+                file = this._imageFolder.clone();
+                file.append(filename);
+              }
+              else {
+                file = Components.classes["@mozilla.org/file/local;1"]
+                  .createInstance(Components.interfaces.nsILocalFile);
+                file.initWithPath(filename);
+              }
+              var ios = Components.classes["@mozilla.org/network/io-service;1"]
+                .getService(Components.interfaces.nsIIOService);
+              thumbnail = ios.newFileURI(file).spec;
+            }
+            catch (ex) {
+              thumbnail = null;
+            }
+          }
+          if (! thumbnail)
+            thumbnail = "chrome://celtx/skin/celtx.png";
+
+          return { title: title, category: typelabel, thumbnail: thumbnail };
+        ]]>
+        </body>
+      </method>
+
+      <!-- Do not call this during reflow! It depends on a stable layout. -->
+      <method name="itemForResource">
+        <parameter name="res"/>
+        <body>
+        <![CDATA[
+          if (! res)
+            return null;
+
+          if (! (res instanceof Components.interfaces.nsIRDFResource))
+            throw "itemForResource: Argument is not an nsIRDFResource";
+
+          res = res.QueryInterface(Components.interfaces.nsIRDFResource);
+          if (! this._vbox.hasChildNodes())
+            return null;
+
+          for (var i = 0; i < this._items.length; ++i) {
+            if (this._items[i] != res.Value)
+              continue;
+
+            var row = Math.floor(i / this._itemsAcross);
+            var col = i - row * this._itemsAcross;
+            if (this._vbox.childNodes.length <= row) {
+              dump("*** itemForResource: Not enough rows to find item\n");
+              return null;
+            }
+            var row = this._vbox.childNodes[row];
+            if (! row.hasChildNodes()) {
+              dump("*** itemForResource: Row has no children\n");
+              return null;
+            }
+            if (row.childNodes.length <= col) {
+              dump("*** itemForResource: Not enough items in row\n");
+              return null;
+            }
+            var item = row.childNodes[col];
+            if (item.getAttribute("uri") != res.Value) {
+              dump("*** itemForResource: Resource mismatch\n");
+              return null;
+            }
+            return item;
+          }
+          return null;
+        ]]>
+        </body>
+      </method>
+
+      <method name="addItem">
+        <parameter name="res"/>
+        <body>
+        <![CDATA[
+          var item = this.itemForResource(res);
+
+          if (item) {
+            this.removeItem(item);
+          }
+          else {
+            var details = this.createDetailsForRes(res);
+            item = document.createElementNS(this._NS_XUL, "itemthumbnail");
+            item.setAttribute("uri", res.Value);
+            item.setAttribute("label", details.title);
+            item.setAttribute("category", details.category);
+            item.setAttribute("image", details.thumbnail);
+          }
+
+          var hbox = null;
+          if (this._vbox.hasChildNodes()) {
+            hbox = this._vbox.lastChild;
+            // Don't append if it will overflow into a new row anyway
+            if (hbox.hasChildNodes() &&
+                hbox.childNodes.length >= this._itemsAcross)
+              hbox = null;
+          }
+          if (! hbox) {
+            hbox = document.createElementNS(this._NS_XUL, "hbox");
+            hbox.setAttribute("class", "imagerow");
+            this._vbox.appendChild(hbox);
+          }
+          hbox.appendChild(item);
+
+          this._items.push(res.Value);
+        ]]>
+        </body>
+      </method>
+
+      <method name="removeItem">
+        <parameter name="item"/>
+        <body>
+        <![CDATA[
+          if (! item)
+            return;
+          var box = item.parentNode;
+          box.removeChild(item);
+          var nextbox = box.nextSibling;
+          if (nextbox && nextbox.hasChildNodes()) {
+            box.appendChild(nextbox.firstChild);
+            if (! nextbox.hasChildNodes())
+              nextbox.parentNode.removeChild(nextbox);
+          }
+          if (! box.hasChildNodes())
+            box.parentNode.removeChild(box);
+
+          var resuri = item.getAttribute("uri");
+          for (var i = 0; i < this._items.length; ++i) {
+            if (this._items[i] == resuri) {
+              this._items.splice(i, 1);
+              break;
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="insertItem">
+        <parameter name="res"/>
+        <parameter name="pos"/>
+        <body>
+        <![CDATA[
+          if (! res)
+            throw "insertItem: Invalid resource";
+
+          var item = this.itemForResource(item);
+
+          if (item) {
+            this.removeItem(item);
+          }
+          else {
+            var details = this.createDetailsForRes(res);
+            item = document.createElementNS(this._NS_XUL, "itemthumbnail");
+            item.setAttribute("uri", res.Value);
+            item.setAttribute("label", details.title);
+            item.setAttribute("category", details.category);
+            item.setAttribute("image", details.thumbnail);
+          }
+
+          var row = Math.floor(pos / this._itemsAcross);
+          var col = pos - row * this._itemsAcross;
+          var hbox = null;
+          if (this._vbox.hasChildNodes() && this._vbox.childNodes.length > row)
+            hbox = this._vbox.childNodes[row];
+          else {
+            hbox = document.createElementNS(this._NS_XUL, "hbox");
+            hbox.setAttribute("class", "imagerow");
+            this._vbox.appendChild(hbox);
+          }
+          this._ignoreResize = true;
+        ]]>
+        </body>
+      </method>
+
+      <!-- Listen for underflows/overflows in rows -->
+      <method name="handleEvent">
+        <parameter name="event"/>
+        <body>
+        <![CDATA[
+          if (event.type == "resize") {
+            var itemsAcross = Math.floor(window.innerWidth / this.colwidth);
+            if (itemsAcross == 0) itemsAcross = 1;
+
+            if (itemsAcross != this._itemsAcross)
+              this.refresh();
+          }
+        ]]>
+        </body>
+      </method>
+
+      <!-- nsIRDFObserver methods -->
+      <method name="onBeginUpdateBatch">
+        <parameter name="ds"/>
+        <body>
+        </body>
+      </method>
+
+      <method name="onEndUpdateBatch">
+        <parameter name="ds"/>
+        <body>
+          this.refresh();
+        </body>
+      </method>
+
+      <method name="onAssert">
+        <parameter name="ds"/>
+        <parameter name="src"/>
+        <parameter name="prop"/>
+        <parameter name="tgt"/>
+        <body>
+          var item = this.itemForResource(src);
+          if (! item)
+            return;
+
+          if (prop.Value == this._NS_DC + "title") {
+            tgt = tgt.QueryInterface(Components.interfaces.nsIRDFLiteral);
+            item.label = tgt.Value;
+          }
+        </body>
+      </method>
+
+      <method name="onChange">
+        <parameter name="ds"/>
+        <parameter name="src"/>
+        <parameter name="prop"/>
+        <parameter name="oldtgt"/>
+        <parameter name="newtgt"/>
+        <body>
+          var item = this.itemForResource(src);
+          if (! item)
+            return;
+
+          if (prop == this._NS_DC + "title") {
+            newtgt = newtgt.QueryInterface(Components.interfaces.nsIRDFLiteral);
+            item.label = newtgt.Value;
+          }
+        </body>
+      </method>
+
+      <method name="onMove">
+        <parameter name="ds"/>
+        <parameter name="oldsrc"/>
+        <parameter name="newsrc"/>
+        <parameter name="prop"/>
+        <parameter name="tgt"/>
+        <body>
+        </body>
+      </method>
+
+      <method name="onUnassert">
+        <parameter name="ds"/>
+        <parameter name="src"/>
+        <parameter name="prop"/>
+        <parameter name="tgt"/>
+        <body>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+  <binding id="itemthumbnail"
+           extends="chrome://global/content/bindings/general.xml#basecontrol">
+    <content>
+      <xul:image anonid="thumbnail"
+                 flex="1"
+             xbl:inherits="src=image"/>
+      <xul:label anonid="label"
+                 crop="end"
+             xbl:inherits="value=label"/>
+    </content>
+    <implementation>
+      <property name="label">
+        <getter>
+          var label = document.getAnonymousElementByAttribute(this, "anonid",
+            "label");
+          return label.value;
+        </getter>
+        <setter>
+          var label = document.getAnonymousElementByAttribute(this, "anonid",
+            "label");
+          label.value = val;
+          return val;
+        </setter>
+      </property>
+    </implementation>
+    <handlers>
+      <handler event="click"
+               button="0">
+      <![CDATA[
+        var imagelist = this.parentNode;
+        while (imagelist && imagelist.nodeName != "imagelist")
+          imagelist = imagelist.parentNode;
+        if (imagelist)
+          imagelist.selectedItem = this;
+      ]]>
+      </handler>
+    </handlers>
+  </binding>
+
+</bindings>

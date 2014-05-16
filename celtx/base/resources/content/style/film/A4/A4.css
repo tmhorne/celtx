@@ -1,0 +1,101 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url(chrome://celtx/content/style/film/film.css);
+
+@media print {
+  body {
+    font-size: 12pt;
+    padding: 0px 0px 0px 0px;
+    margin: 0.3125in 0px 0px 0px;
+  }
+
+  /* All settings adjusted for invisible left and right margin 0.6875in */
+
+  .dual {
+    margin-left: 0.3125in;
+  }
+
+  .dd {
+    float: left;
+    width: 2.63in;
+    margin-left: 0.5in;
+  }
+
+  .dd > .character {
+    margin-left: 0.9375in;
+    margin-right: 0in;
+  }
+
+  .dd > .parenthetical {
+    margin-left: 0.625in;
+    margin-right: 0in;
+  }
+
+  .dd > .dialog {
+    margin-left: 0in;
+    margin-right: 0in;
+  }
+
+  p {
+    margin-left: 0.8125in;
+    margin-right: 0.3125in;
+  }
+
+  p.character {
+    margin-left: 2.8125in;
+  }
+
+  p.parenthetical {
+    margin-left: 2.3125in;
+    margin-right: 1.8125in;
+  }
+
+  p.dialog {
+    margin-left: 1.8125in;
+    margin-right: 1.8125in;
+  }
+
+  p.sceneheading:before {
+    margin-left: -0.5in;
+%ifndef XP_MACOSX
+    margin-bottom: -13pt !important;
+%endif
+  }
+
+  p.sceneheading:after {
+    margin-right: 0in;
+%ifndef XP_MACOSX
+    margin-top: -13pt !important;
+%endif
+  }
+
+  .softbreak:after, .hardbreak:after {
+    margin-right: 0.5625in;
+  }
+
+  .firstpage:after {
+    margin-right: 0.5625in;
+  }
+}

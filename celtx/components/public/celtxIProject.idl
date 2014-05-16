@@ -1,0 +1,44 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsISupports.idl"
+
+interface nsIRDFDataSource;
+interface nsILocalFile;
+
+/*
+ * This is far from the full interface, but it's all we need for the
+ * purposes of our XPCOM components that use it.
+ */
+[scriptable, uuid(b1378be5-9f7b-454d-9851-523490d24743)]
+interface celtxIProject: nsISupports
+{
+  readonly attribute string id;
+  readonly attribute string wsref;
+
+  readonly attribute nsIRDFDataSource ds;
+  readonly attribute nsILocalFile projectFolder;
+
+  string mintURI ();
+};

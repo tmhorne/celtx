@@ -1,0 +1,89 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+.sceneitem[depth="2"] {
+  padding-left: 10px;
+}
+
+.sceneitem[depth="3"] {
+  padding-left: 15px;
+}
+
+.sceneitem[depth="4"] {
+  padding-left: 20px;
+}
+
+.sceneitem > hbox > label {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.bumperbutton .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+  visibility: hidden;
+}
+
+/*
+ * We want visibility according to this:
+ * V = visible, T = transparent, H = hidden
+ *
+ * selected| Y | Y | Y | Y | N | N | N | N |
+ * hover   | Y | Y | N | N | Y | Y | N | N |
+ * disabled| Y | N | Y | N | Y | N | Y | N |
+ * --------+---+---+---+---+---+---+---+---+
+ * result  | H | V | H | V | H | T | H | H |
+ *
+ * V = (S & d)
+ * T = (s & H & d)
+ * H = (D) | (s & h & d) -- default
+ */
+
+.sceneitem:not([selected]):hover .bumperbutton:not([disabled]) .toolbarbutton-icon {
+  visibility: visible;
+  opacity: 0.5;
+}
+
+.sceneitem[selected] .bumperbutton:not([disabled]) .toolbarbutton-icon {
+  visibility: visible;
+}
+
+/*
+.bumperbutton {
+  margin: 0px;
+  padding: 4px;
+  border: 0px;
+}
+
+.bumperbutton label {
+  display: none;
+}
+
+.bumperbutton[action="outdent"] {
+  list-style-image: url(chrome://celtx/skin/indent_decrease.png);
+}
+.bumperbutton[action="indent"] {
+  list-style-image: url(chrome://celtx/skin/outdent_decrease.png);
+}
+*/

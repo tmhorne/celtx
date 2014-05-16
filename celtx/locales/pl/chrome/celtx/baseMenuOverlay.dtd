@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m" >
+<!ENTITY minimizeWindow.label "Miniaturka" >
+<!ENTITY bringAllToFront.label "Pokaż wszystko na wierzchu" >
+<!ENTITY zoomWindow.label "Powiększenie" >
+<!ENTITY windowMenu.label "Okno" >
+
+<!ENTITY helpMenu.label "Pomoc" >
+<!ENTITY helpMenu.accesskey "c" >
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label	  "Pomoc" >
+<!ENTITY helpMenuWin.accesskey	  "c" >
+<!ENTITY aboutCmd.label           "O programie &brandFullName;">
+<!ENTITY aboutCmd.accesskey       "O">
+<!ENTITY helpContents.label       "Spis tematów">
+<!ENTITY helpContents.accesskey   "S">
+<!ENTITY helpContentsMac.label    "Pomoc programu &brandShortName;">
+<!ENTITY helpForIEUsers.label     "Dla użytkowników Internet Explorera">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "/">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.accesskey     "I">
+<!ENTITY helpReleaseNotes.label         "Informacje o wydaniu">
+<!ENTITY updateCmd.accesskey            "a"> 
+<!ENTITY updateCmd.label                "Sprawdź dostępność aktualizacji…">
+
+<!ENTITY preferencesCmdMac.label        "Preferencje…">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Usługi">
+
+<!ENTITY hideThisAppCmdMac.label        "Ukryj &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Ukryj pozostałe">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Pokaż wszystkie">

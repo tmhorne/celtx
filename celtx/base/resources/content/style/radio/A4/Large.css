@@ -1,0 +1,70 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url(chrome://celtx/content/style/radio/A4/A4.css);
+
+@media screen {
+  body {
+    font-size: 12pt;
+    width: 676px;
+    padding: 0px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
+  }
+
+  /* The editor crops 1.0in left and 0.5in right from the page */
+
+  /* All calculations are based on 1.0in = 96px at 12pt */
+
+  p {
+    margin-left: 48px; /* 1.5in */
+    margin-right: 48px; /* 1.0in */
+  }
+
+  p.dialog, p.parenthetical {
+    margin-left: 96px;
+  }
+
+  p.action {
+    margin-left: 192px;
+    margin-right: 96px;
+  }
+
+  p.sceneheading, p.title {
+    margin-left: 288px;
+  }
+
+  p.sceneheading:before {
+    margin-left: -36px;
+%ifndef XP_MACOSX
+    margin-bottom: -18px !important;
+%endif
+  }
+
+  p.sceneheading:after {
+    margin-right: -48px;
+%ifndef XP_MACOSX
+    margin-top: -18px !important;
+%endif
+  }
+}

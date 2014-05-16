@@ -1,0 +1,36 @@
+<!ENTITY aboutCmd.accesskey "א">
+<!ENTITY aboutCmd.label "אודות &brandFullName;">
+<!ENTITY bringAllToFront.label "הבא הכל לקידמה">
+<!ENTITY helpContents.accesskey "ת">
+<!ENTITY helpContents.label "תוכן עזרה">
+<!ENTITY helpContentsMac.label "עזרה של &brandShortName;">
+<!ENTITY helpForIEUsers.accesskey "מ">
+<!ENTITY helpForIEUsers.label "למשתמשי Internet Explorer">
+<!ENTITY helpMenu.accesskey "ז">
+<!ENTITY helpMenu.label "עזרה">
+<!ENTITY helpMenuWin.accesskey "ז">
+<!ENTITY helpMenuWin.label "עזרה">
+<!ENTITY helpReleaseNotes.accesskey "ה">
+<!ENTITY helpReleaseNotes.label "הערות הפצה">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.label "הסתר אחרים">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,shift">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.label "הסתר את &brandShortName;">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "מזער חלון">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.label "העדפות...">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+<!ENTITY servicesMenuMac.label "שירותים">
+<!ENTITY showAllAppsCmdMac.label "הראה הכל">
+<!ENTITY updateCmd.accesskey "כ">
+<!ENTITY updateCmd.label "בדוק אם ישנם עדכונים...">
+<!ENTITY windowMenu.label "חלון">
+<!ENTITY zoomWindow.label "הגדל חלון">

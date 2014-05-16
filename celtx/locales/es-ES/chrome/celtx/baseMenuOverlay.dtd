@@ -1,0 +1,36 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "Minimizar">
+<!ENTITY bringAllToFront.label "Traer todo al frente">
+<!ENTITY zoomWindow.label "Tamaño">
+<!ENTITY windowMenu.label "Ventana">
+<!ENTITY helpMenu.label "Ayuda">
+<!ENTITY helpMenu.accesskey "u">
+<!ENTITY helpMenuWin.label "Ayuda">
+<!ENTITY helpMenuWin.accesskey "u">
+<!ENTITY aboutCmd.label "Acerca de &brandFullName;">
+<!ENTITY aboutCmd.accesskey "A">
+<!ENTITY helpContents.label "Contenido de la ayuda">
+<!ENTITY helpContents.accesskey "u">
+<!ENTITY helpContentsMac.label "Ayuda de &brandShortName;">
+<!ENTITY helpForIEUsers.label "Para usuarios de Internet Explorer">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+<!ENTITY helpReleaseNotes.label "Notas de publicación">
+<!ENTITY helpReleaseNotes.accesskey "N">
+<!ENTITY updateCmd.label "Buscar actualizaciones…">
+<!ENTITY updateCmd.accesskey "o">
+<!ENTITY preferencesCmdMac.label "Preferencias…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+<!ENTITY servicesMenuMac.label "Servicios">
+<!ENTITY hideThisAppCmdMac.label "Ocultar &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+<!ENTITY hideOtherAppsCmdMac.label "Ocultar otros">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+<!ENTITY showAllAppsCmdMac.label "Mostrar todo">

@@ -1,0 +1,965 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "ইমেল">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "বিবিসি অপশনস্‌">
+<!ENTITY bbc.showTitle.label "শো-র টাইটেল">
+<!ENTITY bbc.sketchTitle.label "স্কেচের টাইটেল">
+<!ENTITY editText.title "এডিট টেক্সট">
+<!ENTITY sketch.fillColour.tooltip "ফিল কালার">
+<!ENTITY sketch.group.tooltip "গ্রুপ">
+<!ENTITY sketch.lower.tooltip "নিচে">
+<!ENTITY sketch.lowerToBottom.tooltip "সবার নিচে">
+<!ENTITY sketch.raise.tooltip "উপরে">
+<!ENTITY sketch.raiseToTop.tooltip "সবার উপরে">
+<!ENTITY sketch.strokeColour.tooltip "স্ট্রোক কালার">
+<!ENTITY sketch.ungroup.tooltip "আন-গ্রুপ">
+
+<!ENTITY custom.label "কাস্টম">
+<!ENTITY saveAsPreset.label "প্রিসেট সেভ করুন">
+<!ENTITY sceneLocking.title "সিন লকিং">
+<!ENTITY sceneNumbering.label "সিন নাম্বারিং">
+<!ENTITY scenenumber.after.label "পরে">
+<!ENTITY scenenumber.before.label "আগে">
+<!ENTITY scenenumber.example.label "উদাহরণ">
+<!ENTITY scenenumber.letter.label "অক্ষর">
+<!ENTITY scenenumber.number.label "নাম্বার">
+<!ENTITY scenenumber.position.label "পজিশণ">
+<!ENTITY scenenumber.prefix.label "প্রিফিক্স">
+<!ENTITY scenenumbers.resetAll.label "সব নাম্বার পুনরায় বসান">
+<!ENTITY scenenumber.suffix.label "সাফিক্স">
+<!ENTITY scenenumber.type.label "টাইপ">
+<!ENTITY style.label "স্টাইল">
+
+<!ENTITY project.film.label "চলচ্চিত্র">
+<!ENTITY project.av.label "এ/ভি">
+<!ENTITY project.theatre.label "মঞ্চ">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "ইমেজ যোগ করুন">
+<!ENTITY addPaletteObjects.label "আর্ট প্যাক নিন">
+<!ENTITY addShot.label "শট যোগ করুন">
+<!ENTITY bbcCueStyle.label "বিবিসি কিউ">
+<!ENTITY bbcSceneStyle.label "বিবিসি সিন">
+<!ENTITY bdc.cameras "ক্যামেরা">
+<!ENTITY chat.label "চ্যাট">
+<!ENTITY colour.blue "নীল">
+<!ENTITY colour.cherry "চেরি">
+<!ENTITY colour.gold "সোনালী">
+<!ENTITY colour.green "সবুজ">
+<!ENTITY colour.pink "গোলাপী">
+<!ENTITY colour.salmon "স্যামন">
+<!ENTITY colour.white "সাদা">
+<!ENTITY colour.yellow "হলুদ">
+<!ENTITY currentRevision.label "ক্যারেন্ট রিভিশণ">
+<!ENTITY createNewRevision.tooltip "নতুন রিভিশণ তৈরী করুন">
+<!ENTITY default.label "ডিফল্ট">
+<!ENTITY enableSceneLocking.label "লক সিন">
+<!ENTITY fixNumbers.label "ফিক্স">
+<!ENTITY furniture.label "ফার্নিচার">
+<!ENTITY hollywood.label "হলিউড">
+<!ENTITY light.flood.label "বন্যা">
+<!ENTITY light.spot.label "স্পট">
+<!ENTITY linesBetweenScenes.label "সিনের মাঝের লাইনসমূহ">
+<!ENTITY man.label "পুরুষ">
+<!ENTITY numbers.bothNos "উভয় #s">
+<!ENTITY numbers.leftNo "বাম #">
+<!ENTITY numbers.none "কোনটাই না">
+<!ENTITY numbers.rightNo "ডান #">
+<!ENTITY omitScene.label "সিন বাতিল করুন">
+<!ENTITY palette.label "প্যালেট">
+<!ENTITY palettes.label "প্যালেটসমূহ">
+<!ENTITY paletteTree.tooltip "ড্র্যাগ এবং ড্রপ পদ্ধতিতে আপনার স্কেচে অবজেক্ট যোগ করুন">
+<!ENTITY people.label "মানুষ">
+<!ENTITY person.label "ব্যক্তি">
+<!ENTITY preventEditing.label "টেক্সট লক">
+<!ENTITY resetRevisionMode.label "রিভিশণ মুড রিসেট করুন">
+<!ENTITY revisionColour.desc "স্ক্রিপ্টে যে কোন ধরণের পরিবর্তনের জন্য এটা ডিফল্ট রিভিশণ কালার হিসেবে ব্যবহৃত।">
+<!ENTITY revisionColour.label "রিভিশণ কালার">
+<!ENTITY revisionMarks.all "সব মার্ক করুন">
+<!ENTITY revisionMarks.current "ক্যারেন্ট মার্ক">
+<!ENTITY revisionMarks.hide "মার্ক লুকান">
+<!ENTITY revisionMarks.mark.label "মার্ক">
+<!ENTITY revisionMarks.unmark.label "আন-মার্ক">
+<!ENTITY revisionMode.label "রিভিশণ মুড">
+<!ENTITY revisionName.label "রিভিশণের নাম">
+<!ENTITY revisionOptions.title "রিভিশণের অপশণ">
+<!ENTITY shotSetup.label "স্কেচ">
+<!ENTITY shotSetup.desc "প্রোজেক্টে স্কেচ যোগ করুন।">
+<!ENTITY showScriptHeader.label "স্ক্রিপ্ট হেডার দেখান">
+<!ENTITY standard.label "স্ট্যান্ডার্ড">
+<!ENTITY startNewRevision.label "নতুন রিভিশণ শুরু করুন">
+<!ENTITY storyboard.showImages.label "ইমেজ দেখান">
+<!ENTITY storyboard.showSetups.label "স্কেচ দেখান">
+<!ENTITY storyboard.showBoth.label "দুটোই দেখান">
+<!ENTITY woman.label "নারী">
+
+<!ENTITY light.bank.label "ব্যাংকলাইট">
+<!ENTITY bathtub.label "বাথ ট্যাব">
+<!ENTITY boy.label "ছেলে">
+<!ENTITY car.label "গাড়ি">
+<!ENTITY chair.label "চেয়ার">
+<!ENTITY coffeetable.label "কফি টেবিল">
+<!ENTITY couch.label "সোফা">
+<!ENTITY crowd.label "ভীড়">
+<!ENTITY endtable.label "টেবিলের শেষপ্রান্ত">
+<!ENTITY girl.label "মেয়ে">
+<!ENTITY group.label "গ্রুপ"> <!-- মানুষের দল -->
+<!ENTITY house.label "বাড়ি">
+<!ENTITY building.label "ব্লিডিং"> <!-- e.g., অফিস ব্লিডিং -->
+<!ENTITY pickuptruck.label "পিকআপ ট্রাক">
+<!ENTITY sink.label "সিংক"> <!-- কিচেন সিংক -->
+<!ENTITY spotlight.label "স্পটলাইট">
+<!ENTITY street.label "রাস্তা">
+<!ENTITY toilet.label "টয়লেট">
+<!ENTITY tree.label "গাছ">
+<!ENTITY van.label "ভ্যান">
+<!ENTITY videocamera.label "ভিডিও ক্যামেরা">
+
+<!ENTITY addImages.label "ইমেজ যোগ করুন">
+<!ENTITY createTemplate.label "টেম্পলেট তৈরী করুন">
+<!ENTITY fetchingList.label "লিষ্ট তৈরী করুন">
+<!ENTITY getCeltxTools.label "সেল্টেক্স টুলস্‌ নিন">
+<!ENTITY myStudio.label "আমার স্টুডিও">
+<!ENTITY openFromStudio.label "স্টুডিও থেকে ওপেন করুন">
+<!ENTITY owner.label "ওনার">
+<!ENTITY personal.label "ব্যক্তিগত">
+<!ENTITY saveCommentCheckbox.label "স্টুডিওতে সেভ করার সময় আমার মতামত জানতে চান।">
+<!ENTITY saveToStudio.label "স্টুডিওতে সেভ করুন">
+<!ENTITY savedBy.label "সেভড্‌ বাই">
+<!ENTITY studio.label "স্টুডিও">
+<!ENTITY studioAuthDialog.title "সেল্টেক্স স্টুডিও অথেন্টিকেশণ">
+<!ENTITY studioAuthDialog.desc "সেল্টেক্স স্টুডিও লগ ইন">
+<!ENTITY studioProjects.label "স্টুডিও প্রোজেক্টসমূহ">
+<!ENTITY toolbox.label "টুলবক্স">
+
+<!ENTITY access.label "অ্যাক্সেস">
+<!ENTITY actorProfile.desc "অভিনেতার জন্য বিবরণ যোগ করুন।">
+<!ENTITY actorProfile.label "&bdc.actor;">
+<!ENTITY adaptTo.label "রুপান্তর">
+<!ENTITY add.label "যোগ">
+<!ENTITY addCardCmd.label "কার্ড যোগ করুন">
+<!ENTITY addCmd.label "যোগ">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "আইটেমের বিবরণ">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "আইটেম সিলেক্ট করুন">
+<!ENTITY addFolder.label "ফোল্ডার যোগ করুন...">
+<!ENTITY addFolderCmd.label "ফোল্ডার যোগ করুন">
+<!ENTITY addItem.label "আইটেম যোগ করুন...">
+<!ENTITY addItemCmd.label "আইটেম যোগ করুন">
+<!ENTITY addNote.label "নোট যোগ করুন">
+<!ENTITY addSequenceCmd.toolbarlabel "সিক্যুয়েন্স যোগ করুন">
+<!ENTITY advanced.label "অ্যাডভান্সড্‌">
+<!ENTITY alignCenter.label "কেন্দ্র বরাবর">
+<!ENTITY alignJustified.label "পাশ বরাবর">
+<!ENTITY alignLeft.label "বাম বরাবর">
+<!ENTITY alignRight.label "ডান বরাবর">
+<!ENTITY allShootDays.label "সকল শুটিংয়ের দিন">
+<!ENTITY allUppercase.label "সব">
+<!ENTITY american.label "আমেরিকান">
+<!ENTITY appName "সেলটেক্স">
+<!ENTITY appliesToPDFOnly.label "এই বৈশিষ্ট্যসমূহ শুধুমাত্র পিডিএফের ক্ষেত্রে প্রজোয্য।">
+<!ENTITY audioplay.desc "প্রজেক্টে একটি অডিও প্লে যোগ করুন।">
+<!ENTITY audioplay.label "অডিও প্লে">
+<!ENTITY authDialog.description "এই অ্যাকশন কার্যকর করতে হলে সেলটেক্স অ্যাকাউন্টে সাইন ইন করুন।">
+<!ENTITY authDialog.title "সেলটেক্স অথেন্টিকেশন">
+<!ENTITY author.label "লেখক">
+<!ENTITY autoCharContinueds.label "কন্টিনিউড চরিত্র দেখান">
+<!ENTITY autoSaveProject.label "অটোমেটিক্যালি প্রজেক্ট সেভ করুন">
+<!ENTITY autoparenthesize.label "যখন ‘(‘ টাইপ করা হয় তখন বন্ধনী তৈরী করুন।">
+<!ENTITY avScript.desc "প্রজেক্টে একটি অডিও ভিজ্যুয়াল স্ক্রিপ্ট যোগ করুন।">
+<!ENTITY avScript.label "এ-ভি স্ক্রিপ্ট">
+<!ENTITY basedOn.label "অবলম্বনে">
+<!ENTITY bdc.actor "অভিনেতা">
+<!ENTITY bdc.addlabour "অতিরিক্ত কর্মী">
+<!ENTITY bdc.animals "পশুপাখী">
+<!ENTITY bdc.camera "ক্যামেরা">
+<!ENTITY bdc.cast "কাস্ট">
+<!ENTITY bdc.cgi "সিজিআই">
+<!ENTITY bdc.construction "গঠন">
+<!ENTITY bdc.crew "&crew.label;">
+<!ENTITY bdc.electrics "ইলেক্ট্রিক্স">
+<!ENTITY bdc.equip "স্পেশাল ইকুইপমেন্ট">
+<!ENTITY bdc.extras "অতিরিক্ত">
+<!ENTITY bdc.greenery "গ্রীনেরি">
+<!ENTITY bdc.hair "চুল">
+<!ENTITY bdc.handler "পশু পালক">
+<!ENTITY bdc.lights "আলোক সজ্জা">
+<!ENTITY bdc.livestock "গবাদিপশু">
+<!ENTITY bdc.location "স্থান">
+<!ENTITY bdc.makeup "মেকাপ">
+<!ENTITY bdc.mechfx "মেকানিক্যাল এফএক্স">
+<!ENTITY bdc.misc "বিবিধ">
+<!ENTITY bdc.music "সংগীত">
+<!ENTITY bdc.opticalfx "অপটিক্যাল এফএক্স">
+<!ENTITY bdc.painting "পেইন্টিং">
+<!ENTITY bdc.prodnotes "প্রোডাকশন নোট">
+<!ENTITY bdc.props "প্রপ">
+<!ENTITY bdc.security "সিকিউরিটি">
+<!ENTITY bdc.set "মঞ্চ">
+<!ENTITY bdc.setdressing "মঞ্চ সজ্জা">
+<!ENTITY bdc.sound "সাউন্ড">
+<!ENTITY bdc.soundfx "সাউন্ড এফএক্স">
+<!ENTITY bdc.specialfx "স্পেশাল এফএক্স">
+<!ENTITY bdc.storyboard "স্টোরিবোর্ড">
+<!ENTITY bdc.stunts "স্ট্যান্ট">
+<!ENTITY bdc.vehicles "বাহন">
+<!ENTITY bdc.wardrobe "ওয়ার্ডরৌব">
+<!ENTITY bdc.weapons "অস্ত্র">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "বোল্ড">
+<!ENTITY bookmark.desc "ওয়েব লিঙ্ক যোগ করুন।">
+<!ENTITY bookmark.label "বুকমার্ক">
+<!ENTITY both.label "উভয়">
+<!ENTITY bottomOfPage.label "পাতার নিম্নাংশে">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc "স্ক্রিপ্টের জন্য ব্রেকডাউন তথ্য যোগ করুন।">
+<!ENTITY breakdown.label "ব্রেকডাউন">
+<!ENTITY breakdownReport.label "ব্রেকডাউন রিপোর্ট">
+<!ENTITY brokenSceneEventWarning.label "এই ইভেন্ট একটি দৃশ্যের অনুরুপ যা এখন অবর্তমান।">
+<!ENTITY browseCmd.label "ব্রাউজ">
+<!ENTITY byline.label "বাই">
+<!ENTITY calendar.desc "প্রজেক্টে একটি ক্যালেন্ডার যোগ করুন।">
+<!ENTITY calendar.label "ক্যালেন্ডার">
+<!ENTITY callSheet.label "কল শিট">
+<!ENTITY cast.label "কাস্ট">
+<!ENTITY castOfCharacters.label "কাস্ট অফ ক্যারেক্টারস্‌">
+<!ENTITY catalog.desc "প্রজেক্টে প্রোডাকশন আইটেমের একটি ক্যাটালগ যোগ করুন।">
+<!ENTITY catalog.label "ক্যাটালগ">
+<!ENTITY catalogAddItem.tooltip "ক্যাটালগে আইটেম যোগ করুন।">
+<!ENTITY catalogDeleteItem.tooltip "ক্যাটালগ থেকে আইটেম ডিলিট করুন">
+<!ENTITY categories.label "ক্যাটাগরি">
+<!ENTITY category.label "ক্যাটাগরি">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName;অ্যাকাউন্ট...">
+<!ENTITY celtxError.title "সেলটেক্স এরর">
+<!ENTITY celtxTagline.label "এর সব কিছুই গল্পকে ঘিরে।">
+<!ENTITY celtxWikiCmd.label "&appName;উইকি">
+<!ENTITY charOutline.desc "চরিত্র সম্পর্কে ধারণা এবং তাদের একে অপরের সাথে সম্পর্ক।">
+<!ENTITY charOutline.label "চরিত্র বিন্যাস">
+<!ENTITY character.label "চরিত্র">
+<!ENTITY characterProfile.desc "নতুন চরিত্রের বিবরণ দিন।">
+<!ENTITY characterProfile.existing "এই নিচের লিষ্ট থেকেও অভিনেতার বিবরণ দিতে পারেন।">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "চরিত্র নির্বাচন করুন">
+<!ENTITY characters.label "ক্যারেক্টারস্‌">
+<!ENTITY clearCmd.label "ক্লিয়ার">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "কমিক বইয়ের জন্য স্ক্রিপ্ট তৈরী করুন। ">
+<!ENTITY comicBook.label "কমিক বই">
+<!ENTITY comment.label "মন্তব্য">
+<!ENTITY completed.label "সমাপ্ত">
+<!ENTITY contact.label "যোগাযোগ">
+<!ENTITY contactInformation.label "যোগাযোগ সংক্রান্ত তথ্য">
+<!ENTITY contactName.label "নাম">
+<!ENTITY contacts.label "কন্ট্যাক্টস্‌">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "চলবে">
+<!ENTITY copyProject.title "ডুপ্লিকেট প্রজেক্ট">
+<!ENTITY copyProjectCmd.label "ডুপ্লিকেট প্রজেক্ট">
+<!ENTITY copyright.label "কপিরাইট">
+<!ENTITY create.label "ক্রিয়েট">
+<!ENTITY createAccount.label "অ্যাকাউন্ট তৈরী করুন">
+<!ENTITY createCatalogFromSelection.label "সিলেকশন থেকে ক্যাটালগ তৈরী করুন">
+<!ENTITY createProject.label "প্রজেক্ট তৈরী করুন">
+<!ENTITY createProject.title "প্রজেক্ট">
+<!ENTITY createdCol.label "তৈরী সম্পূর্ন">
+<!ENTITY creatorCol.label "নির্মাতা">
+<!ENTITY crew.desc "ক্রু ডকুমেন্ট যোগ করুন।">
+<!ENTITY crew.label "ক্রু">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "তারিখ">
+<!ENTITY datePicker.label "ডেট পিকার">
+<!ENTITY daynightHeader.label "দিন/রাত">
+<!ENTITY daynightWarning.label "সিনের শিরোনামের শেষে কার্যকর দিন/রাত শব্দ নেই। এই সমস্যা দূর করতে, স্ক্রিপ্টে সিনের শিরোনাম পরিবর্তন করুন অথবা প্রেফারেন্স ডায়লগ বক্সের স্ক্রিপ্ট ট্যাবে দিন/রাত শব্দের তালিকা পরিবর্তন করুন।">
+<!ENTITY daynightWords.label "দিন/রাত শব্দ">
+<!ENTITY dayoff.label "কর্ম বিরতি">
+<!ENTITY daysOff.label "কর্ম বিরতি">
+<!ENTITY decreaseDelayCmd.tooltip "বিলম্ব কমান।">
+<!ENTITY decreaseFontSizeCmd.tooltip "বর্ণের আকৃতি ছোট করুন">
+<!ENTITY decreaseIndentCmd.label "ইন্ডেন্ট কমান">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "ডিফল্ট সিন লেন্থ">
+<!ENTITY delayLabel.tooltip "ইমেজের মধ্যে বিলম্ব (সেকেন্ড)">
+<!ENTITY deleteCardCmd.label "ডিলিট কার্ড">
+<!ENTITY deleteItem.label "ডিলিট আইটেম">
+<!ENTITY deleteItemCmd.label "ডিলিট">
+<!ENTITY department.label "ডিপার্টমেন্ট">
+<!ENTITY description.label "বিবরণ">
+<!ENTITY details.label "বিশদ বিবরণ">
+<!ENTITY dialog.label "সংলাপ">
+<!ENTITY director.label "নির্দেশক">
+<!ENTITY disabled.label "ডিজ্যাবেল্ড">
+<!ENTITY displayMedia.label "মিডিয়া দেখান">
+<!ENTITY downloadProjectCmd.label "ডাউনলোড প্রজেক্ট...">
+<!ENTITY downloadProjectCmd.toolbarlabel "ডাউনলোড ">
+<!ENTITY downloadingPDF.label "পিডিএফে পরিবর্তন...">
+<!ENTITY dragToSchedule.tooltip "সিডিউলে ড্যাগ এবং ড্রপ করুন">
+<!ENTITY dualDialogCmd.label "দ্বৈত সংলাপ">
+<!ENTITY dualDialogCmd.tooltip "দ্বৈত সংলাপ">
+<!ENTITY duplicate.label "ডুপ্লিকেট">
+<!ENTITY duplicateItemCmd.label "ডুপ্লিকেট">
+<!ENTITY edit.label "এডিট">
+<!ENTITY editDates.label "এডিট ডেট">
+<!ENTITY editProfile.label "এডিট ডেট অনলাইন">
+<!ENTITY editSceneDialog.title "এডিট সিন">
+<!ENTITY editTitlePageCmd.label "এডিট টাইটেল...">
+<!ENTITY editlabel.tooltip "এডিটে ক্লিক করুন">
+<!ENTITY eighths.label "অষ্টম">
+<!ENTITY eighthsSuffix.label "৮ তম">
+<!ENTITY element.label "এলিমেন্ট">
+<!ENTITY elements.label "এলিমেন্টস্‌">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "অ্যাক্টিভ সেলটেক্স ব্যবহারকারীর সংখ্যা গননা করতে এটি ব্যবহৃত হয়। এই প্রসেসের মাধ্যমে ব্যক্তিগত তথ্য বা প্রজেক্ট ডাটা সরবরাহ করা হয় না।">
+<!ENTITY enableStats.label "শুরুতে সেলটেক্স সার্ভারকে পিন করার অনুমতি দিন।">
+<!ENTITY enabled.label "অ্যানাবেল্ড">
+<!ENTITY end.label "এবং">
+<!ENTITY endOfShooting.label "শ্যুটিংয়ের সমাপ্তি">
+<!ENTITY enterEmbedTagPrompt.label "এইখানে এমবেড বা অবজেক্ট ট্যাগ দিন:">
+<!ENTITY eventDetails.label "ইন্ডেন্ট ডিটেলস্‌">
+<!ENTITY every15Minutes.label "প্রতি ১৫ মিনিট">
+<!ENTITY every30Minutes.label "প্রতি আধ ঘন্টা">
+<!ENTITY every5Minutes.label "প্রতি ৫ মিনিট">
+<!ENTITY everyHour.label "প্রতি ঘন্টা">
+<!ENTITY everyMinute.label "প্রতি মিনিট">
+<!ENTITY exportList "এক্সপোর্ট লিষ্ট">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "এক্সপোর্ট স্ক্রিপ্ট">
+<!ENTITY externalFile.desc "প্রজেক্টে যে কোন তৈরী ফাইল যোগ করুন।">
+<!ENTITY externalFile.label "ফাইল">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "ফরমেটেড্‌ স্ক্রিনপ্লে যোগ করুন।">
+<!ENTITY filmScript.label "স্ক্রিনপ্লে">
+<!ENTITY filter.label "ফিল্টার">
+<!ENTITY findAllCharacters.label "তালিকাতে চরিত্র যোগ করুন">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "ফাইন্ড...">
+<!ENTITY findPreviousCmd.label "ফাইন্ড প্রিভিয়াস">
+<!ENTITY findTab.label "ফাইন্ড">
+<!ENTITY folder.label "ফোল্ডার">
+<!ENTITY forceOverwrite.label "যদি সার্ভার নতুন ভার্সন হয় তাহলে জোরপূর্বক ওভার রাইট করুন">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "অ্যাড্রেস">
+<!ENTITY form.affectEvent "এই ইভেন্ট কিভাবে পুরো প্রজেক্টের উপর প্রভাব ফেলবে?">
+<!ENTITY form.age "বয়স">
+<!ENTITY form.alternate "বিকল্প নাম">
+<!ENTITY form.antag "খলনায়ক">
+<!ENTITY form.antagWho "এই দৃশ্যে খলনায়ক কে?">
+<!ENTITY form.availability "অ্যাভেলেবিলিটি">
+<!ENTITY form.bestFriend "প্রিয় বন্ধু">
+<!ENTITY form.borrow "ধার">
+<!ENTITY form.build "নির্মান">
+<!ENTITY form.buy "ক্রয়">
+<!ENTITY form.catalyst "প্রভাবক">
+<!ENTITY form.cell "সেল #">
+<!ENTITY form.centralEvent "এই দৃশ্যের কেন্দ্রীয় ঘটনা কোনটি?">
+<!ENTITY form.charBackground "ক্যারেক্টার ব্যাকগ্রাউন্ড">
+<!ENTITY form.charGoal "এই চরিত্রের লক্ষ্য কি?">
+<!ENTITY form.charPlan "লক্ষ্য পৌছানোর জন্য এই চরিত্রের পরিকল্পনা কি?">
+<!ENTITY form.charTraits "ক্যারেক্টার ট্রেইটস্‌">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "ক্যারেক্টার ইউজড্‌ বাই">
+<!ENTITY form.color "রং">
+<!ENTITY form.comicRelief "কমিক রিলিফ">
+<!ENTITY form.comments "মন্তব্য">
+<!ENTITY form.confidante "আস্থা">
+<!ENTITY form.contactInfo "যোগাযোগ সংক্রান্ত তথ্য">
+<!ENTITY form.cost "ব্যয়">
+<!ENTITY form.crewLink "ইউআরএল">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "অ্যাভেলেবেল দিন">
+<!ENTITY form.dateNeed "প্রয়োজনীয় দিন">
+<!ENTITY form.dateReturn "রিটার্ন ডেট">
+<!ENTITY form.description "বর্ণনা">
+<!ENTITY form.details "বিশদ বিবরণ">
+<!ENTITY form.dislikes "অপছন্দ">
+<!ENTITY form.distFeatures "শনাক্তকারী বৈশিষ্ট্য">
+<!ENTITY form.dob "জন্মতারিখ">
+<!ENTITY form.dress "পোশাক">
+<!ENTITY form.education "শিক্ষা">
+<!ENTITY form.elevator "এলিভেটর">
+<!ENTITY form.email "ইমেল অ্যাড্রেস">
+<!ENTITY form.endDate "শেষ তারিখ">
+<!ENTITY form.era "যুগ">
+<!ENTITY form.eyes "চোখ">
+<!ENTITY form.facilityInfo "ফ্যাসিলিটি ইনফরমেশন">
+<!ENTITY form.familyBack "ফ্যামিলি ব্যাকগ্রাউন্ড">
+<!ENTITY form.fullName "পুরোনাম">
+<!ENTITY form.generic "জেনেরিক">
+<!ENTITY form.genericForm "জেনেরিক ফরম্‌">
+<!ENTITY form.habits "অভ্যাস/বদভ্যাস">
+<!ENTITY form.hair "চুল">
+<!ENTITY form.hat "টুপি">
+<!ENTITY form.height "উচ্চতা">
+<!ENTITY form.inScenes "ইন সিনস্‌">
+<!ENTITY form.jacket "জ্যাকেট">
+<!ENTITY form.jobTitle "যব টাইটেল">
+<!ENTITY form.keyCharTraits "প্রধান চরিত্র বিন্যাস">
+<!ENTITY form.lightSources "আলোর উৎস">
+<!ENTITY form.likes "পছন্দ">
+<!ENTITY form.locationMap "লোকেশন ম্যাপ">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "লাভ ইন্টারেষ্ট">
+<!ENTITY form.media "মিডিয়া">
+<!ENTITY form.mentor "মেন্টর">
+<!ENTITY form.motiv "মোটিভেশন">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "না">
+<!ENTITY form.noise "নয়েজ ইস্যু">
+<!ENTITY form.other "অন্যান্য">
+<!ENTITY form.pants "প্যান্টস্‌">
+<!ENTITY form.parking "পার্কিং ইনফরমেশন">
+<!ENTITY form.partner "সহযোগী">
+<!ENTITY form.person "ব্যক্তিত্ব">
+<!ENTITY form.phone "ফোন#">
+<!ENTITY form.physicalDesc "শারীরিক বিবরণ">
+<!ENTITY form.powerCapa "পাওয়ার ক্যাপাবিলিটিস">
+<!ENTITY form.princFunction "এই চরিত্রের প্রধান কাজ কি?">
+<!ENTITY form.procure "প্রকিউরমেন্ট">
+<!ENTITY form.propProfile "প্রপ">
+<!ENTITY form.protag "প্রোটাগোনিষ্ট">
+<!ENTITY form.protagAntag "প্রোটাগোনিষ্ট/অ্যানটাগোনিষ্ট">
+<!ENTITY form.protagWho "এই দৃশ্যের প্রোটাগোনিষ্ট কে?">
+<!ENTITY form.rent "ভাড়া">
+<!ENTITY form.rentalCost "ভাড়া খরচ">
+<!ENTITY form.role "রোল">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "অ্যানটাগোনিষ্ট কিভাবে এই লক্ষ্য অর্জন করবে?">
+<!ENTITY form.sceneAntagGoal "এই দৃশ্যে অ্যানটাগোনিষ্টের লক্ষ্য কি?">
+<!ENTITY form.sceneChars "এই দৃশ্যে চরিত্র কোনগুলো?">
+<!ENTITY form.sceneDetails "দৃশ্যের বিবরণ">
+<!ENTITY form.sceneMood "এই দৃশ্যের ভাব কেমন?">
+<!ENTITY form.sceneProtagAchieve "প্রোটাগোনিষ্ট কিভাবে এই লক্ষ্য অর্জন করবে?">
+<!ENTITY form.sceneProtagGoal "এই দৃশ্যে প্রোটাগোনিষ্ট লক্ষ্য কি?">
+<!ENTITY form.sceneSetting "এই দৃশ্যের সেটিং কি?">
+<!ENTITY form.sceneWhen "কখন এই দৃশ্যের অবতারনা হবে?">
+<!ENTITY form.scenesUsed "সিন ইউজড্‌ ইন">
+<!ENTITY form.scoutSelect "স্কাউটিং এবং সিলেকশন">
+<!ENTITY form.scoutedFor "স্কাউটেড ফর সিন">
+<!ENTITY form.scriptName "স্ক্রিপ্টের নাম">
+<!ENTITY form.selectedFor "দৃশ্যসমূহের জন্য মনোনীত">
+<!ENTITY form.sex "সেক্স">
+<!ENTITY form.shirt "শার্ট">
+<!ENTITY form.shoes "জুতা">
+<!ENTITY form.size "সাইজ">
+<!ENTITY form.squareFoot "স্কয়ার ফুটেজ">
+<!ENTITY form.startDate "শুরুর তারিখ">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "ওয়ার্ডরৌবের সাইজ">
+<!ENTITY form.washroom "ওয়াসরুমের লোকেশন">
+<!ENTITY form.weight "ওজন">
+<!ENTITY form.wornBy "পোশাক পরেছেন">
+<!ENTITY form.yes "ইয়েস">
+<!ENTITY format.label "ফরম্যাট">
+<!ENTITY formatAct.label "অ্যাক্ট">
+<!ENTITY formatAction.label "অ্যাকশন">
+<!ENTITY formatBalloon.label "বেলুন">
+<!ENTITY formatBalloonType.label "বেলুন টাইপ">
+<!ENTITY formatCaption.label "ক্যাপশন">
+<!ENTITY formatCaption.shortlabel "&formatCaption.label;">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "দৃশ্য শিরোনাম">
+<!ENTITY formatMusic.label "সংগীত">
+<!ENTITY formatPage.label "পৃষ্ঠা">
+<!ENTITY formatPage.shortlabel "&formatPage.label;">
+<!ENTITY formatPanel.label "প্যানেল">
+<!ENTITY formatPanel.shortlabel "&formatPanel.label;">
+<!ENTITY formatParen.label "প্যারেনথিটিক্যাল">
+<!ENTITY formatProductionNote.label "প্রোডাকশন নোট">
+<!ENTITY formatShot.label "শট">
+<!ENTITY formatSound.label "শব্দ">
+<!ENTITY formatStagedir.label "মঞ্চ নির্দেশনা">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label "&title.label;">
+<!ENTITY formatTrans.label "ট্র্যানজিশন">
+<!ENTITY formatVoice.label "কন্ঠ">
+<!ENTITY fourHours.label "৪ ঘন্টা">
+<!ENTITY freeAndSecure.label "মক্ত এবং নিরাপদ">
+<!ENTITY general.label "সাধারণ">
+<!ENTITY generatePDFCmd.label "পিডিএফ বানান...">
+<!ENTITY generateReportCmd.label "প্রতিবেদন তৈরী করুন">
+<!ENTITY generateReportCmd.toolbarlabel "প্রতিবেদন">
+<!ENTITY getProjDialog.caption "অ্যাভেলেবেল প্রজেক্ট">
+<!ENTITY getProjDialog.title "ডাউনলোড প্রজেক্ট">
+<!ENTITY gotoItemCmd.label "গো টু">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "অ্যাবাউট &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "বাগ রিপোর্ট করুন">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "অনলাইন সহযোগিতা">
+<!ENTITY icons.label "আইকন">
+<!ENTITY iconsAndText.label "আইকন এবং টেক্সট্‌">
+<!ENTITY image.label "ইমেজ">
+<!ENTITY images.label "ইমেজস্‌">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "ইম্পোর্ট স্ক্রিপ্ট">
+<!ENTITY importScriptCmd.toolbarLabel "ইম্পোর্ট">
+<!ENTITY includeInWorkweek.label "এই দিনগুলো কর্ম সপ্তাহের মধ্যে অন্তর্ভুক্ত করুন">
+<!ENTITY includeTitlePage.label "টাইটেল পেজ অন্তর্ভুক্ত করুন">
+<!ENTITY increaseDelayCmd.tooltip "বিলম্ব দির্ঘায়িত করুন। ">
+<!ENTITY increaseFontSizeCmd.tooltip "ফন্টের আকার বৃদ্ধি করুন">
+<!ENTITY increaseIndentCmd.label "ইন্ডেন্ট বৃদ্ধি করুন">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "ইন্ডেক্স কার্ড হেডিং">
+<!ENTITY indexCards.label "ইন্ডেক্স কার্ড">
+<!ENTITY inlineSpellCheckCmd.label "ইন লাইন বানান শুদ্ধিকরণ">
+<!ENTITY insertNoteCmd.toolbarLabel "নোট...">
+<!ENTITY international.label "আন্তর্জাতিক">
+<!ENTITY intextHeader.label "আই/ই">
+<!ENTITY intextWarning.label "সিনের শিরোনামের শেষে কার্যকর ইনট্‌/এক্সট্‌ শব্দ নেই। এই সমস্যা দূর করতে, স্ক্রিপ্টের সিনের শিরোনাম পরিবর্তন করুন অথবা প্রেফারেন্স ডায়লগ বক্সের স্ক্রিপ্ট ট্যাবে ইনট্‌/এক্সট্‌ শব্দের তালিকা পরিবর্তন করুন।">
+<!ENTITY intextWords.label "ইনট্‌/এক্সট্‌ শব্দ">
+<!ENTITY invalidLogin.label "ভুল ইউজারনেম বা পাসওর্য়াড">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "ইটালিক">
+<!ENTITY item.label "আইটেম">
+<!ENTITY language.label "ভাষা">
+<!ENTITY left.label "বাম">
+<!ENTITY linesPerPage.label "পৃষ্ঠায় লাইনের সংখ্যা">
+<!ENTITY list.label "লিষ্ট...">
+<!ENTITY location.desc "লোকেশনের বিবরণ যোগকরুন।">
+<!ENTITY location.label "লোকেশন">
+<!ENTITY loginOnStartup.label "স্ট্যার্টআপে সাইন ইন করুন">
+<!ENTITY lowercaseCmd.label "লোয়ারকেস">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "মিডিয়া">
+<!ENTITY mediaViewer.title "মিডিয়া ভিউয়ার">
+<!ENTITY modified.label "পরিবর্তন সমাপ্ত">
+<!ENTITY modifiedCol.label "পরিবর্তন সমাপ্ত">
+<!ENTITY moveDownCmd.label "নিচে নামন">
+<!ENTITY moveUpCmd.label "উপরে উঠান">
+<!ENTITY moving.label "মুভিং">
+<!ENTITY name.label "নাম">
+<!ENTITY network.label "নেটওয়ার্ক">
+<!ENTITY never.label "নেভার">
+<!ENTITY newMarkupItem.label "&lt;নতুন...&gt;">
+<!ENTITY newProjectCmd.label "নতুন প্রজেক্ট...">
+<!ENTITY newProjectCmd.toolbarlabel "নতুন">
+<!ENTITY noFileSelected.label "&lt;কোন ফাইল সিলেক্ট করা হয়নি&gt;">
+<!ENTITY noImageSelected.label "কোন ইমেজ সিলেক্ট করা হয়নি">
+<!ENTITY noScriptSelected.label "কোন স্ক্রিপ্ট সিলেক্ট করা হয়নি">
+<!ENTITY none.label "কোনটাই না">
+<!ENTITY noteDialog.title "এডিট নোট">
+<!ENTITY notes.label "নোটস্‌">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "চরিত্রের সংখ্যা">
+<!ENTITY numberOfScenes.label " দৃশ্যের সংখ্যা">
+<!ENTITY oneHour.label "এক ঘন্টা">
+<!ENTITY oneLineSchedule.label "এক লাইনের সিডিউল">
+<!ENTITY open.label "ওপেন">
+<!ENTITY openItemCmd.label "আইটেম খুলুন">
+<!ENTITY openProjectCmd.label "প্রজেক্ট খুলুন...">
+<!ENTITY openProjectCmd.toolbarlabel "ওপেন">
+<!ENTITY openProjectFolder.label "প্রজেক্ট ফোল্ডার খুলুন">
+<!ENTITY openRecentCmd.label "সাম্প্রতিক ফাইলসমূহ খুলুন">
+<!ENTITY options.label "অপশনস্‌">
+<!ENTITY orderedList.label "অডার্ড লিষ্ট">
+<!ENTITY outline.desc "বুলেটেড আউট লাইন ডকুমেন্ট যোগ করুন।">
+<!ENTITY outline.label "আউট লাইন">
+<!ENTITY over14.label "আমার বয়স ১৪ বা তার উর্ধ্বে।">
+<!ENTITY pageAndSceneNumbering.label "পেজ এবং দৃশ্য নম্বর">
+<!ENTITY paperSize.label "পেপার সাইজ">
+<!ENTITY password.label "পাসওয়ার্ড">
+<!ENTITY passwordAgain.label "আবার পাসওয়ার্ড দিন ">
+<!ENTITY pdf.label "পিডিএফ">
+<!ENTITY pdfDownloadDialog.title "পিডিএফ এ পরিবর্তন">
+<!ENTITY pdfErrorHeader "ওওপস্‌!">
+<!ENTITY pdfErrorText1 "এই অ্যাডভান্সড্‌ ফিচার ব্যবহারের জন্য অনলাইন যেতে হবে।">
+<!ENTITY pdfErrorText2 "সিকিউর এবং প্রাইভেট, এই অ্যাডভান্সড্‌ সেলটেক্স ওয়েব সুবিধা নিজ থেকে স্ক্রিপ্টকে ইন্ডাস্ট্রি স্ট্যান্ডার্ড স্ক্রিন প্লে, স্টেজ প্লে, অডিও প্লে বা ডুয়েল কলাম (এভি) তে ফরম্যাট করবে।">
+<!ENTITY pdfOptions.title "পিডিএফ অপশনস্‌">
+<!ENTITY pdfOptionsCmd.label "মোরস্‌ এবং কন্টিনিউডস্‌">
+<!ENTITY pdfWarningHeader "হায় দেয়ার!">
+<!ENTITY pdfWarningText "সিকিউর এবং প্রাইভেট, এই অ্যাডভান্সড্‌ সেলটেক্স ওয়েব সুবিধা নিজ থেকে স্ক্রিপ্টকে ইন্ডাস্ট্রি স্ট্যান্ডার্ড স্ক্রিন প্লে, স্টেজ প্লে, অডিও প্লে বা ডুয়েল কলাম (এভি) তে ফরম্যাট করবে।">
+<!ENTITY picklist.label "পিক লিষ্ট">
+<!ENTITY principalFunction.label "প্রধান ক্রিয়া">
+<!ENTITY printBackgroundColour.label "ব্যাকগ্রাউন্ড রঙ্গীন প্রিন্ট করুন">
+<!ENTITY printCardBorders.label "কার্ড বর্ডার প্রিন্ট করুন">
+<!ENTITY printCardsDialog.title "কার্ড প্রিন্ট করুন">
+<!ENTITY printStoryboardDialog.title "স্টোরিবোর্ড প্রিন্ট করুন">
+<!ENTITY privacy.label "প্রাইভেসি">
+<!ENTITY producer.label "প্রযোজক">
+<!ENTITY productionItems.label "প্রোডাকশন আইটেমস্‌">
+<!ENTITY progressDialog.title "অগ্রগতি">
+<!ENTITY project.label "প্রজেক্ট">
+<!ENTITY projectItems.label "নতুন প্রজেক্টে আছে">
+<!ENTITY projectLibrary.label " প্রজেক্ট লাইব্রেরি">
+<!ENTITY projectProperties.label "আপলোড অপশনস্‌ ">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "প্রজেক্ট টেম্পলেট">
+<!ENTITY propSheet.desc "নতুন প্রপের জন্য বিবরণ যোগ করুন।">
+<!ENTITY propSheet.existing "এই নিচের লিষ্ট থেকেও প্রপ আইটেমের বিবরণ দিতে পারেন।">
+<!ENTITY propSheet.label "প্রপস্‌">
+<!ENTITY propSheet.select "প্রপ সিলেক্ট করুন">
+<!ENTITY properties.label "প্রোপারটিস্‌">
+<!ENTITY publishDialog.findUsers "ইউজার খুজুন">
+<!ENTITY publishDialog.ownerLabel "প্রজেক্ট ওনার">
+<!ENTITY publishDialog.privateDesc "ব্যক্তিগত: আমার অ্যাক্সেস সীমাবদ্ধ করুন">
+<!ENTITY publishDialog.privateLabel "ব্যক্তিগত">
+<!ENTITY publishDialog.publicDesc "পাবলিক: প্রজেক্ট সেন্ট্রালে প্রজেক্ট পাবলিশ করুন">
+<!ENTITY publishDialog.publicLabel "পাবলিক">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "শেয়ারড্‌: সিলেক্টেড ইউজারের সাথে প্রজেক্ট শেয়ার করুন">
+<!ENTITY publishDialog.sharedLabel "শেয়ারড্‌">
+<!ENTITY publishDialog.title "প্রজেক্ট পাবলিশ করুন">
+<!ENTITY publishDialog.userList "ইউজার লিষ্ট">
+<!ENTITY publishMode.label "পাবলিশ মুড">
+<!ENTITY recent.label "সাম্প্রতিক">
+<!ENTITY recentProjects.label "সাম্প্রতিক প্রজেক্টস্‌ ">
+<!ENTITY recoverPassword.label "পাসওয়ার্ড পুর্নরুদ্ধার">
+<!ENTITY recycleCmd.label "স্ক্র্যাচপ্যাডে পাঠান">
+<!ENTITY regWiz.aboutThis "একবার অ্যাকাউন্ট তৈরী করলে, আপনি অটোমেটিক্যালি এই ওয়ার্ক সেশনের জন্য লগ ইন হবেন।">
+<!ENTITY regWiz.accountInstructions "&appName;অ্যাকাউন্টের জন্য ইউজারনেম এবং পাসওয়ার্ড বেছে নিন। (অনুগ্রহ করে লক্ষ্য করুন ইউজারনেম এবং পাসওয়ার্ড কেস সেনসিটিভ্‌।)">
+<!ENTITY regWiz.accountLabel "ইউজার অ্যাকাউন্ট (৩/৫)">
+<!ENTITY regWiz.bullet1 "রিমোট ব্যাকআপস্‌">
+<!ENTITY regWiz.bullet2 "ওয়ার্কস্পেস কোলাবরেশন">
+<!ENTITY regWiz.bullet3 "প্রজেক্ট সেন্ট্রালে পাবলিশ করুন">
+<!ENTITY regWiz.bullet4 "আইফোনে প্রজেক্ট দেখুন">
+<!ENTITY regWiz.checkLabel "অ্যাকাউন্ট ইনফরমেশন মিলিয়ে দেখুন">
+<!ENTITY regWiz.clickFinish "এই &appName;সম্প্রদায়ের সদস্য হওয়ার জন্য আপনাকে ধন্যবাদ।">
+<!ENTITY regWiz.clickFinish1 "আপনি &appName;সার্ভারে লগ ইন করেছেন এবং আমাদের ফ্রি অনলাইন ফিচারের সুবিধা নিতে পারেন।">
+<!ENTITY regWiz.clickFinish2 "প্রজেক্ট ব্যাকআপ করতে আপলোড/ডাউনলোড ফিচার ব্যবহার করে দেখুন অথবা এমন কেউ যার &appName;অ্যাকাউন্ট আছে তার সাথে একটি কমন প্রজেক্টে কোলাবরেট করুন।">
+<!ENTITY regWiz.clickNext "আমাদের কাছে সব ভালই মনে হচ্ছে। ‘নেক্সট’ সিলেক্ট করে রেজিস্ট্রেশন সম্পূর্ন করুন।">
+<!ENTITY regWiz.conclusion "উপসংহার (৫/৫)">
+<!ENTITY regWiz.confirmIntro "আপনি নিচের তথ্য যোগ করেছেন:">
+<!ENTITY regWiz.confirmLabel "সেটিং নিশ্চিত করুন(৪/৫)">
+<!ENTITY regWiz.createNewAccountLabel "নতুন অ্যাকাউন্ট তৈরী করুন।">
+<!ENTITY regWiz.createYourAccountLabel "আপনার নিজের &appName;অ্যাকাউন্ট সংগ্রহ করুন!(১/৫)">
+<!ENTITY regWiz.emailLabel "ইমেল:">
+<!ENTITY regWiz.finish "সমাপ্ত">
+<!ENTITY regWiz.identityInstructions "অনুগ্রহ করে আপনার নাম, অর্গানাজেশন এবং ইমেল অ্যাড্রেস দিন।">
+<!ENTITY regWiz.identityLabel "আইডেন্টিটি (২/৫)">
+<!ENTITY regWiz.intro "&appName;সার্ভারে অ্যাকাউন্ট তৈরী করুন এবং এই সকল ফ্রি ওয়েব ফিচারের সুবিধা নিন:">
+<!ENTITY regWiz.loginSuccessfulLabel "ধ্যনবাদ আপনি &appName; সার্ভারে লগ ইন করেছেন।">
+<!ENTITY regWiz.newOrExistingLabel "নতুন অ্যাকাউন্ট তৈরী করুন অথবা পূর্বে তৈরী অ্যাকাউন্ট ব্যবহার করুন:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; অ্যাকাউন্ট ইউজারনেম এবং পাসওয়ার্ড কেস সেনসিটিভ্‌">
+<!ENTITY regWiz.notePassword "আপনার পাসওয়ার্ড কমপক্ষে ৫ ক্যারেক্টারের হতে হবে।">
+<!ENTITY regWiz.noteUsername "আপনার ইউজারনেম কমপক্ষে ৩ ক্যারেক্টারের হতে হবে এবং শুধু অক্ষর ও নম্বর হতে পারবে।">
+<!ENTITY regWiz.orgLabel "অর্গানাইজেশন:">
+<!ENTITY regWiz.title "সেলটেক্স রেজিস্ট্রেশন উইজার্ড">
+<!ENTITY regWiz.uidLabel "&appName;ইউজারনেম:">
+<!ENTITY regWiz.useExistingAccountLabel "পূর্বে তৈরী অ্যাকাউন্ট ব্যবহার করুন।">
+<!ENTITY regWiz.warn "এই ফিচার ব্যবহার করার জন্যে একটি &appName;অ্যাকাউন্ট তৈরী করুন।">
+<!ENTITY remove.label "রিমুভ">
+<!ENTITY removeCmd.label "রিমুভ">
+<!ENTITY removeMarkupCmd.label "রিমুভ মার্কআপ">
+<!ENTITY rename.label "রিনেম">
+<!ENTITY renameItem.label "রিনেম আইটেম...">
+<!ENTITY replaceCmd.label "প্রতিস্থাপন...">
+<!ENTITY reportThisBug.label "এই বাগ রিপোর্ট করুন">
+<!ENTITY reportThisBug.tooltip "আমাদের কাছে অজানা বাগ রিপোর্ট করুন।">
+<!ENTITY reports.label "প্রতিবেদন">
+<!ENTITY right.label "ডান">
+<!ENTITY sampleProjects.label "সেম্পল প্রজেক্ট">
+<!ENTITY samples.label "সেম্পল">
+<!ENTITY saveAsHTML.label "HTML হিসাবে সেভ করুন">
+<!ENTITY saveAsTemplate.label "টেম্পলেট হিসাবে সেভ করুন">
+<!ENTITY savePDFCmd.label "পিডিএফ সেভ করুন">
+<!ENTITY savePDFCmd.tooltip "পিডিএফ সেভ করুন">
+<!ENTITY saveProjectAsCmd.label "সেভ প্রজেক্ট অ্যাজ...">
+<!ENTITY saveProjectCmd.label "সেভ প্রজেক্ট">
+<!ENTITY saveProjectCmd.toolbarlabel "সেভ">
+<!ENTITY scene.label "সিন">
+<!ENTITY sceneBreakdown.label "সিন ব্রেকডাউন">
+<!ENTITY sceneBreakdownWithDesc.label "বিবরণের সাথে সিন ব্রেকডাউন">
+<!ENTITY sceneDetails.desc "নতুন সিনের জন্য বিবরণ যোগ করুন।">
+<!ENTITY sceneDetails.existing "এই নিচের লিষ্ট থেকেও দৃশ্যের বিবরণ দিতে পারেন।">
+<!ENTITY sceneDetails.label "সিন ডিটেলস্‌">
+<!ENTITY sceneDetails.select "একটি সিন বেছে নিন">
+<!ENTITY scenePageBreaks.label "প্রতিটি সিনের পর পেজ ব্রেক দিন">
+<!ENTITY sceneSummary.label "দৃশ্য সংক্ষেপ">
+<!ENTITY sceneTag.label "সিন ট্যাগ">
+<!ENTITY sceneTagDialog.title "রং বেছে নিন">
+<!ENTITY scenes.label "দৃশ্যসমূহ">
+<!ENTITY schedule.desc "একটি স্ক্রিপ্টের জন্য একটি শুটিং সিডিউল যোগকরুন।">
+<!ENTITY schedule.label "প্রোডাকশন সিডিউল">
+<!ENTITY scheduleCmd.toolbarlabel "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip "সিডিউল স্ক্রিপ্ট ">
+<!ENTITY scheduleID.label "সিডিউল আইডি ">
+<!ENTITY scheduled.label "সিডিউলড্‌">
+<!ENTITY scratchpad.label "স্ক্র্যাচপ্যাড">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "প্রজেক্টের জন্য স্ক্রিপ্ট যোগ করুন।">
+<!ENTITY script.label "স্ক্রিপ্ট">
+<!ENTITY scriptDay.label "স্ক্রিপ্ট ডে">
+<!ENTITY scriptEditor.label "স্ক্রিপ্ট এডিটর">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "ফরম্যাট অপশনস্‌">
+<!ENTITY scriptHeader.label "স্ক্রিপ্ট হেডার">
+<!ENTITY scriptReport.desc "অটোমেটিক্যালি জেনারেটেড স্ক্রিপ্ট রিপোর্ট।">
+<!ENTITY scriptReport.label "স্ক্রিপ্ট রিপোর্ট">
+<!ENTITY scriptWithNotes.label "নোটসহ স্ক্রিপ্ট ">
+<!ENTITY selectCatalogType.label "ক্যাটালগ টাইপ সিলেক্ট করুন।">
+<!ENTITY sequence.label "সিক্যুয়েন্স">
+<!ENTITY sequences.label "সিক্যুয়েন্স">
+<!ENTITY server.label "সার্ভার">
+<!ENTITY setting.label "সেটিং">
+<!ENTITY sharing.label "শেয়ারিং">
+<!ENTITY shootDay.label "শুট ডে">
+<!ENTITY shootDays.label "শুট ডেজ্‌">
+<!ENTITY shootingSchedule.label "শুটিং সিডিউল">
+<!ENTITY shotList.label "শট লিষ্ট ">
+<!ENTITY shotWords.label "শট ওয়ার্ডস্‌">
+<!ENTITY shotholder.label "ইমেজ যোগ করার জন্য ডবল ক্লিক করুন।">
+<!ENTITY showContinuedCount.label "কন্টিনিউড পেজ গননা দেখান">
+<!ENTITY showDialogBreaks.label "ডায়লগ ব্রেক দেখান">
+<!ENTITY showFirstPageNumber.label "প্রথম পাতায় পেজ নম্বর দেখান">
+<!ENTITY showIDNumbers.label "আইডি নম্বর দেখান">
+<!ENTITY showNotes.label "নোটস্‌ দেখান">
+<!ENTITY showPageNumbers.label "পেজিনেশন">
+<!ENTITY showProjectFileCmd.label "প্রজেক্ট ফাইল দেখান">
+<!ENTITY showSceneBreaks.label "পেজ ব্রেক দেখান">
+<!ENTITY showSceneHeaders.label "সিন হেডার দেখান">
+<!ENTITY showSceneNumbers.label " সিন নম্বর দেখান">
+<!ENTITY showScript.label " স্ক্রিপ্ট দেখান ">
+<!ENTITY showTagNames.label "কার্ডের উপর ট্যাগ নাম দেখান">
+<!ENTITY showTitlePage.label "টাইটেল পেজ দেখান">
+<!ENTITY showWorkdaysOnly.label "শুধু কাজের দিনগুলো দেখান">
+<!ENTITY signIn.label "সাইন ইন">
+<!ENTITY signOut.label "সাইন আউট">
+<!ENTITY signedOut.label "সাইন্ড আউট">
+<!ENTITY slideshowCmd.toolbarlabel "প্লে">
+<!ENTITY source.label "সোর্স">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "অভিধানে যোগ করুন">
+<!ENTITY spellCheckCmd.label "বানান শুদ্ধিকরণ...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "শব্দ উপেক্ষা করুন">
+<!ENTITY spellCheckNoSuggestions.label "কোন সাজেশন পাওয়া যায়নি">
+<!ENTITY splash.celtxCentral "প্রজেক্ট সেন্ট্রালে লগ ইন">
+<!ENTITY splash.celtxCentralDesc "প্রজেক্ট সেন্ট্রাল ব্যবহার করে পাসওয়ার্ড পরিবর্তন করুন অথবা প্রোফাইল আপডেট করুন">
+<!ENTITY splash.discussion "আলোচনা">
+<!ENTITY splash.downloadProject "একটি প্রজেক্ট ডাউনলোড করুন">
+<!ENTITY splash.downloadProjectDesc "সেলটেক্স সার্ভার থেকে প্রজেক্ট ডাউনলোড করুন">
+<!ENTITY splash.featureTour "ফিচার ট্যুর">
+<!ENTITY splash.forums "ফোরাম">
+<!ENTITY splash.forumsDesc "আলোচনায় অংশগ্রহনের জন্য সেলটেক্স ফোরামে যোগ দিন">
+<!ENTITY splash.gettingStarted "শুরু হতে যাচ্ছে">
+<!ENTITY splash.guide "সেলটেক্স ইউজার গাইড">
+<!ENTITY splash.help "হেল্প">
+<!ENTITY splash.helpAccount "অ্যাকাউন্ট তৈরী করুন">
+<!ENTITY splash.helpAccountDesc "অ্যাকাউন্ট তৈরী করে আপনি সার্ভার সাইড ফিচার ব্যবহারের সুবিধা নিতে পারেন যাতে কোলাবরেশন ও পিডিএফ তৈরী করার সুযোগ আছে।">
+<!ENTITY splash.helpDesc "বাম পাশের লিঙ্কগুলো সেলটেক্স সার্ভারের রিসোর্স হাইলাইট করে">
+<!ENTITY splash.helpOptions "হেল্প অপশনস্‌">
+<!ENTITY splash.inbox "ইনবক্স">
+<!ENTITY splash.logIn "সাইন ইন">
+<!ENTITY splash.newProject "একটি নতুন প্রজেক্ট শুরু করুন">
+<!ENTITY splash.newProjectDesc "একটি নতুন প্রজেক্ট তৈরী করুন">
+<!ENTITY splash.openProject "একটি তৈরী প্রজেক্ট খুলুন">
+<!ENTITY splash.openProjectDesc "তৈরী প্রজেক্ট যোগ করুন।">
+<!ENTITY splash.options "অপশনস্‌">
+<!ENTITY splash.projectCentral "প্রজেক্ট সেন্ট্রাল">
+<!ENTITY splash.projects "প্রজেক্ট">
+<!ENTITY splash.recentProjects "সাম্প্রতিক প্রজেক্ট">
+<!ENTITY splash.sampleDesc "আমরা সেলটেক্সের বিভিন্ন ফিচার দেখানোর জন্য উইজার্ড অব অজ ব্যবহার করেছি। সিংগেল সিন তৈরী করার প্রয়োজনীয়তা বিভিন্ন ডকুমেন্টের সাহায্যে দেখানো হয়েছে, এই স্যাম্পলে স্ক্রিপ্ট, ক্যারেক্টার, সিন ডিটেলস্‌, ব্রেকডাউন ইনফরমেশন এবং কিছু সিডিউল ইনফরমেশন ব্যবহার করা হয়েছে।">
+<!ENTITY splash.sampleProject "স্যাম্পল প্রজেক্ট">
+<!ENTITY splash.videoWalkthrus "ভিডিও ওয়াক থ্রু">
+<!ENTITY splash.videoWalkthrusDesc "স্বল্প দৈর্ঘ্যের ভিডিও ফিচার টিউটরিয়াল আপনার সুবিধার্থে">
+<!ENTITY splash.walkthru "৩-মিনিটের ওয়াক থ্রু">
+<!ENTITY splash.webServices "ওয়েব সুবিধা">
+<!ENTITY splash.welcomePrefix "সেলটেক্সে স্বাগতম">
+<!ENTITY splash.welcomePrefixDesc "মিডিয়া প্রি-প্রোডাকশন">
+<!ENTITY splash.wiki "উইকি গাইড">
+<!ENTITY splash.wikiDesc "সেলটেক্স জানার রিসোর্স">
+<!ENTITY splashScreen.label "স্পেল্যাশ স্ক্রিন">
+<!ENTITY stackTrace.desc "নিচের তথ্যগুলো আমাদের প্রয়োজন হতে পারে। যদি এই বাগ রিপোর্ট করতে চান তাহলে অনুগ্রহ করে তা সাথে যুক্ত করুন।">
+<!ENTITY stageplay.desc "আন্তর্জাতিক ফরম্যাটিংসহ মঞ্চ নাটকের স্ক্রিপ্ট যোগ করুন।">
+<!ENTITY stageplay.label "মঞ্চ নাটক">
+<!ENTITY start.label "শুরু">
+<!ENTITY startOfDay.label "দিনের শুরু">
+<!ENTITY startOfShooting.label "শুটিংয়ের শুরু">
+<!ENTITY startOfWeek.label "সপ্তাহের শুরু">
+<!ENTITY statistics.label "স্ট্যাটেস্টিক্স">
+<!ENTITY storyboard.desc "স্টোরিবোর্ডের ইমেজগুলো শট সিক্যুয়েন্স অনুসারে সাজান।">
+<!ENTITY storyboard.label "স্টোরিবোর্ড">
+<!ENTITY strikethrough.label "স্ট্রায়িক থ্রু">
+<!ENTITY stripboard.label "স্ট্রিপবোর্ড">
+<!ENTITY subject.label "সাবজেক্ট">
+<!ENTITY summary.label "সংক্ষেপ">
+<!ENTITY syncDialog.title "সিঙ্ক">
+<!ENTITY tagItemCmd.label "ট্যাগ">
+<!ENTITY tagline.label "ট্যাগলাইন">
+<!ENTITY tags.label "ট্যাগস্‌">
+<!ENTITY text.label "টেক্সট্‌">
+<!ENTITY textDocument.desc "টেক্সট্‌ ডকুমেন্ট যোগ করুন। আউটলাইন, ট্রিটমেন্ট অথবা সিনপ্‌সিসের জন্য সুবিধাজনক।">
+<!ENTITY textDocument.label "টেক্সট্‌">
+<!ENTITY theatreTmplActTitle "অ্যাক্ট ১">
+<!ENTITY theatreTmplSceneTitle "সিন ১">
+<!ENTITY thirtyMinutes.label "৩০ মিনিট">
+<!ENTITY threeHours.label "৩ ঘন্টা">
+<!ENTITY time.label "সময়">
+<!ENTITY title.label "টাইটেল">
+<!ENTITY titlePage.label "টাইটেল পেজ">
+<!ENTITY toggleEditing.label "টোগল এডিটিং">
+<!ENTITY togglePaginationCmd.label "অ্যানাবেল পেজিনেশন">
+<!ENTITY toggleScratchpadCmd.label "ওপেন/ক্লোজ স্ক্র্যাচপ্যাড">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "সাইডবার">
+<!ENTITY topOfNextPage.label "পরের পৃষ্ঠার সবার উপরে">
+<!ENTITY tryAgain.label "আবার চেষ্টা করুন">
+<!ENTITY twoColumns.label "দুই কলাম">
+<!ENTITY twoHours.label "২ ঘন্টা">
+<!ENTITY typeset.label "টাইপসেট্‌">
+<!ENTITY under14.label "আমি ১৪ এর নিচে।">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "আন্ডারলাইন">
+<!ENTITY unorderedList.label "অগোছালো লিষ্ট">
+<!ENTITY untitled.label "শিরোনামহীন">
+<!ENTITY update.label "আপডেট">
+<!ENTITY updateInbox.label "আপডেট ইনবক্স">
+<!ENTITY uploadDialog.title "আপডেট প্রজেক্ট">
+<!ENTITY uploadProjectCmd.label "আপলোড প্রজেক্ট...">
+<!ENTITY uploadProjectCmd.toolbarlabel "আপলোড">
+<!ENTITY uppercaseCmd.label "আপারকেস">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "ইউজারনেম">
+<!ENTITY video.label "ভিডিও">
+<!ENTITY videoTutorialCmd.label "ভিডিও টিউটরিয়াল">
+<!ENTITY viewProjectOnline.label "অনলাইনে প্রজেক্ট দেখুন">
+<!ENTITY wardrobeSheet.desc "নতুন ওয়ার্ডরৌব আইটেমের জন্য বিবরণ দিন।">
+<!ENTITY wardrobeSheet.existing "চাইলে নিচের লিষ্ট থেকেও ওয়ার্ডরৌব আইটেমের জন্য বিবরণ দিতে পারেন।">
+<!ENTITY wardrobeSheet.label "ওয়ার্ডরৌব">
+<!ENTITY wardrobeSheet.select "ওয়ার্ডরৌব সিলেক্ট করুন">
+<!ENTITY webPanel.desc "সেলটেক্স ওয়েব সার্ভিসেস।">
+<!ENTITY webPanel.label "ওয়েব সার্ভিসেস">
+<!ENTITY webPanelCmd.toolbarlabel "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "একটি সেলটেক্স অ্যাকাউন্ট তৈরী করুন">
+<!ENTITY webPanelIntro.text1 "ফ্রি সাইনআপ এবং সিকিউর ওয়েব সার্ভিসের মাধ্যমে সেলটেক্সের সকল সুবিধা ব্যবহারের সুযোগ গ্রহন করুন।">
+<!ENTITY webPanelIntro.text2 "সম্পূর্ণ প্রজেক্টের একটি ব্যাকআপ কপি রিমোট এবং সিকিউর সেলটেক্স সার্ভারে রাখুন যা চুরি যাওয়া বা দুর্যোগের কারণে হার্ডড্রাইভ ক্ষতিগ্রস্থ হলেও প্রজেক্টকে রক্ষা করবে।">
+<!ENTITY webPanelIntro.text3 "প্রজেক্ট শেয়ার করে অন্য সদস্যদের সাথে কোলাবরেট করুন এবং প্রাইভেট স্পেস তৈরী করুন।">
+<!ENTITY webPanelIntro.text4 "মন্তব্যের জন্য মিডিয়া প্রজেক্টটি প্রজেক্ট সেন্ট্রালে পাবলিশ করুন এবং আমাদের বর্ধমান মিডিয়া নির্মাতা কমিউনিটির সাথে যোগ দিন।">
+<!ENTITY webPanelIntro.text5 "সেলটেক্স প্রজেক্টটি আইফোনের জন্য তৈরী ফরম্যাটে দেখুন।">
+<!ENTITY wiz.clickFinish "উইজার্ড সম্পন্ন করতে ফিনিশ বাটনে ক্লিক করুন।">
+<!ENTITY wiz.clickNext "শুরু করতে নেক্সট্‌ বাটনে ক্লিক করুন।">
+<!ENTITY workweek.label "কর্ম সপ্তাহ">
+<!ENTITY writer.label "লেখক">
+<!ENTITY zoom.label "জুম">

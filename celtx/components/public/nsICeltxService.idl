@@ -1,0 +1,76 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsISupports.idl"
+
+interface nsIDOMWindow;
+interface nsIDOMDocument;
+
+[scriptable, uuid(a0de6cbe-2cb7-418f-af8b-857f845335e3)]
+interface nsICeltxObserver: nsISupports
+{
+  void onLogin (in boolean succeeded);
+};
+
+[scriptable, uuid(23a9282b-f609-4253-88dc-05334e4d6977)]
+interface nsICeltxNotification: nsISupports
+{
+    attribute string type;
+    attribute string title;
+    attribute string author;
+    attribute string date;
+    attribute string description;
+    attribute string source;
+};
+
+[scriptable, uuid(f67ef398-240d-46f1-9304-736109cea2f7)]
+interface nsICeltxService: nsISupports
+{
+    readonly attribute string tempDirSpec;
+    readonly attribute boolean loggedIn;
+    readonly attribute string username;
+    readonly attribute string workspaceURI;
+
+    readonly attribute string SPLASH_URL;
+    readonly attribute string POW_URL;
+
+    readonly attribute string STUDIO_SERVER;
+    readonly attribute string STUDIO_BASEURL;
+
+    readonly attribute string PDF_CONVERT_URL;
+    readonly attribute string PDF_PREVIEW_URL;
+
+    attribute boolean offline;
+
+    attribute nsIDOMDocument banners;
+
+    void checkAutoLogin (in nsIDOMWindow win);
+    void checkLoginFromCookie ();
+    void loginSuccessful ();
+    void login (in string service, in nsICeltxObserver observer,
+                in boolean reattempt, in nsIDOMWindow win);
+    void loginAs (in string username, in string password, in string service,
+                  in nsICeltxObserver observer, in nsIDOMWindow win);
+    void logout ();
+};

@@ -1,0 +1,9 @@
+default-palette.jar:
+% content default-palette %content/default-palette/
+  content/default-palette/camera.svg
+  content/default-palette/index.rdf
+  content/default-palette/light_flood.svg
+  content/default-palette/light_spot.svg
+  content/default-palette/man.svg
+  content/default-palette/person.svg
+  content/default-palette/woman.svg

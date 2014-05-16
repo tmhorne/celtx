@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="scriptreportnav"
+        title="Window Title"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptreportnav.js"/>
+
+  <vbox class="celtxtoolbar"
+        flex="1">
+    <hbox class="panelheader" align="center">
+      <label value="&reports.label;"/>
+    </hbox>
+
+    <tree id="report-tree"
+          flex="1"
+          seltype="single"
+          onselect="goDoCommand('cmd-report-changed')"
+          hidecolumnpicker="true">
+      <treecols>
+        <treecol id="report-type-col"
+                 hideheader="true"
+                 flex="1"/>
+      </treecols>
+      <treechildren>
+        <treeitem>
+          <treerow>
+            <treecell label="&sceneBreakdown.label;"
+                      tooltiptext="&sceneBreakdown.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&sceneBreakdownWithDesc.label;"
+                      tooltiptext="&sceneBreakdownWithDesc.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&dialog.label;"
+                      tooltiptext="&dialog.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&elements.label;"
+                      tooltiptext="&elements.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&scriptWithNotes.label;"
+                      tooltiptext="&scriptWithNotes.label;"/>
+          </treerow>
+        </treeitem>
+      </treechildren>
+    </tree>
+  </vbox>
+
+</window>
+

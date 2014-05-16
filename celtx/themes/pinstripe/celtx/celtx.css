@@ -1,0 +1,132 @@
+
+@import url(chrome://global/skin/);
+
+toolbar[printpreview="true"] {
+  -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
+}
+
+tab.noimagetab .tab-icon {
+  display: none !important;
+}
+
+tabpanels.plain {
+  -moz-appearance: dialog !important;
+}
+
+tabs[closebutton="false"] .tabs-closebutton-box {
+  display: none !important;
+}
+
+.celtx-tab {
+	min-width: 30px;
+  max-width: 200px;
+}
+
+#celtx {
+  width: 1000px;
+  height: 700px;
+}
+
+#navigation-sidebar {
+  min-width: 75px;
+  width: 200px;
+}
+
+#gis-button {
+  list-style-image: url("chrome://celtx/skin/google.ico");
+}
+
+#newproject {
+  width: 440px;
+}
+
+#findreplace {
+  width: 400px;
+  height: 220px;
+}
+
+#findfields {
+  min-height: 72px;
+}
+
+#spellcheck-dialog {
+  height: 260px;
+}
+
+.sync-box {
+  background-image: url("chrome://celtx/skin/celtx.png");
+  background-repeat: no-repeat;
+  padding-left: 70px;
+}
+
+picklistitem {
+  display: -moz-box;
+  -moz-binding: url(chrome://celtx/content/editors/datasheet.xml#picklistitem);
+}
+
+#statusbar-left {
+  width: 100px;
+}
+
+#statusbar-display label {
+  text-align: center;
+}
+
+#statusbar-display {
+  width: 100px;
+}
+
+#note-popup {
+  width: 300px;
+  max-width: 300px;
+  min-height: 200px;
+  max-height: 500px;
+}
+
+#download-project-dialog {
+  width: 600px;
+  height: 350px;
+  padding: 15px;
+}
+
+#celtxerror {
+  max-width: 400px;
+}
+
+/* Prevents overflow/underflow cycle on OS X */
+.tree-bodybox {
+  padding-bottom: 3px;
+}
+
+#registration-wizard {
+  width: 45em;
+  height: 35em;
+}
+
+.wizard-header-icon {
+  list-style-image: url(chrome://celtx/skin/celtx.png) !important;
+  width: 48px;
+  height: 48px;
+}
+
+#doctype-description {
+  min-height: 4em;
+}
+
+#existing-desc-deck {
+  min-height: 5em;
+}
+
+#existing-select-deck {
+  min-height: 5em;
+}
+
+#progressdialog {
+  width: 300px;
+  height: 100px;
+  padding: 15px;
+}
+
+treechildren::-moz-tree-image {
+  margin-right: 5px;
+}

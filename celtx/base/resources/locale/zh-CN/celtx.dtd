@@ -1,0 +1,966 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Email">
+
+<!ENTITY export.label "导出">
+<!ENTITY exportSketch.label "导出草稿">
+<!ENTITY chapter.label "章节">
+<!ENTITY chapters.label "章节">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "编辑">
+<!ENTITY showContents.label "显示内容">
+<!ENTITY exportCatalog.label "导出目录">
+<!ENTITY novel.desc "新建一篇小说，并增加故事版和动作描述">
+<!ENTITY novel.label "小说">
+<!ENTITY showBreakdownInScript.label "显示剧本里的空白">
+<!ENTITY showDialogNumbers.label "显示会话号">
+
+<!ENTITY timer.settings.label "设置">
+<!ENTITY timer.autostart.label "当剧本打开时打开会话">
+<!ENTITY timer.schedule.label "时间安排">
+<!ENTITY timer.useSchedule.label "使用计划中的休息">
+<!ENTITY timer.workMinutes.label "工作 (分钟):">
+<!ENTITY timer.breakMinutes.label "休息 (分钟):">
+<!ENTITY timer.alertType.label "键入休息结束警告">
+<!ENTITY timer.showDialog.label "显示对话">
+<!ENTITY timer.endSession.label "结束">
+<!ENTITY timer.flashTimer.label "闪烁计时器">
+<!ENTITY timer.resetSession.label "近期的会话">
+<!ENTITY timer.settingsCmd.label "&计时器.设置.标签;...">
+<!ENTITY timer.sessionSummary.label "报告">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "会话开始时间:">
+<!ENTITY timer.totalWritingTime.label "全部写作时间:">
+<!ENTITY timer.totalBreakTime.label "全部休息时间:">
+<!ENTITY timer.totalTime.label "所有时间:">
+<!ENTITY timer.wordsWritten.label "已写字数">
+
+<!ENTITY timer.allSessions.label "所有会话">
+<!ENTITY timer.sessionDetail.label "会话细节">
+<!ENTITY timer.scriptSummary.label "剧本摘要">
+<!ENTITY timer.writingGoals.label "写作目标">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "会话回报">
+<!ENTITY timer.totalSessionTime.header "全部会话时间">
+<!ENTITY timer.totalSessionTime.label "全部会话时间">
+<!ENTITY timer.totalWordsWritten.header "总字数">
+<!ENTITY timer.totalWordsWritten.label "总字数">
+<!ENTITY timer.noSessionsToDisplay.label "没有可供显示的会话">
+<!ENTITY timer.sessionNo.label "会话号 #">
+<!ENTITY timer.date.label "日期">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "开始日期">
+<!ENTITY timer.startTime.label "开始时间">
+<!ENTITY timer.endTime.label "结束时间">
+<!ENTITY timer.breakTime.label "休息时间">
+
+<!ENTITY timer.sessionStartWords.label "会话开始字数">
+<!ENTITY timer.sessionEndWords.label "会话结束字数">
+<!ENTITY timer.newWords.header "新建文本">
+<!ENTITY timer.noNewWords.label "文本达到字数上限">
+<!ENTITY timer.newDialog.header "新建对白">
+<!ENTITY timer.noNewDialog.label "无法增加新的对话.">
+<!ENTITY timer.newCharacters.header "新建角色">
+<!ENTITY timer.noNewCharacters.label "缺少新建角色.">
+<!ENTITY timer.newPages.header "新建图层">
+<!ENTITY timer.newScenes.header "新建场景">
+<!ENTITY timer.newPanels.header "新建托盘">
+<!ENTITY timer.shotWords.header "显示文本">
+<!ENTITY timer.actionWords.header "动作文本">
+<!ENTITY timer.dialogWords.header "对白文本">
+<!ENTITY timer.soundVoiceMusicWords.header "声音/人声/音乐 文本">
+<!ENTITY timer.stageDirWords.header "舞台调度">
+
+<!ENTITY timer.name.label "名称">
+<!ENTITY timer.words.label "文本">
+<!ENTITY timer.percentage.label "百分比">
+
+<!ENTITY timer.summaryReport.label "摘要报告">
+<!ENTITY timer.contributionsByAuthor.label "贡献">
+<!ENTITY timer.weekdaySessions.label "会话按每周天数">
+<!ENTITY timer.weekdayWords.label "字数按每周天数">
+<!ENTITY timer.numberOfSessions.label "会话数">
+<!ENTITY timer.longest.label "最长">
+<!ENTITY timer.shortest.label "最短">
+<!ENTITY timer.averageDuration.label "平均长度">
+<!ENTITY timer.mostWords.label "最长单词">
+<!ENTITY timer.leastWords.label "最短单词">
+<!ENTITY timer.averageWords.label "平均词数">
+<!ENTITY timer.wordCounts.header "词数">
+<!ENTITY timer.element.label "元素">
+<!ENTITY timer.totalWords.header "总字数">
+<!ENTITY timer.totalDialogWords.header "总对话字数">
+<!ENTITY timer.character.label "角色">
+<!ENTITY timer.weekday.label "工作日">
+<!ENTITY timer.sessions.label "会话">
+<!ENTITY timer.pctOfTotal.label "总第&#37; ">
+<!ENTITY timer.author.label "作者">
+
+<!ENTITY timer.writingGoalReport.label "写作目标报告">
+<!ENTITY timer.goalSession.header "会话目标">
+<!ENTITY timer.goalSession.label "会话目标">
+<!ENTITY timer.goalDaily.header "当日目标">
+<!ENTITY timer.goalDaily.label "当日目标">
+<!ENTITY timer.goalScript.header "剧本目标">
+<!ENTITY timer.goalScript.label "剧本目标">
+<!ENTITY timer.wordGoal.label "词数目标">
+
+<!ENTITY timer.message.label "信息">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "最近的会话">
+
+<!ENTITY timer.alertDialog.title "会话计时器">
+<!ENTITY timer.timerMenu.tooltip "点此选项">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "前景色">
+<!ENTITY fullscreen.backgroundColour.tooltip "背景色">
+<!ENTITY fullscreen.fullscreen.tooltip "全屏">
+
+<!ENTITY bbc.options.label "BBC 选项">
+<!ENTITY bbc.showTitle.label "标题">
+<!ENTITY bbc.sketchTitle.label "草稿标题">
+<!ENTITY editText.title "编辑文字">
+<!ENTITY sketch.fillColour.tooltip "填充颜色">
+<!ENTITY sketch.group.tooltip "组">
+<!ENTITY sketch.lower.tooltip "小写">
+<!ENTITY sketch.lowerToBottom.tooltip "小写并上标">
+<!ENTITY sketch.raise.tooltip "提升">
+<!ENTITY sketch.raiseToTop.tooltip "提升到顶部">
+<!ENTITY sketch.strokeColour.tooltip "画笔颜色">
+<!ENTITY sketch.ungroup.tooltip "不分组">
+
+<!ENTITY custom.label "自定义">
+<!ENTITY saveAsPreset.label "另存为预置">
+<!ENTITY sceneLocking.title "幕景锁定">
+<!ENTITY sceneNumbering.label "场景编号">
+<!ENTITY scenenumber.after.label "之后">
+<!ENTITY scenenumber.before.label "之前">
+<!ENTITY scenenumber.example.label "实例">
+<!ENTITY scenenumber.letter.label "字母">
+<!ENTITY scenenumber.number.label "数字">
+<!ENTITY scenenumber.position.label "位置">
+<!ENTITY scenenumber.prefix.label "前缀">
+<!ENTITY scenenumbers.resetAll.label "重置所有计数器">
+<!ENTITY scenenumber.suffix.label "后缀">
+<!ENTITY scenenumber.type.label "类">
+<!ENTITY style.label "类型">
+
+<!ENTITY project.film.label "电影">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "戏剧">
+<!ENTITY project.audioplay.label "广播剧">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "加入图片">
+<!ENTITY addPaletteObjects.label "获得艺术包">
+<!ENTITY addShot.label "添加镜头">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC 场景">
+<!ENTITY bdc.cameras "摄像机">
+<!ENTITY chat.label "对话">
+<!ENTITY colour.blue "蓝色">
+<!ENTITY colour.cherry "樱桃红">
+<!ENTITY colour.gold "金色">
+<!ENTITY colour.green "绿色">
+<!ENTITY colour.pink "粉色">
+<!ENTITY colour.salmon "鲜肉色">
+<!ENTITY colour.white "白色">
+<!ENTITY colour.yellow "黄色">
+<!ENTITY currentRevision.label "当前版本">
+<!ENTITY createNewRevision.tooltip "新建新版本">
+<!ENTITY default.label "默认">
+<!ENTITY enableSceneLocking.label "锁定场景">
+<!ENTITY fixNumbers.label "修改">
+<!ENTITY furniture.label "家具">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "注水">
+<!ENTITY light.spot.label "栏目">
+<!ENTITY linesBetweenScenes.label "场景线">
+<!ENTITY man.label "男性">
+<!ENTITY numbers.bothNos "都是 #s">
+<!ENTITY numbers.leftNo "左侧 #">
+<!ENTITY numbers.none "没有">
+<!ENTITY numbers.rightNo "右侧 #">
+<!ENTITY omitScene.label "多重场景">
+<!ENTITY palette.label "调色版">
+<!ENTITY palettes.label "调色版">
+<!ENTITY paletteTree.tooltip "拖动物体到你的草稿上">
+<!ENTITY people.label "人物">
+<!ENTITY person.label "人物">
+<!ENTITY preventEditing.label "锁定文本">
+<!ENTITY resetRevisionMode.label "重复模式">
+<!ENTITY revisionColour.desc "不同的编辑使用默认的版本色">
+<!ENTITY revisionColour.label "版本色">
+<!ENTITY revisionMarks.all "所有标记">
+<!ENTITY revisionMarks.current "当前标记">
+<!ENTITY revisionMarks.hide "隐藏标记">
+<!ENTITY revisionMarks.mark.label "标记">
+<!ENTITY revisionMarks.unmark.label "去掉标记">
+<!ENTITY revisionMode.label "版本模式">
+<!ENTITY revisionName.label "版本名">
+<!ENTITY revisionOptions.title "版本号">
+<!ENTITY shotSetup.label "草稿">
+<!ENTITY shotSetup.desc "添加草稿到你的工程里.">
+<!ENTITY showScriptHeader.label "显示剧本标签">
+<!ENTITY standard.label "标准">
+<!ENTITY startNewRevision.label "开始新的版本">
+<!ENTITY storyboard.showImages.label "显示图片">
+<!ENTITY storyboard.showSetups.label "显示草稿">
+<!ENTITY storyboard.showBoth.label "显示图片和草稿">
+<!ENTITY woman.label "女性">
+
+<!ENTITY light.bank.label "泛光灯">
+<!ENTITY bathtub.label "浴室">
+<!ENTITY boy.label "男孩">
+<!ENTITY car.label "汽车">
+<!ENTITY chair.label "椅子">
+<!ENTITY coffeetable.label "咖啡桌">
+<!ENTITY couch.label "沙发床">
+<!ENTITY crowd.label "人群">
+<!ENTITY endtable.label "茶几">
+<!ENTITY girl.label "女孩">
+<!ENTITY group.label "编组"> <!-- Group of people -->
+<!ENTITY house.label "房子">
+<!ENTITY building.label "建筑物"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "小卡车">
+<!ENTITY sink.label "水槽"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "聚光灯">
+<!ENTITY street.label "街道">
+<!ENTITY toilet.label "厕所">
+<!ENTITY tree.label "树木">
+<!ENTITY van.label "大货车">
+<!ENTITY videocamera.label "摄影机">
+
+<!ENTITY createTemplate.label "创建模板">
+<!ENTITY fetchingList.label "取得列表">
+<!ENTITY getCeltxTools.label "获取 Celtx 工具">
+<!ENTITY myStudio.label "我的 Celtx">
+<!ENTITY openFromStudio.label "从 Celtx 打开">
+<!ENTITY owner.label "拥有者">
+<!ENTITY personal.label "个人">
+<!ENTITY saveCommentCheckbox.label "储存到 Celtx 前询问我意见.">
+<!ENTITY saveToStudio.label "储存到 Celtx">
+<!ENTITY savedBy.label "储存者">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx 验证">
+<!ENTITY studioAuthDialog.desc "Celtx 登入">
+<!ENTITY studioProjects.label "Celtx 方案">
+<!ENTITY toolbox.label "工具箱">
+
+<!ENTITY access.label "使用">
+<!ENTITY actorProfile.desc "为演员添加简介">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "改编成">
+<!ENTITY add.label "添加">
+<!ENTITY addCardCmd.label "增加索引卡片">
+<!ENTITY addCmd.label "添加">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "项目详情">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "选择项目">
+<!ENTITY addFolder.label "添加文件夹...">
+<!ENTITY addFolderCmd.label "添加文件夹">
+<!ENTITY addImages.label "添加图片">
+<!ENTITY addItem.label "添加项目...">
+<!ENTITY addItemCmd.label "添加项目">
+<!ENTITY addNote.label "添加注释">
+<!ENTITY addSequenceCmd.toolbarlabel "添加序列">
+<!ENTITY advanced.label "高级">
+<!ENTITY alignCenter.label "居中">
+<!ENTITY alignJustified.label "两端对齐">
+<!ENTITY alignLeft.label "左对齐">
+<!ENTITY alignRight.label "右对齐">
+<!ENTITY allShootDays.label "全部发行日">
+<!ENTITY allUppercase.label "全部">
+<!ENTITY american.label "美国">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "这些特性仅在 PDF生成 中可用">
+<!ENTITY audioplay.desc "添加音频到你的方案.">
+<!ENTITY audioplay.label "音频播放">
+<!ENTITY authDialog.description "请登陆您的Celtx帐户来使用此功能">
+<!ENTITY authDialog.title "Celtx 验证">
+<!ENTITY author.label "作家">
+<!ENTITY autoCharContinueds.label "显示角色的连续性">
+<!ENTITY autoSaveProject.label "自动保存方案">
+<!ENTITY autoparenthesize.label "当输入“(”时，作为附加说明">
+<!ENTITY avScript.desc "添加 A/V 程式到你的方案.">
+<!ENTITY avScript.label "A/V 程式">
+<!ENTITY basedOn.label "根据">
+<!ENTITY bdc.actor "演员">
+<!ENTITY bdc.addlabour "场工">
+<!ENTITY bdc.animals "动物">
+<!ENTITY bdc.camera "摄影机">
+<!ENTITY bdc.cast "角色">
+<!ENTITY bdc.cgi "CG特效">
+<!ENTITY bdc.construction "建筑">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "电器">
+<!ENTITY bdc.equip "特殊设备">
+<!ENTITY bdc.extras "临时演员">
+<!ENTITY bdc.greenery "植物">
+<!ENTITY bdc.hair "发型">
+<!ENTITY bdc.handler "驯兽师">
+<!ENTITY bdc.lights "灯光">
+<!ENTITY bdc.livestock "家畜">
+<!ENTITY bdc.location "外景地">
+<!ENTITY bdc.makeup "化妆">
+<!ENTITY bdc.mechfx "机械特效">
+<!ENTITY bdc.misc "杂项">
+<!ENTITY bdc.music "音乐">
+<!ENTITY bdc.opticalfx "光学特效">
+<!ENTITY bdc.painting "绘画">
+<!ENTITY bdc.prodnotes "拍摄记录">
+<!ENTITY bdc.props "道具">
+<!ENTITY bdc.security "保安">
+<!ENTITY bdc.set "布景">
+<!ENTITY bdc.setdressing "布景装饰">
+<!ENTITY bdc.sound "声音">
+<!ENTITY bdc.soundfx "声音特效">
+<!ENTITY bdc.specialfx "特殊特效">
+<!ENTITY bdc.storyboard "故事板">
+<!ENTITY bdc.stunts "特技替身">
+<!ENTITY bdc.vehicles "交通工具">
+<!ENTITY bdc.wardrobe "戏装">
+<!ENTITY bdc.weapons "武器">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "粗体">
+<!ENTITY bookmark.desc "添加网络链接。">
+<!ENTITY bookmark.label "书签">
+<!ENTITY both.label "全部">
+<!ENTITY bottomOfPage.label "页面底部">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc "为剧本添加分析信息。">
+<!ENTITY breakdown.label "分析">
+<!ENTITY breakdownReport.label "分析报告">
+<!ENTITY brokenSceneEventWarning.label "本项目与不存在的场景相关。">
+<!ENTITY browseCmd.label "浏览">
+<!ENTITY byline.label "by">
+<!ENTITY calendar.desc "向您的工程中添加日历。">
+<!ENTITY calendar.label "日历">
+<!ENTITY callSheet.label "Call Sheet">
+<!ENTITY cast.label "演员表">
+<!ENTITY castOfCharacters.label "演员阵容">
+<!ENTITY catalog.desc "添加拍摄项目目录到你的方案.">
+<!ENTITY catalog.label "目录">
+<!ENTITY catalogAddItem.tooltip "添加目录项目">
+<!ENTITY catalogDeleteItem.tooltip "删除目录项目">
+<!ENTITY categories.label "分类">
+<!ENTITY category.label "分类">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; 帐户...(C)">
+<!ENTITY celtxError.title "Celtx 出错">
+<!ENTITY celtxTagline.label "所有关于这个故事">
+<!ENTITY celtxWikiCmd.label "&appName; 百科">
+<!ENTITY charOutline.desc "一份关于角色及其相互之间关系的概述总览。">
+<!ENTITY charOutline.label "角色提纲">
+<!ENTITY character.label "角色">
+<!ENTITY characterProfile.desc "为新角色添加描述。">
+<!ENTITY characterProfile.existing "你也可以为下列的已存在角色添加描述。">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "选择角色">
+<!ENTITY characters.label "角色">
+<!ENTITY clearCmd.label "清空">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "创建连环漫画册脚本.">
+<!ENTITY comicBook.label "连环漫画册">
+<!ENTITY comment.label "评论">
+<!ENTITY completed.label "已完成">
+<!ENTITY contact.label "联系人">
+<!ENTITY contactInformation.label "联系人资料">
+<!ENTITY contactName.label "联系人姓名">
+<!ENTITY contacts.label "联络">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "继续">
+<!ENTITY copyProject.title "复制方案">
+<!ENTITY copyProjectCmd.label "复制方案">
+<!ENTITY copyright.label "版权">
+<!ENTITY create.label "创建">
+<!ENTITY createAccount.label "创建新账户">
+<!ENTITY createCatalogFromSelection.label "从选项里创建目录">
+<!ENTITY createProject.label  "创建工程">
+<!ENTITY createProject.title "创建工程">
+<!ENTITY createdCol.label "创建">
+<!ENTITY creatorCol.label "创建者">
+<!ENTITY crew.desc "添加一个队员文档.">
+<!ENTITY crew.label "队员">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "日期">
+<!ENTITY datePicker.label "日期选择器">
+<!ENTITY daynightHeader.label "日/夜">
+<!ENTITY daynightWarning.label "场景标题未以有效的日景/夜景描述词结束。要修正此问题，编辑剧本中的场景标题或者在选项中改变日景/夜景描述词。">
+<!ENTITY daynightWords.label "日景/夜景描述词">
+<!ENTITY dayoff.label "休息日">
+<!ENTITY daysOff.label "休假">
+<!ENTITY decreaseDelayCmd.tooltip "减少延迟。">
+<!ENTITY decreaseFontSizeCmd.tooltip "减小字号">
+<!ENTITY decreaseIndentCmd.label "减少缩进">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "预设场景长度">
+<!ENTITY delayLabel.tooltip "在图片之间延迟 (秒)">
+<!ENTITY deleteCardCmd.label "删除索引卡片">
+<!ENTITY deleteItem.label "删除项目">
+<!ENTITY deleteItemCmd.label "删除">
+<!ENTITY department.label "部门">
+<!ENTITY description.label "描述">
+<!ENTITY details.label "详情">
+<!ENTITY dialog.label "对话">
+<!ENTITY director.label "导演">
+<!ENTITY disabled.label "停用">
+<!ENTITY displayMedia.label "显示媒体">
+<!ENTITY downloadProjectCmd.label "下载工程...">
+<!ENTITY downloadProjectCmd.toolbarlabel "下载">
+<!ENTITY downloadingPDF.label "转换到RDF...">
+<!ENTITY dragToSchedule.tooltip "拖放到日程表.">
+<!ENTITY dualDialogCmd.label "双对话">
+<!ENTITY dualDialogCmd.tooltip "双对话">
+<!ENTITY duplicate.label "复制">
+<!ENTITY duplicateItemCmd.label "复制项目">
+<!ENTITY edit.label "编辑">
+<!ENTITY editDates.label "编辑日期">
+<!ENTITY editProfile.label "编辑网上资料">
+<!ENTITY editSceneDialog.title "编辑场景">
+<!ENTITY editTitlePageCmd.label "编辑标题页...">
+<!ENTITY editlabel.tooltip "点击修改">
+<!ENTITY eighths.label "Eighths">
+<!ENTITY eighthsSuffix.label "8ths">
+<!ENTITY element.label "单元">
+<!ENTITY elements.label "单元">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "这是用来计算活动的 Celtx 用户数。在此过程中，无个人身份信息或者工程数据被发送。">
+<!ENTITY enableStats.label "允许 Celtx 在启动时测试与服务器的连接。">
+<!ENTITY enableStats.label "向 Celtx 发送使用数据。">
+<!ENTITY enabled.label "启用">
+<!ENTITY end.label "完">
+<!ENTITY endOfShooting.label "拍摄结束">
+<!ENTITY enterEmbedTagPrompt.label "在此输入嵌入或对象标签：">
+<!ENTITY eventDetails.label "项目详情">
+<!ENTITY every15Minutes.label "每15分钟">
+<!ENTITY every30Minutes.label "每半小时">
+<!ENTITY every5Minutes.label "每5分钟">
+<!ENTITY everyHour.label "每小时">
+<!ENTITY everyMinute.label "每分钟">
+<!ENTITY exportList "Export List">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "导出剧本...">
+<!ENTITY externalFile.desc "向你的工程中加入已存在文件。">
+<!ENTITY externalFile.label "文件">
+<!ENTITY fileLocation "位置">
+<!ENTITY filmScript.desc "添加已格式化的电影剧本。">
+<!ENTITY filmScript.label "剧本">
+<!ENTITY filter.label "过滤器">
+<!ENTITY findAllCharacters.label "在目录里添加角色">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "查找...">
+<!ENTITY findPreviousCmd.label "查找上一个">
+<!ENTITY findTab.label "查找">
+<!ENTITY folder.label "文件夹">
+<!ENTITY forceOverwrite.label "如果服务器上的版本更新则强制覆盖">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "地址">
+<!ENTITY form.affectEvent "这个事件如何影响整个情节？">
+<!ENTITY form.age "年龄">
+<!ENTITY form.alternate "供选择的姓名">
+<!ENTITY form.antag "对立者">
+<!ENTITY form.antagWho "这场戏中谁是对立者？">
+<!ENTITY form.availability "可利用性">
+<!ENTITY form.bestFriend "最好的朋友">
+<!ENTITY form.borrow "借入">
+<!ENTITY form.build "建造">
+<!ENTITY form.buy "购买">
+<!ENTITY form.catalyst "催化剂">
+<!ENTITY form.cell "手机 #">
+<!ENTITY form.centralEvent "这场戏的中心事件是什么？">
+<!ENTITY form.charBackground "角色背景">
+<!ENTITY form.charGoal "这个角色的目标是什么？">
+<!ENTITY form.charPlan "为了达到目标，角色的工程是什么？">
+<!ENTITY form.charTraits "角色特点">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "角色出现在">
+<!ENTITY form.color "色彩">
+<!ENTITY form.comicRelief "插科打诨">
+<!ENTITY form.comments "注释评论">
+<!ENTITY form.confidante "已知女友">
+<!ENTITY form.contactInfo "联络信息">
+<!ENTITY form.cost "费用">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "有空的时间">
+<!ENTITY form.dateNeed "需要时间">
+<!ENTITY form.dateReturn "返回日期">
+<!ENTITY form.description "描述">
+<!ENTITY form.details "详细情况">
+<!ENTITY form.dislikes "厌恶">
+<!ENTITY form.distFeatures "有区别的特征">
+<!ENTITY form.dob "生日">
+<!ENTITY form.dress "服装">
+<!ENTITY form.education "教育">
+<!ENTITY form.elevator "电梯">
+<!ENTITY form.email "Email地址">
+<!ENTITY form.endDate "结束日期">
+<!ENTITY form.era "时代">
+<!ENTITY form.eyes "眼睛">
+<!ENTITY form.facilityInfo "设施信息">
+<!ENTITY form.familyBack "家庭背景">
+<!ENTITY form.fullName "全名">
+<!ENTITY form.generic "普遍">
+<!ENTITY form.genericForm "普遍形式">
+<!ENTITY form.habits "习惯/犯罪">
+<!ENTITY form.hair "头发">
+<!ENTITY form.hat "帽子">
+<!ENTITY form.height "身高">
+<!ENTITY form.inScenes "In Scenes">
+<!ENTITY form.jacket "上衣">
+<!ENTITY form.jobTitle "标题">
+<!ENTITY form.keyCharTraits "关键角色特征">
+<!ENTITY form.lightSources "光源">
+<!ENTITY form.likes "喜好">
+<!ENTITY form.locationMap "外景地图">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "恋人">
+<!ENTITY form.media "媒体">
+<!ENTITY form.mentor "老师">
+<!ENTITY form.motiv "行动方式">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "否">
+<!ENTITY form.noise "噪音问题">
+<!ENTITY form.other "其他">
+<!ENTITY form.pants "裤子">
+<!ENTITY form.parking "停车信息">
+<!ENTITY form.partner "伙伴">
+<!ENTITY form.person "个性">
+<!ENTITY form.phone "电话 #">
+<!ENTITY form.physicalDesc "详细身体状况描述">
+<!ENTITY form.powerCapa "功率能力">
+<!ENTITY form.princFunction "这个角色的主要功能是什么？">
+<!ENTITY form.procure "采购">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "主角">
+<!ENTITY form.protagAntag "主角/对手">
+<!ENTITY form.protagWho "谁是这场戏的主要人物？">
+<!ENTITY form.rent "租金">
+<!ENTITY form.rentalCost "租金费用">
+<!ENTITY form.role "角色">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "对手如何才能达成这个目标？">
+<!ENTITY form.sceneAntagGoal "对手在这场戏里的目标是什么？">
+<!ENTITY form.sceneChars "这场戏里有哪些角色？">
+<!ENTITY form.sceneDetails "场景详情">
+<!ENTITY form.sceneMood "这场戏的情绪是怎样的？">
+<!ENTITY form.sceneProtagAchieve "主角如何才能达成目标？">
+<!ENTITY form.sceneProtagGoal "这场戏里主角的目标是什么？">
+<!ENTITY form.sceneSetting "这场戏的设定是什么？">
+<!ENTITY form.sceneWhen "这场戏是何时发生的？">
+<!ENTITY form.scenesUsed "场景用于">
+<!ENTITY form.scoutSelect "搜索和选择">
+<!ENTITY form.scoutedFor "为场景搜索">
+<!ENTITY form.scriptName "剧本名称">
+<!ENTITY form.selectedFor "为场景所选">
+<!ENTITY form.sex "性别">
+<!ENTITY form.shirt "衬衫">
+<!ENTITY form.shoes "鞋子">
+<!ENTITY form.size "尺码">
+<!ENTITY form.squareFoot "建筑面积">
+<!ENTITY form.startDate "开始日期">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "戏装尺寸">
+<!ENTITY form.washroom "洗手间位置">
+<!ENTITY form.weight "重量">
+<!ENTITY form.wornBy "穿戴">
+<!ENTITY form.yes "是">
+<!ENTITY format.label "格式">
+<!ENTITY formatAct.label "表演">
+<!ENTITY formatAction.label "动作">
+<!ENTITY formatBalloon.label  "气球">
+<!ENTITY formatBalloonType.label "气球类型">
+<!ENTITY formatCaption.label  "字幕">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;"> <!-- max 7 chars -->
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "场景标题">
+<!ENTITY formatMusic.label    "音乐">
+<!ENTITY formatPage.label     "页">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;"> <!-- max 5 chars -->
+<!ENTITY formatPanel.label    "面板">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;"> <!-- max 5 chars -->
+<!ENTITY formatParen.label "插入">
+<!ENTITY formatProductionNote.label "摄制手札">
+<!ENTITY formatShot.label "镜头">
+<!ENTITY formatSound.label    "声音">
+<!ENTITY formatStagedir.label "舞台指导">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "转换">
+<!ENTITY formatVoice.label    "语音">
+<!ENTITY fourHours.label "4小时">
+<!ENTITY freeAndSecure.label "Free and Secure">
+<!ENTITY general.label "一般的">
+<!ENTITY generatePDFCmd.label "生成 PDF 文件...">
+<!ENTITY generateReportCmd.label "生成报告">
+<!ENTITY generateReportCmd.toolbarlabel "报告">
+<!ENTITY getProjDialog.caption "可用工程">
+<!ENTITY getProjDialog.title "下载工程">
+<!ENTITY gotoItemCmd.label "前往">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "关于 &appName;(A)">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "报告BUG(R)">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "在线支持(O)">
+<!ENTITY icons.label "图标">
+<!ENTITY iconsAndText.label "图标和文字">
+<!ENTITY image.label "图片">
+<!ENTITY images.label "图片">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "导入剧本">
+<!ENTITY importScriptCmd.toolbarLabel "导入">
+<!ENTITY includeInWorkweek.label "在工作周中包含这些日子">
+<!ENTITY includeTitlePage.label "包含封面页">
+<!ENTITY increaseDelayCmd.tooltip "增加延迟.">
+<!ENTITY increaseFontSizeCmd.tooltip "Increase Font Size">
+<!ENTITY increaseIndentCmd.label "增加缩进">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "索引卡片标题">
+<!ENTITY indexCards.label "索引卡片">
+<!ENTITY inlineSpellCheckCmd.label "拼写检查">
+<!ENTITY insertNoteCmd.toolbarLabel "注释">
+<!ENTITY international.label "国际">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "场景标题未以一个有效的 日/夜景 描述词结束。要修正此问题，编辑剧本中的场景标题或者在选项中改变 日/夜景 描述词。">
+<!ENTITY intextWords.label "日景/夜景描述词">
+<!ENTITY invalidLogin.label "错误用户名或密码。">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "斜体">
+<!ENTITY item.label "项目">
+<!ENTITY language.label "语言">
+<!ENTITY left.label "左">
+<!ENTITY linesPerPage.label "每页行数">
+<!ENTITY list.label "列出...">
+<!ENTITY location.desc "为一个外景地添加描述。">
+<!ENTITY location.label "外景地">
+<!ENTITY loginOnStartup.label "开始时登录">
+<!ENTITY lowercaseCmd.label "小写">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "媒体">
+<!ENTITY mediaViewer.title "媒体查看器">
+<!ENTITY modified.label "修改">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "下移">
+<!ENTITY moveUpCmd.label "上移">
+<!ENTITY moving.label "剧组转场">
+<!ENTITY name.label "名称">
+<!ENTITY network.label "网络">
+<!ENTITY never.label "从不">
+<!ENTITY newMarkupItem.label "&lt;新建 ...&gt;">
+<!ENTITY newProjectCmd.label "新建作品...">
+<!ENTITY newProjectCmd.toolbarlabel "新建">
+<!ENTITY noFileSelected.label "&lt;未选中文件&gt;">
+<!ENTITY noImageSelected.label "未选中图片">
+<!ENTITY noScriptSelected.label "未选中程式">
+<!ENTITY none.label "无">
+<!ENTITY noteDialog.title "编辑注释">
+<!ENTITY notes.label "注释">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "人物数">
+<!ENTITY numberOfScenes.label "场景数">
+<!ENTITY oneHour.label "1小时">
+<!ENTITY oneLineSchedule.label "一行计划">
+<!ENTITY open.label "打开">
+<!ENTITY openItemCmd.label "打开项目">
+<!ENTITY openProjectCmd.label "打开方案...">
+<!ENTITY openProjectCmd.toolbarlabel "打开">
+<!ENTITY openProjectFolder.label "打开方案目录">
+<!ENTITY openRecentCmd.label "打开最近">
+<!ENTITY options.label "选项">
+<!ENTITY orderedList.label "Ordered List">
+<!ENTITY outline.desc "添加已编号的提纲文件。">
+<!ENTITY outline.label "提纲">
+<!ENTITY over14.label "我是14岁或以上。">
+<!ENTITY pageAndSceneNumbering.label "页面和场景编号中">
+<!ENTITY paperSize.label "页面大小">
+<!ENTITY password.label "密码">
+<!ENTITY passwordAgain.label "重新输入密码">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "转换到RDF">
+<!ENTITY pdfErrorHeader "Oops!">
+<!ENTITY pdfErrorText1 "该项高级功能需要连网.">
+<!ENTITY pdfErrorText2 "Secure and private, this advanced Celtx web service automatically formats your script to an industry standard Screenplay, Stageplay, Audio Play or Dual Column (AV).">
+<!ENTITY pdfOptions.title "PDF 选项">
+<!ENTITY pdfOptionsCmd.label "习惯和“继续”标签">
+<!ENTITY pdfWarningHeader "Hi there!">
+<!ENTITY pdfWarningText "Secure and private, this advanced Celtx web service automatically formats your script to an industry standard Screenplay, Stageplay, Audio Play or Dual Column (AV).">
+<!ENTITY picklist.label "字符串列表">
+<!ENTITY principalFunction.label "主要功能">
+<!ENTITY printBackgroundColour.label "Print Background Colour">
+<!ENTITY printCardBorders.label "Print Card Borders">
+<!ENTITY printCardsDialog.title "Print Cards">
+<!ENTITY printStoryboardDialog.title "打印故事板">
+<!ENTITY privacy.label "隐私">
+<!ENTITY producer.label "Producer">
+<!ENTITY productionItems.label "制作项目">
+<!ENTITY progressDialog.title "进度">
+<!ENTITY project.label "作品">
+<!ENTITY projectItems.label "新方案包括">
+<!ENTITY projectLibrary.label "方案资源库">
+<!ENTITY projectProperties.label "设定">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "方案模板">
+<!ENTITY propSheet.desc "为新的道具添加描述。">
+<!ENTITY propSheet.existing "你也可以对下列已存在道具添加描述。">
+<!ENTITY propSheet.label "道具">
+<!ENTITY propSheet.select "选择道具">
+<!ENTITY properties.label "道具">
+<!ENTITY publishDialog.findUsers "寻找用户">
+<!ENTITY publishDialog.ownerLabel "工程拥有者">
+<!ENTITY publishDialog.privateDesc "私人：仅我可见">
+<!ENTITY publishDialog.privateLabel "私人">
+<!ENTITY publishDialog.publicDesc "公开：发布工程到工程中心">
+<!ENTITY publishDialog.publicLabel "公开">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "共享：与指定的用户共享工程">
+<!ENTITY publishDialog.sharedLabel "共享为">
+<!ENTITY publishDialog.title "公开文件">
+<!ENTITY publishDialog.userList "用户列表">
+<!ENTITY publishMode.label "公开模式">
+<!ENTITY recent.label "Recent">
+<!ENTITY recentProjects.label "最近方案">
+<!ENTITY recoverPassword.label "找回密码">
+<!ENTITY recycleCmd.label "发送至便条簿">
+<!ENTITY regWiz.aboutThis "注册向导将会收集注册需要的信息.">
+<!ENTITY regWiz.accountInstructions "请选择您&appName;帐户用户名和密码">
+<!ENTITY regWiz.accountLabel "用户帐户">
+<!ENTITY regWiz.bullet1 "远程备份">
+<!ENTITY regWiz.bullet2 "协作空间">
+<!ENTITY regWiz.bullet3 "发布到 Project Central">
+<!ENTITY regWiz.bullet4 "iPhone 工程查看器">
+<!ENTITY regWiz.checkLabel "检验帐户信息">
+<!ENTITY regWiz.clickFinish "感谢您成为 &appName; 社区的一员。">
+<!ENTITY regWiz.clickFinish1 "您已登录 &appName; 服务器，现在您可以使用我们的免费在线功能">
+<!ENTITY regWiz.clickFinish2 "使用下载/上传功能来为您的工程制作安全备份。或者您可以使用共享功能来与其他拥有 &appName; 账号的朋友合作工程。">
+<!ENTITY regWiz.clickNext "如果您已经确定,请按'下一个'按钮去提交注册申请.">
+<!ENTITY regWiz.conclusion "决定 (5/5)">
+<!ENTITY regWiz.confirmIntro "您已经进入下列项目:">
+<!ENTITY regWiz.confirmLabel "确定设置">
+<!ENTITY regWiz.createNewAccountLabel "建立新的帐户">
+<!ENTITY regWiz.createYourAccountLabel "获得您自己的 &appName; 账户！ (1/5)">
+<!ENTITY regWiz.emailLabel "Email:">
+<!ENTITY regWiz.finish "完成">
+<!ENTITY regWiz.identityInstructions "请输入您的姓名,单位,和Email地址">
+<!ENTITY regWiz.identityLabel "身份">
+<!ENTITY regWiz.intro "如果您想在线获得 &appName; 信息,请先注册 &appName; 帐户">
+<!ENTITY regWiz.loginSuccessfulLabel "谢谢, 您已经成功的登录 &appName;">
+<!ENTITY regWiz.newOrExistingLabel "建立新的帐户或使用现有的帐户:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; 帐户的用户名和密码是要区分大小写.">
+<!ENTITY regWiz.notePassword "密码最少5个英文字符">
+<!ENTITY regWiz.noteUsername "用户名最少3个英文字符，只允许用字母和数字">
+<!ENTITY regWiz.orgLabel "组织:">
+<!ENTITY regWiz.title "Celtx 注册向导">
+<!ENTITY regWiz.uidLabel "&appName; 用户名:">
+<!ENTITY regWiz.useExistingAccountLabel "使用现有的帐户">
+<!ENTITY regWiz.warn "要使用此项功能，您必须创建 &appName; 账户。">
+<!ENTITY remove.label "移除">
+<!ENTITY removeCmd.label "移除">
+<!ENTITY removeMarkupCmd.label "移除审定">
+<!ENTITY rename.label "重命名">
+<!ENTITY renameItem.label "重命名项目...">
+<!ENTITY replaceCmd.label "替换">
+<!ENTITY reportThisBug.label "报告这个 Bug">
+<!ENTITY reportThisBug.tooltip "寄给我们一份匿名错误报告。">
+<!ENTITY reports.label "报告">
+<!ENTITY right.label "权利">
+<!ENTITY sampleProjects.label "示例方案">
+<!ENTITY samples.label "示例">
+<!ENTITY saveAsHTML.label "另存为 HTML">
+<!ENTITY saveAsTemplate.label "另存为模板">
+<!ENTITY savePDFCmd.label "保存为 PDF">
+<!ENTITY savePDFCmd.tooltip "保存为 PDF">
+<!ENTITY saveProjectAsCmd.label "另存为方案...">
+<!ENTITY saveProjectCmd.label "保存工程">
+<!ENTITY saveProjectCmd.toolbarlabel "保存">
+<!ENTITY scene.label "场景">
+<!ENTITY sceneBreakdown.label "场景分析">
+<!ENTITY sceneBreakdownWithDesc.label "场景分析加描述">
+<!ENTITY sceneDetails.desc "为新场景添加描述。">
+<!ENTITY sceneDetails.existing "您也可以向下列已存在的场景添加描述">
+<!ENTITY sceneDetails.label "场景详情">
+<!ENTITY sceneDetails.select "选择场景">
+<!ENTITY scenePageBreaks.label "在每个场景后分页">
+<!ENTITY sceneSummary.label "场景摘要">
+<!ENTITY sceneTag.label "场景标签">
+<!ENTITY sceneTagDialog.title "拾取颜色">
+<!ENTITY scenes.label "场景">
+<!ENTITY schedule.desc "为剧本添加拍摄日程表。">
+<!ENTITY schedule.label "日程表">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "日程剧本">
+<!ENTITY scheduleID.label "日程 ID">
+<!ENTITY scheduled.label "已安排日程">
+<!ENTITY scratchpad.label "草稿版">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "向工程里添加一个剧本。">
+<!ENTITY script.label "剧本">
+<!ENTITY scriptDay.label "编剧日">
+<!ENTITY scriptEditor.label "剧本编辑器">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "格式选项">
+<!ENTITY scriptHeader.label "剧本头">
+<!ENTITY scriptReport.desc "一份自动生成的剧本报告。">
+<!ENTITY scriptReport.label "剧本报告">
+<!ENTITY scriptWithNotes.label "带注释的剧本">
+<!ENTITY selectCatalogType.label "选择一个分类">
+<!ENTITY sequence.label "分镜头">
+<!ENTITY sequences.label "序列">
+<!ENTITY server.label "服务器">
+<!ENTITY setting.label "设置">
+<!ENTITY sharing.label "共享中">
+<!ENTITY shootDay.label "拍摄日期">
+<!ENTITY shootDays.label "拍摄天数">
+<!ENTITY shootingSchedule.label "拍摄日程表">
+<!ENTITY shotList.label "分镜头">
+<!ENTITY shotWords.label "镜头词数">
+<!ENTITY shotholder.label "双击添加图片。">
+<!ENTITY showContinuedCount.label "显示连续的页面数">
+<!ENTITY showDialogBreaks.label "显示对白停顿">
+<!ENTITY showFirstPageNumber.label "在第一页显示页数">
+<!ENTITY showIDNumbers.label "显示 ID 号">
+<!ENTITY showNotes.label "显示笔记">
+<!ENTITY showPageNumbers.label "页数">
+<!ENTITY showProjectFileCmd.label "显示工程文件">
+<!ENTITY showSceneBreaks.label "显示场景停顿">
+<!ENTITY showSceneHeaders.label "显示场景头">
+<!ENTITY showSceneNumbers.label "显示场景数目">
+<!ENTITY showScript.label "显示剧本">
+<!ENTITY showTagNames.label "显示卡片中的关键词">
+<!ENTITY showTitlePage.label "显示标题页">
+<!ENTITY showWorkdaysOnly.label "只显示工作日">
+<!ENTITY signIn.label "登录">
+<!ENTITY signOut.label "登出">
+<!ENTITY signedOut.label "已登出">
+<!ENTITY slideshowCmd.toolbarlabel "播放">
+<!ENTITY source.label "Source">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "添加进字典">
+<!ENTITY spellCheckCmd.label "拼写检查...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "忽略词">
+<!ENTITY spellCheckNoSuggestions.label "无法找到可建议修改的词">
+<!ENTITY splash.celtxCentral "celtx 交流中心">
+<!ENTITY splash.celtxCentralDesc "使用 celtx 中心来更改您的密码及更新您的档案">
+<!ENTITY splash.discussion "讨论">
+<!ENTITY splash.downloadProject "下载工程">
+<!ENTITY splash.downloadProjectDesc "从 Celtx 服务器下载工程">
+<!ENTITY splash.featureTour "特性浏览">
+<!ENTITY splash.forums "Celtx 论坛">
+<!ENTITY splash.forumsDesc "加入 Celtx 论坛的讨论">
+<!ENTITY splash.gettingStarted "入门">
+<!ENTITY splash.guide "Celtx 用户手册">
+<!ENTITY splash.help "帮助">
+<!ENTITY splash.helpAccount "建立帐户">
+<!ENTITY splash.helpAccountDesc "创建账户使您能使用服务器端特性，包括合作及PDF生成功能。">
+<!ENTITY splash.helpDesc "左边的链接显示了许多 celtx 资源">
+<!ENTITY splash.helpOptions "帮助选项">
+<!ENTITY splash.inbox "收件箱">
+<!ENTITY splash.logIn "登录">
+<!ENTITY splash.newProject "开始新工程">
+<!ENTITY splash.newProjectDesc "创建新工程">
+<!ENTITY splash.openProject "打开现有工程">
+<!ENTITY splash.openProjectDesc "使用或添加现有工程。">
+<!ENTITY splash.options "选项">
+<!ENTITY splash.projectCentral "工程中心">
+<!ENTITY splash.projects "工程">
+<!ENTITY splash.recentProjects "最近的工程">
+<!ENTITY splash.sampleDesc "我们使用《绿野仙踪》来展示 Celtx的不同特性. 各种文档被使用来满足制作一个场景的需要。包含在这例子中的是一个剧本，角色和场景细节，分析信息和一些日程表。">
+<!ENTITY splash.sampleProject "示例工程">
+<!ENTITY splash.videoWalkthrus "视频示例">
+<!ENTITY splash.videoWalkthrusDesc "简单的视频示例让你更快上手。">
+<!ENTITY splash.walkthru "3分钟速成">
+<!ENTITY splash.webServices "网络服务">
+<!ENTITY splash.welcomePrefix "欢迎您来到 Celtx">
+<!ENTITY splash.welcomePrefixDesc "媒体前期作业">
+<!ENTITY splash.wiki "百科向导">
+<!ENTITY splash.wikiDesc "开始熟悉 Celtx 所用的资源">
+<!ENTITY splashScreen.label "银幕斑点">
+<!ENTITY stackTrace.desc "以下是可能对我们有帮助的信息。 如果您决定提交报告，请包含下列信息。">
+<!ENTITY stageplay.desc  "添加国际标准格式的舞台剧剧本。">
+<!ENTITY stageplay.label "舞台剧(国际标准)">
+<!ENTITY start.label "开始">
+<!ENTITY startOfDay.label "每天开始时间">
+<!ENTITY startOfShooting.label "开始拍摄">
+<!ENTITY startOfWeek.label "每周开始时间">
+<!ENTITY statistics.label "统计">
+<!ENTITY storyboard.desc "把故事板图片组织成镜头序列。">
+<!ENTITY storyboard.label "故事板">
+<!ENTITY strikethrough.label "删除线">
+<!ENTITY stripboard.label "拉片板">
+<!ENTITY subject.label "主题">
+<!ENTITY summary.label "摘要">
+<!ENTITY syncDialog.title "同步">
+<!ENTITY tagItemCmd.label "标签">
+<!ENTITY tagline.label "标签行">
+<!ENTITY tags.label "标签">
+<!ENTITY text.label "文本">
+<!ENTITY textDocument.desc "添加文本文档。有用于提纲，论述或一览。">
+<!ENTITY textDocument.label "文本">
+<!ENTITY theatreTmplActTitle "幕 I">
+<!ENTITY theatreTmplSceneTitle "场景1">
+<!ENTITY thirtyMinutes.label "30分钟">
+<!ENTITY threeHours.label "3小时">
+<!ENTITY time.label "Time">
+<!ENTITY title.label "标题">
+<!ENTITY titlePage.label "标题页">
+<!ENTITY toggleEditing.label "开始编辑">
+<!ENTITY togglePaginationCmd.label "启用页码">
+<!ENTITY toggleScratchpadCmd.label "打开/关闭 便条簿">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "侧边栏">
+<!ENTITY topOfNextPage.label "下一页顶部">
+<!ENTITY tryAgain.label "再试一次">
+<!ENTITY twoColumns.label "两栏">
+<!ENTITY twoHours.label "2 小时">
+<!ENTITY typeset.label "TypeSet">
+<!ENTITY under14.label "我小于14岁。">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label " 下划线 ">
+<!ENTITY unorderedList.label "无序列表">
+<!ENTITY untitled.label "无标题">
+<!ENTITY update.label "升级">
+<!ENTITY updateInbox.label "更新收件箱">
+<!ENTITY uploadDialog.title "上传工程">
+<!ENTITY uploadProjectCmd.label "上传工程...">
+<!ENTITY uploadProjectCmd.toolbarlabel "上传">
+<!ENTITY uppercaseCmd.label "大写">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "用户名">
+<!ENTITY video.label "视频">
+<!ENTITY videoTutorialCmd.label "视频教程">
+<!ENTITY viewProjectOnline.label "在线查看工程">
+<!ENTITY wardrobeSheet.desc "为新的戏装添加描述。">
+<!ENTITY wardrobeSheet.existing "你可以为下列已存在戏装添加描述。">
+<!ENTITY wardrobeSheet.label "戏装">
+<!ENTITY wardrobeSheet.select "选择戏装">
+<!ENTITY webPanel.desc              "Celtx 网络服务。">
+<!ENTITY webPanel.label             "网络服务">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "创建 Celtx 帐号">
+<!ENTITY webPanelIntro.text1 "Get the most out of Celtx by signing up for free and secure web services.">
+<!ENTITY webPanelIntro.text2 "*Back up* your entire project to the remote, secure Celtx server to have a safe copy in the event of theft, or disaster strikes your hard drive.">
+<!ENTITY webPanelIntro.text3 "*Collaborate* with team members by sharing your project and creating a private project space.">
+<!ENTITY webPanelIntro.text4 "*Publish* your media project to Project Central for reviews and comments, and join our growing world community of media creators.">
+<!ENTITY webPanelIntro.text5 "以专为 *iPhone* 优化的格式查看 Celtx 工程.">
+<!ENTITY wiz.clickFinish "点击“完成”按钮完成本向导.">
+<!ENTITY wiz.clickNext "点击“下一个”按钮开始.">
+<!ENTITY workweek.label "工作周">
+<!ENTITY writer.label "作者">
+<!ENTITY zoom.label "缩放">

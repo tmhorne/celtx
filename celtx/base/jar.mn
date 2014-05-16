@@ -1,0 +1,9 @@
+celtx.jar:
+#ifdef MOZ_USE_GENERIC_BRANDING
+% content branding %content/branding/ xpcnativewrappers=yes
+  content/branding/icon48.png                    (branding/icon48.png)
+  content/branding/icon64.png                    (branding/icon64.png)
+#ifdef XP_WIN
+  content/branding/uninstall.properties          (branding/uninstall.properties)
+#endif
+#endif

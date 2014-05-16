@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/toolbar.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % baseMenuOverlayDTD SYSTEM
+          "chrome://celtxapp/locale/baseMenuOverlay.dtd">
+%baseMenuOverlayDTD;
+<!ENTITY % editMenuOverlayDTD SYSTEM
+          "chrome://global/locale/editMenuOverlay.dtd">
+<!ENTITY % browserDTD SYSTEM "chrome://celtxapp/locale/browser.dtd" >
+%browserDTD;
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         id="project-toolbar-overlay">
+
+  <toolbar id="project-toolbar" class="chromeclass-toolbar">
+    <toolbarbutton id="celtx-new-button"
+                   class="project-toolbar-button"
+                   label="&addCmd.label;"
+                   tooltiptext="&addCmd.label;"
+                   command="cmd-add-document"/>
+    <toolbarbutton id="celtx-open-button"
+                   type="menu-button"
+                   class="project-toolbar-button cx-menu-button"
+                   label="&openProjectCmd.toolbarlabel;"
+                   tooltiptext="&openProjectCmd.label;"
+                   command="cmd-open-project">
+      <menupopup id="recent-popup"/>
+    </toolbarbutton>
+    <toolbarbutton id="celtx-save-button"
+                   class="project-toolbar-button"
+                   label="&saveProjectCmd.toolbarlabel;"
+                   tooltiptext="&saveProjectCmd.label;"
+                   command="cmd-save-project"/>
+    <toolbarbutton id="celtx-print-button"
+                   class="project-toolbar-button"
+                   label="&printButton.label;"
+                   tooltiptext="&printButton.label;"
+                   command="cmd-print"/>
+    <toolbarbutton id="celtx-toolbox-button"
+                   class="project-toolbar-button"
+                   label="&toolbox.label;"
+                   tooltiptext="&toolbox.label;"
+                   oncommand="openExtensionsManager();"/>
+    <toolbarbutton id="celtx-studio-button"
+                   type="menu-vertical"
+                   class="project-toolbar-button"
+                   label="&celtxServices.toolbarlabel;"
+                   tooltiptext="&celtxServices.tooltiptext;">
+      <menupopup>
+        <menuitem label="&openFromStudio.label;&ellipsis;"
+                  command="cmd-open-studio"/>
+        <menuitem label="&saveToStudio.label;&ellipsis;"
+                  oncommand="cmdSaveProjectToServer();"/>
+      </menupopup>
+    </toolbarbutton>
+    <toolbarspacer flex="1"/>
+    <iframe id="bannerframe"
+            width="234"
+            height="60"
+            src="about:blank"
+            style="opacity: 0;"/>
+    <toolbaritem id="devWarningItem" collapsed="true" align="center">
+      <label id="devWarningLabel"
+             style="font-size: 18pt; font-weight: bold; color: blue;" />
+    </toolbaritem>
+  </toolbar>
+
+</overlay>
+

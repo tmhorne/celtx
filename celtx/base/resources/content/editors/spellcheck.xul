@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+<!ENTITY % spellCheckDTD SYSTEM "chrome://celtx/locale/spellcheck.dtd">
+%spellCheckDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="spellcheck-dialog"
+        title="&spellCheckCmd.label;"
+        onload="loaded()"
+        onunload="unloaded()">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/spellcheck.js"/>
+
+  <stringbundleset>
+    <stringbundle id="languageBundle"
+                  src="chrome://global/locale/languageNames.properties"/>
+  </stringbundleset>
+
+  <commandset id="spellcheck-command-set"
+              commandupdater="true"
+              events="clipboard,undo"
+              oncommandupdate="updateCommands()">
+    <command id="cmd-replace-word"
+             oncommand="replaceWord()"
+             disabled="true"/>
+    <command id="cmd-replace-all"
+             oncommand="replaceAll()"
+             disabled="true"/>
+    <command id="cmd-ignore-word"
+             oncommand="ignoreWord()"
+             disabled="true"/>
+    <command id="cmd-ignore-all"
+             oncommand="ignoreAll()"
+             disabled="true"/>
+    <command id="cmd-add-word"
+             oncommand="addWord()"
+             disabled="true"/>
+    <command id="cmd-change-dictionary"
+             oncommand="changeDictionary()"/>
+  </commandset>
+
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include ../celtx-menubar.inc
+  </toolbar>
+
+  <grid>
+    <columns>
+      <column/>
+      <column flex="1"/>
+      <column/>
+    </columns>
+    <rows>
+      <row>
+        <label value="&misspelledWord.label;"/>
+        <label class="bold" id="mispelled-word"/>
+        <spacer/>
+      </row>
+      <row>
+        <label value="&wordEditField.label;"
+               control="word-edit-field"
+               accesskey="&wordEditField.accessKey;"/>
+        <textbox id="word-edit-field"
+                 oninput="wordEditInput()"
+                 flex="1"/>
+        <button id="replace-button"
+                label="&replaceButton.label;"
+                command="cmd-replace-word"
+                accesskey="&replaceButton.accessKey;"/>
+      </row>
+      <row>
+        <label value="&suggestions.label;"
+               control="suggestions-list"
+               accesskey="&suggestions.accessKey;"/>
+        <listbox id="suggestions-list"
+                 rows="8"
+                 onselect="selectSuggestion()"
+                 ondblclick="suggestionDoubleClicked()"/>
+        <vbox>
+          <button id="replace-all-button"
+                  command="cmd-replace-all"
+                  label="&replaceAllButton.label;"
+                  accesskey="&replaceAllButton.accessKey;"/>
+          <button id="ignore-button"
+                  command="cmd-ignore-word"
+                  label="&ignoreButton.label;"
+                  accesskey="&ignoreButton.accessKey;"/>
+          <button id="ignore-all-button"
+                  command="cmd-ignore-all"
+                  label="&ignoreAllButton.label;"
+                  accesskey="&ignoreAllButton.accessKey;"/>
+          <button id="add-word-button"
+                  command="cmd-add-word"
+                  label="&addToUserDictionaryButton.label;"
+                  accesskey="&addToUserDictionaryButton.accessKey;"/>
+        </vbox>
+      </row>
+      <row>
+        <spacer/>
+        <menulist id="languageMenu"
+                  command="cmd-change-dictionary">
+          <menupopup />
+        </menulist>
+        <spacer />
+      </row>
+    </rows>
+  </grid>
+
+</window>
+

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/browser.css" type="text/css"?>
+
+<?xul-overlay href="chrome://celtx/content/project-toolbar.xul"?>
+
+<!DOCTYPE window [
+#include celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="celtx"
+        windowtype="celtx:main"
+        title="&appName;"
+        persist="screenX screenY width height"
+        onload="loaded()"
+        onclose="return closeWrapper(event);"
+        onfocus="celtxDebugBreak();"
+        onclick="fixWindowFocus();">
+
+#include celtx-sets.inc
+
+  <commandset id="projectCommandSet">
+    <command id="cmd-add-document"
+             disabled="true"
+             oncommand="goDoCommand('cmd-add-document')"/>
+    <command id="cmd-add-folder"
+             disabled="true"
+             oncommand="goDoCommand('cmd-add-folder')"/>
+    <command id="cmd-open-document"
+             disabled="true"
+             oncommand="goDoCommand('cmd-open-document')"/>
+    <command id="cmd-remove-document"
+             disabled="true"
+             oncommand="goDoCommand('cmd-remove-document')"/>
+    <command id="cmd-rename-document"
+             disabled="true"
+             oncommand="goDoCommand('cmd-rename-document')"/>
+    <command id="cmd-generate-report"
+             disabled="true"
+             oncommand="goDoCommand('cmd-generate-report')"/>
+    <command id="cmd-schedule-script"
+             disabled="true"
+             oncommand="goDoCommand('cmd-schedule-script')"/>
+    <command id="cmd-create-storyboard"
+             disabled="true"
+             oncommand="goDoCommand('cmd-create-storyboard')"/>
+    <command id="cmd-reveal-project"
+             disabled="true"
+             oncommand="goDoCommand('cmd-reveal-project')"/>
+  </commandset>
+
+  <popup id="messagepopup"/>
+
+  <popup id="doctree-popup"
+         onpopupshowing="docTreePopupShowing();">
+    <menuitem label="&open.label;"
+              style="font-weight: bold;"
+              command="cmd-open-document"/>
+    <menuitem id="popupDuplicateItem"
+              label="&duplicate.label;"
+              oncommand="cmdCopyDocument()"/>
+    <menuitem label="&rename.label;&ellipsis;"
+              command="cmd-rename-document"/>
+    <menuseparator id="popupDuplicateAsSep"/>
+    <menu id="popupDuplicateAsMenu"
+          label="&adaptTo.label;"
+          oncommand="cmdCopyDocumentAs(event)">
+      <menupopup>
+        <menuitem label="&filmScript.label;"
+                  value="&ns_cx;ScriptDocument"/>
+        <menuitem label="&stageplay.label;"
+                  value="&ns_cx;TheatreDocument"/>
+        <menuitem label="&avScript.label;"
+                  value="&ns_cx;AVDocument"/>
+        <menuitem label="&audioplay.label;"
+                  value="&ns_cx;RadioDocument"/>
+        <menuitem label="&comicBook.label;"
+                  value="&ns_cx;ComicDocument"/>
+        <menuseparator/>
+        <menuitem label="&storyboard.label;"
+                  value="&ns_cx;StoryboardDocument2"/>
+      </menupopup>
+    </menu>
+    <menuseparator id="popupDelSeparator"/>
+    <menuitem id="popupDelItem"
+              label="&deleteItemCmd.label;"
+              command="cmd-remove-document"/>
+  </popup>
+
+#include celtx-scripts.inc
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/json2.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/templates.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/docrules.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/catalogManager.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptscene.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/server.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/save.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/banner.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/celtx.js"/>
+
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include celtx-menubar.inc
+  </toolbar>
+
+  <toolbar id="project-toolbar"
+           class="celtxtoolbar"
+           observes="toolbar-broadcaster"/>
+
+  <hbox flex="1">
+    <!-- The Project Sidebar -->
+    <vbox id="navigation-sidebar"
+          class="celtxtoolbar"
+          persist="height">
+      <hbox class="panelheader" align="center">
+        <label value="&projectLibrary.label;"/>
+      </hbox>
+      <vbox flex="1">
+        <!-- The Project Navigator -->
+        <toolbar class="celtxtoolbar">
+          <toolbarbutton class="library-toolbar-button"
+                         id="add-document-button"
+                         command="cmd-add-document"
+                         tooltiptext="&addItem.label;"/>
+          <toolbarbutton class="library-toolbar-button"
+                         id="add-folder-button"
+                         command="cmd-add-folder"
+                         tooltiptext="&addFolder.label;"/>
+          <toolbarbutton class="library-toolbar-button"
+                         id="remove-document-button"
+                         command="cmd-remove-document"
+                         tooltiptext="&deleteItem.label;"/>
+        </toolbar>
+        <tree id="document-tree"
+              flex="1"
+              flags="dont-build-content"
+              hidecolumnpicker="true"
+              seltype="single"
+              context="doctree-popup"
+              ref=""
+              datasources="chrome://celtx/content/doctypes.rdf"
+              onselect="goUpdateCommand('cmd-remove-document')"
+              ondblclick="doctreeDoubleClicked(event)"
+              ondraggesture="gDocDNDObserver.dragGesture(event)"
+              ondragenter="gDocDNDObserver.onDragEnter(event)">
+          <treecols>
+            <!--
+              Picking an arbitrary arc and using sortDirection="none" will
+              force the builder to sort by sequence order, rather than
+              showing all the matches for one rule first, followed by the
+              other rule's matches.
+            -->
+            <treecol primary="true"
+                     flex="1"
+                     sort="?doc"
+                     sortActive="true"
+                     sortDirection="none"
+                     hideheader="true"/>
+          </treecols>
+          <template>
+            <!-- The "Project" rule -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?doc"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;projectRoot"
+                        object="true"/>
+                <triple subject="?doc"
+                        predicate="&ns_rdf;instanceOf"
+                        object="&ns_rdf;Seq"/>
+                <triple subject="?project"
+                        predicate="&ns_cx;components"
+                        object="?uri"/>
+                <triple subject="?project"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc"
+                            container="true">
+                    <treerow>
+                      <treecell label="?title"
+                                src="chrome://celtx/skin/celtx-16.png"/>
+                    </treerow>
+                    <treechildren/>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <!-- The "Folder" rule -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?doc"/>
+                <triple subject="?doc"
+                predicate="&ns_rdf;instanceOf"
+                        object="&ns_rdf;Seq"/>
+                <triple subject="?doc"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc"
+                            container="true"
+                            open="true">
+                    <treerow>
+                      <treecell label="?title"
+                                src="chrome://celtx/skin/folder.png"/>
+                    </treerow>
+                    <treechildren/>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <!-- The custom icon "External File" rule -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?doc"/>
+                <triple subject="?doc"
+                        predicate="http://purl.org/dc/elements/1.1/title"
+                        object="?title"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;doctype"
+                        object="&ns_cx;ExternalDocument"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;mozicon"
+                        object="?mozicon"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc">
+                    <treerow>
+                      <treecell label="?title"
+                                src="?mozicon"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <!-- The "Catalog" rule -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?doc"/>
+                <triple subject="?doc"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;doctype"
+                        object="&ns_cx;CatalogDocument"/>
+                <triple subject="&ns_cx;CatalogDocument"
+                        predicate="&ns_cx;thumbnail"
+                        object="?thumbnail"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;size"
+                        object="?size"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc">
+                    <treerow>
+                      <treecell label="?title (?size^)"
+                                src="?thumbnail"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <!-- The "Document" rule -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri" child="?doc"/>
+                <triple subject="?doc"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;doctype"
+                        object="?doctype"/>
+                <triple subject="?doctype"
+                        predicate="&ns_cx;thumbnail"
+                        object="?thumbnail"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc">
+                    <treerow>
+                      <treecell label="?title"
+                                src="?thumbnail"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+      </vbox>
+      <splitter collapse="after">
+        <grippy/>
+      </splitter>
+      <!-- The Outline View -->
+      <deck id="outline-deck"
+            persist="height"
+            flex="1"/>
+    </vbox>
+    <!-- The Project Sidebar Splitter -->
+    <splitter orient="horizontal" collapse="before">
+      <grippy/>
+    </splitter>
+    <deck id="tabbox-hider-deck"
+          flex="1">
+      <!-- The Document Tabs -->
+      <tabeditor id="document-tabbox"
+                 flex="1" />
+      <iframe id="welcomeframe"
+              flex="1"
+              src="about:blank"/>
+    </deck>
+  </hbox>
+
+  <vbox id="notifierbox"
+        collapsed="true">
+    <splitter class="groove"/>
+    <hbox pack="start"
+          align="center"
+          style="background-color: white; overflow: hidden;">
+      <iframe id="notifierframe"
+              width="660"
+              height="124"
+              style="background-color: white; overflow: hidden;"/>
+      <spacer flex="1"/>
+      <iframe id="powframe"
+              width="336"
+              height="100"
+              style="background-color: white; overflow: hidden;"/>
+    </hbox>
+  </vbox>
+
+  <toolbar id="projectstatusbar"
+           class="statustoolbar"
+           pack="end"
+           align="center">
+    <toolbaritem align="center">
+      <label id="notifierlabel"
+             class="text-link"
+             onclick="toggleStatusNotifier();"
+             style="border: 0px; color: blue;"
+             value=""
+             closedvalue=""/>
+    </toolbaritem>
+    <toolbarseparator/>
+    <toolbaritem id="statusbox"
+                 align="center"
+                 collapsed="true">
+      <progressmeter id="statusprogress"
+                     width="100"
+                     mode="determined"/>
+      <toolbarbutton id="statuscancelbutton"
+                     image="chrome://celtx/skin/closetab.png"
+                     onclick="cancelPendingSaveRequest();"/>
+      <label id="statusmsg"/>
+    </toolbaritem>
+    <toolbarspacer flex="1"/>
+    <toolbarbutton id="networkmenu"
+                   orient="horizontal"
+                   label="&signedOut.label;"
+                   type="menu"
+                   image="chrome://celtx/skin/offline.png">
+      <menupopup>
+        <menuitem id="loginmenuitem"
+                  label="&signIn.label;"
+                  oncommand="getCeltxService().login(
+                    'publish', { onLogin: function (x) {} }, false, window);"/>
+        <menuitem id="logoutmenuitem"
+                  label="&signOut.label;"
+                  hidden="true"
+                  oncommand="getCeltxService().logout()"/>
+      </menupopup>
+    </toolbarbutton>
+  </toolbar>
+
+</window>
+

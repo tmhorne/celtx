@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<overlay id="paneGeneralOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <prefpane id="paneGeneral"
+            label="&general.label;"
+            onpaneload="generalLoaded();">
+    <preferences>
+      <preference id="celtx.user.id"
+                  name="celtx.user.id"
+                  type="string"/>
+      <preference id="celtx.user.encpassword"
+                  name="celtx.user.encpassword"
+                  type="string"/>
+      <preference id="celtx.user.loginOnStartup"
+                  name="celtx.user.loginOnStartup"
+                  type="bool"
+                  onchange="loginOnStartupChanged(event);"/>
+      <preference id="celtx.autosave"
+                  name="celtx.autosave"
+                  type="int"/>
+      <preference id="celtx.inbox.refreshRate"
+                  name="celtx.inbox.refreshRate"
+                  type="int"/>
+      <preference id="celtx.server.promptForCommitMessage"
+                  name="celtx.server.promptForCommitMessage"
+                  type="bool"/>
+    </preferences>
+    <script type="application/x-javascript">
+function loginOnStartupChanged (aEvent) {
+  if (! aEvent.target.value) {
+    /*
+    try {
+      var pref = Components.classes["@mozilla.org/preferences-service;1"]
+        .getService(Components.interfaces.nsIPrefService);
+      pref.getBranch("celtx.");
+      pref.clearUserPref("user.password");
+    }
+    catch (ex) {}
+    */
+  }
+}
+
+function generalLoaded () {
+  dump("    general pane loaded\n");
+  if (! ("getRDFService" in window)) {
+    var jsloader = Components.classes["@mozilla.org/moz/jssubscript-loader;1"]
+      .getService(Components.interfaces.mozIJSSubScriptLoader);
+    jsloader.loadSubScript("chrome://celtx/content/util.js");
+  }
+  var pref = document.getElementById("celtx.inbox.refreshRate");
+  var menu = document.getElementById("refresh-menu");
+  var items = menu.getElementsByTagName("menuitem");
+  for (var i = 0; i &lt; items.length; ++i) {
+    if (pref.value == items[i].getAttribute("value")) {
+      menu.selectedItem = items[i];
+      return;
+    }
+  }
+  menu.selectedItem = items[items.length - 1];
+}
+
+function refreshMenuChanged () {
+  var pref = document.getElementById("celtx.inbox.refreshRate");
+  var menu = document.getElementById("refresh-menu");
+  pref.value = Number(menu.selectedItem.getAttribute("value"));
+}
+
+
+function fetchPassword (event) {
+  if (! ("getRDFService" in window)) {
+    var jsloader = Components.classes["@mozilla.org/moz/jssubscript-loader;1"]
+      .getService(Components.interfaces.mozIJSSubScriptLoader);
+    jsloader.loadSubScript("chrome://celtx/content/util.js");
+  }
+  var pref = document.getElementById("celtx.user.encpassword");
+  return base64_decodew(pref.value);
+}
+
+
+function savePassword (event) {
+  if (! ("getRDFService" in window)) {
+    var jsloader = Components.classes["@mozilla.org/moz/jssubscript-loader;1"]
+      .getService(Components.interfaces.mozIJSSubScriptLoader);
+    jsloader.loadSubScript("chrome://celtx/content/util.js");
+  }
+  var box = document.getElementById("passwordtextbox");
+  return base64_encodew(box.value);
+}
+    </script>
+
+    <checkbox preference="celtx.user.loginOnStartup"
+              label="&loginOnStartup.label;"
+              onsynctopreference="return loginOnStartupChanged(event);" />
+    <grid>
+      <columns>
+        <column/>
+        <column width="240"/>
+      </columns>
+      <rows>
+        <row align="center">
+          <label value="&username.label;&colon;"/>
+          <textbox maxlength="100"
+                   preference="celtx.user.id"/>
+        </row>
+        <row align="center">
+          <label value="&password.label;&colon;"/>
+          <textbox id="passwordtextbox"
+                   type="password"
+                   maxlength="100"
+                   preference="celtx.user.encpassword"
+                   onsyncfrompreference="return fetchPassword(event);"
+                   onsynctopreference="return savePassword(event);"/>
+        </row>
+      </rows>
+    </grid>
+    <separator class="groove"/>
+    <hbox align="center">
+      <label value="&autoSaveProject.label;&colon;"/>
+      <menulist id="autosave-menu"
+                preference="celtx.autosave">
+        <menupopup>
+          <menuitem label="&every5Minutes.label;"
+                    value="5"/>
+          <menuitem label="&every15Minutes.label;"
+                    value="15"/>
+          <menuitem label="&every30Minutes.label;"
+                    value="30"/>
+          <menuitem label="&everyHour.label;"
+                    value="60"/>
+          <menuseparator/>
+          <menuitem label="&never.label;"
+                    value="-1"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+    <!-- Suppressed pending further refinements. -->
+    <hbox align="center"
+          collapsed="true">
+      <label value="&updateInbox.label;&colon;"/>
+      <menulist id="refresh-menu"
+                oncommand="refreshMenuChanged();">
+        <menupopup>
+          <menuitem label="&everyMinute.label;"
+                    value="1"/>
+          <menuitem label="&every5Minutes.label;"
+                    value="5"/>
+          <menuitem label="&every15Minutes.label;"
+                    value="15"/>
+          <menuitem label="&every30Minutes.label;"
+                    value="30"/>
+          <menuitem label="&everyHour.label;"
+                    value="60"/>
+          <menuseparator/>
+          <menuitem label="&never.label;"
+                    value="-1"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+    <separator class="groove"/>
+    <checkbox preference="celtx.server.promptForCommitMessage"
+              label="&saveCommentCheckbox.label;"/>
+  </prefpane>
+
+</overlay>

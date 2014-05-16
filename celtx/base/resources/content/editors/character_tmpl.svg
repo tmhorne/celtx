@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cx="http://celtx.com/NS/v1/"
+     height="100" width="100" viewBox="0 0 120 120" overflow="visible"
+     cx:type="character">
+  <g transform="rotate(0)" cx:role="rotate">
+    <circle fill="white" stroke="black" stroke-width="4"
+            r="25" cy="60" cx="60"/>
+    <!--
+      Endpoints 10 degrees from center line
+    -->
+    <path stroke="black" stroke-width="2" fill="none"
+          d="M 84.62 55.66 L 100 60 L 84.62 64.34" />
+  </g>
+  <text font-family="sans-serif" font-size="12pt" y="110" x="60"
+        text-anchor="middle">name</text>
+</svg>

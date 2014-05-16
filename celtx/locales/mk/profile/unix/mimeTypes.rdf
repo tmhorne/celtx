@@ -1,0 +1,25 @@
+<?xml version="1.0"?>  
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:NC="http://home.netscape.com/NC-rdf#">
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-celtx-project"
+                   NC:prettyName="Celtx Project"
+                   NC:path="" />
+  <RDF:Description RDF:about="urn:mimetype:application/x-celtx-project"
+                   NC:value="application/x-celtx-project"
+                   NC:editable="true"
+                   NC:fileExtensions="celtx"
+                   NC:description="Celtx Project">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-celtx-project"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="urn:mimetypes:root">
+    <RDF:li RDF:resource="urn:mimetype:application/x-celtx-project"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-celtx-project"
+                   NC:alwaysAsk="false"
+                   NC:saveToDisk="true">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-celtx-project"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetypes">
+    <NC:MIME-types RDF:resource="urn:mimetypes:root"/>
+  </RDF:Description>
+</RDF:RDF>

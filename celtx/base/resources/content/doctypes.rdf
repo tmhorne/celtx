@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE RDF [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<RDF:RDF xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cx="http://celtx.com/NS/v1/"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <RDF:Seq RDF:ID="documentList">
+    <RDF:li RDF:resource="&cx;ScriptGroupDocument"/>
+    <RDF:li RDF:resource="&cx;TextDocument"/>
+    <RDF:li RDF:resource="&cx;StoryboardDocument2"/>
+    <RDF:li RDF:resource="&cx;SingleShotDocument"/>
+    <RDF:li RDF:resource="&cx;CatalogDocument"/>
+    <RDF:li RDF:resource="&cx;ScheduleDocument"/>
+    <RDF:li RDF:resource="&cx;BookmarkDocument"/>
+    <RDF:li RDF:resource="&cx;CalendarDocument"/>
+    <RDF:li RDF:resource="&cx;ExternalDocument"/>
+    <RDF:li RDF:resource="&cx;CharacterDocument"/>
+    <RDF:li RDF:resource="&cx;SceneDocument"/>
+  </RDF:Seq>
+
+  <RDF:Description RDF:about="chrome://celtx/content/doctypes.rdf#documents"
+                   dc:title="Documents"/>
+
+  <RDF:Description RDF:about="chrome://celtx/content/doctypes.rdf#items"
+                   dc:title="Production Items"/>
+
+  <RDF:Seq RDF:ID="documents">
+    <RDF:li RDF:resource="&cx;ScriptGroupDocument"/>
+    <RDF:li RDF:resource="&cx;TextDocument"/>
+    <RDF:li RDF:resource="&cx;StoryboardDocument2"/>
+    <RDF:li RDF:resource="&cx;CatalogDocument"/>
+    <RDF:li RDF:resource="&cx;ScheduleDocument"/>
+    <RDF:li RDF:resource="&cx;BookmarkDocument"/>
+    <RDF:li RDF:resource="&cx;CalendarDocument"/>
+    <RDF:li RDF:resource="&cx;ExternalDocument"/>
+  </RDF:Seq>
+
+  <RDF:Seq RDF:ID="items">
+    <RDF:li RDF:resource="&cx;CharacterDocument"/>
+    <RDF:li RDF:resource="&cx;SceneDocument"/>
+    <RDF:li RDF:resource="&cx;LocationDocument"/>
+    <RDF:li RDF:resource="&cx;PropDocument"/>
+    <RDF:li RDF:resource="&cx;ActorDocument"/>
+    <RDF:li RDF:resource="&cx;CrewDocument"/>
+    <RDF:li RDF:resource="&cx;WardrobeDocument"/>
+    <RDF:li RDF:resource="&cx;AdditionalLabourDocument"/>
+    <RDF:li RDF:resource="&cx;AnimalsDocument"/>
+    <RDF:li RDF:resource="&cx;AnimalHandlerDocument"/>
+    <RDF:li RDF:resource="&cx;CameraDocument"/>
+    <RDF:li RDF:resource="&cx;CGIDocument"/>
+    <RDF:li RDF:resource="&cx;ConstructionDocument"/>
+    <RDF:li RDF:resource="&cx;ElectricsDocument"/>
+    <RDF:li RDF:resource="&cx;ExtrasDocument"/>
+    <RDF:li RDF:resource="&cx;GreeneryDocument"/>
+    <RDF:li RDF:resource="&cx;HairDocument"/>
+    <RDF:li RDF:resource="&cx;LightsDocument"/>
+    <RDF:li RDF:resource="&cx;LivestockDocument"/>
+    <RDF:li RDF:resource="&cx;MakeupDocument"/>
+    <RDF:li RDF:resource="&cx;MechFXDocument"/>
+    <RDF:li RDF:resource="&cx;MiscDocument"/>
+    <RDF:li RDF:resource="&cx;MusicDocument"/>
+    <RDF:li RDF:resource="&cx;OpticalFXDocument"/>
+    <RDF:li RDF:resource="&cx;PaintingDocument"/>
+    <RDF:li RDF:resource="&cx;ProductionNotesDocument"/>
+    <RDF:li RDF:resource="&cx;SecurityDocument"/>
+    <RDF:li RDF:resource="&cx;SetDocument"/>
+    <RDF:li RDF:resource="&cx;SetDressingDocument"/>
+    <RDF:li RDF:resource="&cx;SoundDocument"/>
+    <RDF:li RDF:resource="&cx;SoundFXDocument"/>
+    <RDF:li RDF:resource="&cx;SpecialEquipmentDocument"/>
+    <RDF:li RDF:resource="&cx;SpecialFXDocument"/>
+    <RDF:li RDF:resource="&cx;StuntsDocument"/>
+    <RDF:li RDF:resource="&cx;VehiclesDocument"/>
+    <RDF:li RDF:resource="&cx;WeaponsDocument"/>
+  </RDF:Seq>
+
+  <!-- The Script meta-document -->
+  <cx:DocType RDF:about="&cx;ScriptGroupDocument">
+    <dc:title>&script.label;</dc:title>
+    <dc:description>&script.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;CatalogDocument">
+    <dc:title>&catalog.label;</dc:title>
+    <dc:description>&catalog.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/catalogue.png</cx:thumbnail>
+  </cx:DocType>
+
+  <cx:Editor RDF:about="&cx;CatalogEditor">
+    <cx:viewer>chrome://celtx/content/editors/catalogue.xul</cx:viewer>
+    <!--
+    <cx:outline>chrome://celtx/content/editors/catnav.xul</cx:outline>
+    -->
+    <cx:edits RDF:resource="&cx;CatalogDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;ScriptDocument">
+    <dc:title>&filmScript.label;</dc:title>
+    <dc:description>&filmScript.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;TheatreDocument">
+    <dc:title>&stageplay.label;</dc:title>
+    <dc:description>&stageplay.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;AVDocument">
+    <dc:title>&avScript.label;</dc:title>
+    <dc:description>&avScript.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;RadioDocument">
+    <dc:title>&audioplay.label;</dc:title>
+    <dc:description>&audioplay.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;ComicDocument">
+    <dc:title>&comicBook.label;</dc:title>
+    <dc:description>&comicBook.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/script.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;ScheduleDocument">
+    <dc:title>&schedule.label;</dc:title>
+    <dc:description>&schedule.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/calendar.png</cx:thumbnail>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;CharacterOutlineDocument">
+    <dc:title>&charOutline.label;</dc:title>
+    <dc:description>&charOutline.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/character.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;StoryboardDocument2">
+    <dc:title>&storyboard.label;</dc:title>
+    <dc:description>&storyboard.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/storyboard.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;SingleShotDocument">
+    <dc:title>&shotSetup.label;</dc:title>
+    <dc:description>&shotSetup.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/setup.gif</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;OutlineDocument">
+    <dc:title>&outline.label;</dc:title>
+    <dc:description>&outline.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/outline.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;TextDocument">
+    <dc:title>&novel.label;</dc:title>
+    <dc:description>&novel.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/text.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;BookmarkDocument">
+    <dc:title>&bookmark.label;</dc:title>
+    <dc:description>&bookmark.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/bookmark.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;CalendarDocument">
+    <dc:title>&calendar.label;</dc:title>
+    <dc:description>&calendar.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/calendar.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;ScriptReportDocument">
+    <dc:title>&scriptReport.label;</dc:title>
+    <dc:description>&scriptReport.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/report.png</cx:thumbnail>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;ExternalDocument">
+    <dc:title>&externalFile.label;</dc:title>
+    <dc:description>&externalFile.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/external.png</cx:thumbnail>
+    <cx:toplevel>true</cx:toplevel>
+  </cx:DocType>
+
+  <cx:Editor RDF:about="&cx;OutlineEditor">
+    <cx:viewer>chrome://celtx/content/editors/outliner.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/outlinernav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;OutlineDocument"/>
+    <cx:edits RDF:resource="&cx;TextDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;ScriptEditor">
+    <cx:viewer>chrome://celtx/content/editors/script.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/scriptnav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;ScriptDocument"/>
+    <cx:edits RDF:resource="&cx;TheatreDocument"/>
+    <cx:edits RDF:resource="&cx;RadioDocument"/>
+    <cx:edits RDF:resource="&cx;AVDocument"/>
+    <cx:edits RDF:resource="&cx;ComicDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;ScheduleEditor">
+    <cx:viewer>chrome://celtx/content/editors/schedule.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/schedulenav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;ScheduleDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;CharacterOutlineEditor">
+    <cx:viewer>chrome://celtx/content/editors/charoutline.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;CharacterOutlineDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;StoryboardEditor">
+    <cx:viewer>chrome://celtx/content/editors/storyboard.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/storyboardnav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;StoryboardDocument2"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;SingleShotEditor">
+    <cx:viewer>chrome://celtx/content/editors/shoteditor.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;SingleShotDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;ScriptReportEditor">
+    <cx:viewer>chrome://celtx/content/editors/scriptreport.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/scriptreportnav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;ScriptReportDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;BookmarkEditor">
+    <cx:edits RDF:resource="&cx;BookmarkDocument"/>
+    <cx:handler>bookmarks_controller</cx:handler>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;ExternalEditor">
+    <cx:edits RDF:resource="&cx;ExternalDocument"/>
+    <cx:handler>external_controller</cx:handler>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;ActorDocument">
+    <dc:title>&actorProfile.label;</dc:title>
+    <dc:description>&actorProfile.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/actor.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Actor"/>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;CrewDocument">
+    <dc:title>&crew.label;</dc:title>
+    <dc:description>&crew.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/actor.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Crew"/>
+  </cx:DocType>
+
+  <cx:DocType RDF:about="&cx;SceneDocument">
+    <dc:title>&sceneDetails.label;</dc:title>
+    <dc:description>&sceneDetails.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/scene.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;SceneDetails"/>
+  </cx:DocType>
+
+  <cx:Editor RDF:about="&cx;SceneEditor">
+    <cx:viewer>chrome://celtx/content/editors/scene.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;SceneDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;ActorEditor">
+    <cx:viewer>chrome://celtx/content/editors/actor.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;ActorDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;CrewEditor">
+    <cx:viewer>chrome://celtx/content/editors/crew.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;CrewDocument"/>
+  </cx:Editor>
+
+  <cx:Editor RDF:about="&cx;LightningEditor">
+    <!--
+    <cx:viewer>chrome://celtx/content/editors/lightning.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/lightningnav.xul</cx:outline>
+    -->
+    <cx:viewer>chrome://celtx/content/editors/calendar.xul</cx:viewer>
+    <cx:outline>chrome://celtx/content/editors/calendarnav.xul</cx:outline>
+    <cx:edits RDF:resource="&cx;CalendarDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;CharacterDocument">
+    <dc:title>&characterProfile.label;</dc:title>
+    <dc:description>&characterProfile.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/character.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Cast"/>
+  </cx:DocType>
+  <cx:Editor RDF:about="&cx;CharacterEditor">
+    <cx:viewer>chrome://celtx/content/editors/character.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;CharacterDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;LocationDocument">
+    <dc:title>&location.label;</dc:title>
+    <dc:description>&location.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/location.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Location"/>
+  </cx:DocType>
+  <cx:Editor RDF:about="&cx;LocationEditor">
+    <cx:viewer>chrome://celtx/content/editors/location.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;LocationDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;PropDocument">
+    <dc:title>&propSheet.label;</dc:title>
+    <dc:description>&propSheet.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/prop.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Props"/>
+  </cx:DocType>
+  <cx:Editor RDF:about="&cx;PropEditor">
+    <cx:viewer>chrome://celtx/content/editors/prop.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;PropDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;WardrobeDocument">
+    <dc:title>&wardrobeSheet.label;</dc:title>
+    <dc:description>&wardrobeSheet.desc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/wardrobe.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Wardrobe"/>
+  </cx:DocType>
+  <cx:Editor RDF:about="&cx;WardrobeEditor">
+    <cx:viewer>chrome://celtx/content/editors/wardrobe.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;WardrobeDocument"/>
+  </cx:Editor>
+
+  <cx:DocType RDF:about="&cx;AdditionalLabourDocument">
+    <dc:title>&bdc.addlabour;</dc:title>
+    <dc:description>&bdc.addlabour;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/addlabour.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;AdditionalLabour"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;AnimalHandlerDocument">
+    <dc:title>&bdc.handler;</dc:title>
+    <dc:description>&bdc.handler;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/animalhandler.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;AnimalHandler"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;AnimalsDocument">
+    <dc:title>&bdc.animals;</dc:title>
+    <dc:description>&bdc.animals;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/animals.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Animals"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;CameraDocument">
+    <dc:title>&bdc.camera;</dc:title>
+    <dc:description>&bdc.camera;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/camera.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Camera"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;CGIDocument">
+    <dc:title>&bdc.cgi;</dc:title>
+    <dc:description>&bdc.cgi;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/cgi.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;CGI"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;ConstructionDocument">
+    <dc:title>&bdc.construction;</dc:title>
+    <dc:description>&bdc.construction;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/construction.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Construction"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;ElectricsDocument">
+    <dc:title>&bdc.electrics;</dc:title>
+    <dc:description>&bdc.electrics;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/electrics.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Electrics"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;ExtrasDocument">
+    <dc:title>&bdc.extras;</dc:title>
+    <dc:description>&bdc.extras;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/extras.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Extras"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;GreeneryDocument">
+    <dc:title>&bdc.greenery;</dc:title>
+    <dc:description>&bdc.greenery;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/greenery.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Greenery"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;HairDocument">
+    <dc:title>&bdc.hair;</dc:title>
+    <dc:description>&bdc.hair;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/hair.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Hair"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;LightsDocument">
+    <dc:title>&bdc.lights;</dc:title>
+    <dc:description>&bdc.lights;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/lights.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Lights"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;LivestockDocument">
+    <dc:title>&bdc.livestock;</dc:title>
+    <dc:description>&bdc.livestock;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/livestock.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Livestock"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;MakeupDocument">
+    <dc:title>&bdc.makeup;</dc:title>
+    <dc:description>&bdc.makeup;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/makeup.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Makeup"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;MechFXDocument">
+    <dc:title>&bdc.mechfx;</dc:title>
+    <dc:description>&bdc.mechfx;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/mechfx.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;MechFX"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;MiscDocument">
+    <dc:title>&bdc.misc;</dc:title>
+    <dc:description>&bdc.misc;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/misc.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Misc"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;MusicDocument">
+    <dc:title>&bdc.music;</dc:title>
+    <dc:description>&bdc.music;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/music.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Music"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;OpticalFXDocument">
+    <dc:title>&bdc.opticalfx;</dc:title>
+    <dc:description>&bdc.opticalfx;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/opticalfx.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;OpticalFX"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;PaintingDocument">
+    <dc:title>&bdc.painting;</dc:title>
+    <dc:description>&bdc.painting;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/painting.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Painting"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;ProductionNotesDocument">
+    <dc:title>&bdc.prodnotes;</dc:title>
+    <dc:description>&bdc.prodnotes;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/prodnotes.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;ProductionNotes"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SecurityDocument">
+    <dc:title>&bdc.security;</dc:title>
+    <dc:description>&bdc.security;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/security.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Security"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SetDocument">
+    <dc:title>&bdc.set;</dc:title>
+    <dc:description>&bdc.set;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/set.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Set"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SetDressingDocument">
+    <dc:title>&bdc.setdressing;</dc:title>
+    <dc:description>&bdc.setdressing;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/setdressing.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;SetDressing"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SoundDocument">
+    <dc:title>&bdc.sound;</dc:title>
+    <dc:description>&bdc.sound;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/sound.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Sound"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SoundFXDocument">
+    <dc:title>&bdc.soundfx;</dc:title>
+    <dc:description>&bdc.soundfx;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/soundfx.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;SoundFX"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SpecialEquipmentDocument">
+    <dc:title>&bdc.equip;</dc:title>
+    <dc:description>&bdc.equip;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/equipment.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;SpecialEquipment"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;SpecialFXDocument">
+    <dc:title>&bdc.specialfx;</dc:title>
+    <dc:description>&bdc.specialfx;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/specialfx.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;SpecialFX"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;StoryboardDocument">
+    <dc:title>&bdc.storyboard;</dc:title>
+    <dc:description>&bdc.storyboard;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/storyboard.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Storyboard"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;StuntsDocument">
+    <dc:title>&bdc.stunts;</dc:title>
+    <dc:description>&bdc.stunts;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/stunts.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Stunts"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;VehiclesDocument">
+    <dc:title>&bdc.vehicles;</dc:title>
+    <dc:description>&bdc.vehicles;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/vehicles.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Vehicles"/>
+  </cx:DocType>
+  <cx:DocType RDF:about="&cx;WeaponsDocument">
+    <dc:title>&bdc.weapons;</dc:title>
+    <dc:description>&bdc.weapons;</dc:description>
+    <cx:thumbnail>chrome://celtx/skin/documents/weapons.png</cx:thumbnail>
+    <cx:category RDF:resource="&cx;Weapons"/>
+  </cx:DocType>
+  <cx:Editor RDF:about="&cx;GenericEditor">
+    <cx:viewer>chrome://celtx/content/editors/generic.xul</cx:viewer>
+    <cx:edits RDF:resource="&cx;AdditionalLabourDocument"/>
+    <cx:edits RDF:resource="&cx;AnimalsDocument"/>
+    <cx:edits RDF:resource="&cx;AnimalHandlerDocument"/>
+    <cx:edits RDF:resource="&cx;CameraDocument"/>
+    <cx:edits RDF:resource="&cx;CGIDocument"/>
+    <cx:edits RDF:resource="&cx;ConstructionDocument"/>
+    <cx:edits RDF:resource="&cx;ElectricsDocument"/>
+    <cx:edits RDF:resource="&cx;ExtrasDocument"/>
+    <cx:edits RDF:resource="&cx;GreeneryDocument"/>
+    <cx:edits RDF:resource="&cx;HairDocument"/>
+    <cx:edits RDF:resource="&cx;LightsDocument"/>
+    <cx:edits RDF:resource="&cx;LivestockDocument"/>
+    <cx:edits RDF:resource="&cx;MakeupDocument"/>
+    <cx:edits RDF:resource="&cx;MechFXDocument"/>
+    <cx:edits RDF:resource="&cx;MiscDocument"/>
+    <cx:edits RDF:resource="&cx;MusicDocument"/>
+    <cx:edits RDF:resource="&cx;OpticalFXDocument"/>
+    <cx:edits RDF:resource="&cx;PaintingDocument"/>
+    <cx:edits RDF:resource="&cx;ProductionNotesDocument"/>
+    <cx:edits RDF:resource="&cx;SecurityDocument"/>
+    <cx:edits RDF:resource="&cx;SetDocument"/>
+    <cx:edits RDF:resource="&cx;SetDressingDocument"/>
+    <cx:edits RDF:resource="&cx;SoundDocument"/>
+    <cx:edits RDF:resource="&cx;SoundFXDocument"/>
+    <cx:edits RDF:resource="&cx;SpecialEquipmentDocument"/>
+    <cx:edits RDF:resource="&cx;SpecialFXDocument"/>
+    <cx:edits RDF:resource="&cx;StoryboardDocument"/>
+    <cx:edits RDF:resource="&cx;StuntsDocument"/>
+    <cx:edits RDF:resource="&cx;VehiclesDocument"/>
+    <cx:edits RDF:resource="&cx;WeaponsDocument"/>
+  </cx:Editor>
+
+</RDF:RDF>

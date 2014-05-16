@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(senza titolo)">
+<!ENTITY newTab.label "Nuova scheda">
+<!ENTITY newTab.accesskey "N">
+<!ENTITY closeTab.label "Chiudi scheda">
+<!ENTITY closeTab.accesskey "c">
+<!ENTITY closeOtherTabs.accesskey "a">
+<!ENTITY closeOtherTabs.label "Chiudi le altre schede">
+<!ENTITY reloadAllTabs.label "Ricarica tutte le schede">
+<!ENTITY reloadAllTabs.accesskey "t">
+<!ENTITY reloadTab.label "Ricarica scheda">
+<!ENTITY reloadTab.accesskey "R">
+<!ENTITY listAllTabs.label "Elenco di tutte le schede">
+<!ENTITY bookmarkAllTabs.label "Tutte le schede nei segnalibri…">
+<!ENTITY bookmarkAllTabs.accesskey "s">
+<!ENTITY bookmarkThisTab.label "Questa scheda nei segnalibri">
+<!ENTITY bookmarkThisTab.accesskey "Q">
+<!ENTITY undoCloseTab.label "Riapri scheda chiusa">
+<!ENTITY undoCloseTab.accesskey "h">

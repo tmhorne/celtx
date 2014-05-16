@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+  <xsl:output method="html" encoding="UTF-8"/>
+
+  <xsl:param name="dialog.breaks.enabled" select="true()"/>
+  <xsl:param name="dialog.breakbottom.text">(MORE)</xsl:param>
+  <xsl:param name="dialog.breaktop.text">(CONT'D)</xsl:param>
+  <xsl:param name="dialog.autocharcontinueds" select="true()"/>
+  <xsl:param name="scene.breaks.enabled" select="false()"/>
+  <xsl:param name="scene.breakbottom.text">(CONTINUED)</xsl:param>
+  <xsl:param name="scene.breaktop.text">CONTINUED:</xsl:param>
+  <xsl:param name="scene.continuedsnumbered" select="false()"/>
+  <xsl:param name="scene.pagebreaks" select="false()"/>
+  <xsl:param name="scene.linesbetween">2</xsl:param>
+  <xsl:param name="script.format">screenplay</xsl:param>
+  <xsl:param name="page.size">USLetter</xsl:param>
+  <xsl:param name="script.titlepage" select="true()"/>
+  <xsl:param name="script.showscenes" select="false()"/>
+  <xsl:param name="script.soundcues" select="false()"/>
+  <xsl:param name="audio.format">default</xsl:param>
+  <xsl:param name="bbc.showname" />
+  <xsl:param name="bbc.sketchname" />
+  <xsl:param name="bbc.contact" />
+
+
+  <xsl:template match="html">
+    <html>
+      <head>
+        <xsl:apply-templates select="head/title"/>
+        <xsl:apply-templates select="head/meta[not(@http-equiv)]"/>
+        <xsl:call-template name="pdf-options"/>
+      </head>
+      <xsl:apply-templates select="body"/>
+    </html>
+  </xsl:template>
+
+
+  <xsl:template match="div">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+
+  <xsl:template match="div[@class='hardbreak']|@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template name="pdf-options">
+
+    <meta name="CX.script.format" content="{$script.format}"/>
+    <meta name="CX.page.size" content="{$page.size}"/>
+
+    <xsl:if test="$dialog.breaks.enabled">
+      <meta name="CX.dialog.breaks.enabled" content="true"/>
+      <meta name="CX.dialog.breakbottom.text"
+            content="{$dialog.breakbottom.text}"/>
+      <meta name="CX.dialog.breaktop.text"
+            content="{$dialog.breaktop.text}"/>
+    </xsl:if>
+    <xsl:if test="not($dialog.breaks.enabled)">
+      <meta name="CX.dialog.breaks.enabled" content="false"/>
+    </xsl:if>
+
+    <meta name="CX.dialog.autocharcontinueds"
+          content="{$dialog.autocharcontinueds}"/>
+
+    <xsl:if test="$scene.breaks.enabled">
+      <meta name="CX.scene.breaks.enabled" content="true"/>
+      <meta name="CX.scene.breakbottom.text"
+            content="{$scene.breakbottom.text}"/>
+      <meta name="CX.scene.breaktop.text"
+            content="{$scene.breaktop.text}"/>
+      <meta name="CX.scene.continuedsnumbered"
+            content="{$scene.continuedsnumbered}"/>
+    </xsl:if>
+
+    <xsl:if test="not($script.titlepage)">
+      <meta name="CX.omitTitlePage" content="True"/>
+    </xsl:if>
+
+    <xsl:if test="$script.showscenes">
+      <meta name="CX.showSceneHeading" content="True"/>
+    </xsl:if>
+    <xsl:if test="$script.soundcues">
+      <meta name="CX.soundCueNumbering" content="true"/>
+    </xsl:if>
+    <xsl:if test="$scene.pagebreaks">
+      <meta name="CX.scenePageBreaks" content="true"/>
+    </xsl:if>
+    <meta name="CX.sceneLinesBetween" content="{$scene.linesbetween}"/>
+    <meta name="CX.audioFormat" content="{$audio.format}"/>
+    <xsl:if test="$script.format = 'radio' and $audio.format != 'default'">
+      <meta name="CX.bbcShowName" content="{$bbc.showname}"/>
+      <meta name="CX.bbcSketchName" content="{$bbc.sketchname}"/>
+      <meta name="CX.bbcContact" content="{$bbc.contact}"/>
+    </xsl:if>
+
+  </xsl:template>
+
+
+</xsl:stylesheet>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" [
+
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+
+]>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&form.locationProfile;</title>
+<style>
+
+@import url(chrome://celtx/content/editors/datasheet.css);
+@import url(chrome://celtx/content/editors/editors.css);
+
+</style>
+
+<script type="application/x-javascript"
+        src="chrome://celtx/content/editors/datasheet.js" />
+
+</head>
+<body>
+<form>
+
+<div class="container0">
+  <div class="scene">
+    <span style="font-weight:bold;">&form.locationProfile;&colon; </span> <span> <input type="text" id="name" name="title" style="width:35%;"/><div class="print"></div></span> <span style="font-weight:bold;padding-left: 3%;">&tags.label;&colon; </span> <span> <input type="text" id="tags" name="tags" style="width:35%;"/><div class="print"></div></span>
+  </div>
+  <div class="contents">
+  <table width="100%">
+  <tr><td>&form.description;&colon;</td><td>&form.media;&colon;</td></tr>
+  <tr><td><textarea cols="3" name="description"></textarea><div class="print"></div></td><td><medialist name="media"></medialist></td></tr>
+  </table><br />
+    <p>&form.address;&colon; &nbsp;<a class="hide" href="javascript: googlemap();">&form.locationMap;</a><br />
+    <textarea cols="3" name="address" id="mapaddress"/><div class="print"></div></p>
+    <br />
+  </div>
+</div>
+
+<br/>
+
+<br />
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-1', 'expand-1');">
+      <img id="toggle-1" class="plusminus" alt="expand"
+           src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.scoutSelect;</span>
+  </div>
+  <div id="expand-1" class="contents">
+    <p>&form.selectedFor;&colon;<br />
+    <textarea type="text" id="scenesUsed" name="scenesUsed" readonly="true"></textarea><div class="print"></div></p>
+    <p>&form.scoutedFor;&colon; <span class="hide">(<span><picklist value="&picklist.label;" control="scouted-for" filter="scenes"/></span>)</span><br />
+    <textarea id="scouted-for" type="text" name="scouted-for" /><div class="print"></div></p>
+    <br/>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-2', 'expand-2');">
+      <img id="toggle-2" class="plusminus" alt="expand"
+           src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.contactInfo;</span>
+  </div>
+  <div id="expand-2" class="contents">
+    <p>&form.name;&colon;<br />
+    <input type="text" name="contact-name" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.email;&colon;<br />
+    <input type="text" name="contact-email" style="width:90%;"/><div class="print"></div></p>
+    <br />
+    <p>&form.phone;&colon;<br />
+    <input type="text" name="contact-phone" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.cell;&colon;<br />
+    <input type="text" name="contact-cell" style="width:90%;"/><div class="print"></div></p>
+    <br />
+    <p>&form.comments;&colon;<br />
+    <textarea type="text" name="contact-comments" /><div class="print"></div></p>
+    <br />
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-3', 'expand-3');">
+      <img id="toggle-3" class="plusminus" alt="expand"
+           src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.facilityInfo;</span>
+  </div>
+  <div id="expand-3" class="contents">
+    <p>&form.dateAvail;&colon;<br />
+    <input type="text" name="dates-available" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.squareFoot;&colon;<br />
+    <input type="text" name="square-footage" style="width:90%;"/><div class="print"></div></p>
+    <br />
+    <p>&form.rentalCost;&colon;<br />
+    <input type="text" name="rental-cost" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.elevator;&colon;<br />
+    <input class="button" type="radio" name="elevator" value="true"/> &form.yes;
+    <input class="button" type="radio" name="elevator" value="true"/> &form.no;
+    </p>
+    <br />
+    <p>&form.powerCapa;&colon;<br />
+    <textarea type="text" name="power-capabilities" /><div class="print"></div></p>
+    <p>&form.lightSources;&colon;<br />
+    <textarea type="text" name="light-sources" /><div class="print"></div></p>
+    <br />
+    <p>&form.noise;&colon;<br />
+    <textarea type="text" name="noise-sources" /><div class="print"></div></p>
+    <p>&form.washroom;&colon;<br />
+    <textarea type="text" name="washroom-locations" /><div class="print"></div></p>
+    <br/>
+    <p>&form.parking;&colon;<br />
+    <textarea type="text" name="parking-information" /><div class="print"></div></p>
+    <p>&form.comments;&colon;<br />
+    <textarea type="text" name="facility-comments" /><div class="print"></div></p>
+    <br />
+  </div>
+</div>
+
+</form>
+</body>
+
+</html>

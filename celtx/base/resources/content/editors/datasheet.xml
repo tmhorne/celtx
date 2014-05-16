@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          id="datasheet-bindings">
+
+<!--
+  <binding id="datasheet"
+           extends="chrome://global/content/bindings/general.xml#iframe"
+           display="xul:iframe"
+           xbl:inherits="contextmenu">
+-->
+  <!--
+    We can't simply extend an iframe anymore, because it seems to
+    have special bindings at the C++ layer.
+  -->
+  <binding id="datasheet">
+    <content>
+      <xul:iframe xbl:inherits="src,type,contextmenu"
+                  flex="1"/>
+     </content>
+
+    <implementation>
+
+      <field name="form"/>
+      <field name="changedFields"/>
+      <field name="modifications"/>
+      <field name="prop"/>
+      <property name="project">
+        <getter>
+          return this._project;
+        </getter>
+        <setter>
+        <![CDATA[
+          this._project = val;
+          var media = this.form.getElementsByTagName('medialist');
+          for (var i = 0; i < media.length; ++i)
+            media[i].project = val;
+          return val;
+        ]]>
+        </setter>
+      </property>
+
+      <property name="docShell" readonly="true">
+        <getter>
+          return this._frame.docShell;
+        </getter>
+      </property>
+      <property name="contentDocument" readonly="true">
+        <getter>
+          return this._frame.contentDocument;
+        </getter>
+      </property>
+
+      <constructor>
+        this._frame = document.getAnonymousNodes(this)[0];
+      </constructor>
+
+      <method name="init">
+        <body>
+        <![CDATA[
+          this.changedFields = {};
+          this.modifications = 0;
+          this.prop = {};
+
+          var type = this.getAttribute('formtype');
+          this.setAttribute('src', type + '.xhtml');
+          var self = this;
+          setTimeout(function () { self.checkLoad(); }, 100);
+        ]]>
+        </body>
+      </method>
+
+      <method name="reset">
+        <body>
+        <![CDATA[
+          this.changedFields = {};
+          this.modifications = 0;
+        ]]>
+        </body>
+      </method>
+
+      <property name="modified" readonly="true"
+                onget="return this.modifications &gt; 0"/>
+
+      <property name="schema" readonly="true"
+                onget="return this.prop"/>
+
+      <method name="checkLoad">
+        <body>
+        <![CDATA[
+          if (! this.docShell || this.docShell.busyFlags) {
+            if (! this.docShell) {
+              dump("*** no docShell for datasheet!\n");
+              // var self = this;
+              // setTimeout(function () { self.checkLoad(); }, 2000);
+              return;
+            }
+            var self = this;
+            setTimeout(function () { self.checkLoad(); }, 100);
+          }
+          else {
+            this.ready();
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="ready">
+        <body>
+        <![CDATA[
+          // HTML form is loaded
+          var forms = this.contentDocument.forms;
+          if (forms.length == 0) throw "No forms in document";
+
+          this.form = forms[0];
+          this.prepareForm();
+          this.findProperties();
+
+          // Notify our parent window
+          var onload = this.getAttribute('onload');
+          if (onload) {
+            var f = new Function(onload);
+            f();
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="prepareForm">
+        <body>
+        <![CDATA[
+          this.form.setAttribute('onsubmit', 'return false;');
+          this.form.removeAttribute('action');
+
+          var self = this;
+          function _change (evt) { self.formChanged(evt) };
+          function _input  (evt) { self.formInput(evt)   };
+
+          this.form.addEventListener('change', _change, true);
+          this.form.addEventListener('input',  _input,  true);
+        ]]>
+        </body>
+      </method>
+
+      <method name="formChanged">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          var elem = evt.target;
+          if (! elem.name) return;
+          this.changed(elem.name);
+        ]]>
+        </body>
+      </method>
+
+      <method name="formInput">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          var elem = evt.target;
+          if (! elem.name) return;
+          this.changed(elem.name);
+        ]]>
+        </body>
+      </method>
+
+      <method name="changed">
+        <parameter name="name"/>
+        <body>
+        <![CDATA[
+          if (! name || ! this.prop[name]) return;
+          this.changedFields[name] = 1;
+          this.modifications++;
+        ]]>
+        </body>
+      </method>
+
+      <method name="findProperties">
+        <body>
+        <![CDATA[
+          var i, elem, name;
+          var f = this.form;
+
+          // Standard form elements
+          for (i = 0; i < f.elements.length; i++) {
+            elem = f.elements[i];
+            if (! elem.name) continue;
+            name = elem.name;
+            if (! this.prop[name]) {
+              this.prop[name] = { type: elem.type, element: f[name] };
+            }
+          }
+
+          // Custom (e.g., media) elements
+          var media = f.getElementsByTagName('medialist');
+          for (i = 0; i < media.length; i++) {
+            elem = media[i];
+            name = elem.getAttribute('name'); 
+            if (! name) continue;
+            if (! this.prop[name]) {
+              this.prop[name] = { type: 'media', element: elem };
+            }
+          }
+
+        ]]>
+        </body>
+      </method>
+
+      <method name="fill">
+        <parameter name="rec"/>
+        <body>
+        <![CDATA[
+          this.reset();
+
+          for (var p in this.prop) {
+            var elem = this.prop[p].element;
+            var type = this.prop[p].type;
+            var i, val, vals;
+        
+            if (type == 'text' || type == 'textarea') {
+              elem.value = rec[p].length ? rec[p][0] : '';
+            }
+            else if (type == 'radio') {
+              val = rec[p].length ? rec[p][0] : '';
+              for (i = 0; i < elem.length; i++) {
+                elem[i].checked = elem[i].value == val;
+              }
+            }
+            else if (type == 'checkbox') {
+              if (elem.length) {
+                vals = this.arrayToSet(rec[p]);
+                for (i = 0; i < elem.length; i++) {
+                  elem[i].checked = vals[elem[i].value] == 1;
+                }
+              }
+              else {
+                val = rec[p].length ? rec[p][0] : '';
+                elem.checked = elem.value == val;
+              }
+            }
+            else if (type == 'select-one' || type == 'select-multiple') {
+              if (! rec[p])
+                dump("*** no value for rec[" + p + "]\n");
+              vals = this.arrayToSet(rec[p]);
+              for (i = 0; i < elem.options.length; i++) {
+                if (elem.options[i].value && (elem.options[i].value in vals)) {
+                  elem.options[i].selected = vals[elem.options[i].value] == 1;
+                }
+                else
+                  elem.options[i].selected = false;
+              }
+            }
+            else if (type == 'media') {
+              elem.clear();
+              vals = rec[p];
+              for (i = 0; i < vals.length; i++) {
+                elem.add(vals[i]);
+              }
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="values">
+        <parameter name="name"/>
+        <body>
+        <![CDATA[
+          var elem = this.prop[name].element;
+          var type = this.prop[name].type;
+          var i;
+        
+          var values = [];
+          if (type == 'text' || type == 'textarea') {
+            if (elem.value != '') values.push(elem.value);
+          }
+          else if (type == 'radio') {
+            for (i = 0; i < elem.length; i++) {
+              if (elem[i].checked) values.push(elem[i].value);
+            }
+          }
+          else if (type == 'checkbox') {
+            if (elem.length) {
+              for (i = 0; i < elem.length; i++) {
+                if (elem[i].checked) values.push(elem[i].value);
+              }
+            }
+            else {
+              if (elem.checked) values.push(elem.value);
+            }
+          }
+          else if (type == 'select-one' || type == 'select-multiple') {
+            for (i = 0; i < elem.options.length; i++) {
+              if (elem.options[i].selected) values.push(elem.options[i].value);
+            }
+          }
+          else if (type == 'media') {
+            values = elem.getItems();
+          }
+        
+          return values;
+        ]]>
+        </body>
+      </method>
+
+      <method name="arrayToSet">
+        <parameter name="a"/>
+        <body>
+        <![CDATA[
+          var s = {};
+          for (var i = 0; i < a.length; i++) {
+            s[a[i]] = 1;
+          }
+          return s;
+        ]]>
+        </body>
+      </method>
+
+    </implementation>
+
+
+  </binding>
+
+  <binding id="media-list">
+
+    <content>
+      <xul:vbox flex="1">
+        <xul:mediaview anonid="list" flex="1" width="300" height="120"
+                       style="border: 1px dotted green;"/>
+        <xul:hbox>
+          <html:input type="button" anonid="btn" style="width: 60px;"
+                      value="&addCmd.label;" />
+        </xul:hbox>
+      </xul:vbox>
+    </content>
+
+    <implementation>
+
+      <constructor>
+        this.init();
+      </constructor>
+
+      <method name="init">
+        <body>
+        <![CDATA[
+          this._list = document.getAnonymousElementByAttribute(this, 'anonid', 'list');
+          this._btn  = document.getAnonymousElementByAttribute(this, 'anonid', 'btn');
+
+          var self = this;
+          function _addClicked () { self.addClicked() }
+          function _dblClicked () { self.itemDoubleClicked() }
+          function _removeClicked (event) { self.remove(event.target); }
+          this._btn.addEventListener('click', _addClicked, true);
+          this._list.addEventListener('dblclick', _dblClicked, true);
+          this._list.addEventListener('remove', _removeClicked, true);
+        ]]>
+        </body>
+      </method>
+
+      <property name="name" readonly="true"
+                onget="return this.getAttribute('name')"/>
+
+      <property name="list" readonly="true"
+                onget="return this._list"/>
+
+      <method name="add">
+        <parameter name="obj"/>
+        <body>
+        <![CDATA[
+          try {
+            var item = document.createElementNS(
+              "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+              'mediaitem');
+            item.setAttribute('id', obj.uri);
+            item.setAttribute('uri', obj.uri);
+            item.setAttribute('type', obj.type);
+            item.setAttribute('title', obj.title);
+            item.setAttribute('src', obj.src);
+            this.list.appendChild(item);
+          }
+          catch (ex) {
+            dump("*** datasheet.add: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="remove">
+        <parameter name="item"/>
+        <body>
+        <![CDATA[
+          try {
+            this.list.removeChild(item);
+            if (item == this.list.selectedItem)
+              this.list.clearSelection();
+            this.modified();
+          }
+          catch (ex) {
+            dump("*** datasheet.remove: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="getItems">
+        <body>
+          <![CDATA[
+          var items = [];
+          var item;
+          for (var i = 0; i < this.list.getRowCount(); i++) {
+            item = this.list.getItemAtIndex(i);
+            items.push({ uri:   item.getAttribute('uri'),
+                         type:  item.getAttribute('type'),
+                         title: item.title,
+                         src:   item.getAttribute('src') });
+          }
+          return items;
+        ]]>
+        </body>
+      </method>
+
+      <method name="itemDoubleClicked">
+        <body>
+          <![CDATA[
+          try {
+            var item = this.list.selectedItem;
+            var url = item.getAttribute('src');
+            var file = top.fileURLToFile(url);
+            top.openExternalFile(file);
+          }
+          catch (ex) {
+            dump("*** itemDoubleClicked: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="addClicked">
+        <body>
+        <![CDATA[
+          try {
+            var mediamgr = Components.classes["@celtx.com/media-manager;1"]
+              .getService(Components.interfaces.celtxIMediaManager);
+            var files = mediamgr.showMediaPicker(window, "all", false, {});
+            if (files.length == 0)
+              return;
+
+            var mediares = mediamgr.addMediaFromFile(files[0], this.project);
+
+            var msrv = Components.classes["@mozilla.org/mime;1"].getService()
+                         .QueryInterface(Components.interfaces.nsIMIMEService);
+            var mimeType = msrv.getTypeFromFile(files[0]);
+            var type = mimeType.split('/').shift();
+
+            // We already know it's a supported media type thanks to
+            // the Media Manager
+            switch (type) {
+              case "image": type = top.Cx.NS_CX + "Image"; break;
+              case "audio": type = top.Cx.NS_CX + "Audio"; break;
+              case "video": type = top.Cx.NS_CX + "Video"; break;
+            }
+
+            var ios = Components.classes["@mozilla.org/network/io-service;1"]
+                        .getService(Components.interfaces.nsIIOService);
+            var src = ios.newFileURI(files[0]).spec;
+
+            var item = { uri: mediares.Value,
+                         type: type,
+                         title: files[0].leafName,
+                         src: src };
+            this.add(item);
+            this.modified();
+          }
+          catch (ex) {
+            dump("*** addClicked: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="modified">
+        <body>
+        <![CDATA[
+          var e = document.createEvent('Events');
+          e.initEvent('change', true, true);
+          this.dispatchEvent(e);
+        ]]>
+        </body>
+      </method>
+
+      <method name="clear">
+        <body>
+        <![CDATA[
+          try {
+            var o = this.list;
+            while (o.hasChildNodes()) {
+              o.removeChild(o.lastChild);
+            }
+          }
+          catch (ex) {
+            dump("*** datasheet.clear: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+    </implementation>
+
+    <handlers>
+      <handler event="editlabelchange">
+        // Redispatch a change event
+        this.modified();
+      </handler>
+      <handler event="keypress"
+               keycode="VK_DELETE">
+        var ot = event.originalTarget;
+        var IInput = Components.interfaces.nsIDOMHTMLInputElement;
+        if (ot instanceof IInput)
+          return;
+
+        var item = this.list.selectedItem;
+        // The list doesn't reset its selectedItem when an item is removed...
+        if (! item || ! item.parentNode)
+          return;
+        this.remove(item);
+      </handler>
+      <handler event="keypress"
+               keycode="VK_BACK">
+        var ot = event.originalTarget;
+        var IInput = Components.interfaces.nsIDOMHTMLInputElement;
+        if (ot instanceof IInput)
+          return;
+
+        var item = this.list.selectedItem;
+        // The list doesn't reset its selectedItem when an item is removed...
+        if (! item || ! item.parentNode)
+          return;
+        this.remove(item);
+      </handler>
+    </handlers>
+
+  </binding>
+
+  <binding id="media-list-item-video"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:hbox class="media-box" flex="1">
+        <xul:vbox pack="start">
+          <xul:image src="chrome://celtx/skin/video.png"
+                     class="mediaitem-icon"/>
+        </xul:vbox>
+        <xul:vbox flex="1">
+          <xul:hbox>
+            <editlabel anonid="item-label" xbl:inherits="value=title"/>
+          </xul:hbox>
+        </xul:vbox>
+        <removelink value="&removeCmd.label;"/>
+      </xul:hbox>
+    </content>  
+    <implementation>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+  </binding>
+
+  <binding id="media-list-item-audio"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:hbox class="media-box" flex="1">
+        <xul:vbox pack="start">
+          <xul:image src="chrome://celtx/skin/audio.png"
+                     class="mediaitem-icon"/>
+        </xul:vbox>
+        <xul:vbox flex="1">
+          <xul:hbox>
+            <editlabel anonid="item-label" xbl:inherits="value=title"/>
+          </xul:hbox>
+        </xul:vbox>
+        <removelink value="&removeCmd.label;"/>
+      </xul:hbox>
+    </content>  
+    <implementation>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+  </binding>
+
+  <binding id="media-list-item-image"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:hbox class="media-box" flex="1">
+        <xul:vbox pack="start">
+          <xul:hbox>
+            <imagepreview anonid="img"/>
+          </xul:hbox>
+        </xul:vbox>
+        <xul:vbox flex="1">
+          <xul:hbox>
+            <editlabel anonid="item-label" xbl:inherits="value=title"/>
+          </xul:hbox>
+        </xul:vbox>
+        <removelink value="&removeCmd.label;"/>
+      </xul:hbox>
+    </content>  
+    <implementation>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this.setImage(this.getAttribute('src'));
+        </body>
+      </method>
+      <method name="setImage">
+        <parameter name="url"/>
+        <body>
+          try {
+            var img = document.getAnonymousElementByAttribute(this, 'anonid', 'img');
+            img.src = url;
+          }
+          catch (ex) {
+            dump("*** setImage: " + ex + "\n");
+          }
+        </body>
+      </method>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+  </binding>
+
+
+  <binding id="removelink"
+           extends="chrome://global/content/bindings/text.xml#text-label"
+           display="xul:label">
+    <handlers>
+      <handler event="click">
+        // XXX This is so wrong
+        var item = this.parentNode.parentNode;
+        var mediaList = item.parentNode.parentNode.parentNode;
+        mediaList.remove(item);
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="picklist"
+           extends="chrome://global/content/bindings/text.xml#text-label"
+           display="xul:label">
+    <implementation>
+      <method name="clicked">
+        <body>
+        <![CDATA[
+          try {
+            // Find our control
+            var filter = this.getAttribute('filter');
+            var ctlID = this.getAttribute('control');
+            var ctlElem = document.getElementById(ctlID);
+            var obj = { canceled: false, value: ctlElem.value };
+            top.gApp.showPicklist(filter, obj);
+            if (obj.canceled) return;
+            ctlElem.value = obj.value;
+            var e = document.createEvent('Events');
+            e.initEvent('change', true, true);
+            ctlElem.dispatchEvent(e);
+          }
+          catch (ex) {
+            dump("*** picklist: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="click">
+        this.clicked();
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="picklistitem"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:checkbox anonid="cb" xbl:inherits="label=value"/>
+    </content>  
+    <implementation>
+      <property name="checked" readonly="true">
+        <getter>
+          var cb = document.getAnonymousElementByAttribute(this, 'anonid', 'cb');
+          return cb.checked;
+        </getter>
+      </property>
+    </implementation>
+  </binding>
+
+
+  <binding id="editable-label">
+    <content>
+      <xul:deck anonid="deck">
+        <xul:description anonid="lbl" class="editable" xbl:inherits="value"/>
+        <xul:textbox anonid="tbox"/>
+      </xul:deck>
+    </content>
+    <implementation>
+      <field name="modified">false</field>
+      <field name="editing">false</field>
+      <field name="_value"/>
+      <property name="value" readonly="true" onget="return this._value"/>
+      <property name="deck" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, 'anonid', 'deck');
+        </getter>
+      </property>
+      <property name="textBox" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, 'anonid', 'tbox');
+        </getter>
+      </property>
+      <property name="textLabel" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, 'anonid', 'lbl');
+        </getter>
+      </property>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this._value = this.getAttribute('value');
+        </body>
+      </method>
+      <method name="setEditable">
+        <parameter name="editable"/>
+        <body>
+        <![CDATA[
+        var txt = this.textBox;
+        var deck = this.deck;
+        if (editable) {
+          txt.value = this.value;
+          deck.selectedIndex = 1;
+          txt.addEventListener('blur', this.fieldChange, true);
+          txt.addEventListener('keypress', this.fieldKeyDown, false);
+          this.editing = true;
+          try{ txt.select(); } catch (ex) { }  // Complains about commandDispatcher
+        }
+        else {
+          this.textLabel.value = this.value;
+          txt.removeEventListener('blur', this.fieldChange, true);
+          txt.removeEventListener('keypress', this.fieldKeyDown, false);
+          txt.blur();
+          this.deck.selectedIndex = 0;
+          this.editing = false;
+        }
+        ]]>
+        </body>
+      </method>
+      <method name="fieldChange">
+        <body>
+          var o = this.parentNode.parentNode;
+          o.setValue(this.value);
+        </body>
+      </method>
+      <method name="fieldKeyDown">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          // this == textbox
+          var o = this.parentNode.parentNode;
+          if (evt.keyCode == KeyEvent.DOM_VK_ESCAPE) {
+            o.setValue(o.value);
+          }
+          else if (evt.keyCode == KeyEvent.DOM_VK_RETURN) {
+            o.setValue(this.value);
+          }
+          evt.preventBubble();
+        ]]>
+        </body>
+      </method>
+      <method name="setValue">
+        <parameter name="val"/>
+        <body>
+          this._value = val;
+          this.setEditable(false);
+          try {
+          var e = document.createEvent('Events');
+          e.initEvent('editlabelchange', true, true);
+          this.dispatchEvent(e);
+          } catch (ex) { dump("*** editlabel.setValue: " + ex + "\n"); }
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="click">
+        event.preventBubble();
+        if (! this.editing) this.setEditable(true);
+      </handler>
+      <handler event="dblclick">
+        event.preventBubble();
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="imagepreview">
+    <content>
+      <xul:vbox collapsed="true">
+        <html:img class="thumbnail"/>
+      </xul:vbox>
+    </content>
+    <implementation>
+      <field name="img"/>
+      <field name="box"/>
+      <field name="src"/>
+      <field name="thumbHeight">75</field>
+      <field name="thumbWidth">75</field>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this.box = document.getAnonymousNodes(this)[0];
+          this.img = this.box.firstChild;
+
+          var _self = this;
+          function _loaded () { _self.loaded(); };
+          this.img.addEventListener('load', _loaded, true);
+
+          this.img.src = this.src;
+        </body>
+      </method>
+      <method name="loaded">
+        <body>
+        <![CDATA[
+          var actualWidth  = this.img.naturalWidth;
+          var actualHeight = this.img.naturalHeight;
+          if (actualWidth == 0 || actualHeight == 0) return;
+
+          var width  = actualWidth;
+          var height = actualHeight;
+
+          if (actualWidth < this.thumbWidth) {
+            width  = this.thumbWidth;
+            height = actualHeight * (this.thumbWidth / actualWidth);
+          }
+          if (height > this.thumbHeight) {
+            height = this.thumbHeight;
+            width  = actualWidth * (this.thumbHeight / actualHeight);
+          }
+
+          this.img.width  = Math.floor(width);
+          this.img.height = Math.floor(height);
+          this.box.collapsed = false;
+        ]]>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+</bindings>

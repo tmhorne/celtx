@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="chrome://celtx/content/celtx.xul">
+    <NC:persist RDF:resource="chrome://celtx/content/celtx.xul#celtx"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://celtx/content/celtx.xul#celtx"
+                   screenX="0"
+                   screenY="22"
+                   width="1022"
+                   height="723" />
+  <RDF:Description RDF:about="chrome://celtx/content/prefs.xul#CeltxPreferences"
+                   lastSelected="paneGeneral" />
+  <RDF:Description RDF:about="http://my.celtx.com/res/id0x01bbfc00"
+                   NC:open="true" />
+  <RDF:Description RDF:about="http://celtx.com/res/9uEellKm1xdh"
+                   NC:open="true" />
+  <RDF:Description RDF:about="chrome://celtx/content/prefs.xul">
+    <NC:persist RDF:resource="chrome://celtx/content/prefs.xul#CeltxPreferences"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="http://my.celtx.com/res/I04lYa4lXfQH"
+                   NC:open="true" />
+  <RDF:Description RDF:about="http://my.celtx.com/res/qDJrWYnWI3xb"
+                   NC:open="true" />
+  <RDF:Description RDF:about="chrome://celtx/content/splash.xul">
+    <NC:persist RDF:resource="chrome://celtx/content/splash.xul#splash"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://celtx/content/splash.xul#splash"
+                   screenX="157"
+                   screenY="68" />
+  <RDF:Description RDF:about="http://my.celtx.com/res/cYFpvpSCS9wu"
+                   NC:open="true" />
+</RDF:RDF>

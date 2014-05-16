@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE stylesheet [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:cx="http://celtx.com/NS/v1/"
+                version="1.0">
+
+  <xsl:output method="xml"
+              encoding="UTF-8"/>
+
+  <xsl:param name="columns">3</xsl:param>
+  <xsl:param name="seqoffset">0</xsl:param>
+  <xsl:param name="shotwords"/>
+  <xsl:param name="viewmode"/>
+
+  <xsl:template match="storyboard">
+    <html>
+      <head>
+        <title><xsl:value-of select="@title"/></title>
+        <link rel="stylesheet"
+              href="chrome://celtx/content/editors/storyboard.css"
+              type="text/css"/>
+      </head>
+      <body edit="true">
+        <div id="dropshadow"
+             hidden="true"/>
+        <xsl:apply-templates select="sequence"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="sequence">
+    <xsl:variable name="seqnum" select="position() + $seqoffset"/>
+    <xsl:variable name="colwidth" select="floor(100 div $columns)"/>
+    <xsl:variable name="numshots" select="count(shot)"/>
+    <div class="sequence"
+         seqnum="{$seqnum}">
+      <xsl:if test="$viewmode = 'both'">
+        <xsl:attribute name="pagebreak">after</xsl:attribute>
+      </xsl:if>
+      <div class="seqheader">
+        <input type="button"
+               cx:action="deletesequence"
+               value="&deleteItemCmd.label;"
+               style="float: right;"/>
+        <xsl:value-of select="$seqnum"/>.
+        <input type="text"
+               value="{@title}"
+               class="editonly"/>
+        <span class="viewonly">
+          <xsl:value-of select="@title"/>
+        </span>
+        <br style="clear: both;"/>
+      </div>
+      <table>
+        <colgroup span="{$columns}"
+                  width="{$colwidth}%"/>
+        <tbody>
+          <xsl:for-each select="shot[position() mod $columns = 1]">
+            <tr>
+              <xsl:if test="$viewmode = 'both'">
+                <xsl:attribute name="pagebreak">after</xsl:attribute>
+              </xsl:if>
+              <xsl:apply-templates select=".">
+                <xsl:with-param name="seqnum"
+                                select="$seqnum"/>
+                <xsl:with-param name="colnum"
+                                select="1"/>
+                <xsl:with-param name="shotnum"
+                                select="(position() - 1) * $columns + 1"/>
+              </xsl:apply-templates>
+            </tr>
+          </xsl:for-each>
+        </tbody>
+      </table>
+      <div class="seqfooter">
+        <input type="button"
+               cx:action="addshot"
+               value="&addShot.label;"
+               style="float: right;"/>
+        <br style="clear: both;"/>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="shot">
+    <xsl:param name="seqnum"/>
+    <xsl:param name="colnum"/>
+    <xsl:param name="shotnum"/>
+    <td valign="top">
+      <div class="shotcell"
+           seqnum="{$seqnum}"
+           shotnum="{$shotnum}">
+        <div class="shotnumber">
+          <img class="deleteshot editonly selectiononly"
+               src="chrome://celtx/skin/sb_delete.png"
+               cx:action="deleteshot"
+               alt="&deleteItemCmd.label;"
+               style="float: right;" />
+          <xsl:value-of select="$seqnum"/>
+          <xsl:text>.</xsl:text>
+          <xsl:value-of select="$shotnum"/>
+          <xsl:text> </xsl:text>
+          <select class="editonly">
+            <option value=""/>
+            <xsl:call-template name="shotoption">
+              <xsl:with-param name="words"
+                              select="$shotwords"/>
+              <xsl:with-param name="selected"
+                              select="@shottype"/>
+            </xsl:call-template>
+          </select>
+          <span class="viewonly">
+            <xsl:value-of select="@shottype"/>
+          </span>
+        </div>
+        <textarea rows="5"
+                  class="editonly"
+                  onfocus="window.passEvent(event);">
+          <xsl:value-of select="@title"/>
+        </textarea>
+        <p class="viewonly">
+          <xsl:value-of select="@title"/>
+        </p>
+        <xsl:if test="$viewmode = 'images' or $viewmode = 'both'">
+          <div class="imgcontainer"
+               style="position: relative;">
+            <div class="selectiontoolbar selectiononly">
+              <img class="deleteshot"
+                   src="chrome://celtx/skin/sb_delete.png"
+                   cx:action="deleteimage"
+                   cx:target="image"
+                   alt="&deleteItemCmd.label;"/>
+            </div>
+            <center>
+              <xsl:choose>
+                <xsl:when test="@thumbnail and @thumbnail != ''">
+                  <img src="{@thumbnail}"
+                       class="shotimg"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <div class="shotimg addcontainer">
+                    <div class="editonly addlabel" cx:action="addimage">
+                      [ &addImage.label; ]
+                    </div>
+                  </div>
+                </xsl:otherwise>
+              </xsl:choose>
+            </center>
+          </div>
+        </xsl:if>
+        <xsl:if test="$viewmode = 'setups' or $viewmode = 'both'">
+          <div class="imgcontainer"
+               style="position: relative;">
+            <div class="selectiontoolbar selectiononly">
+              <img class="deleteshot"
+                   src="chrome://celtx/skin/sb_delete.png"
+                   cx:action="deleteimage"
+                   cx:target="setup"
+                   alt="&deleteItemCmd.label;"/>
+            </div>
+            <center>
+              <svg:svg class="shotimg"
+                       viewBox="0 0 1000 1000"
+                       cx:setupres="{@setupres}" />
+            </center>
+          </div>
+        </xsl:if>
+      </div>
+    </td>
+    <xsl:if test="$colnum &lt; $columns">
+      <xsl:variable name="nextshot"
+                    select="following-sibling::shot[position() = 1]"/>
+      <xsl:if test="$nextshot">
+        <xsl:apply-templates select="$nextshot">
+          <xsl:with-param name="seqnum"
+                          select="$seqnum"/>
+          <xsl:with-param name="colnum"
+                          select="$colnum + 1"/>
+          <xsl:with-param name="shotnum"
+                          select="$shotnum + 1"/>
+        </xsl:apply-templates>
+      </xsl:if>
+      <xsl:if test="not($nextshot)">
+        <xsl:call-template name="filler">
+          <xsl:with-param name="colnum"
+                          select="$colnum + 1"/>
+        </xsl:call-template>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="shotoption">
+    <xsl:param name="words"/>
+    <xsl:param name="selected"/>
+    <xsl:variable name="head"
+                  select="substring-before($words, '|')"/>
+    <xsl:variable name="tail"
+                  select="substring-after($words, '|')"/>
+    <xsl:if test="$head != ''">
+      <xsl:choose>
+        <xsl:when test="$selected = $head or $selected = ''">
+          <option value="{$head}" selected="true">
+            <xsl:value-of select="$head"/>
+          </option>
+          <xsl:call-template name="shotoption">
+            <xsl:with-param name="words" select="$tail"/>
+            <xsl:with-param name="selected" select="$head"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <option value="{$head}">
+            <xsl:value-of select="$head"/>
+          </option>
+          <xsl:call-template name="shotoption">
+            <xsl:with-param name="words" select="$tail"/>
+            <xsl:with-param name="selected" select="$selected"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="filler">
+    <xsl:param name="colnum"/>
+    <td><xsl:text> </xsl:text></td>
+    <xsl:if test="$colnum &lt; $columns">
+      <xsl:call-template name="filler">
+        <xsl:with-param name="colnum"
+                        select="$colnum + 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+</xsl:stylesheet>

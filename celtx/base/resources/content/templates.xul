@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE window [
+#include celtx-entities.inc
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/templates.css" type="text/css"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="templatewindow"
+        title="&appName;"
+        windowtype="celtx:splash"
+        onload="loaded()">
+
+#include celtx-scripts.inc
+
+  <script src="chrome://celtx/content/templates.js"
+          type="application/x-javascript"/>
+  <script type="application/x-javascript">
+  <![CDATA[
+var gWindow = new Object();
+var gSelectedItem = null;
+var gIgnoreClicks = false;
+
+
+var gNetworkObserver = {
+  QueryInterface: function (iid) {
+    if (iid.Equals(Components.interfaces.nsISupports) ||
+        iid.Equals(Components.interfaces.nsIObserver))
+      return this;
+    throw Components.results.NS_ERROR_NO_INTERFACE;
+  },
+
+  observe: function (subject, topic, data) {
+    if (topic == "celtx:network-status-changed") {
+      var obsvc = getObserverService();
+      obsvc.removeObserver(this, "celtx:network-status-changed");
+      if (data == "online") {
+        getCeltxService().checkAutoLogin(window);
+        fetchNetworkItems();
+      }
+    }
+  }
+};
+
+
+function loaded () {
+  gApp.init();
+  window.controllers.appendController(gApp);
+
+  try {
+    populateTemplates();
+  }
+  catch (ex) { dump("*** populateTemplates: " + ex + "\n"); }
+
+  try {
+    populateSamples();
+  }
+  catch (ex) { dump("*** populateSamples: " + ex + "\n"); }
+
+  try {
+    populateRecentProjects();
+  }
+  catch (ex) { dump("*** populateRecentProjects: " + ex + "\n"); }
+
+  if (document.getElementById("projectlist").childNodes.length == 0)
+    showSamples();
+  var cxsvc = getCeltxService();
+  if (cxsvc.offline) {
+    var obsvc = getObserverService();
+    obsvc.addObserver(gNetworkObserver, "celtx:network-status-changed", false);
+  }
+  else {
+    getCeltxService().checkAutoLogin(window);
+    fetchNetworkItems();
+  }
+}
+
+
+function fetchNetworkItems () {
+  var INav = Components.interfaces.nsIWebNavigation;
+  var cxsvc = getCeltxService();
+
+  var nav = document.getElementById("notifier").webNavigation;
+  nav.loadURI(cxsvc.SPLASH_URL, INav.LOAD_FLAGS_BYPASS_CACHE,
+    null, null, null);
+
+  nav = document.getElementById("powbox").webNavigation;
+  nav.loadURI(cxsvc.POW_URL, INav.LOAD_FLAGS_BYPASS_CACHE,
+    null, null, null);
+}
+
+
+function accept () {
+  if (gIgnoreClicks)
+    return;
+
+  if (! gSelectedItem) {
+    dump("*** accept: No selected item\n");
+    return;
+  }
+
+  var fileuri = gSelectedItem.getAttribute("value");
+  var file = fileURLToFile(fileuri);
+  if (! file.exists()) {
+    var ps = getPromptService();
+    ps.alert(window, gApp.getText("ProjectNotFoundTitle"),
+      gApp.getText("ProjectNotFoundMsg", [ file.path ]));
+    document.getElementById("projectlist").selectedItem = null;
+    document.getElementById("templatelist").selectedItem = null;
+    gSelectedItem.parentNode.removeChild(gSelectedItem);
+    gSelectedItem = null;
+    removeFromRecentProjects(file.persistentDescriptor);
+    return;
+  }
+
+  gIgnoreClicks = true;
+
+  var projwin = gApp.findProjectWindowByFile(file);
+  if (projwin)
+    projwin.focus();
+  else if (window.opener && ! window.opener.closed &&
+      ("loadProject" in window.opener) && ! window.opener.gProject)
+    window.opener.loadProject(fileuri);
+  else
+    window.openDialog(Cx.CONTENT_PATH, "_blank", Cx.NEW_WINDOW_FLAGS,
+      fileuri);
+
+  setTimeout(closeTemplateWindow, 0);
+}
+
+
+function closeTemplateWindow () {
+  window.controllers.removeController(gApp);
+  close();
+}
+
+
+function cancel (shouldClose) {
+  var ww = getWindowMediator();
+  var windows = getWindowMediator().getXULWindowEnumerator("celtx:main");
+  if (! windows.hasMoreElements())
+    goQuitApplication();
+  else if (shouldClose)
+    setTimeout(closeTemplateWindow, 0);
+}
+
+
+function template_open () {
+  if (gApp.openProject())
+    setTimeout(closeTemplateWindow, 0);
+}
+
+
+function template_download () {
+  gApp.openStudioProject();
+}
+
+
+function projectSelected (event) {
+  document.getElementById("templatelist").selectedItem = null;
+  gSelectedItem = document.getElementById("projectlist").selectedItem;
+  if (gSelectedItem)
+    accept();
+}
+
+
+function templateSelected (event, listbox) {
+  if (event.target.getAttribute("class") == "deletebtn")
+    return;
+  document.getElementById("projectlist").selectedItem = null;
+  if (listbox.id == "templatelist")
+    document.getElementById("samplelist").selectedItem = null;
+  else
+    document.getElementById("templatelist").selectedItem = null;
+  gSelectedItem = listbox.selectedItem;
+  if (gSelectedItem)
+    accept();
+}
+
+
+function templateClicked (event) {
+  var node = event.target;
+  while (node) {
+    if (node.className == "projectitem")
+      break;
+    node = node.parentNode;
+  }
+  if (node == gSelectedItem)
+    return;
+  if (gSelectedItem)
+    gSelectedItem.removeAttribute("selected");
+  if (node) {
+    gSelectedItem = node;
+    gSelectedItem.setAttribute("selected", "true");
+    gWindow.openbutton.disabled = false;
+  }
+  else {
+    gSelectedItem = null;
+    gWindow.openbutton.disabled = true;
+  }
+}
+
+
+function templateDblClicked (event) {
+  if (gSelectedItem)
+    accept();
+}
+
+
+/*
+ * Extract the project title from a project.rdf file. This is just here to
+ * handle old projects, before the switch to single file format, that are
+ * still in the recent projects list.
+ * @param projfile  a project.rdf file
+ * @type string
+ * @return the name of the project
+ */
+function titleForProjectFile (projfile) {
+  var rdfsvc = getRDFService();
+  var ds = rdfsvc.GetDataSourceBlocking(fileToFileURL(projfile));
+  var typearc = rdfsvc.GetResource(Cx.NS_RDF + "type");
+  var projtype = rdfsvc.GetResource(Cx.NS_CX + "Project");
+  var titlearc = rdfsvc.GetResource(Cx.NS_DC + "title");
+  var project = ds.GetSource(typearc, projtype, true);
+  if (! project)
+    return null;
+  return getRDFString(ds, project, titlearc);
+}
+
+
+function populateRecentProjects () {
+  var rdfsvc = getRDFService();
+  var titlearc = rdfsvc.GetResource(Cx.NS_DC + "title");
+
+  gProjMgr.purgeMissingRecentProjects();
+  var projects = gProjMgr.recentProjects.toArray();
+
+  var listbox = document.getElementById("projectlist");
+  var IRes = Components.interfaces.nsIRDFResource;
+  var ILit = Components.interfaces.nsIRDFLiteral;
+  for (var i = 0; i < projects.length; i++) {
+    var filedesc = projects[i].QueryInterface(ILit).Value;
+    var file = Components.classes["@mozilla.org/file/local;1"]
+      .createInstance(Components.interfaces.nsILocalFile);
+    try {
+      file.persistentDescriptor = filedesc;
+    }
+    catch (ex) {
+      continue;
+    }
+
+    var item = document.createElement("richlistitem");
+    item.setAttribute("class", "projectitem");
+    item.setAttribute("align", "center");
+    item.setAttribute("pack", "start");
+    item.setAttribute("orient", "horizontal");
+    item.setAttribute("value", fileToFileURL(file));
+    var image = document.createElement("image");
+    image.setAttribute("src", "chrome://celtx/skin/splash/projectIcon.png");
+    item.appendChild(image);
+    var label = document.createElement("description");
+    label.setAttribute("crop", "end");
+    label.setAttribute("flex", "1");
+    var title = file.leafName;
+    if (title == "project.rdf") {
+      title = titleForProjectFile(file);
+      if (! title)
+        continue;
+    }
+    label.appendChild(document.createTextNode(title));
+    item.appendChild(label);
+
+    listbox.appendChild(item);
+  }
+}
+
+
+function deleteSelectedTemplate () {
+  var item = document.getElementById("templatelist").selectedItem;
+  var title = item.getAttribute("name");
+  var ps = getPromptService();
+  if (document.getElementById("templatelist").childNodes.length == 1) {
+    ps.alert(window, gApp.getText("DeleteTemplate"),
+      gApp.getText("CantDeleteLastTemplate"));
+    return;
+  }
+  if (! ps.confirm(window, gApp.getText("DeleteTemplate"),
+      gApp.getText("DeleteTemplatePrompt", [ title ]))) {
+    gSelectedItem = null;
+    document.getElementById("templatelist").selectedItem = null;
+    return;
+  }
+  var file = fileURLToFile(item.getAttribute("value"));
+  file.remove(false);
+  item.parentNode.removeChild(item);
+}
+
+
+function populateTemplates () {
+  var tmpllist = getTemplateList();
+  var listbox = document.getElementById("templatelist");
+  for (var i = 0; i < tmpllist.length; ++i) {
+    var info = null;
+    try {
+      info = getTemplateInfo(tmpllist[i]);
+    }
+    catch (ex) {
+      dump("*** getTemplateInfo failed for " + tmpllist[i].leafName
+        + ": " + ex + "\n");
+      continue;
+    }
+    var item = document.createElement("richlistitem");
+    item.setAttribute("class", "projectitem");
+    item.setAttribute("align", "center");
+    item.setAttribute("pack", "start");
+    item.setAttribute("orient", "horizontal");
+    item.setAttribute("value", info.fileuri);
+    item.setAttribute("name", info.title);
+    var image = document.createElement("image");
+    if (info.iconuri)
+      image.setAttribute("src", info.iconuri);
+    else
+      image.setAttribute("src", "chrome://celtx/skin/splash/customIcon.png");
+    item.appendChild(image);
+    var label = document.createElement("label");
+    label.setAttribute("flex", "1");
+    label.setAttribute("crop", "end");
+    label.appendChild(document.createTextNode(info.title));
+    item.appendChild(label);
+    var delbtn = document.createElement("toolbarbutton");
+    delbtn.setAttribute("class", "deletebtn");
+    delbtn.setAttribute("oncommand", "deleteSelectedTemplate()");
+    item.appendChild(delbtn);
+
+    listbox.appendChild(item);
+  }
+}
+
+
+function populateSamples () {
+  var tmpllist = getSampleList();
+  var listbox = document.getElementById("samplelist");
+  for (var i = 0; i < tmpllist.length; ++i) {
+    var info = null;
+    try {
+      info = getTemplateInfo(tmpllist[i]);
+    }
+    catch (ex) {
+      dump("*** getTemplateInfo failed for " + tmpllist[i].leafName
+        + ": " + ex + "\n");
+      continue;
+    }
+    var item = document.createElement("richlistitem");
+    item.setAttribute("class", "projectitem");
+    item.setAttribute("align", "center");
+    item.setAttribute("pack", "start");
+    item.setAttribute("orient", "horizontal");
+    item.setAttribute("value", info.fileuri);
+    item.setAttribute("name", info.title);
+    var image = document.createElement("image");
+    if (info.iconuri)
+      image.setAttribute("src", info.iconuri);
+    else
+      image.setAttribute("src", "chrome://celtx/skin/splash/projectIcon.png");
+    item.appendChild(image);
+    var label = document.createElement("label");
+    label.setAttribute("flex", "1");
+    label.setAttribute("crop", "end");
+    label.appendChild(document.createTextNode(info.title));
+    item.appendChild(label);
+
+    listbox.appendChild(item);
+  }
+}
+
+
+function showSamples () {
+  document.getElementById("recentbox").collapsed = true;
+  document.getElementById("samplebox").collapsed = false;
+}
+
+
+function showRecent () {
+  document.getElementById("samplebox").collapsed = true;
+  document.getElementById("recentbox").collapsed = false;
+}
+  ]]>
+  </script>
+
+#ifdef XP_MACOSX
+<menubar id="main-menubar" statusbar="statusbar-display"
+       style="border:0px;padding:0px;margin:0px;-moz-appearance:none">
+  <menu id="file-menu"
+        hidden="true"
+        label="&fileMenu.label;"
+        accesskey="&fileMenu.accesskey;">
+    <menupopup id="menu_FilePopup">
+      <menuitem id="aboutName"
+                accesskey="&aboutCmd.accesskey;"
+                label="&aboutCmd.label;"
+                hidden="true"
+                oncommand="gApp.showAboutDialog();"/>
+      <menuitem id="menu_FileQuitItem"
+                label="&quitApplicationCmd.label;"
+                accesskey="&quitApplicationCmd.accesskey;"
+                oncommand="goQuitApplication()"/>
+    </menupopup>
+  </menu>
+</menubar>
+#endif
+<vbox>
+  <hbox id="banner">
+    <titlebar flex="1" pack="end" align="end">
+      <label class="byLine" value="&celtxTagline.label;"/>
+    </titlebar>
+    <vbox pack="start" align="end">
+      <toolbarbutton class="hoverclosebtn"
+                     label="X"
+                     oncommand="cancel(true)"/>
+    </vbox>
+  </hbox>
+  <hbox class="listgroup"
+        flex="1">
+    <vbox class="listcolumn"
+          flex="1">
+      <label class="projectlistheader"
+             value="&projectTemplates.label;"/>
+      <richlistbox id="templatelist"
+                   class="projectlist"
+                   flex="1"
+                   onclick="templateSelected(event, this)"/>
+    </vbox>
+    <vbox class="listcolumn"
+          flex="1">
+      <vbox id="recentbox"
+            flex="1">
+        <hbox class="projectlistheader">
+          <label value="&recentProjects.label;"
+                 flex="1"/>
+          <label class="text-link"
+                 value="&samples.label;"
+                 onclick="showSamples()"/>
+        </hbox>
+        <richlistbox id="projectlist"
+                     class="projectlist"
+                     flex="1"
+                     onclick="projectSelected(event)"/>
+      </vbox>
+      <vbox id="samplebox"
+            flex="1"
+            collapsed="true">
+        <hbox class="projectlistheader">
+          <label value="&sampleProjects.label;"
+                 flex="1"/>
+          <label class="text-link"
+                 value="&recent.label;"
+                 onclick="showRecent()"/>
+        </hbox>
+        <richlistbox id="samplelist"
+                     class="projectlist"
+                     flex="1"
+                     onclick="templateSelected(event, this)"/>
+      </vbox>
+      <hbox pack="end">
+#ifdef XP_MACOSX
+        <toolbarbutton class="minibutton"
+#else
+        <button
+#endif
+                       label="&openFromStudio.label;"
+                       oncommand="template_download()"/>
+#ifdef XP_MACOSX
+        <toolbarbutton class="minibutton"
+#else
+        <button
+#endif
+                       label="&browseCmd.label;"
+                       oncommand="template_open()"/>
+      </hbox>
+      <iframe id="powbox"
+              src="about:blank"/>
+    </vbox>
+  </hbox>
+  <iframe id="notifier"/>
+  <!--
+  <hbox align="center" pack="end">
+    <button label="&closeCmd.label;"
+            oncommand="cancel(true)"/>
+  </hbox>
+  -->
+</vbox>
+</window>

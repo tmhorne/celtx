@@ -1,0 +1,392 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+<!ENTITY mainWindow.title  "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier  "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator  " - ">
+
+<!ENTITY tabCmd.label  "Uusi välilehti">
+<!ENTITY tabCmd.accesskey  "v">
+<!ENTITY tabCmd.commandkey  "t">
+<!ENTITY openLocationCmd.label  "Avaa sijainti…">
+<!ENTITY openLocationCmd.accesskey  "A">
+<!ENTITY openFileCmd.label  "Avaa tiedosto…">
+<!ENTITY openFileCmd.accesskey  "d">
+<!ENTITY openFileCmd.commandkey  "o">
+<!ENTITY printSetupCmd.label  "Sivun asetukset…">
+<!ENTITY printSetupCmd.accesskey  "e">
+<!ENTITY printPreviewCmd.label  "Tulostuksen esikatselu">
+<!ENTITY printPreviewCmd.accesskey  "k">
+<!ENTITY printCmd.label  "Tulosta…">
+<!ENTITY printCmd.accesskey  "o">
+<!ENTITY printCmd.commandkey  "p">
+<!ENTITY import.label  "Tuo…">
+<!ENTITY import.accesskey  "T">
+
+<!ENTITY goOfflineCmd.label  "Työskentele yhteydettömässä tilassa">
+<!ENTITY goOfflineCmd.accesskey  "y">
+
+<!ENTITY navbarCmd.label  "Navigointipalkki">
+<!ENTITY navbarCmd.accesskey  "N">
+<!ENTITY personalbarCmd.label  "Kirjanmerkkipalkki">
+<!ENTITY personalbarCmd.accesskey  "K">
+<!ENTITY bookmarksToolbarItem.label  "Kirjanmerkkipalkin linkit">
+<!ENTITY taskbarCmd.label  "Tilarivi">
+<!ENTITY taskbarCmd.accesskey  "r">
+
+<!ENTITY pageSourceCmd.label  "Sivun lähdekoodi">
+<!ENTITY pageSourceCmd.accesskey  "n">
+<!ENTITY pageSourceCmd.commandkey  "u">
+<!ENTITY pageInfoCmd.label  "Tietoja sivusta">
+<!ENTITY pageInfoCmd.accesskey  "T">
+<!ENTITY pageInfoCmd.commandkey  "i">
+<!ENTITY fullScreenCmd.label  "Kokoruututila">
+<!ENTITY fullScreenCmd.accesskey  "K">
+
+<!ENTITY fullScreenMinimize.tooltip  "Pienennä ikkuna">
+<!ENTITY fullScreenRestore.tooltip  "Palauta">
+<!ENTITY fullScreenClose.tooltip  "Sulje">
+<!ENTITY fullScreenAutohide.label "Piilota työkalupalkit">
+<!ENTITY fullScreenAutohide.accesskey "P">
+<!ENTITY fullScreenExit.label "Poistu kokoruututilasta">
+<!ENTITY fullScreenExit.accesskey "o">
+
+<!ENTITY closeWindow.label  "Sulje ikkuna">
+<!ENTITY closeWindow.accesskey "i">
+
+<!ENTITY bookmarksMenu.label  "Kirjanmerkit">
+<!ENTITY bookmarksMenu.accesskey  "K">
+<!ENTITY bookmarkThisPageCmd.label "Lisää sivu kirjanmerkkeihin">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Tilaa sivu">
+<!ENTITY subscribeToPageMenuitem.label "Tilaa sivu…">
+<!ENTITY addCurPagesCmd.label "Lisää välilehdet kirjanmerkkeihin…">
+<!ENTITY organizeBookmarks.label "Järjestele kirjanmerkkejä…">
+<!ENTITY bookmarkAllCmd.label "Lisää välilehdet kirjanmerkkeihin…">
+
+<!ENTITY backCmd.label                 "Edellinen">
+<!ENTITY backCmd.accesskey             "E">
+<!ENTITY backButton.tooltip            "Siirry sivu taaksepäin">
+<!ENTITY forwardCmd.label              "Seuraava">
+<!ENTITY forwardCmd.accesskey          "S">
+<!ENTITY forwardButton.tooltip         "Siirry sivu eteenpäin">
+<!ENTITY backForwardMenu.tooltip      "Viime aikoina avattuja sivuja">
+<!ENTITY reloadCmd.label               "Päivitä">
+<!ENTITY reloadCmd.accesskey           "ä">
+<!ENTITY reloadButton.tooltip          "Päivitä avoin sivu">
+<!ENTITY stopCmd.label                 "Pysäytä">
+<!ENTITY stopCmd.accesskey             "y">
+<!ENTITY stopCmd.macCommandKey         ".">
+<!ENTITY stopButton.tooltip            "Lopeta sivun lataus">
+<!ENTITY goEndCap.tooltip             "Siirry osoitepalkissa olevaan osoitteeseen">
+<!ENTITY printButton.label             "Tulosta">
+<!ENTITY printButton.tooltip           "Tulosta sivu">
+
+<!ENTITY locationItem.title            "Osoite">
+<!ENTITY searchItem.title              "Etsi">
+<!ENTITY throbberItem.title            "Toimintaindikaattori">
+<!ENTITY bookmarksItem.title           "Kirjanmerkit">
+
+<!-- Toolbar items --> 
+<!ENTITY  homeButton.label             "Aloitussivu">
+
+<!ENTITY bookmarksButton.label           "Kirjanmerkit">
+<!ENTITY bookmarksButton.tooltip         "Näytä kirjanmerkit">
+<!ENTITY bookmarksSidebarCmd.accesskey   "K">
+<!ENTITY bookmarksSidebarCmd.commandkey  "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey  "i">
+
+<!ENTITY historyButton.label             "Sivuhistoria">
+<!ENTITY historyButton.tooltip           "Näytä sivuhistoria">
+<!ENTITY historySidebarCmd.accesskey     "H">
+<!ENTITY historySidebarCmd.commandKey    "h">
+
+<!ENTITY toolsMenu.label               "Työkalut">
+<!ENTITY toolsMenu.accesskey           "y">
+
+<!ENTITY keywordfield.label            "Lisää pikakomento tälle haulle…">
+<!ENTITY keywordfield.accesskey        "L">
+<!ENTITY search.label                  "Verkkohaku">
+<!ENTITY search.accesskey              "k">
+<!ENTITY downloads.label               "Lataukset">
+<!ENTITY downloads.tooltip             "Näytä latausikkuna">
+<!ENTITY downloads.accesskey           "L">
+<!ENTITY downloads.commandkey          "j">
+<!ENTITY downloadsUnix.commandkey      "y">
+<!ENTITY addons.label                 "Lisäosat">
+<!ENTITY addons.tooltip               "Listaa ja muokkaa asennettuja lisäosia">
+<!ENTITY addons.accesskey             "o">
+
+<!ENTITY errorConsoleCmd.label    "Virhekonsoli">
+<!ENTITY errorConsoleCmd.accesskey  "V">
+<!ENTITY errorConsoleCmd.commandkey   "j">
+
+<!ENTITY fileMenu.label          "Tiedosto">
+<!ENTITY fileMenu.accesskey        "T">
+<!ENTITY newNavigatorCmd.label         "Uusi ikkuna">
+<!ENTITY newNavigatorCmd.key         "N">
+<!ENTITY newNavigatorCmd.accesskey       "U">
+
+<!ENTITY editMenu.label          "Muokkaa">
+<!ENTITY editMenu.accesskey        "M">
+<!ENTITY undoCmd.label             "Kumoa">
+<!ENTITY undoCmd.key             "Z">
+<!ENTITY undoCmd.accesskey           "m">
+<!ENTITY redoCmd.label             "Tee uudelleen">
+<!ENTITY redoCmd.key             "Y">
+<!ENTITY redoCmd.accesskey           "T">
+<!ENTITY cutCmd.label            "Leikkaa">
+<!ENTITY cutCmd.key              "X">
+<!ENTITY cutCmd.accesskey          "L">
+<!ENTITY copyCmd.label             "Kopioi">
+<!ENTITY copyCmd.key             "C">
+<!ENTITY copyCmd.accesskey           "K">
+<!ENTITY pasteCmd.label            "Liitä">
+<!ENTITY pasteCmd.key            "V">
+<!ENTITY pasteCmd.accesskey          "i">
+<!ENTITY deleteCmd.label           "Poista">
+<!ENTITY deleteCmd.key             "D">
+<!ENTITY deleteCmd.accesskey         "o">
+<!ENTITY selectAllCmd.label          "Valitse kaikki">
+<!ENTITY selectAllCmd.key          "A">
+<!ENTITY selectAllCmd.accesskey        "V">
+<!ENTITY preferencesCmd.label        "Asetukset…">
+<!ENTITY preferencesCmd.accesskey      "A">
+<!ENTITY preferencesCmdUnix.label        "Asetukset">
+<!ENTITY preferencesCmdUnix.accesskey      "A">
+
+<!ENTITY clearPrivateDataCmd.label            "Poista yksityisyystietoja">
+<!ENTITY clearPrivateDataCmd.accesskey        "y">
+
+<!ENTITY viewMenu.label          "Näytä">
+<!ENTITY viewMenu.accesskey        "N">
+<!ENTITY viewToolbarsMenu.label        "Työkalupalkit">
+<!ENTITY viewToolbarsMenu.accesskey      "T">
+<!ENTITY viewSidebarMenu.label  "Sivupaneeli">
+<!ENTITY viewSidebarMenu.accesskey  "p">
+<!ENTITY viewCustomizeToolbar.label        "Muokkaa…">
+<!ENTITY viewCustomizeToolbar.accesskey      "M">
+
+<!ENTITY historyMenu.label "Sivuhistoria">
+<!ENTITY historyMenu.accesskey "S">
+<!ENTITY historyUndoMenu.label "Suljetut välilehdet">
+
+<!ENTITY historyHomeCmd.label "Aloitussivu">
+<!ENTITY showAllHistoryCmd2.label "Näytä sivuhistoria">
+<!ENTITY showAllHistoryCmd.commandkey "H">
+
+<!ENTITY openCmd.commandkey            "l">
+<!ENTITY urlbar.emptyText             "Etsi kirjanmerkeistä ja sivuhistoriasta">
+<!ENTITY urlbar.accesskey              "d">
+
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+<!ENTITY searchFocus.commandkey        "k">
+<!ENTITY searchFocus.commandkey2       "e">
+<!ENTITY searchFocusUnix.commandkey    "j">
+
+<!ENTITY openLinkCmd.label             "Avaa uuteen ikkunaan">
+<!ENTITY openLinkCmd.accesskey         "i">
+<!ENTITY openLinkCmdInTab.label        "Avaa uuteen välilehteen">
+<!ENTITY openLinkCmdInTab.accesskey    "v">
+<!ENTITY openFrameCmd.label            "Avaa kehys uuteen ikkunaan">
+<!ENTITY openFrameCmd.accesskey        "A">
+<!ENTITY openFrameCmdInTab.label       "Avaa kehys uuteen välilehteen">
+<!ENTITY openFrameCmdInTab.accesskey   "v">
+<!ENTITY showOnlyThisFrameCmd.label      "Näytä vain tämä kehys">
+<!ENTITY showOnlyThisFrameCmd.accesskey  "N">
+<!ENTITY reloadCmd.commandkey          "r">
+<!ENTITY reloadFrameCmd.label          "Päivitä kehys">
+<!ENTITY reloadFrameCmd.accesskey      "ä">
+<!ENTITY viewPartialSourceForSelectionCmd.label  "Näytä valinnan lähdekoodi">
+<!ENTITY viewPartialSourceForMathMLCmd.label     "Näytä MathML-lähdekoodi">
+<!ENTITY viewPartialSourceCmd.accesskey  "n">
+<!ENTITY viewPageSourceCmd.label       "Näytä sivun lähdekoodi">
+<!ENTITY viewPageSourceCmd.accesskey   "k">
+<!ENTITY viewFrameSourceCmd.label      "Näytä kehyksen lähdekoodi">
+<!ENTITY viewFrameSourceCmd.accesskey  "ä">
+<!ENTITY viewPageInfoCmd.label         "Näytä sivun tiedot">
+<!ENTITY viewPageInfoCmd.accesskey     "o">
+<!ENTITY viewFrameInfoCmd.label        "Näytä kehyksen tiedot">
+<!ENTITY viewFrameInfoCmd.accesskey    "o">
+<!ENTITY showImageCmd.label           "Lataa kuva">
+<!ENTITY showImageCmd.accesskey       "L">
+<!ENTITY viewImageCmd.label            "Näytä kuva">
+<!ENTITY viewImageCmd.accesskey        "N">
+<!ENTITY viewBGImageCmd.label          "Näytä taustakuva">
+<!ENTITY viewBGImageCmd.accesskey      "a">
+<!ENTITY setDesktopBackgroundCmd.label       "Aseta työpöydän taustakuvaksi…">
+<!ENTITY setDesktopBackgroundCmd.accesskey   "A">
+<!ENTITY bookmarkPageCmd2.label       "Lisää sivu kirjanmerkkeihin">
+<!ENTITY bookmarkPageCmd2.accesskey   "A">
+<!ENTITY bookmarkThisLinkCmd.label      "Lisää kohde kirjanmerkkeihin">
+<!ENTITY bookmarkThisLinkCmd.accesskey  "A">
+<!ENTITY bookmarkThisFrameCmd.label      "Lisää kehyssivu kirjanmerkkeihin">
+<!ENTITY bookmarkThisFrameCmd.accesskey  "A">
+<!ENTITY sendPageCmd.label             "Postita linkki…">
+<!ENTITY sendPageCmd.accesskey         "P">
+<!ENTITY savePageCmd.label             "Tallenna sivu nimellä…">
+<!ENTITY savePageCmd.accesskey         "n">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2       "s">
+<!ENTITY savePageCmd.commandkey        "s">
+<!ENTITY saveFrameCmd.label            "Tallenna kehys nimellä…">
+<!ENTITY saveFrameCmd.accesskey        "T">
+<!ENTITY printFrameCmd.label          "Tulosta kehys…">
+<!ENTITY printFrameCmd.accesskey      "u">
+<!ENTITY saveLinkCmd.label             "Tallenna kohde levylle…">
+<!ENTITY saveLinkCmd.accesskey         "T">
+<!ENTITY sendLinkCmd.label             "Postita linkki…">
+<!ENTITY sendLinkCmd.accesskey         "P">
+<!ENTITY saveImageCmd.label            "Tallenna kuva nimellä…">
+<!ENTITY saveImageCmd.accesskey        "k">
+<!ENTITY sendImageCmd.label            "Postita kuva…">
+<!ENTITY sendImageCmd.accesskey        "s">
+<!ENTITY copyLinkCmd.label             "Kopioi linkin osoite">
+<!ENTITY copyLinkCmd.accesskey         "K">
+<!ENTITY copyLinkTextCmd.label        "Kopioi linkkiteksti">
+<!ENTITY copyLinkTextCmd.accesskey    "i">
+<!ENTITY copyImageCmd.label            "Kopioi kuvan osoite">
+<!ENTITY copyImageCmd.accesskey        "p">
+<!ENTITY copyImageContentsCmd.label    "Kopioi kuva">
+<!ENTITY copyImageContentsCmd.accesskey   "u">
+<!ENTITY blockImageCmd.accesskey        "E">
+<!ENTITY metadataCmd.label             "Ominaisuudet">
+<!ENTITY metadataCmd.accesskey         "O">
+<!ENTITY copyEmailCmd.label            "Kopioi sähköpostiosoite">
+<!ENTITY copyEmailCmd.accesskey        "s">
+<!ENTITY thisFrameMenu.label               "Tämä kehys">
+<!ENTITY thisFrameMenu.accesskey           "ä">
+
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+<!ENTITY fullZoomEnlargeCmd.label       "Suurenna">
+<!ENTITY fullZoomEnlargeCmd.accesskey   "S">
+<!ENTITY fullZoomEnlargeCmd.commandkey  "+">
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "="> <!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label        "Pienennä">
+<!ENTITY fullZoomReduceCmd.accesskey    "P">
+<!ENTITY fullZoomReduceCmd.commandkey   "-">
+<!ENTITY fullZoomReduceCmd.commandkey2  "">
+
+<!ENTITY fullZoomResetCmd.label         "Palauta">
+<!ENTITY fullZoomResetCmd.accesskey     "a">
+<!ENTITY fullZoomResetCmd.commandkey    "0">
+<!ENTITY fullZoomResetCmd.commandkey2   "">
+
+<!ENTITY fullZoomToggleCmd.label        "Muuta vain tekstin kokoa">
+<!ENTITY fullZoomToggleCmd.accesskey    "M">
+<!ENTITY fullZoom.label                 "Sivun suurennus">
+<!ENTITY fullZoom.accesskey             "S">
+
+<!ENTITY newTabButton.tooltip            "Avaa uusi välilehti">
+<!ENTITY newWindowButton.tooltip         "Avaa uusi ikkuna">
+<!ENTITY sidebarCloseButton.tooltip      "Sulje sivupaneeli">
+
+<!ENTITY cutButton.tooltip               "Leikkaa">
+<!ENTITY copyButton.tooltip              "Kopioi">
+<!ENTITY pasteButton.tooltip             "Liitä">
+
+<!ENTITY quitApplicationCmdWin.label        "Lopeta">
+<!ENTITY quitApplicationCmdWin.accesskey    "L">
+<!ENTITY goBackCmd.commandKey  "Ö">
+<!ENTITY goForwardCmd.commandKey  "Ä">
+<!ENTITY quitApplicationCmd.label        "Lopeta">
+<!ENTITY quitApplicationCmd.accesskey    "L">
+<!ENTITY quitApplicationCmdMac.label    "Lopeta &brandShortName;">
+<!ENTITY quitApplicationCmdMac.key      "Q">
+
+<!ENTITY closeCmd.label                  "Sulje">
+<!ENTITY closeCmd.key                    "W">
+<!ENTITY closeCmd.accesskey              "S">
+
+<!ENTITY pageStyleMenu.label  "Sivun tyylit">
+<!ENTITY pageStyleMenu.accesskey  "v">
+<!ENTITY pageStyleNoStyle.label  "Ei tyylimäärittelyjä">
+<!ENTITY pageStyleNoStyle.accesskey  "E">
+<!ENTITY pageStylePersistentOnly.label  "Oletustyyli">
+<!ENTITY pageStylePersistentOnly.accesskey  "O">
+
+<!ENTITY pageReportIcon.tooltip             "Muuta tämän sivuston ponnahdusikkuna-asetuksia">
+
+<!ENTITY allowPopups.accesskey  "S">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label  "Muokkaa ponnahdusikkunoiden eston asetuksia…">
+<!ENTITY editPopupSettings.label  "Muokkaa ponnahdusikkunoiden eston asetuksia…">
+<!ENTITY editPopupSettings.accesskey  "M">
+<!ENTITY dontShowMessage.accesskey  "Ä">
+
+<!ENTITY bidiSwitchPageDirectionItem.label         "Vaihda sivun suuntaa">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey     "V">
+<!ENTITY bidiSwitchTextDirectionItem.label         "Vaihda tekstin suuntaa">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey     "a">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey    "X">
+
+<!ENTITY findOnCmd.label      "Etsi tältä sivulta…">
+<!ENTITY findOnCmd.accesskey  "E">
+<!ENTITY findOnCmd.commandkey  "f">
+<!ENTITY findAgainCmd.label   "Etsi seuraava">
+<!ENTITY findAgainCmd.accesskey  "s">
+<!ENTITY findAgainCmd.commandkey  "g">
+<!ENTITY findAgainCmd.commandkey2  "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Hae sanastoja…">
+<!ENTITY spellAddDictionaries.accesskey "H">
+
+<!ENTITY editBookmark.done.label                     "Valmis">
+<!ENTITY editBookmark.cancel.label                   "Peruuta">
+<!ENTITY editBookmark.removeBookmark.label           "Poista kirjanmerkki">
+<!ENTITY editBookmark.removeBookmark.accessKey       "P">
+<!ENTITY editBookmark.undo.label                     "Kumoa">
+<!ENTITY editBookmark.undo.accessKey                 "K">
+<!ENTITY editBookmark.edit.label                     "Muokkaa…">
+<!ENTITY editBookmark.edit.accessKey                 "M">
+
+<!ENTITY identity.unverifiedsite2 "Tähän verkkosivustoon ei liity identiteettitietoja.">
+<!ENTITY identity.connectedTo "Yhteys muodostettu verkkosivustoon">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "Sivustoa hallinnoi">
+
+<!ENTITY identity.moreInfoLinkText "Lisätietoja…">
+
+<!ENTITY downloadMonitor2.tooltip "Avaa latausikkuna napsauttamalla hiirellä">

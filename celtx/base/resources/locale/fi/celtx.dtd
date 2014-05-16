@@ -1,0 +1,978 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Sähköposti">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC Options">
+<!ENTITY bbc.showTitle.label "Title of Show">
+<!ENTITY bbc.sketchTitle.label "Title of Sketch">
+<!ENTITY editText.title "Edit Text">
+<!ENTITY sketch.fillColour.tooltip "Fill Colour">
+<!ENTITY sketch.group.tooltip "Group">
+<!ENTITY sketch.lower.tooltip "Lower">
+<!ENTITY sketch.lowerToBottom.tooltip "Lower to Bottom">
+<!ENTITY sketch.raise.tooltip "Raise">
+<!ENTITY sketch.raiseToTop.tooltip "Raise to Top">
+<!ENTITY sketch.strokeColour.tooltip "Stroke Colour">
+<!ENTITY sketch.ungroup.tooltip "Ungroup">
+
+<!ENTITY custom.label "Custom">
+<!ENTITY saveAsPreset.label "Save as Preset">
+<!ENTITY sceneLocking.title "Scene Locking">
+<!ENTITY sceneNumbering.label "Scene Numbering">
+<!ENTITY scenenumber.after.label "After">
+<!ENTITY scenenumber.before.label "Before">
+<!ENTITY scenenumber.example.label "Example">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Number">
+<!ENTITY scenenumber.position.label "Position">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Reset All Numbers">
+<!ENTITY scenenumber.suffix.label "Suffix">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "Elokuva">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "Teatteri">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Lisää kuva">
+<!ENTITY addPaletteObjects.label "Hanki kuvituspaketteja">
+<!ENTITY addShot.label "Lisää otos">
+<!ENTITY bbcCueStyle.label "BBC merkki">
+<!ENTITY bbcSceneStyle.label "BBC kohtaus">
+<!ENTITY bdc.cameras "Kamerat">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Sininen">
+<!ENTITY colour.cherry "Kirsikka">
+<!ENTITY colour.gold "Kulta">
+<!ENTITY colour.green "Vihreä">
+<!ENTITY colour.pink "Vaaleanpunainen">
+<!ENTITY colour.salmon "Lohenpunainen">
+<!ENTITY colour.white "Valkoinen">
+<!ENTITY colour.yellow "Keltainen">
+<!ENTITY currentRevision.label "Nykyinen tarkistusversio">
+<!ENTITY createNewRevision.tooltip "Luo uusi tarkistusversio">
+<!ENTITY default.label "Vakio">
+<!ENTITY enableSceneLocking.label "Lukitse kohtaukset">
+<!ENTITY fixNumbers.label "Korjaa">
+<!ENTITY furniture.label "Huonekalu">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Valonheitin">
+<!ENTITY light.spot.label "Kohdevalo">
+<!ENTITY linesBetweenScenes.label "Kohtausten väliset repliikit">
+<!ENTITY man.label "Mies">
+<!ENTITY numbers.bothNos "Molemmat #t">
+<!ENTITY numbers.leftNo "Vasen #">
+<!ENTITY numbers.none "Ei mikään">
+<!ENTITY numbers.rightNo "Oikea #">
+<!ENTITY omitScene.label "Hylkää kohtaus">
+<!ENTITY palette.label "Paletti">
+<!ENTITY palettes.label "Paletit">
+<!ENTITY paletteTree.tooltip "Vedä ja pudota kohteita luonnokseesi">
+<!ENTITY people.label "Ihmiset">
+<!ENTITY person.label "Henkilö">
+<!ENTITY preventEditing.label "Tekstin lukitus">
+<!ENTITY resetRevisionMode.label "Nollaa tarkistusversiotila">
+<!ENTITY revisionColour.desc "Tätä käytetään vakiovärinä kaikkiin käsikirjoitukseen tehtäviin muutoksiin tarkastusversiossa.">
+<!ENTITY revisionColour.label "Tarkistusversioväri">
+<!ENTITY revisionMarks.all "Kaikki merkinnät">
+<!ENTITY revisionMarks.current "Nykyiset merkinnät">
+<!ENTITY revisionMarks.hide "Piilota merkinnät">
+<!ENTITY revisionMarks.mark.label "Merkintä">
+<!ENTITY revisionMarks.unmark.label "Poista merkintä">
+<!ENTITY revisionMode.label "Tarkistusversiotila">
+<!ENTITY revisionName.label "Tarkistusversion nimi">
+<!ENTITY revisionOptions.title "Tarkistusversio vaihtoehdot">
+<!ENTITY shotSetup.label "Luonnos">
+<!ENTITY shotSetup.desc "Lisää luonnos projektiisi.">
+<!ENTITY showScriptHeader.label "Näytä käsikirjoituksen otsikko">
+<!ENTITY standard.label "Normaali">
+<!ENTITY startNewRevision.label "Aloita uusi tarkistus">
+<!ENTITY storyboard.showImages.label "Näytä kuvat">
+<!ENTITY storyboard.showSetups.label "Näytä luonnokset">
+<!ENTITY storyboard.showBoth.label "Näytä molemmat">
+<!ENTITY woman.label "Nainen">
+
+<!ENTITY light.bank.label "Bank-valaisin">
+<!ENTITY bathtub.label "Kylpyamme">
+<!ENTITY boy.label "Poika">
+<!ENTITY car.label "Auto">
+<!ENTITY chair.label "Tuoli">
+<!ENTITY coffeetable.label "Kahvipöytä">
+<!ENTITY couch.label "Sohva">
+<!ENTITY crowd.label "Väkijoukko">
+<!ENTITY endtable.label "Apupöytä">
+<!ENTITY girl.label "Tyttö">
+<!ENTITY group.label "Ryhmä"> <!-- ihmisryhmä -->
+<!ENTITY house.label "Talo">
+<!ENTITY building.label "Rakennus"> <!-- esim. toimistorakennus -->
+<!ENTITY pickuptruck.label "Lava-auto">
+<!ENTITY sink.label "Lavuaari"> <!-- Tiskiallas -->
+<!ENTITY spotlight.label "Kohdevalo">
+<!ENTITY street.label "Katu">
+<!ENTITY toilet.label "Vessa">
+<!ENTITY tree.label "Puu">
+<!ENTITY van.label "Pakettiauto">
+<!ENTITY videocamera.label "Videokamera">
+
+<!ENTITY createTemplate.label "Luo mallipohja">
+<!ENTITY fetchingList.label "Noutolista">
+<!ENTITY getCeltxTools.label "Hanki Celtx Tools">
+<!ENTITY myStudio.label "Minun Celtx">
+<!ENTITY openFromStudio.label "Avaa Celtx">
+<!ENTITY owner.label "Omistaja">
+<!ENTITY personal.label "Henkilökohtainen">
+<!ENTITY saveCommentCheckbox.label "Pyydä kommenttia kun tallennan Celtx.">
+<!ENTITY saveToStudio.label "Tallenna Celtx">
+<!ENTITY savedBy.label "Tallentanut">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx -tunnistautuminen">
+<!ENTITY studioAuthDialog.desc "Celtx -kirjautuminen">
+<!ENTITY studioProjects.label "Celtx projektit">
+<!ENTITY toolbox.label "Työkalut">
+
+<!ENTITY access.label "Pääsy">
+<!ENTITY actorProfile.desc "Lisää kuvaus näyttelijästä.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Sovita">
+<!ENTITY add.label "Lisää">
+<!ENTITY addCardCmd.label "Lisää kortti">
+<!ENTITY addCmd.label "&add.label;">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Yksityiskohdat">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Valitse">
+<!ENTITY addFolder.label "Lisää kansio...">
+<!ENTITY addFolderCmd.label "Lisää kansio">
+<!ENTITY addImages.label "Lisää kuvia">
+<!ENTITY addItem.label "Lisää merkintä...">
+<!ENTITY addItemCmd.label "Lisää">
+<!ENTITY addNote.label "Lisää muistilappu">
+<!ENTITY addSequenceCmd.toolbarlabel "Lisää tapahtumasarja">
+<!ENTITY advanced.label "Kehittynyt">
+<!ENTITY alignCenter.label "Keskitä">
+<!ENTITY alignJustified.label "Tasaa molemmat reunat">
+<!ENTITY alignLeft.label "Tasaa vasemmalle">
+<!ENTITY alignRight.label "Tasaa oikealle">
+<!ENTITY allShootDays.label "Kaikki kuvauspäivät">
+<!ENTITY allUppercase.label "KAIKKI">
+<!ENTITY american.label "Amerikkalainen">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Nämä ominaisuudet ovat käyttettävissä vain PDF-tiedostojen luomisessa.">
+<!ENTITY audioplay.desc "Lisää kuunnelmakäsikirjoitus projektiisi.">
+<!ENTITY audioplay.label "Kuunnelma">
+<!ENTITY authDialog.description "Tämä toiminto vaati kirjautumistasi Celtx-tilille">
+<!ENTITY authDialog.title "Celtx-todistus">
+<!ENTITY author.label "Tekijä">
+<!ENTITY autoCharContinueds.label "Näytä hahmojen jatkuvuudet">
+<!ENTITY autoSaveProject.label "Automaattinen tallennus">
+<!ENTITY autoparenthesize.label "Luo parenthetical kun kirjoitat '(' ">
+<!ENTITY avScript.desc "Lisää audio-visuaalinen käsikirjoitus projektiisi.">
+<!ENTITY avScript.label "A/V käsikirjoitus">
+<!ENTITY basedOn.label "Perustuu:">
+<!ENTITY bdc.actor        "Näyttelijä">
+<!ENTITY bdc.addlabour "Lisätyövoima">
+<!ENTITY bdc.animals "Eläimet">
+<!ENTITY bdc.camera "Kamera">
+<!ENTITY bdc.cast "Näyttelijät">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "Rakentaminen">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "Elektroniikka">
+<!ENTITY bdc.equip "Erityisvarusteet">
+<!ENTITY bdc.extras "Extrat">
+<!ENTITY bdc.greenery "Kasvisto">
+<!ENTITY bdc.hair "Hiukset">
+<!ENTITY bdc.handler "Eläinten käsittelijä">
+<!ENTITY bdc.lights "Valaistus">
+<!ENTITY bdc.livestock "Karja">
+<!ENTITY bdc.location "Sijainti">
+<!ENTITY bdc.makeup "Meikki">
+<!ENTITY bdc.mechfx "Mekaaniset tehosteet">
+<!ENTITY bdc.misc "Sekalaiset">
+<!ENTITY bdc.music "Musiikki">
+<!ENTITY bdc.opticalfx "Visuaaliset tehosteet">
+<!ENTITY bdc.painting "Maalaus">
+<!ENTITY bdc.prodnotes "Tuotantomuistio">
+<!ENTITY bdc.props "Lavasteet">
+<!ENTITY bdc.security "Turvallisuus">
+<!ENTITY bdc.set "Kuvauspaikka">
+<!ENTITY bdc.setdressing "Kuvauspaikan muokkaus">
+<!ENTITY bdc.sound "Äänet">
+<!ENTITY bdc.soundfx "Äänitehosteet">
+<!ENTITY bdc.specialfx "Erikoistehosteet">
+<!ENTITY bdc.storyboard "Kuvakäsikirjoitus">
+<!ENTITY bdc.stunts "Stuntit">
+<!ENTITY bdc.vehicles "Ajoneuvot">
+<!ENTITY bdc.wardrobe "Vaatekaappi">
+<!ENTITY bdc.weapons "Aseet">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Lihavoitu">
+<!ENTITY bookmark.desc "Lisää www-linkki.">
+<!ENTITY bookmark.label "Kirjanmerkki">
+<!ENTITY both.label "Molemmat">
+<!ENTITY bottomOfPage.label "Sivun loppu">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Lisää erittely -tietoja käsikirjotukseen.">
+<!ENTITY breakdown.label    "Erittely">
+<!ENTITY breakdownReport.label "Erittelyraportti">
+<!ENTITY brokenSceneEventWarning.label "Tapahtuma liittyy kohtaukseen, jota ei ole enää olemassa.">
+<!ENTITY browseCmd.label "Selaa">
+<!ENTITY byline.label "Tekijä:">
+<!ENTITY calendar.desc "Lisää kalenteri projektiisi.">
+<!ENTITY calendar.label "Kalenteri">
+<!ENTITY callSheet.label "Kuvausaikataulu">
+<!ENTITY cast.label "Henkilöt">
+<!ENTITY castOfCharacters.label "Henkilöluettelo">
+<!ENTITY catalog.desc "Lisää tuotannossa tarvittavien asioiden luettelo projektiisi.">
+<!ENTITY catalog.label "Luettelo">
+<!ENTITY catalogAddItem.tooltip "Lisää kohde luetteloon">
+<!ENTITY catalogDeleteItem.tooltip "Poista kohde luettelosta">
+<!ENTITY categories.label "Kategoriat">
+<!ENTITY category.label "Kategoria">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; Tili...">
+<!ENTITY celtxError.title "Celtx-virhe">
+<!ENTITY celtxTagline.label "Tarina on tärkein.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Yleiskatsaus hahmoihin ja hahmojen suhteisiin keskenään.">
+<!ENTITY charOutline.label "Hahmoluonnos">
+<!ENTITY character.label "Hahmot">
+<!ENTITY characterProfile.desc "Lisää kuvaus uudelle hahmolle.">
+<!ENTITY characterProfile.existing "Voit myös kuvailla jo olemassa olevaa hahmoa listasta alapuolella.">
+<!ENTITY characterProfile.label "Hahmo">
+<!ENTITY characterProfile.select "Valitse hahmo">
+<!ENTITY characters.label "Hahmot">
+<!ENTITY clearCmd.label "Tyhjennä">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Luo käsikirjoitus sarjakuvakirjalle.">
+<!ENTITY comicBook.label "Sarjakuvakirja">
+<!ENTITY comment.label "Kommentoi">
+<!ENTITY completed.label "Valmis">
+<!ENTITY contact.label "Ota yhteys">
+<!ENTITY contactInformation.label "Yhteystiedot">
+<!ENTITY contactName.label "Kontaktin nimi">
+<!ENTITY contacts.label "Yhteystiedot">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Jatka">
+<!ENTITY copyProject.title "Kopioi projekti nimellä">
+<!ENTITY copyProjectCmd.label "Kopioi projekti">
+<!ENTITY copyright.label "Tekijänoikeus">
+<!ENTITY create.label "Luo">
+<!ENTITY createAccount.label "Luo tili">
+<!ENTITY createCatalogFromSelection.label "Luo luettelo valinnasta">
+<!ENTITY createProject.label  "Luo projekti">
+<!ENTITY createProject.title "Luo projekti">
+<!ENTITY createdCol.label "Tehty">
+<!ENTITY creatorCol.label "Tekijä">
+<!ENTITY crew.desc "Lisää henkilökunta dokumentti.">
+<!ENTITY crew.label "Henkilökunta">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Päivämäärä">
+<!ENTITY datePicker.label "Päivämäärän valitsin">
+<!ENTITY daynightHeader.label "P/Y">
+<!ENTITY daynightWarning.label "Kohtauksen otsikointi ei lopu oikealla Päivä/Yö-sanalla. Korjataksesi ongelman, muokkaa kohtauksen otsikointia käsikirjoituksessa tai muokkaa Päivä/Yö-sanalistaa in the Script tab of the Preferences dialog.">
+<!ENTITY daynightWords.label "Päivä/Yö-sanat">
+<!ENTITY dayoff.label "Vapaapäivä">
+<!ENTITY daysOff.label "Vapaapäivä">
+<!ENTITY decreaseDelayCmd.tooltip "Vähennä viivettä.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Pienennä fontin kokoa">
+<!ENTITY decreaseIndentCmd.label "Vähennä sisennystä">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Kohtauksen oletuspituus">
+<!ENTITY delayLabel.tooltip "Lisää viivettä (sekunteja) kuvien välillä">
+<!ENTITY deleteCardCmd.label "Poista kortti">
+<!ENTITY deleteItem.label "Poista">
+<!ENTITY deleteItemCmd.label "Poista">
+<!ENTITY deleteItemCmd.label "Poista">
+<!ENTITY department.label "Lokero">
+<!ENTITY description.label "Kuvaus">
+<!ENTITY details.label "Yksityiskohdat">
+<!ENTITY dialog.label "Dialogi">
+<!ENTITY director.label "Ohjaaja">
+<!ENTITY disabled.label "Estetty">
+<!ENTITY displayMedia.label "Näytä media">
+<!ENTITY downloadProjectCmd.label "Lataa projekti...">
+<!ENTITY downloadProjectCmd.label "Lataa projekti...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Lataa">
+<!ENTITY downloadProjectCmd.toolbarlabel "Lataa">
+<!ENTITY downloadingPDF.label "Muunnetaan &gt; PDF...">
+<!ENTITY dragToSchedule.tooltip "Klikkaa hiirellä ja raahaa aikatauluun.">
+<!ENTITY dualDialogCmd.label "Kaksoisdialogi">
+<!ENTITY dualDialogCmd.tooltip "Kaksoisdialogi">
+<!ENTITY duplicate.label "Monista">
+<!ENTITY duplicateItemCmd.label "Tee kopio">
+<!ENTITY edit.label "Muokkaa">
+<!ENTITY editDates.label "Muokkaa päivämääriä">
+<!ENTITY editProfile.label "Muokkaa Online-profiiliasi">
+<!ENTITY editSceneDialog.title "Muokkaa kohtauksen vuoropuhelua">
+<!ENTITY editTitlePageCmd.label "Muokkaa otsikkosivua...">
+<!ENTITY editlabel.tooltip "Muokkaa">
+<!ENTITY eighths.label "Kahdeksasosat">
+<!ENTITY eighthsSuffix.label "8">
+<!ENTITY element.label "Elementti">
+<!ENTITY elements.label "Elementit">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Tätä käytetään aktiivisten Celtx-käyttäjien määrän laskemiseksi. Henkilö tai projekti -tietoja ei välitetä eteenpäin prosessin aikana.">
+<!ENTITY enableStats.label    "Salli Celtx-palvelimen yhteyksien testaus käynnistyksen yhteydessä.">
+<!ENTITY enableStats.label "Lähetä käyttäjätilastot Celtx-kehittäjille.">
+<!ENTITY enabled.label "Sallittu">
+<!ENTITY end.label "Loppu">
+<!ENTITY endOfShooting.label "Kuvaukset päättyvät">
+<!ENTITY enterEmbedTagPrompt.label "Luo EMBED tai OBJECT merkki tähän:">
+<!ENTITY eventDetails.label "Tapahtuman yksityiskohdat">
+<!ENTITY every15Minutes.label "Joka 15. minuutti">
+<!ENTITY every30Minutes.label "Joka 30. minuutti">
+<!ENTITY every5Minutes.label "Joka 5. minuutti">
+<!ENTITY everyHour.label "Joka tunti">
+<!ENTITY everyMinute.label "Joka minuutti">
+<!ENTITY exportList "Vie lista">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Vie käsikirjoitus...">
+<!ENTITY externalFile.desc "Lisää mikä tahansa olemassa oleva tiedosto projektiisi.">
+<!ENTITY externalFile.label "Tiedosto">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "Lisää elokuvakäsikirjoitus.">
+<!ENTITY filmScript.label "Käsikirjoitus">
+<!ENTITY filter.label "Suodatin">
+<!ENTITY findAllCharacters.label "Lisää hahmoja luetteloon">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Etsi">
+<!ENTITY findPreviousCmd.label "Etsi edellinen">
+<!ENTITY findPreviousCmd.label "Etsi edellinen">
+<!ENTITY findTab.label "Etsi">
+<!ENTITY folder.label "Kansio">
+<!ENTITY forceOverwrite.label "Korvaa jos versio palvelimella on uudempi">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Osoite">
+<!ENTITY form.affectEvent "Kuinka tapahtuma vaikuttaa juoneen?">
+<!ENTITY form.age "Ikä">
+<!ENTITY form.alternate "Vaihtoehtoinen nimi">
+<!ENTITY form.antag "antagonisti">
+<!ENTITY form.antagWho "Kuka on antagonisti tässä kohtauksessa?">
+<!ENTITY form.availability "Saatavuus">
+<!ENTITY form.bestFriend "parhaat ystävät">
+<!ENTITY form.borrow "Lainata">
+<!ENTITY form.build "Rakenna">
+<!ENTITY form.buy "Osta">
+<!ENTITY form.catalyst "katalysaattori">
+<!ENTITY form.cell "Matkapuhelinnumero">
+<!ENTITY form.centralEvent "Mikä on tämän kohtauksen keskeisin tapahtuma?">
+<!ENTITY form.charBackground "Hahmon tausta">
+<!ENTITY form.charGoal "Mikä on hahmon päämäärä?">
+<!ENTITY form.charPlan "Mikä on hahmon suunnitelma päämääränsä saavuttamiseksi?">
+<!ENTITY form.charTraits "Hahmon piirteitä">
+<!ENTITY form.character "Hahmo">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Hahmoja käyttänyt">
+<!ENTITY form.color "Väri">
+<!ENTITY form.comicRelief "koomikko">
+<!ENTITY form.comments "Kommentit">
+<!ENTITY form.confidante "uskottu">
+<!ENTITY form.contactInfo "Yhteystiedot">
+<!ENTITY form.cost "Hinta">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Päivämäärät saatavilla">
+<!ENTITY form.dateNeed "Tarvitaan päivämäärät">
+<!ENTITY form.dateReturn "Palautuspäivä">
+<!ENTITY form.description "Kuvaus">
+<!ENTITY form.details "Yksityiskohdat">
+<!ENTITY form.dislikes "Ei pidä">
+<!ENTITY form.distFeatures "Erottuvat piirteet">
+<!ENTITY form.dob "Syntymäpäivä">
+<!ENTITY form.dress "Puku">
+<!ENTITY form.education "Koulutus">
+<!ENTITY form.elevator "Hissi">
+<!ENTITY form.email "Sähköpostiosoite">
+<!ENTITY form.endDate "Päätöspäivämäärä">
+<!ENTITY form.era "Aikakausi">
+<!ENTITY form.eyes "Silmät">
+<!ENTITY form.facilityInfo "Tiedot mukavuuksista">
+<!ENTITY form.familyBack "Perhetausta">
+<!ENTITY form.fullName "Koko nimi">
+<!ENTITY form.generic "Perus">
+<!ENTITY form.genericForm "Peruskaavake">
+<!ENTITY form.habits "Tottumukset/paheet">
+<!ENTITY form.hair "Hiukset">
+<!ENTITY form.hat "Päähine">
+<!ENTITY form.height "Korkeus">
+<!ENTITY form.inScenes "Kohtaukset joissa mukana">
+<!ENTITY form.jacket "Takki">
+<!ENTITY form.jobTitle "Otsikko">
+<!ENTITY form.keyCharTraits "Avainluonteenpiirteet">
+<!ENTITY form.lightSources "Valonlähteet">
+<!ENTITY form.likes "Pitää">
+<!ENTITY form.locationMap "Sijaintikartta">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "rakkauden kohde">
+<!ENTITY form.media "Media">
+<!ENTITY form.mentor "oppi-isä">
+<!ENTITY form.motiv "Motivaatio">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Ei">
+<!ENTITY form.noise "Meluongelmat">
+<!ENTITY form.other "muu">
+<!ENTITY form.pants "Housut">
+<!ENTITY form.parking "Pysäköintitiedot">
+<!ENTITY form.partner "partneri">
+<!ENTITY form.person "Personaallisuus">
+<!ENTITY form.phone "Puhelinnumero">
+<!ENTITY form.physicalDesc "Yksityiskohtainen fyysinen kuvaus">
+<!ENTITY form.powerCapa "Sähkömahdollisuudet">
+<!ENTITY form.princFunction "Mikä on hahmon tärkein tehtävä?">
+<!ENTITY form.procure "Hankinta">
+<!ENTITY form.propProfile "Lavaste">
+<!ENTITY form.protag "protagonisti">
+<!ENTITY form.protagAntag "Protagonisti/Antagonisti">
+<!ENTITY form.protagWho "Kuka on protagonisti tässä kohtauksessa?">
+<!ENTITY form.rent "Vuokra">
+<!ENTITY form.rentalCost "Vuokran hinta">
+<!ENTITY form.role "Rooli">
+<!ENTITY form.scene "Kohtaus">
+<!ENTITY form.sceneAntagAchieve "Kuinka antagonisti saavuttaa päämääränsä?">
+<!ENTITY form.sceneAntagGoal "Mikä on antagonistin päämäärä tässä kohtauksessa?">
+<!ENTITY form.sceneChars "Ketkä hahmoista ovat tässä kohtauksessa?">
+<!ENTITY form.sceneDetails "Kohtauksen yksityiskohdat">
+<!ENTITY form.sceneMood "Millainen tunnelma kohtauksessa on?">
+<!ENTITY form.sceneProtagAchieve "Kuinka protagonisti saavuttaa päämääränsä?">
+<!ENTITY form.sceneProtagGoal "Mikä on protagonistin päämäärä tässä kohtauksessa?">
+<!ENTITY form.sceneSetting "Kohtauksen lavasteet?">
+<!ENTITY form.sceneWhen "Mikä on kohtauksen tapahtuma-aika?">
+<!ENTITY form.scenesUsed "Käytetyt kohtaukset">
+<!ENTITY form.scoutSelect "Etsiminen ja valitseminen">
+<!ENTITY form.scoutedFor "Etsitty kohtauksille">
+<!ENTITY form.scriptName "Käsikirjoituksen nimi">
+<!ENTITY form.selectedFor "Valittu kohtauksille">
+<!ENTITY form.sex "Sukupuoli">
+<!ENTITY form.shirt "Paita">
+<!ENTITY form.shoes "Kengät">
+<!ENTITY form.size "Koko">
+<!ENTITY form.squareFoot "Neliömetrit">
+<!ENTITY form.startDate "Aloituspäivämäärä">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Vaatetuksen koot">
+<!ENTITY form.washroom "Pesuhuoneiden sijainnit">
+<!ENTITY form.weight "Paino">
+<!ENTITY form.wornBy "Käyttäjä">
+<!ENTITY form.yes "Kyllä">
+<!ENTITY format.label "Muokkaa">
+<!ENTITY formatAct.label      "Näytös">
+<!ENTITY formatAction.label "Toiminta">
+<!ENTITY formatBalloon.label  "Puhekupla">
+<!ENTITY formatBalloonType.label "Puhekuplan tyyppi">
+<!ENTITY formatCaption.label  "Otsikko">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;"> <!-- max 7 chars -->
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Otsikko">
+<!ENTITY formatMusic.label    "Muokkaa musiikkia">
+<!ENTITY formatPage.label     "Sivu">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;"> <!-- max 5 chars -->
+<!ENTITY formatPanel.label    "Paneeli">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;"> <!-- max 5 chars -->
+<!ENTITY formatParen.label "Sulkumerkit">
+<!ENTITY formatProductionNote.label "Muokkaa tuotantomuistiinpanoja">
+<!ENTITY formatShot.label "Kuvaus">
+<!ENTITY formatSound.label    "Muokkaa ääntä">
+<!ENTITY formatStagedir.label "Näyttämöohjaus">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Siirtymä">
+<!ENTITY formatVoice.label    "Muokkaa puheääntä">
+<!ENTITY fourHours.label "4 tuntia">
+<!ENTITY freeAndSecure.label "Ilmainen ja turvallinen">
+<!ENTITY general.label "Yleinen">
+<!ENTITY generatePDFCmd.label "Luo PDF...">
+<!ENTITY generatePDFCmd.label "Luo PDF...">
+<!ENTITY generateReportCmd.label "Luo raportti">
+<!ENTITY generateReportCmd.toolbarlabel "Raportoi">
+<!ENTITY getProjDialog.caption "Käytettävissä olevat projektit">
+<!ENTITY getProjDialog.title "Lataa projekti">
+<!ENTITY gotoItemCmd.label "Mene">
+<!ENTITY gotoItemCmd.label "Siirry">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Lisää &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Raportoi virheestä">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Online-avustus">
+<!ENTITY icons.label "Kuvakkeet">
+<!ENTITY iconsAndText.label "Kuvakkeet ja tekstit">
+<!ENTITY image.label "Kuva">
+<!ENTITY images.label "Kuvat">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Tuo käsikirjoitus">
+<!ENTITY importScriptCmd.toolbarLabel "Tuo">
+<!ENTITY includeInWorkweek.label "Sisällytä nämä päivät työviikkoon">
+<!ENTITY includeTitlePage.label "Sisällytä otsikkosivu">
+<!ENTITY increaseDelayCmd.tooltip "Lisää viivettä.">
+<!ENTITY increaseFontSizeCmd.tooltip "Suurenna fontin kokoa">
+<!ENTITY increaseIndentCmd.label "Lisää sisennystä">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Hakemistokortin otsiko">
+<!ENTITY indexCards.label "Indeksikortit">
+<!ENTITY inlineSpellCheckCmd.label "Rivien oikeinkirjoituksen tarkastus">
+<!ENTITY insertNoteCmd.toolbarLabel "Muistiinpano">
+<!ENTITY international.label "Kansainvälinen">
+<!ENTITY intextHeader.label "S/U">
+<!ENTITY intextWarning.label "Kohtauksen otsikko ei ala oikeanlaisella SISÄ/ULKO sanalla. Korjaa ongelma muuttamalla kohtauksen otsikkoa tai SISÄ/ULKO sanalistaa Asetukset valintaikkunan Käsikirjoitus-välilehdellä.">
+<!ENTITY intextWords.label "SISÄ/ULKO sanat">
+<!ENTITY invalidLogin.label "Väärä käyttäjänimi tai salasana.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Kursivoitu">
+<!ENTITY item.label "Kirjaus">
+<!ENTITY language.label "Kieli">
+<!ENTITY left.label "Vasen">
+<!ENTITY linesPerPage.label "Rivejä per sivu">
+<!ENTITY list.label "Lista...">
+<!ENTITY location.desc "Lisää kuvaus sijainnille.">
+<!ENTITY location.label "Sijainti">
+<!ENTITY loginOnStartup.label "Kirjaudu sisään käynnistyksen yhteydessä">
+<!ENTITY lowercaseCmd.label "Pienet kirjaimet">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Media">
+<!ENTITY mediaViewer.title "Median esikatselu">
+<!ENTITY modified.label "Muokattu">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Siirrä alas">
+<!ENTITY moveUpCmd.label "Siirrä ylös">
+<!ENTITY moving.label "Muutetaan">
+<!ENTITY name.label "Nimi">
+<!ENTITY network.label "Verkko">
+<!ENTITY never.label "Ei koskaan">
+<!ENTITY newMarkupItem.label "&lt;Uusi...&gt;">
+<!ENTITY newProjectCmd.label "Uusi projekti...">
+<!ENTITY newProjectCmd.toolbarlabel "Uusi">
+<!ENTITY noFileSelected.label "&lt;tiedostoja ei ole valittu&gt;">
+<!ENTITY noImageSelected.label "Kuvia ei ole valittu">
+<!ENTITY noScriptSelected.label "Käsikirjoitusta ei ole valittu">
+<!ENTITY none.label "Ei mikään">
+<!ENTITY none.label "Tyhjä">
+<!ENTITY noteDialog.title "Muokkaa muistiinpanoa">
+<!ENTITY notes.label "Muistiinpanot">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Hahmojen lukumäärä">
+<!ENTITY numberOfScenes.label "Kohtausten lukumäärä">
+<!ENTITY oneHour.label "1 tunti">
+<!ENTITY oneLineSchedule.label "Yhden rivin aikataulu">
+<!ENTITY open.label "Avaa">
+<!ENTITY openItemCmd.label "Avaa">
+<!ENTITY openProjectCmd.label "Avaa projekti...">
+<!ENTITY openProjectCmd.label "Avaa projekti...">
+<!ENTITY openProjectCmd.toolbarlabel "Avaa">
+<!ENTITY openProjectFolder.label "Avaa projekti kansio">
+<!ENTITY openRecentCmd.label "Avaa viimeaikaisia">
+<!ENTITY options.label "Asetukset">
+<!ENTITY orderedList.label "Numeroitu luettelo">
+<!ENTITY outline.desc "Lisää asiakirja luettelomerkeillä.">
+<!ENTITY outline.label "Luonnos">
+<!ENTITY over14.label "Olen täsmälleen 14 vuotta vanha tai vanhempi.">
+<!ENTITY pageAndSceneNumbering.label "Sivu- ja kohtausnumerointi">
+<!ENTITY paperSize.label "Paperin koko">
+<!ENTITY password.label "Salasana">
+<!ENTITY passwordAgain.label "Laita salasanasi uudelleen">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "Muunnetaan &gt; PDF">
+<!ENTITY pdfErrorHeader "Hups!">
+<!ENTITY pdfErrorText1 "Sinun tulee olla online tilassa voidaksesi käyttää tätä toimintoa!">
+<!ENTITY pdfErrorText2 "Yksityinen ja suojattu. Celtx web-palvelu formatoi automaattisesti käsikirjoituksesi standardi elokuvakäsikirjoitukseksi, näyttämökäsikirjoitukseksi, kuunnelmaksi tai dialogiksi (AV).">
+<!ENTITY pdfOptions.title "PDF-asetukset">
+<!ENTITY pdfOptionsCmd.label "Lisää- ja jatkuu-merkinnät">
+<!ENTITY pdfWarningHeader "Terve!">
+<!ENTITY pdfWarningText "Yksityinen ja suojattu, tämä Celtx web-palvelu automaattisesti formatoi käsikirjoituksesi teollisuuden standardti elokuvakäsikirjoitukseksi, näyttämökäsikirjoitukseksi, kuunnelmaksi tai kaksois dialogiksi  (AV).">
+<!ENTITY picklist.label "Valintalista">
+<!ENTITY principalFunction.label "Ensisijainen tehtävä">
+<!ENTITY printBackgroundColour.label "Tulosta taustaväri">
+<!ENTITY printCardBorders.label "Tulosta kortin rajat">
+<!ENTITY printCardsDialog.title "Tulosta kortit">
+<!ENTITY printStoryboardDialog.title "Tulosta kuvakäsikirjoitus">
+<!ENTITY privacy.label "Yksityisyys">
+<!ENTITY producer.label "Tuottaja">
+<!ENTITY productionItems.label "Tuotanto">
+<!ENTITY progressDialog.title "Edistys">
+<!ENTITY project.label "Projekti">
+<!ENTITY projectItems.label "Uudet projektit sisältävät">
+<!ENTITY projectLibrary.label "Projektikirjasto">
+<!ENTITY projectProperties.label "Projektin asetukset...">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;">
+<!ENTITY projectTemplates.label "Projektin oletusmallit">
+<!ENTITY propSheet.desc "Lisää kuvaus uudelle lavasteelle.">
+<!ENTITY propSheet.existing "Voit myös kuvailla jo olemassa olevaa lavastetta listasta alapuolella.">
+<!ENTITY propSheet.label "Lavasteet">
+<!ENTITY propSheet.select "Valitse lavaste">
+<!ENTITY properties.label "Tarpeisto">
+<!ENTITY publishDialog.findUsers "Etsi käyttäjä">
+<!ENTITY publishDialog.ownerLabel "Projektin omistaja">
+<!ENTITY publishDialog.privateDesc "Yksityinen: Käyttö rajattu minuun">
+<!ENTITY publishDialog.privateLabel "Yksityinen">
+<!ENTITY publishDialog.publicDesc "Julkinen: Julkaise projekti projektikeskuksessa">
+<!ENTITY publishDialog.publicLabel "Yleinen">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Jaettu: Jaa projekti valittujen käyttäjien kanssa">
+<!ENTITY publishDialog.sharedLabel "Jakaja">
+<!ENTITY publishDialog.title "Julkaise projekti">
+<!ENTITY publishDialog.userList "Käyttäjälista">
+<!ENTITY publishMode.label "Julkaisutila">
+<!ENTITY recent.label "Viimeisimmät">
+<!ENTITY recentProjects.label "Viimeisimmät projektit">
+<!ENTITY recoverPassword.label "Palauta salasana">
+<!ENTITY recycleCmd.label "Lähetä muistilehtiölle">
+<!ENTITY regWiz.aboutThis "Tämä ohjelma kerää tarvittavat tiedot rekisteröitymiseen.">
+<!ENTITY regWiz.accountInstructions "Ole hyvä ja valitse käyttäjänimi ja salasana tilillesi &appName;.">
+<!ENTITY regWiz.accountLabel "Käyttäjätili">
+<!ENTITY regWiz.bullet1 "Etävarmuuskopiot">
+<!ENTITY regWiz.bullet2 "Yhteistyön mahdollistavat työtilat">
+<!ENTITY regWiz.bullet3 "Projektikeskuksessa julkaisu">
+<!ENTITY regWiz.bullet4 "Projektin katselu iPhonella">
+<!ENTITY regWiz.checkLabel "Tilin tietojen tarkastus">
+<!ENTITY regWiz.clickFinish "Jos olet tyytyväinen arvoihin, paina 'Valmis'-nappulaa lähettääksesi rekisteröintisi.">
+<!ENTITY regWiz.clickFinish1 "Olet nyt kirjautunut palvelimelle &appName; ja voit käyttää ilmaisia verkko-ominaisuuksia">
+<!ENTITY regWiz.clickFinish2 "Kokeile Lataa / Lataa palvelimelle -ominaisuuksia varmuuskopioidaksesi projektisi, tai jos tunnet jonkun toisen &appName;-tilin käytä projektinjakamisominaisuutta yhteistyöhön yhteisessä projektissa.">
+<!ENTITY regWiz.clickNext "Jos olet tyytyväinen arvoihin, paina 'Seuraava'-nappulaa lähettääksesi rekisteröintisi.">
+<!ENTITY regWiz.conclusion "Johtopäätös (5/5)">
+<!ENTITY regWiz.confirmIntro "Olet kirjoittanut seuraavasti:">
+<!ENTITY regWiz.confirmLabel "Hyväksy asetukset">
+<!ENTITY regWiz.createNewAccountLabel "Luo uusi tili.">
+<!ENTITY regWiz.createYourAccountLabel "Hanki oma &appName;-tilisi! (1/5)">
+<!ENTITY regWiz.emailLabel "Sähköposti:">
+<!ENTITY regWiz.finish "Loppu">
+<!ENTITY regWiz.identityInstructions "Ole hyvä ja kirjoita nimesi, yhdistyksesi ja sähköposti osoitteesi.">
+<!ENTITY regWiz.identityLabel "Henkilöllisyys">
+<!ENTITY regWiz.intro "Päästäksesi &appName;-ominaisuuksiin sinun täytyy ensin rekisteröidä &appName;-tili.">
+<!ENTITY regWiz.loginSuccessfulLabel "Kiitos, nyt olet kirjautunut ohjelmaan: &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Luo uusi tili tai käytä jo olemassa olevaa tiliä:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; tilin käyttäjänimi ja salasana ovat asiakohtaisia.">
+<!ENTITY regWiz.notePassword "Salasanasi tulee olla vähintää 5 kirjainta pitkä.">
+<!ENTITY regWiz.noteUsername "Käyttäjänimesi tulee olla vähintään 3 kirjainta pituudeltaan ja saa sisältää vain kirjaimia ja numeroita.">
+<!ENTITY regWiz.orgLabel "Yhdistys:">
+<!ENTITY regWiz.title "&appName; Rekisteröintiohjelma">
+<!ENTITY regWiz.uidLabel "&appName; Käyttäjänimi:">
+<!ENTITY regWiz.useExistingAccountLabel "Käytä jo olemassa olevaa tiliä.">
+<!ENTITY regWiz.warn "Sinun täytyy luoda &appName;-tili päästäksesi käyttämään tätä ominaisuutta.">
+<!ENTITY remove.label "Poista">
+<!ENTITY removeCmd.label "Poista">
+<!ENTITY removeMarkupCmd.label "Poista">
+<!ENTITY rename.label "Nimeä uudelleen">
+<!ENTITY renameItem.label "Nimeä uudelleen...">
+<!ENTITY replaceCmd.label "Korvaa">
+<!ENTITY reportThisBug.label "Raportoi virheestä">
+<!ENTITY reportThisBug.tooltip "Lähetä anonyymi virheraportti.">
+<!ENTITY reports.label "Raportit">
+<!ENTITY right.label "Oikea">
+<!ENTITY sampleProjects.label "Malliprojektit">
+<!ENTITY samples.label "Mallit">
+<!ENTITY saveAsHTML.label "Tallenna HTML tiedostona">
+<!ENTITY saveAsTemplate.label "Tallenna oletusmallina">
+<!ENTITY savePDFCmd.label "Tallenna PDF">
+<!ENTITY savePDFCmd.tooltip "Tallenna PDF">
+<!ENTITY saveProjectAsCmd.label "Tallenna projekti nimellä...">
+<!ENTITY saveProjectCmd.label "Tallenna projekti">
+<!ENTITY saveProjectCmd.toolbarlabel "Tallenna">
+<!ENTITY scene.label "Kohtaus">
+<!ENTITY sceneBreakdown.label "Kohtauksen erittely">
+<!ENTITY sceneBreakdownWithDesc.label "Kohtauksen erittely selostuksen kanssa">
+<!ENTITY sceneDetails.desc "Lisää kuvaus uudelle kohtaukselle.">
+<!ENTITY sceneDetails.existing "Voit myös kuvailla jo olemassa olevaa kohtausta alapuolella olevasta listasta.">
+<!ENTITY sceneDetails.label "Kohtauksen yksityiskohdat">
+<!ENTITY sceneDetails.select "Valitse kohtaus">
+<!ENTITY scenePageBreaks.label "Sivunvaihto jokaisen kohtauksen jälkeen">
+<!ENTITY sceneSummary.label "Kohtauksen yhteenveto">
+<!ENTITY sceneTag.label "Kohtauksen tuntomerkki">
+<!ENTITY sceneTagDialog.title "Valitse väri">
+<!ENTITY scenes.label "Kohtaukset">
+<!ENTITY schedule.desc      "Lisää kuvausaikataulu käsikirjoitukselle.">
+<!ENTITY schedule.label     "Aikataulu">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Tee aikataulu käsikirjoitukselle">
+<!ENTITY scheduleID.label "Aikataulun tunnus">
+<!ENTITY scheduled.label "Ajoitettu">
+<!ENTITY scratchpad.label "Muistilehtiö">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Lisää käsikirjoitus projektiisi.">
+<!ENTITY script.label "Käsikirjoitus">
+<!ENTITY scriptDay.label "Käsikirjoituspäivä">
+<!ENTITY scriptEditor.label "Käsikirjoituksen muokkaaminen">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Formaatti asetukset">
+<!ENTITY scriptHeader.label "Käsikirjoituksen otsikko">
+<!ENTITY scriptReport.desc "Automaattisesti luotu raportti.">
+<!ENTITY scriptReport.label "Käsikirjoitusraportti">
+<!ENTITY scriptReport.label "Raportti käsikirjoituksesta">
+<!ENTITY scriptWithNotes.label "Käsikirjoitus muistiinpanoilla">
+<!ENTITY selectCatalogType.label "Valitse luettelon tyyppi.">
+<!ENTITY sequence.label "Jakso">
+<!ENTITY sequences.label "Jaksot">
+<!ENTITY server.label "Palvelin">
+<!ENTITY setting.label "Asetus">
+<!ENTITY sharing.label "Jakaminen">
+<!ENTITY shootDay.label "Kuvauspäivä">
+<!ENTITY shootDays.label "Kuvauspäivät">
+<!ENTITY shootingSchedule.label "Kuvaus aikataulu">
+<!ENTITY shotList.label "Kuvattu - lista">
+<!ENTITY shotWords.label "Kuvatut sanat">
+<!ENTITY shotholder.label "Kaksoisklikkaa lisätäksesi kuva.">
+<!ENTITY showContinuedCount.label "Näytä sivunumeron laskeminen">
+<!ENTITY showDialogBreaks.label "Näytä dialogikatkot">
+<!ENTITY showFirstPageNumber.label "Näytä sivunumero ensimmäisellä sivulla">
+<!ENTITY showIDNumbers.label "Näytä ID numerot">
+<!ENTITY showNotes.label "Näytä muistiinpanot"> 
+<!ENTITY showPageNumbers.label "Pagination">
+<!ENTITY showProjectFileCmd.label "Näytä projekti tiedosto">
+<!ENTITY showSceneBreaks.label "Näytä kohtausten leikkaukset">
+<!ENTITY showSceneHeaders.label "Näytä kohtauksen otsikot">
+<!ENTITY showSceneNumbers.label "Näytä kohtausnumerot">
+<!ENTITY showScript.label "Näytä käsikirjoitus">
+<!ENTITY showTagNames.label "Näytä tuntomerkit korteissa">
+<!ENTITY showTitlePage.label "Näytä kansi sivu">
+<!ENTITY showWorkdaysOnly.label "Näytä ainoastaan työpäivät">
+<!ENTITY signIn.label "Kirjaudu">
+<!ENTITY signOut.label "Kirjaudu ulos">
+<!ENTITY signedOut.label "Uloskirjautunut">
+<!ENTITY slideshowCmd.toolbarlabel "Näytelmä">
+<!ENTITY source.label "Lähde">
+<!ENTITY spellCheckAddToDictionary.accesskey  "s">
+<!ENTITY spellCheckAddToDictionary.label  "Lisää sanastoon">
+<!ENTITY spellCheckCmd.label "Oikeinkirjoitus">
+<!ENTITY spellCheckIgnoreWord.accesskey  "h">
+<!ENTITY spellCheckIgnoreWord.label  "Ohita sana">
+<!ENTITY spellCheckNoSuggestions.label  "Ei ehdotuksia">
+<!ENTITY splash.celtxCentral      "projektikeskuskirjautuminen">
+<!ENTITY splash.celtxCentral "Celtx-keskus">
+<!ENTITY splash.celtxCentralDesc  "Käytä projektikeskusta vaihtaaksesi salasanasi tai päivittääksesi profiilisi">
+<!ENTITY splash.celtxCentralDesc "Käytä Celtx-keskusta vaihtaaksesi salasanasi tai päivittääksesi profiilisi">
+<!ENTITY splash.discussion "Keskustelu">
+<!ENTITY splash.downloadProject "Lataa projekti">
+<!ENTITY splash.downloadProjectDesc "Lataa projekti Celtx-palvelimelta">
+<!ENTITY splash.featureTour "Ominaisuuskierros">
+<!ENTITY splash.forums "Celtx-keskustelualue">
+<!ENTITY splash.forumsDesc "Liity keskusteluihin Celtx-keskustelualueella">
+<!ENTITY splash.gettingStarted "Aloittaminen">
+<!ENTITY splash.guide "Celtx-käyttäjän opas">
+<!ENTITY splash.help "Ohje">
+<!ENTITY splash.helpAccount "Luo käyttäjätili">
+<!ENTITY splash.helpAccountDesc "Luomalla tilin pääset käyttämään palvelimen sivuominaisuuksia, joihin sisältyy yhteistyö verkossa ja PDF-tiedostojen luominen">
+<!ENTITY splash.helpDesc "Vasemmalla puolella on useita linkkejä Celtx-resursseihin">
+<!ENTITY splash.helpOptions "Apua-asetukset">
+<!ENTITY splash.inbox           "Saapuneet">
+<!ENTITY splash.logIn "Kirjaudu sisään">
+<!ENTITY splash.newProject "Aloita uusi projekti">
+<!ENTITY splash.newProjectDesc "Luo uusi projekti">
+<!ENTITY splash.openProject "Avaa olemassa oleva projekti">
+<!ENTITY splash.openProjectDesc "Avaa tai lisää jo olemassa oleva projekti.">
+<!ENTITY splash.options "asetukset">
+<!ENTITY splash.projectCentral "Projektikeskus">
+<!ENTITY splash.projects "Projektit">
+<!ENTITY splash.recentProjects "viimeaikaisia projekteja">
+<!ENTITY splash.sampleDesc      "Käytimme Ihmemaa Oz -tarinaa (The Wizard of Oz) näyttääksemme Celtx-ohjelman eri ominaisuuksia. Lukuisia asiakirjoja käytetään, jotta nähtäisiin mitä tarvitaan yhden kohtauksen tuottamiseen. Tämä näyte sisältää käsikirjoituksen, hahmojen ja kohtausten yksityiskohtien lomakkeet, erittelyä ja aikataulutiedot.">
+<!ENTITY splash.sampleProject   "projektinäyte">
+<!ENTITY splash.videoWalkthrus "läpikäyntivideo">
+<!ENTITY splash.videoWalkthrusDesc "Lyhyitä video-ohjeistuksia ohjelman nopean ja vaivattoman käytön opetteluun">
+<!ENTITY splash.walkthru "3 minuutin ohjeistus">
+<!ENTITY splash.webServices "Webpalvelut">
+<!ENTITY splash.welcomePrefix "tervetuloa Celtx-ohjelmaan">
+<!ENTITY splash.welcomePrefixDesc "Mediaesituotanto">
+<!ENTITY splash.wiki "wiki-opas">
+<!ENTITY splash.wikiDesc "Lähde Celtx-ohjelman oppimiseen">
+<!ENTITY splashScreen.label "Aloitusruutu">
+<!ENTITY stackTrace.desc "Alapuolella on tietoja, jotka saattavat olla hyödyllisiä meille. Ole hyvä ja sisällytä ne, jos päätät raportoida tästä virheestä.">
+<!ENTITY stageplay.desc  "Lisää näytelmäkäsikirjoitus kansainvälisellä pohjalla.">
+<!ENTITY stageplay.label    "Näytelmä">
+<!ENTITY start.label "Aloita">
+<!ENTITY startOfDay.label "Päivä alkaa">
+<!ENTITY startOfShooting.label "Kuvausten alkaminen">
+<!ENTITY startOfWeek.label "Viikko alkaa">
+<!ENTITY statistics.label "Tilastot">
+<!ENTITY storyboard.desc    "Järjestä kuvakäsikirjoituksen kuvat kuvausjärjestykseen.">
+<!ENTITY storyboard.label   "Kuvakäsikirjoitus">
+<!ENTITY strikethrough.label "Yliviivaus">
+<!ENTITY stripboard.label "Tuotantotaulu">
+<!ENTITY subject.label "Kohde">
+<!ENTITY summary.label "Yhteenveto">
+<!ENTITY syncDialog.title "Synnkronointi">
+<!ENTITY tagItemCmd.label "Tuntomerkki">
+<!ENTITY tagline.label      "Tunnuslause">
+<!ENTITY tags.label "Tagi">
+<!ENTITY text.label "Teksti">
+<!ENTITY textDocument.desc "Lisää tekstiasiakirja. Hyödyllinen hahmottelulle, käsittelylle tai yhteenvedolle.">
+<!ENTITY textDocument.label "&text.label;">
+<!ENTITY theatreTmplActTitle "NÄYTÖS I">
+<!ENTITY theatreTmplSceneTitle "Kohtaus 1">
+<!ENTITY thirtyMinutes.label "30 minuuttia">
+<!ENTITY threeHours.label "3 tuntia">
+<!ENTITY time.label "Aika">
+<!ENTITY title.label "Nimike">
+<!ENTITY titlePage.label "Nimilehti">
+<!ENTITY titlePage.label "Otsikkosivu">
+<!ENTITY toggleEditing.label "Vaihda muokkaukseen">
+<!ENTITY togglePaginationCmd.label "Mahdollista taitto">
+<!ENTITY toggleScratchpadCmd.label "Avaa/sulje muistilehtiö">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Sivupaneeli">
+<!ENTITY topOfNextPage.label "Seuraavan sivun yläosa">
+<!ENTITY tryAgain.label "Kokeile uudelleen">
+<!ENTITY twoColumns.label "Kaksi kolumnia">
+<!ENTITY twoHours.label "2 tuntia">
+<!ENTITY typeset.label "TypeSet">
+<!ENTITY under14.label "Olen alle 14. vuoden ikäinen.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Alleviivattu">
+<!ENTITY unorderedList.label "Luettelointi">
+<!ENTITY untitled.label "Nimetön">
+<!ENTITY update.label "Päivitä">
+<!ENTITY updateInbox.label "Päivitä saapuneet">
+<!ENTITY uploadDialog.title "Julkaise projekti">
+<!ENTITY uploadProjectCmd.label "Julkaise projekti...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Julkaise">
+<!ENTITY uppercaseCmd.label "Isot kirjaimet">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Käyttäjänimi">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Video-ohjeistus">
+<!ENTITY viewProjectOnline.label "Näytä projekti verkossa">
+<!ENTITY wardrobeSheet.desc "Lisää kuvaus uudelle vaatetukselle.">
+<!ENTITY wardrobeSheet.existing "Voit myös kuvailla jo olemassa olevaa vaatetusta alapuolella olevasta listasta.">
+<!ENTITY wardrobeSheet.label "Vaatetus">
+<!ENTITY wardrobeSheet.select "Valitse vaatetus">
+<!ENTITY webPanel.desc              "Celtx-verkkopalvelut.">
+<!ENTITY webPanel.label             "Verkkopalvelut">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Luo Celtx-tili">
+<!ENTITY webPanelIntro.text1 "Parhaan hyödyn Celtx-ohjelmasta saat kirjautumalla ilmaiseen ja turvalliseen verkkopalveluun">
+<!ENTITY webPanelIntro.text2 "*Varmuuskopioi* koko projektisi suojatulle Celtx palvelimelle. Näin sinulla on kopio projektistasi turvassa mahdollisen varkauden sattuessa tai kovalevyn rikkoutuessa.">
+<!ENTITY webPanelIntro.text3 "*Tee yhteistyötä* työryhmän jäsenten kanssa jakamalla projektisi ja luomalla yksityistä projektitilaa.">
+<!ENTITY webPanelIntro.text4 "*Julkaise* mediaprojektisi Projektikeskuksessa saadaksesi arviointeja ja kommentteja ja liity maailmanlaajuiseen median luojien yhteisöömme.">
+<!ENTITY webPanelIntro.text5 "Katsele Celtx projekteja *iPhonellesi* optimoidussa muodossa.">
+<!ENTITY wiz.clickFinish "Paina 'Valmis' viimeistelläksesi tämän ohjelman.">
+<!ENTITY wiz.clickNext "Paina 'Seuraava'-nappulaa aloittaaksesi.">
+<!ENTITY workweek.label "Työviikko">
+<!ENTITY writer.label "Kirjoittaja">
+<!ENTITY zoom.label "Zoomaa">

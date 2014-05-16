@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/editors.css"
+                 type="text/css"?>
+
+<?xml-stylesheet href="chrome://celtx/skin/search/searchbox.css"
+                 type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+#include ../celtx-form.inc
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/catalogue.js"/>
+
+  <commandset id="browserContextCommandSet">
+    <command id="cmd_undo" 
+             oncommand="goDoCommand('cmd_undo')"
+             disabled="true"/>
+    <command id="cmd_redo" 
+             oncommand="goDoCommand('cmd_redo')"
+             disabled="true"/>
+    <command id="cmd_cut" 
+             oncommand="goDoCommand('cmd_cut')"
+             disabled="true"/>
+    <command id="cmd_copy" 
+             oncommand="goDoCommand('cmd_copy')"
+             disabled="true"/>
+    <command id="cmd_paste" 
+             oncommand="goDoCommand('cmd_paste')"
+             disabled="true"/>
+    <command id="cmd_delete"
+             oncommand="goDoCommand('cmd_delete')"
+             valueDefault="&deleteCmd.label;"
+             disabled="true"/>
+    <command id="cmd_selectAll"
+             oncommand="goDoCommand('cmd_selectAll')"
+             disabled="true"/>
+  </commandset>
+
+  <popup id="browserContextMenu"
+         onpopupshowing="goUpdateGlobalEditMenuItems()">
+    <menuitem id="context-undo"
+              label="&undoCmd.label;"
+              accesskey="&undoCmd.accesskey;"
+              command="cmd_undo"/>
+    <menuseparator id="context-sep-undo"/>
+    <menuitem id="context-cut"
+              label="&cutCmd.label;"
+              accesskey="&cutCmd.accesskey;"
+              command="cmd_cut"/>
+    <menuitem id="context-copy"
+              label="&copyCmd.label;"
+              accesskey="&copyCmd.accesskey;"
+              command="cmd_copy"/>
+    <menuitem id="context-paste"
+              label="&pasteCmd.label;"
+              accesskey="&pasteCmd.accesskey;"
+              command="cmd_paste"/>
+    <menuitem id="context-delete"
+              label="&deleteCmd.label;"
+              accesskey="&deleteCmd.accesskey;"
+              command="cmd_delete"/>
+    <menuseparator id="context-sep-paste"/>
+    <menuitem id="context-selectall"
+              label="&selectAllCmd.label;"
+              accesskey="&selectAllCmd.accesskey;"
+              command="cmd_selectAll"/>
+  </popup>
+
+  <menupopup id="catalogcontext"
+             onpopupshowing="gController.itemPopupShowing()">
+    <menuitem label="&open.label;"
+              oncommand="gController.openFormForSelectedItem();"/>
+    <menuitem id="ctx_createcatalog"
+              label="&createCatalogFromSelection.label;"
+              oncommand="gController.createCatalogFromSelection()"/>
+    <menuseparator/>
+    <menuitem id="ctx_remove"
+              label="&remove.label;"
+              oncommand="gController.cmdRemoveItem();"/>
+  </menupopup>
+
+  <vbox id="catalogheader"
+        flex="1">
+    <toolbar id="catalogtoolbar"
+             class="editortoolbar">
+      <toolbarbutton id="createbutton"
+                     class="library-toolbar-button
+                            library-add-button"
+                     label="&add.label;"
+                     tooltiptext="&catalogAddItem.tooltip;"
+                     oncommand="gController.cmdCreateItem(event)"/>
+      <toolbarbutton id="removebutton"
+                     class="library-toolbar-button
+                            library-remove-button"
+                     label="&remove.label;"
+                     disabled="true"
+                     tooltiptext="&catalogDeleteItem.tooltip;"
+                     oncommand="gController.cmdRemoveItem()"/>
+    <toolbarseparator id="exportseparator" />
+    <toolbarbutton id="csvexportbutton"
+                   label="&exportCatalog.label;&ellipsis;"
+                   oncommand="gController.cmdExportList();" />
+      <toolbarspacer flex="1"/>
+      <toolbaritem>
+        <searchbox id="searchbox"
+                   oncommand="gController.searchFilterChanged();"/>
+      </toolbaritem>
+    </toolbar>
+    <tree id="itemlist"
+          flex="1"
+          rows="7"
+          flags="dont-build-content"
+          seltype="multiple"
+          context="catalogcontext"
+          hidecolumnpicker="true"
+          datasources="chrome://celtx/content/schema.rdf"
+          ref=""
+          onselect="gController.itemSelected(event);"
+          ondraggesture="gController.onItemDrag(event);"
+          ondblclick="gController.openFormForSelectedItem(event);">
+      <treecols>
+        <treecol label="&name.label;"
+                 flex="1"
+                 sort="?title"
+                 sortActive="true"
+                 sortDirection="ascending"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="category_col"
+                 label="&category.label;"
+                 flex="1"
+                 sort="?catname"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="altname_col"
+                 hidden="true"
+                 label="&form.alternate;"
+                 flex="1"
+                 sort="?altname"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Generic, Prop, Scene Details, Wardrobe -->
+        <treecol id="desc_col"
+                 label="&description.label;"
+                 flex="1"
+                 sort="?description"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Character -->
+        <treecol id="fullname_col"
+                 hidden="true"
+                 label="&form.fullName;"
+                 flex="1"
+                 sort="?fullname"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Character -->
+        <treecol id="princfunc_col"
+                 hidden="true"
+                 label="&principalFunction.label;"
+                 flex="1"
+                 sort="?princfunc"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Character -->
+        <treecol id="actor_col"
+                 hidden="true"
+                 label="&bdc.actor;"
+                 flex="1"
+                 sort="?actorname"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Crew -->
+        <treecol id="jobtitle_col"
+                 hidden="true"
+                 label="&form.jobTitle;"
+                 flex="1"
+                 sort="?jobtitle"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Crew -->
+        <treecol id="jobdept_col"
+                 hidden="true"
+                 label="&department.label;"
+                 flex="1"
+                 sort="?jobdept"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Location -->
+        <treecol id="address_col"
+                 hidden="true"
+                 label="&form.address;"
+                 flex="1"
+                 sort="?address"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Location -->
+        <treecol id="contact_col"
+                 hidden="true"
+                 label="&contactName.label;"
+                 flex="1"
+                 sort="?contact"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Actor, Crew, Location -->
+        <treecol id="phone_col"
+                 hidden="true"
+                 label="&form.phone;"
+                 flex="1"
+                 sort="?phone"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Actor, Crew, Location -->
+        <treecol id="cell_col"
+                 hidden="true"
+                 label="&form.cell;"
+                 flex="1"
+                 sort="?cell"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Actor, Crew, Location -->
+        <treecol id="email_col"
+                 hidden="true"
+                 label="&form.email;"
+                 flex="1"
+                 sort="?email"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Props -->
+        <treecol id="cost_col"
+                 hidden="true"
+                 label="&form.cost;"
+                 flex="1"
+                 sort="?cost"/>
+        <splitter class="tree-splitter"/>
+        <!-- Used by: Wardrobe -->
+        <treecol id="wornby_col"
+                 hidden="true"
+                 label="&form.wornBy;"
+                 flex="1"
+                 sort="?wornby"/>
+        <splitter class="tree-splitter"/>
+        <treecol label="&tags.label;"
+                 flex="1"
+                 sort="?tags"/>
+        <treecol label="&media.label;"
+                 type="checkbox"
+                 width="60"/>
+      </treecols>
+      <template>
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <member container="?uri"
+                    child="?item"/>
+            <!-- This is used for filtering based on search text. -->
+            <triple subject="?item"
+                    predicate="&ns_cx;marked"
+                    object="true"/>
+            <triple subject="?item"
+                    predicate="&ns_rdf;type"
+                    object="?category"/>
+            <triple subject="?category"
+                    predicate="&ns_rdfs;label"
+                    object="?catname"/>
+            <triple subject="?item"
+                    predicate="&ns_dc;title"
+                    object="?title"/>
+            <triple subject="?item"
+                    predicate="&ns_cx;media"
+                    object="?mediaseq"/>
+            <member container="?mediaseq"
+                    child="?media"/>
+          </conditions>
+          <bindings>
+            <binding subject="?item"
+                     predicate="&ns_dc;description"
+                     object="?description"/>
+            <binding subject="?item"
+                     predicate="&ns_cx;tags"
+                     object="?tags"/>
+            <binding subject="?item"
+                     predicate="&ns_cx;actor"
+                     object="?actor"/>
+            <binding subject="?actor"
+                     predicate="&ns_dc;title"
+                     object="?actorname"/>
+            <!-- The predicates used here will be replaced dynamically -->
+            <binding id="fullname_pred"
+                     subject="?item"
+                     predicate="&ns_cx;full-name"
+                     object="?fullname"/>
+            <binding id="princfunc_pred"
+                     subject="?item"
+                     predicate="&ns_cx;princ_func"
+                     object="?princfunc"/>
+            <binding id="jobtitle_pred"
+                     subject="?item"
+                     predicate="&ns_cx;crewJobTitle"
+                     object="?jobtitle"/>
+            <binding id="jobdept_pred"
+                     subject="?item"
+                     predicate="&ns_cx;crewJobDept"
+                     object="?jobdept"/>
+            <binding id="address_pred"
+                     subject="?item"
+                     predicate="&ns_cx;address"
+                     object="?address"/>
+            <binding id="contact_pred"
+                     subject="?item"
+                     predicate="&ns_cx;contact-name"
+                     object="?contact"/>
+            <binding id="phone_pred"
+                     subject="?item"
+                     predicate="&ns_cx;phone"
+                     object="?phone"/>
+            <binding id="cell_pred"
+                     subject="?item"
+                     predicate="&ns_cx;cell"
+                     object="?cell"/>
+            <binding id="email_pred"
+                     subject="?item"
+                     predicate="&ns_cx;email"
+                     object="?email"/>
+            <binding id="cost_pred"
+                     subject="?item"
+                     predicate="&ns_cx;cost"
+                     object="?cost"/>
+            <binding id="wornby_pred"
+                     subject="?item"
+                     predicate="&ns_cx;character"
+                     object="?wornby"/>
+            <binding id="altname_pred"
+                     subject="?item"
+                     predicate="&ns_cx;alter-name"
+                     object="?altname"/>
+          </bindings>
+          <action>
+            <treechildren>
+              <treeitem uri="?item">
+                <treerow>
+                  <treecell label="?title"
+                            crop="none"/>
+                  <treecell label="?catname"/>
+                  <treecell label="?altname"/>
+                  <treecell label="?description"
+                            crop="end"/>
+                  <treecell label="?fullname"/>
+                  <treecell label="?princfunc"/>
+                  <treecell label="?actorname"/>
+                  <treecell label="?jobtitle"/>
+                  <treecell label="?jobdept"/>
+                  <treecell label="?address"/>
+                  <treecell label="?contact"/>
+                  <treecell label="?phone"/>
+                  <treecell label="?cell"/>
+                  <treecell label="?email"/>
+                  <treecell label="?cost"/>
+                  <treecell label="?wornby"/>
+                  <treecell label="?tags"/>
+                  <treecell properties="attachment"
+                            value="true"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <member container="?uri"
+                    child="?item"/>
+            <!-- This is used for filtering based on search text. -->
+            <triple subject="?item"
+                    predicate="&ns_cx;marked"
+                    object="true"/>
+            <triple subject="?item"
+                    predicate="&ns_rdf;type"
+                    object="?category"/>
+            <triple subject="?category"
+                    predicate="&ns_rdfs;label"
+                    object="?catname"/>
+            <triple subject="?item"
+                    predicate="&ns_dc;title"
+                    object="?title"/>
+          </conditions>
+          <bindings>
+            <binding subject="?item"
+                     predicate="&ns_dc;description"
+                     object="?description"/>
+            <binding subject="?item"
+                     predicate="&ns_cx;tags"
+                     object="?tags"/>
+            <binding subject="?item"
+                     predicate="&ns_cx;actor"
+                     object="?actor"/>
+            <binding subject="?actor"
+                     predicate="&ns_dc;title"
+                     object="?actorname"/>
+            <!-- The predicates used here will be replaced dynamically -->
+            <binding id="fullname_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;full-name"
+                     object="?fullname"/>
+            <binding id="princfunc_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;princ_func"
+                     object="?princfunc"/>
+            <binding id="jobtitle_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;crewJobTitle"
+                     object="?jobtitle"/>
+            <binding id="jobdept_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;crewJobDept"
+                     object="?jobdept"/>
+            <binding id="address_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;address"
+                     object="?address"/>
+            <binding id="contact_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;contact-name"
+                     object="?contact"/>
+            <binding id="phone_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;phone"
+                     object="?phone"/>
+            <binding id="cell_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;cell"
+                     object="?cell"/>
+            <binding id="email_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;email"
+                     object="?email"/>
+            <binding id="cost_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;cost"
+                     object="?cost"/>
+            <binding id="wornby_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;character"
+                     object="?wornby"/>
+            <binding id="altname_pred_media"
+                     subject="?item"
+                     predicate="&ns_cx;alter-name"
+                     object="?altname"/>
+          </bindings>
+          <action>
+            <treechildren>
+              <treeitem uri="?item">
+                <treerow>
+                  <treecell label="?title"
+                            crop="none"/>
+                  <treecell label="?catname"/>
+                  <treecell label="?altname"/>
+                  <treecell label="?description"
+                            crop="end"/>
+                  <treecell label="?fullname"/>
+                  <treecell label="?princfunc"/>
+                  <treecell label="?actorname"/>
+                  <treecell label="?jobtitle"/>
+                  <treecell label="?jobdept"/>
+                  <treecell label="?address"/>
+                  <treecell label="?contact"/>
+                  <treecell label="?phone"/>
+                  <treecell label="?cell"/>
+                  <treecell label="?email"/>
+                  <treecell label="?cost"/>
+                  <treecell label="?wornby"/>
+                  <treecell label="?tags"/>
+                  <treecell value="false"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+      </template>
+    </tree>
+  </vbox>
+  <splitter collapse="before"/>
+  <vbox flex="3">
+    <datasheet id="sheet"
+               flex="1"
+               type="content"
+               onload="gController.sheetReady()"
+               contextmenu="browserContextMenu"
+               src="about:blank"/>
+  </vbox>
+
+</window>

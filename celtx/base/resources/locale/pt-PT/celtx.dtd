@@ -1,0 +1,973 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "E-mail">
+
+<!ENTITY export.label "Exportar">
+<!ENTITY exportSketch.label "Exportar Sketch">
+<!ENTITY chapter.label "Capítulo">
+<!ENTITY chapters.label "Capítulos">
+<!ENTITY chapter.toolbarlabel "Cap">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Mostrar Conteúdo">
+<!ENTITY exportCatalog.label "Extrair Catálogo">
+<!ENTITY novel.desc "Adicionar história com anotações e catões de índice.">
+<!ENTITY novel.label "Novela">
+<!ENTITY showBreakdownInScript.label "Mostrar Guião em etapas.">
+<!ENTITY showDialogNumbers.label "Mostrar números de Diálogo.">
+
+<!ENTITY timer.settings.label "Definições">
+<!ENTITY timer.autostart.label "Iníciar sessão ao abrir o documento.">
+<!ENTITY timer.schedule.label "Horário">
+<!ENTITY timer.useSchedule.label "Usar pausas programadas">
+<!ENTITY timer.workMinutes.label "Trabalho (minutos):">
+<!ENTITY timer.breakMinutes.label "Pausa (minutos):">
+<!ENTITY timer.alertType.label "Tipo de alerta para iniciar/acabar pausa">
+<!ENTITY timer.showDialog.label "Mostrar um Diálogo">
+<!ENTITY timer.endSession.label "Acabar sessão">
+<!ENTITY timer.flashTimer.label "Piscar o cronômetro">
+<!ENTITY timer.resetSession.label "Restablecer Sessão">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Relatório">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Hora de Início da Sessão:">
+<!ENTITY timer.totalWritingTime.label "Tempo Total de Escrita:">
+<!ENTITY timer.totalBreakTime.label "Tempo Total de Intervalo:">
+<!ENTITY timer.totalTime.label "Tempo Total:">
+<!ENTITY timer.wordsWritten.label "Palavras Escritas">
+
+<!ENTITY timer.allSessions.label "Todas as Sessões">
+<!ENTITY timer.sessionDetail.label "Detalhe de Sessões">
+<!ENTITY timer.scriptSummary.label "Sumário do Guião">
+<!ENTITY timer.writingGoals.label "Escrever Objectivos">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Relatório de Sessão">
+<!ENTITY timer.totalSessionTime.header "Tempo Total de Sessão">
+<!ENTITY timer.totalSessionTime.label "Tempo total de sessão">
+<!ENTITY timer.totalWordsWritten.header "Total de Palavras Escritas">
+<!ENTITY timer.totalWordsWritten.label "Total de Palavras escritas">
+<!ENTITY timer.noSessionsToDisplay.label "Não existem sessões para apresentar.">
+<!ENTITY timer.sessionNo.label "Sessão #">
+<!ENTITY timer.date.label "Data">
+
+<!ENTITY timer.tweetThis.label "Tweet Isto!">
+<!ENTITY timer.startDate.label "Data de início">
+<!ENTITY timer.startTime.label "Hora de início">
+<!ENTITY timer.endTime.label "Hora de acabar">
+<!ENTITY timer.breakTime.label "Hora de pausa">
+
+<!ENTITY timer.sessionStartWords.label "Palavras ao início da sessão">
+<!ENTITY timer.sessionEndWords.label "Palavras no fim da sessão">
+<!ENTITY timer.newWords.header "Palavras Novas">
+<!ENTITY timer.noNewWords.label "A quantidade de palavras não aumentou.">
+<!ENTITY timer.newDialog.header "Diálogo Novo">
+<!ENTITY timer.noNewDialog.label "A quantidade de diálogo nao aumentou.">
+<!ENTITY timer.newCharacters.header "Personagens Novos">
+<!ENTITY timer.noNewCharacters.label "Não foram adicionados personagens novos.">
+<!ENTITY timer.newPages.header "Página Nova">
+<!ENTITY timer.newScenes.header "Cenas Novas">
+<!ENTITY timer.newPanels.header "Paineis Novos">
+<!ENTITY timer.shotWords.header "Palavras de Plano">
+<!ENTITY timer.actionWords.header "Palavras de Acção">
+<!ENTITY timer.dialogWords.header "Palavras de Diálogo">
+<!ENTITY timer.soundVoiceMusicWords.header "Palavras de Som/Voz/Música">
+<!ENTITY timer.stageDirWords.header "Palavras de encenação">
+
+<!ENTITY timer.name.label "Nome">
+<!ENTITY timer.words.label "Palavras">
+<!ENTITY timer.percentage.label "Percentagem">
+
+<!ENTITY timer.summaryReport.label "Sumário do Relatório">
+<!ENTITY timer.contributionsByAuthor.label "Contribuições por Autor">
+<!ENTITY timer.weekdaySessions.label "Sessões por Dia da Semana">
+<!ENTITY timer.weekdayWords.label "Palavras por Dia da Semana">
+<!ENTITY timer.numberOfSessions.label "Número de sessões">
+<!ENTITY timer.longest.label "Mais longa">
+<!ENTITY timer.shortest.label "Mais curta">
+<!ENTITY timer.averageDuration.label "Média da duração">
+<!ENTITY timer.mostWords.label "Maior quantidade de palavras">
+<!ENTITY timer.leastWords.label "Menor quantia de palavras">
+<!ENTITY timer.averageWords.label "Média de palavras">
+<!ENTITY timer.wordCounts.header "Contagem de Palavras">
+<!ENTITY timer.element.label "Elementos">
+<!ENTITY timer.totalWords.header "Total de Palavras">
+<!ENTITY timer.totalDialogWords.header "Total de Palavras de Diálogo">
+<!ENTITY timer.character.label "Personagem">
+<!ENTITY timer.weekday.label "Dia da Semana">
+<!ENTITY timer.sessions.label "Sessões">
+<!ENTITY timer.pctOfTotal.label "Total de &#37;">
+<!ENTITY timer.author.label "Autor">
+
+<!ENTITY timer.writingGoalReport.label "Escrever Relátorio de Objectivos">
+<!ENTITY timer.goalSession.header "Objectivo de Sessão">
+<!ENTITY timer.goalSession.label "Objectivo de sessão">
+<!ENTITY timer.goalDaily.header "Objectivo Diário">
+<!ENTITY timer.goalDaily.label "Objectivo diário">
+<!ENTITY timer.goalScript.header "Objectivo para o Guião">
+<!ENTITY timer.goalScript.label "Objectivo para o guião">
+<!ENTITY timer.wordGoal.label "Objectivo para as palavras">
+
+<!ENTITY timer.message.label "Mensagem">
+<!ENTITY timer.tags.label "Etiqueta">
+<!ENTITY timer.mostRecentSession.label "Sessão mais recente">
+
+<!ENTITY timer.alertDialog.title "Cronômetro da Sessão">
+<!ENTITY timer.timerMenu.tooltip "Carregue para Opções">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Cor do Texto">
+<!ENTITY fullscreen.backgroundColour.tooltip "Cor de Fundo">
+<!ENTITY fullscreen.fullscreen.tooltip "Encher Tela">
+
+<!ENTITY bbc.options.label "Opções BBC">
+<!ENTITY bbc.showTitle.label "Título da Série">
+<!ENTITY bbc.sketchTitle.label "Título da Sketch">
+<!ENTITY editText.title "Modificar Texto">
+<!ENTITY sketch.fillColour.tooltip "Prencher Cor">
+<!ENTITY sketch.group.tooltip "Grupo">
+<!ENTITY sketch.lower.tooltip "Baixe">
+<!ENTITY sketch.lowerToBottom.tooltip "Baixar para baixo">
+<!ENTITY sketch.raise.tooltip "Levantar">
+<!ENTITY sketch.raiseToTop.tooltip "Levantar para o topo">
+<!ENTITY sketch.strokeColour.tooltip "Cor da Linha">
+<!ENTITY sketch.ungroup.tooltip "Desagrupar">
+
+<!ENTITY custom.label "Personalizado">
+<!ENTITY saveAsPreset.label "Guardar como predefinição">
+<!ENTITY sceneLocking.title "Fechar Cena">
+<!ENTITY sceneNumbering.label "Numeração de cena">
+<!ENTITY scenenumber.after.label "Após">
+<!ENTITY scenenumber.before.label "Antes">
+<!ENTITY scenenumber.example.label "Exemplo">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Número">
+<!ENTITY scenenumber.position.label "Posição">
+<!ENTITY scenenumber.prefix.label "Prefixo">
+<!ENTITY scenenumbers.resetAll.label "Redefinir todos os Números">
+<!ENTITY scenenumber.suffix.label "Sufixo">
+<!ENTITY scenenumber.type.label "Tipo">
+<!ENTITY style.label "Estilo">
+
+<!ENTITY project.film.label "Filme">
+<!ENTITY project.av.label "Audiovisual">
+<!ENTITY project.theatre.label "Teatro">
+<!ENTITY project.audioplay.label "Peça Radiofónica">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Nova Imagem">
+<!ENTITY addPaletteObjects.label "Obter Pacotes de Arte">
+<!ENTITY addShot.label "Novo Plano">
+<!ENTITY bbcCueStyle.label "Marcação BBC">
+<!ENTITY bbcSceneStyle.label "Cena BBC">
+<!ENTITY bdc.cameras "Câmaras">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Azul">
+<!ENTITY colour.cherry "Cereja">
+<!ENTITY colour.gold "Dourado">
+<!ENTITY colour.green "Verde">
+<!ENTITY colour.pink "Rosa">
+<!ENTITY colour.salmon "Salmão">
+<!ENTITY colour.white "Branco">
+<!ENTITY colour.yellow "Amarelo">
+<!ENTITY currentRevision.label "Revisão Actual">
+<!ENTITY createNewRevision.tooltip "Criar Revisão Nova">
+<!ENTITY default.label "Padrão">
+<!ENTITY enableSceneLocking.label "Fechar Cenas">
+<!ENTITY fixNumbers.label "Reparar">
+<!ENTITY furniture.label "Mobília">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Reflector">
+<!ENTITY light.spot.label "Projector">
+<!ENTITY linesBetweenScenes.label "Linhas entre cenas">
+<!ENTITY man.label "Homem">
+<!ENTITY numbers.bothNos "Ambos os números">
+<!ENTITY numbers.leftNo "Número na esquerda">
+<!ENTITY numbers.none "Nenhum">
+<!ENTITY numbers.rightNo "Número na direita">
+<!ENTITY omitScene.label "Omitir Cena">
+<!ENTITY palette.label "Paleta">
+<!ENTITY palettes.label "Paletas">
+<!ENTITY paletteTree.tooltip "Arrastar e soltar objectos no esboço">
+<!ENTITY people.label "Gente">
+<!ENTITY person.label "Pessoa">
+<!ENTITY preventEditing.label "Fechar texto">
+<!ENTITY resetRevisionMode.label "Reiniciar Modo de Revisão">
+<!ENTITY revisionColour.desc "Esta será usada como a cor padrão de revisão para cada edição feita no argumento.">
+<!ENTITY revisionColour.label "Cor da Revisão">
+<!ENTITY revisionMarks.all "Todas as Marcas">
+<!ENTITY revisionMarks.current "Marcas Actuais">
+<!ENTITY revisionMarks.hide "Esconder Marcas">
+<!ENTITY revisionMarks.mark.label "Marcar">
+<!ENTITY revisionMarks.unmark.label "Desmarcar">
+<!ENTITY revisionMode.label "Modo de Revisão">
+<!ENTITY revisionName.label "Nome da Revisão">
+<!ENTITY revisionOptions.title "Opções de Revisão">
+<!ENTITY shotSetup.label "Esboço de Plano">
+<!ENTITY shotSetup.desc "Novo esboço de plano no projecto.">
+<!ENTITY showScriptHeader.label "Mostra Cabeçalhos do Argumento">
+<!ENTITY standard.label "Padrão">
+<!ENTITY startNewRevision.label "Iniciar uma Revisão Nova">
+<!ENTITY storyboard.showImages.label "Mostrar Imagens">
+<!ENTITY storyboard.showSetups.label "Mostrar Esboços">
+<!ENTITY storyboard.showBoth.label "Mostrar Ambos">
+<!ENTITY woman.label "Mulher">
+
+
+<!ENTITY light.bank.label "Calha de Luz">
+<!ENTITY bathtub.label "Banheira">
+<!ENTITY boy.label "Menino">
+<!ENTITY car.label "Carro">
+<!ENTITY chair.label "Cadeira">
+<!ENTITY coffeetable.label "Mesa de Café">
+<!ENTITY couch.label "Sofá">
+<!ENTITY crowd.label "Multidão">
+<!ENTITY endtable.label "Mesa de Canto">
+<!ENTITY girl.label "Menina">
+<!ENTITY group.label "Grupo"> <!-- Grupo de pessoas -->
+<!ENTITY house.label "Casa">
+<!ENTITY building.label "Edifício"> <!-- Exemplo., escritório, prédio -->
+<!ENTITY pickuptruck.label "Camioneta">
+<!ENTITY sink.label "Pia"> <!-- Lava loiça -->
+<!ENTITY spotlight.label "Luz Spot">
+<!ENTITY street.label "Rua">
+<!ENTITY toilet.label "W.C.">
+<!ENTITY tree.label "Árvore">
+<!ENTITY van.label "Carrinha">
+<!ENTITY videocamera.label "Câmara de Vídeo">
+
+<!ENTITY createTemplate.label "Criar Modelo">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "Obter Celtx Tools">
+<!ENTITY myStudio.label "Meu Celtx">
+<!ENTITY openFromStudio.label "Abrir a partir Celtx">
+<!ENTITY owner.label "Proprietário">
+<!ENTITY personal.label "Pessoal">
+<!ENTITY saveCommentCheckbox.label "Peça-me um comentário ao salvar no Celtx.">
+<!ENTITY saveToStudio.label "Salvar no Celtx">
+<!ENTITY savedBy.label "Salvo Por">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Autentificação Celtx">
+<!ENTITY studioAuthDialog.desc "Login Celtx">
+<!ENTITY studioProjects.label "Projectos Celtx">
+<!ENTITY toolbox.label "Instrumentos">
+
+<!ENTITY access.label "Acesso">
+<!ENTITY actorProfile.desc "Adicionar uma descrição para um novo actor.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Adaptar a">
+<!ENTITY add.label "Adicionar">
+<!ENTITY addCardCmd.label "Nova Ficha">
+<!ENTITY addCmd.label "Adicionar">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Detalhes do Item">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Seleccionar o Item">
+<!ENTITY addFolder.label "Nova Pasta...">
+<!ENTITY addFolderCmd.label "Nova Pasta">
+<!ENTITY addImages.label "Adicionar Imagens">
+<!ENTITY addItem.label "Novo Item...">
+<!ENTITY addItemCmd.label "Novo Item">
+<!ENTITY addNote.label "Adicionar Nota">
+<!ENTITY addSequenceCmd.toolbarlabel "Adicionar Sequência">
+<!ENTITY advanced.label "Avançado">
+<!ENTITY alignCenter.label "Alinhar ao centro">
+<!ENTITY alignJustified.label "Justificar">
+<!ENTITY alignLeft.label "Alinhar à esquerda">
+<!ENTITY alignRight.label "Alinhar à direita">
+<!ENTITY allShootDays.label "Todos os dias de filmagem">
+<!ENTITY allUppercase.label "TODOS">
+<!ENTITY american.label "Americano">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Estas opções apenas estão disponíveis para criação de PDFs.">
+<!ENTITY audioplay.desc "Adicionar guião de áudio ao projecto.">
+<!ENTITY audioplay.label "Guião de Áudio">
+<!ENTITY authDialog.description "Esta operação necessita que inicie a sessão na sua conta Celtx">
+<!ENTITY authDialog.title "Autenticação Celtx">
+<!ENTITY author.label "Autor">
+<!ENTITY autoCharContinueds.label "Mostrar continuações do diálogo da personagem">
+<!ENTITY autoSaveProject.label "Guardar projecto automaticamente">
+<!ENTITY autoparenthesize.label "Escrever parênteses quando digitar '('">
+<!ENTITY avScript.desc "Adicionar um guião audiovisual ao projecto.">
+<!ENTITY avScript.label "Guião A/V">
+<!ENTITY basedOn.label "Baseado em">
+<!ENTITY bdc.actor        "Actor">
+<!ENTITY bdc.addlabour    "Trabalho extra">
+<!ENTITY bdc.animals      "Animais">
+<!ENTITY bdc.camera       "Câmara">
+<!ENTITY bdc.cast         "Elenco">
+<!ENTITY bdc.cgi          "Imagem Computorizada (CGI)">
+<!ENTITY bdc.construction "Construção">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics    "Electricidade">
+<!ENTITY bdc.equip        "Equipamento especial">
+<!ENTITY bdc.extras       "Figuração">
+<!ENTITY bdc.greenery     "Plantas/Flores">
+<!ENTITY bdc.hair         "Cabelo">
+<!ENTITY bdc.handler      "Tratador de animais">
+<!ENTITY bdc.lights       "Iluminação">
+<!ENTITY bdc.livestock    "Animais de Criação">
+<!ENTITY bdc.location     "Locais de Filmagem">
+<!ENTITY bdc.location     "Localização">
+<!ENTITY bdc.makeup       "Maquilhagem">
+<!ENTITY bdc.mechfx       "Efeitos Mecânicos">
+<!ENTITY bdc.misc         "Vários">
+<!ENTITY bdc.music        "Música">
+<!ENTITY bdc.opticalfx    "Efeitos Visuais">
+<!ENTITY bdc.painting     "Pintura">
+<!ENTITY bdc.prodnotes    "Notas de Produção">
+<!ENTITY bdc.props        "Adereços">
+<!ENTITY bdc.security     "Segurança">
+<!ENTITY bdc.set          "Cenário">
+<!ENTITY bdc.setdressing  "Decoração">
+<!ENTITY bdc.sound        "Som">
+<!ENTITY bdc.soundfx      "Efeitos Sonoros">
+<!ENTITY bdc.specialfx    "Efeitos Especiais">
+<!ENTITY bdc.storyboard   "Storyboard">
+<!ENTITY bdc.stunts       "Acrobacias">
+<!ENTITY bdc.vehicles     "Veículos">
+<!ENTITY bdc.wardrobe     "Guarda-roupa">
+<!ENTITY bdc.weapons      "Armas">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Negrito">
+<!ENTITY bookmark.desc "Adicionar uma hiperligação">
+<!ENTITY bookmark.label "Favoritos">
+<!ENTITY both.label "Ambos">
+<!ENTITY bottomOfPage.label "Fim de Página">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Adicionar informação sobre cenas">
+<!ENTITY breakdown.label    "Decomposição">
+<!ENTITY breakdown.label    "Informação sobre cenas">
+<!ENTITY breakdownReport.label "Relatório de informação sobre cenas">
+<!ENTITY brokenSceneEventWarning.label "Este evento corresponde a uma cena que já não existe">
+<!ENTITY browseCmd.label "Navegar">
+<!ENTITY byline.label "por">
+<!ENTITY calendar.desc "Adicionar um calendário ao projecto">
+<!ENTITY calendar.label "Calendário">
+<!ENTITY callSheet.label "Lista de chamada">
+<!ENTITY cast.label "Elenco">
+<!ENTITY castOfCharacters.label "Personagens">
+<!ENTITY catalog.desc "Adicionar um catálogo de itens de produção ao projecto.">
+<!ENTITY catalog.label "Catálogo">
+<!ENTITY catalogAddItem.tooltip "Adicionar Item ao Catálogo">
+<!ENTITY catalogDeleteItem.tooltip "Apagar Item do Catálogo">
+<!ENTITY categories.label "Categorias">
+<!ENTITY category.label "Categoria">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "Conta &appName;...">
+<!ENTITY celtxError.title "Erro Celtx">
+<!ENTITY celtxTagline.label "Tudo por uma boa história.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Uma visão das personagens e das suas relações">
+<!ENTITY charOutline.label "Esboço da Personagem">
+<!ENTITY character.label "Personagem">
+<!ENTITY characterProfile.desc "Adicionar uma descrição sobre uma personagem">
+<!ENTITY characterProfile.existing "Pode também adicionar uma descrição para uma personagem da seguinte lista:">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "Seleccionar uma Personagem">
+<!ENTITY characters.label "Personagens">
+<!ENTITY clearCmd.label "Limpar">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Criar Argumento para Banda Desenhada">
+<!ENTITY comicBook.label "Banda Desenhada">
+<!ENTITY comment.label "Comentário">
+<!ENTITY completed.label "Completo">
+<!ENTITY contact.label "Contacto">
+<!ENTITY contactInformation.label "Informação de contacto">
+<!ENTITY contactName.label "Nome Contato">
+<!ENTITY contacts.label "Contactos">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Continua">
+<!ENTITY copyProject.title "Duplicar Projecto">
+<!ENTITY copyProjectCmd.label "Duplicar Projecto">
+<!ENTITY copyright.label "Direitos Autorais">
+<!ENTITY create.label "Criar">
+<!ENTITY createAccount.label "Criar uma Conta">
+<!ENTITY createCatalogFromSelection.label "Criar Catálogo a Partir da Selecção">
+<!ENTITY createProject.label  "Criar um Projecto">
+<!ENTITY createProject.title "Criar um Projecto">
+<!ENTITY createdCol.label "Criado">
+<!ENTITY creatorCol.label "Autor">
+<!ENTITY crew.desc "Adicionar um documento da equipa.">
+<!ENTITY crew.label "Equipa">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "Data">
+<!ENTITY datePicker.label "Seleccionador de data">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "O cabeçalho da cena não termina com a informação de DIA/NOITE. Para corrigir o problema, modifique o cabeçalho no guião ou modifique a lista de palavras para DIA/NOITE no separador 'Guião' do menu de preferências">
+<!ENTITY daynightWords.label "Palavras para DIA/NOITE">
+<!ENTITY dayoff.label "Descanso">
+<!ENTITY daysOff.label "Dias de folga">
+<!ENTITY decreaseDelayCmd.tooltip "Diminuir intervalo">
+<!ENTITY decreaseFontSizeCmd.tooltip "Diminuir o tamanho de letra">
+<!ENTITY decreaseIndentCmd.label "Diminuir avanço">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Duração de cena pré-definida">
+<!ENTITY delayLabel.tooltip "Intervalo entre imagens (segundos)">
+<!ENTITY deleteCardCmd.label "Eliminar Ficha">
+<!ENTITY deleteItem.label "Apagar item">
+<!ENTITY deleteItemCmd.label "Apagar">
+<!ENTITY department.label "Departamento">
+<!ENTITY description.label "Descrição">
+<!ENTITY details.label "Detalhes">
+<!ENTITY dialog.label           "Diálogo">
+<!ENTITY dialog.label "Diálogo">
+<!ENTITY director.label "Realizador">
+<!ENTITY disabled.label "Desactivado">
+<!ENTITY displayMedia.label "Mostrar Media">
+<!ENTITY downloadProjectCmd.label "Transferir Projecto...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Transferir">
+<!ENTITY downloadingPDF.label "A converter para PDF...">
+<!ENTITY dragToSchedule.tooltip "Arrastar e Colocar na Calendarização">
+<!ENTITY dualDialogCmd.label "Duplo Diálogo">
+<!ENTITY dualDialogCmd.tooltip "Duplo Diálogo">
+<!ENTITY duplicate.label "Duplicar">
+<!ENTITY duplicateItemCmd.label "Duplicar Item">
+<!ENTITY edit.label "Editar">
+<!ENTITY editDates.label "Editar Datas">
+<!ENTITY editProfile.label "Editar o Perfil Online">
+<!ENTITY editSceneDialog.title "Editar Cena">
+<!ENTITY editTitlePageCmd.label "Editar a página de título...">
+<!ENTITY editlabel.tooltip "Carregar para editar">
+<!ENTITY eighths.label "Oitavos">
+<!ENTITY eighthsSuffix.label "8s">
+<!ENTITY element.label "Elemento">
+<!ENTITY elements.label "Elementos">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Isto é utilizado para contar o número de utilizadores de Celtx activos. Nenhuma informação pessoal ou do projecto é transmitida durante o processo">
+<!ENTITY enableStats.desc "Somente utilizado para contar o número de utilizadores activos do Celtx. Nenhuma informação de identificação ou sobre o projecto é transmitida durante o processo.">
+<!ENTITY enableStats.label "Enviar estatísticas de uso para o Celtx">
+<!ENTITY enabled.label "Activado">
+<!ENTITY end.label "Fim">
+<!ENTITY endOfShooting.label "Fim das Filmagens">
+<!ENTITY enterEmbedTagPrompt.label "Introduzir encaixe de etiqueta do objecto aqui:">
+<!ENTITY eventDetails.label "Detalhes sobre o evento">
+<!ENTITY every15Minutes.label "De 15 em 15 minutos">
+<!ENTITY every30Minutes.label "De 30 em 30 minutos">
+<!ENTITY every5Minutes.label "De 5 em 5 minutos">
+<!ENTITY everyHour.label "De hora a hora">
+<!ENTITY everyMinute.label "De minuto a minuto">
+<!ENTITY exportList "Exportar Lista">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Exportar Guião...">
+<!ENTITY externalFile.desc "Adicionar um ficheiro já existente ao projecto.">
+<!ENTITY externalFile.label "Ficheiro">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY fileLocation "Localização do Ficheiro">
+<!ENTITY filmScript.desc "Adicionar um guião de filme já formatado">
+<!ENTITY filmScript.label "Guião">
+<!ENTITY filter.label "Filtro">
+<!ENTITY findAllCharacters.label "Adicionar personagens ao catálogo">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Procurar">
+<!ENTITY findPreviousCmd.label "Encontar Anterior">
+<!ENTITY findTab.label "Encontrar">
+<!ENTITY folder.label "Pasta">
+<!ENTITY forceOverwrite.label "Forçar substituição se a versão do servidor for nova">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Morada">
+<!ENTITY form.affectEvent "De que forma é que o evento afecta o enredo no seu todo?">
+<!ENTITY form.age "Idade">
+<!ENTITY form.alternate "Nome Alternativo">
+<!ENTITY form.antag "Antagonista">
+<!ENTITY form.antagWho "Quem é o Antagonista nesta cena?">
+<!ENTITY form.availability "Disponibilidade">
+<!ENTITY form.bestFriend "Melhor Amigo(a)">
+<!ENTITY form.borrow "Pedir emprestado">
+<!ENTITY form.build "Construir">
+<!ENTITY form.buy "Comprar">
+<!ENTITY form.catalyst "catalisador(a)">
+<!ENTITY form.cell "Número de Telemóvel">
+<!ENTITY form.centralEvent "Qual é o acontecimento central nesta cena?">
+<!ENTITY form.charBackground "Antecedentes da Personagem">
+<!ENTITY form.charGoal "Qual é o objectivo desta Personagem?">
+<!ENTITY form.charPlan "Qual o plano da Personagem para atingir esse objectivo?">
+<!ENTITY form.charTraits "Características da Personagem">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Utilizado pela(s) Personagem(ns)">
+<!ENTITY form.color "Cor">
+<!ENTITY form.comicRelief "Comicidade">
+<!ENTITY form.comments "Observações">
+<!ENTITY form.confidante "Confidente">
+<!ENTITY form.contactInfo "Informação de Contacto">
+<!ENTITY form.cost "Custo">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Datas Disponíveis">
+<!ENTITY form.dateNeed "Necessário nos Dias">
+<!ENTITY form.dateReturn "Data de Devolução">
+<!ENTITY form.description "Descrição">
+<!ENTITY form.details "Detalhes">
+<!ENTITY form.dislikes "Não gosta de">
+<!ENTITY form.distFeatures "Características Diferenciadoras">
+<!ENTITY form.dob "Data de Nascimento">
+<!ENTITY form.dress "Vestuário">
+<!ENTITY form.education "Educação">
+<!ENTITY form.elevator "Elevador">
+<!ENTITY form.email "Endereço de Email">
+<!ENTITY form.endDate "Data de Fim">
+<!ENTITY form.era "Época">
+<!ENTITY form.eyes "Olhos">
+<!ENTITY form.facilityInfo "Informação do Local">
+<!ENTITY form.familyBack "Antecedentes Familiares">
+<!ENTITY form.fullName "Nome Completo">
+<!ENTITY form.generic "Genérico">
+<!ENTITY form.genericForm "Formulário Genérico">
+<!ENTITY form.habits "Hábitos/Vícios">
+<!ENTITY form.hair "Cabelo">
+<!ENTITY form.hat "Chapéu">
+<!ENTITY form.height "Altura">
+<!ENTITY form.inScenes "Em Cenas">
+<!ENTITY form.jacket "Casaco">
+<!ENTITY form.jobTitle "Título">
+<!ENTITY form.keyCharTraits "Características Principais da Personagem">
+<!ENTITY form.lightSources "Fontes de Luz">
+<!ENTITY form.likes "Gosta de">
+<!ENTITY form.locationMap "Mapa de Localização">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "Interesse Amoroso">
+<!ENTITY form.media "Meio">
+<!ENTITY form.mentor "Mentor(a)">
+<!ENTITY form.motiv "Motivação">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Não">
+<!ENTITY form.noise "Problemas de Ruídos">
+<!ENTITY form.other "Outro">
+<!ENTITY form.pants "Calças">
+<!ENTITY form.parking "Informação sobre estacionamento">
+<!ENTITY form.partner "Parceiro(a)">
+<!ENTITY form.person "Personalidade">
+<!ENTITY form.phone "Número de Telefone">
+<!ENTITY form.physicalDesc "Descrição Física Detalhada">
+<!ENTITY form.powerCapa "Instalação Eléctrica">
+<!ENTITY form.princFunction "Qual é o papel principal desta personagem?">
+<!ENTITY form.procure "Forma de Obtenção">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "Protagonista">
+<!ENTITY form.protagAntag "Protagonista/Antagonista">
+<!ENTITY form.protagWho "Quem é o Protagonista nesta cena?">
+<!ENTITY form.rent "Alugar">
+<!ENTITY form.rentalCost "Custo do Aluguer">
+<!ENTITY form.role "Papel">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Como é que o Antagonista atingirá esse objectivo?">
+<!ENTITY form.sceneAntagGoal "Qual é o objectivo do antagonista nesta cena?">
+<!ENTITY form.sceneChars "Que personagens se encontram nesta cena?">
+<!ENTITY form.sceneDetails "Detalhes da cena">
+<!ENTITY form.sceneMood "Qual o tom desta cena?">
+<!ENTITY form.sceneProtagAchieve "Como alcança o protagonista este objectivo?">
+<!ENTITY form.sceneProtagGoal "Qual é o objectivo do protagonista nesta cena?">
+<!ENTITY form.sceneSetting "Qual a localização desta cena?">
+<!ENTITY form.sceneWhen "Quando é que esta cena aparece?">
+<!ENTITY form.scenesUsed "Cenas usadas em">
+<!ENTITY form.scoutSelect "Explorar e Seleccionar">
+<!ENTITY form.scoutedFor "Explorado para Cenas">
+<!ENTITY form.scriptName "Nome do guião">
+<!ENTITY form.selectedFor "Escolhido para o guião">
+<!ENTITY form.sex "Sexo">
+<!ENTITY form.shirt "Camisa">
+<!ENTITY form.shoes "Sapatos">
+<!ENTITY form.size "Tamanho">
+<!ENTITY form.squareFoot "Área">
+<!ENTITY form.startDate "Data de Início">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Tamanhos do Guarda-roupa">
+<!ENTITY form.washroom "Localização dos Vestiários">
+<!ENTITY form.weight "Peso">
+<!ENTITY form.wornBy "Vestido por">
+<!ENTITY form.yes "Sim">
+<!ENTITY format.label "Formato">
+<!ENTITY formatAct.label      "Acto">
+<!ENTITY formatAction.label "Acção">
+<!ENTITY formatBalloon.label  "Balão">
+<!ENTITY formatBalloonType.label "Tipo balão">
+<!ENTITY formatCaption.label  "Legenda">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Cabeçalho">
+<!ENTITY formatMusic.label    "Música">
+<!ENTITY formatPage.label     "Página">
+<!ENTITY formatPage.shortlabel     "Pág.">
+<!ENTITY formatPanel.label    "Painel">
+<!ENTITY formatPanel.shortlabel    "Pain.">
+<!ENTITY formatParen.label "Parentesis">
+<!ENTITY formatProductionNote.label "Nota de Produção">
+<!ENTITY formatShot.label "Câmara">
+<!ENTITY formatSound.label    "Som">
+<!ENTITY formatStagedir.label "Direcção de Cena">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Transição">
+<!ENTITY formatVoice.label    "Voz">
+<!ENTITY fourHours.label "4 horas">
+<!ENTITY freeAndSecure.label "Seguro e Gratuito">
+<!ENTITY general.label "Geral">
+<!ENTITY generatePDFCmd.label "Criar PDF...">
+<!ENTITY generateReportCmd.label "Criar  Relatório">
+<!ENTITY generateReportCmd.toolbarlabel "Relatório">
+<!ENTITY getProjDialog.caption "Projectos Disponíveis">
+<!ENTITY getProjDialog.title "Descarregar Projecto">
+<!ENTITY gotoItemCmd.label "Ir para">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Acerca do &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Relatar um problema">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Assitência Online">
+<!ENTITY icons.label "Icones">
+<!ENTITY iconsAndText.label "Ícones e Texto">
+<!ENTITY image.label "Imagem">
+<!ENTITY images.label "Imagens">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Importar Guião">
+<!ENTITY importScriptCmd.toolbarLabel "Importar">
+<!ENTITY includeInWorkweek.label "Incluir estes dias na Semana de Trabalho">
+<!ENTITY includeTitlePage.label "Incluir página de título">
+<!ENTITY increaseDelayCmd.tooltip "Aumentar intervalo">
+<!ENTITY increaseFontSizeCmd.tooltip "Aumentar o tamanho de letra">
+<!ENTITY increaseIndentCmd.label "Aumentar avanço">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Cabeçalho da Ficha">
+<!ENTITY indexCards.label "Fichas">
+<!ENTITY inlineSpellCheckCmd.label "Corrector Ortográfico">
+<!ENTITY insertNoteCmd.toolbarLabel "Nota">
+<!ENTITY international.label "Internacional">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "O cabeçalho da cena não começa com uma palavra válida para INT/EXT. Para resolver este problema, edite o cabeçalho da cena no guião ou modifique a lista de palavras INT/EXT na aba 'Guião' em 'Preferências'.">
+<!ENTITY intextWarning.label "O cabeçalho da cena não termina com a informação de DIA/NOITE. Para corrigir o problema, modifique o cabeçalho no guião ou modifique a lista de palavras para DIA/NOITE no separador 'guião' do menu de preferências">
+<!ENTITY intextWords.label "Palavras para INT/EXT">
+<!ENTITY invalidLogin.label "Nome de utilizador ou palavra-passe inválidos">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Itálico">
+<!ENTITY item.label "Item">
+<!ENTITY language.label "Linguagem">
+<!ENTITY left.label "Esquerda">
+<!ENTITY linesPerPage.label "Linhas por página">
+<!ENTITY list.label "Lista...">
+<!ENTITY location.desc "Adicionar descrição para local.">
+<!ENTITY location.label "Local">
+<!ENTITY loginOnStartup.label "Iniciar sessão no arranque">
+<!ENTITY lowercaseCmd.label "Minúsculas">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Media">
+<!ENTITY mediaViewer.title "Visualizador Multimédia">
+<!ENTITY modified.label "Modificado">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Mover para baixo">
+<!ENTITY moveUpCmd.label "Mover para cima">
+<!ENTITY moving.label "A mover">
+<!ENTITY name.label "Nome">
+<!ENTITY network.label "Rede">
+<!ENTITY never.label "Nunca">
+<!ENTITY newMarkupItem.label "&lt;Novo ...&gt;">
+<!ENTITY newProjectCmd.label "Novo Projecto...">
+<!ENTITY newProjectCmd.toolbarlabel "Novo">
+<!ENTITY noFileSelected.label "&lt;nenhum ficheiro seleccionado&gt;">
+<!ENTITY noImageSelected.label "Nenhuma imagem seleccionada">
+<!ENTITY noScriptSelected.label "Nenhum guião seleccionado">
+<!ENTITY none.label "Nenhum">
+<!ENTITY noteDialog.title "Editar Nota">
+<!ENTITY notes.label "Notas">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Número de personagens">
+<!ENTITY numberOfScenes.label "Número de cenas">
+<!ENTITY oneHour.label "1 hora">
+<!ENTITY oneLineSchedule.label "Agendamento de uma linha">
+<!ENTITY open.label "Abrir">
+<!ENTITY openItemCmd.label "Abrir item">
+<!ENTITY openProjectCmd.label "Abrir Projecto...">
+<!ENTITY openProjectCmd.toolbarlabel "Abrir">
+<!ENTITY openProjectFolder.label "Abrir pasta do projecto">
+<!ENTITY openRecentCmd.label "Abrir Recente">
+<!ENTITY options.label "Opções">
+<!ENTITY orderedList.label "Lista Ordenada">
+<!ENTITY outline.desc "Adicionar documento de esboço com marcas.">
+<!ENTITY outline.label "Esboço">
+<!ENTITY over14.label "Tenho 14 anos ou mais">
+<!ENTITY pageAndSceneNumbering.label "Numeração de Página e Cena">
+<!ENTITY paperSize.label "Tamanho do papel">
+<!ENTITY password.label "Palavra-passe">
+<!ENTITY passwordAgain.label "Confirmar Palavra-passe">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "A converter para PDF">
+<!ENTITY pdfErrorHeader "Oops!">
+<!ENTITY pdfErrorText1 "É necessário estar conectado para poder utilizar esta ferramenta.">
+<!ENTITY pdfErrorText2 "Seguro e privado, este avançado serviço de rede Celtx formata automaticamente o guião conforme o padrão para cinema, teatro, rádio ou em duas colunas (A/V).">
+<!ENTITY pdfOptions.title "Opções de PDF">
+<!ENTITY pdfOptionsCmd.label "Adicional e continuado">
+<!ENTITY pdfWarningHeader "Olá!">
+<!ENTITY pdfWarningText "Seguro e privado, este avançado serviço de rede Celtx formata automaticamente o guião conforme o padrão para cinema, teatro, rádio ou em duas colunas (A/V).">
+<!ENTITY picklist.label "Lista de escolhas">
+<!ENTITY principalFunction.label "Funcção Principal">
+<!ENTITY printBackgroundColour.label "Imprimir Cor de Fundo">
+<!ENTITY printCardBorders.label "Imprimir Margens das Fichas">
+<!ENTITY printCardsDialog.title "Imprimir Fichas">
+<!ENTITY printStoryboardDialog.title "Imprimir Sequência de Cenas">
+<!ENTITY privacy.label "Privacidade">
+<!ENTITY producer.label "Produtor">
+<!ENTITY productionItems.label "Itens de Produção">
+<!ENTITY progressDialog.title "Progresso">
+<!ENTITY project.label "Projecto">
+<!ENTITY projectItems.label "Novos projectos contêm">
+<!ENTITY projectLibrary.label "Biblioteca de Projectos">
+<!ENTITY projectProperties.label "Definições de Projecto...">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Modelos de Projecto">
+<!ENTITY propSheet.desc "Adicionar descrição para um novo adereço.">
+<!ENTITY propSheet.existing "Também pode escolher um adereço da lista em baixo">
+<!ENTITY propSheet.label "Adereços">
+<!ENTITY propSheet.select "Escolher um adereço">
+<!ENTITY properties.label "Propriedades">
+<!ENTITY publishDialog.findUsers "Encontrar utilizadores">
+<!ENTITY publishDialog.ownerLabel "Detentor do Projecto">
+<!ENTITY publishDialog.privateDesc "Privado: só eu posso aceder ao projecto">
+<!ENTITY publishDialog.privateLabel "Privado">
+<!ENTITY publishDialog.publicDesc "Público: Publicar o projecto na Central de Projectos">
+<!ENTITY publishDialog.publicLabel "Público">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Partilhado: Partilhar o projecto com os utilizadores escolhidos">
+<!ENTITY publishDialog.sharedLabel "Partilhado por">
+<!ENTITY publishDialog.title "Publicar Projecto">
+<!ENTITY publishDialog.userList "Lista de utilizadores">
+<!ENTITY publishMode.label "Modo de Publicação">
+<!ENTITY recent.label "Recente">
+<!ENTITY recentProjects.label "Projectos Recentes">
+<!ENTITY recoverPassword.label "Recuperar palavra-passe">
+<!ENTITY recycleCmd.label "Enviar para o Cesto dos Papéis">
+<!ENTITY regWiz.aboutThis "Este Assistente irá recolher as informações necessárias para efectuar o registo.">
+<!ENTITY regWiz.accountInstructions "Por favor escolha um Nome de Utilizador e uma Palavra-passe para a sua conta &appName;.">
+<!ENTITY regWiz.accountLabel "Conta de Utilizador">
+<!ENTITY regWiz.bullet1 "Cópia de segurança remota">
+<!ENTITY regWiz.bullet2 "Espaços de Colaboração">
+<!ENTITY regWiz.bullet3 "Publicar na Central de Projectos">
+<!ENTITY regWiz.bullet4 "Projecto em formato iPhone">
+<!ENTITY regWiz.checkLabel "Verificação de informação de conta">
+<!ENTITY regWiz.clickFinish "Se está satisfeito com estes valores prima o botão 'Terminar' para efectuar o registo.">
+<!ENTITY regWiz.clickFinish1 "Está autenticado no servidor &appName; e pronto para aceder às nossas ferramentas online gratuitas">
+<!ENTITY regWiz.clickFinish2 "Experimente as opções de Transferência/Envio para fazer uma cópia de segurança do projecto, ou, se conhecer alguém com uma conta &appName;, utilize as opções de partilha de projecto para colaborar num projecto comum">
+<!ENTITY regWiz.clickNext "Se está satisfeito com estes valores prima o botão 'Próximo' para efectuar o registo.">
+<!ENTITY regWiz.conclusion "Conclusão (5/5)">
+<!ENTITY regWiz.confirmIntro "Inseriu o seguinte:">
+<!ENTITY regWiz.confirmLabel "Confirmar Configurações">
+<!ENTITY regWiz.createNewAccountLabel "Criar uma nova conta.">
+<!ENTITY regWiz.createYourAccountLabel "Obtenha a sua própria conta &appName;! (1/5)">
+<!ENTITY regWiz.emailLabel "E-mail:">
+<!ENTITY regWiz.finish "Terminado">
+<!ENTITY regWiz.identityInstructions "Por favor insira o seu nome, organização e endereço de e-mail.">
+<!ENTITY regWiz.identityLabel "Identidade">
+<!ENTITY regWiz.intro "Para aceder às funcionalidades online do &appName; precisa de ter uma conta &appName; registada.">
+<!ENTITY regWiz.loginSuccessfulLabel "Obrigado, está agora ligado com a sua conta &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Crie uma conta nova ou utilize uma existente:">
+<!ENTITY regWiz.noteCaseSensitive "Os Nomes de Utilizador e Palavras-passe das contas &appName; são sensíveis a maísculas e minúsculas.">
+<!ENTITY regWiz.notePassword "A sua Palavra-passe deve ter pelo menos 5 caracteres.">
+<!ENTITY regWiz.noteUsername "O seu Nome de Utilizador deve ter pelo menos 3 caracteres e pode conter apenas letras e dígitos.">
+<!ENTITY regWiz.orgLabel "Organização:">
+<!ENTITY regWiz.title "Assistente de Registo do &appName;">
+<!ENTITY regWiz.uidLabel "Nome de Utilizador:">
+<!ENTITY regWiz.useExistingAccountLabel "Utilizar uma conta existente.">
+<!ENTITY regWiz.warn "Precisa de criar uma conta &appName; para aceder a esta opção">
+<!ENTITY remove.label "Remover">
+<!ENTITY removeCmd.label "Remover">
+<!ENTITY removeMarkupCmd.label "Remover">
+<!ENTITY rename.label "Mudar o Nome">
+<!ENTITY renameItem.label "Atribuir outro nome ao Item...">
+<!ENTITY replaceCmd.label "Substituir">
+<!ENTITY reportThisBug.label "Denunciar este erro">
+<!ENTITY reportThisBug.tooltip "Envia um relatório de erro anónimo">
+<!ENTITY reports.label "Relatórios">
+<!ENTITY right.label "Direita">
+<!ENTITY sampleProjects.label "Exemplos de Projectos">
+<!ENTITY samples.label "Exemplos">
+<!ENTITY saveAsHTML.label "Gravar como HTML">
+<!ENTITY saveAsTemplate.label "Guardar como Modelo">
+<!ENTITY savePDFCmd.label "Guardar PDF">
+<!ENTITY savePDFCmd.tooltip "Guardar PDF">
+<!ENTITY saveProjectAsCmd.label "Guardar Projecto Como...">
+<!ENTITY saveProjectCmd.label "Guardar Projecto">
+<!ENTITY saveProjectCmd.toolbarlabel "Guardar">
+<!ENTITY scene.label "Cena">
+<!ENTITY sceneBreakdown.label "Quebra de cena">
+<!ENTITY sceneBreakdownWithDesc.label "Quebra de cena com descrição">
+<!ENTITY sceneDetails.desc "Adicionar descrição para uma nova cena">
+<!ENTITY sceneDetails.existing "Pode também descrever uma cena da lista em baixo">
+<!ENTITY sceneDetails.label "Detalhes da Cena">
+<!ENTITY sceneDetails.select "Escolher uma Cena">
+<!ENTITY scenePageBreaks.label "Quebra de página após cada cena">
+<!ENTITY sceneSummary.label "Sumário da Cena">
+<!ENTITY sceneTag.label "Etiqueta de Cena">
+<!ENTITY sceneTagDialog.title "Escolher uma Cor">
+<!ENTITY scenes.label "Cenas">
+<!ENTITY schedule.desc      "Adicionar um horário de filmagem para o guião">
+<!ENTITY schedule.label     "Horário">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Definir horário para guião">
+<!ENTITY scheduleID.label "Agendamento ID">
+<!ENTITY scheduled.label "Horário definido">
+<!ENTITY scratchpad.label "Bloco de rascunho">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Adicionar guião ao projecto.">
+<!ENTITY script.label "Guião">
+<!ENTITY scriptDay.label "Dia de guião">
+<!ENTITY scriptEditor.label "Editor de guião">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Opções de Formato">
+<!ENTITY scriptHeader.label "Cabeçalho do Guião">
+<!ENTITY scriptReport.desc "Relatório de guião gerado automaticamente">
+<!ENTITY scriptReport.label "Relatório de Guião">
+<!ENTITY scriptWithNotes.label "Guião com notas">
+<!ENTITY selectCatalogType.label "Seleccionar o tipo de catálogo">
+<!ENTITY sequence.label "Sequência">
+<!ENTITY sequences.label "Sequências">
+<!ENTITY server.label "Servidor">
+<!ENTITY setting.label "Definição">
+<!ENTITY sharing.label "Partilha">
+<!ENTITY shootDay.label "Dia de Filmagem">
+<!ENTITY shootDays.label "Dias de filmagem">
+<!ENTITY shootingSchedule.label "Agenda de filmagem">
+<!ENTITY shotList.label "Lista de Planos">
+<!ENTITY shotWords.label "Escala de Planos">
+<!ENTITY shotholder.label "Duplo-clique para adicionar uma imagem">
+<!ENTITY showContinuedCount.label "Ver numeração de páginas continuada">
+<!ENTITY showDialogBreaks.label "Ver quebras no diálogo">
+<!ENTITY showFirstPageNumber.label "Ver número de página na primeira página">
+<!ENTITY showIDNumbers.label "Ver números de identificação">
+<!ENTITY showNotes.label "Mostrar notas">
+<!ENTITY showPageNumbers.label "Ver números de página">
+<!ENTITY showProjectFileCmd.label "Ver ficheiro do projecto">
+<!ENTITY showSceneBreaks.label "Ver intervalo de cenas">
+<!ENTITY showSceneHeaders.label "Ver Cabeçalhos de Cena">
+<!ENTITY showSceneNumbers.label "Ver números de cena">
+<!ENTITY showScript.label "Mostrar Guião">
+<!ENTITY showTagNames.label "Ver nome das etiquetas nas fichas">
+<!ENTITY showTitlePage.label "Ver Página de Título">
+<!ENTITY showWorkdaysOnly.label "Ver apenas dias de trabalho">
+<!ENTITY signIn.label "Conectar">
+<!ENTITY signOut.label "Desconectar">
+<!ENTITY signedOut.label "Desconectado">
+<!ENTITY slideshowCmd.toolbarlabel "Reproduzir">
+<!ENTITY source.label "Fonte">
+<!ENTITY spellCheckAddToDictionary.accesskey "A">
+<!ENTITY spellCheckAddToDictionary.label "Adicionar ao dicionário">
+<!ENTITY spellCheckCmd.label "Verificação Ortográfica">
+<!ENTITY spellCheckIgnoreWord.accesskey "r">
+<!ENTITY spellCheckIgnoreWord.label "Ignorar palavra">
+<!ENTITY spellCheckNoSuggestions.label "Sem sugestões">
+<!ENTITY splash.celtxCentral "aceder à central de projectos">
+<!ENTITY splash.celtxCentralDesc "Utilize a central de projectos para alterar a sua palavra-chave ou actualizar o seu perfil">
+<!ENTITY splash.discussion "Discussão">
+<!ENTITY splash.downloadProject "Transferir um projecto">
+<!ENTITY splash.downloadProjectDesc "Transferir um projecto do servidor Celtx">
+<!ENTITY splash.featureTour "descrição do programa">
+<!ENTITY splash.forums "fóruns Celtx">
+<!ENTITY splash.forumsDesc "Participar nas discussões dos fóruns Celtx">
+<!ENTITY splash.gettingStarted "Início">
+<!ENTITY splash.guide "Guia do Utilizador do Celtx">
+<!ENTITY splash.help "Ajuda">
+<!ENTITY splash.helpAccount "criar uma conta">
+<!ENTITY splash.helpAccountDesc "Criar uma conta dá acesso a recursos no servidor que incluem colaboração e criação de PDF">
+<!ENTITY splash.helpDesc "As ligações à esquerda mostram vários recursos do Celtx">
+<!ENTITY splash.helpOptions "Opções de Ajuda">
+<!ENTITY splash.inbox "Caixa de Entrada">
+<!ENTITY splash.logIn "Iniciar sessão">
+<!ENTITY splash.newProject "Iniciar um novo projecto">
+<!ENTITY splash.newProjectDesc "Cria um novo projecto">
+<!ENTITY splash.openProject "Abrir um projecto existente">
+<!ENTITY splash.openProjectDesc "Acede ou adiciona projectos já existentes">
+<!ENTITY splash.options "opções">
+<!ENTITY splash.projectCentral "Central de Projectos">
+<!ENTITY splash.projects "projectos">
+<!ENTITY splash.recentProjects "projectos recentes">
+<!ENTITY splash.sampleDesc      "Utilizámos o 'Feiticeiro de Oz' para demonstrar as diferentes funcionalidades do Celtx. Os vários documentos são usados para ilustrar as necessidades na produção de uma única cena. Incluídos neste exemplo estão um guião, formulários de detalhes de personagens e cenas, informações detalhadas de cena e algumas informações de planeamento de agenda.">
+<!ENTITY splash.sampleProject   "exemplo de projecto">
+<!ENTITY splash.videoWalkthrus "demonstrações em vídeo">
+<!ENTITY splash.videoWalkthrusDesc "Curtas demonstrações em vídeo para facilitar uma rápida aprendizagem do programa">
+<!ENTITY splash.walkthru "Tutorial em 3 minutos">
+<!ENTITY splash.webServices "Serviços na Web">
+<!ENTITY splash.welcomePrefix "Bem-vindo ao Celtx">
+<!ENTITY splash.welcomePrefixDesc "Meios de Pré-Produção">
+<!ENTITY splash.wiki "Guia Wiki">
+<!ENTITY splash.wikiDesc "Recursos para ficar a conhecer o Celtx">
+<!ENTITY splashScreen.label "Ecrã Inicial">
+<!ENTITY stackTrace.desc "Abaixo encontra-se alguma informação que nos poderá ser útil. Por favor inclua-a no relatório se decidir comunicar este erro.">
+<!ENTITY stageplay.desc  "Adicionar peça de teatro com formatação internacional">
+<!ENTITY stageplay.label    "Peça de Teatro">
+<!ENTITY start.label "Início">
+<!ENTITY startOfDay.label "Início do Dia">
+<!ENTITY startOfShooting.label "Início das Filmagens">
+<!ENTITY startOfWeek.label "Início da Semana">
+<!ENTITY statistics.label "Estatísticas">
+<!ENTITY storyboard.desc  "Organizar as imagens do Storyboard em sequências a filmar">
+<!ENTITY storyboard.label   "Storyboard">
+<!ENTITY strikethrough.label "Rasurado">
+<!ENTITY stripboard.label "Tira">
+<!ENTITY subject.label "Assunto">
+<!ENTITY summary.label "Sumário">
+<!ENTITY syncDialog.title "Sincronizar">
+<!ENTITY tagItemCmd.label "Etiqueta">
+<!ENTITY tagline.label      "Linha de Etiqueta">
+<!ENTITY tags.label "Tags">
+<!ENTITY text.label "Texto">
+<!ENTITY textDocument.desc  "Novo documento de texto. Útil para esboços, tratamentos e sinopses.">
+<!ENTITY textDocument.desc "Adicionar documento de texto. Útil para um esboço, tratamento ou sinopse.">
+<!ENTITY textDocument.label "Texto">
+<!ENTITY theatreTmplActTitle "ACTO I">
+<!ENTITY theatreTmplSceneTitle "Cena 1">
+<!ENTITY thirtyMinutes.label "30 minutos">
+<!ENTITY threeHours.label "3 horas">
+<!ENTITY time.label "Hora">
+<!ENTITY title.label "Título">
+<!ENTITY titlePage.label "Página de Título">
+<!ENTITY toggleEditing.label "Activar edição">
+<!ENTITY togglePaginationCmd.label "Activar paginação">
+<!ENTITY toggleScratchpadCmd.label "Abrir/Fechar Bloco de Rascunhos">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Barra Lateral">
+<!ENTITY topOfNextPage.label "Topo da próxima página">
+<!ENTITY tryAgain.label "Tente Novamente">
+<!ENTITY twoColumns.label "Duas Colunas">
+<!ENTITY twoHours.label "2 horas">
+<!ENTITY typeset.label "Formatação">
+<!ENTITY under14.label "Tenho menos de 14 anos">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Sublinhado">
+<!ENTITY unorderedList.label "Lista Desordenada">
+<!ENTITY untitled.label "Sem Título">
+<!ENTITY update.label "Actualizar">
+<!ENTITY updateInbox.label "Caixa de actualizações">
+<!ENTITY uploadDialog.title "Enviar Projecto">
+<!ENTITY uploadProjectCmd.label "Enviar Projecto">
+<!ENTITY uploadProjectCmd.toolbarlabel "Enviar">
+<!ENTITY uppercaseCmd.label "Maiúsculas">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Utilizador">
+<!ENTITY video.label "Vídeo">
+<!ENTITY videoTutorialCmd.label "Tutorial em Vídeo">
+<!ENTITY viewProjectOnline.label "Ver projecto online">
+<!ENTITY wardrobeSheet.desc "Adicionar descrição para nova peça de guarda-roupa">
+<!ENTITY wardrobeSheet.existing "Pode também adicionar descrição para uma peça de guarda-roupa já exisitente">
+<!ENTITY wardrobeSheet.label "Guarda-roupa">
+<!ENTITY wardrobeSheet.select "Escolher Guarda-roupa">
+<!ENTITY webPanel.desc              "Serviços online Celtx">
+<!ENTITY webPanel.label     "Serviços online">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Criar uma conta Celtx">
+<!ENTITY webPanelIntro.text1 "Aproveite o Celtx ao máximo com os serviços web seguros e gratuitos que temos para lhe oferecer.">
+<!ENTITY webPanelIntro.text2 "Mantenha uma *Cópia de Segurança* do seu projecto no servidor remoto e seguro da Celtx, para que o seu trabalho não se perca em caso de roubo, avaria ou desastre.">
+<!ENTITY webPanelIntro.text3 "*Colabore* com elementos da nossa equipa, partilhando o seu projecto e criando um espaço pessoal para o mesmo.">
+<!ENTITY webPanelIntro.text4 "*Publique* o seu projecto na Central de Projectos para obter críticas e comentários, e assim juntar-se à nossa comunidade mundial de criadores de média.">
+<!ENTITY webPanelIntro.text5 "Veja o seu projecto Celtx num formato optimizado para *iPhone*.">
+<!ENTITY wiz.clickFinish "Clique no botão 'Terminar' para concluir o Assistente.">
+<!ENTITY wiz.clickNext "Clique no botão 'Próximo' para começar.">
+<!ENTITY workweek.label "Semana de Trabalho">
+<!ENTITY writer.label "Guionista">
+<!ENTITY zoom.label "Zoom">

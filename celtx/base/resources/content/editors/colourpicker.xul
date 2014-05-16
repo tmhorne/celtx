@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&sceneTagDialog.title;"
+        buttons="accept,cancel"
+        onload="loaded()"
+        ondialogaccept="return accepted()">
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript">
+    var config = null;
+
+    function loaded () {
+      config = window.arguments[0];
+      var group = document.getElementById("colourgroup");
+      var buttons = group.getElementsByTagName("radio");
+      for (var i = 0; i &lt; buttons.length; ++i) {
+        var colour = buttons[i].value;
+        if (colour == config.colour) {
+          group.selectedItem = buttons[i];
+          break;
+        }
+      }
+      var textboxes = document.getElementsByTagName("textbox");
+      for (var i = 0; i &lt; textboxes.length; ++i) {
+        var colour = textboxes[i].getAttribute("colour");
+        if (colour &amp;&amp; (colour in config.tagnames))
+          textboxes[i].value = config.tagnames[colour];
+      }
+      var ps = getPrefService();
+      ps = ps.QueryInterface(Components.interfaces.nsIPrefBranch);
+      var showtags = document.getElementById("showtags");
+      showtags.checked = ps.getBoolPref("celtx.scenecards.showtags");
+    }
+
+    function accepted () {
+      config.accepted = true;
+      config.colour = document.getElementById("colourgroup").value;
+      var textboxes = document.getElementsByTagName("textbox");
+      for (var i = 0; i &lt; textboxes.length; ++i) {
+        var colour = textboxes[i].getAttribute("colour");
+        if (colour)
+          config.tagnames[colour] = textboxes[i].value;
+      }
+      var ps = getPrefService();
+      ps = ps.QueryInterface(Components.interfaces.nsIPrefBranch);
+      var showtags = document.getElementById("showtags");
+      ps.setBoolPref("celtx.scenecards.showtags", showtags.checked);
+      return true;
+    }
+  </script>
+  <label class="header" value="&sceneTag.label;&colon;"/>
+  <radiogroup id="colourgroup">
+    <grid>
+      <columns>
+        <column/>
+        <column/>
+        <column flex="1"/>
+      </columns>
+      <rows>
+        <row>
+          <radio value="white"
+                       selected="true"/>
+          <label style="width: 40px; background-color: #FFFFFF;"/>
+          <textbox colour="white"/>
+        </row>
+        <row>
+          <radio value="grey"/>
+          <label style="width: 40px; background-color: #D8D8D8;"/>
+          <textbox colour="grey"/>
+        </row>
+        <row>
+          <radio value="blue"/>
+          <label style="width: 40px; background-color: #C8E6FF;"/>
+          <textbox colour="blue"/>
+        </row>
+        <row>
+          <radio value="green"/>
+          <label style="width: 40px; background-color: #CCFFCC;"/>
+          <textbox colour="green"/>
+        </row>
+        <row>
+          <radio value="yellow"/>
+          <label style="width: 40px; background-color: #FFFFCC;"/>
+          <textbox colour="yellow"/>
+        </row>
+        <row>
+          <radio value="orange"/>
+          <label style="width: 40px; background-color: #FFD8B2;"/>
+          <textbox colour="orange"/>
+        </row>
+        <row>
+          <radio value="pink"/>
+          <label style="width: 40px; background-color: #FFCCFF;"/>
+          <textbox colour="pink"/>
+        </row>
+      </rows>
+    </grid>
+  </radiogroup>
+  <hbox pack="center">
+    <checkbox id="showtags"
+              label="&showTagNames.label;"/>
+  </hbox>
+</dialog>

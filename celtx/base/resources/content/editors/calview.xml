@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   - ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 2.0
+   -
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/.
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is calendar views.
+   -
+   - The Initial Developer of the Original Code is
+   -   Oracle Corporation
+   - Portions created by the Initial Developer are Copyright (C) 2005
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -   Vladimir Vukicevic <vladimir@pobox.com>
+   -   Stefan Sitter <ssitter@googlemail.com>
+   -   Clint Talbert <cmtalbert@myfastmail.com>
+   -
+   - Alternatively, the contents of this file may be used under the terms of
+   - either the GNU General Public License Version 2 or later (the "GPL"), or
+   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+   - in which case the provisions of the GPL or the LGPL are applicable instead
+   - of those above. If you wish to allow use of your version of this file only
+   - under the terms of either the GPL or the LGPL, and not to allow others to
+   - use your version of this file under the terms of the MPL, indicate your
+   - decision by deleting the provisions above and replace them with the notice
+   - and other provisions required by the GPL or the LGPL. If you do not delete
+   - the provisions above, a recipient may use your version of this file under
+   - the terms of any one of the MPL, the GPL or the LGPL.
+   -
+   - ***** END LICENSE BLOCK *****
+-->
+
+<bindings id="calview-bindings"
+          xmlns="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="celtx-event-column"
+           extends="chrome://calendar/content/calendar-multiday-view.xml#calendar-event-column">
+    <handlers>
+      <handler event="dragenter">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = true;
+      ]]>
+      </handler>
+
+      <handler event="dragover">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = true;
+      ]]>
+      </handler>
+
+      <handler event="dragexit">
+      <![CDATA[
+        if (event.originalTarget != this) {
+          return;
+        }
+        this.removeDropShadows();
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+        session.canDrop = false;
+      ]]>
+      </handler>
+
+      <handler event="dragdrop">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+
+        var transfer = Components.classes["@mozilla.org/widget/transferable;1"]
+          .createInstance(Components.interfaces.nsITransferable);
+        transfer.addDataFlavor("application/x-moz-cal-event");
+        transfer.addDataFlavor("x-celtx/x-banner");
+        transfer.addDataFlavor("x-celtx/x-scene");
+        session.getData(transfer, 0);
+        var data = {};
+
+        try {
+          transfer.getTransferData("x-celtx/x-banner", data, {});
+        }
+        catch (ex) {}
+        if (data.value) {
+          data = data.value.QueryInterface(
+            Components.interfaces.nsISupportsString).toString();
+          var banner = Components.classes["@mozilla.org/calendar/event;1"]
+            .createInstance(Components.interfaces.calIEvent);
+          banner.title = data == "dayoff" ? gApp.getText("DayOff")
+            : gApp.getText("Moving");
+          banner.startDate = this.date.clone();
+          banner.endDate = this.date.clone();
+          if (data == "dayoff") {
+            var day = Components.classes["@mozilla.org/calendar/duration;1"]
+              .createInstance(Components.interfaces.calIDuration);
+            day.days = 1;
+            banner.endDate.addDuration(day);
+            if (data == "dayoff")
+              banner.setProperty("X-CELTX-DAYOFF", "TRUE");
+            else
+              banner.setProperty("X-CELTX-MOVING", "TRUE");
+          }
+          else {
+            var duration = 120;
+            try {
+              var pref = getPrefService().getBranch("celtx.calendar.");
+              duration = pref.getIntPref("scene.defaultlength");
+            }
+            catch (ex) {
+              dump("*** calendar-month-day-box.dragdrop: " + ex + "\n");
+            }
+
+            banner.startDate.isDate = false;
+            var interval = this.mPixPerMin * 15;
+            var pos = event.screenY - this.parentNode.boxObject.screenY;
+            banner.startDate.minute = (Math.round(pos/interval) * 15)
+              + this.mStartMin;
+            banner.endDate.isDate = false;
+            banner.endDate.hour = banner.startDate.hour;
+            banner.endDate.minute = banner.startDate.minute + duration;
+          }
+          setDefaultAlarmValues(banner);
+          doTransaction('add', banner, this.calendarView.displayCalendar,
+            null, null);
+          return;
+        }
+        data = {};
+        try {
+          transfer.getTransferData("x-celtx/x-scene", data, {});
+        }
+        catch (ex) {}
+        if (data.value) {
+          data = data.value.QueryInterface(
+            Components.interfaces.nsISupportsString).toString();
+          var item = this.calendarView.controller.createEventForScene(data);
+          item.startDate = this.date.clone();
+          item.endDate = this.date.clone();
+          item.startDate.isDate = false;
+          var interval = this.mPixPerMin * 15;
+          var pos = event.screenY - this.parentNode.boxObject.screenY;
+          item.startDate.minute = (Math.round(pos/interval) * 15)
+            + this.mStartMin;
+          item.endDate.isDate = false;
+          var duration = 120;
+          try {
+            var pref = getPrefService().getBranch("celtx.calendar.");
+            duration = pref.getIntPref("scene.defaultlength");
+          }
+          catch (ex) {
+            dump("*** calendar-month-day-box.dragdrop: " + ex + "\n");
+          }
+          item.endDate.hour = item.startDate.hour;
+          item.endDate.minute = item.startDate.minute + duration;
+          setDefaultAlarmValues(item);
+          doTransaction('add', item, this.calendarView.displayCalendar,
+            null, null);
+          return;
+        }
+      ]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="celtx-month-day-box"
+           extends="chrome://calendar/content/calendar-month-view.xml#calendar-month-day-box">
+    <handlers>
+      <handler event="dragdrop">
+      <![CDATA[
+        var dragService = Components.classes[
+          "@mozilla.org/widget/dragservice;1"]
+          .getService(Components.interfaces.nsIDragService);
+        var session = dragService.getCurrentSession();
+
+        var transfer = Components.classes["@mozilla.org/widget/transferable;1"]
+          .createInstance(Components.interfaces.nsITransferable);
+        transfer.addDataFlavor("application/x-moz-cal-event");
+        transfer.addDataFlavor("x-celtx/x-banner");
+        transfer.addDataFlavor("x-celtx/x-scene");
+        session.getData(transfer, 0);
+        var data = {};
+
+        var boxDate = this.mDate;
+        var offset = this.monthView.mShadowIndex;
+
+        function adjustDate(date) {
+          var newDate = date.clone();
+          newDate.day = boxDate.day - offset;
+          newDate.month = boxDate.month;
+          newDate.year = boxDate.year;
+          return newDate;
+        }
+
+        try {
+          transfer.getTransferData("x-celtx/x-banner", data, {});
+        }
+        catch (ex) {}
+        if (data.value) {
+          data = data.value.QueryInterface(
+            Components.interfaces.nsISupportsString).toString();
+          var banner = Components.classes["@mozilla.org/calendar/event;1"]
+            .createInstance(Components.interfaces.calIEvent);
+          banner.title = data == "dayoff" ? gApp.getText("DayOff")
+            : gApp.getText("Moving");
+          banner.startDate = this.date.clone();
+          banner.endDate = this.date.clone();
+          if (data == "dayoff") {
+            banner.setProperty("X-CELTX-DAYOFF", "TRUE");
+            var day = Components.classes["@mozilla.org/calendar/duration;1"]
+              .createInstance(Components.interfaces.calIDuration);
+            day.days = 1;
+            banner.endDate.addDuration(day);
+          }
+          else {
+            banner.setProperty("X-CELTX-MOVING", "TRUE");
+
+            var dayitems = this.dayitems.childNodes;
+
+            // Get default start time and duration
+            var startHour = 8;
+            var startMinute = 0;
+            var duration = 120;
+            try {
+              var pref = getPrefService().getBranch("celtx.calendar.");
+              duration = pref.getIntPref("scene.defaultlength");
+              pref = getPrefService().getBranch("calendar.view.");
+              startHour = pref.getIntPref("daystarthour");
+            }
+            catch (ex) {
+              dump("*** calendar-month-day-box.dragdrop: " + ex + "\n");
+            }
+  
+            for (var i = 0; i < dayitems.length; ++i) {
+              var occur = dayitems[i].occurrence;
+              if (occur instanceof Components.interfaces.calIEvent &&
+                  occur.endDate.hour > startHour) {
+                startHour = occur.endDate.hour;
+              }
+            }
+            banner.startDate.isDate = false;
+            banner.startDate.hour = startHour;
+            banner.startDate.minute = startMinute;
+            banner.endDate.isDate = false;
+            banner.endDate.hour = banner.startDate.hour;
+            banner.endDate.minute = banner.startDate.minute + duration;
+          }
+          setDefaultAlarmValues(banner);
+          this.removeDropShadows();
+          doTransaction('add', banner, this.monthView.displayCalendar,
+            null, null);
+          return;
+        }
+        data = {};
+        try {
+          transfer.getTransferData("x-celtx/x-scene", data, {});
+        }
+        catch (ex) {}
+        if (data.value) {
+          data = data.value.QueryInterface(
+            Components.interfaces.nsISupportsString).toString();
+          var item = this.monthView.controller.createEventForScene(data);
+          var dayitems = this.dayitems.childNodes;
+
+          // Get default start time and duration
+          var startHour = 8;
+          var startMinute = 0;
+          var duration = 2;
+          try {
+            var pref = getPrefService().getBranch("celtx.calendar.");
+            duration = pref.getIntPref("scene.defaultlength");
+            pref = getPrefService().getBranch("calendar.view.");
+            startHour = pref.getIntPref("daystarthour");
+          }
+          catch (ex) {
+            dump("*** gScheduleController.loaded: " + ex + "\n");
+          }
+
+          for (var i = 0; i < dayitems.length; ++i) {
+            var occur = dayitems[i].occurrence;
+            if (occur instanceof Components.interfaces.calIEvent &&
+                occur.endDate.hour > startHour) {
+              startHour = occur.endDate.hour;
+            }
+          }
+          item.startDate = this.date.clone();
+          item.endDate = this.date.clone();
+          item.startDate.isDate = false;
+          item.startDate.hour = startHour;
+          item.startDate.minute = startMinute;
+          item.endDate.isDate = false;
+          item.endDate.hour = item.startDate.hour;
+          item.endDate.minute = item.startDate.minute + duration;
+          // item.title = this.monthView.controller.getSceneHeader(data);
+          setDefaultAlarmValues(item);
+          // item.setProperty("X-CELTX-SCENE", data);
+          this.removeDropShadows();
+          doTransaction('add', item, this.monthView.displayCalendar,
+            null, null);
+          return;
+        }
+
+        // In the fall-through case, the calendar-month-view dragdrop handler
+        // will handle this correctly.
+        return;
+      ]]></handler>
+    </handlers>
+  </binding>
+
+</bindings>

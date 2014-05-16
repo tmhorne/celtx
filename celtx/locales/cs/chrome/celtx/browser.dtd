@@ -1,0 +1,392 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+<!ENTITY mainWindow.title "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+
+<!ENTITY tabCmd.label "Nový panel">
+<!ENTITY tabCmd.accesskey "p">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Otevřít adresu…">
+<!ENTITY openLocationCmd.accesskey "O">
+<!ENTITY openFileCmd.label "Otevřít soubor…">
+<!ENTITY openFileCmd.accesskey "s">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Vzhled stránky…">
+<!ENTITY printSetupCmd.accesskey "V">
+<!ENTITY printPreviewCmd.label "Náhled tisku">
+<!ENTITY printPreviewCmd.accesskey "h">
+<!ENTITY printCmd.label "Tisk…">
+<!ENTITY printCmd.accesskey "T">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Importovat…">
+<!ENTITY import.accesskey "I">
+
+<!ENTITY goOfflineCmd.label "Pracovat offline">
+<!ENTITY goOfflineCmd.accesskey "l">
+
+<!ENTITY navbarCmd.label "Lišta navigace">
+<!ENTITY navbarCmd.accesskey "N">
+<!ENTITY personalbarCmd.label "Lišta záložek">
+<!ENTITY personalbarCmd.accesskey "L">
+<!ENTITY bookmarksToolbarItem.label "Záložky nástrojové lišty">
+<!ENTITY taskbarCmd.label "Stavový řádek">
+<!ENTITY taskbarCmd.accesskey "S">
+
+<!ENTITY pageSourceCmd.label "Zdrojový kód stránky">
+<!ENTITY pageSourceCmd.accesskey "Z">
+<!ENTITY pageSourceCmd.commandkey "u">
+<!ENTITY pageInfoCmd.label "Informace o stránce">
+<!ENTITY pageInfoCmd.accesskey "I">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "Celá obrazovka">
+<!ENTITY fullScreenCmd.accesskey "C">
+
+<!ENTITY fullScreenMinimize.tooltip "Minimalizovat">
+<!ENTITY fullScreenRestore.tooltip "Obnovit">
+<!ENTITY fullScreenClose.tooltip "Zavřít">
+<!ENTITY fullScreenAutohide.label "Skrýt nástrojové lišty">
+<!ENTITY fullScreenAutohide.accesskey "S">
+<!ENTITY fullScreenExit.label "Ukončit celoobrazovkový režim">
+<!ENTITY fullScreenExit.accesskey "k">
+
+<!ENTITY closeWindow.label "Zavřít okno">
+<!ENTITY closeWindow.accesskey "a">
+
+<!ENTITY bookmarksMenu.label "Záložky">
+<!ENTITY bookmarksMenu.accesskey "o">
+<!ENTITY bookmarkThisPageCmd.label "Přidat stránku do záložek">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Odebírat kanál této stránky">
+<!ENTITY subscribeToPageMenuitem.label "Odebírat kanál této stránky…">
+<!ENTITY addCurPagesCmd.label "Přidat všechny panely do záložek…">
+<!ENTITY organizeBookmarks.label "Knihovna stránek…">
+<!ENTITY bookmarkAllCmd.label "Přidat všechny panely do záložek…">
+
+<!ENTITY backCmd.label "Zpět">
+<!ENTITY backCmd.accesskey "Z">
+<!ENTITY backButton.tooltip "Přejde o jednu stránku zpět">
+<!ENTITY forwardCmd.label "Vpřed">
+<!ENTITY forwardCmd.accesskey "V">
+<!ENTITY forwardButton.tooltip "Přejde na následující stránku">
+<!ENTITY backForwardMenu.tooltip "Zobrazí nedávné stránky">
+<!ENTITY reloadCmd.label "Obnovit">
+<!ENTITY reloadCmd.accesskey "b">
+<!ENTITY reloadButton.tooltip "Aktualizuje načtenou stránku">
+<!ENTITY stopCmd.label "Zastavit">
+<!ENTITY stopCmd.accesskey "a">
+<!ENTITY stopCmd.macCommandKey ".">
+<!ENTITY stopButton.tooltip "Zastaví načítání stránky">
+<!ENTITY goEndCap.tooltip "Přejde na adresu v adresním řádku">
+<!ENTITY printButton.label "Tisk">
+<!ENTITY printButton.tooltip "Vytiskne tuto stránku">
+
+<!ENTITY locationItem.title "Adresa">
+<!ENTITY searchItem.title "Hledání">
+<!ENTITY throbberItem.title "Ukazatel činnosti">
+<!ENTITY bookmarksItem.title "Záložky">
+
+<!-- Toolbar items -->
+<!ENTITY homeButton.label "Domů">
+
+<!ENTITY bookmarksButton.label "Záložky">
+<!ENTITY bookmarksButton.tooltip "Zobrazí vaše záložky">
+<!ENTITY bookmarksSidebarCmd.accesskey "Z">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+
+<!ENTITY historyButton.label "Historie">
+<!ENTITY historyButton.tooltip "Zobrazí stránky navštívené v poslední době">
+<!ENTITY historySidebarCmd.accesskey "H">
+<!ENTITY historySidebarCmd.commandKey "h">
+
+<!ENTITY toolsMenu.label "Nástroje">
+<!ENTITY toolsMenu.accesskey "N">
+
+<!ENTITY keywordfield.label "K vyhledávání přiřadit klíčové slovo">
+<!ENTITY keywordfield.accesskey "K">
+<!ENTITY search.label "Hledání na webu">
+<!ENTITY search.accesskey "w">
+<!ENTITY downloads.label "Správce stahování">
+<!ENTITY downloads.tooltip "Zobrazí průběh stahování">
+<!ENTITY downloads.accesskey "t">
+<!ENTITY downloads.commandkey "j">
+<!ENTITY downloadsUnix.commandkey "y">
+<!ENTITY addons.label "Správce doplňků">
+<!ENTITY addons.tooltip "Zobrazí Správce doplňků">
+<!ENTITY addons.accesskey "d">
+
+<!ENTITY errorConsoleCmd.label "Chybová konzola">
+<!ENTITY errorConsoleCmd.accesskey "C">
+<!ENTITY errorConsoleCmd.commandkey "j">
+
+<!ENTITY fileMenu.label "Soubor">
+<!ENTITY fileMenu.accesskey "S">
+<!ENTITY newNavigatorCmd.label "Nové okno">
+<!ENTITY newNavigatorCmd.key "N">
+<!ENTITY newNavigatorCmd.accesskey "N">
+
+<!ENTITY editMenu.label "Úpravy">
+<!ENTITY editMenu.accesskey "a">
+<!ENTITY undoCmd.label "Zpět">
+<!ENTITY undoCmd.key "Z">
+<!ENTITY undoCmd.accesskey "Z">
+<!ENTITY redoCmd.label "Znovu">
+<!ENTITY redoCmd.key "Y">
+<!ENTITY redoCmd.accesskey "o">
+<!ENTITY cutCmd.label "Vyjmout">
+<!ENTITY cutCmd.key "X">
+<!ENTITY cutCmd.accesskey "V">
+<!ENTITY copyCmd.label "Kopírovat">
+<!ENTITY copyCmd.key "C">
+<!ENTITY copyCmd.accesskey "K">
+<!ENTITY pasteCmd.label "Vložit">
+<!ENTITY pasteCmd.key "V">
+<!ENTITY pasteCmd.accesskey "l">
+<!ENTITY deleteCmd.label "Smazat">
+<!ENTITY deleteCmd.key "D">
+<!ENTITY deleteCmd.accesskey "m">
+<!ENTITY selectAllCmd.label "Vybrat vše">
+<!ENTITY selectAllCmd.key "A">
+<!ENTITY selectAllCmd.accesskey "a">
+<!ENTITY preferencesCmd.label "Možnosti…">
+<!ENTITY preferencesCmd.accesskey "M">
+<!ENTITY preferencesCmdUnix.label "Předvolby">
+<!ENTITY preferencesCmdUnix.accesskey "v">
+
+<!ENTITY clearPrivateDataCmd.label "Vymazat důvěrná data">
+<!ENTITY clearPrivateDataCmd.accesskey "d">
+
+<!ENTITY viewMenu.label "Zobrazit">
+<!ENTITY viewMenu.accesskey "Z">
+<!ENTITY viewToolbarsMenu.label "Nástrojové lišty">
+<!ENTITY viewToolbarsMenu.accesskey "N">
+<!ENTITY viewSidebarMenu.label "Postranní lišta">
+<!ENTITY viewSidebarMenu.accesskey "P">
+<!ENTITY viewCustomizeToolbar.label "Vlastní…">
+<!ENTITY viewCustomizeToolbar.accesskey "V">
+
+<!ENTITY historyMenu.label "Historie">
+<!ENTITY historyMenu.accesskey "H">
+<!ENTITY historyUndoMenu.label "Naposledy zavřené panely">
+
+<!ENTITY historyHomeCmd.label "Domů">
+<!ENTITY showAllHistoryCmd2.label "Zobrazit celou historii">
+<!ENTITY showAllHistoryCmd.commandkey "H">
+
+<!ENTITY openCmd.commandkey "l">
+<!ENTITY urlbar.emptyText "Hledat v záložkách a historii">
+<!ENTITY urlbar.accesskey "d">
+
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+<!ENTITY searchFocus.commandkey "k">
+<!ENTITY searchFocus.commandkey2 "e">
+<!ENTITY searchFocusUnix.commandkey "j">
+
+<!ENTITY openLinkCmd.label "Otevřít odkaz v novém okně">
+<!ENTITY openLinkCmd.accesskey "O">
+<!ENTITY openLinkCmdInTab.label "Otevřít odkaz v novém panelu">
+<!ENTITY openLinkCmdInTab.accesskey "n">
+<!ENTITY openFrameCmd.label "Otevřít rám v novém okně">
+<!ENTITY openFrameCmd.accesskey "O">
+<!ENTITY openFrameCmdInTab.label "Otevřít rám v novém panelu">
+<!ENTITY openFrameCmdInTab.accesskey "t">
+<!ENTITY showOnlyThisFrameCmd.label "Zobrazit pouze tento rám">
+<!ENTITY showOnlyThisFrameCmd.accesskey "p">
+<!ENTITY reloadCmd.commandkey "r">
+<!ENTITY reloadFrameCmd.label "Znovu načíst rám">
+<!ENTITY reloadFrameCmd.accesskey "r">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Zobrazit zdrojový kód výběru">
+<!ENTITY viewPartialSourceForMathMLCmd.label "Zobrazit zdrojový kód MathML">
+<!ENTITY viewPartialSourceCmd.accesskey "Z">
+<!ENTITY viewPageSourceCmd.label "Zobrazit zdrojový kód stránky">
+<!ENTITY viewPageSourceCmd.accesskey "d">
+<!ENTITY viewFrameSourceCmd.label "Zobrazit zdrojový kód rámu">
+<!ENTITY viewFrameSourceCmd.accesskey "v">
+<!ENTITY viewPageInfoCmd.label "Zobrazit informace o stránce">
+<!ENTITY viewPageInfoCmd.accesskey "i">
+<!ENTITY viewFrameInfoCmd.label "Zobrazit informace o rámu">
+<!ENTITY viewFrameInfoCmd.accesskey "i">
+<!ENTITY showImageCmd.label "Načíst obrázek">
+<!ENTITY showImageCmd.accesskey "N">
+<!ENTITY viewImageCmd.label "Zobrazit obrázek">
+<!ENTITY viewImageCmd.accesskey "Z">
+<!ENTITY viewBGImageCmd.label "Zobrazit obrázek na pozadí">
+<!ENTITY viewBGImageCmd.accesskey "o">
+<!ENTITY setDesktopBackgroundCmd.label "Nastavit pozadí plochy…">
+<!ENTITY setDesktopBackgroundCmd.accesskey  "t">
+<!ENTITY bookmarkPageCmd2.label "Přidat stránku do záložek">
+<!ENTITY bookmarkPageCmd2.accesskey "P">
+<!ENTITY bookmarkThisLinkCmd.label "Přidat odkaz do záložek">
+<!ENTITY bookmarkThisLinkCmd.accesskey "P">
+<!ENTITY bookmarkThisFrameCmd.label "Přidat rám do záložek">
+<!ENTITY bookmarkThisFrameCmd.accesskey "d">
+<!ENTITY sendPageCmd.label "Odeslat odkaz…">
+<!ENTITY sendPageCmd.accesskey "d">
+<!ENTITY savePageCmd.label "Uložit stránku jako…">
+<!ENTITY savePageCmd.accesskey "j">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2 "j">
+<!ENTITY savePageCmd.commandkey "s">
+<!ENTITY saveFrameCmd.label "Uložit rám jako…">
+<!ENTITY saveFrameCmd.accesskey "r">
+<!ENTITY printFrameCmd.label "Tisknout rám…">
+<!ENTITY printFrameCmd.accesskey "T">
+<!ENTITY saveLinkCmd.label "Uložit odkaz jako…">
+<!ENTITY saveLinkCmd.accesskey "d">
+<!ENTITY sendLinkCmd.label "Odeslat odkaz…">
+<!ENTITY sendLinkCmd.accesskey "e">
+<!ENTITY saveImageCmd.label "Uložit obrázek jako…">
+<!ENTITY saveImageCmd.accesskey "j">
+<!ENTITY sendImageCmd.label "Odeslat obrázek…">
+<!ENTITY sendImageCmd.accesskey "s">
+<!ENTITY copyLinkCmd.label "Kopírovat adresu odkazu">
+<!ENTITY copyLinkCmd.accesskey "K">
+<!ENTITY copyLinkTextCmd.label "Kopírovat text odkazu">
+<!ENTITY copyLinkTextCmd.accesskey "x">
+<!ENTITY copyImageCmd.label "Kopírovat adresu obrázku">
+<!ENTITY copyImageCmd.accesskey "b">
+<!ENTITY copyImageContentsCmd.label "Kopírovat obrázek">
+<!ENTITY copyImageContentsCmd.accesskey "r">
+<!ENTITY blockImageCmd.accesskey "l">
+<!ENTITY metadataCmd.label "Vlastnosti">
+<!ENTITY metadataCmd.accesskey "i">
+<!ENTITY copyEmailCmd.label "Kopírovat e-mailovou adresu">
+<!ENTITY copyEmailCmd.accesskey "e">
+<!ENTITY thisFrameMenu.label "Tento rám">
+<!ENTITY thisFrameMenu.accesskey "T">
+
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+<!ENTITY fullZoomEnlargeCmd.label "Zvětšit">
+<!ENTITY fullZoomEnlargeCmd.accesskey "v">
+<!ENTITY fullZoomEnlargeCmd.commandkey "+">
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "="><!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label "Zmenšit">
+<!ENTITY fullZoomReduceCmd.accesskey "m">
+<!ENTITY fullZoomReduceCmd.commandkey "-">
+<!ENTITY fullZoomReduceCmd.commandkey2 "">
+
+<!ENTITY fullZoomResetCmd.label "Normální">
+<!ENTITY fullZoomResetCmd.accesskey "N">
+<!ENTITY fullZoomResetCmd.commandkey "0">
+<!ENTITY fullZoomResetCmd.commandkey2 "">
+
+<!ENTITY fullZoomToggleCmd.label "Pouze velikost textu">
+<!ENTITY fullZoomToggleCmd.accesskey "t">
+<!ENTITY fullZoom.label "Velikost stránky">
+<!ENTITY fullZoom.accesskey "V">
+
+<!ENTITY newTabButton.tooltip "Otevře nový panel">
+<!ENTITY newWindowButton.tooltip "Otevře nové okno">
+<!ENTITY sidebarCloseButton.tooltip "Zavře postranní lištu">
+
+<!ENTITY cutButton.tooltip "Vyjmout">
+<!ENTITY copyButton.tooltip "Kopírovat">
+<!ENTITY pasteButton.tooltip "Vložit">
+
+<!ENTITY quitApplicationCmdWin.label "Ukončit">
+<!ENTITY quitApplicationCmdWin.accesskey "k">
+<!ENTITY goBackCmd.commandKey "[">
+<!ENTITY goForwardCmd.commandKey "]">
+<!ENTITY quitApplicationCmd.label "Ukončit">
+<!ENTITY quitApplicationCmd.accesskey "k">
+<!ENTITY quitApplicationCmdMac.label "Ukončit">
+<!ENTITY quitApplicationCmdMac.key "Q">
+
+<!ENTITY closeCmd.label "Zavřít">
+<!ENTITY closeCmd.key "W">
+<!ENTITY closeCmd.accesskey "Z">
+
+<!ENTITY pageStyleMenu.label "Styl stránky">
+<!ENTITY pageStyleMenu.accesskey "y">
+<!ENTITY pageStyleNoStyle.label "Bez stylu">
+<!ENTITY pageStyleNoStyle.accesskey "B">
+<!ENTITY pageStylePersistentOnly.label "Základní styl">
+<!ENTITY pageStylePersistentOnly.accesskey "Z">
+
+<!ENTITY pageReportIcon.tooltip "Změní nastavení blokování vyskakovacích oken pro webový server">
+
+<!ENTITY allowPopups.accesskey "P">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label "Upravit předvolby blokování vyskakovacích oken…">
+<!ENTITY editPopupSettings.label "Upravit možnosti blokování vyskakovacích oken…">
+<!ENTITY editPopupSettings.accesskey "U">
+<!ENTITY dontShowMessage.accesskey "N">
+
+<!ENTITY bidiSwitchPageDirectionItem.label "Změnit orientaci stránky">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey "o">
+<!ENTITY bidiSwitchTextDirectionItem.label "Změnit orientaci textu">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey "r">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey "X">
+
+<!ENTITY findOnCmd.label "Najít na této stránce…">
+<!ENTITY findOnCmd.accesskey "N">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label "Najít další">
+<!ENTITY findAgainCmd.accesskey "t">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Přidat slovník…">
+<!ENTITY spellAddDictionaries.accesskey "s">
+
+<!ENTITY editBookmark.done.label "Dokončit">
+<!ENTITY editBookmark.cancel.label "Zrušit">
+<!ENTITY editBookmark.removeBookmark.label "Smazat záložku">
+<!ENTITY editBookmark.removeBookmark.accessKey "S">
+<!ENTITY editBookmark.undo.label "Zpět">
+<!ENTITY editBookmark.undo.accessKey "Z">
+<!ENTITY editBookmark.edit.label "Upravit…">
+<!ENTITY editBookmark.edit.accessKey "U">
+
+<!ENTITY identity.unverifiedsite2 "Tato stránka neposkytuje informace o své identitě.">
+<!ENTITY identity.connectedTo "Jste připojeni k serveru">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables. If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "který je provozován">
+
+<!ENTITY identity.moreInfoLinkText "Více informací…">
+
+<!ENTITY downloadMonitor2.tooltip "Po klepnutí otevře Správce stahování">

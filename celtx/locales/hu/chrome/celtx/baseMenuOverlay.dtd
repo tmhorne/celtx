@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key       "m">
+<!ENTITY minimizeWindow.label     "Kis méret">
+<!ENTITY bringAllToFront.label    "Előtérbe hozás">
+<!ENTITY zoomWindow.label         "Nagyítás">
+<!ENTITY windowMenu.label         "Ablak">
+
+<!ENTITY helpMenu.label           "Súgó"> 
+<!ENTITY helpMenu.accesskey       "S"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "Súgó"> 
+<!ENTITY helpMenuWin.accesskey    "S">
+<!ENTITY aboutCmd.label           "A &brandFullName; névjegye">
+<!ENTITY aboutCmd.accesskey       "A">
+<!ENTITY helpContents.label       "Tartalom">
+<!ENTITY helpContents.accesskey   "T">
+<!ENTITY helpContentsMac.label    "&brandShortName; Súgó">
+<!ENTITY helpForIEUsers.label     "Internet Explorer-felhasználóknak">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "/">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.label         "Verzióinformáció">
+<!ENTITY helpReleaseNotes.accesskey     "V">
+<!ENTITY updateCmd.label                "Frissítések keresése...">
+<!ENTITY updateCmd.accesskey            "F">
+
+<!ENTITY preferencesCmdMac.label        "Beállítások...">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Szolgáltatások">
+
+<!ENTITY hideThisAppCmdMac.label        "A &brandShortName; elrejtése">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "A több elrejtése">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Mindet mutat">

@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Utan tittel)">
+<!ENTITY  newTab.label           "Ny fane">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "Lat att fane">
+<!ENTITY  closeTab.accesskey         "L">
+<!ENTITY  closeOtherTabs.accesskey  "n">
+<!ENTITY  closeOtherTabs.label   "Lat att andre faner">
+<!ENTITY  reloadAllTabs.label    "Oppdater alle faner">
+<!ENTITY  reloadAllTabs.accesskey         "a">
+<!ENTITY  reloadTab.label        "Oppdater fane">
+<!ENTITY  reloadTab.accesskey         "r">
+<!ENTITY  listAllTabs.label      "List opp alle fanene">
+<!ENTITY  bookmarkAllTabs.label       "Bokmerk alle fanene …">
+<!ENTITY  bookmarkAllTabs.accesskey   "o">
+<!ENTITY  bookmarkThisTab.label       "Bokmerk denne fana">
+<!ENTITY  bookmarkThisTab.accesskey   "B">
+<!ENTITY  undoCloseTab.label          "Angre Lat att fane">
+<!ENTITY  undoCloseTab.accesskey      "A">

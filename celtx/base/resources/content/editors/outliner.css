@@ -1,0 +1,144 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  padding: 3em 0em 0em 3em;
+  font-size: 14pt;
+}
+
+h1 {
+  font-size: 1.2em;
+  text-align: center;
+  
+}
+
+@media screen {
+  h1 {
+    background-color: #E8E8E8;
+  }
+}
+
+@media print {
+  body {
+    padding: 0px;
+  }
+  .hardbreak {
+    border-width: 0px;
+    page-break-before: always;
+  }
+}
+
+/* Extend the Mozilla rules to explicitly style 4+ deep unordered lists */
+
+ul ul ul ul,
+ul ul ul ul ul ul ul {
+  list-style-type: disc;
+}
+
+ul ul ul ul ul,
+ul ul ul ul ul ul ul ul {
+  list-style-type: circle;
+}
+
+ul ul ul ul ul ul,
+ul ul ul ul ul ul ul ul ul {
+  list-style-type: square;
+}
+
+/*
+ * The HTML editor doesn't nest lists properly. Instead of this:
+ *
+ * <ol>
+ *   <li>Item 1</li>
+ *   <li>Item 2
+ *     <ol>
+ *       <li>Item 2.1</li>
+ *     </ol>
+ *   </li>
+ *   <li>Item 3</li>
+ * </ol>
+ *
+ * It does this:
+ *
+ * <ol>
+ *   <li>Item 1</li>
+ *   <li>Item 2</li>
+ *     <ol>
+ *       <li>Item 2.1</li>
+ *     </ol>
+ *   <li>Item 3</li>
+ * </ol>
+ *
+ * That breaks nested CSS counters, so we have to be more explicit.
+ */
+
+ol {
+  list-style-type: none;
+  counter-reset: ol1;
+}
+
+ol > ol {
+  counter-reset: ol2;
+}
+
+ol > ol > ol {
+  counter-reset: ol3;
+}
+
+ol > ol > ol > ol {
+  counter-reset: ol4;
+}
+
+ol > li:before {
+  counter-increment: ol1;
+  content: counter(ol1) ". ";
+}
+
+ol > ol > li:before {
+  counter-increment: ol2;
+  content: counter(ol1) "." counter(ol2) ". ";
+}
+
+ol > ol > ol > li:before {
+  counter-increment: ol3;
+  content: counter(ol1) "." counter(ol2) "." counter(ol3) ". ";
+}
+
+ol > ol > ol > ol > li:before {
+  counter-increment: ol4;
+  content: counter(ol1) "." counter(ol2) "." counter(ol3) "." counter(ol4) ". ";
+}
+
+/*
+ * Now reset it for deeper levels, so we don't muck up the numbering of the
+ * higher levels.
+ */
+ol > ol > ol > ol > ol {
+  counter-reset: oln;
+}
+
+ol > ol > ol > ol > ol > li:before {
+  counter-increment: oln;
+  content: counter(oln) ". ";
+}

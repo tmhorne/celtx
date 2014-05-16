@@ -1,0 +1,970 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "E-mail">
+
+<!ENTITY export.label "Exporta">
+<!ENTITY exportSketch.label "Exporta esquetx">
+<!ENTITY chapter.label "Capítol">
+<!ENTITY chapters.label "Capítols">
+<!ENTITY chapter.toolbarlabel "Cap.">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Mostra el contingut">
+<!ENTITY exportCatalog.label "Exporta Catàleg">
+<!ENTITY novel.desc "Afegeix una novel·la, amb fitxes i anotacions.">
+<!ENTITY novel.label "Novel·la">
+<!ENTITY showBreakdownInScript.label "Mostra el desglossament en el guió">
+<!ENTITY showDialogNumbers.label "Mostra números del diàleg">
+
+<!ENTITY timer.settings.label "Configuració">
+<!ENTITY timer.autostart.label "Inicia sessió quant obri un guió.">
+<!ENTITY timer.schedule.label "Programació">
+<!ENTITY timer.useSchedule.label "Usa pausa programada">
+<!ENTITY timer.workMinutes.label "Feina (minutes):">
+<!ENTITY timer.breakMinutes.label "Pausa (minutes):">
+<!ENTITY timer.alertType.label "Escriviu l'alerta per l'inici/final de la pausa">
+<!ENTITY timer.showDialog.label "Mostra un diàleg">
+<!ENTITY timer.endSession.label "Fi de sessió">
+<!ENTITY timer.flashTimer.label "Flash del temporitzador">
+<!ENTITY timer.resetSession.label "Reinicia sessió">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Informes">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Hora d'inici de la sessió:">
+<!ENTITY timer.totalWritingTime.label "Temps total escrivint:">
+<!ENTITY timer.totalBreakTime.label "Temps total de pausa:">
+<!ENTITY timer.totalTime.label "Temps total:">
+<!ENTITY timer.wordsWritten.label "Paraules escrites">
+
+<!ENTITY timer.allSessions.label "Totes les sessions">
+<!ENTITY timer.sessionDetail.label "Detall de la sessió">
+<!ENTITY timer.scriptSummary.label "Resum del guió">
+<!ENTITY timer.writingGoals.label "Objectius de l'escriptura">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Informe de la sessió">
+<!ENTITY timer.totalSessionTime.header "Temps total de la sessió">
+<!ENTITY timer.totalSessionTime.label "Temps total de la sessió">
+<!ENTITY timer.totalWordsWritten.header "Total de paraules escrites">
+<!ENTITY timer.totalWordsWritten.label "Total paraules escrites">
+<!ENTITY timer.noSessionsToDisplay.label "Cap sessió per mostrar.">
+<!ENTITY timer.sessionNo.label "Sessió #">
+<!ENTITY timer.date.label "Data">
+
+<!ENTITY timer.tweetThis.label "Envia al Twiter!">
+<!ENTITY timer.startDate.label "Data inicial">
+<!ENTITY timer.startTime.label "Hora inicial">
+<!ENTITY timer.endTime.label "Hora final">
+<!ENTITY timer.breakTime.label "Hora de la pausa">
+
+<!ENTITY timer.sessionStartWords.label "Paraules al inici de la sessió">
+<!ENTITY timer.sessionEndWords.label "Paraules al final de la sessió">
+<!ENTITY timer.newWords.header "Paraules noves">
+<!ENTITY timer.noNewWords.label "Cap augment en el nombre de paraules.">
+<!ENTITY timer.newDialog.header "Diàleg nou">
+<!ENTITY timer.noNewDialog.label "Cap augment de diàleg.">
+<!ENTITY timer.newCharacters.header "Personatges nous">
+<!ENTITY timer.noNewCharacters.label "Cap personatge afegit.">
+<!ENTITY timer.newPages.header "Pàgines noves">
+<!ENTITY timer.newScenes.header "Escenes noves">
+<!ENTITY timer.newPanels.header "Panells nous">
+<!ENTITY timer.shotWords.header "Paraules de pla">
+<!ENTITY timer.actionWords.header "Paraules d'acció">
+<!ENTITY timer.dialogWords.header "Paraules de diàleg">
+<!ENTITY timer.soundVoiceMusicWords.header "Paraules So/Veu/Música">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Nom">
+<!ENTITY timer.words.label "Paraules">
+<!ENTITY timer.percentage.label "Percentatge">
+
+<!ENTITY timer.summaryReport.label "Informe resum">
+<!ENTITY timer.contributionsByAuthor.label "Contribucions per autor">
+<!ENTITY timer.weekdaySessions.label "Sessions per dia de la setmana">
+<!ENTITY timer.weekdayWords.label "Paraules per dia de la setmana">
+<!ENTITY timer.numberOfSessions.label "Número de sessions">
+<!ENTITY timer.longest.label "El més llarg">
+<!ENTITY timer.shortest.label "El més curt">
+<!ENTITY timer.averageDuration.label "Mitjana de durada">
+<!ENTITY timer.mostWords.label "Més paraules">
+<!ENTITY timer.leastWords.label "Menys paraules">
+<!ENTITY timer.averageWords.label "Mitjana de paraules">
+<!ENTITY timer.wordCounts.header "Comptador de paraules">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Paraules totals">
+<!ENTITY timer.totalDialogWords.header "Total de paraules de diàleg">
+<!ENTITY timer.character.label "Personatge">
+<!ENTITY timer.weekday.label "Dia de la setmana">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; de total">
+<!ENTITY timer.author.label "Autor">
+
+<!ENTITY timer.writingGoalReport.label "Informe d'objectius de l'escriptura">
+<!ENTITY timer.goalSession.header "Objectius de la sessió">
+<!ENTITY timer.goalSession.label "Objectius d ela sessió">
+<!ENTITY timer.goalDaily.header "Objectius diari">
+<!ENTITY timer.goalDaily.label "Objectius diari">
+<!ENTITY timer.goalScript.header "Objectiu del guió">
+<!ENTITY timer.goalScript.label "Objectiu del guió">
+<!ENTITY timer.wordGoal.label "Objectiu de la paraula">
+
+<!ENTITY timer.message.label "Missatge">
+<!ENTITY timer.tags.label "Etiquetes">
+<!ENTITY timer.mostRecentSession.label "Sessió més recent">
+
+<!ENTITY timer.alertDialog.title "Temporitzador de la sessió">
+<!ENTITY timer.timerMenu.tooltip "Cliqueu per opcions">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Color del primer pla">
+<!ENTITY fullscreen.backgroundColour.tooltip "Color del fons">
+<!ENTITY fullscreen.fullscreen.tooltip "Pantalla sensera">
+
+<!ENTITY bbc.options.label "Opcions format BBC">
+<!ENTITY bbc.showTitle.label "Títol del xou">
+<!ENTITY bbc.sketchTitle.label "Títol de l'esquetx">
+<!ENTITY editText.title "Edita Text">
+<!ENTITY sketch.fillColour.tooltip "Acolorir">
+<!ENTITY sketch.group.tooltip "Agrupa">
+<!ENTITY sketch.lower.tooltip "Avall">
+<!ENTITY sketch.lowerToBottom.tooltip "Mou a dalt">
+<!ENTITY sketch.raise.tooltip "Amunt">
+<!ENTITY sketch.raiseToTop.tooltip "Mou a baix">
+<!ENTITY sketch.strokeColour.tooltip "Color del traç">
+<!ENTITY sketch.ungroup.tooltip "Desagrupa">
+
+<!ENTITY custom.label "Personalitza">
+<!ENTITY saveAsPreset.label "Desa com a predeterminat">
+<!ENTITY sceneLocking.title "Bloqueja escena">
+<!ENTITY sceneNumbering.label "Numeració d'escenes">
+<!ENTITY scenenumber.after.label "Després">
+<!ENTITY scenenumber.before.label "Abans">
+<!ENTITY scenenumber.example.label "Exemple">
+<!ENTITY scenenumber.letter.label "Carta">
+<!ENTITY scenenumber.number.label "Número">
+<!ENTITY scenenumber.position.label "Posició">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Restableix tots els números">
+<!ENTITY scenenumber.suffix.label "Sufix">
+<!ENTITY scenenumber.type.label "Tipus">
+<!ENTITY style.label "Estil">
+
+<!ENTITY project.film.label "Cinema">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "Teatre">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Afegeix Imatge">
+<!ENTITY addPaletteObjects.label "Paquet artístic">
+<!ENTITY addShot.label "Afegeix pla">
+<!ENTITY bbcCueStyle.label "Indicació estil BBC">
+<!ENTITY bbcSceneStyle.label "Escena estil BBC">
+<!ENTITY bdc.cameras "Càmeres">
+<!ENTITY chat.label "Xat">
+<!ENTITY colour.blue "Blau">
+<!ENTITY colour.cherry "Vermell">
+<!ENTITY colour.gold "Daurat">
+<!ENTITY colour.green "Verd">
+<!ENTITY colour.pink "Rosa">
+<!ENTITY colour.salmon "Salmó">
+<!ENTITY colour.white "Blanc">
+<!ENTITY colour.yellow "Groc">
+<!ENTITY currentRevision.label "Revisió actual">
+<!ENTITY createNewRevision.tooltip "Crea revisió nova">
+<!ENTITY default.label "Defecte">
+<!ENTITY enableSceneLocking.label "Bloqueja escenes">
+<!ENTITY fixNumbers.label "Bloqueja">
+<!ENTITY furniture.label "Mobiliari">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Llum dispersa">
+<!ENTITY light.spot.label "Llum concentrada">
+<!ENTITY linesBetweenScenes.label "Línies entre escenes">
+<!ENTITY man.label "Home">
+<!ENTITY numbers.bothNos "Ambdós #s">
+<!ENTITY numbers.leftNo "Esquerra #">
+<!ENTITY numbers.none "Cap">
+<!ENTITY numbers.rightNo "Dreta #">
+<!ENTITY omitScene.label "Omet escena">
+<!ENTITY palette.label "Paleta">
+<!ENTITY palettes.label "Paletes">
+<!ENTITY paletteTree.tooltip "Arrossegueu i deixeu objectes dins de l'esbós">
+<!ENTITY people.label "Gent">
+<!ENTITY person.label "Persona">
+<!ENTITY preventEditing.label "Bloqueja text">
+<!ENTITY resetRevisionMode.label "Reinicia mode de revisió">
+<!ENTITY revisionColour.desc "Aquest serà el color predeterminat de la revisió per a qualsevol edició feta al guió.">
+<!ENTITY revisionColour.label "Color de la revisió">
+<!ENTITY revisionMarks.all "Totes les marques">
+<!ENTITY revisionMarks.current "Marques actuals">
+<!ENTITY revisionMarks.hide "Amaga les marques">
+<!ENTITY revisionMarks.mark.label "Marca">
+<!ENTITY revisionMarks.unmark.label "Desmarca">
+<!ENTITY revisionMode.label "Mode de revisió">
+<!ENTITY revisionName.label "Nom de la revisió">
+<!ENTITY revisionOptions.title "Opcions de revisió">
+<!ENTITY shotSetup.label "Esbós">
+<!ENTITY shotSetup.desc "Afegeix esbós al projecte.">
+<!ENTITY showScriptHeader.label "Mostra capçalera del guió">
+<!ENTITY standard.label "Estàndard">
+<!ENTITY startNewRevision.label "Inicia una revisió nova">
+<!ENTITY storyboard.showImages.label "Mostra imatges">
+<!ENTITY storyboard.showSetups.label "Mostra esbossos">
+<!ENTITY storyboard.showBoth.label "Mostra ambdós">
+<!ENTITY woman.label "Dona">
+
+<!ENTITY light.bank.label "Caixa de llum">
+<!ENTITY bathtub.label "Banyera">
+<!ENTITY boy.label "Noi">
+<!ENTITY car.label "Cotxe">
+<!ENTITY chair.label "Cadira">
+<!ENTITY coffeetable.label "Taula de bar">
+<!ENTITY couch.label "Sofà">
+<!ENTITY crowd.label "Multitud">
+<!ENTITY endtable.label "Taula auxiliar">
+<!ENTITY girl.label "Noia">
+<!ENTITY group.label "Grup"> <!-- Grup de gent -->
+<!ENTITY house.label "Casa">
+<!ENTITY building.label "Edifici"> <!-- ex., edifici d'oficines -->
+<!ENTITY pickuptruck.label "Camioneta">
+<!ENTITY sink.label "Pica"> <!-- Aigüera  -->
+<!ENTITY spotlight.label "Projector">
+<!ENTITY street.label "Carrer">
+<!ENTITY toilet.label "Lavabo">
+<!ENTITY tree.label "Arbre">
+<!ENTITY van.label "Furgoneta">
+<!ENTITY videocamera.label "Càmera de vídeo">
+
+<!ENTITY studioAuthDialog.title "Autenticació Celtx">
+<!ENTITY studioAuthDialog.desc "Inici sessió Celtx">
+
+<!ENTITY access.label "Accés">
+<!ENTITY actorProfile.desc      "Afegeix al projecte una descripció per a un actor o actriu.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Converteix a...">
+<!ENTITY add.label    "Afegeix">
+<!ENTITY addCardCmd.label "Afegeix una fitxa">
+<!ENTITY addCmd.label "Afegeix">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Detalls de l'element">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Selecciona un element">
+<!ENTITY addFolder.label "Afegeix carpeta...">
+<!ENTITY addFolderCmd.label "Afegeix Carpeta">
+<!ENTITY addImages.label "Afegeix imatges">
+<!ENTITY addItem.label "Afegeix element...">
+<!ENTITY addItemCmd.label "Afegeix element">
+<!ENTITY addNote.label "Afegeix nota">
+<!ENTITY addSequenceCmd.toolbarlabel "Afegeix seqüència">
+<!ENTITY advanced.label       "Avançat">
+<!ENTITY alignCenter.label "Centra">
+<!ENTITY alignJustified.label "Justifica">
+<!ENTITY alignLeft.label "Alinea a l'esquerra">
+<!ENTITY alignRight.label "Alinea a la dreta">
+<!ENTITY allShootDays.label "Tots els dies de rodatge">
+<!ENTITY allUppercase.label "TOT">
+<!ENTITY american.label "Americà">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Aquesta característica només està disponible per la creació de PDF.">
+<!ENTITY audioplay.desc "Afegeix un guió radiofònic al projecte.">
+<!ENTITY audioplay.label "Guió radiofònic">
+<!ENTITY authDialog.description "Per dur a terme aquesta acció, cal estar registrat a Celtx.">
+<!ENTITY authDialog.title       "Autenticació Celtx">
+<!ENTITY author.label "Autor">
+<!ENTITY autoCharContinueds.label   "Mostra continuacions de personatges">
+<!ENTITY autoSaveProject.label "Desa automàticament el projecte">
+<!ENTITY autoparenthesize.label "Obre parèntesis quan es teclegi '(' ">
+<!ENTITY avScript.desc "Afegeix al projecte un guió audiovisual de dues columnes: Àudio i Vídeo.">
+<!ENTITY avScript.label "Guió A/V">
+<!ENTITY basedOn.label "Basat en">
+<!ENTITY bdc.actor        "Actor">
+<!ENTITY bdc.addlabour    "Tasques addicionals">
+<!ENTITY bdc.animals      "Animals">
+<!ENTITY bdc.camera       "Càmera">
+<!ENTITY bdc.cast         "Repartiment">
+<!ENTITY bdc.cgi          "CGI">
+<!ENTITY bdc.construction "Construcció">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics    "Elèctrics">
+<!ENTITY bdc.equip        "Equipament especial">
+<!ENTITY bdc.extras       "Extres">
+<!ENTITY bdc.greenery     "Jardineria">
+<!ENTITY bdc.hair         "Perruqueria">
+<!ENTITY bdc.handler      "Cuidador d'animals">
+<!ENTITY bdc.lights       "Llums">
+<!ENTITY bdc.livestock    "Bestiar">
+<!ENTITY bdc.location     "Localització">
+<!ENTITY bdc.makeup       "Maquillatge">
+<!ENTITY bdc.mechfx       "FX mecànics">
+<!ENTITY bdc.misc         "Diversos">
+<!ENTITY bdc.music        "Música">
+<!ENTITY bdc.opticalfx    "FX òptics">
+<!ENTITY bdc.painting     "Pintura">
+<!ENTITY bdc.prodnotes    "Notes de producció">
+<!ENTITY bdc.props        "Attrezzo">
+<!ENTITY bdc.security     "Seguretat">
+<!ENTITY bdc.set          "Escenari">
+<!ENTITY bdc.setdressing  "Decorat">
+<!ENTITY bdc.sound        "So">
+<!ENTITY bdc.soundfx      "FX sonors">
+<!ENTITY bdc.specialfx    "FX especials">
+<!ENTITY bdc.storyboard   "Storyboard">
+<!ENTITY bdc.stunts       "Dobles especialistes">
+<!ENTITY bdc.vehicles     "Vehicles">
+<!ENTITY bdc.wardrobe     "Vestuari">
+<!ENTITY bdc.weapons      "Armes">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Negreta">
+<!ENTITY bookmark.desc      "Afegeix un enllaç a un lloc web.">
+<!ENTITY bookmark.label     "Enllaç web">
+<!ENTITY both.label   "Ambdós">
+<!ENTITY bottomOfPage.label   "Al peu de pàgina">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Afegeix informació desglossada per al guió.">
+<!ENTITY breakdown.label    "Desglossament">
+<!ENTITY breakdownReport.label "Informe desglossat">
+<!ENTITY brokenSceneEventWarning.label "L'esdeveniment correspon a una escena que ja no existeix.">
+<!ENTITY browseCmd.label      "Navega">
+<!ENTITY byline.label "de">
+<!ENTITY calendar.desc      "Afegeix un calendari al Projecte.">
+<!ENTITY calendar.label     "Calendari">
+<!ENTITY callSheet.label "Convocatòria">
+<!ENTITY cast.label "Repartiment">
+<!ENTITY castOfCharacters.label "Repartiment de personatges">
+<!ENTITY catalog.desc "Afegeix un catàleg d'elements de producció al meu projecte.">
+<!ENTITY catalog.label "Catàleg">
+<!ENTITY catalogAddItem.tooltip "Afegeix un element al catàleg">
+<!ENTITY catalogDeleteItem.tooltip "Elimina element del catàleg">
+<!ENTITY categories.label "Categories">
+<!ENTITY category.label     "Categoria">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "Compte &appName;...">
+<!ENTITY celtxError.title       "Errada del Celtx">
+<!ENTITY celtxTagline.label "Tot al voltant d'una història.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Una visió de conjunt de personatges i les relacions entre ells.">
+<!ENTITY charOutline.label "Esbós del personatge">
+<!ENTITY character.label        "Personatge">
+<!ENTITY characterProfile.desc  "Afegeix una descripció per un personatge nou.">
+<!ENTITY characterProfile.existing "També podeu descriure un personatge existent de la següent llista.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "Selecciona un Personatge">
+<!ENTITY characters.label       "Personatges">
+<!ENTITY clearCmd.label "Neteja">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Crea un guió de còmic.">
+<!ENTITY comicBook.label "Còmic">
+<!ENTITY comment.label "Comentari">
+<!ENTITY completed.label "Completat">
+<!ENTITY contact.label "Contacte">
+<!ENTITY contactInformation.label "Contacte">
+<!ENTITY contactName.label "Nom de contacte">
+<!ENTITY contacts.label "Contactes">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Continua">
+<!ENTITY copyProject.title    "Duplica el Projecte">
+<!ENTITY copyProjectCmd.label "Duplica el Projecte">
+<!ENTITY copyright.label "Copyright">
+<!ENTITY create.label "Crea">
+<!ENTITY createAccount.label "Crea un Compte">
+<!ENTITY createCatalogFromSelection.label "Crea un catàleg de la selecció">
+<!ENTITY createProject.label  "Crea un Projecte nou">
+<!ENTITY createProject.title  "Crea un Projecte">
+<!ENTITY createTemplate.label "Crea una plantilla">
+<!ENTITY createdCol.label  "Creat">
+<!ENTITY creatorCol.label  "Autor">
+<!ENTITY crew.desc "Afegeix un document d'equip tècnic.">
+<!ENTITY crew.label "Equip">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Data">
+<!ENTITY datePicker.label "Tria data">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "L'encapçalament de l'escena no acaba amb una paraula de DIA/NIT vàlida. Per solucionar aquest problema, editeu l'encapçalament de l'escena o bé modifiqueu les paraules de la llista DIA/NIT de la pestanya Guió del diàleg de Preferències.">
+<!ENTITY daynightWords.label "Paraules DIA/NIT">
+<!ENTITY dayoff.label "Dia lliure">
+<!ENTITY daysOff.label "Dies lliures">
+<!ENTITY decreaseDelayCmd.tooltip "Disminueix retard.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Disminueix la mida de la lletra">
+<!ENTITY decreaseIndentCmd.label "Disminueix sangria">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Durada de escena per defecte">
+<!ENTITY delayLabel.tooltip "Retard en segons entre imatges">
+<!ENTITY deleteCardCmd.label "Suprimeix fitxa">
+<!ENTITY deleteItem.label "Suprimeix element">
+<!ENTITY deleteItemCmd.label        "Suprimeix">
+<!ENTITY department.label   "Departament">
+<!ENTITY description.label  "Descripció">
+<!ENTITY details.label          "Detalls">
+<!ENTITY dialog.label           "Diàleg">
+<!ENTITY director.label "Director">
+<!ENTITY disabled.label "Desactivat">
+<!ENTITY displayMedia.label "Mostra arxiu multimèdia">
+<!ENTITY downloadProjectCmd.label "Baixa un Projecte...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Baixa">
+<!ENTITY downloadingPDF.label       "Convertint a PDF...">
+<!ENTITY dragToSchedule.tooltip "Arrossega i deixa al pla de rodatge.">
+<!ENTITY dualDialogCmd.label "Diàleg Dual">
+<!ENTITY dualDialogCmd.tooltip "Diàleg Dual">
+<!ENTITY duplicate.label "Duplica">
+<!ENTITY duplicateItemCmd.label "Duplica element">
+<!ENTITY edit.label "Edita">
+<!ENTITY editDates.label "Edita dates">
+<!ENTITY editProfile.label "Editar registre">
+<!ENTITY editSceneDialog.title "Edita l'escena">
+<!ENTITY editTitlePageCmd.label "Edita el títol de la pàgina...">
+<!ENTITY editlabel.tooltip "Clic per editar">
+<!ENTITY eighths.label "Vuitens">
+<!ENTITY eighthsSuffix.label "8ens">
+<!ENTITY element.label          "Element">
+<!ENTITY elements.label         "Elements">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Això s'usa per saber la quantitat d'usuaris actius del Celtx. Cap informació personal o cap dada dels projectes serà tramesa en aquest procés.">
+<!ENTITY enableStats.label    "Envia estadístiques d'us a Celtx.">
+<!ENTITY enableStats.label    "Quan s'executi el Celtx, autoritza'l a fer PING al Servidor Celtx .">
+<!ENTITY enabled.label "Activat">
+<!ENTITY end.label "Fi">
+<!ENTITY endOfShooting.label "Fi de rodatge">
+<!ENTITY enterEmbedTagPrompt.label "Afegeix aquí una etiqueta de un EMBED o bé d'un OBJECT:">
+<!ENTITY eventDetails.label "Detalls d'esdeveniment">
+<!ENTITY every15Minutes.label "Cada quart d'hora">
+<!ENTITY every30Minutes.label "Cada mitja hora">
+<!ENTITY every5Minutes.label "Cada 5 minuts">
+<!ENTITY everyHour.label "Cada hora">
+<!ENTITY everyMinute.label "Cada minut">
+<!ENTITY exportList "Exporta llistat">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label      "Exporta Guió">
+<!ENTITY externalFile.desc  "Afegeix al projecte un arxiu existent.">
+<!ENTITY externalFile.label "Arxiu">
+<!ENTITY fetchingList.label "Obtenint el llistat">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "Afegeix un guió cinematogràfic al projecte.">
+<!ENTITY filmScript.label   "Guió de cinema">
+<!ENTITY filter.label "Filtre">
+<!ENTITY findAllCharacters.label "Afegeix personatges al catàleg">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Cerca...">
+<!ENTITY findPreviousCmd.label "Cerca l'anterior">
+<!ENTITY findTab.label "Troba">
+<!ENTITY folder.label "Carpeta">
+<!ENTITY forceOverwrite.label "Reemplaça sempre i quan la versió del servidor sigui més recent">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Adreça">
+<!ENTITY form.affectEvent "Com afecta aquest esdeveniment a l'estructura global de la història?">
+<!ENTITY form.age "Edat">
+<!ENTITY form.alternate "Nom alternatiu">
+<!ENTITY form.antag "antagonista">
+<!ENTITY form.antagWho "Qui és l'antagonista d'aquesta escena?">
+<!ENTITY form.availability "Disponibilitat">
+<!ENTITY form.bestFriend "millor amic">
+<!ENTITY form.borrow "Préstec">
+<!ENTITY form.build "Construir">
+<!ENTITY form.buy "Comprar">
+<!ENTITY form.catalyst "catalitzador">
+<!ENTITY form.cell "Telèfon mòbil">
+<!ENTITY form.centralEvent "Quin és l'element central d'aquesta escena?">
+<!ENTITY form.charBackground "Rerefons del personatge">
+<!ENTITY form.charGoal "Quin és l'objectiu d'aquest personatge?">
+<!ENTITY form.charPlan "Quina és l'estratègia del personatge per assolir el seu objectiu?">
+<!ENTITY form.charTraits "Trets del personatge">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Usat per els personatges ">
+<!ENTITY form.color "Color">
+<!ENTITY form.comicRelief "apunt còmic">
+<!ENTITY form.comments "Comentaris">
+<!ENTITY form.confidante "confident">
+<!ENTITY form.contactInfo "Informació de contacte">
+<!ENTITY form.cost "Cost">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Dates de disponibilitat">
+<!ENTITY form.dateNeed "Dates d'utilització">
+<!ENTITY form.dateReturn "Data de retorn">
+<!ENTITY form.description "Descripció">
+<!ENTITY form.details "Detalls">
+<!ENTITY form.dislikes "Aversions">
+<!ENTITY form.distFeatures "Característiques destacades">
+<!ENTITY form.dob "Data de naixement">
+<!ENTITY form.dress "Vestit">
+<!ENTITY form.education "Educació">
+<!ENTITY form.elevator "Grua">
+<!ENTITY form.email "Correu electrònic">
+<!ENTITY form.endDate "Data de finalització">
+<!ENTITY form.era "Època">
+<!ENTITY form.eyes "Ulls">
+<!ENTITY form.facilityInfo "Informació de recursos">
+<!ENTITY form.familyBack "Rerefons de la família">
+<!ENTITY form.fullName "Nom complert">
+<!ENTITY form.generic "Genèric">
+<!ENTITY form.genericForm "Formulari Genèric">
+<!ENTITY form.habits "Hàbits/Vicis">
+<!ENTITY form.hair "Cabells">
+<!ENTITY form.hat "Barret">
+<!ENTITY form.height "Alçada">
+<!ENTITY form.inScenes "A les escenes">
+<!ENTITY form.jacket "Jaqueta">
+<!ENTITY form.jobTitle "Títol">
+<!ENTITY form.keyCharTraits "Trets principals del personatge">
+<!ENTITY form.lightSources "Punts de llum">
+<!ENTITY form.likes "Preferències">
+<!ENTITY form.locationMap "Mapa de la localització">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "interès amorós">
+<!ENTITY form.media "Multimèdia">
+<!ENTITY form.mentor "mentor">
+<!ENTITY form.motiv "Motivació">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "No">
+<!ENTITY form.noise "Soroll">
+<!ENTITY form.other "altre">
+<!ENTITY form.pants "Pantalons">
+<!ENTITY form.parking "Garatge">
+<!ENTITY form.partner "soci">
+<!ENTITY form.person "Personalitat">
+<!ENTITY form.phone "Telèfon">
+<!ENTITY form.physicalDesc "Descripció física detallada">
+<!ENTITY form.powerCapa "Capacitat energètica">
+<!ENTITY form.princFunction "Quina és la funció principal d'aquest personatge?">
+<!ENTITY form.procure "Procedència">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "protagonista">
+<!ENTITY form.protagAntag "Protagonista/Antagonista">
+<!ENTITY form.protagWho "Qui és el protagonista d'aquesta escena?">
+<!ENTITY form.rent "Lloguer">
+<!ENTITY form.rentalCost "Cost del lloguer">
+<!ENTITY form.role "Rol">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Com aconsegueix l'objectiu el antagonista?">
+<!ENTITY form.sceneAntagGoal "Quin és l'objectiu del antagonista en aquesta escena?">
+<!ENTITY form.sceneChars "Quins personatges apareixen en aquesta escena?">
+<!ENTITY form.sceneDetails "Detalls de l'Escena">
+<!ENTITY form.sceneMood "Quin és l'ambient de l'escena?">
+<!ENTITY form.sceneProtagAchieve "Com aconsegueix l'objectiu el protagonista?">
+<!ENTITY form.sceneProtagGoal "Quin és l'objectiu del protagonista en aquesta escena?">
+<!ENTITY form.sceneSetting "Quin és el context d'aquesta escena?">
+<!ENTITY form.sceneWhen "Quan passa aquesta escena?">
+<!ENTITY form.scenesUsed "Usat a les escenes ">
+<!ENTITY form.scoutSelect "Cerca i Selecció">
+<!ENTITY form.scoutedFor "Cerca d'escenes">
+<!ENTITY form.scriptName "Nom del Guió">
+<!ENTITY form.selectedFor "Selecció per escenes">
+<!ENTITY form.sex "Sexe">
+<!ENTITY form.shirt "Camisa">
+<!ENTITY form.shoes "Sabates">
+<!ENTITY form.size "Talla">
+<!ENTITY form.squareFoot "Superfície">
+<!ENTITY form.startDate "Data d'inici">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Talles de vestuari">
+<!ENTITY form.washroom "Lavabos">
+<!ENTITY form.weight "Pes">
+<!ENTITY form.wornBy "Usuaris">
+<!ENTITY form.yes "Sí">
+<!ENTITY format.label "Format">
+<!ENTITY formatAct.label      "Acte">
+<!ENTITY formatAction.label   "Acció">
+<!ENTITY formatBalloon.label  "Bafarada">
+<!ENTITY formatBalloonType.label "Tipus de bafarada">
+<!ENTITY formatCaption.label  "Peu">
+<!ENTITY formatCaption.shortlabel "&formatCaption.label;">  <!-- max 7 chars -->
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "Capçalera d'escena">
+<!ENTITY formatMusic.label    "Música">
+<!ENTITY formatPage.label     "Pàgina">
+<!ENTITY formatPage.shortlabel     "Pàg.">  <!-- max 5 chars -->
+<!ENTITY formatPanel.label    "Vinyeta">
+<!ENTITY formatPanel.shortlabel    "Vin.">  <!-- max 5 chars -->
+<!ENTITY formatParen.label    "Entre parèntesis">
+<!ENTITY formatProductionNote.label "Notes de producció">
+<!ENTITY formatShot.label     "Pla">
+<!ENTITY formatSound.label    "So">
+<!ENTITY formatStagedir.label "Acotacions">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "Transició">
+<!ENTITY formatVoice.label    "Veu"> 
+<!ENTITY fourHours.label "4 hores">
+<!ENTITY freeAndSecure.label "Gratis i segur">
+<!ENTITY general.label "General">
+<!ENTITY generatePDFCmd.label "Crea PDF...">
+<!ENTITY generateReportCmd.label "Crea un informe">
+<!ENTITY generateReportCmd.toolbarlabel "Informe">
+<!ENTITY getCeltxTools.label "Aconsegueix eines Celtx">
+<!ENTITY getProjDialog.caption "Projectes disponibles">
+<!ENTITY getProjDialog.title   "Baixa un Projecte">
+<!ENTITY gotoItemCmd.label          "Ves-hi">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Quan a &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Informa d'una errada">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Suport en línia">
+<!ENTITY icons.label "Icones">
+<!ENTITY iconsAndText.label "Icones i Text">
+<!ENTITY image.label "Imatge">
+<!ENTITY images.label "Imatges">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Importa Guió">
+<!ENTITY importScriptCmd.toolbarLabel "Importa">
+<!ENTITY includeInWorkweek.label "Inclou aquests dies en la setmana laboral">
+<!ENTITY includeTitlePage.label     "Inclou títol de pàgina">
+<!ENTITY increaseDelayCmd.tooltip "Augmenta retard.">
+<!ENTITY increaseFontSizeCmd.tooltip "Augmenta la mida de la lletra">
+<!ENTITY increaseIndentCmd.label "Augmenta sangria">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Títol de la fitxa">
+<!ENTITY indexCards.label "Fitxes">
+<!ENTITY inlineSpellCheckCmd.label "Comprovació constant d'ortografia">
+<!ENTITY insertNoteCmd.toolbarLabel "Nota...">
+<!ENTITY international.label "Internacional">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "L'encapçalament de l'escena no acaba amb una paraula de INT/EXT vàlida. Per solucionar aquest problema, editeu l'encapçalament de l'escena o bé modifiqueu les paraules de la llista INT/EXT de la pestanya Guió del diàleg de Preferències.">
+<!ENTITY intextWords.label "Paraules INT/EXT">
+<!ENTITY invalidLogin.label   "Nom d'usuari o Contrasenya incorrectes.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Cursiva">
+<!ENTITY item.label         "Element">
+<!ENTITY language.label "Idioma">
+<!ENTITY left.label   "Esquerra">
+<!ENTITY linesPerPage.label "Línies per pàgina">
+<!ENTITY list.label "Llista...">
+<!ENTITY location.desc          "Afegeix una descripció per a una localització.">
+<!ENTITY location.label         "Localització">
+<!ENTITY loginOnStartup.label "Inicia sessió quan s'iniciï el Celtx">
+<!ENTITY lowercaseCmd.label "Minúscules">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Multimèdia">
+<!ENTITY mediaViewer.title "Visor multimèdia">
+<!ENTITY modified.label "Modificat">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label          "Més avall">
+<!ENTITY moveUpCmd.label            "Més amunt">
+<!ENTITY moving.label "Desplaçament">
+<!ENTITY myStudio.label "Celtx">
+<!ENTITY name.label         "Nom">
+<!ENTITY network.label "Xarxa">
+<!ENTITY never.label "Mai">
+<!ENTITY newMarkupItem.label        "&lt;Nou ...&gt;">
+<!ENTITY newProjectCmd.label "Projecte nou...">
+<!ENTITY newProjectCmd.toolbarlabel "Nou">
+<!ENTITY noFileSelected.label   "&lt;cap arxiu seleccionat&gt;">
+<!ENTITY noImageSelected.label "Cap imatge seleccionada">
+<!ENTITY noScriptSelected.label "Cap guió seleccionat">
+<!ENTITY none.label "Cap">
+<!ENTITY noteDialog.title           "Edita la nota">
+<!ENTITY notes.label "Notes">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Número de personatges">
+<!ENTITY numberOfScenes.label "Número d'escenes">
+<!ENTITY oneHour.label "1 hora">
+<!ENTITY oneLineSchedule.label "Pla de rodatge per dies">
+<!ENTITY open.label "Obre">
+<!ENTITY openFromStudio.label "Obre des de Celtx">
+<!ENTITY openItemCmd.label "Obre element">
+<!ENTITY openProjectCmd.label "Obre un Projecte...">
+<!ENTITY openProjectCmd.toolbarlabel "Obre">
+<!ENTITY openProjectFolder.label "Obre la Carpeta del Projecte">
+<!ENTITY openRecentCmd.label "Obre recent">
+<!ENTITY options.label "Opcions">
+<!ENTITY orderedList.label "Llistat numerat">
+<!ENTITY outline.desc       "Afegeix un resum.">
+<!ENTITY outline.label      "Resum">
+<!ENTITY over14.label "Sóc major de 14 anys.">
+<!ENTITY owner.label "Propietari">
+<!ENTITY pageAndSceneNumbering.label  "Numeració de pàgines i escenes">
+<!ENTITY paperSize.label        "Mida del paper">
+<!ENTITY password.label "Contrasenya">
+<!ENTITY passwordAgain.label "Torneu a escriure la contrasenya">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title    "Converteix a PDF">
+<!ENTITY pdfErrorHeader "Vaja!">
+<!ENTITY pdfErrorText1 "Cal estar connectat a Internet per poder usar aquesta funció.">
+<!ENTITY pdfErrorText2 "Segur i privat, aquest servei web avançat de Celtx dóna format estàndard a guions de cine, teatre, ràdio o de doble columna (A/V).">
+<!ENTITY pdfOptions.title           "Opcions del PDF">
+<!ENTITY pdfOptionsCmd.label "Més i Continuacions">
+<!ENTITY pdfWarningHeader "Hola!">
+<!ENTITY pdfWarningText "Segur i privat, aquest servei web avançat de Celtx dóna format estàndard a guions de cine, teatre, ràdio o de doble columna (A/V).">
+<!ENTITY personal.label "Personal">
+<!ENTITY picklist.label "Llistat per triar">
+<!ENTITY principalFunction.label "Funció principal">
+<!ENTITY printBackgroundColour.label "Imprimeix el color de fons">
+<!ENTITY printCardBorders.label "Imprimeix el contorn de les fitxes">
+<!ENTITY printCardsDialog.title "Imprimeix fitxes">
+<!ENTITY printStoryboardDialog.title "Imprimeix Storyboard">
+<!ENTITY privacy.label "Privadesa">
+<!ENTITY producer.label "Productor">
+<!ENTITY productionItems.label "Elements de producció">
+<!ENTITY progressDialog.title "Progrés">
+<!ENTITY project.label "Projecte">
+<!ENTITY projectItems.label   "Els projectes nous contenen">
+<!ENTITY projectLibrary.label "Elements del projectes">
+<!ENTITY projectProperties.label "Configuració del Projecte...">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Plantilles de projectes">
+<!ENTITY propSheet.desc         "Afegeix al projecte una descripció per a un objecte nou.">
+<!ENTITY propSheet.existing "També podeu descriure un objecte existent de la següent llista.">
+<!ENTITY propSheet.label        "Objectes">
+<!ENTITY propSheet.select       "Selecciona un objecte">
+<!ENTITY properties.label "Propietats">
+<!ENTITY publishDialog.findUsers    "Cerca usuaris registrats">
+<!ENTITY publishDialog.ownerLabel   "Autor del Projecte">
+<!ENTITY publishDialog.privateDesc "Privat: Només pot accedir-hi el seu autor">
+<!ENTITY publishDialog.privateLabel "Privat">
+<!ENTITY publishDialog.publicDesc "Públic: Publica el Projecte a la Central de Projectes on tothom podrà llegir-lo">
+<!ENTITY publishDialog.publicLabel  "Públic">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Compartit: Comparteix el Projecte amb usuaris seleccionats">
+<!ENTITY publishDialog.sharedLabel  "Compartit amb">
+<!ENTITY publishDialog.title        "Publica el Projecte">
+<!ENTITY publishDialog.userList     "Llista d'usuaris">
+<!ENTITY publishMode.label "Mode de publicació">
+<!ENTITY recent.label "Recent">
+<!ENTITY recentProjects.label "Projectes recents">
+<!ENTITY recoverPassword.label "Recuperar contrasenya">
+<!ENTITY recycleCmd.label           "Envia a l'esborrany">
+<!ENTITY regWiz.aboutThis "Un cop registrat, automàticament quedareu connectat en aquesta sessió de treball.">
+<!ENTITY regWiz.accountInstructions "Introduïu el nom d'usuari i contrasenya per registrar-vos &appName; . (Recordeu que els noms d'usuari i contrasenyes distingeixen les majúscules de les minúscules.)">
+<!ENTITY regWiz.accountLabel "Compte d'usuari (3/5)">
+<!ENTITY regWiz.bullet1 "Copies de seguretat remotes">
+<!ENTITY regWiz.bullet2 "Espai de treball compartit">
+<!ENTITY regWiz.bullet3 "Publicar a la Central de Projectes">
+<!ENTITY regWiz.bullet4 "Visionat del projecte al iPhone">
+<!ENTITY regWiz.checkLabel "Comprovació de la informació de registre">
+<!ENTITY regWiz.clickFinish "Moltes gràcies per afegir-vos a la comunitat &appName; .">
+<!ENTITY regWiz.clickFinish1 "Us heu connectat correctament al Servidor &appName; i podeu accedir a les opcions en línia gratuïtes.">
+<!ENTITY regWiz.clickFinish2 "Proveu l'opció Baixa/Puja per fer una còpia de seguretat del Projecte o, si coneixeu algun usuari registrat &appName; podeu compartir el Projecte i establir un vincle de col·laboració.">
+<!ENTITY regWiz.clickNext "Per nosaltres, tot és correcte! Premeu 'Següent' per completar el registre.">
+<!ENTITY regWiz.conclusion "Conclusió (5/5)">
+<!ENTITY regWiz.confirmIntro "Heu introduït les dades següents:">
+<!ENTITY regWiz.confirmLabel "Confirmació de les dades (4/5)">
+<!ENTITY regWiz.createNewAccountLabel "Crea una registre d'usuari nou.">
+<!ENTITY regWiz.createYourAccountLabel "Registreu-vos a Celtx &appName; ! (1/5)">
+<!ENTITY regWiz.emailLabel "E-mail:">
+<!ENTITY regWiz.finish "Finalitza">
+<!ENTITY regWiz.identityInstructions "Introduïu el vostre nom, organització i adreça electrònica.">
+<!ENTITY regWiz.identityLabel "Identitat (2/5)">
+<!ENTITY regWiz.intro "Creeu un registre d'usuari al Servidor &appName; i podreu accedir de franc a les següents prestacions :">
+<!ENTITY regWiz.loginSuccessfulLabel "Gràcies, heu accedit correctament a &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Nou registre d'usuari o accedeix amb una existent:">
+<!ENTITY regWiz.noteCaseSensitive "Els noms d'usuari i contrasenya dels comptes &appName; distingeixen les majúscules de les minúscules.">
+<!ENTITY regWiz.notePassword "La contrasenya ha de tenir com a mínim 5 caracters.">
+<!ENTITY regWiz.noteUsername "El nom d'usuari ha de tenir com a mínim 3 caràcters i només pot contenir lletres i números.">
+<!ENTITY regWiz.orgLabel   "Organització:">
+<!ENTITY regWiz.title "Guia de Registre Celtx">
+<!ENTITY regWiz.uidLabel   "&appName; Usuari:">
+<!ENTITY regWiz.useExistingAccountLabel "Utilitza un registre d'usuari existent.">
+<!ENTITY regWiz.warn "Necessiteu crear un registre d'usuari &appName; per realitzar aquesta operació.">
+<!ENTITY remove.label "Suprimeix">
+<!ENTITY removeCmd.label "Suprimeix">
+<!ENTITY removeMarkupCmd.label "Suprimeix etiqueta">
+<!ENTITY rename.label "Canvia el nom">
+<!ENTITY renameItem.label "Canvia el nom de l'element...">
+<!ENTITY replaceCmd.label "Reemplaça...">
+<!ENTITY reportThisBug.label    "Envia un informe d'aquest error">
+<!ENTITY reportThisBug.tooltip  "Envia un informe anònim d'aquest error.">
+<!ENTITY reports.label "Informes">
+<!ENTITY right.label  "Dreta">
+<!ENTITY sampleProjects.label "Projectes de mostra">
+<!ENTITY samples.label "Mostres">
+<!ENTITY saveAsHTML.label "Desa com HTML">
+<!ENTITY saveAsTemplate.label "Desa com a plantilla">
+<!ENTITY saveCommentCheckbox.label "Demana'm cometaris quan desi a Celtx.">
+<!ENTITY savePDFCmd.label "Desa PDF">
+<!ENTITY savePDFCmd.tooltip "Desa PDF">
+<!ENTITY saveProjectAsCmd.label "Anomena i desa...">
+<!ENTITY saveProjectCmd.label "Desa Projecte">
+<!ENTITY saveProjectCmd.toolbarlabel "Desa">
+<!ENTITY saveToStudio.label "Desa a Celtx">
+<!ENTITY savedBy.label "Desat per">
+<!ENTITY scene.label "Escena">
+<!ENTITY sceneBreakdown.label "Escenes desglossades">
+<!ENTITY sceneBreakdownWithDesc.label "Desglossament d'escena amb descripció">
+<!ENTITY sceneDetails.desc      "Afegeix al projecte una descripció per a una escena nova.">
+<!ENTITY sceneDetails.existing "També podeu descriure una Escena existent de la següent llista.">
+<!ENTITY sceneDetails.label     "Detalls de l'Escena">
+<!ENTITY sceneDetails.select    "Selecciona una Escena">
+<!ENTITY scenePageBreaks.label "Salt de pàgina després de cada escena">
+<!ENTITY sceneSummary.label "Resum d'escena">
+<!ENTITY sceneTag.label "Etiqueta d'escena">
+<!ENTITY sceneTagDialog.title "Trieu un color">
+<!ENTITY scenes.label           "Escenes">
+<!ENTITY schedule.desc      "Afegeix un pla de rodatge per un guió seleccionat.">
+<!ENTITY schedule.label     "Planificació">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Planificació del Guió">
+<!ENTITY scheduleID.label "ID pla de rodatge">
+<!ENTITY scheduled.label "Planificat">
+<!ENTITY scratchpad.label "Esborrany">
+<!ENTITY script.accesskey "G">
+<!ENTITY script.desc "Afegeix un guió al meu projecte.">
+<!ENTITY script.label "Guió">
+<!ENTITY scriptDay.label "Dia de guió">
+<!ENTITY scriptEditor.label "Editor del Guió">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Opcions de format">
+<!ENTITY scriptHeader.label "Encapçalament del guió">
+<!ENTITY scriptReport.desc  "Informe automàtic del Guió">
+<!ENTITY scriptReport.label "Informe del guió">
+<!ENTITY scriptWithNotes.label  "Guió amb notes">
+<!ENTITY selectCatalogType.label "Selecciona un tipus de catàleg.">
+<!ENTITY sequence.label "Seqüència">
+<!ENTITY sequences.label "Seqüències">
+<!ENTITY server.label   "Servidor">
+<!ENTITY setting.label "Paràmetre">
+<!ENTITY sharing.label "Compartint">
+<!ENTITY shootDay.label "Dia de rodatge">
+<!ENTITY shootDays.label "Dies de rodatge">
+<!ENTITY shootingSchedule.label "Pla de rodatge per escenes">
+<!ENTITY shotList.label "Llistat de plans">
+<!ENTITY shotWords.label "Tipus de plans">
+<!ENTITY shotholder.label "Doble-clic per afegir una imatge.">
+<!ENTITY showContinuedCount.label   "Numera les pàgines pertanyents a la mateixa escena">
+<!ENTITY showDialogBreaks.label     "Mostra salts de diàleg">
+<!ENTITY showFirstPageNumber.label    "Mostra el número de la primera pàgina">
+<!ENTITY showIDNumbers.label "Mostra números d'identificació">
+<!ENTITY showNotes.label "Mostra les notes">
+<!ENTITY showPageNumbers.label        "Paginació">
+<!ENTITY showProjectFileCmd.label "Mostra els arxius del projecte">
+<!ENTITY showSceneBreaks.label      "Mostra salts d'escena">
+<!ENTITY showSceneHeaders.label "Mostra encapçalaments d'escena">
+<!ENTITY showSceneNumbers.label       "Mostra el número d'escena">
+<!ENTITY showScript.label "Mostra el guió">
+<!ENTITY showTagNames.label "Mostra els noms d'etiquetes en les fitxes">
+<!ENTITY showTitlePage.label "Mostra la pàgina del títol">
+<!ENTITY showWorkdaysOnly.label "Mostra només dies laborables">
+<!ENTITY signIn.label "Inicia sessió">
+<!ENTITY signOut.label "Tanca sessió">
+<!ENTITY signedOut.label "Desconnectat">
+<!ENTITY slideshowCmd.toolbarlabel "Reproduir">
+<!ENTITY source.label "Origen">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "Afegeix al diccionari">
+<!ENTITY spellCheckCmd.label "Ortografia...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Ignora la paraula">
+<!ENTITY spellCheckNoSuggestions.label "No s'ha trobat cap suggeriment">
+<!ENTITY splash.celtxCentral      "Central de Projectes">
+<!ENTITY splash.celtxCentral      "Centre Celtx">
+<!ENTITY splash.celtxCentralDesc  "Useu la central de projectes per canviar la contrasenya o bé per actualitzar el registre d'usuari">
+<!ENTITY splash.celtxCentralDesc  "Utilitzeu el Centre Celtx per canviar la contrassenya o actualitzar el registre d'usuari">
+<!ENTITY splash.discussion      "Fòrums">
+<!ENTITY splash.downloadProject     "Baixa un Projecte">
+<!ENTITY splash.downloadProjectDesc "Baixa un Projecte des del servidor de Celtx">
+<!ENTITY splash.featureTour         "Guia de presentació">
+<!ENTITY splash.forums      "Fòrums">
+<!ENTITY splash.forumsDesc  "Uniu-vos al fòrum de Celtx">
+<!ENTITY splash.gettingStarted  "Per començar">
+<!ENTITY splash.guide               "Guia d'usuari Celtx">
+<!ENTITY splash.help            "Ajuda">
+<!ENTITY splash.helpAccount     "Crea un registre d'usuari">
+<!ENTITY splash.helpAccountDesc "Al registrar-vos com usuari tindreu accés al servidor i us permetrà, per exemple, dur a terme col·laboracions i generar arxius PDF">
+<!ENTITY splash.helpDesc        "L'enllaç de l'esquerra destaca alguns recursos de Celtx">
+<!ENTITY splash.helpOptions         "opcions d'ajuda">
+<!ENTITY splash.inbox           "Safata d'entrada">
+<!ENTITY splash.logIn "Connectar">
+<!ENTITY splash.newProject      "Comença un nou Projecte">
+<!ENTITY splash.newProjectDesc  "Crea un nou Projecte">
+<!ENTITY splash.openProject     "Obre un Projecte existent">
+<!ENTITY splash.openProjectDesc "Accedeix o afegeix Projectes existents.">
+<!ENTITY splash.options             "opcions">
+<!ENTITY splash.projectCentral  "Central de Projectes">
+<!ENTITY splash.projects        "Projectes">
+<!ENTITY splash.recentProjects      "projectes recents">
+<!ENTITY splash.sampleDesc      "Hem utilitzat El Mag d'Oz per il·lustrar les diferents prestacions de Celtx. Els documents que es presenten pretenen cobrir les necessitats de producció d'una escena. Hi trobareu un guió, formularis de detalls d'escenes i personatges, així com també fulls de calendaris.">
+<!ENTITY splash.sampleDesc      "Hem utilitzat The Wizard of Oz (El Mag d'Oz) per il·lustrar les diverses prestacions de Celtx. Els documents que es presenten pretenen cobrir les necessitats de producció d'una escena. Hi trobareu un guió, formularis de detalls d'escenes i personatges, així com també fulls plans de producció.">
+<!ENTITY splash.sampleProject   "Projecte d'exemple">
+<!ENTITY splash.sampleProject   "Projecte de mostra">
+<!ENTITY splash.videoWalkthrus      "Guies pas a pas">
+<!ENTITY splash.videoWalkthrusDesc  "Vídeos de mostra per aprendre ràpidament">
+<!ENTITY splash.walkthru            "Guia pas a pas en 3 minuts">
+<!ENTITY splash.webServices     "serveis web">
+<!ENTITY splash.welcomePrefix     "Benvingut/da a Celtx">
+<!ENTITY splash.welcomePrefixDesc "Pre-producció d'Audiovisuals">
+<!ENTITY splash.wiki      "Guia wiki">
+<!ENTITY splash.wikiDesc  "Per aprendre a utilitzar Celtx">
+<!ENTITY splashScreen.label "Pantalla d'inici">
+<!ENTITY stackTrace.desc        "A sota hi ha informació que ens pot ser d'utilitat. Si decidiu enviar-nos un informe sobre aquest error, us agrairíem que l'adjuntéssiu.">
+<!ENTITY stageplay.desc  "Afegeix al projecte un guió teatral amb format internacional.">
+<!ENTITY stageplay.label    "Guió teatral">
+<!ENTITY start.label "Inici">
+<!ENTITY startOfDay.label "Dia d'inici">
+<!ENTITY startOfShooting.label "Inici de rodatge">
+<!ENTITY startOfWeek.label "Setmana d'inici">
+<!ENTITY statistics.label "Estadística">
+<!ENTITY storyboard.desc    "Organitza les imatges del storyboard per seqüències.">
+<!ENTITY storyboard.label   "Storyboard">
+<!ENTITY strikethrough.label "Tatxar">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioProjects.label "Projectes de Celtx">
+<!ENTITY subject.label "Tema">
+<!ENTITY summary.label "Resum">
+<!ENTITY syncDialog.title "Sincronitzant">
+<!ENTITY tagItemCmd.label           "Etiqueta">
+<!ENTITY tagline.label      "Marcador de línia">
+<!ENTITY tags.label "Etiquetes">
+<!ENTITY text.label "Text">
+<!ENTITY textDocument.desc "Afegeix al projecte un document de text. És útil per a un esbós, una sinopsis, escaleta, etc.">
+<!ENTITY textDocument.label "Text">
+<!ENTITY theatreTmplActTitle "ACTE I">
+<!ENTITY theatreTmplSceneTitle "Escena 1">
+<!ENTITY thirtyMinutes.label "30 minuts">
+<!ENTITY threeHours.label "3 hores">
+<!ENTITY time.label "Hora">
+<!ENTITY title.label        "Títol">
+<!ENTITY titlePage.label "Portada">
+<!ENTITY toggleEditing.label "Intercanvia edició">
+<!ENTITY togglePaginationCmd.label    "Habilita paginació">
+<!ENTITY toggleScratchpadCmd.label  "Obre/Tanca l'esborrany">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Finestra lateral">
+<!ENTITY toolbox.label "Caixa d'eines">
+<!ENTITY topOfNextPage.label  "Dalt de la pàgina següent">
+<!ENTITY tryAgain.label "Intenteu-ho un altre cop">
+<!ENTITY twoColumns.label "Dues columnes">
+<!ENTITY twoHours.label "2 hores">
+<!ENTITY typeset.label "Visualització de pàgina">
+<!ENTITY under14.label "Sóc menor de 14 anys.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Subratllat">
+<!ENTITY unorderedList.label "Llistat puntejat">
+<!ENTITY untitled.label "Sense nom">
+<!ENTITY update.label "Actualitza">
+<!ENTITY updateInbox.label "Actualitzar la safata d'entrada">
+<!ENTITY uploadDialog.title         "Penja el Projecte">
+<!ENTITY uploadProjectCmd.label "Penja el Projecte...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Penja">
+<!ENTITY uppercaseCmd.label "Majúscules">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Nom d'usuari">
+<!ENTITY video.label "Vídeo">
+<!ENTITY videoTutorialCmd.label "Vídeo Tutorial">
+<!ENTITY viewProjectOnline.label "Visor de projectes en línia">
+<!ENTITY wardrobeSheet.desc     "Afegeix al projecte una descripció per una peça de vestuari nova.">
+<!ENTITY wardrobeSheet.existing "També podeu descriure una peça de vestuari existent de la següent llista.">
+<!ENTITY wardrobeSheet.label    "Vestuari">
+<!ENTITY wardrobeSheet.select   "Selecciona un Vestuari">
+<!ENTITY webPanel.desc              "Serveis web del Celtx.">
+<!ENTITY webPanel.label             "Serveis Web">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Crea un registre de Celtx">
+<!ENTITY webPanelIntro.text1 "Registrant-vos a Celtx disposareu de serveis web, gratis i segurs.">
+<!ENTITY webPanelIntro.text2 "*Còpia de seguretat* del projecte sencer al servidor remot Celtx, per disposar d'una còpia en cas de qualsevol incidència al disc dur.">
+<!ENTITY webPanelIntro.text3 "*Col·laboreu* amb companys d'equip compartint el projecte i creant un espai privat de treball.">
+<!ENTITY webPanelIntro.text4 "*Publiqueu* el projecte a la Central de Projectes per revisions i comentaris, i uniu-vos a la nostra comunitat mundial de creatius de mitjans de comunicació.">
+<!ENTITY webPanelIntro.text5 "Vegeu el projecte en format optimitzat per al *iPhone*.">
+<!ENTITY wiz.clickFinish "Premeu el botó 'Acabar' per completar aquesta guia.">
+<!ENTITY wiz.clickNext "Premeu el botó 'Següent' per començar.">
+<!ENTITY workweek.label "Setmana laboral">
+<!ENTITY writer.label "Guionista">
+<!ENTITY zoom.label "Zoom">

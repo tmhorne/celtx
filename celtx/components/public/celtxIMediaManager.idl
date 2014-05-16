@@ -1,0 +1,119 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsISupports.idl"
+
+interface celtxIProject;
+interface nsIRDFResource;
+interface nsIFile;
+interface imgIContainer;
+interface nsIDOMWindow;
+
+[scriptable, uuid(9bd32bb1-f633-4de7-a561-cfba04c27501)]
+interface celtxIMediaObserver : nsISupports
+{
+  void onThumbnailFailed (in nsIRDFResource aResource,
+                          in wstring aErrMsg);
+
+  void onThumbnail (in nsIRDFResource aResource,
+                    in nsIFile aThumbnail);
+};
+
+[scriptable, uuid(31d5d5ad-891f-463c-9b00-aa089eac1613)]
+interface celtxIPalette : nsISupports
+{
+  readonly attribute string id;
+
+  wstring getCategoryName (in nsIRDFResource aCategory);
+  string getCategoryIconURI (in nsIRDFResource aCategory);
+  wstring getImageName (in nsIRDFResource aImage);
+  string getImageLocation (in nsIRDFResource aImage);
+  string getImageIconURI (in nsIRDFResource aImage);
+
+  void getCategories (out unsigned long oCount,
+              [retval, array, size_is(oCount)] out nsIRDFResource oCategories);
+
+  void getImagesInCategory (in nsIRDFResource category,
+                            out unsigned long oCount,
+              [retval, array, size_is(oCount)] out nsIRDFResource oImages);
+};
+
+[scriptable, uuid(6ec3dd07-0717-4ed2-8492-fac6e39639f3)]
+interface celtxIMediaManager: nsISupports
+{
+  imgIContainer decodeImageFile (in nsIFile aFile);
+
+  void getShotPalettes (out unsigned long oCount,
+              [retval, array, size_is(oCount)] out celtxIPalette oPalettes);
+
+  // Project-specific APIs
+
+  // Sets width and height attributes for media resources
+  void checkMediaAttributes (in celtxIProject aProject);
+
+  // Gets a URL (normally a file URL) for a given media resource
+  string urlForMedia (in nsIRDFResource aResource,
+                      in celtxIProject aProject);
+
+  nsIFile fileForMedia (in nsIRDFResource aResource,
+                        in celtxIProject aProject);
+
+  nsIRDFResource mediaForFilename (in string aFilename,
+                                   in celtxIProject aProject);
+
+  void createThumbnail (in nsIRDFResource aResource,
+                        in celtxIProject aProject,
+                        in long aMaxWidth,
+                        in long aMaxHeight,
+                        in celtxIMediaObserver aObserver);
+
+  // Returns the thumbnail if it exists, null otherwise. If aForce is true
+  // and no thumbnail is found, it will create one and call the observer.
+  nsIFile getThumbnail (in nsIRDFResource aResource,
+                        in celtxIProject aProject,
+                        in boolean aForce,
+                        in long aMaxWidth,
+                        in long aMaxHeight,
+                        in celtxIMediaObserver aObserver);
+
+  // Creates a media resource for an existing media file in the project.
+  // This should only be used as a fix-up method for media files that
+  // were added prior to proper media management being in place.
+  nsIRDFResource createMediaForExistingFilename (in string aFilename,
+                                                 in celtxIProject aProject);
+
+  nsIRDFResource addMediaFromFile (in nsIFile aFile,
+                                   in celtxIProject aProject);
+
+  /*
+   * Presents an open file dialog for the user to pick media files.
+   * aType is one of "all" (default), "image", "video", or "audio"
+   * Returns false if user cancelled.
+   */
+  void showMediaPicker (in nsIDOMWindow aWindow,
+                        in string aType,
+                        in boolean aMultiple,
+                        out unsigned long oCount,
+                        [retval, array, size_is(oCount)] out nsIFile oFiles);
+};

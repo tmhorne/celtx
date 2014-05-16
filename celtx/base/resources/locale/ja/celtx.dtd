@@ -1,0 +1,965 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "電子メール">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC Options">
+<!ENTITY bbc.showTitle.label "Title of Show">
+<!ENTITY bbc.sketchTitle.label "Title of Sketch">
+<!ENTITY editText.title "Edit Text">
+<!ENTITY sketch.fillColour.tooltip "Fill Colour">
+<!ENTITY sketch.group.tooltip "Group">
+<!ENTITY sketch.lower.tooltip "Lower">
+<!ENTITY sketch.lowerToBottom.tooltip "Lower to Bottom">
+<!ENTITY sketch.raise.tooltip "Raise">
+<!ENTITY sketch.raiseToTop.tooltip "Raise to Top">
+<!ENTITY sketch.strokeColour.tooltip "Stroke Colour">
+<!ENTITY sketch.ungroup.tooltip "Ungroup">
+
+<!ENTITY custom.label "Custom">
+<!ENTITY saveAsPreset.label "Save as Preset">
+<!ENTITY sceneLocking.title "Scene Locking">
+<!ENTITY sceneNumbering.label "Scene Numbering">
+<!ENTITY scenenumber.after.label "After">
+<!ENTITY scenenumber.before.label "Before">
+<!ENTITY scenenumber.example.label "Example">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Number">
+<!ENTITY scenenumber.position.label "Position">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Reset All Numbers">
+<!ENTITY scenenumber.suffix.label "Suffix">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "フィルム">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "劇場">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Add Image">
+<!ENTITY addPaletteObjects.label "Get Art Packs">
+<!ENTITY addShot.label "Add Shot">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC Scene">
+<!ENTITY bdc.cameras "Cameras">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "青">
+<!ENTITY colour.cherry "チェリー">
+<!ENTITY colour.gold "金">
+<!ENTITY colour.green "緑">
+<!ENTITY colour.pink "ピンク">
+<!ENTITY colour.salmon "サーモン">
+<!ENTITY colour.white "白">
+<!ENTITY colour.yellow "黄色">
+<!ENTITY currentRevision.label "Current Revision">
+<!ENTITY createNewRevision.tooltip "Create New Revision">
+<!ENTITY default.label "Default">
+<!ENTITY enableSceneLocking.label "Lock Scenes">
+<!ENTITY fixNumbers.label "Fix">
+<!ENTITY furniture.label "Furniture">
+<!ENTITY hollywood.label "ハリウッド">
+<!ENTITY light.flood.label "Flood">
+<!ENTITY light.spot.label "Spot">
+<!ENTITY linesBetweenScenes.label "Lines between scenes">
+<!ENTITY man.label "Man">
+<!ENTITY numbers.bothNos "Both #s">
+<!ENTITY numbers.leftNo "Left #">
+<!ENTITY numbers.none "None">
+<!ENTITY numbers.rightNo "Right #">
+<!ENTITY omitScene.label "Omit Scene">
+<!ENTITY palette.label "Palette">
+<!ENTITY palettes.label "Palettes">
+<!ENTITY paletteTree.tooltip "Drag and drop objects onto your sketch">
+<!ENTITY people.label "人々">
+<!ENTITY person.label "人">
+<!ENTITY preventEditing.label "Text Lock">
+<!ENTITY resetRevisionMode.label "Reset Revision Mode">
+<!ENTITY revisionColour.desc "This will be used as the default revision colour for any edits made to the script.">
+<!ENTITY revisionColour.label "Revision Colour">
+<!ENTITY revisionMarks.all "All Marks">
+<!ENTITY revisionMarks.current "Current Marks">
+<!ENTITY revisionMarks.hide "Hide Marks">
+<!ENTITY revisionMarks.mark.label "Mark">
+<!ENTITY revisionMarks.unmark.label "Unmark">
+<!ENTITY revisionMode.label "Revision Mode">
+<!ENTITY revisionName.label "Revision Name">
+<!ENTITY revisionOptions.title "Revision Options">
+<!ENTITY shotSetup.label "Sketch">
+<!ENTITY shotSetup.desc "Add a sketch to your project.">
+<!ENTITY showScriptHeader.label "Show Script Header">
+<!ENTITY standard.label "Standard">
+<!ENTITY startNewRevision.label "Start a New Revision">
+<!ENTITY storyboard.showImages.label "Show Images">
+<!ENTITY storyboard.showSetups.label "Show Sketches">
+<!ENTITY storyboard.showBoth.label "Show Both">
+<!ENTITY woman.label "Woman">
+
+<!ENTITY light.bank.label "Banklight">
+<!ENTITY bathtub.label "Bath Tub">
+<!ENTITY boy.label "男の子">
+<!ENTITY car.label "車">
+<!ENTITY chair.label "椅子">
+<!ENTITY coffeetable.label "Coffee Table">
+<!ENTITY couch.label "Couch">
+<!ENTITY crowd.label "Crowd">
+<!ENTITY endtable.label "End Table">
+<!ENTITY girl.label "女の子">
+<!ENTITY group.label "Group"> <!-- Group of people -->
+<!ENTITY house.label "家">
+<!ENTITY building.label "建物"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pickup Truck">
+<!ENTITY sink.label "Sink"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Spotlight">
+<!ENTITY street.label "Street">
+<!ENTITY toilet.label "Toilet">
+<!ENTITY tree.label "木">
+<!ENTITY van.label "Van">
+<!ENTITY videocamera.label "Video Camera">
+
+<!ENTITY createTemplate.label "Create Template">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "Get Celtx Tools">
+<!ENTITY myStudio.label "My Celtx">
+<!ENTITY openFromStudio.label "Open from Celtx">
+<!ENTITY owner.label "Owner">
+<!ENTITY personal.label "Personal">
+<!ENTITY saveCommentCheckbox.label "Ask me for a comment when saving to Celtx.">
+<!ENTITY saveToStudio.label "Save to Celtx">
+<!ENTITY savedBy.label "Saved By">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx Authentication">
+<!ENTITY studioAuthDialog.desc "Celtx Login">
+<!ENTITY studioProjects.label "Celtx Projects">
+<!ENTITY toolbox.label "Toolbox">
+
+<!ENTITY access.label "アクセス">
+<!ENTITY actorProfile.desc "俳優の情報を追加">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Adapt To">
+<!ENTITY add.label "追加">
+<!ENTITY addCardCmd.label "カードを追加">
+<!ENTITY addCmd.label "追加">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "アイテム詳細">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "アイテム選択">
+<!ENTITY addFolder.label "フォルダー追加...">
+<!ENTITY addFolderCmd.label "フォルダー追加">
+<!ENTITY addImages.label "イメージを追加">
+<!ENTITY addItem.label "アイテム追加...">
+<!ENTITY addItemCmd.label "アイテム追加">
+<!ENTITY addNote.label "ノートを追加">
+<!ENTITY addSequenceCmd.toolbarlabel "シーケンスを追加">
+<!ENTITY advanced.label "先進的">
+<!ENTITY alignCenter.label "中央で揃える">
+<!ENTITY alignJustified.label "均等に表示">
+<!ENTITY alignLeft.label "左寄せ">
+<!ENTITY alignRight.label "右寄せ">
+<!ENTITY allShootDays.label "全ての撮影日">
+<!ENTITY allUppercase.label "すべて">
+<!ENTITY american.label "アメリカン">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "これらの機能はPDF作成のみに有効。">
+<!ENTITY audioplay.desc "プロジェクトに音声劇を追加します">
+<!ENTITY audioplay.label "音声劇">
+<!ENTITY authDialog.description "この操作には、お客様が Celtx のアカウントにログインする必要があります。">
+<!ENTITY authDialog.title "Celtx の認証">
+<!ENTITY author.label "著者">
+<!ENTITY autoCharContinueds.label "登場人物の続きを表示">
+<!ENTITY autoSaveProject.label "プロジェクトをオートセーブする">
+<!ENTITY autoparenthesize.label "'(' がタイプされた時には挿入句を作る">
+<!ENTITY avScript.desc "プロジェクトにオーディオ・ビジュアルのスクリプトを追加します。">
+<!ENTITY avScript.label "A/V スクリプト">
+<!ENTITY basedOn.label "ベースです">
+<!ENTITY bdc.actor "俳優">
+<!ENTITY bdc.addlabour "追加労働者">
+<!ENTITY bdc.animals "動物">
+<!ENTITY bdc.camera "カメラ">
+<!ENTITY bdc.cast "出演者">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "建て込み">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "電気">
+<!ENTITY bdc.equip "特殊機器">
+<!ENTITY bdc.extras "エキストラ">
+<!ENTITY bdc.greenery "草木">
+<!ENTITY bdc.hair "髪">
+<!ENTITY bdc.handler "動物調教師">
+<!ENTITY bdc.lights "照明">
+<!ENTITY bdc.livestock "家畜">
+<!ENTITY bdc.location "ロケーション">
+<!ENTITY bdc.makeup "メーキャップ">
+<!ENTITY bdc.mechfx "メカニカル FX">
+<!ENTITY bdc.misc "その他">
+<!ENTITY bdc.music "音楽">
+<!ENTITY bdc.opticalfx "光学 FX">
+<!ENTITY bdc.painting "ペインティング">
+<!ENTITY bdc.prodnotes "プロダクションノート">
+<!ENTITY bdc.props "小道具">
+<!ENTITY bdc.security "セキュリティ">
+<!ENTITY bdc.set "セット">
+<!ENTITY bdc.setdressing "什器／家具">
+<!ENTITY bdc.sound "音響">
+<!ENTITY bdc.soundfx "音響 FX">
+<!ENTITY bdc.specialfx "特殊 FX">
+<!ENTITY bdc.storyboard "コンテ">
+<!ENTITY bdc.stunts "スタントマン">
+<!ENTITY bdc.vehicles "車両">
+<!ENTITY bdc.wardrobe "衣装">
+<!ENTITY bdc.weapons "武器">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "太字">
+<!ENTITY bookmark.desc "ウェブリンク追加.">
+<!ENTITY bookmark.label "ブックマーク">
+<!ENTITY both.label "両方">
+<!ENTITY bottomOfPage.label "ページの最後">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc "脚本への追加のブレイクダウン情報.">
+<!ENTITY breakdown.label "ブレイクダウン">
+<!ENTITY breakdownReport.label "詳細レポート">
+<!ENTITY brokenSceneEventWarning.label "このイベントはもう存在しないシーンに対応しています。">
+<!ENTITY browseCmd.label "ブラウズ">
+<!ENTITY byline.label "by">
+<!ENTITY calendar.desc "プロジェクトにカレンダーを追加">
+<!ENTITY calendar.label "カレンダー">
+<!ENTITY callSheet.label "Call Sheet">
+<!ENTITY cast.label "キャスト">
+<!ENTITY castOfCharacters.label "登場人物のキャスト">
+<!ENTITY catalog.desc "プロダクション・アイテムのカタログをプロジェクトに追加">
+<!ENTITY catalog.label "カタログ">
+<!ENTITY catalogAddItem.tooltip "カタログにアイテムを追加">
+<!ENTITY catalogDeleteItem.tooltip "カタログからアイテムを削除">
+<!ENTITY categories.label "カテゴリー">
+<!ENTITY category.label "カテゴリー">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; のアカウント...">
+<!ENTITY celtxError.title "Celtx エラー">
+<!ENTITY celtxTagline.label "物語に関して。">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "互いの登場人物の関係の概要。">
+<!ENTITY charOutline.label "登場人物の概要">
+<!ENTITY character.label "登場人物">
+<!ENTITY characterProfile.desc "新しい登場人物に説明を追加">
+<!ENTITY characterProfile.existing "以下のリストから既存の登場人物について説明することもできます。">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "登場人物選択">
+<!ENTITY characters.label "登場人物">
+<!ENTITY clearCmd.label "クリア">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "コミックブックの脚本を作成">
+<!ENTITY comicBook.label "コミックブック">
+<!ENTITY comment.label "コメント">
+<!ENTITY completed.label "完了">
+<!ENTITY contact.label "コンタクト">
+<!ENTITY contactInformation.label "コンタクト情報">
+<!ENTITY contactName.label "コンタクト名">
+<!ENTITY contacts.label "連絡先">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "続行">
+<!ENTITY copyProject.title "プロジェクト複製">
+<!ENTITY copyProjectCmd.label "プロジェクト複製">
+<!ENTITY copyright.label "著作権">
+<!ENTITY create.label "作成">
+<!ENTITY createAccount.label "アカウント作成">
+<!ENTITY createCatalogFromSelection.label "選択項目からカタログを作成">
+<!ENTITY createProject.label "プロジェクトを作成">
+<!ENTITY createProject.title "プロジェクトを作成">
+<!ENTITY createdCol.label "作成日">
+<!ENTITY creatorCol.label "作者">
+<!ENTITY crew.desc "クルー・ドキュメントを追加">
+<!ENTITY crew.label "クルー">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "日付">
+<!ENTITY datePicker.label "日付選択">
+<!ENTITY daynightHeader.label "昼/夜">
+<!ENTITY daynightWarning.label "シーン見出しが有効な昼/夜の単語で終わっていません。 この問題を修正するために、脚本中のシーン見出しを編集するか、またはPreferenceダイアログ中の脚本タブで、DAY/NIGHT単語リストを変更してください。">
+<!ENTITY daynightWords.label "昼/夜 words">
+<!ENTITY dayoff.label "休日">
+<!ENTITY daysOff.label "休暇">
+<!ENTITY decreaseDelayCmd.tooltip "遅延を小さく">
+<!ENTITY decreaseFontSizeCmd.tooltip "文字サイズを小さく">
+<!ENTITY decreaseIndentCmd.label "インデントを小さく">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "脚本の長さの既定値">
+<!ENTITY delayLabel.tooltip "画像間の遅延（秒）">
+<!ENTITY deleteCardCmd.label "カード削除">
+<!ENTITY deleteItem.label "アイテム削除">
+<!ENTITY deleteItemCmd.label "削除">
+<!ENTITY department.label "分類">
+<!ENTITY description.label "説明">
+<!ENTITY details.label "詳細">
+<!ENTITY dialog.label "対話">
+<!ENTITY director.label "監督">
+<!ENTITY disabled.label "無効化">
+<!ENTITY displayMedia.label "メディアを表示">
+<!ENTITY downloadProjectCmd.label "プロジェクトをダウンロード...">
+<!ENTITY downloadProjectCmd.toolbarlabel "ダウンロード">
+<!ENTITY downloadingPDF.label "PDFに変換中...">
+<!ENTITY dragToSchedule.tooltip "スケジュールにドラッグアンドドロップ.">
+<!ENTITY dualDialogCmd.label "二元的な対話">
+<!ENTITY dualDialogCmd.tooltip "二元的な対話">
+<!ENTITY duplicate.label "複製">
+<!ENTITY duplicateItemCmd.label "アイテムを複製">
+<!ENTITY edit.label "編集">
+<!ENTITY editDates.label "日付を編集">
+<!ENTITY editProfile.label "オンラインプロフィールを編集">
+<!ENTITY editSceneDialog.title "シーンを編集">
+<!ENTITY editTitlePageCmd.label "タイトルページを編集...">
+<!ENTITY editlabel.tooltip "クリックして編集">
+<!ENTITY eighths.label "Eighths">
+<!ENTITY eighthsSuffix.label "8ths">
+<!ENTITY element.label "要素">
+<!ENTITY elements.label "要素">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "これは、アクティブなCeltxユーザの数を数えるのに使用されます。個人情報やプロジェクトデータは送信されません。">
+<!ENTITY enableStats.label "Celtxに着手するとき、Celtxサーバを確認させてください。">
+<!ENTITY enabled.label "有効">
+<!ENTITY end.label "終了">
+<!ENTITY endOfShooting.label "撮影終了">
+<!ENTITY enterEmbedTagPrompt.label "ここにEMBEDかOBJECTタグを入れてください：">
+<!ENTITY eventDetails.label "イベント詳細">
+<!ENTITY every15Minutes.label "１５分毎">
+<!ENTITY every30Minutes.label "３０分毎">
+<!ENTITY every5Minutes.label "５分毎">
+<!ENTITY everyHour.label "１時間毎">
+<!ENTITY everyMinute.label "１分毎">
+<!ENTITY exportList "リストを書き出し">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "脚本を書き出し...">
+<!ENTITY externalFile.desc "既に存在するファイルをプロジェクトに追加.">
+<!ENTITY externalFile.label "ファイル">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "フォーマットされた映画脚本追加">
+<!ENTITY filmScript.label "映画脚本">
+<!ENTITY filter.label "フィルター">
+<!ENTITY findAllCharacters.label "カタログにキャラクターを追加">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "検索...">
+<!ENTITY findPreviousCmd.label "前方検索">
+<!ENTITY findTab.label "検索">
+<!ENTITY folder.label "フォルダ">
+<!ENTITY forceOverwrite.label "サーバのバージョンの方が新しいなら強制的に上書きする">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "住所">
+<!ENTITY form.affectEvent "このイベントは全体のプロットにどんな影響を与えますか？">
+<!ENTITY form.age "年齢">
+<!ENTITY form.alternate "別名">
+<!ENTITY form.antag "敵対者">
+<!ENTITY form.antagWho "このシーンの敵対者はだれですか？">
+<!ENTITY form.availability "有用性">
+<!ENTITY form.bestFriend "親友">
+<!ENTITY form.borrow "借用">
+<!ENTITY form.build "制作">
+<!ENTITY form.buy "購入">
+<!ENTITY form.catalyst "カタリスト">
+<!ENTITY form.cell "セル #">
+<!ENTITY form.centralEvent "このシーンの中心的な出来事は何ですか？">
+<!ENTITY form.charBackground "登場人物の背景">
+<!ENTITY form.charGoal "この登場人物の目的は何ですか？">
+<!ENTITY form.charPlan "目的達成に向けて登場人物の抱く計画はどのようなものですか？">
+<!ENTITY form.charTraits "登場人物の特質">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "使用する登場人物">
+<!ENTITY form.color "色">
+<!ENTITY form.comicRelief "コミックリリーフ">
+<!ENTITY form.comments "コメント">
+<!ENTITY form.confidante "女性の親友">
+<!ENTITY form.contactInfo "連絡先">
+<!ENTITY form.cost "費用">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "空いている期日">
+<!ENTITY form.dateNeed "必要日数">
+<!ENTITY form.dateReturn "返却日">
+<!ENTITY form.description "説明">
+<!ENTITY form.details "詳細">
+<!ENTITY form.dislikes "嫌いなもの">
+<!ENTITY form.distFeatures "チャームポイント">
+<!ENTITY form.dob "誕生日">
+<!ENTITY form.dress "ドレス">
+<!ENTITY form.education "教育程度">
+<!ENTITY form.elevator "エレベータの有無">
+<!ENTITY form.email "電子メールアドレス">
+<!ENTITY form.endDate "最終日">
+<!ENTITY form.era "時代">
+<!ENTITY form.eyes "目の色">
+<!ENTITY form.facilityInfo "施設情報">
+<!ENTITY form.familyBack "家庭背景">
+<!ENTITY form.fullName "氏名">
+<!ENTITY form.generic "ジェネリック">
+<!ENTITY form.genericForm "ジェネリックフォーム">
+<!ENTITY form.habits "癖／弱点">
+<!ENTITY form.hair "髪型">
+<!ENTITY form.hat "帽子">
+<!ENTITY form.height "身長">
+<!ENTITY form.inScenes "In Scenes">
+<!ENTITY form.jacket "上着">
+<!ENTITY form.jobTitle "タイトル">
+<!ENTITY form.keyCharTraits "性格的特徴">
+<!ENTITY form.lightSources "光の具合">
+<!ENTITY form.likes "好きなもの">
+<!ENTITY form.locationMap "案内図">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "恋人">
+<!ENTITY form.media "メディア">
+<!ENTITY form.mentor "導師">
+<!ENTITY form.motiv "動機">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "いいえ">
+<!ENTITY form.noise "雑音問題">
+<!ENTITY form.other "他">
+<!ENTITY form.pants "ズボン">
+<!ENTITY form.parking "駐車情報">
+<!ENTITY form.partner "パートナー">
+<!ENTITY form.person "個性">
+<!ENTITY form.phone "電話番号">
+<!ENTITY form.physicalDesc "肉体的特徴の詳細">
+<!ENTITY form.powerCapa "電力設備">
+<!ENTITY form.princFunction "この登場人物の役割は何ですか?">
+<!ENTITY form.procure "調達">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "主役">
+<!ENTITY form.protagAntag "主役/敵対者">
+<!ENTITY form.protagWho "このシーンの主役は誰ですか？">
+<!ENTITY form.rent "賃貸">
+<!ENTITY form.rentalCost "賃貸料">
+<!ENTITY form.role "役割">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "敵対者はどのようにこの目標を達成しますか？">
+<!ENTITY form.sceneAntagGoal "このシーンでの敵対者の目標は何ですか？">
+<!ENTITY form.sceneChars "どの登場人物がこのシーンに登場しますか？">
+<!ENTITY form.sceneDetails "シーンの詳細">
+<!ENTITY form.sceneMood "このシーンはどのような雰囲気ですか？">
+<!ENTITY form.sceneProtagAchieve "主役はどのようにこの目標を達成しますか？">
+<!ENTITY form.sceneProtagGoal "このシーンでの主役の目標は何ですか？">
+<!ENTITY form.sceneSetting "このシーンの設定は何ですか?">
+<!ENTITY form.sceneWhen "このシーンはいつ起こりますか？">
+<!ENTITY form.scenesUsed "使用するシーン">
+<!ENTITY form.scoutSelect "スカウトと選択">
+<!ENTITY form.scoutedFor "シーンの為の偵察">
+<!ENTITY form.scriptName "脚本の名前">
+<!ENTITY form.selectedFor "使うシーン">
+<!ENTITY form.sex "性別">
+<!ENTITY form.shirt "シャツ">
+<!ENTITY form.shoes "靴">
+<!ENTITY form.size "サイズ">
+<!ENTITY form.squareFoot "平方フィート">
+<!ENTITY form.startDate "開始日">
+<!ENTITY form.wardProfile "&wardrobe.label;">
+<!ENTITY form.wardrobeSizes "衣装のサイズ">
+<!ENTITY form.washroom "洗面所の位置">
+<!ENTITY form.weight "体重">
+<!ENTITY form.wornBy "磨耗">
+<!ENTITY form.yes "はい">
+<!ENTITY format.label "フォーマット">
+<!ENTITY formatAct.label "アクト">
+<!ENTITY formatAction.label "ト書き">
+<!ENTITY formatBalloon.label  "バルーン">
+<!ENTITY formatBalloonType.label "バルーンタイプ">
+<!ENTITY formatCaption.label  "キャプション">
+<!ENTITY formatCaption.shortlabel "&formatCaption.label;"> <!-- max 7 chars -->
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "柱">
+<!ENTITY formatMusic.label "音楽">
+<!ENTITY formatPage.label     "ページ">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;">
+<!ENTITY formatPanel.label    "パネル">
+<!ENTITY formatPanel.shortlabel     "&formatPanel.label;">
+<!ENTITY formatParen.label "括弧">
+<!ENTITY formatProductionNote.label "プロダクション・ノート">
+<!ENTITY formatShot.label "ショット">
+<!ENTITY formatSound.label "音声">
+<!ENTITY formatStagedir.label "ト書き">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label "&title.label;">
+<!ENTITY formatTrans.label "場面転換">
+<!ENTITY formatVoice.label "声">
+<!ENTITY fourHours.label "４時間">
+<!ENTITY freeAndSecure.label "無料・安全">
+<!ENTITY general.label "一般">
+<!ENTITY generatePDFCmd.label "PDF生成...">
+<!ENTITY generateReportCmd.label "レポート生成">
+<!ENTITY generateReportCmd.toolbarlabel "レポート">
+<!ENTITY getProjDialog.caption "利用可能なプロジェクト">
+<!ENTITY getProjDialog.title "プロジェクトのダウンロード">
+<!ENTITY gotoItemCmd.label "移動">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "&appName;について">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "バグの報告">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "オンラインサポート">
+<!ENTITY icons.label "アイコン">
+<!ENTITY iconsAndText.label "アイコンとテキスト">
+<!ENTITY image.label "画像">
+<!ENTITY images.label "画像">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "脚本をインポート">
+<!ENTITY importScriptCmd.toolbarLabel "インポート">
+<!ENTITY includeInWorkweek.label "最近の週労働日数を含める">
+<!ENTITY includeTitlePage.label "表紙を含める">
+<!ENTITY increaseDelayCmd.tooltip "遅延を増やす">
+<!ENTITY increaseFontSizeCmd.tooltip "文字サイズを大きく">
+<!ENTITY increaseIndentCmd.label "インデントを増やす">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "インデックスカードのヘッダー">
+<!ENTITY indexCards.label "インデックスカード">
+<!ENTITY inlineSpellCheckCmd.label "インラインスペルチェック">
+<!ENTITY insertNoteCmd.toolbarLabel "ノート...">
+<!ENTITY international.label "国際">
+<!ENTITY intextHeader.label "屋内/野外">
+<!ENTITY intextWarning.label "場面見出しは有効な屋内／野外の単語から始まりません。この問題を修正するには、脚本中でシーンの見出しを編集するか、あるいはプリファレンスダイアログの脚本タブで屋内／野外単語リストを設定変更して下さい。">
+<!ENTITY intextWords.label "屋内／野外 単語">
+<!ENTITY invalidLogin.label "ユーザ名あるいはパスワードが不正です。">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "斜体">
+<!ENTITY item.label "アイテム">
+<!ENTITY language.label "言語">
+<!ENTITY left.label "左">
+<!ENTITY linesPerPage.label "ページごとの行数">
+<!ENTITY list.label "リスト...">
+<!ENTITY location.desc "ロケーションの説明を追加">
+<!ENTITY location.label "ロケーション">
+<!ENTITY loginOnStartup.label "開始前にサインイン">
+<!ENTITY lowercaseCmd.label "小文字">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "メディア">
+<!ENTITY mediaViewer.title "メディアビュワー">
+<!ENTITY modified.label "修正日">
+<!ENTITY modifiedCol.label "修正">
+<!ENTITY moveDownCmd.label "下へ移動">
+<!ENTITY moveUpCmd.label "上へ移動">
+<!ENTITY moving.label "移動中">
+<!ENTITY name.label "名前">
+<!ENTITY network.label "ネットワーク">
+<!ENTITY never.label "まさか">
+<!ENTITY newMarkupItem.label "&lt;New ...&gt;">
+<!ENTITY newProjectCmd.label "新規プロジェクト...">
+<!ENTITY newProjectCmd.toolbarlabel "新規">
+<!ENTITY noFileSelected.label "&lt;no file selected&gt;">
+<!ENTITY noImageSelected.label "画像が選択されていません">
+<!ENTITY noScriptSelected.label "スクリプトが選択されていません">
+<!ENTITY none.label "なし">
+<!ENTITY noteDialog.title "ノートの編集">
+<!ENTITY notes.label "ノート">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "キャラクターの数">
+<!ENTITY numberOfScenes.label "シーンの数">
+<!ENTITY oneHour.label "１時間">
+<!ENTITY oneLineSchedule.label "ワンライン・スケジュール">
+<!ENTITY open.label "開く">
+<!ENTITY openItemCmd.label "アイテムを開く">
+<!ENTITY openProjectCmd.label "プロジェクトを開く...">
+<!ENTITY openProjectCmd.toolbarlabel "開く">
+<!ENTITY openProjectFolder.label "プロジェクトフォルダを開く">
+<!ENTITY openRecentCmd.label "最近のものを開く">
+<!ENTITY options.label "オプション">
+<!ENTITY orderedList.label "規則正しいリスト">
+<!ENTITY outline.desc "概要ドキュメント追加">
+<!ENTITY outline.label "概要">
+<!ENTITY over14.label "私は１４歳以上です。">
+<!ENTITY pageAndSceneNumbering.label "ページとシーンにナンバリング">
+<!ENTITY paperSize.label "用紙サイズ">
+<!ENTITY password.label "パスワード">
+<!ENTITY passwordAgain.label "パスワードを再入力">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "PDF へ変換">
+<!ENTITY pdfErrorHeader "おっと！">
+<!ENTITY pdfErrorText1 "この先進機能を使うにはオンラインである必要があります。">
+<!ENTITY pdfErrorText2 "安全で非公開に, この先進的な Celtx ウェブサービスは、あなたの脚本を自動的に業界標準の映像劇、舞台劇、音声劇のフォーマット、あるいは、 二段組フォーマットに変換します。">
+<!ENTITY pdfOptions.title "PDFのオプション">
+<!ENTITY pdfOptionsCmd.label "続く">
+<!ENTITY pdfWarningHeader "やあ！">
+<!ENTITY pdfWarningText "安全で非公開に, この先進的な Celtx ウェブサービスは、あなたの脚本を自動的に業界標準の映像劇、舞台劇、音声劇のフォーマット、あるいは、 二段組フォーマットに変換します。">
+<!ENTITY picklist.label "ピックリスト">
+<!ENTITY principalFunction.label "主な働き">
+<!ENTITY printBackgroundColour.label "背景色を印刷する">
+<!ENTITY printCardBorders.label "カードの境界を印刷する">
+<!ENTITY printCardsDialog.title "カードを印刷する">
+<!ENTITY printStoryboardDialog.title "コンテ印刷">
+<!ENTITY privacy.label "プライバシー">
+<!ENTITY producer.label "プロデューサー">
+<!ENTITY productionItems.label "生産品目">
+<!ENTITY progressDialog.title "進捗">
+<!ENTITY project.label "プロジェクト">
+<!ENTITY projectItems.label "新しいプロジェクトを含む">
+<!ENTITY projectLibrary.label "プロジェクトライブラリ">
+<!ENTITY projectProperties.label "アップロードのオプション">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "プロジェクトのテンプレート">
+<!ENTITY propSheet.desc "新しい柱の説明を追加">
+<!ENTITY propSheet.existing "以下のリストから既に存在する柱を選択して説明をすることもできます。">
+<!ENTITY propSheet.label "柱">
+<!ENTITY propSheet.select "柱を選択">
+<!ENTITY properties.label "プロパティ">
+<!ENTITY publishDialog.findUsers "ユーザを検索">
+<!ENTITY publishDialog.ownerLabel "プロジェクトオーナー">
+<!ENTITY publishDialog.privateDesc "非公開： アクセス制限">
+<!ENTITY publishDialog.privateLabel "非公開">
+<!ENTITY publishDialog.publicDesc "公開: プロジェクトセントラルにプロジェクト発行">
+<!ENTITY publishDialog.publicLabel "公開">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "共有: 選択されたユーザとプロジェクトを共有">
+<!ENTITY publishDialog.sharedLabel "共有者：">
+<!ENTITY publishDialog.title "プロジェクトの発行">
+<!ENTITY publishDialog.userList "ユーザ一覧">
+<!ENTITY publishMode.label "発行モード">
+<!ENTITY recent.label "最近のもの">
+<!ENTITY recentProjects.label "最近のプロジェクト">
+<!ENTITY recoverPassword.label "パスワード復帰">
+<!ENTITY recycleCmd.label "メモ帳へ転送">
+<!ENTITY regWiz.aboutThis "このアシスタントは、登録に必要な情報を収集します。">
+<!ENTITY regWiz.accountInstructions "お客様の &appName; のアカウントで使う、ユーザ名とパスワードを指定してください。">
+<!ENTITY regWiz.accountLabel "ユーザ・アカウント (3/5)">
+<!ENTITY regWiz.bullet1 "リモート・バックアップ">
+<!ENTITY regWiz.bullet2 "共同作業スペース">
+<!ENTITY regWiz.bullet3 "Project Centralへの投稿">
+<!ENTITY regWiz.bullet4 "iPhoneでのプロジェクト閲覧">
+<!ENTITY regWiz.checkLabel "アカウント情報の確認">
+<!ENTITY regWiz.clickFinish "&appName; のコミュニティのメンバーに加わって頂きありがとうございます。">
+<!ENTITY regWiz.clickFinish1 "あなたは &appName; のサーバにログインしました。無料オンライン機能が利用できます。">
+<!ENTITY regWiz.clickFinish2 "ダウンロード/アップロード機能を、あなたのプロジェクトの安全なバックアップのために、あるいは、もし誰か &appName; のアカウントを持っている人が居るならば共同プロジェクトの共有に使ってみてください。">
+<!ENTITY regWiz.clickNext "これらの値でよろしければ、'次' ボタンをクリックして登録情報を送信してください。">
+<!ENTITY regWiz.conclusion "結論(5/5)">
+<!ENTITY regWiz.confirmIntro "入力された内容は以下の通り：">
+<!ENTITY regWiz.confirmLabel "設定の確認 (4/5)">
+<!ENTITY regWiz.createNewAccountLabel "新規アカウントを作成">
+<!ENTITY regWiz.createYourAccountLabel "&appName; のアカウントを取得しましょう！ (1/5)">
+<!ENTITY regWiz.emailLabel "電子メール：">
+<!ENTITY regWiz.finish "終わり">
+<!ENTITY regWiz.identityInstructions "お客様の氏名、組織名、および電子メールアドレスを半角ローマ字で入力ください。">
+<!ENTITY regWiz.identityLabel "個人識別情報 (2/5)">
+<!ENTITY regWiz.intro "&appName; のオンライン機能を利用するには、まず &appName; のアカウントを登録する必要があります。">
+<!ENTITY regWiz.loginSuccessfulLabel "ありがとうございます。お客様は、 &appName; にログインされました。">
+<!ENTITY regWiz.newOrExistingLabel "新規アカウントを作成するか、既存のアカウントを使ってください：">
+<!ENTITY regWiz.noteCaseSensitive "&appName; のアカウントのユーザ名とパスワードは、大文字と小文字を区別して判別されます。">
+<!ENTITY regWiz.notePassword "パスワードは、最低半角５文字以上にしてください。">
+<!ENTITY regWiz.noteUsername "ユーザ名は、最低半角３文字以上の長さで、半角文字と数字だけで構成してください。">
+<!ENTITY regWiz.orgLabel "組織：">
+<!ENTITY regWiz.title "Celtx 登録ウィザード">
+<!ENTITY regWiz.uidLabel "&appName; のユーザ名：">
+<!ENTITY regWiz.useExistingAccountLabel "既存のアカウントを使用">
+<!ENTITY regWiz.warn "この内容にアクセスするには &appName; のアカウントを作成する必要があります。">
+<!ENTITY remove.label "削除">
+<!ENTITY removeCmd.label "削除">
+<!ENTITY removeMarkupCmd.label "Markupを削除">
+<!ENTITY rename.label "リネーム">
+<!ENTITY renameItem.label "Itemを削除...">
+<!ENTITY replaceCmd.label "置換...">
+<!ENTITY reportThisBug.label "このバグを報告する">
+<!ENTITY reportThisBug.tooltip "バグレポートを送信.">
+<!ENTITY reports.label "レポート">
+<!ENTITY right.label "右">
+<!ENTITY sampleProjects.label "サンプルプロジェクト">
+<!ENTITY samples.label "サンプル">
+<!ENTITY saveAsHTML.label "ＨＴＭＬとして保存">
+<!ENTITY saveAsTemplate.label "テンプレートとして保存">
+<!ENTITY savePDFCmd.label "PDFとして保存">
+<!ENTITY savePDFCmd.tooltip "PDFとして保存">
+<!ENTITY saveProjectAsCmd.label "プロジェクトに名前をつけて保存...">
+<!ENTITY saveProjectCmd.label "プロジェクトを保存...">
+<!ENTITY saveProjectCmd.toolbarlabel "保存">
+<!ENTITY scene.label "シーン">
+<!ENTITY sceneBreakdown.label "シーンの内訳">
+<!ENTITY sceneBreakdownWithDesc.label "解説付きシーンの内訳">
+<!ENTITY sceneDetails.desc "新しいシーンの説明を追加">
+<!ENTITY sceneDetails.existing "以下のリストから選択する既存シーンへの説明をすることもできます。">
+<!ENTITY sceneDetails.label "シーンの詳細">
+<!ENTITY sceneDetails.select "シーンを選択">
+<!ENTITY scenePageBreaks.label "各シーン後のページブレイク">
+<!ENTITY sceneSummary.label "シーンのサマリー">
+<!ENTITY sceneTag.label "シーンタグ">
+<!ENTITY sceneTagDialog.title "色を選択">
+<!ENTITY scenes.label "シーン">
+<!ENTITY schedule.desc "脚本のシュートスケジュールを追加">
+<!ENTITY schedule.label "生産計画">
+<!ENTITY scheduleCmd.toolbarlabel "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip "脚本のスケジュール">
+<!ENTITY scheduleID.label "スケジュールＩＤ">
+<!ENTITY scheduled.label "スケジュール">
+<!ENTITY scratchpad.label "メモ">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "プロジェクトに脚本を追加">
+<!ENTITY script.label "脚本">
+<!ENTITY scriptDay.label "執筆日">
+<!ENTITY scriptEditor.label "脚本エディタ">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "フォーマット設定">
+<!ENTITY scriptHeader.label "スクリプトヘッダ">
+<!ENTITY scriptReport.desc "自動生成された脚本レポート.">
+<!ENTITY scriptReport.label "脚本レポート">
+<!ENTITY scriptWithNotes.label "脚本とノート">
+<!ENTITY selectCatalogType.label "カタログのタイプを選択">
+<!ENTITY sequence.label "シーケンス">
+<!ENTITY sequences.label "シーケンス">
+<!ENTITY server.label "サーバ">
+<!ENTITY setting.label "設定">
+<!ENTITY sharing.label "共有">
+<!ENTITY shootDay.label "撮影日">
+<!ENTITY shootDays.label "撮影日">
+<!ENTITY shootingSchedule.label "撮影スケジュール">
+<!ENTITY shotList.label "ショットリスト">
+<!ENTITY shotWords.label "ショットの単語">
+<!ENTITY shotholder.label "ダブルクリックでイメージ追加">
+<!ENTITY showContinuedCount.label "続きのページカウントを表示">
+<!ENTITY showDialogBreaks.label "ダイアログ中断を表示">
+<!ENTITY showFirstPageNumber.label "最初のページにページ番号を表示">
+<!ENTITY showIDNumbers.label "ID ナンバーを表示">
+<!ENTITY showNotes.label "ノートを表示">
+<!ENTITY showPageNumbers.label "丁付け">
+<!ENTITY showProjectFileCmd.label "プロジェクトファイルを表示">
+<!ENTITY showSceneBreaks.label "シーンブレイクを表示">
+<!ENTITY showSceneHeaders.label "柱を表示">
+<!ENTITY showSceneNumbers.label "シーン番号を表示">
+<!ENTITY showScript.label "スクリプトを表示">
+<!ENTITY showTagNames.label "カード上のタグ番号を表示">
+<!ENTITY showTitlePage.label "表紙を表示">
+<!ENTITY showWorkdaysOnly.label "労働日だけを表示">
+<!ENTITY signIn.label "サインイン">
+<!ENTITY signOut.label "サインアウト">
+<!ENTITY signedOut.label "サインアウトしました">
+<!ENTITY slideshowCmd.toolbarlabel "プレイ">
+<!ENTITY source.label "ソース">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "辞書に追加">
+<!ENTITY spellCheckCmd.label "スペルチェック...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "単語を無視">
+<!ENTITY spellCheckNoSuggestions.label "候補が見つかりません">
+<!ENTITY splash.celtxCentral "プロジェクトセントラルにログイン">
+<!ENTITY splash.celtxCentralDesc "プロジェクトセントラルを使ってあなたのパスワードまたはプロフィールを変更">
+<!ENTITY splash.discussion "会議室">
+<!ENTITY splash.downloadProject "プロジェクトをダウンロード">
+<!ENTITY splash.downloadProjectDesc "celtx serverからプロジェクトをダウンロードする">
+<!ENTITY splash.featureTour "機能紹介ツアー">
+<!ENTITY splash.forums "Celtx のフォーラム">
+<!ENTITY splash.forumsDesc "Celtx フォーラムの会議に参加する。">
+<!ENTITY splash.gettingStarted "はじめに">
+<!ENTITY splash.guide "Celtx のユーザ・ガイド">
+<!ENTITY splash.help "ヘルプ">
+<!ENTITY splash.helpAccount "アカウントを作成">
+<!ENTITY splash.helpAccountDesc "アカウントを作成すると、共同作業機能及び、PDF生成機能を含む、サーバサイド機能へアクセスができます。">
+<!ENTITY splash.helpDesc "左の強調されたリンクはCeltxリソースです。">
+<!ENTITY splash.helpOptions "ヘルプオプション">
+<!ENTITY splash.inbox "インボックス">
+<!ENTITY splash.logIn "サインイン">
+<!ENTITY splash.newProject "新規プロジェクトを作成">
+<!ENTITY splash.newProjectDesc "新規プロジェクトを作成">
+<!ENTITY splash.openProject "既存のプロジェクトを開く">
+<!ENTITY splash.openProjectDesc "既存のプロジェクトにアクセス、追加">
+<!ENTITY splash.options "オプション">
+<!ENTITY splash.projectCentral "プロジェクトセントラル">
+<!ENTITY splash.projects "プロジェクト">
+<!ENTITY splash.recentProjects "最近のプロジェクト">
+<!ENTITY splash.sampleDesc "Celtxの様々な特徴を例示するのにオズの魔法使いを使用しました。様々なドキュメントは、1つのシーンを発生させる必要性を太らせるのに使用されます。このサンプルに含まれているのは、脚本と、登場人物と、シーンの詳細フォームと、ブレイクダウン情報と、スケジュール情報です。">
+<!ENTITY splash.sampleProject "サンプルプロジェクト">
+<!ENTITY splash.videoWalkthrus "ビデオウォークスルー">
+<!ENTITY splash.videoWalkthrusDesc "短いビデオチュートリアルがあなたが早く習得するのを助けます">
+<!ENTITY splash.walkthru "３分ウォークスルー">
+<!ENTITY splash.webServices "WEBサービス">
+<!ENTITY splash.welcomePrefix "Celtxへようこそ">
+<!ENTITY splash.welcomePrefixDesc "メディアプリプロダクション">
+<!ENTITY splash.wiki "wiki ガイド">
+<!ENTITY splash.wikiDesc "Celtxと知り合うためのソース">
+<!ENTITY splashScreen.label "スプラッシュスクリーン">
+<!ENTITY stackTrace.desc "以下に、私たちの役に立つだろう情報があります。このバグを報告する際に、これを含めてください。">
+<!ENTITY stageplay.desc "国際形式の舞台演劇用脚本を追加">
+<!ENTITY stageplay.label "舞台劇">
+<!ENTITY start.label "開始">
+<!ENTITY startOfDay.label "１日の始まり">
+<!ENTITY startOfShooting.label "撮影開始">
+<!ENTITY startOfWeek.label "週の始まり">
+<!ENTITY statistics.label "統計">
+<!ENTITY storyboard.desc "コンテの画像をショットシーケンスにまとめる">
+<!ENTITY storyboard.label "コンテ">
+<!ENTITY strikethrough.label "Strikethrough">
+<!ENTITY stripboard.label "ストリップボード">
+<!ENTITY subject.label "サブジェクト">
+<!ENTITY summary.label "サマリー">
+<!ENTITY syncDialog.title "同期">
+<!ENTITY tagItemCmd.label "タグ">
+<!ENTITY tagline.label "タグライン">
+<!ENTITY tags.label "タグ">
+<!ENTITY text.label "テキスト">
+<!ENTITY textDocument.desc "アウトライン、トリートメント、シノプシス等に役立つテキストドキュメントを追加">
+<!ENTITY textDocument.label "テキスト">
+<!ENTITY theatreTmplActTitle "アクト １">
+<!ENTITY theatreTmplSceneTitle "シーン １">
+<!ENTITY thirtyMinutes.label "３０分">
+<!ENTITY threeHours.label "３時間">
+<!ENTITY time.label "時間">
+<!ENTITY title.label "柱">
+<!ENTITY titlePage.label "表紙">
+<!ENTITY toggleEditing.label "編集を切り換え">
+<!ENTITY togglePaginationCmd.label "丁付け可能">
+<!ENTITY toggleScratchpadCmd.label "メモ帳を開閉">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "サイドバー">
+<!ENTITY topOfNextPage.label "次頁先頭">
+<!ENTITY tryAgain.label "再試行">
+<!ENTITY twoColumns.label "二段組">
+<!ENTITY twoHours.label "２時間">
+<!ENTITY typeset.label "植字">
+<!ENTITY under14.label "私は１４歳以下です。">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "下線">
+<!ENTITY unorderedList.label "順不同のリスト">
+<!ENTITY untitled.label "無題">
+<!ENTITY update.label "アップデート">
+<!ENTITY updateInbox.label "インボックスを更新">
+<!ENTITY uploadDialog.title "プロジェクトをアップロード">
+<!ENTITY uploadProjectCmd.label "プロジェクトをアップロード...">
+<!ENTITY uploadProjectCmd.toolbarlabel "アップロード">
+<!ENTITY uppercaseCmd.label "大文字">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "ユーザ名">
+<!ENTITY video.label "ビデオ">
+<!ENTITY videoTutorialCmd.label "チュートリアルビデオ">
+<!ENTITY viewProjectOnline.label "オンラインプロジェクトを表示">
+<!ENTITY wardrobeSheet.desc "ワードローブアイテムの説明を追加">
+<!ENTITY wardrobeSheet.existing "また、あなたは以下のリストから既存の持ち衣装について説明することができます。">
+<!ENTITY wardrobeSheet.label "衣装">
+<!ENTITY wardrobeSheet.select "衣装選択">
+<!ENTITY webPanel.desc "Celtx WEB サービス.">
+<!ENTITY webPanel.label "Web サービス">
+<!ENTITY webPanelCmd.toolbarlabel "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Celtxのアカウントを作成する">
+<!ENTITY webPanelIntro.text1 "無料で安全なウェブサービスにサインインしてCeltxを最大限に使いこなしましょう。">
+<!ENTITY webPanelIntro.text2 "Celtxの安全なリモートサーバーにプロジェクトを*バックアップ*して、盗難やHDDクラッシュといった災難に備えましょう。">
+<!ENTITY webPanelIntro.text3 "プライベートな空間でプロジェクトを共有して、チームメンバーとの*共同作業*を行いましょう。">
+<!ENTITY webPanelIntro.text4 "Project Centralにあなたのプロジェクトを*投稿*してメディアクリエーターの輪に混じり、レビューやコメントをもらいましょう。">
+<!ENTITY webPanelIntro.text5 "*iPhone*に最適化されたフォーマットでプロジェクトを閲覧しましょう。">
+<!ENTITY wiz.clickFinish "'Finish'ボタンをクリックして、このWizardを完了してください。">
+<!ENTITY wiz.clickNext "'Next'ボタンをクリックして、開始してください。">
+<!ENTITY workweek.label "週労働日数">
+<!ENTITY writer.label "ライター">
+<!ENTITY zoom.label "ズーム">

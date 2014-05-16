@@ -1,0 +1,970 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Email">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Nastavení">
+<!ENTITY timer.autostart.label "Začít sezení, když je scénář otevřen.">
+<!ENTITY timer.schedule.label "Plán">
+<!ENTITY timer.useSchedule.label "Použít naplánované přestávky">
+<!ENTITY timer.workMinutes.label "Práce (minuty):">
+<!ENTITY timer.breakMinutes.label "Přestávka (minuty):">
+<!ENTITY timer.alertType.label "Typ upozornění, když přestávka začíná/končí">
+<!ENTITY timer.showDialog.label "Zobrazit dialogové okno">
+<!ENTITY timer.endSession.label "Konec sezení">
+<!ENTITY timer.flashTimer.label "Zablikat časovačem">
+<!ENTITY timer.resetSession.label "Nulovat sezení">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reporty">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Počáteční čas sezení:">
+<!ENTITY timer.totalWritingTime.label "Celkový čas psaní:">
+<!ENTITY timer.totalBreakTime.label "Celkový čas přestávky:">
+<!ENTITY timer.totalTime.label "Celkový čas:">
+<!ENTITY timer.wordsWritten.label "Napsaných slov">
+
+<!ENTITY timer.allSessions.label "Všechna sezení">
+<!ENTITY timer.sessionDetail.label "Detaily sezení">
+<!ENTITY timer.scriptSummary.label "Souhrn scénáře">
+<!ENTITY timer.writingGoals.label "Cíle psaní">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Report sezení">
+<!ENTITY timer.totalSessionTime.header "Celkový čas sezení">
+<!ENTITY timer.totalSessionTime.label "Celkový čas sezení">
+<!ENTITY timer.totalWordsWritten.header "Celkový počet napsaných slov">
+<!ENTITY timer.totalWordsWritten.label "Celkový počet napsaných slov">
+<!ENTITY timer.noSessionsToDisplay.label "Nejsou žádná sezení k zobrazení.">
+<!ENTITY timer.sessionNo.label "Sezení číslo #">
+<!ENTITY timer.date.label "Datum">
+
+<!ENTITY timer.tweetThis.label "Poslat na Tweeter!">
+<!ENTITY timer.startDate.label "Datum začátku">
+<!ENTITY timer.startTime.label "Čas začátku">
+<!ENTITY timer.endTime.label "Čas konce">
+<!ENTITY timer.breakTime.label "Čas přestávky">
+
+<!ENTITY timer.sessionStartWords.label "Slov na počátku sezení">
+<!ENTITY timer.sessionEndWords.label "Slov na konci sezení">
+<!ENTITY timer.newWords.header "Nová slova">
+<!ENTITY timer.noNewWords.label "Žádná nová slova.">
+<!ENTITY timer.newDialog.header "Nové dialogy">
+<!ENTITY timer.noNewDialog.label "Žádný nový dialog.">
+<!ENTITY timer.newCharacters.header "Nové postavy">
+<!ENTITY timer.noNewCharacters.label "Žádná nová postava.">
+<!ENTITY timer.newPages.header "Nové stránky">
+<!ENTITY timer.newScenes.header "Nové scény">
+<!ENTITY timer.newPanels.header "Nové panely">
+<!ENTITY timer.shotWords.header "Slova záběrů">
+<!ENTITY timer.actionWords.header "Slova akce">
+<!ENTITY timer.dialogWords.header "Slova dialogu">
+<!ENTITY timer.soundVoiceMusicWords.header "Slova zvuku/hlasu/hudby">
+<!ENTITY timer.stageDirWords.header "Slova režie">
+
+<!ENTITY timer.name.label "Název">
+<!ENTITY timer.words.label "Slova">
+<!ENTITY timer.percentage.label "Procenta">
+
+<!ENTITY timer.summaryReport.label "Souhrnný report">
+<!ENTITY timer.contributionsByAuthor.label "Příspěvky podle autora">
+<!ENTITY timer.weekdaySessions.label "Sezení podle dne v týdnu">
+<!ENTITY timer.weekdayWords.label "Slova podle dne v týdnu">
+<!ENTITY timer.numberOfSessions.label "Počet sezení">
+<!ENTITY timer.longest.label "Nejdelší">
+<!ENTITY timer.shortest.label "Nejkratší">
+<!ENTITY timer.averageDuration.label "Průměrné trvání">
+<!ENTITY timer.mostWords.label "Nejvíce slov">
+<!ENTITY timer.leastWords.label "Nejméně slov">
+<!ENTITY timer.averageWords.label "Průměrně slov">
+<!ENTITY timer.wordCounts.header "Počet slov">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Celkem slov">
+<!ENTITY timer.totalDialogWords.header "Celkem slov v dialogu">
+<!ENTITY timer.character.label "Postava">
+<!ENTITY timer.weekday.label "Den v týdnu">
+<!ENTITY timer.sessions.label "Počet sezení">
+<!ENTITY timer.pctOfTotal.label "Celkem &#37;">
+<!ENTITY timer.author.label "Autor">
+
+<!ENTITY timer.writingGoalReport.label "Report cílů psaní">
+<!ENTITY timer.goalSession.header "Cíl pro sezení">
+<!ENTITY timer.goalSession.label "Cíl pro sezení">
+<!ENTITY timer.goalDaily.header "Cíl pro den">
+<!ENTITY timer.goalDaily.label "Cíl pro den">
+<!ENTITY timer.goalScript.header "Cíl pro scénář">
+<!ENTITY timer.goalScript.label "Cíl pro scénář">
+<!ENTITY timer.wordGoal.label "Plánovaný počet slov">
+
+<!ENTITY timer.message.label "Zprávy">
+<!ENTITY timer.tags.label "Tagy">
+<!ENTITY timer.mostRecentSession.label "Poslední sezení">
+
+<!ENTITY timer.alertDialog.title "Čas sezení">
+<!ENTITY timer.timerMenu.tooltip "Klikněte pro nastavení">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Barva popředí">
+<!ENTITY fullscreen.backgroundColour.tooltip "Barva pozadí">
+<!ENTITY fullscreen.fullscreen.tooltip "Celá obrazovka">
+
+<!ENTITY bbc.options.label "Nastavení BBC">
+<!ENTITY bbc.showTitle.label "Název programu">
+<!ENTITY bbc.sketchTitle.label "Název skeče">
+<!ENTITY editText.title "Editace textu">
+<!ENTITY sketch.fillColour.tooltip "Barva výplně">
+<!ENTITY sketch.group.tooltip "Seskupit">
+<!ENTITY sketch.lower.tooltip "Posunout o úroveň níž">
+<!ENTITY sketch.lowerToBottom.tooltip "Posunout do pozadí">
+<!ENTITY sketch.raise.tooltip "Posunout o úroveň víš">
+<!ENTITY sketch.raiseToTop.tooltip "Posunout do popředí">
+<!ENTITY sketch.strokeColour.tooltip "Barva obrysu">
+<!ENTITY sketch.ungroup.tooltip "Zrušit seskupení">
+
+<!ENTITY custom.label "Vlastní">
+<!ENTITY saveAsPreset.label "Uložit jako přednastavené">
+<!ENTITY sceneLocking.title "Zamykání scény">
+<!ENTITY sceneNumbering.label "Číslování scény">
+<!ENTITY scenenumber.after.label "Po">
+<!ENTITY scenenumber.before.label "Před">
+<!ENTITY scenenumber.example.label "Příklad">
+<!ENTITY scenenumber.letter.label "Písmeno">
+<!ENTITY scenenumber.number.label "Číslo">
+<!ENTITY scenenumber.position.label "Pozice">
+<!ENTITY scenenumber.prefix.label "Předpona">
+<!ENTITY scenenumbers.resetAll.label "Resetovat všechna čísla">
+<!ENTITY scenenumber.suffix.label "Přípona">
+<!ENTITY scenenumber.type.label "Typ">
+<!ENTITY style.label "Styl">
+
+<!ENTITY project.film.label "Film">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "Divadlo">
+<!ENTITY project.audioplay.label "Audio scénář">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Přidat obrázek">
+<!ENTITY addPaletteObjects.label "Získat balík artů">
+<!ENTITY addShot.label "Přidat záběr">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC scéna">
+<!ENTITY bdc.cameras "Kamery">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Modrá">
+<!ENTITY colour.cherry "Třešeň">
+<!ENTITY colour.gold "Zlatá">
+<!ENTITY colour.green "Zelená">
+<!ENTITY colour.pink "Růžová">
+<!ENTITY colour.salmon "Lososová">
+<!ENTITY colour.white "Bílá">
+<!ENTITY colour.yellow "Žlutá">
+<!ENTITY currentRevision.label "Aktuální revize">
+<!ENTITY createNewRevision.tooltip "Vytvořit novou revizi">
+<!ENTITY default.label "Výchozí">
+<!ENTITY enableSceneLocking.label "Zamknout scénu">
+<!ENTITY fixNumbers.label "Pevně">
+<!ENTITY furniture.label "Nábytek">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Plné">
+<!ENTITY light.spot.label "Bodové">
+<!ENTITY linesBetweenScenes.label "Řádky mezi scénami">
+<!ENTITY man.label "Muž">
+<!ENTITY numbers.bothNos "Oboje #s">
+<!ENTITY numbers.leftNo "Levé #">
+<!ENTITY numbers.none "Žádné">
+<!ENTITY numbers.rightNo "Pravé #">
+<!ENTITY omitScene.label "Vynechat scénu">
+<!ENTITY palette.label "Paleta">
+<!ENTITY palettes.label "Palety">
+<!ENTITY paletteTree.tooltip "Táhni a pusť objekt do skeče">
+<!ENTITY people.label "Lidé">
+<!ENTITY person.label "Osoba">
+<!ENTITY preventEditing.label "Zamknout text">
+<!ENTITY resetRevisionMode.label "Zrušit mód revizí">
+<!ENTITY revisionColour.desc "Toto bude použito jako výchozí barva pro zvýraznění změn v tomto skriptu.">
+<!ENTITY revisionColour.label "Barva revizí">
+<!ENTITY revisionMarks.all "Všechny značky">
+<!ENTITY revisionMarks.current "Aktuální značky">
+<!ENTITY revisionMarks.hide "Skrýt značky">
+<!ENTITY revisionMarks.mark.label "Označit">
+<!ENTITY revisionMarks.unmark.label "Odznačit">
+<!ENTITY revisionMode.label "Mód revizí">
+<!ENTITY revisionName.label "Jméno revize">
+<!ENTITY revisionOptions.title "Nastavení revizí">
+<!ENTITY shotSetup.label "Skeč">
+<!ENTITY shotSetup.desc "Přidat skeč do projektu.">
+<!ENTITY showScriptHeader.label "Zobrazit hlavičku scénáře">
+<!ENTITY standard.label "Standardní">
+<!ENTITY startNewRevision.label "Zahájit novou revizi">
+<!ENTITY storyboard.showImages.label "Zobrazit obrázky">
+<!ENTITY storyboard.showSetups.label "Zobrazit skeče">
+<!ENTITY storyboard.showBoth.label "Zobrazit oboje">
+<!ENTITY woman.label "Žena">
+
+<!ENTITY light.bank.label "Plošné světlo">
+<!ENTITY bathtub.label "Vana">
+<!ENTITY boy.label "Chlapec">
+<!ENTITY car.label "Auto">
+<!ENTITY chair.label "Židle">
+<!ENTITY coffeetable.label "Kávový stolek">
+<!ENTITY couch.label "Gauč">
+<!ENTITY crowd.label "Dav">
+<!ENTITY endtable.label "Noční stolek">
+<!ENTITY girl.label "Dívka">
+<!ENTITY group.label "Skupina"> <!-- Group of people -->
+<!ENTITY house.label "Dům">
+<!ENTITY building.label "Budova"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pick-up">
+<!ENTITY sink.label "Dřez"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Bodové světlo">
+<!ENTITY street.label "Ulice">
+<!ENTITY toilet.label "Toaleta">
+<!ENTITY tree.label "Strom">
+<!ENTITY van.label "Dodávka">
+<!ENTITY videocamera.label "Videokamera">
+
+<!ENTITY createTemplate.label "Vytvořit šablonu">
+<!ENTITY fetchingList.label "Zachytávací seznam">
+<!ENTITY getCeltxTools.label "Získat nástroje Celtx">
+<!ENTITY myStudio.label "Mé Celtx">
+<!ENTITY openFromStudio.label "Otevřít ze Celtx">
+<!ENTITY owner.label "Vlastník">
+<!ENTITY personal.label "Osobní">
+<!ENTITY saveCommentCheckbox.label "Ptát se na komentáře při ukládání do Celtx.">
+<!ENTITY saveToStudio.label "Uložit do Celtx">
+<!ENTITY savedBy.label "Uložil">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Oprávnění pro Celtx">
+<!ENTITY studioAuthDialog.desc "Přihlášení do Celtx">
+<!ENTITY studioProjects.label "Projekty Celtx">
+<!ENTITY toolbox.label "Sada nástrojů">
+
+<!ENTITY access.label "Zpřístupnění">
+<!ENTITY actorProfile.desc "Přidat popis k herci.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Přizpůsobit pro">
+<!ENTITY add.label "Přidat">
+<!ENTITY addCardCmd.label "Přidat kartu">
+<!ENTITY addCmd.label "Přidat">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Detaily položky">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Vybrat položku">
+<!ENTITY addFolder.label "Přidat složku...">
+<!ENTITY addFolderCmd.label "Vložit adresář">
+<!ENTITY addImages.label "Přidat obrázky">
+<!ENTITY addItem.label "Přidat položku...">
+<!ENTITY addItemCmd.label "Vložit položku">
+<!ENTITY addNote.label "Přidat poznámku">
+<!ENTITY addSequenceCmd.toolbarlabel "Vložit sekvenci">
+<!ENTITY advanced.label "Pokročilé">
+<!ENTITY alignCenter.label "Zarovnat na střed">
+<!ENTITY alignJustified.label "Zarovnat do bloku">
+<!ENTITY alignLeft.label "Zarovnat vlevo">
+<!ENTITY alignRight.label "Zarovnat vpravo">
+<!ENTITY allShootDays.label "Všechny natáčecí dny">
+<!ENTITY allUppercase.label "VŠE">
+<!ENTITY american.label "Americký">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Tyto možnosti jsou dostupné pouze pro generování PDF.">
+<!ENTITY audioplay.desc "Přidat audio stopu do projektu.">
+<!ENTITY audioplay.label "Audio stopa">
+<!ENTITY authDialog.description "Tato akce vyžaduje aby jste byli přihlášeni do vašeho Celtx účtu">
+<!ENTITY authDialog.title "Celtx ověření">
+<!ENTITY author.label "Autor">
+<!ENTITY autoCharContinueds.label "Ukázat pokračování postavy">
+<!ENTITY autoSaveProject.label "Automaticky uložit projekt">
+<!ENTITY autoparenthesize.label "Uzávorkovat automaticky po '('">
+<!ENTITY avScript.desc "Přidat audio-vizuální scénář do projektu.">
+<!ENTITY avScript.label "A/V scénář">
+<!ENTITY basedOn.label "Podle">
+<!ENTITY bdc.actor "Herec">
+<!ENTITY bdc.addlabour "Dodatečné práce">
+<!ENTITY bdc.animals "Zvířata">
+<!ENTITY bdc.camera "Kamera">
+<!ENTITY bdc.cast "Postavy">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "Stavby">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "Přístroje">
+<!ENTITY bdc.equip "Speciální vybavení">
+<!ENTITY bdc.extras "Další">
+<!ENTITY bdc.greenery "Zeleň">
+<!ENTITY bdc.hair "Účesy">
+<!ENTITY bdc.handler "Koordinátoři zvířat">
+<!ENTITY bdc.lights "Světla">
+<!ENTITY bdc.livestock "Živý inventář">
+<!ENTITY bdc.location "Lokace">
+<!ENTITY bdc.makeup "Makeup">
+<!ENTITY bdc.mechfx "Mechanické FX">
+<!ENTITY bdc.misc "Smíšené">
+<!ENTITY bdc.music "Hudba">
+<!ENTITY bdc.opticalfx "Optické FX">
+<!ENTITY bdc.painting "Kresby">
+<!ENTITY bdc.prodnotes "Produkční poznámky">
+<!ENTITY bdc.props "Rekvizity">
+<!ENTITY bdc.security "Bezpečnost">
+<!ENTITY bdc.set "Umístění">
+<!ENTITY bdc.setdressing "Ošacení">
+<!ENTITY bdc.sound "Zvuky">
+<!ENTITY bdc.soundfx "Zvukové FX">
+<!ENTITY bdc.specialfx "Zvláštní FX">
+<!ENTITY bdc.storyboard "Storyboard">
+<!ENTITY bdc.stunts "Kaskadéři">
+<!ENTITY bdc.vehicles "Vozidla">
+<!ENTITY bdc.wardrobe "Kostýmy">
+<!ENTITY bdc.weapons "Zbraně">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Tučné">
+<!ENTITY bookmark.desc "Přidat odkaz.">
+<!ENTITY bookmark.label "Oblíbené">
+<!ENTITY both.label "Oboje">
+<!ENTITY bottomOfPage.label "Spodek stránky">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc "Přidat souhrnné informace ke scénáři.">
+<!ENTITY breakdown.label "Souhrn">
+<!ENTITY breakdownReport.label "Detailní sestava">
+<!ENTITY brokenSceneEventWarning.label "Události se vztahují ke scéně, která již neexistuje.">
+<!ENTITY browseCmd.label "Prozkoumání">
+<!ENTITY byline.label "napsal">
+<!ENTITY calendar.desc "Přidat kalendář do projektu.">
+<!ENTITY calendar.label "Kalendář">
+<!ENTITY callSheet.label "Vývěska">
+<!ENTITY cast.label "Obsazení">
+<!ENTITY castOfCharacters.label "Obsazení rolí">
+<!ENTITY catalog.desc "Přidat katalog položek z produkce do projektu.">
+<!ENTITY catalog.label "Katalog">
+<!ENTITY catalogAddItem.tooltip "Přidat položku do katalogu">
+<!ENTITY catalogDeleteItem.tooltip "Smazat položku z katalogu">
+<!ENTITY categories.label "Kategorie">
+<!ENTITY category.label "Kategorie">
+<!ENTITY celtxAccountCmd.accessKey "T">
+<!ENTITY celtxAccountCmd.label "&appName; Účet...">
+<!ENTITY celtxError.title "Celtx chyba">
+<!ENTITY celtxTagline.label "Vše je o příběhu.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Představení postav a jejich vzájemných vztahů.">
+<!ENTITY charOutline.label "Nástin postavy">
+<!ENTITY character.label "Postava">
+<!ENTITY characterProfile.desc "Přidat popis k nové postavě.">
+<!ENTITY characterProfile.existing "Můžete také popsat již existující postavu ze seznamu níže.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "Vybrat postavu">
+<!ENTITY characters.label "Postavy">
+<!ENTITY clearCmd.label "Vyčistit">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Vytvořit scénář pro komiks.">
+<!ENTITY comicBook.label "Komiks">
+<!ENTITY comment.label "Poznámka">
+<!ENTITY completed.label "Dokončeno">
+<!ENTITY contact.label "Kontakt">
+<!ENTITY contactInformation.label "Kontaktní informace">
+<!ENTITY contactName.label "Jméno kontaktu">
+<!ENTITY contacts.label "Kontakty">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Pokračovat">
+<!ENTITY copyProject.title "Duplikovat projekt">
+<!ENTITY copyProjectCmd.label "Duplikovat projekt">
+<!ENTITY copyright.label "Copyright">
+<!ENTITY create.label "Vytvořit">
+<!ENTITY createAccount.label "Vytvořit účet">
+<!ENTITY createCatalogFromSelection.label "Vytvořit katalog z výběru">
+<!ENTITY createProject.label  "Vytvořit projekt">
+<!ENTITY createProject.title "Vytvořit projekt">
+<!ENTITY createdCol.label "Vytvořeno">
+<!ENTITY creatorCol.label "Vytvořil">
+<!ENTITY crew.desc "Přidat dokument pracovní skupiny.">
+<!ENTITY crew.label "Pracovní skupina">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Datum">
+<!ENTITY datePicker.label "Výběr data">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "Hlavička scény nekonční platným DENNÍM/NOČNÍM slovem. K nápravě je třeba editovat hlavičku scény ve scénáři nebo modifikovat DENNÍ/NOČNÍ list slov v tabu scénáře v dialogu nastavení.">
+<!ENTITY daynightWords.label "DENNÍ/NOČNÍ slova">
+<!ENTITY dayoff.label "Volný den">
+<!ENTITY daysOff.label "Volné dny">
+<!ENTITY decreaseDelayCmd.tooltip "Snížit prodlevu.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Zmenšit font">
+<!ENTITY decreaseIndentCmd.label "Zmenšit odsazení">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Přednastavená délka scény">
+<!ENTITY delayLabel.tooltip "Zpoždění (sekundy) mezi obrázky">
+<!ENTITY deleteCardCmd.label "Smazat kartu">
+<!ENTITY deleteItem.label "Smazat položky">
+<!ENTITY deleteItemCmd.label "Smazat">
+<!ENTITY department.label "Oddělení">
+<!ENTITY description.label "Popis">
+<!ENTITY details.label "Detaily">
+<!ENTITY dialog.label "Dialog">
+<!ENTITY director.label "Režisér">
+<!ENTITY disabled.label "Zakázané">
+<!ENTITY displayMedia.label "Zobrazit média">
+<!ENTITY downloadProjectCmd.label "Stáhnout projekt...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Stáhnout">
+<!ENTITY downloadingPDF.label "Konverze do PDF...">
+<!ENTITY dragToSchedule.tooltip "Přetáhni k plánování.">
+<!ENTITY dualDialogCmd.label "Dvojí dialog">
+<!ENTITY dualDialogCmd.tooltip "Dvojí dialog">
+<!ENTITY duplicate.label "Duplikovat">
+<!ENTITY duplicateItemCmd.label "Duplikovat položku">
+<!ENTITY edit.label "Editovat">
+<!ENTITY editDates.label "Editovat data">
+<!ENTITY editProfile.label "Editovat online profil">
+<!ENTITY editSceneDialog.title "Editovat scénu">
+<!ENTITY editTitlePageCmd.label "Editace titulní strany...">
+<!ENTITY editlabel.tooltip "Klikni pro editování">
+<!ENTITY eighths.label "Osminy">
+<!ENTITY eighthsSuffix.label "8">
+<!ENTITY element.label "Element">
+<!ENTITY elements.label "Elementy">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Toho se využívá pro součet aktivních uživatelů Celtx. Žádná osobní identifikace ani data projektu nejsou v tomto procesu odesílána.">
+<!ENTITY enableStats.label    "Umožnit programu Celtx poslat při startu příkaz PING na server.">
+<!ENTITY enableStats.label "Poslat statistiku užívání na Celtx.">
+<!ENTITY enabled.label "Povolené">
+<!ENTITY end.label "Konec">
+<!ENTITY endOfShooting.label "Konec natáčení">
+<!ENTITY enterEmbedTagPrompt.label "Vlož EMBED nebo OBJECT tag:">
+<!ENTITY eventDetails.label "Detaily události">
+<!ENTITY every15Minutes.label "Každých 15 minut">
+<!ENTITY every30Minutes.label "Každou půlhodinu">
+<!ENTITY every5Minutes.label "Každých 5 minut">
+<!ENTITY everyHour.label "Každou hodinu">
+<!ENTITY everyMinute.label "Každou minutu">
+<!ENTITY exportList "Exportovat seznam">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Export scénáře...">
+<!ENTITY externalFile.desc "Přidat jakýkoli existující soubor do projektu.">
+<!ENTITY externalFile.label "Soubor">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "Přidat zformátovaný scénář filmu.">
+<!ENTITY filmScript.label "Scénář">
+<!ENTITY filter.label "Filtr">
+<!ENTITY findAllCharacters.label "Přidat postavy do katalogu">
+<!ENTITY findCmd.accesskey "H">
+<!ENTITY findCmd.label "Hledání">
+<!ENTITY findPreviousCmd.label "Hledat předchozí">
+<!ENTITY findTab.label "Hledat">
+<!ENTITY folder.label "Složka">
+<!ENTITY forceOverwrite.label "Přepsat i když verze na serveru je novější">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Adresa">
+<!ENTITY form.affectEvent "Jak tyto události ovlivní celkovou zápletku?">
+<!ENTITY form.age "Věk">
+<!ENTITY form.alternate "Alternativní název">
+<!ENTITY form.antag "antagonista">
+<!ENTITY form.antagWho "Kdo je antagonistou této scény?">
+<!ENTITY form.availability "Dostupnost">
+<!ENTITY form.bestFriend "nejlepší přítel">
+<!ENTITY form.borrow "Půjčeno">
+<!ENTITY form.build "Vyrobeno">
+<!ENTITY form.buy "Nakoupeno">
+<!ENTITY form.catalyst "prostředník">
+<!ENTITY form.cell "Mobil #">
+<!ENTITY form.centralEvent "Jaké jsou ústřední události této scény?">
+<!ENTITY form.charBackground "Pozadí postavy">
+<!ENTITY form.charGoal "Co je cílem této postavy?">
+<!ENTITY form.charPlan "Jaký má postava plán k dosažení svého cíle?">
+<!ENTITY form.charTraits "Rysy postavy">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Používají postavy">
+<!ENTITY form.color "Barva">
+<!ENTITY form.comicRelief "komická postava">
+<!ENTITY form.comments "Komentáře">
+<!ENTITY form.confidante "důvěrník">
+<!ENTITY form.contactInfo "Kontaktní informace">
+<!ENTITY form.cost "Cena">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Datum dostupnosti">
+<!ENTITY form.dateNeed "Datum užívání">
+<!ENTITY form.dateReturn "Datum návratu">
+<!ENTITY form.description "Popis">
+<!ENTITY form.details "Detaily">
+<!ENTITY form.dislikes "Odpor k">
+<!ENTITY form.distFeatures "Rozlišující znaky">
+<!ENTITY form.dob "Datum narození">
+<!ENTITY form.dress "Oděv">
+<!ENTITY form.education "Vzdělání">
+<!ENTITY form.elevator "Výtah">
+<!ENTITY form.email "Email">
+<!ENTITY form.endDate "Datum konce">
+<!ENTITY form.era "Éra">
+<!ENTITY form.eyes "Oči">
+<!ENTITY form.facilityInfo "Vlohy">
+<!ENTITY form.familyBack "Rodinné zázemí">
+<!ENTITY form.fullName "Celé jméno">
+<!ENTITY form.generic "Všeobecné">
+<!ENTITY form.genericForm "Všeobecný formulář">
+<!ENTITY form.habits "Zvyky/Vady">
+<!ENTITY form.hair "Vlasy">
+<!ENTITY form.hat "Pokrývka hlavy">
+<!ENTITY form.height "Výška">
+<!ENTITY form.inScenes "Ve scénách">
+<!ENTITY form.jacket "Bunda">
+<!ENTITY form.jobTitle "Titul">
+<!ENTITY form.keyCharTraits "Klíčové rysy postavy">
+<!ENTITY form.lightSources "Zdroje světla">
+<!ENTITY form.likes "Záliby">
+<!ENTITY form.locationMap "Mapa lokace">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "milostné zájmy">
+<!ENTITY form.media "Média">
+<!ENTITY form.mentor "rádce">
+<!ENTITY form.motiv "Motivace">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Ne">
+<!ENTITY form.noise "Hluk">
+<!ENTITY form.other "ostatní">
+<!ENTITY form.pants "Kalhoty">
+<!ENTITY form.parking "Parkování">
+<!ENTITY form.partner "partner">
+<!ENTITY form.person "Personálie">
+<!ENTITY form.phone "Telefon #">
+<!ENTITY form.physicalDesc "Detailní fyzický popis">
+<!ENTITY form.powerCapa "Možnosti napájení">
+<!ENTITY form.princFunction "Jaká je hlavní funkce této postavy?">
+<!ENTITY form.procure "Zprostředkování">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "protagonista">
+<!ENTITY form.protagAntag "Protagonista/Antagonista">
+<!ENTITY form.protagWho "Kdo je protagonistou této scény?">
+<!ENTITY form.rent "Nájem">
+<!ENTITY form.rentalCost "Cena nájmu">
+<!ENTITY form.role "Role">
+<!ENTITY form.scene "Scéna">
+<!ENTITY form.sceneAntagAchieve "Jak antagonista dosáhne tohoto cíle?">
+<!ENTITY form.sceneAntagGoal "Jaký je cíl antagonisty v této scéně?">
+<!ENTITY form.sceneChars "Které postavy jsou v této scéně?">
+<!ENTITY form.sceneDetails "Detaily scény">
+<!ENTITY form.sceneMood "Jaká je nálada scény?">
+<!ENTITY form.sceneProtagAchieve "Jak protagonista dosáhne tohoto cíle?">
+<!ENTITY form.sceneProtagGoal "Jaký je cíl protagonisty v této scéně?">
+<!ENTITY form.sceneSetting "Jaké je umístění scény?">
+<!ENTITY form.sceneWhen "Kdy dojde k této scéně?">
+<!ENTITY form.scenesUsed "Užito ve scénách">
+<!ENTITY form.scoutSelect "Průzkum a vybírání">
+<!ENTITY form.scoutedFor "Průzkum pro scény">
+<!ENTITY form.scriptName "Jméno scénáře">
+<!ENTITY form.selectedFor "Vybráno pro scény">
+<!ENTITY form.sex "Pohlaví">
+<!ENTITY form.shirt "Tričko">
+<!ENTITY form.shoes "Boty">
+<!ENTITY form.size "Velikost">
+<!ENTITY form.squareFoot "Rozměr filmu">
+<!ENTITY form.startDate "Datum zahájení">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Velikost kostýmu">
+<!ENTITY form.washroom "Umístění prádelny">
+<!ENTITY form.weight "Váha">
+<!ENTITY form.wornBy "Nošeno">
+<!ENTITY form.yes "Ano">
+<!ENTITY format.label "Formát">
+<!ENTITY formatAct.label      "Akt">
+<!ENTITY formatAction.label "Akce">
+<!ENTITY formatBalloon.label  "Bublina">
+<!ENTITY formatBalloonType.label "Typ bubliny">
+<!ENTITY formatCaption.label  "Titulek">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;"> <!-- max 7 chars -->
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Obraz">
+<!ENTITY formatMusic.label    "Hudba">
+<!ENTITY formatPage.label     "Strana">
+<!ENTITY formatPage.shortlabel     "Str."> <!-- max 5 chars -->
+<!ENTITY formatPanel.label    "Panel">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;"> <!-- max 5 chars -->
+<!ENTITY formatParen.label "Vsuvka">
+<!ENTITY formatProductionNote.label "Produkční poznámky">
+<!ENTITY formatShot.label "Záběr">
+<!ENTITY formatSound.label    "Zvuk">
+<!ENTITY formatStagedir.label "Režie">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Přechod">
+<!ENTITY formatVoice.label    "Hlas">
+<!ENTITY fourHours.label "4 hodiny">
+<!ENTITY freeAndSecure.label "Zdarma a bezpečně">
+<!ENTITY general.label "Hlavní">
+<!ENTITY generatePDFCmd.label "Generovat PDF...">
+<!ENTITY generateReportCmd.label "Generovat sestavu">
+<!ENTITY generateReportCmd.toolbarlabel "Sestava">
+<!ENTITY getProjDialog.caption "Dostupné projekty">
+<!ENTITY getProjDialog.title "Stáhnout projekt">
+<!ENTITY gotoItemCmd.label "Jít na">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "O aplikaci &appName;">
+<!ENTITY helpReportBugCmd.accessKey "N">
+<!ENTITY helpReportBugCmd.label "Nahlášení chyby">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Online Podpora">
+<!ENTITY icons.label "Ikony">
+<!ENTITY iconsAndText.label "Ikony a text">
+<!ENTITY image.label "Obrázek">
+<!ENTITY images.label "Obrázky">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Import scénáře">
+<!ENTITY importScriptCmd.toolbarLabel "Import">
+<!ENTITY includeInWorkweek.label "Zahrnout tyto dny do pracovního týdne">
+<!ENTITY includeTitlePage.label "Vložit titulní stranu">
+<!ENTITY increaseDelayCmd.tooltip "Zvětšit prodlevu.">
+<!ENTITY increaseFontSizeCmd.tooltip "Zvětšit font">
+<!ENTITY increaseIndentCmd.label "Zvětšit odsazení">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Nadpis karty">
+<!ENTITY indexCards.label "Karty">
+<!ENTITY inlineSpellCheckCmd.label "Průběžná kontrola pravopisu">
+<!ENTITY insertNoteCmd.toolbarLabel "Poznámka">
+<!ENTITY international.label "Mezinárodní">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "Tato hlavička scény nezačíná platným INT/EXT slovem. K nápravě je třeba editovat hlavičku scény ve scénáři nebo modifikovat INT/EXT list slov v tabu scénáře v dialogu nastavení.">
+<!ENTITY intextWords.label "INT/EXT slova">
+<!ENTITY invalidLogin.label "Nesprávné uživatelské jméno nebo heslo.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Zkosené">
+<!ENTITY item.label "Položka">
+<!ENTITY language.label "Jazyk">
+<!ENTITY left.label "Vlevo">
+<!ENTITY linesPerPage.label "Řádků na stranu">
+<!ENTITY list.label "Seznam...">
+<!ENTITY location.desc "Přidat popis lokace.">
+<!ENTITY location.label "Lokace">
+<!ENTITY loginOnStartup.label "Přihlásit se při startu">
+<!ENTITY lowercaseCmd.label "Malá písmena">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Média">
+<!ENTITY mediaViewer.title "Prohlížeč médii">
+<!ENTITY modified.label "Změněno">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Posun nahoru">
+<!ENTITY moveUpCmd.label "Posun dolů">
+<!ENTITY moving.label "Přesouvání">
+<!ENTITY name.label "Jméno">
+<!ENTITY network.label "Síť">
+<!ENTITY never.label "Nikdy">
+<!ENTITY newMarkupItem.label "&lt;Nový...&gt;">
+<!ENTITY newProjectCmd.label "Nový projekt...">
+<!ENTITY newProjectCmd.toolbarlabel "Nový">
+<!ENTITY noFileSelected.label "&lt;nebyl vybrán soubor&gt;">
+<!ENTITY noImageSelected.label "Není vybraný obrázek">
+<!ENTITY noScriptSelected.label "Není vybrán žádný scénář">
+<!ENTITY none.label "Žádné">
+<!ENTITY noteDialog.title "Editace poznámek">
+<!ENTITY notes.label "Poznámky">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Počet postav">
+<!ENTITY numberOfScenes.label "Počet scén">
+<!ENTITY oneHour.label "1 hodina">
+<!ENTITY oneLineSchedule.label "Jednořádkový plán">
+<!ENTITY open.label "Otevřít">
+<!ENTITY openItemCmd.label "Otevřít položku">
+<!ENTITY openProjectCmd.label "Otevřít projekt...">
+<!ENTITY openProjectCmd.toolbarlabel "Otevřít">
+<!ENTITY openProjectFolder.label "Otevřít adresář projektu">
+<!ENTITY openRecentCmd.label "Otevřít nedávný">
+<!ENTITY options.label "Nastavení">
+<!ENTITY orderedList.label "Řazený seznam">
+<!ENTITY outline.desc "Přidat osnovu dokumentu.">
+<!ENTITY outline.label "Osnova">
+<!ENTITY over14.label "Je mi 14 a více let.">
+<!ENTITY pageAndSceneNumbering.label "Číslování scén a stran">
+<!ENTITY paperSize.label "Velikost stránky">
+<!ENTITY password.label "Heslo">
+<!ENTITY passwordAgain.label "Znovu heslo">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "Konverze do PDF">
+<!ENTITY pdfErrorHeader "Hopla!">
+<!ENTITY pdfErrorText1 "Pro využití této pokročilé služby musíte být online.">
+<!ENTITY pdfErrorText2 "Tato pokročilá Celtx webová služba automaticky zformátuje váš scénář na průmyslový standard filmového, divadelního nebo rádiového scénáře nebo dvousloupcového (AV) scénáře.">
+<!ENTITY pdfOptions.title "Nastavení PDF">
+<!ENTITY pdfOptionsCmd.label "Zobrazení informace o pokračování">
+<!ENTITY pdfWarningHeader "Ahoj!">
+<!ENTITY pdfWarningText "Tato pokročilá Celtx webová služba automaticky zformátuje váš scénář na průmyslový standard filmového, divadelního nebo rádiového scénáře nebo dvousloupcového (AV) scénáře.">
+<!ENTITY picklist.label "Výběrový list">
+<!ENTITY principalFunction.label "Základní funkce">
+<!ENTITY printBackgroundColour.label "Tisknout barvu pozadí">
+<!ENTITY printCardBorders.label "Tisknou okraje karty">
+<!ENTITY printCardsDialog.title "Tisk karty">
+<!ENTITY printStoryboardDialog.title "Tisknout storyboard">
+<!ENTITY privacy.label "Soukromé">
+<!ENTITY producer.label "Producent">
+<!ENTITY productionItems.label "Produkční položky">
+<!ENTITY progressDialog.title "Běh">
+<!ENTITY project.label "Projekt">
+<!ENTITY projectItems.label "Obsah nových projektů">
+<!ENTITY projectLibrary.label "Knihovna projektu">
+<!ENTITY projectProperties.label "Nastavení projektu">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Šablony projektů">
+<!ENTITY propSheet.desc "Přidat popis.">
+<!ENTITY propSheet.existing "Můžete také popsat existující předmět ze seznamu dole.">
+<!ENTITY propSheet.label "Předmět">
+<!ENTITY propSheet.select "Výběr předmětu">
+<!ENTITY properties.label "Nastavení">
+<!ENTITY publishDialog.findUsers "Najít uživatele">
+<!ENTITY publishDialog.ownerLabel "Vlastník projektu">
+<!ENTITY publishDialog.privateDesc "Soukromé: Omezit přístup jen pro mě">
+<!ENTITY publishDialog.privateLabel "Soukromý">
+<!ENTITY publishDialog.publicDesc "Veřejné: Uveřejnit projekt v centrále projektů">
+<!ENTITY publishDialog.publicLabel "Veřejný">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Sdílené: Sdílet projekt s vybranými uživateli">
+<!ENTITY publishDialog.sharedLabel "Sdílený">
+<!ENTITY publishDialog.title "Zveřejnit projekt">
+<!ENTITY publishDialog.userList "Seznam uživatelů">
+<!ENTITY publishMode.label "Publikační mód">
+<!ENTITY recent.label "Nedávný">
+<!ENTITY recentProjects.label "Nedávné projekty">
+<!ENTITY recoverPassword.label "Obnovit heslo">
+<!ENTITY recycleCmd.label "Poslat na šmírák">
+<!ENTITY regWiz.aboutThis "Tento průvodce si vyžádá veškeré informace nezbytné k registraci.">
+<!ENTITY regWiz.accountInstructions "Prosím, zvolte uživatelské jméno a heslo pro váš účet na &appName;">
+<!ENTITY regWiz.accountLabel "Účet uživatele">
+<!ENTITY regWiz.bullet1 "Vzdálené zálohy">
+<!ENTITY regWiz.bullet2 "Pracovní plochy pro spolupráci">
+<!ENTITY regWiz.bullet3 "Zveřejnit v centru projektů">
+<!ENTITY regWiz.bullet4 "Zobrazit projekt v iPhone">
+<!ENTITY regWiz.checkLabel "Kontrola informací o účtu">
+<!ENTITY regWiz.clickFinish "Jste-li spokojeni se zadanými hodnotami, stiskněte tlačítko 'Dokončit' a vaše registrace bude odeslána.">
+<!ENTITY regWiz.clickFinish1 "Nyní jste přihlášen na &appName; server a máte přístup k našim bezplatným on-line službám.">
+<!ENTITY regWiz.clickFinish2 "Zkuste download/upload k vytvoření zabezpečené zálohy vašeho projektu nebo, pokud znáte jiného uživatele zaregistrovaného na &appName;, můžete využít možnosti společné práce na projektu.">
+<!ENTITY regWiz.clickNext "Jste-li spokojeni se zadanými hodnotami, stiskněte tlačítko 'Další' a vaše registrace bude odeslána.">
+<!ENTITY regWiz.conclusion "Závěr (5/5)">
+<!ENTITY regWiz.confirmIntro "Vložili jste následující:">
+<!ENTITY regWiz.confirmLabel "Potvrzení">
+<!ENTITY regWiz.createNewAccountLabel "Založit nový účet.">
+<!ENTITY regWiz.createYourAccountLabel "Získejte svůj vlastní účet na &appName;! (1/5)">
+<!ENTITY regWiz.emailLabel "Email:">
+<!ENTITY regWiz.finish "Ukončit">
+<!ENTITY regWiz.identityInstructions "Prosím, vložte své jméno, společnost a email.">
+<!ENTITY regWiz.identityLabel "Identita">
+<!ENTITY regWiz.intro "Po založení účtu na &appName;, budete moci využít funkce jako:">
+<!ENTITY regWiz.loginSuccessfulLabel "Děkujeme, že jste se zapsali na &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Založit nový účet nebo použít existující:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; uživatelské jméno a heslo rozpoznává malá a velká písmena.">
+<!ENTITY regWiz.notePassword "Vaše heslo musí být nejméně 5 znaků dlouhé.">
+<!ENTITY regWiz.noteUsername "Vaše uživatelské jméno musí být nejméně 3 znaky dlouhé a smí obsahovat pouze písmena a čísla.">
+<!ENTITY regWiz.orgLabel "Společnost:">
+<!ENTITY regWiz.title "&appName; Průvodce registrací">
+<!ENTITY regWiz.uidLabel "&appName; Uživatelské jméno:">
+<!ENTITY regWiz.useExistingAccountLabel "Použít existující účet.">
+<!ENTITY regWiz.warn "Musíte nejdříve založit účet na &appName;, aby jste měli přístup k těmto službám.">
+<!ENTITY remove.label "Odstranit">
+<!ENTITY removeCmd.label "Odstranit">
+<!ENTITY removeMarkupCmd.label "Odstranit">
+<!ENTITY rename.label "Přejmenovat">
+<!ENTITY renameItem.label "Přejmenovat položku...">
+<!ENTITY replaceCmd.label "Nahrazení">
+<!ENTITY reportThisBug.label "Ohlásit tuto chybu">
+<!ENTITY reportThisBug.tooltip "Poslat anonymní report chyb.">
+<!ENTITY reports.label "Sestavy">
+<!ENTITY right.label "Vpravo">
+<!ENTITY sampleProjects.label "Ukázkový projekt">
+<!ENTITY samples.label "Ukázky">
+<!ENTITY saveAsHTML.label "Uložit jako HTML">
+<!ENTITY saveAsTemplate.label "Uložit jako šablonu">
+<!ENTITY savePDFCmd.label "Uložit PDF">
+<!ENTITY savePDFCmd.tooltip "Uložit PDF">
+<!ENTITY saveProjectAsCmd.label "Uložit projekt jako...">
+<!ENTITY saveProjectCmd.label "Uložit projekt">
+<!ENTITY saveProjectCmd.toolbarlabel "Uložit">
+<!ENTITY scene.label "Scéna">
+<!ENTITY sceneBreakdown.label "Detailní sestava scény">
+<!ENTITY sceneBreakdownWithDesc.label "Detailní sestava s popisem">
+<!ENTITY sceneDetails.desc "Přidat popis k nové scéně.">
+<!ENTITY sceneDetails.existing "Můžete také popsat scénu ze seznamu níže.">
+<!ENTITY sceneDetails.label "Detaily scény">
+<!ENTITY sceneDetails.select "Vybrat scénu">
+<!ENTITY scenePageBreaks.label "Zalomení strany za každou scénou">
+<!ENTITY sceneSummary.label "Souhrn scény">
+<!ENTITY sceneTag.label "Tag scény">
+<!ENTITY sceneTagDialog.title "Vybrat barvu">
+<!ENTITY scenes.label "Scény">
+<!ENTITY schedule.desc      "Přidat plán natáčení scénáře.">
+<!ENTITY schedule.label     "Plán">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Naplánované scénáře">
+<!ENTITY scheduleID.label "ID plánu">
+<!ENTITY scheduled.label "Naplánované">
+<!ENTITY scratchpad.label "Šmírák">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Přidat scénář do projektu.">
+<!ENTITY script.label "Scénář">
+<!ENTITY scriptDay.label "Den pro scénář">
+<!ENTITY scriptEditor.label "Editor scénáře">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Nastavení formátu">
+<!ENTITY scriptHeader.label "Hlavička scénáře">
+<!ENTITY scriptReport.desc "Automaticky generovaná sestava scénáře.">
+<!ENTITY scriptReport.label "Sestava scénáře">
+<!ENTITY scriptWithNotes.label "Scénář s poznámkami">
+<!ENTITY selectCatalogType.label "Vybrat typ katalogu.">
+<!ENTITY sequence.label "Sekvence">
+<!ENTITY sequences.label "Sekvence">
+<!ENTITY server.label "Server">
+<!ENTITY setting.label "Nastavení">
+<!ENTITY sharing.label "Sdílení">
+<!ENTITY shootDay.label "Natáčecí den">
+<!ENTITY shootDays.label "Natáčecí dny">
+<!ENTITY shootingSchedule.label "Plán natáčení">
+<!ENTITY shotList.label "Seznam záběrů">
+<!ENTITY shotWords.label "Slova záběru">
+<!ENTITY shotholder.label "Dvakrát kliknout pro vložení obrázku.">
+<!ENTITY showContinuedCount.label "Zobrazit počet pokračujících stran">
+<!ENTITY showDialogBreaks.label "Zobrazit přerušení dialogů">
+<!ENTITY showFirstPageNumber.label "Zobrazit počet stran na první straně">
+<!ENTITY showIDNumbers.label "Zobrazit ID čísla">
+<!ENTITY showNotes.label "Zobrazit poznámky">
+<!ENTITY showPageNumbers.label "Číslování stran">
+<!ENTITY showProjectFileCmd.label "Zobrazit soubory projektu">
+<!ENTITY showSceneBreaks.label "Zobrazit přerušení scén">
+<!ENTITY showSceneHeaders.label "Zobrazit hlavičky scén">
+<!ENTITY showSceneNumbers.label "Zobrazit čísla scén">
+<!ENTITY showScript.label "Zobrazit scénář">
+<!ENTITY showTagNames.label "Zobrazit názvy tagů na kartě">
+<!ENTITY showTitlePage.label "Zobrazit titulní stranu">
+<!ENTITY showWorkdaysOnly.label "Zobrazit jen pracovní dny">
+<!ENTITY signIn.label "Přihlásit">
+<!ENTITY signOut.label "Odhlásit">
+<!ENTITY signedOut.label "Odhlášen">
+<!ENTITY slideshowCmd.toolbarlabel "Hrát">
+<!ENTITY source.label "Zdroj">
+<!ENTITY spellCheckAddToDictionary.accesskey "P">
+<!ENTITY spellCheckAddToDictionary.label "Přidat do slovníku">
+<!ENTITY spellCheckCmd.label "Kontrola pravopisu">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Ignorovat slovo">
+<!ENTITY spellCheckNoSuggestions.label "Žádné návrhy nenalezeny">
+<!ENTITY splash.celtxCentral      "přihlášení do centrály projektů">
+<!ENTITY splash.celtxCentral "Celtx centrála">
+<!ENTITY splash.celtxCentralDesc  "Použij centrálu projektů ke změně hesla a upravě profilu">
+<!ENTITY splash.celtxCentralDesc "Použít celtx centrálu ke změně hesla nebo uprávu profilu">
+<!ENTITY splash.discussion "Diskuze">
+<!ENTITY splash.downloadProject "Stáhnout projekt">
+<!ENTITY splash.downloadProjectDesc "Stáhnout projekt ze serveru celtx">
+<!ENTITY splash.featureTour "Exkurze služeb">
+<!ENTITY splash.forums "Celtx fórum">
+<!ENTITY splash.forumsDesc "Vstup do diskuse na celtx fóru">
+<!ENTITY splash.gettingStarted "Začínáme">
+<!ENTITY splash.guide "Celtx uživatelská příručka">
+<!ENTITY splash.help "Nápověda">
+<!ENTITY splash.helpAccount "Založit účet">
+<!ENTITY splash.helpAccountDesc "Vytvoření účtu vám umožní přístup ke službám na straně serveru, jako je spolupráce a generování PDF">
+<!ENTITY splash.helpDesc "Odkazy vlevo upozorňují na některé zdroje celtx">
+<!ENTITY splash.helpOptions "menu nápovědy">
+<!ENTITY splash.inbox "Inbox">
+<!ENTITY splash.logIn "Přihlásit se">
+<!ENTITY splash.newProject "Založit nový projekt">
+<!ENTITY splash.newProjectDesc "Vytvořit nový projekt">
+<!ENTITY splash.openProject "Otevřít existující projekt">
+<!ENTITY splash.openProjectDesc "Vstup do existujícího projektu">
+<!ENTITY splash.options "menu">
+<!ENTITY splash.projectCentral "Centrála projektů">
+<!ENTITY splash.projects "PROJEKTY">
+<!ENTITY splash.recentProjects "nedávné projekty">
+<!ENTITY splash.sampleDesc      "Pro demonstraci některých předností Celtx jsme použili předlohu Kouzelník ze země Oz. Různé typy dokumentů osvětlují potřeby produkce jedné scény. Například scénář, formulář detailů postav a scény, souhrnné informace a některé plánovací informace.">
+<!ENTITY splash.sampleDesc "Použili jsme Kouzelníka ze země Oz jako ilustraci některých možností cetlx. různé dokumenty osvětlují potřeby produkce jedné scény. v tomto příkladě jsou využity dokumenty jako scénář, formuláře popisů postav a detailů scény, informace o poruše a rozvrhový kalendář.">
+<!ENTITY splash.sampleProject   "ukázkový projekt">
+<!ENTITY splash.sampleProject "vzorový projekt">
+<!ENTITY splash.videoWalkthrus "Videoprůvodce">
+<!ENTITY splash.videoWalkthrusDesc "Krátké výukové video pro rychlé seznámení">
+<!ENTITY splash.walkthru "3-minutová prohlídka">
+<!ENTITY splash.webServices "WEBOVÉ SLUŽBY">
+<!ENTITY splash.welcomePrefix "Vítejte v Celtx">
+<!ENTITY splash.welcomePrefixDesc "Preprodukce médií">
+<!ENTITY splash.wiki "Wiki průvodce">
+<!ENTITY splash.wikiDesc "Zdroje pro seznámení s programem celtx">
+<!ENTITY splashScreen.label "Uvítací obrazovka">
+<!ENTITY stackTrace.desc "Níže jsou informace, které mohou být pro nás užitečné. Prosím, přiložte je, pokud se rozhodnete reportovat tuto chybu.">
+<!ENTITY stageplay.desc  "Vložit scénář jevištní hry s mezinárodním formátováním.">
+<!ENTITY stageplay.label    "Jevištní hra">
+<!ENTITY start.label "Začátek">
+<!ENTITY startOfDay.label "Začátek dne">
+<!ENTITY startOfShooting.label "Začátek natáčení">
+<!ENTITY startOfWeek.label "Začátek týdne">
+<!ENTITY statistics.label "Statistiky">
+<!ENTITY storyboard.desc    "Organizovat obrázky storyboardu do sekvencí záběrů.">
+<!ENTITY storyboard.label   "Storyboard">
+<!ENTITY strikethrough.label "Přeškrtnuté">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY subject.label "Subjekt">
+<!ENTITY summary.label "Souhrn">
+<!ENTITY syncDialog.title "Sync">
+<!ENTITY tagItemCmd.label "Označit">
+<!ENTITY tagline.label "Tagline">
+<!ENTITY tags.label "Tagy">
+<!ENTITY text.label "Text">
+<!ENTITY textDocument.desc "Vložit textový dokument. Vhodné pro osnovu, zpracování nebo synopse.">
+<!ENTITY textDocument.label "&text.label;">
+<!ENTITY theatreTmplActTitle "AKT I">
+<!ENTITY theatreTmplSceneTitle "Scéna 1">
+<!ENTITY thirtyMinutes.label "30 minut">
+<!ENTITY threeHours.label "3 hodiny">
+<!ENTITY time.label "Čas">
+<!ENTITY title.label "Titulek">
+<!ENTITY titlePage.label "Titulní strana">
+<!ENTITY toggleEditing.label "Přepnout editaci">
+<!ENTITY togglePaginationCmd.label "Zapnutí/vypnutí číslování stran">
+<!ENTITY toggleScratchpadCmd.label "Otevři/uzavři šmírák">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Postranní lišta">
+<!ENTITY topOfNextPage.label "Vršek další strany">
+<!ENTITY tryAgain.label "Zkusit znovu">
+<!ENTITY twoColumns.label "Dva sloupce">
+<!ENTITY twoHours.label "2 hodiny">
+<!ENTITY typeset.label "Náhled">
+<!ENTITY under14.label "Je mi méně než 14.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Podtržené">
+<!ENTITY unorderedList.label "Neřazený seznam">
+<!ENTITY untitled.label "Nepojmenovaný">
+<!ENTITY update.label "Update">
+<!ENTITY updateInbox.label "Update inboxu">
+<!ENTITY uploadDialog.title "Uploadování projektu">
+<!ENTITY uploadProjectCmd.label "Uploadování projektu...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Uploadování">
+<!ENTITY uppercaseCmd.label "Velká písmena">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Uživatelské jméno">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Videoprůvodce">
+<!ENTITY viewProjectOnline.label "Zobrazit projekt online">
+<!ENTITY wardrobeSheet.desc "Přidání popisu pro novou položku kostýmu.">
+<!ENTITY wardrobeSheet.existing "Můžete také popsat existující kostým ze seznamu níže.">
+<!ENTITY wardrobeSheet.label "Kostýmy">
+<!ENTITY wardrobeSheet.select "Vybrat kostým">
+<!ENTITY webPanel.desc              "webové služby Celtx.">
+<!ENTITY webPanel.label             "Webové služby">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Vytvořit účet na Celtx">
+<!ENTITY webPanelIntro.text1 "Získejte maximum z programu Celtx registrací k bezpečným a bezplatným webovým službám.">
+<!ENTITY webPanelIntro.text2 "*Zálohujte* celý projekt na zabezpečený Celtx server a uchovejte si tak kopii pro případ zcizení, nebo havárie pevného disku.">
+<!ENTITY webPanelIntro.text3 "*Spolupracujte* s členy svého týmu, sdílejte s nimi projekty a vytvořte soukromý pracovní prostor pro projekty.">
+<!ENTITY webPanelIntro.text4 "*Publikujte* svůj projekt na centrále projektů a získejte tak hodnocení a komentáře a připojte se k rostoucí světové komunitě tvůrců.">
+<!ENTITY webPanelIntro.text5 "Zobrazte svůj Celtx projekt ve formátu optimalizovaném pro váš *iPhone*.">
+<!ENTITY wiz.clickFinish "Stiskněte tlačítko 'Konec' pro dokončení Průvodce.">
+<!ENTITY wiz.clickNext "Stiskněte tlačítko 'Další' pro zahájení.">
+<!ENTITY workweek.label "Pracovní týden">
+<!ENTITY writer.label "Spisovatel">
+<!ENTITY zoom.label "Přiblížení">

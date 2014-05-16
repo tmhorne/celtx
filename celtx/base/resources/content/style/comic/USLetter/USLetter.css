@@ -1,0 +1,76 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url(chrome://celtx/content/style/comic/comic.css);
+
+@media print {
+  body {
+    font-size: 12pt;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  /* All settings adjusted for invisible left and right margin 0.6875in */
+
+  p {
+    margin-left: 2.2in; /* 2.5in */
+    margin-right: 1.15in; /* 1.0in */
+  }
+
+  p.sceneheading {
+    margin-left: 1.7in; /* 1.5in */
+  }
+  
+  p.sceneheading:before {
+    /* margin-bottom: -1.07em; */
+    margin-left: -1.2in;
+  }
+
+  p.shot {
+    margin-left: 1.95in; /* 2.0in */
+  }
+
+  p.shot:before {
+    /* margin-bottom: -1.07em; */
+    margin-left: -1.2in;
+  }
+
+  p.caption {
+    margin-left: 2.2in;
+  }
+
+  p.caption:before {
+    /* margin-bottom: -1.07em; */
+    margin-left: -1.2in;
+  }
+
+  p.character {
+    margin-left: 3.2in;
+  }
+
+  p.parenthetical {
+    margin-left: 2.7in;
+    margin-right: 2.2in; /* 2.5in */
+  }
+}

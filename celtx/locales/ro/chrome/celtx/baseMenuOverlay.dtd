@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key       "m">
+<!ENTITY minimizeWindow.label     "Minimizează">
+<!ENTITY bringAllToFront.label    "Adu toate în față">
+<!ENTITY zoomWindow.label         "Scalare">
+<!ENTITY windowMenu.label         "Fereastră">
+
+<!ENTITY helpMenu.label           "Ajutor"> 
+<!ENTITY helpMenu.accesskey       "A"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "Ajutor"> 
+<!ENTITY helpMenuWin.accesskey    "A">
+<!ENTITY aboutCmd.label           "Despre &brandFullName;">
+<!ENTITY aboutCmd.accesskey       "D">
+<!ENTITY helpContents.label       "Manual de utilizare">
+<!ENTITY helpContents.accesskey   "M">
+<!ENTITY helpContentsMac.label    "Manual &brandShortName;">
+<!ENTITY helpForIEUsers.label     "Pentru utilizatorii Internet Explorer">
+<!ENTITY helpForIEUsers.accesskey "i">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "VK_HELP">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.label         "Note asupra ediției">
+<!ENTITY helpReleaseNotes.accesskey     "N">
+<!ENTITY updateCmd.label                "Caută actualizări...">
+<!ENTITY updateCmd.accesskey            "C">
+
+<!ENTITY preferencesCmdMac.label        "Preferințe...">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Servicii">
+
+<!ENTITY hideThisAppCmdMac.label        "Ascunde &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Ascunde-le pe celelalte">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Arată toate">

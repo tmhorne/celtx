@@ -1,0 +1,20 @@
+<!ENTITY  untitledTab            "(Χωρίς τίτλο)">
+<!ENTITY  newTab.label           "Νέα καρτέλα">
+<!ENTITY  newTab.accesskey       "Ν">
+<!ENTITY  closeTab.label         "Κλείσιμο καρτέλας">
+<!ENTITY  closeTab.accesskey         "κ">
+<!ENTITY  closeOtherTabs.accesskey  "λ">
+<!ENTITY  closeOtherTabs.label   "Κλείσιμο των άλλων καρτελών">
+<!ENTITY  reloadAllTabs.label    "Ανανέωση όλων των καρτελών">
+<!ENTITY  reloadAllTabs.accesskey         "Α">
+<!ENTITY  reloadTab.label        "Ανανέωση καρτέλας">
+<!ENTITY  reloadTab.accesskey         "ρ">
+<!ENTITY  listAllTabs.label      "Λίστα όλων των καρτελών">
+<!ENTITY  bookmarkAllTabs.label       "Όλες οι καρτέλες ως σελιδοδείκτης...">
+<!ENTITY  bookmarkAllTabs.accesskey   "τ">
+<!ENTITY  undoCloseTab.label          "Ακύρωση κλεισίματος καρτέλας">
+<!ENTITY  undoCloseTab.accesskey      "ω">
+
+<!ENTITY  bookmarkThisTab.label       "Η καρτέλα ως σελιδοδείκτης">
+<!ENTITY  bookmarkThisTab.accesskey   "σ">
+

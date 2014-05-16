@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-event-dialog.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/datetimepickers/datetimepickers.css" ?>
+
+<!DOCTYPE dialog [
+  <!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+  %celtxDTD;
+  <!ENTITY % dtd1 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd1;
+  <!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd">
+  %dtd2;
+]>
+
+<dialog id="calendar-event-dialog"
+        title="&event.title.label;"
+        buttons="accept,cancel"
+        ondialogaccept="return onAccept();"
+        ondialogcancel="return onCancel();"
+        onload="onLoad()"
+        persist="screenX screenY"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-dialog-utils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendarUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/applicationUtil.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/tododialog.js"/>
+
+  <grid>
+    <columns>
+      <column/>
+      <column flex="1"/>
+    </columns>
+    <rows>
+      <row>
+        <label value="&title.label;&colon;"/>
+        <textbox id="titlebox"
+                 flex="1"/>
+      </row>
+      <row>
+        <label value="&location.label;&colon;"/>
+        <textbox id="locationbox"
+                 flex="1"/>
+      </row>
+      <row>
+        <label value="&newevent.date.label;&colon;"/>
+        <hbox align="center"
+              pack="start"
+              flex="1">
+          <checkbox id="hasentrydate"
+                    oncommand="updateEntryDate();"
+                    class="checkbox-no-label"/>
+          <datetimepicker id="entrydate"
+                          onchange="onStartTimeChange();"/>
+        </hbox>
+      </row>
+      <row>
+        <label value="&newtodo.duedate.label;&colon;"/>
+        <hbox align="center"
+              pack="start"
+              flex="1">
+          <checkbox id="hasduedate"
+                    oncommand="updateDueDate();"
+                    class="checkbox-no-label"/>
+          <datetimepicker id="duedate"
+                          onchange="onEndTimeChange();"/>
+        </hbox>
+      </row>
+      <row>
+        <label value="&description.label;&colon;"/>
+        <textbox id="description"
+                 multiline="true"
+                 rows="4"
+                 flex="1"/>
+      </row>
+    </rows>
+  </grid>
+  <label id="end-time-warning"
+         class="warning-text-class"
+         value="&newevent.endtime.warning;"/>
+
+</dialog>

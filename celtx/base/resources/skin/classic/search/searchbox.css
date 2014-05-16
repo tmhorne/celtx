@@ -1,0 +1,84 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+searchbox {
+  -moz-binding: url("chrome://celtx/content/searchbox.xml#searchbox");
+}
+
+.search-go-button-bkgnd {
+  list-style-image: none;
+}
+
+.searchbox-textbox {
+  background: url("chrome://celtx/skin/search/background-mid.png") repeat-x;
+  margin: 4px 0px 4px 0px;
+  padding-top: 4px;
+  -moz-appearance: none;
+  font: icon;
+  height: 22px !important;
+  width: 200px;
+  min-width: 4em;
+  border: none !important;
+}
+
+.searchbox-left {
+  list-style-image: url("chrome://celtx/skin/search/background-left.png");
+}
+
+.searchbox-right {
+  list-style-image: url("chrome://celtx/skin/search/background-right.png");
+}
+
+.searchbox-box {
+  -moz-margin-start: 3px;
+}
+
+.autocomplete-textbox-container {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  height: 21px !important;
+}
+
+.search-go-button {
+  -moz-box-flex: 1; /* expand to fill toolbar height */
+  list-style-image: url("chrome://celtx/skin/search/go.png");
+  -moz-image-region: rect(0px 25px 22px 0px);
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  -moz-margin-start: -1px;
+}
+
+.search-go-button:hover {
+  -moz-image-region: rect(0px 50px 22px 25px);
+}
+
+.search-go-button:hover:active {
+  -moz-image-region: rect(0px, 100px, 22px, 75px);
+}
+
+.search-go-button[disabled="true"] {
+  -moz-image-region: rect(0px, 75px, 22px, 50px);
+}

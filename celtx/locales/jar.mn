@@ -1,0 +1,9 @@
+#filter substitution
+
+@AB_CD@.jar:
+% locale celtxapp @AB_CD@ %locale/@AB_CD@/celtxapp/
+    locale/@AB_CD@/celtxapp/baseMenuOverlay.dtd       (@AB_CD@/chrome/celtx/baseMenuOverlay.dtd)
+    locale/@AB_CD@/celtxapp/browser.dtd               (@AB_CD@/chrome/celtx/browser.dtd)
+% locale branding @AB_CD@ %locale/@AB_CD@/branding/
+    locale/@AB_CD@/branding/brand.dtd         (en-US/chrome/branding/brand.dtd)
+    locale/@AB_CD@/branding/brand.properties  (en-US/chrome/branding/brand.properties)

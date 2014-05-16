@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+  <xsl:output method="text"
+              encoding="UTF-8"
+              media-type="text/unicode"/>
+
+  <xsl:variable name="nl" select="'&#xd;&#xa;'"/>
+  <xsl:variable
+      name="ws"
+      select="'                                                            '"/>
+  <xsl:variable name="lcase">abcdefghijklmnopqrstuvwxyz</xsl:variable>
+  <xsl:variable name="ucase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</xsl:variable>
+
+  <xsl:template match="html">
+    <text><xsl:apply-templates select="/html/body/*"/><xsl:value-of
+      select="$nl"/><xsl:value-of select="$nl"/></text>
+  </xsl:template>
+
+  <xsl:template match="p[@class='dialog']">
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T" select="normalize-space(string(.))"/>
+      <xsl:with-param name="I">20</xsl:with-param>
+      <xsl:with-param name="LL">35</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='parenthetical']">
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T" select="normalize-space(string(.))"/>
+      <xsl:with-param name="I">25</xsl:with-param>
+      <xsl:with-param name="LL">30</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='action' or @class='caption']">
+    <xsl:value-of select="$nl"/>
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T" 
+                      select="concat('Caption  ', normalize-space(string(.)))"/>
+      <xsl:with-param name="I">16</xsl:with-param>
+      <xsl:with-param name="LL">54</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='sceneheading']">
+    <xsl:value-of select="$nl"/>
+    <xsl:variable name="index"
+              select="count(preceding-sibling::p[@class='sceneheading']) + 1"/>
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T"
+          select="concat('Page ', $index, '  ', normalize-space(string(.)))"/>
+      <xsl:with-param name="I">10</xsl:with-param>
+      <xsl:with-param name="LL">60</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='character']">
+    <xsl:value-of select="$nl"/>
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T"
+                      select="translate(normalize-space(string(.)), $lcase, $ucase)"/>
+      <xsl:with-param name="I">30</xsl:with-param>
+      <xsl:with-param name="LL">40</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='transition']">
+    <xsl:value-of select="$nl"/>
+    <xsl:call-template name="right-align">
+      <xsl:with-param name="text"
+                      select="translate(normalize-space(string(.)), $lcase, $ucase)"/>
+      <xsl:with-param name="lmargin">10</xsl:with-param>
+      <xsl:with-param name="rmargin">65</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template match="p[@class='shot']">
+    <xsl:value-of select="$nl"/>
+    <xsl:variable name="index">
+      <xsl:number level="any"
+                  from="p[@class='sceneheading']"
+                  count="p[@class='shot']"/>
+    </xsl:variable>
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T" 
+                      select="concat('Panel ', $index, '  ', normalize-space(string(.)))"/>
+      <xsl:with-param name="I">12</xsl:with-param>
+      <xsl:with-param name="LL">58</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <!-- Unclassed paras -->
+  <xsl:template match="p">
+    <xsl:value-of select="$nl"/>
+    <xsl:call-template name="word-wrap">
+      <xsl:with-param name="T" select="normalize-space(string(.))"/>
+      <xsl:with-param name="I">10</xsl:with-param>
+      <xsl:with-param name="LL">60</xsl:with-param>
+    </xsl:call-template>
+    <xsl:value-of select="$nl"/>
+  </xsl:template>
+
+  <xsl:template name="right-align">
+    <xsl:param name="text"/>
+    <xsl:param name="lmargin"/>
+    <xsl:param name="rmargin"/>
+
+    <xsl:variable name="textlen" select="string-length($text)"/>    
+    <xsl:variable name="linelen" select="$rmargin - $lmargin"/>
+    
+    <xsl:choose>
+      <xsl:when test="$textlen &gt; $linelen">
+        <xsl:value-of select="concat(substring($ws, 1, $lmargin), substring($text, 1, $linelen))"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of
+            select="concat(substring($ws, 1, $lmargin), substring($ws, 1, $linelen - $textlen), $text)"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name='word-wrap'>
+    <xsl:param name='L'/>
+    <xsl:param name='T'/>
+    <xsl:param name='I'/>
+    <xsl:param name='LL'/>
+
+    <xsl:variable name="LT" select="normalize-space(concat($L, ' ', $T))"/>
+
+    <xsl:variable name="len" select="string-length($T)"/>
+    <xsl:variable name="word" select="substring-before($T, ' ')"/>
+    <xsl:variable name="shifted"
+                  select="normalize-space(concat($L, ' ', $word))"/>
+
+    <xsl:choose>
+      <xsl:when test="$len = 0">
+        <xsl:value-of select="substring($ws, 1, $I)"/>
+        <xsl:value-of select="$L"/>
+      </xsl:when>
+      <xsl:when test="string-length($L) = 0 and string-length($word) &gt; $LL">
+        <xsl:call-template name='word-wrap'>
+          <xsl:with-param name="L" select="substring($T, 1, $LL)"/>
+          <xsl:with-param name="T" select="substring($T, $LL + 1, $len - $LL)"/>
+          <xsl:with-param name="I" select="$I"/>
+          <xsl:with-param name="LL" select="$LL"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test='string-length($shifted) &lt;= $LL'>
+        <!-- We may be able to cram another word onto L -->
+        <xsl:choose>
+          <xsl:when test="string-length($LT) &lt;= $LL">
+            <xsl:value-of select="substring($ws, 1, $I)"/>
+            <xsl:value-of select="$LT"/>
+          </xsl:when>
+          <xsl:when test='not(contains($T, " "))'>
+            <xsl:value-of select="substring($ws, 1, $I)"/>
+            <xsl:value-of select="$L"/>
+            <xsl:value-of select="$nl"/>
+
+            <xsl:choose>
+              <xsl:when test="$len &gt; $LL">
+                <xsl:call-template name='word-wrap'>
+                  <xsl:with-param name="L" select="substring($T, 1, $LL)"/>
+                  <xsl:with-param name="T" select="substring($T, $LL + 1, $len - $LL)"/>
+                  <xsl:with-param name="I" select="$I"/>
+                  <xsl:with-param name="LL" select="$LL"/>
+                </xsl:call-template>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name='word-wrap'>
+                  <xsl:with-param name="L" select="$T"/>
+                  <xsl:with-param name="I" select="$I"/>
+                  <xsl:with-param name="LL" select="$LL"/>
+                </xsl:call-template>
+              </xsl:otherwise>
+            </xsl:choose>
+
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name='word-wrap'>
+              <xsl:with-param name='L' 
+                              select='$shifted'/>
+              <xsl:with-param name='T'
+                              select='substring-after($T, " ")'/>
+              <xsl:with-param name="I" select="$I"/>
+              <xsl:with-param name="LL" select="$LL"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- We can't fit anything else on L -->
+        <xsl:value-of select="substring($ws, 1, $I)"/>
+        <xsl:value-of select='$L'/>
+        <xsl:value-of select="$nl"/>
+        <xsl:call-template name='word-wrap'>
+          <xsl:with-param name='T' select='$T'/>
+          <xsl:with-param name="I" select="$I"/>
+          <xsl:with-param name="LL" select="$LL"/>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:template>
+
+</xsl:stylesheet>

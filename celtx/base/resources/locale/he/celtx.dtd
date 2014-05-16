@@ -1,0 +1,649 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "דואר אלקטרוני">
+
+<!ENTITY basedOn.label "מבוסס על">
+<!ENTITY editProfile.label "ערוך פרופיל רשת">
+<!ENTITY signedOut.label "יצאת">
+<!ENTITY signIn.label "הכנס">
+<!ENTITY signOut.label "צא">
+
+<!ENTITY byline.label "על ידי">
+<!ENTITY celtxTagline.label ".הכל מבוסס על הסיפור">
+<!ENTITY recent.label "לאחרונה">
+<!ENTITY sampleProjects.label "פרויקטים לדוגמא">
+<!ENTITY samples.label "דוגמאות">
+<!ENTITY sequence.label "סיקוונס">
+<!ENTITY showScript.label "הצג תסריט">
+
+<!ENTITY projectTemplates.label "תבנית פרויקטים">
+<!ENTITY saveAsTemplate.label "שמור בתור תבנית">
+<!ENTITY showNotes.label "הצג הערות">
+
+<!ENTITY copyProject.title    "Duplicate Project">
+<!ENTITY copyProjectCmd.label "Duplicate Project">
+<!ENTITY addCardCmd.label "הוסף כרטיס">
+<!ENTITY alignCenter.label "מרכז יישור">
+<!ENTITY alignJustified.label "יישור מוצדק">
+<!ENTITY alignLeft.label "יישר שמאלה">
+<!ENTITY alignRight.label "יישר ימינה">
+<!ENTITY american.label "אמריקאי">
+<!ENTITY audioplay.desc "הוסף קטע שמע לפרויקט">
+<!ENTITY audioplay.label "השמע קטע שמע">
+<!ENTITY author.label "סופר">
+<!ENTITY autoSaveProject.label "שמירת פרויקט אוטמטית">
+<!ENTITY avScript.desc "הוסף תסריט אודיו-ויזואלי לפרויקט.">
+<!ENTITY avScript.label "תסריט A/V">
+<!ENTITY cast.label "סגל שחקנים">
+<!ENTITY castOfCharacters.label "סגל הדמויות">
+<!ENTITY comment.label "תגובה">
+<!ENTITY contact.label "יצירת קשר">
+<!ENTITY contactInformation.label "מידע יצירת קשר">
+<!ENTITY continue.label "המשך">
+<!ENTITY copyright.label "זכויות יוצרים">
+<!ENTITY createProject.label  "צור פרוייקט">
+<!ENTITY decreaseFontSizeCmd.tooltip "הקטן גודל פונט">
+<!ENTITY deleteCardCmd.label "מחק כרטיס">
+<!ENTITY director.label "במאי">
+<!ENTITY duplicateItemCmd.label "הכפל פריט">
+<!ENTITY editSceneDialog.title "ערוך סצנה">
+<!ENTITY ellipsis "...">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY format.label "פורמט">
+<!ENTITY formatMusic.label    "מוזיקה>
+<!ENTITY formatProductionNote.label "הערות הפקה">
+<!ENTITY formatTitle.label    "&תג.כותרת;">
+<!ENTITY formatSound.label    "עוצמת קול">
+<!ENTITY formatVoice.label    "קול">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY increaseFontSizeCmd.tooltip "הגדל גודל פונט">
+<!ENTITY indexCards.label "כרטיסים באינדקס">
+<!ENTITY international.label "בינלאומי">
+<!ENTITY linesPerPage.label "שורות לכל עמוד">
+<!ENTITY noScriptSelected.label "אף תסריט לא נבחר">
+<!ENTITY orderedList.label "רשימה מוזמנת">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfErrorHeader "אופס!">
+<!ENTITY pdfErrorText1 "הינך צריך להיות מחובר לרשת בכדי להשתמש בפונקציה מתקדמת זו. ">
+<!ENTITY pdfErrorText2 "בטיחות ופרטיות, גירסת סלטקס רשת מתקדמת זו הופכת את תסריתך באופן אוטומטי לתסריט תעשייה בסיסי בקולנוע וטלוויזיה, מחזה (AV).">
+<!ENTITY pdfWarningHeader "שלום!">
+<!ENTITY pdfWarningText "בטיחות ופרטיות, גירסת סלטקס רשת מתקדמת זו הופכת את תסריתך באופן אוטומטי לתסריט תעשייה בסיסי בקולנוע וטלוויזיה, מחזה (AV).">
+<!ENTITY printBackgroundColour.label "הדפס צבעי רקע">
+<!ENTITY printCardBorders.label "הדפס גבולות כרטיס">
+<!ENTITY printCardsDialog.title "הדפס כרטיסים">
+<!ENTITY producer.label "מפיק">
+<!ENTITY project.label "פרויקט">
+<!ENTITY recentProjects.label "פרויקטים אחרונים">
+<!ENTITY savePDFCmd.label "שמור PDF">
+<!ENTITY savePDFCmd.tooltip "שמור PDF">
+<!ENTITY saveProjectAsCmd.label "שמור פרויקט בתור...">
+<!ENTITY sceneTag.label "כותרת סצנה">
+<!ENTITY sceneTagDialog.title "בחר צבע">
+<!ENTITY script.accesskey "S">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "אפשרויות פורמט">
+<!ENTITY scriptHeader.label "כותרת תסריט">
+<!ENTITY shotList.label "הצג רשימה">
+<!ENTITY shotWords.label "הצג מילים">
+<!ENTITY showIDNumbers.label "הצג מספרי זיהוי">
+<!ENTITY showProjectFileCmd.label "הצג קבצי פרויק">
+<!ENTITY showSceneHeaders.label "הצג כותרות סצנות">
+<!ENTITY showTagNames.label "הצג שמות תגיות על כרטיס">
+<!ENTITY showTitlePage.label "הצג עמוד ראשי">
+<!ENTITY source.label "מקור">
+<!ENTITY statistics.label "סטטיסטיקה">
+<!ENTITY strikethrough.label "Strikethrough">
+<!ENTITY subject.label "נושא">
+<!ENTITY time.label "זמן">
+<!ENTITY toggleSidebarCmd.accesskey "הפעל/בטל חלון צדדי">
+<!ENTITY tryAgain.label "נסה שוב">
+<!ENTITY twoColumns.label "שני טורים">
+<!ENTITY typeset.label "סידור דפוס">
+<!ENTITY unorderedList.label "רשימות לא מסודרות">
+<!ENTITY writer.label "תסריטאי">
+<!ENTITY zoom.label "זום">
+
+<!ENTITY access.label "גישה">
+<!ENTITY addSequenceCmd.toolbarlabel "הוסף סדרת סצנות">
+<!ENTITY autoparenthesize.label "כתוב בסוגריים כשמקלידים '('">
+<!ENTITY bdc.actor        "שחקן">
+<!ENTITY breakdown.desc     "הוסף פירוט אינפורמציה לתסריט.">
+<!ENTITY breakdown.label    "פירוט">
+<!ENTITY brokenSceneEventWarning.label "האירוע מתקשר לסצנה שכבר לא קיימת">
+<!ENTITY calendar.desc      "הוסף יומן לפרוייקט שלך">
+<!ENTITY calendar.label     "יומן">
+<!ENTITY categories.label "קטגוריות">
+<!ENTITY charOutline.desc "סקירה כללית של הדמויות והקשרים ביניהן">
+<!ENTITY charOutline.label "תמצית דמות">
+<!ENTITY clearCmd.label "מחק">
+<!ENTITY completed.label "הושלם">
+<!ENTITY contacts.label "אנשי קשר">
+<!ENTITY createAccount.label "צור חשבון">
+<!ENTITY daynightHeader.label "יום/לילה">
+<!ENTITY daynightWarning.label " כותרת הסצנה לא כוללת הגדרת יום או לילה. כדי לתקן את הבעיה, ערוך את כותרת הסצנה בתסריט או שנה את רשימת המילים ליום/לילה בהעדפות > תסריט.">
+<!ENTITY daynightWords.label "מילים ליום/לילה">
+<!ENTITY dayoff.label "יום חופש">
+<!ENTITY decreaseDelayCmd.tooltip "קצר עיכוב.">
+<!ENTITY defaultSceneLength.label "אורך סצנה לפי ברירת המחדל">
+<!ENTITY delayLabel.tooltip "עיכוב (בשניות) בין סצנות">
+<!ENTITY disabled.label "מנוטרל">
+<!ENTITY dragToSchedule.tooltip "גרור ושחרר על לוח הזמנים">
+<!ENTITY dualDialogCmd.label "דיאלוג בשניים">
+<!ENTITY dualDialogCmd.tooltip "דיאלוג בשניים">
+<!ENTITY editlabel.tooltip "הקלק כדי לערוך">
+<!ENTITY enableStats.desc "זה נועד כדי לספור את מספר משתמשי קלטקס האקטיביים. לא יימסרו פרטים מזהים או חומר מפרוייקטים.">
+<!ENTITY enabled.label "פעיל">
+<!ENTITY enterEmbedTagPrompt.label "הכנס תג 'אמבד' או 'אובייקט' כאן:">
+<!ENTITY eventDetails.label "פרטי האירוע">
+<!ENTITY every15Minutes.label "בכל 15 דקות">
+<!ENTITY every30Minutes.label "בכל חצי שעה">
+<!ENTITY every5Minutes.label "בכל 5 דקות">
+<!ENTITY everyHour.label "בכל שעה">
+<!ENTITY everyMinute.label "בכל דקה">
+<!ENTITY fileLocation "אתר הסרטה">
+<!ENTITY formatAct.label      "מערכה">
+<!ENTITY formatStagedir.label "ביום במה">
+<!ENTITY fourHours.label "ארבע שעות">
+<!ENTITY general.label "כללי">
+<!ENTITY image.label "תמונה">
+<!ENTITY includeInWorkweek.label "כלול את הימים האלה בשבוע העבודה">
+<!ENTITY increaseDelayCmd.tooltip "הארך עיכוב.">
+<!ENTITY intextHeader.label "פנים/חוץ">
+<!ENTITY intextWarning.label ".  כותרת הסצנה לא כוללת הגדרת פנים/חוץ. כדי לתקן את הבעיה, ערוך את כותרת הסצנה או שנה את רשימת המילים לפנים/חוץ בהעדפות > תסריט.">
+<!ENTITY intextWords.label "מילים לפנים/חוץ">
+<!ENTITY language.label "שפה">
+<!ENTITY loginOnStartup.label "התחבר בהפעלה">
+<!ENTITY moving.label "בתנועה">
+<!ENTITY network.label "רשת">
+<!ENTITY never.label "אף פעם">
+<!ENTITY noImageSelected.label "לא נבחרה תמונה">
+<!ENTITY oneHour.label "שעה אחת">
+<!ENTITY openProjectFolder.label "פתח את תיקיית הפרוייקט">
+<!ENTITY over14.label "אני בגיל 14 ומעלה.">
+<!ENTITY printStoryboardDialog.title "הדפס סטוריבורד">
+<!ENTITY productionItems.label "פריטי הפקה">
+<!ENTITY projectItems.label   "פרוייקטים חדשים מכילים">
+<!ENTITY projectLibrary.label "ספריית פרוייקט">
+<!ENTITY publishDialog.privateDesc "פרטי: הגבל גישה רק לי">
+<!ENTITY publishDialog.publicDesc "ציבורי: פרסם פרוייקט במרכז הפרוייקטים">
+<!ENTITY publishDialog.sharedDesc "משותף: שתף את ה]פרוייקט עם משתמשים נבחרים">
+<!ENTITY recoverPassword.label "שלוף סיסמה">
+<!ENTITY schedule.desc      "הוסף לוח זמנים של צילומים לתסריט">
+<!ENTITY schedule.label     "לוח זמנים">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "תסריט לוח זמנים">
+<!ENTITY scheduled.label "נקבע בלוח הזמנים">
+<!ENTITY scriptEditor.label "עורך תסריטים">
+<!ENTITY sequences.label "סדרת סצנות">
+<!ENTITY setting.label "זמן ומקום">
+<!ENTITY shotholder.label "הקלק פעמיים להוספת תמונה.">
+<!ENTITY showWorkdaysOnly.label "הצג ימי עבודה בלבד">
+<!ENTITY slideshowCmd.toolbarlabel "נגן">
+<!ENTITY splash.inbox           "תיבת דואר נכנס">
+<!ENTITY splash.logIn "התחבר">
+<!ENTITY splash.welcomePrefixDesc "קדם הפקה לסרטים ופרויקטים אחרים">
+<!ENTITY splashScreen.label       "מצג פתיחה">
+<!ENTITY stackTrace.desc        " האינפורמציה מתחת יכולה לעזור לנו. בבקשה כלול אותה אם תחליט לדווח על התקלה הזו.">
+<!ENTITY stageplay.desc  "הוסף תסריט מחזה בפורמט בינלאומי">
+<!ENTITY stageplay.label    "בינלאומי">
+<!ENTITY startOfDay.label "תחילת יום">
+<!ENTITY startOfWeek.label "תחילת שבוע">
+<!ENTITY storyboard.desc    "ארגן תמונות סטוריבורד כסדרות סצנות לצילום">
+<!ENTITY storyboard.label   "סטוריבורד">
+<!ENTITY tagline.label      "שורת לשוניות">
+<!ENTITY theatreTmplActTitle "מערכה ראשונה">
+<!ENTITY theatreTmplSceneTitle "סצנה 1">
+<!ENTITY thirtyMinutes.label "שלושים דקות">
+<!ENTITY threeHours.label "שלוש שעות">
+<!ENTITY twoHours.label "שעתיים">
+<!ENTITY under14.label "אני מתחת לגיל 14">
+<!ENTITY updateInbox.label "עדכן דואר נכנס">
+<!ENTITY video.label "וידאו">
+<!ENTITY viewProjectOnline.label "צפה בפרוייקט באינטרנט">
+<!ENTITY webPanel.desc              "שירותי אינטרנט של קלטקס">
+<!ENTITY webPanel.label             "שירותים אינטרנט">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY workweek.label "שבוע עבודה">
+
+
+<!-- Existing translation: -->
+<!ENTITY actorProfile.desc      "הוסף תיאור שחקן">
+<!ENTITY actorProfile.label     "שחקן">
+<!ENTITY add.label    "הוסף">
+<!ENTITY addCmd.label "הוסף">
+<!ENTITY folder.label "תיקיה:">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "פרטים">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "בחר פריט">
+<!ENTITY addFolder.label "הוסף תיקיה">
+<!ENTITY addFolderCmd.label "הוסף תיקיה">
+<!ENTITY addItem.label "הוסף פריט">
+<!ENTITY addItemCmd.label "הוסף פריט">
+<!ENTITY advanced.label       "מתקדם">
+<!ENTITY allUppercase.label "הכל">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "אפשרויות אלו קיימות עבור יצירת PDF בלבד">
+<!ENTITY authDialog.description "פעולה זו מצריכה כניסה לחשבון קלטקס שלך">
+<!ENTITY authDialog.title       "אימות קלטקס">
+<!ENTITY autoCharContinueds.label   "הצג המשך דמויות">
+<!ENTITY bdc.addlabour    "כח אדם נוסף">
+<!ENTITY bdc.animals      "חיות">
+<!ENTITY bdc.camera       "מצלמה">
+<!ENTITY bdc.cast         "שחקנים">
+<!ENTITY bdc.cgi          "CGI">
+<!ENTITY bdc.construction "הקמת תפאורה">
+<!ENTITY bdc.electrics    "ציוד חשמלי">
+<!ENTITY bdc.equip        "ציוד מיוחד">
+<!ENTITY bdc.extras       "ניצבים">
+<!ENTITY bdc.greenery     "ירק">
+<!ENTITY bdc.hair         "שיער">
+<!ENTITY bdc.handler      "מאמן חיות">
+<!ENTITY bdc.lights       "תאורה">
+<!ENTITY bdc.livestock    "חיות משק">
+<!ENTITY bdc.location     "לוקיישן">
+<!ENTITY bdc.makeup       "איפור">
+<!ENTITY bdc.mechfx       "פעלולים מכניים">
+<!ENTITY bdc.misc         "שונות">
+<!ENTITY bdc.music        "מוסיקה">
+<!ENTITY bdc.opticalfx    "פעלולים אופטיים">
+<!ENTITY bdc.painting     "ציור">
+<!ENTITY bdc.prodnotes    "הערות הפקה">
+<!ENTITY bdc.props        "פרופס">
+<!ENTITY bdc.security     "ביטחון">
+<!ENTITY bdc.set          "תפאורה">
+<!ENTITY bdc.setdressing  "עיצוב תפאורה">
+<!ENTITY bdc.sound        "קול">
+<!ENTITY bdc.soundfx      "אפקטיים קוליים">
+<!ENTITY bdc.specialfx    "אפקטים מיוחדים">
+<!ENTITY bdc.storyboard   "סטוריבורד">
+<!ENTITY bdc.stunts       "פעלולים">
+<!ENTITY bdc.vehicles     "כלי רכב">
+<!ENTITY bdc.wardrobe     "מלתחה">
+<!ENTITY bdc.weapons      "נשק">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "מודגש">
+<!ENTITY bookmark.desc      "הוסף כתובת אינטרנט">
+<!ENTITY bookmark.label     "סימנייה">
+<!ENTITY both.label   "שניהם">
+<!ENTITY bottomOfPage.label   "תחתית עמוד">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdownReport.label "דוח מפורט">
+<!ENTITY browseCmd.label      "סייר">
+<!ENTITY category.label     "קטגוריה">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; חשבון">
+<!ENTITY celtxError.title       "שגיאת קלטקס">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY character.label        "דמות">
+<!ENTITY characterProfile.desc  "הוסף תיאור דמות חדשה">
+<!ENTITY characterProfile.existing "בנוסף ניתן לתאר דמות קיימת מהרשימה">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "בחר דמות">
+<!ENTITY characters.label       "דמויות">
+<!ENTITY colon ":">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY createProject.title  "צור פרוייקט">
+<!ENTITY createdCol.label  "נוצר">
+<!ENTITY creatorCol.label  "יוצר">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY decreaseIndentCmd.label "הקטן שוליים">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY deleteItem.label "מחק פריט">
+<!ENTITY deleteItemCmd.label        "מחק">
+<!ENTITY department.label   "מחלקה">
+<!ENTITY description.label  "תיאור">
+<!ENTITY details.label          "פרטים">
+<!ENTITY dialog.label           "דיאלוג">
+<!ENTITY displayMedia.label "הצג מדיה">
+<!ENTITY downloadProjectCmd.label "הורד פרוייקט מהרשת">
+<!ENTITY downloadProjectCmd.toolbarlabel "הורד">
+<!ENTITY downloadingPDF.label       "ממיר ל- PDF">
+<!ENTITY editTitlePageCmd.label "ערוך עמוד כותרת">
+<!ENTITY element.label          "אלמנט">
+<!ENTITY elements.label         "אלמנטים">
+<!ENTITY enableStats.label    "שלח נתונים סטאטיסטיים לקלטקס">
+<!ENTITY exportScriptCmd.label      "ייצא תסריט">
+<!ENTITY externalFile.desc  "הוסף קובץ קיים לפרוייקט">
+<!ENTITY externalFile.label "קובץ">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "הוסף תסריט">
+<!ENTITY filmScript.label   "תסריט">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "חפש">
+<!ENTITY findPreviousCmd.label "מצא קודם">
+<!ENTITY findTab.label "מצא">
+<!ENTITY forceOverwrite.label "כתוב על מסמך קיים במידה והגרסא חדשה יותר">
+<!ENTITY form.actorLink "אתר שחקן">
+<!ENTITY form.actorProfile "פרופיל שחקן">
+<!ENTITY form.address "כתובת">
+<!ENTITY form.affectEvent "כיצד משפיע מאורע זה על העלילה כולה?">
+<!ENTITY form.age "גיל">
+<!ENTITY form.alternate "שם נוסף">
+<!ENTITY form.antag "דמות היריב">
+<!ENTITY form.antagWho "מי דמות היריב בסצנה?">
+<!ENTITY form.availability "זמינות">
+<!ENTITY form.bestFriend "החבר הטוב">
+<!ENTITY form.borrow "השאלה">
+<!ENTITY form.build "בניה">
+<!ENTITY form.buy "קנייה">
+<!ENTITY form.catalyst "זרז">
+<!ENTITY form.cell "סלולרי">
+<!ENTITY form.centralEvent "מה המאורע המרכזי של הסצנה?">
+<!ENTITY form.charBackground "רקע הדמות">
+<!ENTITY form.charGoal "מהי מטרתה של דמות זו?">
+<!ENTITY form.charPlan "מה תוכניתה של הדמות להשגת מטרה זו?">
+<!ENTITY form.charTraits "תכונות דמות">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "פרופיל דמות">
+<!ENTITY form.charactersUsed "בשימוש דמויות">
+<!ENTITY form.color "צבע">
+<!ENTITY form.comicRelief "הפוגה קומית">
+<!ENTITY form.comments "הערות">
+<!ENTITY form.confidante "איש סוד">
+<!ENTITY form.contactInfo "פרטי התקשרות">
+<!ENTITY form.cost "עלות">
+<!ENTITY form.dateAvail "זמין בתאריכים">
+<!ENTITY form.dateNeed "תאריכים נדרשים">
+<!ENTITY form.dateReturn "תאריך החזרה">
+<!ENTITY form.description "תיאור">
+<!ENTITY form.details "פרטים">
+<!ENTITY form.dislikes "שונא">
+<!ENTITY form.distFeatures "מאפיינים מבדילים">
+<!ENTITY form.dob "תאריך לידה">
+<!ENTITY form.dress "שימלה">
+<!ENTITY form.education "השכלה">
+<!ENTITY form.elevator "מעלית">
+<!ENTITY form.email "כתובת דואר אלקטרוני">
+<!ENTITY form.endDate "תאריך סיום">
+<!ENTITY form.era "תקופה">
+<!ENTITY form.eyes "עיניים">
+<!ENTITY form.facilityInfo "פרטי מתקן">
+<!ENTITY form.familyBack "רקע משפחתי">
+<!ENTITY form.fullName "שם מלא">
+<!ENTITY form.genericForm "תבנית גנרית">
+<!ENTITY form.generic "גנרי">
+<!ENTITY form.habits "הרגלים">
+<!ENTITY form.hair "שיער">
+<!ENTITY form.hat "כובע">
+<!ENTITY form.height "גובה">
+<!ENTITY form.jacket "ג'אקט">
+<!ENTITY form.keyCharTraits "תכונות מרכזיות">
+<!ENTITY form.lightSources "מקורות אור">
+<!ENTITY form.likes "אוהב">
+<!ENTITY form.locationMap "מפת לוקיישן">
+<!ENTITY form.locationProfile "פרופיל לוקיישן">
+<!ENTITY form.loveInterest "עניין רומנטי">
+<!ENTITY form.media "מדיה">
+<!ENTITY form.mentor "מורה">
+<!ENTITY form.motiv "מניעים">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "לא">
+<!ENTITY form.noise "רעש">
+<!ENTITY form.other "אחר">
+<!ENTITY form.pants "מכנסיים">
+<!ENTITY form.parking "פרטי חנייה">
+<!ENTITY form.partner "שותף">
+<!ENTITY form.person "אישיות">
+<!ENTITY form.phone "מספר טלפון">
+<!ENTITY form.physicalDesc "תיאור פיזי מפורט">
+<!ENTITY form.powerCapa "יכולות חשמל">
+<!ENTITY form.princFunction "מה תפקידה המרכזי של הדמות?">
+<!ENTITY form.procure "רכישה">
+<!ENTITY form.propProfile "פרופיל אביזרים">
+<!ENTITY form.protag "דמות ראשית">
+<!ENTITY form.protagAntag "דמות ראשית/יריב">
+<!ENTITY form.protagWho "מי הדמות הראשית בסצנה?">
+<!ENTITY form.rent "שכירה">
+<!ENTITY form.rentalCost "שכר דירה">
+<!ENTITY form.role "תפקיד">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "איך היריב משיג מטרה זו?">
+<!ENTITY form.sceneAntagGoal "מה מטרתו של היריב בסצנה?">
+<!ENTITY form.sceneChars "איזה דמויות משתתפות בסצנה?">
+<!ENTITY form.sceneDetails "פרטי סצנה">
+<!ENTITY form.sceneMood "איזו תחושה מעבירה הסצנה?">
+<!ENTITY form.sceneProtagAchieve "איך הדמות הראשית משיגה מטרה זו?">
+<!ENTITY form.sceneProtagGoal "מה מטרת של הדמות הראשית בסצנה?">
+<!ENTITY form.sceneSetting "היכן מתרחשת הסצנה?">
+<!ENTITY form.sceneWhen "מתי מתרחשת הסצנה?">
+<!ENTITY form.scenesUsed "בשימוש בסצנות">
+<!ENTITY form.scoutSelect "חיפוש ובחירה">
+<!ENTITY form.scoutedFor "חיפוש עבור סצנות">
+<!ENTITY form.scriptName "Script Name">
+<!ENTITY form.selectedFor "נבחר עבור סצנות">
+<!ENTITY form.sex "מין">
+<!ENTITY form.shirt "חולצה">
+<!ENTITY form.shoes "נעליים">
+<!ENTITY form.size "גודל">
+<!ENTITY form.squareFoot "מטר רבוע">
+<!ENTITY form.startDate "תאריך התחלה">
+<!ENTITY form.wardProfile "פרופיל מלתחה">
+<!ENTITY form.wardrobeSizes "מידות בגדים">
+<!ENTITY form.washroom "מיקום מקלחות">
+<!ENTITY form.weight "משקל">
+<!ENTITY form.wornBy "נלבש על ידי">
+<!ENTITY form.yes "כן">
+<!ENTITY formatAction.label   "פעולה">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "כותרת סצנה">
+<!ENTITY formatParen.label    "סוגריים">
+<!ENTITY formatShot.label     "צילום">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTrans.label    "חיתוך">
+<!ENTITY generatePDFCmd.label "צור PDF">
+<!ENTITY generateReportCmd.label "חולל דוח">
+<!ENTITY generateReportCmd.toolbarlabel "דוח">
+<!ENTITY getProjDialog.caption "פרוייקטים קיימים">
+<!ENTITY getProjDialog.title   "הורד פרוייקט מהרשת">
+<!ENTITY gotoItemCmd.label          "עבור ל...">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "אודות &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "דווח על בעיה">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "עזרה מקוונת">
+<!ENTITY icons.label "אייקונים">
+<!ENTITY iconsAndText.label "טקסט ואייקונים">
+<!ENTITY images.label "תמונות">
+<!ENTITY importScriptCmd.label "יבוא תסריט">
+<!ENTITY importScriptCmd.toolbarLabel "יבוא">
+<!ENTITY includeTitlePage.label     "כלול עמוד כותרת">
+<!ENTITY increaseIndentCmd.label "הגדל שוליים">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY inlineSpellCheckCmd.label "בדיקת איות אינטגראלית">
+<!ENTITY insertNoteCmd.toolbarLabel "הערה">
+<!ENTITY invalidLogin.label   "שם משתמש או סיסמא שגויים">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "מוטה">
+<!ENTITY item.label         "פריט">
+<!ENTITY left.label   "שמאל">
+<!ENTITY list.label "רשימה...">
+<!ENTITY location.desc          "הוסף תיאור לוקיישן">
+<!ENTITY location.label         "לוקיישן">
+<!ENTITY lowercaseCmd.label "אותיות קטנות">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "מדיה">
+<!ENTITY mediaViewer.title "נגן מדיה">
+<!ENTITY modified.label "שונה">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label          "הורד מטה">
+<!ENTITY moveUpCmd.label            "העלה מעלה">
+<!ENTITY name.label         "שם">
+<!ENTITY newMarkupItem.label        "&lt;חדש...&gt;">
+<!ENTITY newProjectCmd.label "פרוייקט חדש...">
+<!ENTITY newProjectCmd.toolbarlabel "חדש">
+<!ENTITY noFileSelected.label   "&lt;לא נבחר קובץ&gt;">
+<!ENTITY none.label "ללא">
+<!ENTITY noteDialog.title           "ערוך הערה">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY openItemCmd.label "פתח פריט">
+<!ENTITY openProjectCmd.label "פתח פרוייקט">
+<!ENTITY openProjectCmd.toolbarlabel "פתח">
+<!ENTITY openRecentCmd.label "פתח פרוייקט אחרון">
+<!ENTITY options.label "אפרויות">
+<!ENTITY outline.desc       "הוסף מסמך אאוטליין בראשי פרקים">
+<!ENTITY outline.label      "אאוטליין">
+<!ENTITY pageAndSceneNumbering.label  "מספור עמודים וסצנות">
+<!ENTITY paperSize.label        "גודל דף">
+<!ENTITY password.label "סיסמא">
+<!ENTITY pdfDownloadDialog.title    "המרה ל- PDF">
+<!ENTITY pdfOptions.title           "אפשרויות PDF">
+<!ENTITY pdfOptionsCmd.label "עודים והמשכים">
+<!ENTITY picklist.label "רשימה לבחירה">
+<!ENTITY privacy.label "Privacy">
+<!ENTITY progressDialog.title "התקדמות">
+<!ENTITY projectProperties.label "מאפייני פרוייקט">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY propSheet.desc         "הוסף תיאור אביזר">
+<!ENTITY propSheet.existing "בנוסף ניתן לתאר אביזר קיים מהרשימה">
+<!ENTITY propSheet.label        "אביזרים">
+<!ENTITY propSheet.select       "בחר אביזר">
+<!ENTITY properties.label "מאפיינים">
+<!ENTITY publishDialog.findUsers    "אתר משתמשים">
+<!ENTITY publishDialog.ownerLabel   "בעל הפרוייקט">
+<!ENTITY publishDialog.privateLabel "פרטי">
+<!ENTITY publishDialog.publicLabel  "פומבי">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedLabel  "בשיתוף עם">
+<!ENTITY publishDialog.title        "פרסם פרוייקט">
+<!ENTITY publishDialog.userList     "רשימת משתמשים">
+<!ENTITY publishMode.label "צורת פרסום">
+<!ENTITY recycleCmd.label           "שלח לפנקס טיוטות">
+<!ENTITY regWiz.aboutThis "מרגע שחשבונך יווצר תחובר אליו אוטומטית עד לסיום סבב העבודה הנוכחי">
+<!ENTITY regWiz.accountInstructions "בחר שם משתמש וסיסמא לחשבון ה-&appName; שלך. )שימו לב: סיסמאות ושמות משתמש רגישים לגודל אות(">
+<!ENTITY regWiz.accountLabel "חשבון משתמש (3/5)">
+<!ENTITY regWiz.bullet1 "גיבויים פרטיים">
+<!ENTITY regWiz.bullet2 "שיתוף פעולה">
+<!ENTITY regWiz.bullet3 "יצירת קבצי PDF">
+<!ENTITY regWiz.bullet4 "">
+<!ENTITY regWiz.checkLabel "בדיקת נתוני החשבון">
+<!ENTITY regWiz.clickFinish "תודה רבה על הצטרפותך לקהילת &appName;">
+<!ENTITY regWiz.clickFinish1 "הנך מחובר לשרת &appName; ויכול להשתמש בתכונות הרשת החינמיות">
+<!ENTITY regWiz.clickFinish2 "נסה את תכונת ההעלאה / הורדה על מנת ליצור גיבוי של הפרוייקט שלך או, במידה ואתה מכיר משתמשי &appName; נוספים השתמש בתכונת השיתוף על מנת לעבוד יחד על פרוייקט ">
+<!ENTITY regWiz.clickNext "נראה אחלה! אנא לחץ על 'הבא' על מנת לסיים את ההרשמה">
+<!ENTITY regWiz.conclusion "סיום )5/5(">
+<!ENTITY regWiz.confirmIntro "הזנת את הפרטים הבאים:">
+<!ENTITY regWiz.confirmLabel "אישור הגדרות (4/5)">
+<!ENTITY regWiz.createNewAccountLabel "צור חשבון חדש.">
+<!ENTITY regWiz.createYourAccountLabel "צור חשבון &appName; )1/5(">
+<!ENTITY regWiz.emailLabel "דואר אלקטרוני:">
+<!ENTITY regWiz.finish "סיים">
+<!ENTITY regWiz.identityInstructions "אנא הכנס את שמך, שם הארגון וכתובת דואר אלקטרוני">
+<!ENTITY regWiz.identityLabel "פרטים מזהים )2/5(">
+<!ENTITY regWiz.intro "צור חשבון &appName; על מנת להנות מגישה לתכונות הרשת הבאות בחינם:">
+<!ENTITY regWiz.loginSuccessfulLabel "תודה, אתה מחובר עתה ל- &appName;">
+<!ENTITY regWiz.newOrExistingLabel "צור חשבון חדש או השתמש בחשבון קיים:">
+<!ENTITY regWiz.noteCaseSensitive "שמות משתמש וסיסמאות &appName; רגישים לגודל אות">
+<!ENTITY regWiz.notePassword "על הסיסמא להיות באורך של לפחות 5 תווים">
+<!ENTITY regWiz.noteUsername "על שם המשתמש להיות באורך של לפחות 3 תווים ויכולה להכיל רק אותיות ומספרים.">
+<!ENTITY regWiz.orgLabel   "ארגון:">
+<!ENTITY passwordAgain.label "הכנס סיסמא שוב">
+<!ENTITY regWiz.title "אשף רישום קלטקס">
+<!ENTITY regWiz.uidLabel   "שם משתמש &appName;:">
+<!ENTITY regWiz.useExistingAccountLabel "השתמש בחשבון קיים.">
+<!ENTITY regWiz.warn "עליך ליצור חשבון &appName; על מנת להשתמש בתכונה זו">
+<!ENTITY remove.label "הסר">
+<!ENTITY removeCmd.label "הסר">
+<!ENTITY removeMarkupCmd.label "הסר הדגשה">
+<!ENTITY renameItem.label "שנה שם פריט">
+<!ENTITY replaceCmd.label "החלף">
+<!ENTITY reportThisBug.label    "דווח על הבעיה">
+<!ENTITY reportThisBug.tooltip  "שלח דווח אנונימי על באג">
+<!ENTITY reports.label "דוחות">
+<!ENTITY right.label  "ימין">
+<!ENTITY saveProjectCmd.label "שמור פרוייקט">
+<!ENTITY saveProjectCmd.toolbarlabel "שמור">
+<!ENTITY scene.label "סצנה">
+<!ENTITY sceneBreakdown.label "פירוט סצנות">
+<!ENTITY sceneBreakdownWithDesc.label "פירוט סצנות עם תיאור">
+<!ENTITY sceneDetails.desc      "הוסף תיאור סצנה חדשה">
+<!ENTITY sceneDetails.existing "בנוסף ניתן לתאר סצנה קיימת מהרשימה">
+<!ENTITY sceneDetails.label     "פרטי סצנה">
+<!ENTITY sceneDetails.select    "בחר סצנה">
+<!ENTITY scenes.label           "סצנות">
+<!ENTITY script.label "תסריט">
+<!ENTITY scriptReport.desc  "דוח תסריט אוטומטי">
+<!ENTITY scriptReport.label "דוח תסריט">
+<!ENTITY scriptWithNotes.label  "תסריט עם הערות">
+<!ENTITY server.label   "שרת:">
+<!ENTITY sharing.label "שיתוף">
+<!ENTITY showContinuedCount.label   "הצג מספרי עמוד">
+<!ENTITY showDialogBreaks.label     "הראה הפסקות בדיאלוג">
+<!ENTITY showFirstPageNumber.label    "הראה מספר בעמוד הראשון">
+<!ENTITY showPageNumbers.label        "חלוקה לדפים">
+<!ENTITY showSceneBreaks.label      "הצג הפסקות סצנה">
+<!ENTITY showSceneNumbers.label       "הצג מספרי סצנה">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "הוסף למילון">
+<!ENTITY spellCheckCmd.label "בדוק איות">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "התעלם ממילה">
+<!ENTITY spellCheckNoSuggestions.label "לא נמצאו הצעות">
+<!ENTITY splash.celtxCentral      "קלטקס מרכז">
+<!ENTITY splash.celtxCentralDesc  "השתמש בקלטקס מרכז להחליף סיסמא או לעדכן את פרופיל המשתמש שלך">
+<!ENTITY splash.discussion      "דיונים">
+<!ENTITY splash.downloadProject     "הורד פרוייקט מהרשת">
+<!ENTITY splash.downloadProjectDesc "הורד פרוייקט משרתי קלטקס ברשת">
+<!ENTITY splash.featureTour         "תכונות קיימות">
+<!ENTITY splash.forums      "פורומים">
+<!ENTITY splash.forumsDesc  "הצטרף לדיונים בפורום של קלטקס">
+<!ENTITY splash.gettingStarted  "התחלה">
+<!ENTITY splash.guide               "מדריך למשתמש">
+<!ENTITY splash.help            "עזרה">
+<!ENTITY splash.helpAccount     "צור חשבון">
+<!ENTITY splash.helpAccountDesc "יצירת שם משתמש מאפשרת גישה לשרתים. גישה זו מאפשרת שיתוף פעולה ויצירת קבצי PDF">
+<!ENTITY splash.helpDesc        "הקישורים מימין מפנים למספר משאבי קלטקס">
+<!ENTITY splash.helpOptions         "אפשרויות עזרה">
+<!ENTITY splash.newProject      "התחל פרוייקט חדש">
+<!ENTITY splash.newProjectDesc  "צור פרוייקט חדש">
+<!ENTITY splash.openProject     "פתח פרוייקט קיים">
+<!ENTITY splash.openProjectDesc "הוסף פרוייקטים קיימים">
+<!ENTITY splash.options             "אפשרויות">
+<!ENTITY splash.projectCentral  "מרכז הפרוייקטים">
+<!ENTITY splash.projects        "פרוייקטים">
+<!ENTITY splash.recentProjects      "פקוייקטים אחרונים">
+<!ENTITY splash.sampleDesc      "בחרנו להשתמש בקוסם מארץ עוץ על מנת להדגים את יכולות הקלטקס. המסמכים השונים משרטטים את המשאבים הנדרשים להפקת סצנה בודדת. פרוייקט דוגמא זה כולל תסריט, וטפסי דמות ופרטי סצנה, ומידע על לוחות זמנים"> 
+<!ENTITY splash.sampleProject   "פרוייקט לדוגמא">
+<!ENTITY splash.videoWalkthrus      "סרטון הדרכה">
+<!ENTITY splash.videoWalkthrusDesc  "סרט הדרכה קצר שיאפשר לך להתחיל לעבוד עם קלטקס">
+<!ENTITY splash.walkthru            "מדריך מקוצר">
+<!ENTITY splash.webServices     "שירותי רשת">
+<!ENTITY splash.welcomePrefix     "ברוכים הבאים לקלטקס">
+<!ENTITY splash.wiki      "wiki מדריך">
+<!ENTITY splash.wikiDesc  "הדרך שלך להכיר את קלטקס לעומק">
+<!ENTITY stackTrace.desc        "המידע למטה עלול לעזור לנו. אנא הוסף אותו לדיווח">
+<!ENTITY syncDialog.title "סנכרון">
+<!ENTITY tagItemCmd.label           "תייג">
+<!ENTITY text.label "טקסט">
+<!ENTITY textDocument.desc "הוסף מסמך טקסט. שימושי ליצירת מסמך ראשי פרקים, טריטמנט או תקציר">
+<!ENTITY textDocument.label "טקסט">
+<!ENTITY title.label        "כותרת">
+<!ENTITY titlePage.label "עמוד כותרת">
+<!ENTITY togglePaginationCmd.label    "אפשר חלוקה לדפים">
+<!ENTITY toggleScratchpadCmd.label  "פתח / סגור פנקס טיוטות">
+<!ENTITY toggleSidebarCmd.label "תפריט צדדי">
+<!ENTITY topOfNextPage.label  "ראש עמוד">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "קו תחתי">
+<!ENTITY untitled.label "ללא שם">
+<!ENTITY uploadDialog.title         "העלה פרוייקט לרשת">
+<!ENTITY uploadProjectCmd.label "העלה פרוייקט לרשת">
+<!ENTITY uploadProjectCmd.toolbarlabel "העלה">
+<!ENTITY uppercaseCmd.label "אותיות גדולות">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "שם משתמש">
+<!ENTITY videoTutorialCmd.label "סרטון הדרכה">
+<!ENTITY wardrobeSheet.desc     "הוסף תיאור פריט מלתחה חדש">
+<!ENTITY wardrobeSheet.existing " בנוסף ניתן לתאר פריט מלתחה קיים מהרשימה">
+<!ENTITY wardrobeSheet.label    "מלתחה">
+<!ENTITY wardrobeSheet.select   "בחר פריט מלתחה">
+<!ENTITY wiz.clickFinish "לחץ על 'סיום' על מנת להשלים את האשף.">
+<!ENTITY wiz.clickNext "לחץ על 'הבא' על מנת להתחיל.">

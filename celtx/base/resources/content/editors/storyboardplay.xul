@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/slideshow.css" type="text/css"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="storyboardplay"
+        title="storyboard"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/storyboardplay.js"/>
+
+#ifdef XP_MACOSX
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include ../celtx-menubar.inc
+  </toolbar>
+#endif
+
+  <vbox class="slideviewer" flex="1">
+    <hbox pack="center">
+      <label id="seqlabel" class="header"/>
+    </hbox>
+    <image id="shotimg" flex="1"/>
+    <hbox pack="center">
+      <description id="shotlabel"
+                   crop="end"
+                   flex="1">
+      </description>
+    </hbox>
+  </vbox>
+  <separator class="groove"/>
+  <toolbar align="center">
+    <hbox pack="center" align="center" flex="1">
+      <toolbarbutton id="firstbtn" oncommand="first()"/>
+      <toolbarbutton id="prevbtn" oncommand="previous()"/>
+      <toolbarbutton id="playbtn" oncommand="play()"/>
+      <toolbarbutton id="nextbtn" oncommand="next()"/>
+      <toolbarbutton id="lastbtn" oncommand="last()"/>
+    </hbox>
+    <label value="&sequence.label;&colon;"/>
+    <menulist id="seqpicker"
+              oncommand="jumpToSequence(this.value)">
+      <menupopup/>
+    </menulist>
+  </toolbar>
+  <toolbar pack="center" align="center">
+    <toolbarbutton id="decrbtn"
+                   oncommand="decreaseDelay()"
+                   tooltiptext="&decreaseDelayCmd.tooltip;"/>
+    <toolbaritem>
+      <label id="delaylbl"
+             value="2"
+             tooltiptext="&delayLabel.tooltip;"/>
+    </toolbaritem>
+    <toolbarbutton id="incrbtn"
+                   oncommand="increaseDelay()"
+                   tooltiptext="&increaseDelayCmd.tooltip;"/>
+  </toolbar>
+  
+</window>

@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/editors.css"
+                 type="text/css"?>
+
+<?xul-overlay href="chrome://celtx/content/editors/scriptpdf.xul"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="scriptwindow"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+  <commandset id="scriptcommandset">
+    <command id="cmd-bold"
+             oncommand="goDoCommand('cmd-bold')"/>
+    <command id="cmd-italic"
+             oncommand="goDoCommand('cmd-italic')"/>
+    <command id="cmd-underline"
+             oncommand="goDoCommand('cmd-underline')"/>
+    <command id="cmd-insert-note"
+             oncommand="goDoCommand('cmd-insert-note')"/>
+    <command id="cmd-lowercase"
+             oncommand="goDoCommand('cmd-lowercase')"/>
+    <command id="cmd-uppercase"
+             oncommand="goDoCommand('cmd-uppercase')"/>
+    <command id="cmd-check-spelling"
+             oncommand="goDoCommand('cmd-check-spelling')"/>
+    <command id="cmd-set-format"
+             oncommand="goDoCommand('cmd-set-format')"/>
+    <command id="cmd-set-zoom"
+             oncommand="goDoCommand('cmd-set-zoom')"/>
+    <command id="cmd-unmarkup"
+             oncommand="goDoCommand('cmd-unmarkup')"/>
+    <command id="cmd-edit-title-page"
+             oncommand="goDoCommand('cmd-edit-title-page')"/>
+    <command id="cmd-import-script"
+             oncommand="goDoCommand('cmd-import-script')"/>
+    <command id="cmd-export-script"
+             oncommand="goDoCommand('cmd-export-script')"/>
+    <command id="cmd-export-report"
+             oncommand="goDoCommand('cmd-export-report')"/>
+    <command id="cmd-schedule-script"
+             oncommand="goDoCommand('cmd-schedule-script')"/>
+    <command id="cmd-toggle-breakdown"
+             oncommand="goDoCommand('cmd-toggle-breakdown')"/>
+    <command id="cmd-toggle-sidebar"
+             oncommand="goDoCommand('cmd-toggle-sidebar')"/>
+    <command id="cmd-toggle-pagination"
+             oncommand="goDoCommand('cmd-toggle-pagination')"/>
+    <command id="cmd-toggle-dual-dialog"
+             oncommand="goDoCommand('cmd-toggle-dual-dialog')"/>
+    <command id="cmd-cardview-toggle"
+             oncommand="goDoCommand('cmd-cardview-toggle')"/>
+    <command id="cmd-create-card"
+             oncommand="goDoCommand('cmd-create-card')"/>
+    <command id="cmd-delete-card"
+             oncommand="goDoCommand('cmd-delete-card')"/>
+    <command id="cmd-script-format"
+             oncommand="goDoCommand('cmd-script-format')"/>
+    <command id="cmd-find-characters"
+             oncommand="goDoCommand('cmd-find-characters')"/>
+    <command id="cmd-copy-as-script"
+             oncommand="goDoCommand('cmd-copy-as-script')"/>
+    <command id="cmd-copy-as-theatre"
+             oncommand="goDoCommand('cmd-copy-as-theatre')"/>
+    <command id="cmd-copy-as-av"
+             oncommand="goDoCommand('cmd-copy-as-av')"/>
+    <command id="cmd-copy-as-radio"
+             oncommand="goDoCommand('cmd-copy-as-radio')"/>
+    <command id="cmd-copy-as-comic"
+             oncommand="goDoCommand('cmd-copy-as-comic')"/>
+    <command id="cmd-copy-as-storyboard"
+             oncommand="goDoCommand('cmd-copy-as-storyboard')"/>
+    <command id="cmd-lock-script"
+             oncommand="goDoCommand('cmd-lock-script')"/>
+    <command id="cmd-manage-revisions"
+             oncommand="goDoCommand('cmd-manage-revisions')"/>
+    <command id="cmd-create-revision"
+             oncommand="goDoCommand('cmd-create-revision')"/>
+    <command id="cmd-toggle-revision-marks"
+             oncommand="goDoCommand('cmd-toggle-revision-marks')"/>
+    <command id="cmd-clear-revision-marks"
+             oncommand="goDoCommand('cmd-clear-revision-marks')"/>
+    <command id="cmd-apply-revision-marks"
+             oncommand="goDoCommand('cmd-apply-revision-marks')"/>
+    <command id="cmd-show-scene-numbers"
+             oncommand="goDoCommand('cmd-show-scene-numbers')"/>
+    <command id="cmd-set-revision-colour"
+             oncommand="goDoCommand('cmd-set-revision-colour')"/>
+    <command id="cmd-set-revision-label"
+             oncommand="goDoCommand('cmd-set-revision-label')"/>
+    <command id="cmd-omit-scene"
+             oncommand="goDoCommand('cmd-omit-scene')"/>
+    <command id="cmd-edit-scene-numbers"
+             oncommand="goDoCommand('cmd-edit-scene-numbers')"/>
+    <command id="cmd-reset-locking"
+             oncommand="goDoCommand('cmd-reset-locking')"/>
+  </commandset>
+
+  <keyset id="script-keyset">
+    <key id="key-bold"
+         key="&bold.commandkey;"
+         modifiers="accel"
+         oncommand="goDoCommand('cmd-bold')"/>
+    <key id="key-italic"
+         key="&italic.commandkey;"
+         modifiers="accel"
+         oncommand="goDoCommand('cmd-italic')"/>
+    <key id="key-underline"
+         key="&underline.commandkey;"
+         modifiers="accel"
+         oncommand="goDoCommand('cmd-underline')"/>
+  </keyset>
+
+  <!-- Appears to be a Mac-only bug, but using an oncommand handler
+       instead of a command attribute can sometimes cause the menuitem to
+       stop responding to mouse clicks, so command attributes should always
+       be used in favour of oncommand in this menu. -->
+  <box hidden="true">
+    <menupopup id="script-popup"
+               label="&script.label;"
+               accesskey="&script.accesskey;">
+      <menuitem label="&importScriptCmd.label;&ellipsis;"
+                accesskey="&importScriptCmd.accesskey;"
+                command="cmd-import-script"/>
+      <menuitem label="&exportScriptCmd.label;&ellipsis;"
+                accesskey="&exportScriptCmd.accesskey;"
+                command="cmd-export-script"/>
+      <menu id="popupDuplicateAsMenu"
+            label="&adaptTo.label;">
+        <menupopup>
+          <menuitem label="&filmScript.label;"
+                    value="&ns_cx;ScriptDocument"
+                    command="cmd-copy-as-script"/>
+          <menuitem label="&stageplay.label;"
+                    value="&ns_cx;TheatreDocument"
+                    command="cmd-copy-as-theatre"/>
+          <menuitem label="&avScript.label;"
+                    value="&ns_cx;AVDocument"
+                    command="cmd-copy-as-av"/>
+          <menuitem label="&audioplay.label;"
+                    value="&ns_cx;RadioDocument"
+                    command="cmd-copy-as-radio"/>
+          <menuitem label="&comicBook.label;"
+                    value="&ns_cx;ComicDocument"
+                    command="cmd-copy-as-comic"/>
+          <menuseparator/>
+          <menuitem label="&storyboard.label;"
+                    value="&ns_cx;StoryboardDocument2"
+                    command="cmd-copy-as-storyboard"/>
+        </menupopup>
+      </menu>
+      <menuseparator id="revisionSeparator" />
+      <menuitem id="revisionModeItem"
+                label="&revisionMode.label;&ellipsis;"
+                command="cmd-create-revision"/>
+      <menuitem id="resetRevisionModeItem"
+                hidden="true"
+                label="&resetRevisionMode.label;&ellipsis;"
+                command="cmd-reset-locking"/>
+      <menuseparator/>
+      <menuitem label="&findAllCharacters.label;"
+                command="cmd-find-characters"/>
+      <menuitem label="&scriptFormatCmd.label;&ellipsis;"
+                accesskey="&scriptFormatCmd.accesskey;"
+                command="cmd-script-format"/>
+      <menuitem id="menu-toggle-breakdown"
+                type="checkbox"
+                autocheck="false"
+                label="&showBreakdownInScript.label;"
+                command="cmd-toggle-breakdown"/>
+      <menuitem id="menu-toggle-sidebar"
+                type="checkbox"
+                autocheck="false"
+                label="&toggleSidebarCmd.label;"
+                accesskey="&toggleSidebarCmd.accesskey;"
+                command="cmd-toggle-sidebar"/>
+    </menupopup>
+  </box>
+
+  <popupset id="scriptpopupset">
+    <popup id="autotext-popup"
+           type="autotext"
+           hidden="true"/>
+
+    <popup id="editor-context"
+           onpopupshowing="goDoCommand('cmd-editor-context-menu')">
+      <menuitem id="spellCheckNoSuggestions"
+                label="(&spellCheckNoSuggestions.label;)"
+                disabled="true"/>
+      <menuseparator id="spellCheckAddSep"/>
+      <menuitem id="spellCheckAddToDictionary"
+                label="&spellCheckAddToDictionary.label;"
+                accesskey="&spellCheckAddToDictionary.accesskey;"
+                oncommand="InlineSpellChecker.addToDictionary(null,null);"/>  
+      <menuitem id="spellCheckIgnoreWord"
+                label="&spellCheckIgnoreWord.label;"
+                accesskey="&spellCheckIgnoreWord.accesskey;"
+                oncommand="InlineSpellChecker.ignoreWord(null, null)"/>  
+      <menuseparator id="spellCheckSuggestionsSeparator"/>
+      <menuitem id="editor-popup-cut"
+                label="&cutCmd.label;"
+                command="cmd_cut"/>
+      <menuitem id="editor-popup-copy"
+                label="&copyCmd.label;"
+                command="cmd_copy"/>
+      <menuitem id="editor-popup-paste"
+                label="&pasteCmd.label;"
+                command="cmd_paste"/>
+      <menuseparator/>
+      <menu label="&format.label;">
+        <menupopup id="context-format-popup"/>
+      </menu>
+      <menuitem label="&removeMarkupCmd.label;"
+                command="cmd-unmarkup"/>
+      <menuseparator id="editor-popup-recycle-sep"/>
+      <menuitem id="editor-popup-recycle"
+                class="menuitem-iconic"
+                label="&recycleCmd.label;"
+                image="chrome://celtx/skin/recycle-16.png"
+                oncommand="goDoCommand('cmd-recycle-selection')"/>
+      <menuseparator id="wordCountSep"
+                     hidden="true"/>
+      <menuitem id="wordCountItem"
+                label="."
+                disabled="true"
+                style="color: MenuText;"
+                hidden="true"/>
+    </popup>
+
+    <popup id="scratchpad-context"
+           onpopupshowing="goUpdateSelectEditMenuItems()">
+      <menuitem id="editor-popup-cut"
+                label="&cutCmd.label;"
+                command="cmd_cut"/>
+      <menuitem id="editor-popup-copy"
+                label="&copyCmd.label;"
+                command="cmd_copy"/>
+      <menuitem id="editor-popup-paste"
+                label="&pasteCmd.label;"
+                command="cmd_paste"/>
+    </popup>
+  </popupset>
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/document.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/importer.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/filecopier.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/editorcontroller.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptscene.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scenenumbers.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/breakdown.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/media.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/notes.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/sidebar.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptsanitizer.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scripteditor.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/titlepage.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptcast.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptcards.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptpdf.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptreport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/script.js"/>
+
+  <hbox id="scriptOnlyMessage"
+        align="center"
+        collapsed="true">
+    <label class="header"
+           style="text-align: center;"
+           flex="1"
+           value="This editor is in Script Only mode" />
+    <spacer width="40" />
+    <label class="text-link"
+           value="Learn More"
+           onclick="showScriptOnlyFAQ();" />
+    <spacer width="20" />
+    <toolbarbutton image="chrome://celtx/skin/closetab.png"
+                   oncommand="hideScriptOnlyMessage();" />
+  </hbox>
+  <deck id="cardsdeck"
+        flex="1">
+    <vbox id="scriptcard"
+          flex="1">
+  <toolbar id="script-toolbar"
+           class="editortoolbar"
+           mode="editing">
+    <toolbaritem align="center">
+      <menulist id="format-menulist"
+                command="cmd-set-format">
+        <menupopup id="format-menu-popup"/>
+      </menulist>
+    </toolbaritem>
+    <toolbarseparator/>
+    <toolbarbutton class="celtx-undo-button format-toolbar-button"
+                   tooltiptext="&undoCmd.label;"
+                   onclick="goDoCommand('cmd_undo')"/>
+    <toolbarbutton class="celtx-redo-button format-toolbar-button"
+                   tooltiptext="&redoCmd.label;"
+                   onclick="goDoCommand('cmd_redo')"/>
+    <toolbarseparator />
+    <toolbarbutton class="celtx-bold-button format-toolbar-button"
+                   tooltiptext='&bold.label;'
+                   onclick="goDoCommand('cmd-bold')"/>
+    <toolbarbutton class="celtx-italic-button format-toolbar-button"
+                   tooltiptext='&italic.label;'
+                   onclick="goDoCommand('cmd-italic')"/>
+    <toolbarbutton class="celtx-underline-button format-toolbar-button"
+                   tooltiptext='&underline.label;'
+                   onclick="goDoCommand('cmd-underline')"/>
+    <toolbarbutton class="celtx-uppercase-button format-toolbar-button"
+                   tooltiptext="&uppercaseCmd.label;"
+                   onclick="goDoCommand('cmd-uppercase')"/>
+    <toolbarbutton class="celtx-lowercase-button format-toolbar-button"
+                   tooltiptext="&lowercaseCmd.label;"
+                   onclick="goDoCommand('cmd-lowercase')"/>
+    <toolbarseparator />
+    <toolbarbutton class="celtx-cut-button format-toolbar-button"
+                   tooltiptext="&cutCmd.label;"
+                   onclick="goDoCommand('cmd_cut')"/>
+    <toolbarbutton class="celtx-copy-button format-toolbar-button"
+                   tooltiptext="&copyCmd.label;"
+                   onclick="goDoCommand('cmd_copy')"/>
+    <toolbarbutton class="celtx-paste-button format-toolbar-button"
+                   tooltiptext="&pasteCmd.label;"
+                   onclick="goDoCommand('cmd_paste')"/>
+    <toolbarseparator />
+    <toolbarbutton id="dual-dialog-button"
+                   class="celtx-dual-button format-toolbar-button"
+                   tooltiptext="&dualDialogCmd.tooltip;"
+                   command="cmd-toggle-dual-dialog"/>
+    <toolbarbutton class="celtx-spell-button format-toolbar-button"
+                   tooltiptext="&spellCheckCmd.label;"
+                   command="cmd-check-spelling" />
+    <toolbarbutton class="celtx-find-button format-toolbar-button"
+                   lockenabled="true"
+                   tooltiptext="&findCmd.label;"
+                   command="cmd-find" />
+    <toolbarbutton id="preventEditingButton"
+                   class="format-toolbar-button"
+                   lockenabled="true"
+                   tooltiptext="&preventEditing.label;"
+                   command="cmd-lock-script" />
+    <toolbarseparator lockenabled="true" />
+    <toolbaritem id="zoomitem"
+                 align="center"
+                 lockenabled="true">
+      <menulist id="zoom-menulist"
+                command="cmd-set-zoom">
+        <menupopup>
+          <menuitem label="100%" value="10"/>
+          <menuitem label="150%" value="12"/>
+          <menuitem label="200%" value="16"/>
+        </menupopup>
+      </menulist>
+    </toolbaritem>
+    <toolbarspacer flex="1"
+                   lockenabled="true"/>
+    <toolbarbutton id="celtx-sidebar-button"
+                   lockenabled="true"
+                   class="celtx-sidebar-button format-toolbar-button"
+                   tooltiptext="&toggleSidebarCmd.label;"
+                   command="cmd-toggle-sidebar"/>
+  </toolbar>
+  <toolbar id="revision-toolbar"
+           class="editortoolbar"
+           collapsed="true">
+    <toolbarbutton id="createRevisionButton"
+                   class="revision-toolbar-button"
+                   label="R"
+                   tooltiptext="&createNewRevision.tooltip;"
+                   command="cmd-create-revision" />
+    <toolbaritem align="center">
+      <textbox id="revlabel" size="12" type="timed" timeout="500"
+               oncommand="gScriptController.setRevisionLabel(this.value);" />
+    </toolbaritem>
+    <toolbaritem align="center">
+      <menulist id="revisionColourMenu"
+                command="cmd-set-revision-colour">
+        <menupopup>
+          <menuitem label="&colour.white;"
+                    value="0"
+                    selected="true" />
+          <menuitem label="&colour.blue;"
+                    value="1" />
+          <menuitem label="&colour.pink;"
+                    value="2" />
+          <menuitem label="&colour.yellow;"
+                    value="3" />
+          <menuitem label="&colour.green;"
+                    value="4" />
+          <menuitem label="&colour.gold;"
+                    value="5" />
+          <menuitem label="&colour.salmon;"
+                    value="6" />
+          <menuitem label="&colour.cherry;"
+                    value="7" />
+        </menupopup>
+      </menulist>
+    </toolbaritem>
+    <toolbaritem align="center">
+      <menulist id="sceneNumbersMenu"
+                command="cmd-show-scene-numbers">
+        <menupopup>
+          <menuitem label="&numbers.none;"
+                    value="none" />
+          <menuitem label="&numbers.leftNo;"
+                    value="left" />
+          <menuitem label="&numbers.rightNo;"
+                    value="right"
+                    selected="true" />
+          <menuitem label="&numbers.bothNos;"
+                    value="both" />
+          <menuseparator />
+          <menuitem label="&fixNumbers.label;&ellipsis;"
+                    command="cmd-edit-scene-numbers" />
+        </menupopup>
+      </menulist>
+    </toolbaritem>
+    <toolbaritem align="center">
+      <menulist id="revisionMarkMenu"
+                command="cmd-toggle-revision-marks">
+        <menupopup>
+          <menuitem id="showAllRevisionMarks"
+                    label="&revisionMarks.all;"
+                    value="all"
+                    selected="true" />
+          <menuitem id="showCurrentRevisionMarks"
+                    label="&revisionMarks.current;"
+                    value="current" />
+          <menuitem id="hideRevisionMarks"
+                    label="&revisionMarks.hide;"
+                    value="hide" />
+          <menuseparator />
+          <menuitem label="&revisionMarks.unmark.label;"
+                    command="cmd-clear-revision-marks" />
+          <menuitem label="&revisionMarks.mark.label;"
+                    command="cmd-apply-revision-marks" />
+        </menupopup>
+      </menulist>
+    </toolbaritem>
+    <toolbarseparator />
+    <toolbarbutton id="omitSceneButton"
+                   class="revision-toolbar-button"
+                   tooltiptext="&omitScene.label;"
+                   command="cmd-omit-scene" />
+  </toolbar>
+  <hbox flex="1">
+    <vbox flex="6">
+        <scripteditor id="editor"
+                      type="content"
+                      context="editor-context"
+                      flex="4"
+                      minheight="100"/>
+        <splitter id="scriptsplitter"
+                  hidden="true"
+                  collapse="after">
+          <grippy/>
+        </splitter>
+        <scripteditor id="scratchpad"
+                      type="content"
+                      context="scratchpad-context"
+                      flex="1"
+                      minheight="100"
+                      collapsed="true"/>
+    </vbox>
+
+    <splitter collapse="after">
+      <grippy/>
+    </splitter>
+
+    <!-- Breakdown Sidebar -->
+#include sidebar.inc
+
+  </hbox>
+  </vbox>
+
+    <vbox id="indexcard"
+          flex="1">
+      <toolbar>
+        <toolbarbutton id="toggle-cardview-button"
+                       showing="front"
+                       label="&showScript.label;"
+                       command="cmd-cardview-toggle"/>
+        <toolbarbutton label="&addCardCmd.label;"
+                       command="cmd-create-card"/>
+        <toolbarbutton label="&deleteCardCmd.label;"
+                       command="cmd-delete-card"/>
+        <toolbarspacer flex="1"/>
+        <toolbaritem align="center">
+          <label value="&zoom.label;&colon;"/>
+          <menulist oncommand="gCardController.setZoom(this.selectedItem.value)">
+            <menupopup>
+              <menuitem label="100%"
+                        value="1.0"
+                        selected="true"/>
+              <menuitem label="75%"
+                        value="0.65"/>
+              <menuitem label="50%"
+                        value="0.5"/>
+            </menupopup>
+          </menulist>
+        </toolbaritem>
+      </toolbar>
+      <iframe id="cardview"
+              type="content"
+              flex="1"
+              src="about:blank"/>
+    </vbox>
+
+
+    <vbox id="titlecard"
+          flex="1">
+      <iframe id="titleframe"
+              flex="1"
+              type="content"
+              src="about:blank"/>
+    </vbox>
+
+
+    <vbox id="castcard"
+          flex="1">
+      <iframe id="castframe"
+              flex="1"
+              type="content"
+              src="about:blank"/>
+    </vbox>
+
+
+    <vbox id="reportcard"
+          class="celtxtoolbar"
+          flex="1">
+      <hbox id="reportheader"
+            pack="center"
+            align="center">
+        <label id="reporttitle"
+               flex="1"
+               style="font-size: 12pt; text-align: center;"/>
+      </hbox>
+
+      <separator class="groove"/>
+    
+      <hbox id="columnbox">
+        <vbox flex="1">
+        <label id="scenelabel"
+               value="&scene.label;"/>
+        <tree id="scene-listbox"
+              flex="1"
+              rows="6"
+              flags="dont-build-content"
+              seltype="multiple"
+              ref=""
+              hidecolumnpicker="true"
+              datasources="rdf:null"
+              onselect="if (gReportController._focused)
+                          goDoCommand('cmd-report-scene-changed')">
+          <treecols>
+            <!-- I haven't found a way to disable cycling the sort
+                 direction on the column header, so I'm hiding the
+                 header and replacing it with a label instead. -->
+            <treecol id="report-scene-title-col"
+                     hideheader="true"
+                     sortActive="true"
+                     sortDirection="ascending"
+                     sort="?sortord"
+                     flex="1"/>
+          </treecols>
+          <template>
+            <!-- XXX: Kludge -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <triple subject="?uri"
+                        predicate="&ns_cx;allItem"
+                        object="?scene"/>
+                <triple subject="?scene"
+                        predicate="&ns_cx;sortord"
+                        object="?sortord"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?scene">
+                    <treerow>
+                      <treecell label="&allUppercase.label;"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?scene"/>
+                <triple subject="?scene"
+                        predicate="&ns_cx;sortord"
+                        object="?sortord"/>
+                <triple subject="?scene"
+                        predicate="&ns_cx;ordinal"
+                        object="?ordinal"/>
+                <!-- Limit this to scenes only, no acts or shots -->
+                <triple subject="?scene"
+                        predicate="&ns_cx;sceneid"
+                        object="?sceneid"/>
+              </conditions>
+              <bindings>
+                <binding subject="?scene"
+                         predicate="&ns_dc;title"
+                         object="?title"/>
+              </bindings>
+              <action>
+                <treechildren>
+                  <treeitem uri="?scene">
+                    <treerow>
+                      <treecell label="?ordinal^. ?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+        </vbox>
+        <deck id="columndeck" flex="2">
+          <!-- Breakdown Columns -->
+          <hbox id="bdcolumns" flex="1">
+            <vbox flex="1">
+            <label value="&department.label;"/>
+            <tree id="dept-listbox"
+                  flex="1"
+                  flags="dont-build-content"
+                  rows="6"
+                  seltype="multiple"
+                  hidecolumnpicker="true"
+                  ref="chrome://celtx/content/schema.rdf#default-markup"
+                  datasources="chrome://celtx/content/schema.rdf"
+                  onselect="if (gReportController._focused)
+                              goDoCommand('cmd-report-dept-changed')">
+              <treecols>
+                <treecol id="report-dept-title-col"
+                         hideheader="true"
+                         sortActive="true"
+                         sortDirection="ascending"
+                         sort="?title"
+                         flex="1"/>
+              </treecols>
+              <treechildren/>
+              <template>
+                <!-- XXX: Kludge -->
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <triple subject="?uri"
+                            predicate="http://celtx.com/NS/v1/member"
+                            object="?markup"/>
+                    <triple subject="?markup"
+                        predicate="http://www.w3.org/2000/01/rdf-schema#label"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?markup">
+                        <treerow>
+                          <treecell label="&allUppercase.label;"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <member container="?uri"
+                            child="?markup"/>
+                    <triple subject="?markup"
+                        predicate="http://www.w3.org/2000/01/rdf-schema#label"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?markup">
+                        <treerow>
+                          <treecell label="?title"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+              </template>
+            </tree>
+            </vbox>
+            <vbox flex="1">
+            <label value="&item.label;"/>
+            <tree id="item-listbox"
+                  flex="1"
+                  rows="6"
+                  flags="dont-build-content"
+                  seltype="multiple"
+                  hidecolumnpicker="true"
+                  ref="http://celtx.com/selection/scenes"
+                  datasources="rdf:null"
+                  onselect="if (gReportController._focused)
+                              goDoCommand('cmd-report-item-changed')">
+              <treecols>
+                <treecol id="report-item-title-col"
+                         hideheader="true"
+                         flex="1"/>
+              </treecols>
+              <treechildren/>
+              <template>
+                <!-- XXX: Kludge -->
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <triple subject="?uri"
+                            predicate="http://celtx.com/NS/v1/member"
+                            object="?item"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?item">
+                        <treerow>
+                          <treecell label="&allUppercase.label;"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <member container="?uri"
+                            child="?scene"/>
+                    <triple subject="?scene"
+                            predicate="&ns_cx;members"
+                            object="?deptlist"/>
+                    <member container="?deptlist"
+                            child="?deptseq"/>
+                    <triple subject="?deptseq"
+                            predicate="&ns_cx;department"
+                            object="?dept"/>
+                    <triple subject="http://celtx.com/selection/departments"
+                            predicate="&ns_cx;member"
+                            object="?dept"/>
+                    <member container="?deptseq"
+                            child="?item"/>
+                    <triple subject="?item"
+                            predicate="&ns_dc;title"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?item">
+                        <treerow>
+                          <treecell label="?title"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+              </template>
+            </tree>
+            </vbox>
+          </hbox>
+          <!-- Dialog Columns -->
+          <vbox id="dialogcolumns" flex="1">
+            <label value="&character.label;"/>
+            <tree id="charlist"
+                  flex="1"
+                  rows="6"
+                  hidecolumnpicker="true"
+                  flags="dont-build-content"
+                  seltype="multiple"
+                  ref="http://celtx.com/NS/v1/Cast"
+                  datasources="rdf:null"
+                  onselect="if (gReportController._focused)
+                              goDoCommand('cmd-report-speaker-changed')">
+              <treecols>
+                <treecol hideheader="true"
+                         sortActive="true"
+                         sortDirection="ascending"
+                         sort="?title"
+                         flex="1"/>
+              </treecols>
+              <template>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <triple subject="?cast"
+                predicate="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                            object="?uri"/>
+                    <triple subject="?cast"
+                            predicate="http://purl.org/dc/elements/1.1/title"
+                            object="0ALL"/>
+                    <triple subject="?cast"
+                            predicate="http://purl.org/dc/elements/1.1/title"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?cast">
+                        <treerow>
+                          <treecell label="&allUppercase.label;"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <triple subject="?cast"
+                predicate="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                            object="?uri"/>
+                    <triple subject="?cast"
+                            predicate="http://purl.org/dc/elements/1.1/title"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?cast">
+                        <treerow>
+                          <treecell label="?title"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+              </template>
+            </tree>
+          </vbox>
+          <!-- Element Columns -->
+          <vbox id="elemcolumns" flex="1">
+            <label value="&element.label;"/>
+            <tree id="elemlist"
+                  flex="1"
+                  rows="6"
+                  hidecolumnpicker="true"
+                  seltype="multiple"
+                  ref="http://celtx.com/NS/v1/Formats"
+                  datasources="chrome://celtx/content/schema.rdf"
+                  onselect="if (gReportController._focused)
+                              goDoCommand('cmd-report-element-changed')">
+              <treecols>
+                <treecol hideheader="true"
+                         flex="1"/>
+              </treecols>
+              <template>
+                <!-- Disguise sceneheading as the ALL element -->
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <member container="?uri" child="?format"/>
+                    <triple subject="?format"
+                            predicate="http://celtx.com/NS/v1/element"
+                            object="sceneheading"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?format">
+                        <treerow>
+                          <treecell label="&allUppercase.label;"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <member container="?uri" child="?format"/>
+                    <triple subject="?format"
+                            predicate="&ns_dc;title"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <treechildren>
+                      <treeitem uri="?format">
+                        <treerow>
+                          <treecell label="?title"/>
+                        </treerow>
+                      </treeitem>
+                    </treechildren>
+                  </action>
+                </rule>
+              </template>
+            </tree>
+          </vbox>
+        </deck>
+      </hbox>
+      <toolbar>
+        <toolbarspacer flex="1"/>
+        <toolbaritem>
+          <checkbox id="media-checkbox"
+                    label="&displayMedia.label;"
+                    checked="false"
+                    oncommand="goDoCommand('cmd-report-toggle-media')"/>
+        </toolbaritem>
+      </toolbar>
+      <iframe id="reportframe"
+              type="content"
+              flex="1"
+              src="about:blank"
+              style="background-color: white;"/>
+    </vbox>
+
+
+    <vbox id="pdfcard"/>
+
+  </deck>
+  <spacer id="EditModeToolbarTop"/>
+  <hbox id="EditModeToolbar">
+    <tabs id="EditModeTabs"
+          class="tabs-bottom"
+          pack="start"
+          oncommand="viewTabSelected(event)">
+      <tab id="scripttab"
+           label="&script.label;"
+           value="scriptcard"
+           selected="true"/>
+      <tab id="typesettab"
+           label="&typeset.label;/PDF"
+           value="pdfcard"/>
+      <tab id="scratchtab"
+           label="&scratchpad.label;"
+           value="scratchcard"/>
+      <tab label="&indexCards.label;"
+           value="indexcard"/>
+      <tab label="&titlePage.label;"
+           value="titlecard"/>
+      <tab id="casttab"
+           label="&cast.label;"
+           value="castcard"
+           collapsed="true"/>
+      <tab label="&reports.label;"
+           value="reportcard"/>
+    </tabs>
+    <hbox flex="1"
+          pack="center"
+          align="center">
+      <label id="statusmsg"/>
+    </hbox>
+  </hbox>
+
+</window>
+

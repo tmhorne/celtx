@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings id="expanderBindings"
+    xmlns="http://www.mozilla.org/xbl"
+    xmlns:xbl="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <binding id="expander" display="xul:vbox">
+    <content>
+      <xul:hbox align="center">
+        <xul:button type="disclosure"
+                    class="expanderButton"
+                    anonid="disclosure"
+                    xbl:inherits="disabled"
+                    mousethrough="always"/>
+        <xul:label class="header"
+                   anonid="label" xbl:inherits="value=label,disabled"
+                   mousethrough="always"
+                   flex="1"/>
+      </xul:hbox>
+      <xul:vbox flex="1"
+                anonid="settings"
+                class="settingsContainer"
+                collapsed="true"
+                mousethrough="always"
+                xbl:inherits="align">
+        <children/>
+      </xul:vbox>
+    </content>
+    <implementation>
+      <constructor>
+      <![CDATA[
+        var settings = document.getAnonymousElementByAttribute(this,
+          "anonid", "settings");
+        var expander = document.getAnonymousElementByAttribute(this,
+          "anonid", "disclosure");
+        this.expanderButton = document.getAnonymousNodes(this)[0].firstChild;
+        this.expanderLabel = document.getAnonymousNodes(this)[0].lastChild;
+        var open = this.getAttribute("open") == "true";
+        settings.collapsed = !open;
+        expander.open = open;
+      ]]>
+      </constructor>
+      <property name="open">
+        <setter>
+          <![CDATA[
+            var settings = document.getAnonymousElementByAttribute(this,
+              "anonid", "settings");
+            var expander = document.getAnonymousElementByAttribute(this,
+              "anonid", "disclosure");
+            settings.collapsed = !val;
+            expander.open = val;
+            if (val)
+              this.setAttribute("open", "true");
+            else
+              this.setAttribute("open", "false");
+            return val;
+          ]]>
+        </setter>
+        <getter>
+          return this.getAttribute("open");
+        </getter>
+      </property>        
+      <method name="onCommand">
+        <parameter name="aEvent"/>
+        <body>
+        <![CDATA[
+          dump("--- onCommand: aEvent.type == " + aEvent.type + "\n");
+          dump("--- onCommand: aEvent.target == " + aEvent.target + "\n");
+          if (this.open == "true")
+            this.open = false;
+          else
+            this.open = true;
+          }
+        ]]>
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="command">
+        if (event.originalTarget == this.expanderButton)
+          this.onCommand(event);
+      </handler>
+      <handler event="click">
+        if (event.originalTarget == this.expanderLabel)
+          this.onCommand(event);
+      </handler>
+    </handlers>
+  </binding>
+          
+</bindings>
+

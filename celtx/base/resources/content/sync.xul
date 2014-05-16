@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&syncDialog.title;"
+        buttons="cancel"
+        onload="loaded();"
+        width="400"
+        height="300"
+        ondialogcancel="return canceled();">
+
+#include celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/sync.js"/>
+
+  <deck id="deck" flex="1">
+    <vbox flex="1">
+      <label id="current-message"/>
+      <progressmeter id="current-meter"
+                     mode="determined"
+                     value="0"/>
+      <label id="overall-message"/>
+      <progressmeter id="overall-meter"
+                     mode="determined"
+                     value="0"/>
+    </vbox>
+    <vbox flex="1">
+      <description id="err-msg"/>
+    </vbox>
+  </deck>
+
+</dialog>

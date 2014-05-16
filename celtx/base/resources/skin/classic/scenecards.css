@@ -1,0 +1,257 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  counter-reset: scenenum;
+}
+
+.scenecard {
+  font-size: 9pt;
+  font-family: monospace;
+  margin: 0.3em;
+  padding: 0.7em 0.7em 0.7em 0.7em;
+  width: 29em;
+  height: 15em;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  float: left;
+  cursor: move;
+}
+
+.scenecard[colour="grey"] {
+  background-color: #999999;
+}
+.scenecard[colour="blue"] {
+  background-color: #C8E6FF;
+}
+.scenecard[colour="green"] {
+  background-color: #CCFFCC;
+}
+.scenecard[colour="orange"] {
+  background-color: #FFD8B2;
+}
+.scenecard[colour="pink"] {
+  background-color: #FFCCFF;
+}
+.scenecard[colour="purple"] {
+  background-color: #E0B4FF;
+}
+.scenecard[colour="red"] {
+  background-color: #FFCCCC;
+}
+.scenecard[colour="yellow"] {
+  background-color: #FFFFCC;
+}
+
+.sceneheader {
+  /* max-height: 1.2em; */
+  max-width: 28em;
+  overflow: hidden;
+  font-family: monospace;
+  text-transform: uppercase;
+  float: left;
+}
+
+.sceneheader:before {
+  content: counter(scenenum) ".";
+  counter-increment: scenenum;
+}
+
+.scenescript, .scenedesc {
+  padding: 0px;
+  width: 29em;
+  overflow: hidden;
+  cursor: auto;
+}
+
+.scenedesc {
+  width: 28.8em;
+}
+
+.scenescript {
+  -moz-user-select: none;
+  cursor: move;
+}
+
+.scenescript p {
+  margin-top: 0em;
+}
+
+body[mode="desc"] .scenetitle {
+  display: none;
+}
+
+body[mode="script"] .scenealttitle {
+  display: none;
+}
+
+body[mode="desc"] .scenescript {
+  display: none;
+}
+
+body[mode="script"] .scenedesc {
+  display: none;
+}
+
+input {
+  font-family: monospace;
+  width: 22em;
+  padding-left: 0.2em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+textarea {
+  font-size: 10pt;
+  border: none !important;
+  margin: 0px !important;
+  padding: 0.2em;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pushpin {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: -1px;
+  cursor: pointer;
+}
+
+.tagname {
+  float: right;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+#dragcard {
+  font-size: 9pt;
+  display: none;
+  width: 29em;
+  height: 15.2em;
+  border: 1px dotted black;
+  background-color: transparent;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#dragcard[dragging="true"] {
+  display: block;
+}
+
+@media screen {
+  body {
+    background-color: silver;
+  }
+  .scenecard {
+    background-image: url(chrome://celtx/skin/cardbkgnd.png);
+    background-repeat: repeat-x;
+    background-color: #F0F0F0;
+    height: 15.2em;
+  }
+  .scenecard[selected="true"] {
+    outline: 1px solid blue;
+  }
+  #dropindicator {
+    font-size: 9pt;
+    height: 15.2em;
+    width: 1px;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #dropindicator[visible="true"] {
+    display: block;
+    border-right: 2px solid blue;
+  }
+  .scenescript {
+    border: 1px solid transparent;
+    height: 12.2em;
+  }
+  .scenedesc {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    height: 12.2em;
+  }
+  input {
+    font-size: 10pt;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+}
+
+@media print {
+  body {
+    margin: 0in 0in 0in 1.2in;
+  }
+  .scenecard {
+    font-size: 12pt;
+    float: left;
+    width: 4.6in;
+    height: 2.6in;
+    overflow: hidden;
+    margin: 0in;
+    padding: 0.2in;
+    /*
+    border: 0.01em solid black;
+    */
+    border: 0px;
+  }
+  .scenecard[pagestart="true"] {
+    margin-top: 0.5in;
+  }
+  * + .scenecard[pagestart="true"] {
+    page-break-before: always;
+  }
+  .scenedesc, .scenescript {
+    height: 11.4em;
+    margin-bottom: 0.4em;
+  }
+  textarea, input {
+    font-size: 12pt;
+    background-color: inherit;
+    border: none;
+  }
+  .pushpin {
+    display: none;
+  }
+  #dragcard {
+    display: none;
+  }
+  #dropindicator {
+    display: none;
+  }
+}

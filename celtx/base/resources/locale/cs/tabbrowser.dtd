@@ -1,0 +1,19 @@
+<!ENTITY untitledTab "(Bez názvu)">
+<!ENTITY newTab.label "Nový panel">
+<!ENTITY newTab.accesskey "N">
+<!ENTITY closeTab.label "Zavřít panel">
+<!ENTITY closeTab.accesskey "Z">
+<!ENTITY closeOtherTabs.accesskey "s">
+<!ENTITY closeOtherTabs.label "Zavřít ostatní panely">
+<!ENTITY reloadAllTabs.label "Obnovit všechny panely">
+<!ENTITY reloadAllTabs.accesskey "b">
+<!ENTITY reloadTab.label "Obnovit panel">
+<!ENTITY reloadTab.accesskey "O">
+<!ENTITY listAllTabs.label "Seznam všech panelů">
+<!ENTITY bookmarkAllTabs.label "Přidat všechny panely do záložek…">
+<!ENTITY bookmarkAllTabs.accesskey "v">
+<!ENTITY bookmarkThisTab.label "Přidat tento panel do záložek…">
+<!ENTITY bookmarkThisTab.accesskey "P">
+<!ENTITY undoCloseTab.label "Otevřít zavřený panel">
+<!ENTITY undoCloseTab.accesskey "t">
+

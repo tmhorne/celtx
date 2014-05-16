@@ -1,0 +1,57 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(4e81bbb0-70be-4db4-a530-7201bf48c957)]
+interface nsISceneNumberService : nsISupports
+{
+  boolean numbersAreSeamless(
+    [array, size_is(aLeftNumberLength)] in unsigned long aLeftNumber,
+    in PRUint32 aLeftNumberLength,
+    [array, size_is(aRightNumberLength)] in unsigned long aRightNumber,
+    in PRUint32 aRightNumberLength);
+
+  [noscript] void numberBetweenNumbers (
+    [array, size_is(aLeftNumberLength)] in unsigned long aLeftNumber,
+    in unsigned long aLeftNumberLength,
+    [array, size_is(aRightNumberLength)] in unsigned long aRightNumber,
+    in unsigned long aRightNumberLength,
+    [array, size_is(ioNumberLength)] in unsigned long outNumber,
+    inout unsigned long ioNumberLength,
+    out boolean outPropagateChanges);
+
+  void getNumberBetweenNumbers (
+    [array, size_is(aLeftNumberLength)] in unsigned long aLeftNumber,
+    in unsigned long aLeftNumberLength,
+    [array, size_is(aRightNumberLength)] in unsigned long aRightNumber,
+    in unsigned long aRightNumberLength,
+    [array, size_is(ioNumberLength)] inout unsigned long ioNumber,
+    inout unsigned long ioNumberLength,
+    out boolean outPropagateChanges);
+};
+
+%{C++
+#define DEFAULT_MAX_SCENE_DEPTH 8
+%}

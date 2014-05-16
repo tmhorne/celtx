@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/celtx.css" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="download-project-dialog" 
+        title="&getProjDialog.title;"
+        buttons="accept,cancel"
+        pack="right" 
+        ondialogaccept="accepted()"
+        ondialogcancel="canceled()"
+        onload="loaded()">
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/getproj.js"/>
+
+  <stringbundleset>
+    <stringbundle id="celtx-bundle"
+                  src="chrome://celtx/locale/celtx.properties"/>
+  </stringbundleset>
+
+  <vbox flex="1">
+
+    <description>&getProjDialog.caption;:</description>
+
+    <!-- TODO: maybe set ref dynamically, too -->
+    <tree id="projects-tree" flex="1" seltype="single"
+          datasources="rdf:null"
+          ref="http://celtx.com/project"
+          flags="dont-build-content"
+          onselect="selected()">
+      <treecols>
+        <treecol id="title"    label="&name.label;"     flex="2"
+                 persist="width ordinal hidden sortActive sortDirection"
+                 sort="?title" class="sortDirectionIndicator" />
+        <splitter class="tree-splitter"/>
+        <treecol id="created"  label="&createdCol.label;"  flex="1"
+                 persist="width ordinal hidden sortActive sortDirection"
+                 sort="?created" class="sortDirectionIndicator" hidden="true" />
+        <splitter class="tree-splitter"/>
+        <treecol id="modified" label="&modifiedCol.label;" flex="1"
+                 persist="width ordinal hidden sortActive sortDirection"
+                 sort="?modified" class="sortDirectionIndicator" />
+        <splitter class="tree-splitter"/>
+        <treecol id="creator"  label="&creatorCol.label;"  flex="1"
+                 persist="width ordinal hidden sortActive sortDirection"
+                 sort="?creator" class="sortDirectionIndicator" />
+        <splitter class="tree-splitter"/>
+        <treecol id="mode" label="&access.label;" flex="1"
+                 persist="width ordinal hidden sortActive sortDirection"
+                 sort="?mode" class="sortDirectionIndicator" />
+      </treecols>
+
+      <template>
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <member container="?uri" child="?proj"/>
+            <triple subject="?proj"
+                    predicate="http://purl.org/dc/elements/1.1/title"
+                    object="?title"/>
+            <triple subject="?proj"
+                    predicate="http://purl.org/dc/elements/1.1/created"
+                    object="?created"/>
+            <triple subject="?proj"
+                    predicate="http://purl.org/dc/elements/1.1/modified"
+                    object="?modified"/>
+            <triple subject="?proj"
+                    predicate="http://purl.org/dc/elements/1.1/creator"
+                    object="?creator"/>
+            <triple subject="?proj"
+                    predicate="http://celtx.com/NS/v1/publishMode"
+                    object="?mode"/>
+          </conditions>
+          <action>
+            <treechildren>
+              <treeitem uri="?proj">
+                <treerow>
+                  <treecell label="?title"/>
+                  <treecell label="?created"/>
+                  <treecell label="?modified"/>
+                  <treecell label="?creator"/>
+                  <treecell label="?mode"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+      </template>
+
+    </tree>
+
+  </vbox>
+
+</dialog>

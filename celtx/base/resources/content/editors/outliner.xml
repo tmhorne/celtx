@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          id="outlinerbindings">
+
+  <!-- Outline Editor -->
+  <binding id="outliner">
+    <content>
+      <xul:editor anonid="editor"
+                  editortype="html"
+                  xbl:inherits="type,context"
+                  style="background-color: white;"
+                  flex="1"/>
+    </content>
+
+    <implementation>
+      <property name="editorElement" readonly="true">
+        <getter>
+          return document.getAnonymousNodes(this)[0];
+        </getter>
+      </property>
+      <property name="editor" readonly="true">
+        <getter>
+          return this.editorElement.getHTMLEditor(
+            this.editorElement.contentWindow);
+        </getter>
+      </property>
+      <property name="contentDocument" readonly="true">
+        <getter>
+          return this.editorElement.contentDocument;
+        </getter>
+      </property>
+      <property name="contentWindow" readonly="true">
+        <getter>
+          return this.editorElement.contentWindow;
+        </getter>
+      </property>
+      <property name="selection" readonly="true">
+        <getter>
+          return this.editor.selection;
+        </getter>
+      </property>
+
+
+      <property name="wordCount" readonly="true">
+        <getter>
+          var pted = this.editor.QueryInterface(
+            Components.interfaces.nsIPlaintextEditor);
+          return pted.getWordCount();
+        </getter>
+      </property>
+
+
+      <property name="modificationCount" readonly="true">
+        <getter>
+          return this.editor.getModificationCount();
+        </getter>
+      </property>
+
+
+      <method name="incrementModificationCount">
+        <parameter name="val"/>
+        <body>
+          this.editor.incrementModificationCount(val);
+        </body>
+      </method>
+
+
+      <method name="resetModificationCount">
+        <body>
+          this.editor.resetModificationCount();
+        </body>
+      </method>
+
+      <method name="load">
+        <parameter name="url"/>
+        <body>
+          <![CDATA[
+          var e = this.editorElement;
+          var observer = {
+            editor: this,
+            observe: function (subject, topic, data) {
+              var eventName = null;
+              switch (topic) {
+                case "obs_documentCreated":
+                  eventName = "scriptload";
+                  break;
+                case "cmd_bold":
+                  eventName = "formatchanged";
+                  break;
+                default:
+                  return;
+              }
+              var event = document.createEvent("HTMLEvents");
+              event.initEvent(eventName, true, false);
+              this.editor.dispatchEvent(event);
+            }
+          };
+          var willLoadEvent = document.createEvent("HTMLEvents");
+          willLoadEvent.initEvent("scriptwillload", true, false);
+          this.dispatchEvent(willLoadEvent);
+          e.commandManager.addCommandObserver(observer,
+            "obs_documentCreated");
+          e.commandManager.addCommandObserver(observer, "cmd_bold");
+          e.setAttribute("src", url);
+          ]]>
+        </body>
+      </method>
+
+      <method name="debugDump">
+        <body>
+          try {
+            var str = this.editor.outputToString("text/html", 2);
+            dump("\n==================================================\n" +
+                 str +
+                 "\n==================================================\n");
+          } catch (ex) { dump("dump: " + ex + "\n"); }
+        </body>
+      </method>
+
+      <method name="cacheFontSetting">
+        <body>
+        <![CDATA[
+          /*
+           * Font settings for a collapsed selection on a blank line are
+           * frequently discarded. This helps us keep them around.
+           */
+          var kDefaultFontName = "Times"; // Keep synced with outliner.js
+          var font = new Object();
+          font.explicit = false;
+          font.mixed = false;
+          font.invalidated = false;
+          this.cachedFont = font;
+
+          var mixed = { value: false };
+          // Font face
+          font.face = this.editor.getFontFaceState(mixed);
+          font.mixed = mixed.value;
+          if (font.face) {
+            font.explicit = true;
+            return;
+          }
+
+          // Extract the computed CSS style
+          var anchor = this.selection.anchorNode;
+          while (anchor && anchor.nodeType != Node.ELEMENT_NODE)
+            anchor = anchor.parentNode;
+          // Shouldn't ever happen, but what the heck
+          if (! anchor)
+            anchor = this.contentDocument.body;
+          var fontface = anchor.style.getPropertyValue("font-family");
+          font.face = fontface || kDefaultFontName;
+          font.explicit = false;
+        ]]>
+        </body>
+      </method>
+
+      <method name="restoreFontIfNeeded">
+        <body>
+        <![CDATA[
+          var font = this.cachedFont;
+          /*
+           * Don't shortcut on an explicitly specified font. If the cursor
+           * is on a blank line (i.e., in an empty text node), you choose a
+           * font, and then select bullet list, you'll be back to the default
+           * font instead.
+           */
+          if (font.invalidated || font.mixed)
+            return;
+          var fontFace = this.editor.getFontFaceState({});
+          if (font.face == fontFace)
+            return;
+          var fontAtom = getAtom("font");
+          this.editor.setInlineProperty(fontAtom, "face", font.face);
+        ]]>
+        </body>
+      </method>
+
+      <method name="cursorToElement">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+        try {
+          var element = this.contentDocument.getElementById(id);
+          if (! element) {
+            dump("*** cursorToElement: ID not found (" + id + ")\n");
+            return;
+          }
+
+          var sel = this.editor.selection;
+          sel.removeAllRanges();
+          var rng = this.contentDocument.createRange();
+          rng.selectNodeContents(element);
+          rng.collapse(true);
+          sel.addRange(rng);
+
+          // Ensure scene is scrolled to top of window
+          this.editorElement.contentWindow.scrollTo(0, element.offsetTop);
+        }
+        catch (ex) {
+          dump("cursorToScene: " + ex + "\n");
+        }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="markup">
+        <parameter name="type"/>
+        <parameter name="ref"/>
+        <body>
+        <![CDATA[
+          if (this.selection.isCollapsed)
+            return;
+
+          var editor = this.editor;
+          editor.beginTransaction();
+          try {
+            // We need to preserve all the notes/media in between, because
+            // they lose their class attributes (and get a ref attribute)
+            // as a result of this
+            var notes = new Array();
+            var media = new Array();
+            for (var i = 0; i < this.selection.rangeCount; ++i) {
+              var range = this.selection.getRangeAt(i);
+              var start = range.startContainer;
+              if (start.hasChildNodes() &&
+                  range.startOffset < start.childNodes.length)
+                start = start.childNodes[range.startOffset];
+              var iter = Components.classes["@celtx.com/dom/iterator;1"]
+                .createInstance(Components.interfaces.celtxINodeIterator);
+              iter.init(start, range);
+              var node = null;
+              while ((node = iter.nextNode()) != null) {
+                if (node.nodeName.toLowerCase() == "span") {
+                  if (node.getAttribute("class") == "note")
+                    notes.push(node);
+                  else if (node.getAttribute("class") == "media")
+                    media.push(node);
+                }
+              }
+            }
+            var span = getAtom("span");
+            editor.setInlineProperty(span, "class", type);
+            editor.setInlineProperty(span, "ref", ref);
+
+            for (var i = 0; i < notes.length; ++i) {
+              var span = notes[i];
+              editor.setAttribute(span, "class", "note");
+              editor.removeAttribute(span, "ref");
+            }
+            for (var i = 0; i < media.length; ++i) {
+              var span = media[i];
+              editor.setAttribute(span, "class", "media");
+              editor.removeAttribute(span, "ref");
+            }
+          }
+          catch (ex) {
+            dump("*** outliner.markup: " + ex + "\n");
+          }
+          editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="unmarkupSpan">
+        <parameter name="span"/>
+        <body>
+        <![CDATA[
+          var offset = offsetInParent(span);
+          while (span.hasChildNodes())
+            this.editor.insertNode(span.firstChild, span.parentNode, offset++);
+          this.editor.deleteNode(span);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="unmarkup">
+        <body>
+        <![CDATA[
+          this.editor.beginTransaction();
+          try {
+            var sel = this.selection;
+            var str = "//span[@ref]";
+            var xpath = new XPathEvaluator();
+            var result = xpath.evaluate(str, this.contentDocument.body,
+              null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+            var spans = [];
+            var span = null;
+            var foundStart = false;
+            while ((span = result.iterateNext()) != null) {
+              if (sel.containsNode(span, true)) {
+                foundStart = true;
+                spans.push(span);
+              }
+              else if (foundStart)
+                // Past the end of the selection
+                break;
+            }
+            for (var i = 0; i < spans.length; ++i)
+              this.unmarkupSpan(spans[i]);
+          }
+          catch (ex) {
+            dump("*** outliner.unmarkup: " + ex + "\n");
+          }
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="insertNote">
+        <parameter name="note"/>
+        <body>
+        <![CDATA[
+          try {
+            var noteElem = this.editor.createElementWithDefaults('span');
+            noteElem.className = 'note';
+            noteElem.setAttribute('text', note.text);
+            noteElem.setAttribute('id', note.id);
+            noteElem.setAttribute('date', note.date.toLocaleString());
+
+            this.editor.insertElementAtSelection(noteElem, false);
+          }
+          catch (ex) {
+            dump("*** insertNote: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="insertMedia">
+        <parameter name="media"/>
+        <body>
+        <![CDATA[
+          try {
+            var noteElem = this.editor.createElementWithDefaults('span');
+            noteElem.className = 'media';
+            noteElem.setAttribute('id', media.id);
+            noteElem.setAttribute('mediares', media.mediares);
+
+            this.editor.insertElementAtSelection(noteElem, false);
+          }
+          catch (ex) {
+            dump("*** insertMedia: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="removeNote">
+        <parameter name="note"/>
+        <body>
+        <![CDATA[
+          if (note)
+            this.editor.deleteNode(note);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="removeMedia">
+        <parameter name="media"/>
+        <body>
+        <![CDATA[
+          if (media)
+            this.editor.deleteNode(media);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="toggleHeading1">
+        <body>
+        <![CDATA[
+          var mixed = { value: false };
+          var format = this.editor.getParagraphState(mixed);
+          if (format != "h1" && ! mixed.value)
+            this.editor.setParagraphFormat("h1");
+          else
+            this.editor.setParagraphFormat("normal");
+        ]]>
+        </body>
+      </method>
+
+      <method name="toggleOrderedList">
+        <body>
+        <![CDATA[
+          this.cacheFontSetting();
+          var mixed = { value: false };
+          var ol = { value: false };
+          var ul = { value: false };
+          var dl = { value: false };
+          this.editor.getListState(mixed, ol, ul, dl);
+          if (ol.value && ! mixed.value)
+            this.editor.removeList("ol");
+          else
+            this.editor.makeOrChangeList("ol", false, "");
+          this.restoreFontIfNeeded();
+        ]]>
+        </body>
+      </method>
+
+      <method name="toggleUnorderedList">
+        <body>
+        <![CDATA[
+          this.cacheFontSetting();
+          var mixed = { value: false };
+          var ol = { value: false };
+          var ul = { value: false };
+          var dl = { value: false };
+          this.editor.getListState(mixed, ol, ul, dl);
+          if (ul.value && ! mixed.value)
+            this.editor.removeList("ul");
+          else
+            this.editor.makeOrChangeList("ul", false, "");
+          this.restoreFontIfNeeded();
+        ]]>
+        </body>
+      </method>
+
+      <method name="increaseIndentLevel">
+        <body>
+          <![CDATA[
+          this.cacheFontSetting();
+          this.editor.indent("indent");
+          this.restoreFontIfNeeded();
+          ]]>
+        </body>
+      </method>
+
+      <method name="decreaseIndentLevel">
+        <body>
+          <![CDATA[
+          this.cacheFontSetting();
+          this.editor.indent("outdent");
+          this.restoreFontIfNeeded();
+          ]]>
+        </body>
+      </method>
+
+      <method name="setAlignment">
+        <parameter name="alignment"/>
+        <body>
+          this.cacheFontSetting();
+          this.editor.align(alignment);
+          this.restoreFontIfNeeded();
+        </body>
+      </method>
+
+      <method name="setColour">
+        <parameter name="colour"/>
+        <body>
+        <![CDATA[
+          this.editor.setCSSInlineProperty(getAtom("font"), "color", colour);
+        ]]>
+        </body>
+      </method>
+
+      <method name="toggleStyle">
+        <parameter name="style"/>
+        <body>
+        <![CDATA[
+          // Adapted from ComposerCommands.js
+          try {
+            var cmdParams = Components.classes[
+              "@mozilla.org/embedcomp/command-params;1"]
+              .createInstance(Components.interfaces.nsICommandParams);
+            var dispatcher = document.commandDispatcher;
+            var cmd = 'cmd_' + style;
+            var ctl = dispatcher.getControllerForCommand(cmd);
+            if (ctl && ctl.isCommandEnabled(cmd)) {
+              if (ctl instanceof Components.interfaces.nsICommandController) {
+                ctl.doCommandWithParams(cmd, cmdParams);
+                if (cmdParams)
+                  ctl.getCommandStateWithParams(cmd, cmdParams);
+              }
+              else
+                ctl.doCommand(cmd);
+            }
+            else {
+              if (ctl)
+                dump("*** toggleStyle: " + cmd + " not enabled\n");
+              else
+                dump("*** toggleStyle: No controller for " + cmd + "\n");
+            }
+          }
+          catch (ex) {
+            dump("*** toggleStyle: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Keep these methods synchronised with the bindings.xml editor -->
+      <method name="setSelectionCase">
+        <parameter name="selection"/>
+        <parameter name="toUpper"/>
+        <body>
+        <![CDATA[
+          var ed = this.editor;
+          var editorsel = ed.selection;
+          if (editorsel.isCollapsed)
+            return;
+
+          if (editorsel.rangeCount != 1)
+            return;
+
+          var doc = this.contentDocument;
+          var range = editorsel.getRangeAt(0);
+          var startContainer = range.startContainer;
+          var startOffset = range.startOffset;
+          var endContainer = range.endContainer;
+          var endOffset = range.endOffset;
+          var start = startContainer;
+          if (start.hasChildNodes() && range.startOffset >= 0 &&
+              range.startOffset < start.childNodes.length)
+            start = start.childNodes[range.startOffset];
+          var iter = Components.classes["@celtx.com/dom/iterator;1"]
+            .createInstance(Components.interfaces.celtxINodeIterator);
+          iter.init(start, range);
+          var node;
+          var texted = this.editor.QueryInterface(
+            Components.interfaces.nsIPlaintextEditor);
+
+          this.editor.beginTransaction();
+          try {
+            while ((node = iter.nextNode()) != null) {
+              if (node.nodeType != Node.TEXT_NODE)
+                continue;
+              var str = node.nodeValue.replace(/\s+/g, " ");
+              var strStartOffset = 0;
+              var strEndOffset = str.length;
+
+              var adjustStart = false;
+              var adjustEnd = false;
+
+              if (node == range.startContainer) {
+                adjustStart = true;
+                strStartOffset = range.startOffset;
+              }
+              if (node == range.endContainer) {
+                adjustEnd = true;
+                strEndOffset = range.endOffset;
+              }
+
+              var head = str.substring(0, strStartOffset);
+              var mid = str.substring(strStartOffset, strEndOffset);
+              var tail = str.substring(strEndOffset, str.length);
+              if (toUpper)
+                str = head + mid.toLocaleUpperCase() + tail;
+              else
+                str = head + mid.toLocaleLowerCase() + tail;
+
+              var textrange = doc.createRange();
+              textrange.setStart(node, strStartOffset);
+              textrange.setEnd(node, strEndOffset);
+              editorsel.removeAllRanges();
+              editorsel.addRange(textrange);
+              if (toUpper)
+                texted.insertText(mid.toLocaleUpperCase());
+              else
+                texted.insertText(mid.toLocaleLowerCase());
+            }
+
+            editorsel.removeAllRanges();
+            range = doc.createRange();
+            range.setStart(startContainer, startOffset);
+            range.setEnd(endContainer, endOffset);
+            editorsel.addRange(range);
+          }
+          catch (ex) {
+            dump("*** setSelectionCase: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="setSelectionToLowerCase">
+        <body>
+          this.setSelectionCase(this.editor.selection, false);
+        </body>
+      </method>
+
+
+      <method name="setSelectionToUpperCase">
+        <body>
+          this.setSelectionCase(this.editor.selection, true);
+        </body>
+      </method>
+
+
+      <method name="createChapter">
+        <body>
+        <![CDATA[
+          var editor = this.editor;
+          editor.beginTransaction();
+          try {
+            var texteditor = editor.QueryInterface(
+              Components.interfaces.nsIPlaintextEditor);
+            texteditor.insertLineBreak();
+            editor.setParagraphFormat("h1");
+          }
+          catch (ex) {
+            dump("*** createChapter: " + ex + "\n");
+          }
+          editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="createPageBreak">
+        <body>
+        <![CDATA[
+          var editor = this.editor;
+          editor.beginTransaction();
+          try {
+            var pagebreak = this.contentDocument.createElement("hr");
+            pagebreak.setAttribute("class", "hardbreak");
+            editor.insertElementAtSelection(pagebreak, true);
+          }
+          catch (ex) {
+            dump("*** createPageBreak: " + ex + "\n");
+          }
+          editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="createPageBreakAndChapter">
+        <body>
+        <![CDATA[
+          var editor = this.editor;
+          editor.beginTransaction();
+          try {
+            var pagebreak = this.contentDocument.createElement("hr");
+            pagebreak.setAttribute("class", "hardbreak");
+            editor.insertElementAtSelection(pagebreak, true);
+            editor.setParagraphFormat("h1");
+          }
+          catch (ex) {
+            dump("*** createPageBreakAndChapter: " + ex + "\n");
+          }
+          editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="debugDump">
+        <body>
+          try {
+            var str = this.editor.outputToString('text/html', 2);
+            dump("\n==================================================\n" +
+                 str +
+                 "\n==================================================\n");
+          } catch (ex) { dump("dump: " + ex + "\n"); }
+        </body>
+      </method>
+    </implementation>
+
+    <handlers>
+      <handler event="keypress" key="1" modifiers="accel">
+        this.toggleHeading1();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_TAB">
+        event.preventDefault();
+        this.increaseIndentLevel();
+      </handler>
+      <handler event="keypress" keycode="VK_TAB" modifiers="shift">
+        event.preventDefault();
+        this.decreaseIndentLevel();
+      </handler>
+      <handler event="keypress" keycode="VK_F3">
+        this.debugDump();
+      </handler>
+
+      <handler event="keypress" keycode="VK_ENTER" modifiers="accel">
+        event.preventDefault();
+        this.createChapter();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN" modifiers="accel">
+        event.preventDefault();
+        this.createChapter();
+      </handler>
+
+      <handler event="keypress" keycode="VK_ENTER" modifiers="shift">
+        event.preventDefault();
+        this.createPageBreak();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN" modifiers="shift">
+        event.preventDefault();
+        this.createPageBreak();
+      </handler>
+
+      <handler event="keypress" keycode="VK_ENTER" modifiers="accel,shift">
+        event.preventDefault();
+        this.createPageBreakAndChapter();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN" modifiers="accel,shift">
+        event.preventDefault();
+        this.createPageBreakAndChapter();
+      </handler>
+    </handlers>
+  </binding>
+
+</bindings>
+

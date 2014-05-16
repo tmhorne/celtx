@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+  <xsl:output method="html"
+              encoding="UTF-8"/>
+
+  <xsl:param name="cssstyle"/>
+
+  <xsl:template match="html">
+    <html>
+      <head>
+        <title><xsl:apply-templates select="head/title"/></title>
+        <style type="text/css">
+          <xsl:value-of select="$cssstyle"/>
+        </style>
+      </head>
+      <body>
+        <xsl:apply-templates select="body/p"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="p">
+    <p>
+      <xsl:for-each select="@*">
+        <xsl:copy/>
+      </xsl:for-each>
+      <xsl:apply-templates select="node()|text()"/>
+    </p>
+  </xsl:template>
+
+  <xsl:template match="span[@class='note' or @class='media']">
+  </xsl:template>
+
+  <xsl:template match="span[@ref]">
+    <xsl:apply-templates select="node()|text()"/>
+  </xsl:template>
+
+  <xsl:template match="span">
+    <span>
+      <xsl:for-each select="@*">
+        <xsl:copy/>
+      </xsl:for-each>
+      <xsl:apply-templates select="node()|text()"/>
+    </span>
+  </xsl:template>
+
+  <xsl:template match="br">
+    <xsl:copy/>
+  </xsl:template>
+
+</xsl:stylesheet>

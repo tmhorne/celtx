@@ -1,0 +1,382 @@
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* styles */
+
+#celtx:not([active="true"]) .tabeditor-strip {
+  background-color: #cfcfcf;;
+}
+
+#celtx:not([active="true"]) .tabeditor-tab {
+  color: #575757;
+}
+
+/*
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"] > .tab-image-middle,
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"] > .tab-closebutton,
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"] > .tab-close-button {
+  background-image: url("chrome://celtx/skin/tabeditor/tab-middle-inactive.png");
+}
+
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"] > .tab-image-left,
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"][chromedir="rtl"] > .tab-image-right {
+  background: url("chrome://celtx/skin/tabeditor/tab-left-inactive.png") no-repeat;
+}
+
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"] > .tab-image-right,
+#celtx:not([active="true"]) .tabeditor-tab[selected="true"][chromedir="rtl"] > .tab-image-left {
+  background: url("chrome://celtx/skin/tabeditor/tab-right-inactive.png") no-repeat;
+}
+*/
+
+.tab-icon-image {
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://global/skin/tree/item.png");
+}
+
+.tab-icon {
+  margin: 0 0 4px 0;
+  opacity: 0.6;
+}
+
+.tabeditor-tab:not([selected="true"]):hover .tab-icon,
+.tabeditor-tab[selected="true"] .tab-icon {
+  opacity: 1.0;
+}
+
+.tab-text {
+  font: message-box;
+  margin-top: 0 !important;
+}
+
+.tab-text,
+.tab-text-shadow {
+  font-weight: bold !important;
+}
+
+.tabeditor-tab[busy] > .tab-icon-image,
+.tabeditor-tab[busy] > .tab-image-middle > .tab-icon > .tab-icon-image {
+ list-style-image: url("chrome://global/skin/icons/loading_16.png") !important; 
+}
+
+.tabeditor-tab {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-tab") !important;
+  -moz-appearance: none;
+  color: #222;
+  -moz-box-pack: center;
+  padding: 0px;
+  border: none !important;
+  min-width: 1px !important;
+  text-align: center;
+  height: 27px;
+}
+
+.tabeditor-tab[selected="true"] {
+  -moz-user-focus: normal;
+}
+
+.tabeditor-tab[selected="true"]:focus > .tab-image-middle > .tab-text-stack > .tab-text {
+  outline: 2px solid #4F8EC9;
+  outline-offset: -2px;
+  -moz-outline-radius: 3px;
+}
+
+.tabeditor-tab[selected="true"],
+.tabeditor-tab:hover {
+  color: #000000;
+}
+
+.tab-image-left,
+.tab-image-right {
+  width: 8px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tabeditor-tab > .tab-image-right,
+.tabeditor-tab[chromedir="rtl"] > .tab-image-left {
+  background: url("chrome://celtx/skin/tabeditor/tab-right.png") no-repeat;
+}
+
+.tabeditor-tab:not([selected="true"]) > .tab-image-right,
+.tabeditor-tab:not([selected="true"])[chromedir="rtl"] > .tab-image-left {
+  background: url("chrome://celtx/skin/tabeditor/tab-right-bkgnd.png") no-repeat;
+}
+
+.tabeditor-tab > .tab-image-left,
+.tabeditor-tab[chromedir="rtl"] > .tab-image-right {
+  background: url("chrome://celtx/skin/tabeditor/tab-left.png") no-repeat;
+}
+
+.tabeditor-tab:not([selected="true"]) > .tab-image-left,
+.tabeditor-tab:not([selected="true"])[chromedir="rtl"] > .tab-image-right {
+  background: url("chrome://celtx/skin/tabeditor/tab-left-bkgnd.png") no-repeat;
+}
+
+.tabeditor-tab > .tab-image-middle,
+.tabeditor-tab > .tab-closebutton {
+  background: url("chrome://celtx/skin/tabeditor/tab-middle.png") repeat-x;
+  /*
+  background: url("chrome://celtx/skin/tabeditor/tab-middle-hover.png") repeat-x;
+  */
+  -moz-box-pack: center;
+}
+
+.tabeditor-tab:not([selected="true"]) > .tab-image-middle,
+.tabeditor-tab:not([selected="true"]) > .tab-close-button {
+  background: url("chrome://celtx/skin/tabeditor/tab-middle-bkgnd.png");
+}
+
+.tabeditor-tab:not([selected="true"]) > .tab-image-middle > .tab-icon > .tab-icon-image  {
+  list-style-image: url("chrome://global/skin/tree/item-grayscale.png");
+}
+
+.tabs-closebutton {
+  margin: 0;
+  list-style-image: url("chrome://global/skin/icons/closetab.png") !important;
+}
+
+.tabs-closebutton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/closetab-active.png") !important;
+  border: none !important;
+}
+
+.tabeditor-strip {
+  margin-top: -1px;
+  border-bottom: 1px solid #404040;
+  /*
+  background-color: #9B9B9B;
+  */
+  background-color: rgb(197,197,197);
+}
+
+.tabeditor-tabs {
+  border: none;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  /*
+  background: url("chrome://celtx/skin/tabeditor/tabbrowser-tabs-bkgnd.png") repeat-x;
+  */
+  height: 29px;
+  padding-top: 2px;
+}
+
+.tabs-left {
+  display: -moz-box;
+  width: 3px;
+}
+
+.tabeditor-tabs[overflow="true"] .tabs-left {
+  display: none;
+}
+
+tabeditor > tabbox > tabpanels {
+  -moz-appearance: none !important;
+}
+
+/**
+ * Tab Drag and Drop
+ */
+
+.tab-drop-indicator-bar {
+  height: 10px;
+  margin-top: -10px;
+  position: relative;
+  /* set -moz-margin-start to -1/2 indicator width: */
+  -moz-margin-start: -4px;
+}
+
+.tab-drop-indicator {
+  height: 33px;
+  width: 10px;
+  margin-bottom: -24px;
+  position: relative;
+  background: url('chrome://celtx/skin/tabeditor/tabDragIndicator.png') 50% 40% no-repeat;
+}
+
+/**
+ * In-tab close button
+ */
+
+.tab-close-button > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  margin-top: 1px;
+}
+
+.tab-close-button {
+  list-style-image: url("chrome://global/skin/icons/closetab.png") !important;
+  -moz-appearance: none;
+  border: none !important;
+  padding: 0 0 4px 0;
+  margin: 0;
+  background: inherit;
+  cursor: default;
+}
+
+.tab-close-button:hover,
+.tabeditor-tab[selected="true"] > .tab-close-button:hover {
+  list-style-image: url("chrome://global/skin/icons/closetab-hover.png");
+}
+
+.tab-close-button:hover:active,
+.tabeditor-tab[selected="true"] > .tab-close-button:hover:active {
+  list-style-image: url("chrome://global/skin/icons/closetab-active.png");
+}
+
+.tabeditor-tab > .tab-close-button {
+  background-image: url("chrome://celtx/skin/tabeditor/tab-middle.png");
+  background-repeat: repeat-x;
+}
+
+.tabeditor-tab[selected="true"] > .tab-close-button {
+  /* Make this button focusable so clicking on it will not focus the tab while
+     it's getting closed */
+  -moz-user-focus: normal;
+}
+
+.tabeditor-tab:not([selected="true"]) > .tab-close-button {
+  background-image: url("chrome://celtx/skin/tabeditor/tab-middle-bkgnd.png");
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up,
+.tabeditor-arrowscrollbox > .scrollbutton-down-stack > .scrollbutton-down[chromedir="rtl"] {
+  border: 0;
+  border-right: 2px solid;
+  -moz-border-right-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-start.png");
+  -moz-image-region: rect(0px, 7px, 11px, 0px);
+  padding: 0;
+  width: 16px;
+  margin: 0;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down-stack > .scrollbutton-down[chromedir="rtl"] {
+  -moz-border-end: none;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up:hover {
+  background-color: rgba(0,0,0,0.10);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up:hover:active {
+  background-color: rgba(0,0,0,0.20);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up[disabled="true"],
+.tabeditor-arrowscrollbox > .scrollbutton-down-stack > .scrollbutton-down[disabled="true"][chromedir="rtl"] {
+  -moz-image-region: rect(0px, 28px, 11px, 21px);
+  background-color: transparent !important; 
+}
+
+.tabeditor-arrowscrollbox .scrollbutton-down,
+.tabeditor-arrowscrollbox > .scrollbutton-up[chromedir="rtl"] {
+  border-left: 2px solid;
+  -moz-border-left-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-end.png");
+  -moz-image-region: rect(0px, 44px, 11px, 37px);
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0;
+  width: 16px;
+  margin: 0;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up[chromedir="rtl"] {
+  -moz-border-start: none;
+}
+
+.tabeditor-arrowscrollbox .scrollbutton-down:hover {
+  background-color: rgba(0,0,0,0.10);
+}
+
+.tabeditor-arrowscrollbox .scrollbutton-down:hover:active {
+  background-color: rgba(0,0,0,0.20);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down-stack > .scrollbutton-down[disabled="true"],
+.tabeditor-arrowscrollbox > .scrollbutton-up[disabled="true"][chromedir="rtl"] {
+  -moz-image-region: rect(0px, 23px, 11px, 16px);
+  background-color: transparent !important;
+}
+
+
+/**
+ * All Tabs Button
+ */
+
+.tabs-alltabs-box {
+  margin: 0;
+  width: 25px;
+}
+
+.tabs-alltabs-button {
+  list-style-image: url("chrome://celtx/skin/tabeditor/alltabs-box-bkgnd-icon.png");
+  -moz-border-start: 2px solid;
+  -moz-border-left-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
+  -moz-border-right-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.tabs-alltabs-button:hover {
+  background-color: rgba(0,0,0,0.10);
+}
+.tabs-alltabs-button:hover:active,
+.tabs-alltabs-button[open="true"] {
+  background-color: rgba(0,0,0,0.20);
+}
+
+.tabs-alltabs-button  > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.tabs-alltabs-button  > .toolbarbutton-text {
+  display: none;
+}
+
+.tabs-alltabs-button > .toolbarbutton-icon {
+  -moz-margin-end: 2px;
+}
+
+.tabs-alltabs-box-animate {
+  margin: 1px 0px 0px 0px;
+  width: 25px;
+  background-image: url("chrome://celtx/skin/tabeditor/alltabs-box-overflow-bkgnd-animate.png");
+  background-repeat: no-repeat;
+  opacity: 0.0;
+}
+
+/**
+ * All Tabs Menupopup 
+ */
+
+.alltabs-item > .menu-iconic-left > .menu-iconic-icon {
+  list-style-image: url("chrome://global/skin/tree/item.png");
+}
+
+.alltabs-item[selected="true"] {
+  font-weight: bold;
+}
+
+.alltabs-item[busy] > .menu-iconic-left > .menu-iconic-icon {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png") !important;
+}
+
+.tabs-closebutton {
+  padding-right: 4px;
+  list-style-image: url("chrome://global/skin/icons/closetab.png") !important;
+  border: none;
+  -moz-box-align: stretch;
+}
+
+.tabs-closebutton:hover > .toolbarbutton-icon {
+	background-image: none !important;
+}
+
+.tabs-closebutton:hover:active {
+	list-style-image: url("chrome://global/skin/icons/closetab-active.png") !important;
+}
+
+tabpanels.plain {
+	background-color: #fff !important;
+}

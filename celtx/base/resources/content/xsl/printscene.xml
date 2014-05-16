@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0">
+
+  <xsl:output method="html"
+              version="4.0"/>
+
+  <xsl:param name="production"></xsl:param>
+
+  <xsl:template match="/scene">
+    <html>
+      <head>
+        <title><xsl:value-of select="$production"/></title>
+        <style type="text/css">
+body {
+  font-family:georgia, helvetica, arial;
+  font-size: 14px;
+  background:white;
+}
+
+tr:first-child {
+  font-weight:bold;
+}
+
+table {
+  font-size:14px;
+  margin-bottom: 10px;
+}
+
+h2, h3 {
+  border-bottom: 2px solid black;
+}
+
+.tableDiv {
+  min-height: 120px;
+}
+
+td.category {
+  width:33%;
+}
+        </style>
+      </head>
+      <body>
+        <h2><xsl:value-of select="$production"/></h2>
+        <table width="100%">
+          <tr>
+            <td>Scene #</td>
+            <td>INT/EXT</td>
+            <td>Setting</td>
+            <td>DAY/NIGHT</td>
+          </tr>
+          <tr>
+            <td><xsl:value-of select="@ordinal"/></td>
+            <td><xsl:value-of select="@intext"/></td>
+            <td><xsl:value-of select="@title"/></td>
+            <td><xsl:value-of select="@daynight"/></td>
+          </tr>
+        </table>
+        <p>
+          <b>Set:</b><br />
+          <xsl:value-of select="@location"/>
+        </p>
+        <p>
+          <b>Scene Notes:</b><br />
+          <xsl:value-of select="@comments"/>
+        </p>
+        <h3>Categories</h3>
+        <xsl:apply-templates select="category[position() mod 3 = 1]"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="category">
+    <xsl:variable name="second"
+                  select="following-sibling::category[position() = 1]"/>
+    <xsl:variable name="third"
+                  select="following-sibling::category[position() = 2]"/>
+    <div class="tableDiv">
+      <table width="100%">
+        <tr>
+          <td class="category"><xsl:value-of select="@title"/></td>
+          <xsl:choose>
+            <xsl:when test="$second">
+              <td class="category"><xsl:value-of select="$second/@title"/></td>
+            </xsl:when>
+            <xsl:otherwise>
+              <td class="category"> </td>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
+            <xsl:when test="$third">
+              <td class="category"><xsl:value-of select="$third/@title"/></td>
+            </xsl:when>
+            <xsl:otherwise>
+              <td class="category"> </td>
+            </xsl:otherwise>
+          </xsl:choose>
+        </tr>
+        <tr>
+          <td class="category"><xsl:apply-templates select="item"/></td>
+          <xsl:choose>
+            <xsl:when test="$second">
+              <td class="category">
+                <xsl:apply-templates select="$second/item"/>
+              </td>
+            </xsl:when>
+            <xsl:otherwise>
+              <td class="category"> </td>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
+            <xsl:when test="$third">
+              <td class="category">
+                <xsl:apply-templates select="$third/item"/>
+              </td>
+            </xsl:when>
+            <xsl:otherwise>
+              <td class="category"> </td>
+            </xsl:otherwise>
+          </xsl:choose>
+        </tr>
+      </table>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="item">
+    <xsl:value-of select="@title"/>
+    <br/>
+  </xsl:template>
+
+</xsl:stylesheet>

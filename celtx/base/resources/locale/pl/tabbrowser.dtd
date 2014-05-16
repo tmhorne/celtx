@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(Bez nazwy)" >
+<!ENTITY newTab.label "Nowa karta" >
+<!ENTITY newTab.accesskey "N" >
+<!ENTITY closeTab.label "Zamknij kartę" >
+<!ENTITY closeTab.accesskey "a" >
+<!ENTITY closeOtherTabs.accesskey "i" >
+<!ENTITY closeOtherTabs.label "Zamknij inne karty" >
+<!ENTITY reloadAllTabs.label "Odśwież wszystkie karty" >
+<!ENTITY reloadAllTabs.accesskey "w" >
+<!ENTITY reloadTab.label "Odśwież kartę" >
+<!ENTITY reloadTab.accesskey "O" >
+<!ENTITY  listAllTabs.label      "Pokaż wszystkie karty">
+<!ENTITY  bookmarkAllTabs.label       "Dodaj zakładki do wszystkich kart…">
+<!ENTITY  bookmarkAllTabs.accesskey   "k">
+<!ENTITY  bookmarkThisTab.label        "Dodaj zakładkę do tej karty">
+<!ENTITY  bookmarkThisTab.accesskey    "z">
+<!ENTITY  undoCloseTab.label          "Przywróć zamkniętą kartę">
+<!ENTITY  undoCloseTab.accesskey      "P">

@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "Minimalizovať okno">
+<!ENTITY bringAllToFront.label "Preniesť všetko do popredia">
+<!ENTITY zoomWindow.label "Zväčšiť okno">
+<!ENTITY windowMenu.label "Okno">
+
+<!ENTITY helpMenu.label "Pomocník">
+<!ENTITY helpMenu.accesskey "P">
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label "Pomocník">
+<!ENTITY helpMenuWin.accesskey "P">
+<!ENTITY aboutCmd.label "O programe &brandFullName;">
+<!ENTITY aboutCmd.accesskey "m">
+<!ENTITY helpContents.label "Obsah Pomocníka">
+<!ENTITY helpContents.accesskey "O">
+<!ENTITY helpContentsMac.label "Pomocník programu &brandShortName;">
+<!ENTITY helpForIEUsers.label "Pre používateľov Internet Explorera">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+
+<!ENTITY helpReleaseNotes.accesskey "P">
+<!ENTITY helpReleaseNotes.label "Poznámky k vydaniu">
+<!ENTITY updateCmd.accesskey "a">
+<!ENTITY updateCmd.label "Kontrola aktualizácií…">
+
+<!ENTITY preferencesCmdMac.label        "Možnosti…">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Služby">
+
+<!ENTITY hideThisAppCmdMac.label        "Skryť &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Skryť ostatné">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Zobraziť všetko">

@@ -1,0 +1,984 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "E-posta">
+
+<!ENTITY export.label "Ver">
+<!ENTITY exportSketch.label "Skeci Ver">
+<!ENTITY chapter.label "Bölüm">
+<!ENTITY chapters.label "Bölümler">
+<!ENTITY chapter.toolbarlabel "Blm">
+<!ENTITY editor.label "Editör">
+<!ENTITY showContents.label "İçerikleri Göster">
+<!ENTITY exportCatalog.label "Katalogu Ver">
+<!ENTITY novel.desc "İndeks kartları ve açıklamalarla bir roman ekleyin.">
+<!ENTITY novel.label "Roman">
+<!ENTITY showBreakdownInScript.label "Senaryodaki Bozulmaları Göster">
+<!ENTITY showDialogNumbers.label "Diyalog Rakamlarını Göster">
+
+<!ENTITY exportSketch.label "Skeci Ver">
+<!ENTITY chapter.label "Bölüm">
+<!ENTITY chapters.label "Bölümler">
+<!ENTITY chapter.toolbarlabel "Blm">
+<!ENTITY editor.label "Editör">
+<!ENTITY showContents.label "İçerikleri Göster">
+<!ENTITY exportCatalog.label "Katalogu Ver">
+<!ENTITY novel.desc "İndeks kartları ve açıklamalarla bir roman ekleyin.">
+<!ENTITY novel.label "Roman">
+<!ENTITY showBreakdownInScript.label "Senaryodaki Bozulmaları Göster">
+<!ENTITY showDialogNumbers.label "Diyalog Rakamlarını Göster">
+
+<!ENTITY timer.settings.label "Ayarlar">
+<!ENTITY timer.autostart.label "Senaryo açıldığında oturumu başlat.">
+<!ENTITY timer.schedule.label "Takvim">
+<!ENTITY timer.useSchedule.label "Planlanan molaları kullan">
+<!ENTITY timer.workMinutes.label "Çalışma zamanı (dakika):">
+<!ENTITY timer.breakMinutes.label "Ara (dakika):">
+<!ENTITY timer.alertType.label "Molanın başlayacağı ve biteceğindeki alarmın türü">
+<!ENTITY timer.showDialog.label "İletişim kutusu göster">
+<!ENTITY timer.endSession.label "Sezonu Sonlandır">
+<!ENTITY timer.flashTimer.label "Zamanlayıcıyı Flaşla">
+<!ENTITY timer.resetSession.label "Sezonu Sıfırla">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Raporlar">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Oturum Başlangıç Zamanı:">
+<!ENTITY timer.totalWritingTime.label "Toplam Yazım Süresi:">
+<!ENTITY timer.totalBreakTime.label "Toplam Ara Süresi:">
+<!ENTITY timer.totalTime.label "Toplam Süre:">
+<!ENTITY timer.wordsWritten.label "Yazılan Sözcük">
+
+<!ENTITY timer.allSessions.label "Bütün Oturumlar">
+<!ENTITY timer.sessionDetail.label "Oturum Ayrıntıları">
+<!ENTITY timer.scriptSummary.label "Senaryo Özeti">
+<!ENTITY timer.writingGoals.label "Amaçlanan Yazım Görevleri">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Oturum Raporu">
+<!ENTITY timer.totalSessionTime.header "Toplam Oturum Süresi">
+<!ENTITY timer.totalSessionTime.label "Toplam oturum süresi">
+<!ENTITY timer.totalWordsWritten.header "Yazılan Sözcük Toplamı">
+<!ENTITY timer.totalWordsWritten.label "Yazılan sözcük toplamı">
+<!ENTITY timer.noSessionsToDisplay.label "Görüntülenebilecek oturum yok.">
+<!ENTITY timer.sessionNo.label "Oturum #">
+<!ENTITY timer.date.label "Tarih">
+
+<!ENTITY timer.tweetThis.label "Tweet'le!">
+<!ENTITY timer.startDate.label "Başlangıç tarihi">
+<!ENTITY timer.startTime.label "Başlangıç saati">
+<!ENTITY timer.endTime.label "Bitiş saati">
+<!ENTITY timer.breakTime.label "Ara saati">
+
+<!ENTITY timer.sessionStartWords.label "Oturum başındaki sözcük sayısı">
+<!ENTITY timer.sessionEndWords.label "Oturum sonundaki sözcük sayısı">
+<!ENTITY timer.newWords.header "Yeni Sözcükler">
+<!ENTITY timer.noNewWords.label "Sözcük sayısında artış yok.">
+<!ENTITY timer.newDialog.header "Yeni konuşma">
+<!ENTITY timer.noNewDialog.label "Konuşma sayısında artış yok.">
+<!ENTITY timer.newCharacters.header "Yeni karakterler">
+<!ENTITY timer.noNewCharacters.label "Yeni karakter eklenmedi.">
+<!ENTITY timer.newPages.header "Yeni Sayfalar">
+<!ENTITY timer.newScenes.header "Yeni Sahneler">
+<!ENTITY timer.newPanels.header "Yeni Paneller">
+<!ENTITY timer.shotWords.header "Çekim Sözcükleri">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Konuşma Sözcükleri">
+<!ENTITY timer.soundVoiceMusicWords.header "Ses/Konuşma/Müzik Sözcükleri">
+<!ENTITY timer.stageDirWords.header "Sahne Yönlendirme Sözcükleri">
+
+<!ENTITY timer.name.label "Ad">
+<!ENTITY timer.words.label "Sözcük">
+<!ENTITY timer.percentage.label "Yüzde">
+
+<!ENTITY timer.summaryReport.label "Özet Rapor">
+<!ENTITY timer.contributionsByAuthor.label "Yazar Katkıları">
+<!ENTITY timer.weekdaySessions.label "Haftanın Gününe Göre Oturumlar">
+<!ENTITY timer.weekdayWords.label "Haftanın Gününe Göre Sözcükler">
+<!ENTITY timer.numberOfSessions.label "Oturum sayısı">
+<!ENTITY timer.longest.label "En uzun">
+<!ENTITY timer.shortest.label "En kısa">
+<!ENTITY timer.averageDuration.label "Ortalama süre">
+<!ENTITY timer.mostWords.label "En çok sözcük sayısı">
+<!ENTITY timer.leastWords.label "En az sözcük sayısı">
+<!ENTITY timer.averageWords.label "Ortalama sözcük">
+<!ENTITY timer.wordCounts.header "Sözcük Sayımları">
+<!ENTITY timer.element.label "Öğe">
+<!ENTITY timer.totalWords.header "Toplam Sözcük">
+<!ENTITY timer.totalDialogWords.header "Toplam Konuşma Sözcüğü">
+<!ENTITY timer.character.label "Karakter">
+<!ENTITY timer.weekday.label "Gün">
+<!ENTITY timer.sessions.label "Oturum">
+<!ENTITY timer.pctOfTotal.label "Toplamda &#37;">
+<!ENTITY timer.author.label "Yazar">
+
+<!ENTITY timer.writingGoalReport.label "Amaçlanan Yazım Raporu">
+<!ENTITY timer.goalSession.header "Oturumda Amaçlanan">
+<!ENTITY timer.goalSession.label "Oturumda amaçlanan">
+<!ENTITY timer.goalDaily.header "Günlük Amaçlanan">
+<!ENTITY timer.goalDaily.label "Günlük amaçlanan">
+<!ENTITY timer.goalScript.header "Senaryoda Amaçlanan">
+<!ENTITY timer.goalScript.label "Senaryoda amaçlanan">
+<!ENTITY timer.wordGoal.label "Amaçlanan Sözcük Sayısı">
+
+<!ENTITY timer.message.label "İleti">
+<!ENTITY timer.tags.label "Etiketler">
+<!ENTITY timer.mostRecentSession.label "En güncel oturum">
+
+<!ENTITY timer.alertDialog.title "Oturum Zamanlayıcısı">
+<!ENTITY timer.timerMenu.tooltip "Seçenekler İçin Tıklayın">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Önalan Rengi">
+<!ENTITY fullscreen.backgroundColour.tooltip "Artalan Rengi">
+<!ENTITY fullscreen.fullscreen.tooltip "Tam Ekran">
+
+<!ENTITY bbc.options.label "BBC Seçenekleri">
+<!ENTITY bbc.showTitle.label "Gösterinin Başlığı">
+<!ENTITY bbc.sketchTitle.label "Skecin Başlığı">
+<!ENTITY editText.title "Metni Düzenle">
+<!ENTITY sketch.fillColour.tooltip "Renkle Doldur">
+<!ENTITY sketch.group.tooltip "Grup">
+<!ENTITY sketch.lower.tooltip "Aşağıya indir">
+<!ENTITY sketch.lowerToBottom.tooltip "En alta indir">
+<!ENTITY sketch.raise.tooltip "Yukarı çıkart">
+<!ENTITY sketch.raiseToTop.tooltip "En üste çıkart">
+<!ENTITY sketch.strokeColour.tooltip "Fırça Rengi">
+<!ENTITY sketch.ungroup.tooltip "Grubu Çöz">
+
+<!ENTITY custom.label "Kişiye Özel">
+<!ENTITY saveAsPreset.label "Ön Tanımlı Ayar Olarak Kaydet">
+<!ENTITY sceneLocking.title "Sahne Kilitleme">
+<!ENTITY sceneNumbering.label "Sahne Numaralandırma">
+<!ENTITY scenenumber.after.label "Sonra">
+<!ENTITY scenenumber.before.label "Önce">
+<!ENTITY scenenumber.example.label "Örnek">
+<!ENTITY scenenumber.letter.label "Mektup">
+<!ENTITY scenenumber.number.label "Numara">
+<!ENTITY scenenumber.position.label "Konu">
+<!ENTITY scenenumber.prefix.label "Ön ek">
+<!ENTITY scenenumbers.resetAll.label "Tüm sayıları sıfırla">
+<!ENTITY scenenumber.suffix.label "Son ek">
+<!ENTITY scenenumber.type.label "Tür">
+<!ENTITY style.label "Biçim">
+
+<!ENTITY project.film.label "Film">
+<!ENTITY project.av.label "Ses/Görüntü">
+<!ENTITY project.theatre.label "Tiyatro">
+<!ENTITY project.audioplay.label "Radyo Oyunu">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Görüntü Ekle">
+<!ENTITY addPaletteObjects.label "Sanat Paketi Edin">
+<!ENTITY addShot.label "Çekim Ekle">
+<!ENTITY bbcCueStyle.label "BBC Repliği">
+<!ENTITY bbcSceneStyle.label "BBC Sahnesi">
+<!ENTITY bdc.cameras "Kameralar">
+<!ENTITY chat.label "Söyleşi">
+<!ENTITY colour.blue "Mavi">
+<!ENTITY colour.cherry "Kiraz Rengi">
+<!ENTITY colour.gold "Altın Rengi">
+<!ENTITY colour.green "Yeşil">
+<!ENTITY colour.pink "Pembe">
+<!ENTITY colour.salmon "Somon Rengi">
+<!ENTITY colour.white "Beyaz">
+<!ENTITY colour.yellow "Sarı">
+<!ENTITY currentRevision.label "Güncel Değişiklik">
+<!ENTITY createNewRevision.tooltip "Yeni Değişiklik Yap">
+<!ENTITY default.label "Varsayılan">
+<!ENTITY enableSceneLocking.label "Sahneleri Kilitle">
+<!ENTITY fixNumbers.label "Onar">
+<!ENTITY furniture.label "Mobilya">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Flood ışık">
+<!ENTITY light.spot.label "Spot ışık">
+<!ENTITY linesBetweenScenes.label "Sahneler arası satırlar">
+<!ENTITY man.label "Adam">
+<!ENTITY numbers.bothNos "Her iki #s">
+<!ENTITY numbers.leftNo "Sol #">
+<!ENTITY numbers.none "Hiçbiri">
+<!ENTITY numbers.rightNo "Sağ #">
+<!ENTITY omitScene.label "Sahneyi Çıkar">
+<!ENTITY palette.label "Palet">
+<!ENTITY palettes.label "Paletler">
+<!ENTITY paletteTree.tooltip "Nesneleri çiziminize sürükleyin ve bırakın">
+<!ENTITY people.label "İnsanlar">
+<!ENTITY person.label "Kişi">
+<!ENTITY preventEditing.label "Metin Kilidi">
+<!ENTITY resetRevisionMode.label "Değişiklik Kipini Sıfırla">
+<!ENTITY revisionColour.desc "Senaryoda yapılan düzenlemeler için varsayılan değişiklik rengi olarak kullanılacaktır.">
+<!ENTITY revisionColour.label "Değişiklik Rengi">
+<!ENTITY revisionMarks.all "Bütün işaretler">
+<!ENTITY revisionMarks.current "Mevcut işaretler">
+<!ENTITY revisionMarks.hide "İşaretleri sakla">
+<!ENTITY revisionMarks.mark.label "İşaretle">
+<!ENTITY revisionMarks.unmark.label "İşareti kaldır">
+<!ENTITY revisionMode.label "Değişiklik Kipi">
+<!ENTITY revisionName.label "Değişiklik Adı">
+<!ENTITY revisionOptions.title "Tashih Seçenekleri">
+<!ENTITY shotSetup.label "Çizim">
+<!ENTITY shotSetup.desc "Projenize çizim ekleyin.">
+<!ENTITY showScriptHeader.label "Senaryo Başlığını Göster">
+<!ENTITY standard.label "Standart">
+<!ENTITY startNewRevision.label "Yeni bir değişikliğe başla">
+<!ENTITY storyboard.showImages.label "Görselleri Göster">
+<!ENTITY storyboard.showSetups.label "Çizimleri Göster">
+<!ENTITY storyboard.showBoth.label "Her İkisini de Göster">
+<!ENTITY woman.label "Kadın">
+
+<!ENTITY light.bank.label "Bank Işığı">
+<!ENTITY bathtub.label "Banyo Küveti">
+<!ENTITY boy.label "Erkek Çocuk">
+<!ENTITY car.label "Araba">
+<!ENTITY chair.label "Sandalye">
+<!ENTITY coffeetable.label "Kahve Masası">
+<!ENTITY couch.label "Kanepe">
+<!ENTITY crowd.label "Kalabalık">
+<!ENTITY endtable.label "Sehpa">
+<!ENTITY girl.label "Kız Çocuk">
+<!ENTITY group.label "Grup"> <!-- Group of people -->
+<!ENTITY house.label "Ev">
+<!ENTITY building.label "Bina"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pikap Kamyonet">
+<!ENTITY sink.label "Mutfak Lavabosu"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Sahne Işığı">
+<!ENTITY street.label "Cadde">
+<!ENTITY toilet.label "Tuvalet">
+<!ENTITY tree.label "Ağaç">
+<!ENTITY van.label "Minibüs">
+<!ENTITY videocamera.label "Video Kamera">
+
+<!ENTITY createTemplate.label "Şablon Oluştur">
+<!ENTITY fetchingList.label "Liste alınıyor">
+<!ENTITY getCeltxTools.label "Celtx Araçları Edinin">
+<!ENTITY myStudio.label "Benim Celtx">
+<!ENTITY openFromStudio.label "Celtx Aç">
+<!ENTITY owner.label "Sahibi">
+<!ENTITY personal.label "Kişisel">
+<!ENTITY saveCommentCheckbox.label "Celtx kaydederken yorum yapmamı iste">
+<!ENTITY saveToStudio.label "Celtx Kaydet">
+<!ENTITY savedBy.label "Kaydeden : ">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx Kimlik Denetlemesi">
+<!ENTITY studioAuthDialog.desc "Celtx Giriş">
+<!ENTITY studioProjects.label "Celtx Projeleri">
+<!ENTITY toolbox.label "Alet Çantası">
+
+<!ENTITY access.label "Erişim">
+<!ENTITY actorProfile.desc "Bir oyuncu için açıklama ekleyin.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Uyarla">
+<!ENTITY add.label "Ekle">
+<!ENTITY addCardCmd.label "Kart ekle">
+<!ENTITY addCmd.label "&add.label;">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Öğe Ayrıntıları">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Öğe Seçin">
+<!ENTITY addFolder.label "Klasör Ekle...">
+<!ENTITY addFolderCmd.label "Klasör Ekle">
+<!ENTITY addImages.label "Görüntü Ekle">
+<!ENTITY addItem.label "Öğe Ekle...">
+<!ENTITY addItemCmd.label "Öğe Ekle">
+<!ENTITY addNote.label "Not Ekle">
+<!ENTITY addSequenceCmd.toolbarlabel "Sıra ekle">
+<!ENTITY advanced.label "Gelişmiş">
+<!ENTITY alignCenter.label "Ortaya hizala">
+<!ENTITY alignJustified.label "İki yana hizala">
+<!ENTITY alignLeft.label "Sola hizala">
+<!ENTITY alignRight.label "Sağa Hizala">
+<!ENTITY allShootDays.label "Bütün Çekim Günleri">
+<!ENTITY allUppercase.label "HEPSİ">
+<!ENTITY american.label "Amerikan">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Bu özellikler sadece PDF dosyası oluşturulurken kullanılabilir.">
+<!ENTITY audioplay.desc "Projenize sesli oyun ekleyin.">
+<!ENTITY audioplay.label "Sesli oyun">
+<!ENTITY authDialog.description "Bu işlem Celtx Hesabınızı açmanızı gerektirir.">
+<!ENTITY authDialog.title "Celtx Belgeleme">
+<!ENTITY author.label "Yazan">
+<!ENTITY autoCharContinueds.label "Sayfa sonunda kesilen konuşmalar için kesmeleri göster:">
+<!ENTITY autoSaveProject.label "Projeyi otomatik kaydet">
+<!ENTITY autoparenthesize.label "'(' ile başlandığında parantezi kapat">
+<!ENTITY avScript.desc "Projenize sesli ve görüntülü senaryo ekleyin.">
+<!ENTITY avScript.label "S/G Senaryo">
+<!ENTITY basedOn.label "Alıntı">
+<!ENTITY bdc.actor        "Oyuncu">
+<!ENTITY bdc.addlabour "Ek iş gücü">
+<!ENTITY bdc.animals "Hayvan">
+<!ENTITY bdc.camera "Kamera">
+<!ENTITY bdc.cast "Karakter">
+<!ENTITY bdc.cgi "Bilgisayarda Üretilen Görüntü">
+<!ENTITY bdc.construction "İnşa">
+<!ENTITY bdc.crew         "Set Ekibi">
+<!ENTITY bdc.electrics "Elektrik">
+<!ENTITY bdc.equip "Özel donanım">
+<!ENTITY bdc.extras "Figüranlar">
+<!ENTITY bdc.greenery "Yeşillik">
+<!ENTITY bdc.hair "Saç">
+<!ENTITY bdc.handler "Hayvan Eğitmenleri">
+<!ENTITY bdc.lights "Işıklar">
+<!ENTITY bdc.livestock "Mal">
+<!ENTITY bdc.location "Mekan">
+<!ENTITY bdc.makeup "Makyaj">
+<!ENTITY bdc.mechfx "Mekanik Efektler">
+<!ENTITY bdc.misc "Diğer">
+<!ENTITY bdc.music "Müzik">
+<!ENTITY bdc.opticalfx "Görsel Efektler">
+<!ENTITY bdc.painting "Boyama">
+<!ENTITY bdc.prodnotes "Yapım Notları">
+<!ENTITY bdc.props "Araç/gereç">
+<!ENTITY bdc.security "Güvenlik">
+<!ENTITY bdc.set "Set">
+<!ENTITY bdc.setdressing "Dekor">
+<!ENTITY bdc.sound "Ses">
+<!ENTITY bdc.soundfx "Ses Efektleri">
+<!ENTITY bdc.specialfx "Özel Efektler">
+<!ENTITY bdc.storyboard "Storyboard">
+<!ENTITY bdc.stunts "Dublörler">
+<!ENTITY bdc.vehicles "Vasıtalar">
+<!ENTITY bdc.wardrobe "Kostüm">
+<!ENTITY bdc.weapons "Silahlar">
+<!ENTITY bold.commandkey "k">
+<!ENTITY bold.label "Kalın yazı">
+<!ENTITY bookmark.desc "Bağlantı ekleyin.">
+<!ENTITY bookmark.label "Bağlantı">
+<!ENTITY both.label "Solda ve Sağda">
+<!ENTITY bottomOfPage.label "Sayfa Sonunda">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Senaryo döküm bilgilerini ekle.">
+<!ENTITY breakdown.label    "Döküm">
+<!ENTITY breakdownReport.label "Döküm Raporu">
+<!ENTITY brokenSceneEventWarning.label "Bu olay artık var olmayan bir sahne ile eşleşmektedir.">
+<!ENTITY browseCmd.label "Gözat">
+<!ENTITY byline.label "Yazan">
+<!ENTITY calendar.desc "Projenize takvim ekleyin">
+<!ENTITY calendar.label "Takvim">
+<!ENTITY callSheet.label "Telefon Listesi">
+<!ENTITY cast.label "Roller">
+<!ENTITY castOfCharacters.label "Karakterler">
+<!ENTITY catalog.desc "Projenize prodüksiyon nesneleri katalogu ekleyin">
+<!ENTITY catalog.label "Katalog">
+<!ENTITY catalogAddItem.tooltip "Kataloga öğe ekle">
+<!ENTITY catalogDeleteItem.tooltip "Katalogdan öğe sil">
+<!ENTITY categories.label "Kategoriler">
+<!ENTITY category.label "Kategori">
+<!ENTITY celtxAccountCmd.accessKey "e">
+<!ENTITY celtxAccountCmd.label "&appName; Hesabı">
+<!ENTITY celtxError.title "Celtx Hatası">
+<!ENTITY celtxTagline.label "Prodüksiyon Öncesi İlk Tercihiniz">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Karakterlere ve ilişkilerine genel bir bakış.">
+<!ENTITY charOutline.label "Karakter Ana Hatları">
+<!ENTITY character.label "Karakter">
+<!ENTITY characterProfile.desc "Yeni bir karakter için açıklama ekleyin.">
+<!ENTITY characterProfile.existing "Aşağıdaki listede bulunan karakterlerden biri için de açıklama ekleyebilirsiniz.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "Karakter seçin">
+<!ENTITY characters.label "Karakterler">
+<!ENTITY clearCmd.label "Sil">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Çizgi roman için senaryo oluştur.">
+<!ENTITY comicBook.label "Çizgi Roman">
+<!ENTITY comment.label "Yorum">
+<!ENTITY completed.label "Tamamlandı">
+<!ENTITY contact.label "İletişim">
+<!ENTITY contactInformation.label "İletişim Bilgisi">
+<!ENTITY contactName.label "Erişim İsmi">
+<!ENTITY contacts.label "Bağlantılar">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Devam">
+<!ENTITY copyProject.title "Proje Kopyala">
+<!ENTITY copyProjectCmd.label "Proje Kopyala">
+<!ENTITY copyright.label "Telif Hakkı Sahibi">
+<!ENTITY create.label "Oluştur">
+<!ENTITY createAccount.label "Yeni Hesap">
+<!ENTITY createCatalogFromSelection.label "Seçimden katalog oluştur.">
+<!ENTITY createProject.label  "Yeni bir proje oluştur">
+<!ENTITY createProject.title "Proje Oluştur">
+<!ENTITY createdCol.label "Oluşturulma">
+<!ENTITY creatorCol.label "Oluşturan">
+<!ENTITY crew.desc "Ekip dokümanı ekle.">
+<!ENTITY crew.label "Ekip">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Tarih">
+<!ENTITY datePicker.label "Tarih seçici">
+<!ENTITY daynightHeader.label "GÜNDÜZ/GECE">
+<!ENTITY daynightWarning.label "Bu sahne başlığı geçerli bir GÜNDÜZ/GECE kelimesi ile bitmiyor.  Bu problemi çözmek için, betikteki sahne başlığını düzeltin veya Tercihlerdeki Betik sekmesinden GÜNDÜZ/GECE kelimelerini değiştirin.">
+<!ENTITY daynightWords.label "GÜNDÜZ/GECE kelimeleri">
+<!ENTITY dayoff.label "Tatil günü">
+<!ENTITY daysOff.label "Boş günler">
+<!ENTITY decreaseDelayCmd.tooltip "Gecikmeyi azalt.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Font Boyutunu Küçült">
+<!ENTITY decreaseIndentCmd.label "Satıra daha dışarıdan başla">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Varsayılan sahne uzunluğu">
+<!ENTITY delayLabel.tooltip "Resimler arası gecikme (saniye)">
+<!ENTITY deleteCardCmd.label "Kartı Sil">
+<!ENTITY deleteItem.label "Öğe Sil">
+<!ENTITY deleteItemCmd.label "Sil">
+<!ENTITY department.label "Departman">
+<!ENTITY description.label "Tanım">
+<!ENTITY details.label "Ayrıntılar">
+<!ENTITY dialog.label "Diyalog">
+<!ENTITY director.label "Yönetmen">
+<!ENTITY disabled.label "Etkisiz">
+<!ENTITY displayMedia.label "Medya dosyasını aç">
+<!ENTITY downloadProjectCmd.label "Proje İndir...">
+<!ENTITY downloadProjectCmd.toolbarlabel "İndir">
+<!ENTITY downloadingPDF.label "PDF'e dönüştürülüyor...">
+<!ENTITY dragToSchedule.tooltip "Takvime sürükle ve bırak.">
+<!ENTITY dualDialogCmd.label "İkili Konuşma">
+<!ENTITY dualDialogCmd.tooltip "İkili Konuşma">
+<!ENTITY duplicate.label "Çift">
+<!ENTITY duplicateItemCmd.label "Nesneyi Çoğalt">
+<!ENTITY edit.label "Düzenle">
+<!ENTITY editDates.label "Tarihi düzenle">
+<!ENTITY editProfile.label "Profili Düzenle">
+<!ENTITY editSceneDialog.title "Sahneyi Düzenle">
+<!ENTITY editTitlePageCmd.label "Kapak Sayfasını Değiştir...">
+<!ENTITY editlabel.tooltip "Düzeltmek için tıklayın">
+<!ENTITY eighths.label "Sekizler">
+<!ENTITY eighthsSuffix.label "8ler">
+<!ENTITY element.label "Öge">
+<!ENTITY elements.label "Ögeler">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "Bu Celtx kullanıcılarının sayısını belirlemek içindir. Hiçbir kişisel bilgi gönderilmeyecektir.">
+<!ENTITY enableStats.label    "Başlatırken Celtx ağına bağlan.">
+<!ENTITY enableStats.label "Kullanım istatistiklerini Celtx'e gönder.">
+<!ENTITY enabled.label "Etkinleştirildi">
+<!ENTITY end.label "Son">
+<!ENTITY endOfShooting.label "Çekim Sonu">
+<!ENTITY enterEmbedTagPrompt.label "Nesne veya Etiket Başlığı Girin:">
+<!ENTITY eventDetails.label "Olay Detayları">
+<!ENTITY every15Minutes.label "Her 15 dakikada">
+<!ENTITY every30Minutes.label "Her Yarım saatte">
+<!ENTITY every5Minutes.label "Her 5 dakikada">
+<!ENTITY everyHour.label "Her saat">
+<!ENTITY everyMinute.label "Her dakika">
+<!ENTITY exportList "Listeyi farklı kaydet">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Senaryoyu Dışa Aktar">
+<!ENTITY externalFile.desc "Mevcut herhangi bir dosyayı projenize ekleyin.">
+<!ENTITY externalFile.label "Dosya">
+<!ENTITY fileLocation "Yer">
+<!ENTITY filmScript.desc "Biçimlendirilmiş bir film senaryosu ekleyin.">
+<!ENTITY filmScript.label "Senaryo">
+<!ENTITY filter.label "Süz">
+<!ENTITY findAllCharacters.label "Katalog'a karakter ekle">
+<!ENTITY findCmd.accesskey "B">
+<!ENTITY findCmd.label "Bul">
+<!ENTITY findPreviousCmd.label "Öncekini Bul">
+<!ENTITY findTab.label "Bul">
+<!ENTITY folder.label "Klasör">
+<!ENTITY forceOverwrite.label "Sunucudaki versiyon daha yeniyse üstüne yaz">
+<!ENTITY form.actorLink "Site Bağlantısı">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Adres">
+<!ENTITY form.affectEvent "Bu olay genel olay örgüsünü nasıl etkiliyor?">
+<!ENTITY form.age "Yaş">
+<!ENTITY form.alternate "Alternatif İsim">
+<!ENTITY form.antag "Kötü Adam">
+<!ENTITY form.antagWho "Bu sahnedeki Kötü Adam kim?">
+<!ENTITY form.availability "Müsaitlik">
+<!ENTITY form.bestFriend "En iyi arkadaş">
+<!ENTITY form.borrow "Ödünç alma">
+<!ENTITY form.build "İnşa etme">
+<!ENTITY form.buy "Satın alma">
+<!ENTITY form.catalyst "Katalizör">
+<!ENTITY form.cell "Cep Numarası">
+<!ENTITY form.centralEvent "Bu sahnedeki ana olay ne?">
+<!ENTITY form.charBackground "Karakter Geçmişi">
+<!ENTITY form.charGoal "Bu karakterin amacı ne?">
+<!ENTITY form.charPlan "Karakterin, amacına ulaşmak için planı ne?">
+<!ENTITY form.charTraits "Karakter Özellikleri">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Kullanan Karakterler">
+<!ENTITY form.color "Renk">
+<!ENTITY form.comicRelief "Nükteci">
+<!ENTITY form.comments "Ek Açıklamalar">
+<!ENTITY form.confidante "Sırdaş">
+<!ENTITY form.contactInfo "İletişim Bilgileri">
+<!ENTITY form.cost "Maliyet">
+<!ENTITY form.crewLink "Site Bağlantısı">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Müsait tarihler">
+<!ENTITY form.dateNeed "Gerektiği tarihler">
+<!ENTITY form.dateReturn "İade tarihi">
+<!ENTITY form.description "Tanım">
+<!ENTITY form.details "Ayrıntılar">
+<!ENTITY form.dislikes "Sevmediği Şeyler">
+<!ENTITY form.distFeatures "Ayırt Edici Özellikler">
+<!ENTITY form.dob "Doğum tarihi">
+<!ENTITY form.dress "Giyim">
+<!ENTITY form.education "Eğitim">
+<!ENTITY form.elevator "Asansör">
+<!ENTITY form.email "E-posta Adresi">
+<!ENTITY form.endDate "Bitiş Tarihi">
+<!ENTITY form.era "Dönem">
+<!ENTITY form.eyes "Gözler">
+<!ENTITY form.facilityInfo "Tesis Bilgisi">
+<!ENTITY form.familyBack "Aile Geçmişi">
+<!ENTITY form.fullName "Tam isim">
+<!ENTITY form.generic "Jenerik">
+<!ENTITY form.genericForm "Jenerik Formu">
+<!ENTITY form.habits "Alışkanlıklar">
+<!ENTITY form.hair "Saç">
+<!ENTITY form.hat "Şapka">
+<!ENTITY form.height "Boy">
+<!ENTITY form.inScenes "Sahnelerde">
+<!ENTITY form.jacket "Ceket">
+<!ENTITY form.jobTitle "Başlık">
+<!ENTITY form.keyCharTraits "Belli Başlı Karakter Özellikleri">
+<!ENTITY form.lightSources "Işık Kaynakları">
+<!ENTITY form.likes "Sevdiği Şeyler">
+<!ENTITY form.locationMap "Harita">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "Sevgi Duyulan Karakter">
+<!ENTITY form.media "Medya">
+<!ENTITY form.mentor "Akıl Hocası">
+<!ENTITY form.motiv "Motivasyon">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Hayır">
+<!ENTITY form.noise "Gürültü Unsurları">
+<!ENTITY form.other "Diğer">
+<!ENTITY form.pants "Pantolon">
+<!ENTITY form.parking "Park Bilgileri">
+<!ENTITY form.partner "Partner">
+<!ENTITY form.person "Kişilik">
+<!ENTITY form.phone "Telefon Numarası">
+<!ENTITY form.physicalDesc "Ayrıntılı Fiziksel Tanım">
+<!ENTITY form.powerCapa "Enerji Kaynakları">
+<!ENTITY form.princFunction "Bu karakterin başlıca işlevi ne?">
+<!ENTITY form.procure "Tedarik">
+<!ENTITY form.propProfile "Sahne Elbisesi">
+<!ENTITY form.protag "Baş Kahraman (Protagonist)">
+<!ENTITY form.protagAntag "Karşıt Karakter (Antagonist)">
+<!ENTITY form.protagWho "Bu sahnedeki baş karakter kim?">
+<!ENTITY form.rent "Kiralama">
+<!ENTITY form.rentalCost "Kira Maliyeti">
+<!ENTITY form.role "Rol">
+<!ENTITY form.scene "Sahne">
+<!ENTITY form.sceneAntagAchieve "Karşıt karakter, bu hedefe nasıl ulaşıyor?">
+<!ENTITY form.sceneAntagGoal "Karşıt karakter bu sahnedeki hedefi ne?">
+<!ENTITY form.sceneChars "Bu sahnede hangi karakterler yer alıyor?">
+<!ENTITY form.sceneDetails "Sahne Ayrıntıları">
+<!ENTITY form.sceneMood "Bu sahneye nasıl bir hava hakim?">
+<!ENTITY form.sceneProtagAchieve "Baş kahraman bu hedefe nasıl ulaşıyor?">
+<!ENTITY form.sceneProtagGoal "Baş kahramanın bu sahnedeki hedefi ne?">
+<!ENTITY form.sceneSetting "Bu sahne nerede gerçekleşiyor?">
+<!ENTITY form.sceneWhen "Bu sahne ne zaman gerçekleşiyor?">
+<!ENTITY form.scenesUsed "Kullanıldığı Sahneler">
+<!ENTITY form.scoutSelect "Gözlem ve Seçim">
+<!ENTITY form.scoutedFor "Şu sahneler için incelendi:">
+<!ENTITY form.scriptName "Senaryo İsmi">
+<!ENTITY form.selectedFor "Şu sahneler için seçildi:">
+<!ENTITY form.sex "Cinsiyet">
+<!ENTITY form.shirt "Gömlek">
+<!ENTITY form.shoes "Ayakkabılar">
+<!ENTITY form.size "Boy">
+<!ENTITY form.squareFoot "Alan (metrekare)">
+<!ENTITY form.startDate "Başlama Tarihi">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Kostüm bedenleri">
+<!ENTITY form.washroom "Tuvalet Yerleri">
+<!ENTITY form.weight "Ağırlık">
+<!ENTITY form.wornBy "Giyen:">
+<!ENTITY form.yes "Evet">
+<!ENTITY format.label "Biçim">
+<!ENTITY formatAct.label      "Hareket">
+<!ENTITY formatAction.label "Devinim">
+<!ENTITY formatBalloon.label  "Balon">
+<!ENTITY formatBalloonType.label "Balon Tipi">
+<!ENTITY formatCaption.label  "Başlık">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;"> <!-- max 7 chars -->
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Sahne Başlığı">
+<!ENTITY formatMusic.label    "Müzik">
+<!ENTITY formatPage.label     "Sayfa">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;"> <!-- max 5 chars -->
+<!ENTITY formatPanel.label    "Panel">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;"> <!-- max 5 chars -->
+<!ENTITY formatParen.label "Açıklama">
+<!ENTITY formatProductionNote.label "Prodüksiyon Notu">
+<!ENTITY formatShot.label "Çekim">
+<!ENTITY formatSound.label    "Ses">
+<!ENTITY formatStagedir.label "Sahne Yönetimi">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Geçiş">
+<!ENTITY formatVoice.label    "Ses">
+<!ENTITY fourHours.label "4 saat">
+<!ENTITY freeAndSecure.label "Açık ve Güvenli">
+<!ENTITY general.label "Genel">
+<!ENTITY generatePDFCmd.label "PDF Oluştur">
+<!ENTITY generateReportCmd.label "Rapor Oluştur">
+<!ENTITY generateReportCmd.toolbarlabel "Rapor">
+<!ENTITY getProjDialog.caption "Kullanılabilir Projeler">
+<!ENTITY getProjDialog.title "Proje İndir">
+<!ENTITY gotoItemCmd.label "Git">
+<!ENTITY helpAboutCmd.accessKey "a">
+<!ENTITY helpAboutCmd.label "&appName; Hakkında">
+<!ENTITY helpReportBugCmd.accessKey "H">
+<!ENTITY helpReportBugCmd.label "Hata Bildir">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Çevrimiçi Destek">
+<!ENTITY icons.label "Simgeler">
+<!ENTITY iconsAndText.label "Simge ve Metin">
+<!ENTITY image.label "Görüntü">
+<!ENTITY images.label "Görüntüler">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Senaryoyu İçe Aktar">
+<!ENTITY importScriptCmd.toolbarLabel "Getirt">
+<!ENTITY includeInWorkweek.label "Bu günleri çalışma haftasına dahil et.">
+<!ENTITY includeTitlePage.label "Kapak Sayfasını Dahil Et">
+<!ENTITY increaseDelayCmd.tooltip "Ertelemeyi arttır.">
+<!ENTITY increaseFontSizeCmd.tooltip "Font Boyutunu Büyüt">
+<!ENTITY increaseIndentCmd.label "Satıra daha içeriden başla">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "İndeks Kart başlığı">
+<!ENTITY indexCards.label "İndeks Kartlar">
+<!ENTITY inlineSpellCheckCmd.label "Satır içi İmla Denetimi">
+<!ENTITY insertNoteCmd.toolbarLabel "Not">
+<!ENTITY international.label "Uluslararası">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "Sahne Başlığı geçerli bir İÇ/DIŞ kelimesiyle başlamıyor. Bu sorunu çözmek için, senaryo başlığını düzeltin veya İÇ/DIŞ kelime listesini Seçenekler'in Senaryo sekmesinden değiştirin.">
+<!ENTITY intextWords.label "İÇ/DIŞ kelimeleri">
+<!ENTITY invalidLogin.label "Yanlış kullanıcı adı ve/veya şifre.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "İtalik">
+<!ENTITY item.label "Öğe">
+<!ENTITY language.label "Dil">
+<!ENTITY left.label "Solda">
+<!ENTITY linesPerPage.label "Sayfa başı satır">
+<!ENTITY list.label "Liste">
+<!ENTITY location.desc "Bir mekan için açıklama ekleyin.">
+<!ENTITY location.label "Mekan">
+<!ENTITY loginOnStartup.label "Başlangıçta Giriş Yap">
+<!ENTITY lowercaseCmd.label "küçük harf">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Medya">
+<!ENTITY mediaViewer.title "Medya Görüntüleyici">
+<!ENTITY modified.label "Değiştirilme">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Aşağıya Taşı">
+<!ENTITY moveUpCmd.label "Yukarıya Taşı">
+<!ENTITY moving.label "Hareket">
+<!ENTITY name.label "İsim">
+<!ENTITY network.label "Ağ">
+<!ENTITY never.label "Asla">
+<!ENTITY newMarkupItem.label "&lt;Yeni...&gt;">
+<!ENTITY newProjectCmd.label "Yeni Proje...">
+<!ENTITY newProjectCmd.toolbarlabel "Yeni">
+<!ENTITY noFileSelected.label "&lt;Dosya seçilmedi&gt;">
+<!ENTITY noImageSelected.label "Hiç Görüntü Seçilmemiş">
+<!ENTITY noScriptSelected.label "Hiç Senaryo Seçilmemiş">
+<!ENTITY none.label "(Hiçbiri)">
+<!ENTITY noteDialog.title "Notu değiştir">
+<!ENTITY notes.label "Notlar">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Karakter Sayısı">
+<!ENTITY numberOfScenes.label "Sahne Sayısı">
+<!ENTITY oneHour.label "1 saat">
+<!ENTITY oneLineSchedule.label "Tek satır Takvim">
+<!ENTITY open.label "Aç">
+<!ENTITY openItemCmd.label "Öğeyi Aç">
+<!ENTITY openProjectCmd.label "Proje Aç...">
+<!ENTITY openProjectCmd.toolbarlabel "Aç">
+<!ENTITY openProjectFolder.label "Proje Klasörünü Aç">
+<!ENTITY openRecentCmd.label "Son Kullanılanlardan Aç">
+<!ENTITY options.label "Seçenekler">
+<!ENTITY orderedList.label "Liste">
+<!ENTITY outline.desc "Maddeleştirilmiş taslak belge ekle.">
+<!ENTITY outline.label "Taslak">
+<!ENTITY over14.label "Ben 14 yaşındayım veya daha büyüğüm.">
+<!ENTITY pageAndSceneNumbering.label "Sayfa ve Sahne Numaralandırma">
+<!ENTITY paperSize.label "Sayfa boyu">
+<!ENTITY password.label "Şifre">
+<!ENTITY passwordAgain.label "Şifre (Tekrar)">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "PDF'e dönüştürülüyor...">
+<!ENTITY pdfErrorHeader "Dur!">
+<!ENTITY pdfErrorText1 "Bu özelliği kullanabilmeniz için çevrimiçi olmalısınız.">
+<!ENTITY pdfErrorText2 "Bu Celtx web sitesi senaryonuzu güvenli, özel ve otomatik olarak endüstri standartlarına göre biçimlendiriyor.">
+<!ENTITY pdfOptions.title "PDF Seçenekleri">
+<!ENTITY pdfOptionsCmd.label "Daha Fazlası ve Devamı">
+<!ENTITY pdfWarningHeader "Merhaba!">
+<!ENTITY pdfWarningText "Bu Celtx web sitesi senaryonuzu güvenli, özel ve otomatik olarak endüstri standartlarına göre biçimlendiriyor.">
+<!ENTITY picklist.label "Listeden Seç">
+<!ENTITY principalFunction.label "Ana Fonksiyon">
+<!ENTITY printBackgroundColour.label "Arkaplan Rengini Yazdır">
+<!ENTITY printCardBorders.label "Kart Kenarlarını Yazdır">
+<!ENTITY printCardsDialog.title "Kartları Yazdır">
+<!ENTITY printStoryboardDialog.title "Plantahta’sını (Storyboard) Yazdır">
+<!ENTITY privacy.label "Gizlilik">
+<!ENTITY producer.label "Yapımcı">
+<!ENTITY productionItems.label "Prodüksiyon Nesneleri">
+<!ENTITY progressDialog.title "İlerleme">
+<!ENTITY project.label "Proje">
+<!ENTITY projectItems.label "Yeni Projeler İçeriyor">
+<!ENTITY projectLibrary.label "Proje Kütüphanesi">
+<!ENTITY projectProperties.label "Proje Ayarları">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Proje Taslağı">
+<!ENTITY propSheet.desc "Yeni bir araç/gereç için açıklama ekleyin.">
+<!ENTITY propSheet.existing "Aşağıdaki listede bulunan araç/gereç için de açıklama ekleyebilirsiniz.">
+<!ENTITY propSheet.label "Araç/Gereç">
+<!ENTITY propSheet.select "Bir araç/gereç seçin">
+<!ENTITY properties.label "Özellikler">
+<!ENTITY properties.label "Özellikler">
+<!ENTITY publishDialog.findUsers "Kullanıcı Bul">
+<!ENTITY publishDialog.ownerLabel "Proje sahibi">
+<!ENTITY publishDialog.privateDesc "Özel: Bana erişimi sınırla">
+<!ENTITY publishDialog.privateLabel "Hususi">
+<!ENTITY publishDialog.publicDesc "Halka açık: Projeyi Proje Merkezinde Yayınla">
+<!ENTITY publishDialog.publicLabel "Umumi">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Paylaşılmış:Projeyi seçilmiş kullanıcılarla paylaş">
+<!ENTITY publishDialog.sharedLabel "Bu kullanıcılarla paylaş">
+<!ENTITY publishDialog.title "Proje Yayınla">
+<!ENTITY publishDialog.userList "Kullanıcı Listesi">
+<!ENTITY publishMode.label "Yayın Biçimi">
+<!ENTITY recent.label "En son">
+<!ENTITY recentProjects.label "En son Projeler">
+<!ENTITY recoverPassword.label "Şifreyi Kurtar ">
+<!ENTITY recycleCmd.label "Müsvedde defterine at">
+<!ENTITY regWiz.aboutThis "Bu Sihirbaz sizden kayıt için gerekli bilgileri isteyecektir.">
+<!ENTITY regWiz.accountInstructions "Lütfen &appName; hesabınız için bir kullanıcı ismi ve şifre seçiniz.">
+<!ENTITY regWiz.accountLabel "Kullanıcı Hesabı (3/5)">
+<!ENTITY regWiz.bullet1 "Uzaktan Yedekleme">
+<!ENTITY regWiz.bullet2 "Birlikte Çalışma Alanı">
+<!ENTITY regWiz.bullet3 "Proje Merkezi'nde Yayınlama">
+<!ENTITY regWiz.bullet4 "iPhone'da Proje Görüntüleme">
+<!ENTITY regWiz.checkLabel "Hesap Bilgisi Denetle">
+<!ENTITY regWiz.clickFinish "Bu değerlerden memnunsanız, 'Son' tuşuna tıklayarak kaydınızı gönderin.">
+<!ENTITY regWiz.clickFinish1 "Şu an &appName; sunucusuna başarıyla bağlandınız; Internet üzerindeki özelliklerimizden faydalanabilirsiniz.">
+<!ENTITY regWiz.clickFinish2 "Projenizin güvenilir bir yedeğini almak için İndirme/Yükleme özelliklerini deneyin veya &appName; hesabı olan birisini tanıyorsanız ortak bir projede çalışmak için proje paylaşma özelliklerini kullanın.">
+<!ENTITY regWiz.clickNext "Bu değerlerden memnunsanız, 'İleri' tuşuna tıklayarak kaydınızı gönderin.">
+<!ENTITY regWiz.conclusion "Son (5/5)">
+<!ENTITY regWiz.confirmIntro "Bu bilgileri girdiniz:">
+<!ENTITY regWiz.confirmLabel "Onayla (4/5)">
+<!ENTITY regWiz.createNewAccountLabel "Yeni bir hesap Oluştur.">
+<!ENTITY regWiz.createYourAccountLabel "Kendi &appName; Hesabınızı Oluşturun! (1/5)">
+<!ENTITY regWiz.emailLabel "E-posta:">
+<!ENTITY regWiz.finish "Tamamla">
+<!ENTITY regWiz.identityInstructions "Lütfen adınızı, bağlı olduğunuz organizasyonu ve e-posta adresinizi girin.">
+<!ENTITY regWiz.identityLabel "Kimlik (2/5)">
+<!ENTITY regWiz.intro "&appName;'in Internet üzerindeki hizmetlerinden yararlanabilmek için öncelikle bir &appName; hesabıyla kayıt yaptırmanız gerekmektedir.">
+<!ENTITY regWiz.loginSuccessfulLabel "Teşekkürler, şu an &appName;'e girmiş bulunuyorsunuz.">
+<!ENTITY regWiz.newOrExistingLabel "Yeni bir hesap oluşturun ya da mevcut bir hesabı kullanın:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; hesabı kullanıcı isimleri ve şifreleri büyük ve küçük harflere duyarlıdır.">
+<!ENTITY regWiz.notePassword "Şifreniz en az 5 karakter uzunluğunda olmalıdır.">
+<!ENTITY regWiz.noteUsername "Kullanıcı isminiz en az 3 karakter uzunluğunda olmalı; sadece rakam ve harf içermelidir.">
+<!ENTITY regWiz.orgLabel "Organizasyon:">
+<!ENTITY regWiz.title "&appName; Kayıt Sihirbazı">
+<!ENTITY regWiz.uidLabel "&appName; Kullanıcı ismi:">
+<!ENTITY regWiz.useExistingAccountLabel "Mevcut bir hesabı kullan">
+<!ENTITY regWiz.warn "Bu özellikten faydalanabilmek için &appName; hesabınız olması gerekmektedir.">
+<!ENTITY remove.label "Kaldır">
+<!ENTITY removeCmd.label "Kaldır">
+<!ENTITY removeMarkupCmd.label "Kaldır">
+<!ENTITY rename.label "Yeniden İsimlendir">
+<!ENTITY renameItem.label "Öğe Kaldır">
+<!ENTITY replaceCmd.label "Değiştir">
+<!ENTITY reportThisBug.label "Hatayı bildir">
+<!ENTITY reportThisBug.tooltip "Adınızı belirtmeden hata raporu gönderin.">
+<!ENTITY reports.label "Raporlar">
+<!ENTITY reports.label "Raporlar">
+<!ENTITY right.label "Sağda">
+<!ENTITY right.label "Sağda">
+<!ENTITY sampleProjects.label "Örnek Projeler">
+<!ENTITY samples.label "Örnek Projeler">
+<!ENTITY saveAsHTML.label "HTML olarak sakla">
+<!ENTITY saveAsTemplate.label "Taslak olarak kaydet">
+<!ENTITY savePDFCmd.label "PDF Olarak Kaydet">
+<!ENTITY savePDFCmd.tooltip "PDF Olarak Kaydet">
+<!ENTITY saveProjectAsCmd.label "Farklı Kaydet...">
+<!ENTITY saveProjectCmd.label "Kaydet">
+<!ENTITY saveProjectCmd.label "Projeyi Kaydet">
+<!ENTITY saveProjectCmd.toolbarlabel "Kaydet">
+<!ENTITY scene.label "Sahne">
+<!ENTITY sceneBreakdown.label "Sahne Analizleri">
+<!ENTITY sceneBreakdownWithDesc.label "Sahne Analizleri (Açıklamalı)">
+<!ENTITY sceneDetails.desc "Yeni sahne için açıklama ekleyin.">
+<!ENTITY sceneDetails.existing "Aşağıdaki listede bulunan sahneler için de açıklama ekleyebilirsiniz.">
+<!ENTITY sceneDetails.label "Sahne Analizleri">
+<!ENTITY sceneDetails.select "Sahne Seçin">
+<!ENTITY scenePageBreaks.label "Her sahneden sonra sayfa aralığı">
+<!ENTITY sceneSummary.label "Sahne Özeti">
+<!ENTITY sceneTag.label "Sahne önyazısı">
+<!ENTITY sceneTagDialog.title "Renk Seçin">
+<!ENTITY scenes.label "Sahneler">
+<!ENTITY schedule.desc      "Senaryo için çekim takvimi ekle.">
+<!ENTITY schedule.label     "Prodüksiyon Takvimi">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Senaryo Takvimi">
+<!ENTITY scheduleID.label "Takvim Kimliği">
+<!ENTITY scheduled.label "Zamanlandı">
+<!ENTITY scratchpad.label "Bloknot">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Projenize bir senaryo ekleyin.">
+<!ENTITY script.label "Senaryo">
+<!ENTITY scriptDay.label "Senaryo Gün">
+<!ENTITY scriptEditor.label "Senaryo Editörü">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Biçim Seçenekleri">
+<!ENTITY scriptHeader.label "Senaryo Başlığı">
+<!ENTITY scriptReport.desc "Otomatik olarak oluşturulan senaryo raporu.">
+<!ENTITY scriptReport.label "Senaryo Raporu">
+<!ENTITY scriptReport.label "Senaryo Raporu">
+<!ENTITY scriptWithNotes.label "Senaryo (Notlarla)">
+<!ENTITY selectCatalogType.label "Bir katalog tipi seçin.">
+<!ENTITY sequence.label "Sekans">
+<!ENTITY sequences.label "Sekanslar">
+<!ENTITY server.label "Sunucu">
+<!ENTITY setting.label "Ayar">
+<!ENTITY sharing.label "Paylaşım">
+<!ENTITY shootDay.label "Çekim Günü">
+<!ENTITY shootDays.label "Çekim günleri">
+<!ENTITY shootingSchedule.label "Çekim Takvimi">
+<!ENTITY shotList.label "Çekim Listesi">
+<!ENTITY shotWords.label "Çekim Kelimeleri">
+<!ENTITY shotholder.label "Resim eklemek için çift tıklayın.">
+<!ENTITY showContinuedCount.label "Taşan sayfa numaralarını göster">
+<!ENTITY showDialogBreaks.label "Kesintiye uğrayan diyalog kesmelerini göster">
+<!ENTITY showFirstPageNumber.label "İlk sayfada, sayfa numarasını göster">
+<!ENTITY showIDNumbers.label "ID Numaraları Göster">
+<!ENTITY showNotes.label "Notları göster">
+<!ENTITY showPageNumbers.label "Sayfa Numaralandırma">
+<!ENTITY showProjectFileCmd.label "Proje Dosyasını Göster">
+<!ENTITY showSceneBreaks.label "Sayfadan taşan sahne kesmelerini göster">
+<!ENTITY showSceneHeaders.label "Sahne Başlığını Göster">
+<!ENTITY showSceneNumbers.label "Sahne numaralarını göster">
+<!ENTITY showScript.label "Senaryoyu göster">
+<!ENTITY showTagNames.label "Kart İsimlerini Göster">
+<!ENTITY showTitlePage.label "Başlık Sayfasını Göster">
+<!ENTITY showWorkdaysOnly.label "Sadece çalışma günlerini göster">
+<!ENTITY signIn.label "Giriş">
+<!ENTITY signOut.label "Çıkış">
+<!ENTITY signedOut.label "Çıkış yapıldı">
+<!ENTITY slideshowCmd.toolbarlabel "Yürüt">
+<!ENTITY source.label "Kaynak">
+<!ENTITY spellCheckAddToDictionary.accesskey "k">
+<!ENTITY spellCheckAddToDictionary.label "Sözlüğe ekle">
+<!ENTITY spellCheckCmd.label "İmla denetimi">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Sözcüğü görmezden gel">
+<!ENTITY spellCheckNoSuggestions.label "Öneri bulunamadı">
+<!ENTITY splash.celtxCentral "Celtx Merkez">
+<!ENTITY splash.celtxCentralDesc "Kişisel bilgilerinizi ve şifrenizi değiştirmek için Celtx Merkez'i kullanın.">
+<!ENTITY splash.discussion "Tartışma">
+<!ENTITY splash.downloadProject "Proje İndir">
+<!ENTITY splash.downloadProjectDesc "Celtx Sunucusundan proje indirin.">
+<!ENTITY splash.featureTour "Özellikler">
+<!ENTITY splash.forums "Celtx Forumları">
+<!ENTITY splash.forumsDesc "Celtx Forumlarındaki tartışmalara katılın.">
+<!ENTITY splash.gettingStarted "Başlangıç">
+<!ENTITY splash.guide "Celtx Kullanıcı Rehberi">
+<!ENTITY splash.help "Yardım">
+<!ENTITY splash.helpAccount "Yeni Hesap Oluştur">
+<!ENTITY splash.helpAccountDesc "Hesap açmak, işbirliği ve PDF oluşturma gibi sunucu tarafında gerçekleştirilen özelliklere ulaşma imkanı sağlar.">
+<!ENTITY splash.helpDesc "Soldaki bağlantıları kullanarak birçok Celtx kaynağına ulaşabilirsiniz.">
+<!ENTITY splash.helpOptions "Yardım Seçenekleri">
+<!ENTITY splash.inbox           "Gelen kutusu">
+<!ENTITY splash.logIn "Giriş">
+<!ENTITY splash.newProject "Yeni Proje Oluştur">
+<!ENTITY splash.newProjectDesc "Yeni Proje Oluştur">
+<!ENTITY splash.openProject "Mevcut Bir Projeyi Aç">
+<!ENTITY splash.openProjectDesc "Mevcut proje ekle/Mevcut projelere ulaş.">
+<!ENTITY splash.options "Seçenekler">
+<!ENTITY splash.projectCentral "Proje Merkezi">
+<!ENTITY splash.projects "Projeler">
+<!ENTITY splash.recentProjects "Son kullanılan projeler">
+<!ENTITY splash.sampleDesc      "Celtx'in özelliklerini görüntülemek için Oz büyücüsünü kullandık. Çeşitli dokümanlar tek bir sahnenin nasıl yapıldığını göstermek için kullanılmıştır. Bu örnekte yer alan nesneler şunlardır, karakter ve sahne detay biçimleri, önemli bilgi ve takvim bilgisi.">
+<!ENTITY splash.sampleProject   "Örnek proje">
+<!ENTITY splash.videoWalkthrus "İzle - Öğren">
+<!ENTITY splash.videoWalkthrusDesc "Size hızlı bir başlangıç sağlayacak açıklamalı videolar">
+<!ENTITY splash.walkthru "3 Dakikada Celtx">
+<!ENTITY splash.webServices "Web Hizmetleri">
+<!ENTITY splash.welcomePrefix "Hoşgeldiniz. Celtx">
+<!ENTITY splash.welcomePrefixDesc "Yapım Planlama">
+<!ENTITY splash.wiki "Viki Rehberi">
+<!ENTITY splash.wikiDesc "Celtx'i öğrenmek için gereken kaynak">
+<!ENTITY splashScreen.label "Hoşgeldin Ekranı">
+<!ENTITY stackTrace.desc "Aşağıda, bizim işimize yarayabilecek bilgiler yer alıyor olabilir. Bu hatayı rapor etmek isterseniz, lütfen bu bilgileri de rapora dâhil edin.">
+<!ENTITY stageplay.desc  "Uluslararası biçimde bir sahne oyunu senaryosu ekle.">
+<!ENTITY stageplay.label    "Sahne Oyunu">
+<!ENTITY start.label "Başla">
+<!ENTITY startOfDay.label "Gün Başlangıcı">
+<!ENTITY startOfShooting.label "Çekimin Başlangıcı">
+<!ENTITY startOfWeek.label "Hafta Başlangıcı">
+<!ENTITY statistics.label "İstatistikler">
+<!ENTITY storyboard.desc    "Plan Tahtası görüntülerini çekim sekanslarına ayarla.">
+<!ENTITY storyboard.label   "Plan Tahtası">
+<!ENTITY strikethrough.label "Üstü Çizili">
+<!ENTITY stripboard.label "Çizgi Tahtası">
+<!ENTITY subject.label "Konu">
+<!ENTITY summary.label "Özet">
+<!ENTITY syncDialog.title "Eşitleme">
+<!ENTITY tagItemCmd.label "Etiket">
+<!ENTITY tagline.label      "Başlık Yazısı">
+<!ENTITY tags.label "Etiketler">
+<!ENTITY text.label "Metin">
+<!ENTITY textDocument.desc "Metin belgesi ekleyin (Taslak, tretman ve sinopsis için özellikle kullanışlı).">
+<!ENTITY textDocument.label "&text.label;">
+<!ENTITY theatreTmplActTitle "BÖLÜM I">
+<!ENTITY theatreTmplSceneTitle "Sahne 1">
+<!ENTITY thirtyMinutes.label "30 dakika">
+<!ENTITY threeHours.label "3 saat">
+<!ENTITY time.label "Zaman">
+<!ENTITY title.label "Başlık">
+<!ENTITY titlePage.label "Kapak Sayfası">
+<!ENTITY titlePage.label "Kapak Sayfası">
+<!ENTITY toggleEditing.label "Düzenlemeyi aç/kapa">
+<!ENTITY togglePaginationCmd.label "Sayfa Numaralandırmayı Aç">
+<!ENTITY toggleScratchpadCmd.label "Müsvedde Defterini Aç/Kapa">
+<!ENTITY toggleSidebarCmd.accesskey "k">
+<!ENTITY toggleSidebarCmd.label "Kenar çubuğu">
+<!ENTITY topOfNextPage.label "Sonraki sayfanın başında">
+<!ENTITY tryAgain.label "Tekrar Deneyin">
+<!ENTITY twoColumns.label "İki Sütun">
+<!ENTITY twoHours.label "2 saat">
+<!ENTITY typeset.label "Karakter Diz">
+<!ENTITY under14.label "14 yaşın altındayım.">
+<!ENTITY underline.commandkey "a">
+<!ENTITY underline.label "Altı Çizili">
+<!ENTITY unorderedList.label "Sırasız Liste">
+<!ENTITY untitled.label "İsimsiz Proje">
+<!ENTITY update.label "Güncelleme">
+<!ENTITY updateInbox.label "Gelen Kutusunu Güncelle">
+<!ENTITY uploadDialog.title "Proje Yayınla">
+<!ENTITY uploadProjectCmd.label "Proje Yayınla...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Yayınla">
+<!ENTITY uppercaseCmd.label "Büyük Harf">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Kullanıcı Adı">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Açıklamalı video">
+<!ENTITY viewProjectOnline.label "Projeyi Çevrimiçi görüntülü">
+<!ENTITY wardrobeSheet.desc "Yeni bir kostüm için açıklama ekleyin.">
+<!ENTITY wardrobeSheet.existing "Aşağıdaki listede bulunan kostümler için de açıklama ekleyebilirsiniz.">
+<!ENTITY wardrobeSheet.label "Kostüm">
+<!ENTITY wardrobeSheet.select "Kostüm Seç">
+<!ENTITY webPanel.desc              "Celtx Ağ Hizmetleri.">
+<!ENTITY webPanel.label             "Ağ Hizmetleri">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Celtx Hesabı Oluştur">
+<!ENTITY webPanelIntro.text1 "Celtx hizmetlerinden üye olarak ücretsiz yararlanın.">
+<!ENTITY webPanelIntro.text2 "*Yedekle*Tüm projenizi uzaktan yedekleyin, hırsızlığa karşı güvenli Celtx sunucularında veya sabit diskinize zarar gelmesi durumunda.">
+<!ENTITY webPanelIntro.text3 "*İşbirliği*takım arkadaşlarınızla projenizi paylaşın ve özel oluşturulan alanlar belirleyin.">
+<!ENTITY webPanelIntro.text4 "*Yayınla* projenizi yayınlayın ve yorumları okuyun ve büyüyen medya kurucuları topluluğumuza katılın.">
+<!ENTITY webPanelIntro.text5 "Celtx projenizi*iPhone* için uyarlanmış haliyle görün.">
+<!ENTITY wiz.clickFinish "Bu Sihirbazı tamamlamak için 'Son' tuşuna tıklayın.">
+<!ENTITY wiz.clickNext "Başlamak için 'İleri' tuşuna tıklayın.">
+<!ENTITY workweek.label "Çalışma Haftası">
+<!ENTITY writer.label "Yazar">
+<!ENTITY zoom.label "Yakınlaştır">

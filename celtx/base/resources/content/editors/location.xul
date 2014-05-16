@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/editors.css"
+                 type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="location-form"
+        title="Location"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+#include ../celtx-form.inc
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/location.js"/>
+
+  <commandset id="browserContextCommandSet">
+    <command id="cmd_undo" 
+             oncommand="goDoCommand('cmd_undo')"
+             disabled="true"/>
+    <command id="cmd_redo" 
+             oncommand="goDoCommand('cmd_redo')"
+             disabled="true"/>
+    <command id="cmd_cut" 
+             oncommand="goDoCommand('cmd_cut')"
+             disabled="true"/>
+    <command id="cmd_copy" 
+             oncommand="goDoCommand('cmd_copy')"
+             disabled="true"/>
+    <command id="cmd_paste" 
+             oncommand="goDoCommand('cmd_paste')"
+             disabled="true"/>
+    <command id="cmd_delete"
+             oncommand="goDoCommand('cmd_delete')"
+             valueDefault="&deleteCmd.label;"
+             disabled="true"/>
+    <command id="cmd_selectAll"
+             oncommand="goDoCommand('cmd_selectAll')"
+             disabled="true"/>
+  </commandset>
+
+  <popup id="browserContextMenu"
+         onpopupshowing="goUpdateGlobalEditMenuItems()">
+    <menuitem id="context-undo"
+              label="&undoCmd.label;"
+              accesskey="&undoCmd.accesskey;"
+              command="cmd_undo"/>
+    <menuseparator id="context-sep-undo"/>
+    <menuitem id="context-cut"
+              label="&cutCmd.label;"
+              accesskey="&cutCmd.accesskey;"
+              command="cmd_cut"/>
+    <menuitem id="context-copy"
+              label="&copyCmd.label;"
+              accesskey="&copyCmd.accesskey;"
+              command="cmd_copy"/>
+    <menuitem id="context-paste"
+              label="&pasteCmd.label;"
+              accesskey="&pasteCmd.accesskey;"
+              command="cmd_paste"/>
+    <menuitem id="context-delete"
+              label="&deleteCmd.label;"
+              accesskey="&deleteCmd.accesskey;"
+              command="cmd_delete"/>
+    <menuseparator id="context-sep-paste"/>
+    <menuitem id="context-selectall"
+              label="&selectAllCmd.label;"
+              accesskey="&selectAllCmd.accesskey;"
+              command="cmd_selectAll"/>
+  </popup>
+
+  <toolbar id="formtoolbar" class="editortoolbar">
+    <toolbarbutton class="celtx-undo-button format-toolbar-button"
+                   tooltiptext="&undoCmd.label;"
+                   onclick="goDoCommand('cmd_undo')"/>
+    <toolbarbutton class="celtx-redo-button format-toolbar-button"
+                   tooltiptext="&redoCmd.label;"
+                   onclick="goDoCommand('cmd_redo')"/>
+    <toolbarseparator />
+    <toolbarbutton class="celtx-cut-button format-toolbar-button"
+                   tooltiptext="&cutCmd.label;"
+                   onclick="goDoCommand('cmd_cut')"/>
+    <toolbarbutton class="celtx-copy-button format-toolbar-button"
+                   tooltiptext="&copyCmd.label;"
+                   onclick="goDoCommand('cmd_copy')"/>
+    <toolbarbutton class="celtx-paste-button format-toolbar-button"
+                   tooltiptext="&pasteCmd.label;"
+                   onclick="goDoCommand('cmd_paste')"/>
+  </toolbar>
+
+  <datasheet id="sheet" type="content" formtype="location" flex="1"
+             onload="ready()" contextmenu="browserContextMenu"/>
+
+</window>

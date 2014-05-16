@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings id="celtxToolbarBindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<!--
+  <binding id="cx-menu-button"
+       extends="chrome://global/content/bindings/toolbarbutton.xml#menu-button">
+    <content>
+      <children includes="observes|template|menupopup|tooltip"/>
+      <xul:vbox>
+        <xul:hbox align="center" flex="1">
+          <xul:toolbarbutton class="box-inherit toolbarbutton-menubutton-button"
+                             anonid="button"
+                             allowevents="true"
+                             flex="1"
+                             style="border: 0px; padding: 0px; margin: 0px;"
+                             align="end"
+                             xbl:inherits="disabled,crop,image,label,accesskey,command,dir,pack,orient,toolbarmode,buttonstyle"/>
+          <xul:dropmarker type="menu-button"
+                          style="border: 0px; padding: 0px; margin: 0px;"
+                          class="toolbarbutton-menubutton-dropmarker"
+                          xbl:inherits="align,dir,pack,orient,disabled,toolbarmode,buttonstyle,label"/>
+        </xul:hbox>
+        <xul:hbox flex="1"
+                  class="toolbarbutton-text-box allowevents-box">
+          <xul:label class="toolbarbutton-text"
+                     crop="right"
+               xbl:inherits="value=label,accesskey,crop,toolbarmode,buttonstyle"
+                     flex="1"/>
+        </xul:hbox>
+      </xul:vbox>
+    </content>
+  </binding>
+-->
+
+  <binding id="cx-menu-button"
+       extends="chrome://global/content/bindings/toolbarbutton.xml#menu-button">
+    <content>
+      <children includes="observes|template|menupopup|tooltip"/>
+      <xul:hbox flex="1">
+        <xul:toolbarbutton orient="vertical"
+                           style="margin: 0px; padding: 0px; border: 0px;"
+                           anonid="button"
+                           allowevents="true"
+                           flex="1"
+                           align="end"
+                           xbl:inherits="disabled,crop,image,label,accesskey,command,dir,pack,orient,toolbarmode,buttonstyle"/>
+        <xul:vbox class="cx-menu-marker-box">
+          <xul:dropmarker type="menu-button"
+                          class="toolbarbutton-menubutton-dropmarker"
+                          xbl:inherits="align,dir,pack,orient,disabled,toolbarmode,buttonstyle,label"/>
+        </xul:vbox>
+      </xul:hbox>
+    </content>
+  </binding>
+
+</bindings>

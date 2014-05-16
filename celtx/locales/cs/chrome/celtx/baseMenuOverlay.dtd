@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "Minimalizovat">
+<!ENTITY bringAllToFront.label "Přenést vše do popředí">
+<!ENTITY zoomWindow.label "Zvětšit okno">
+<!ENTITY windowMenu.label "Okno">
+
+<!ENTITY helpMenu.label "Nápověda">
+<!ENTITY helpMenu.accesskey "v">
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+ for the help button in the menubar but Gnome does not. -->
+<!ENTITY helpMenuWin.label "Nápověda">
+<!ENTITY helpMenuWin.accesskey "v">
+<!ENTITY aboutCmd.label "O aplikaci &brandFullName;">
+<!ENTITY aboutCmd.accesskey "O">
+<!ENTITY helpContents.label "Obsah nápovědy">
+<!ENTITY helpContents.accesskey "n">
+<!ENTITY helpContentsMac.label "Nápověda aplikace &brandShortName;">
+<!ENTITY helpForIEUsers.label "Pro uživatele Internet Exploreru">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+ are all the necessary keys to hit OS X's open-help 
+ keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+
+<!ENTITY helpReleaseNotes.label "Poznámky k vydání">
+<!ENTITY helpReleaseNotes.accesskey "P">
+<!ENTITY updateCmd.label "Zkontrolovat aktualizace…">
+<!ENTITY updateCmd.accesskey "a">
+
+<!ENTITY preferencesCmdMac.label "Předvolby…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+
+<!ENTITY servicesMenuMac.label "Služby">
+
+<!ENTITY hideThisAppCmdMac.label "Skrýt &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label "Skrýt ostatní">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label "Zobrazit vše">

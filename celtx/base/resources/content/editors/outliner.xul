@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/editors.css"
+                 type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="outliner"
+        title="Outliner"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/document.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/editorcontroller.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptscene.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/breakdown.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/media.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/notes.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/sidebar.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/outliner.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/outlinercards.js" />
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/titlepage.js" />
+
+#include ../celtx-sets.inc
+
+  <commandset>
+    <command id="cmd-heading-1"
+             oncommand="goDoCommand('cmd-heading-1')" />
+    <command id="cmd_bold"
+             state="false"
+             oncommand="gController.doCommand('cmd_bold')" />
+    <command id="cmd_italic"
+             state="false"
+             oncommand="gController.doCommand('cmd_italic')" />
+    <command id="cmd_underline"
+             state="false"
+             oncommand="gController.doCommand('cmd_underline')" />
+    <command id="cmd_strikethrough"
+             state="false"
+             oncommand="gController.doCommand('cmd_strikethrough')" />
+    <command id="cmd-decrease-indent"
+             oncommand="goDoCommand('cmd-decrease-indent')" />
+    <command id="cmd-increase-indent"
+             oncommand="goDoCommand('cmd-increase-indent')" />
+    <command id="cmd-toggle-ol"
+             oncommand="goDoCommand('cmd-toggle-ol')" />
+    <command id="cmd-toggle-ul"
+             oncommand="goDoCommand('cmd-toggle-ul')" />
+    <command id="cmd-align-left"
+             oncommand="goDoCommand('cmd-align-left')" />
+    <command id="cmd-align-center"
+             oncommand="goDoCommand('cmd-align-center')" />
+    <command id="cmd-align-right"
+             oncommand="goDoCommand('cmd-align-right')" />
+    <command id="cmd-align-justify"
+             oncommand="goDoCommand('cmd-align-justify')" />
+    <command id="cmd-font-face"
+             oncommand="goDoCommand('cmd-font-face')" />
+    <command id="cmd-font-size"
+             oncommand="goDoCommand('cmd-font-size')" />
+    <command id="cmd-cardview-toggle"
+             oncommand="goDoCommand('cmd-cardview-toggle')"/>
+    <command id="cmd-create-card"
+             oncommand="goDoCommand('cmd-create-card')"/>
+    <command id="cmd-delete-card"
+             oncommand="goDoCommand('cmd-delete-card')"/>
+    <command id="cmd-toggle-breakdown"
+             oncommand="goDoCommand('cmd-toggle-breakdown')"/>
+    <command id="cmd-toggle-sidebar"
+             oncommand="goDoCommand('cmd-toggle-sidebar')"/>
+    <command id="cmd-import"
+             oncommand="goDoCommand('cmd-import')"/>
+    <command id="cmd-export"
+             oncommand="goDoCommand('cmd-export')"/>
+  </commandset>
+
+  <!-- Hook for the sidebar's commands -->
+  <commandset id="scriptcommandset" />
+
+  <popupset id="outliner-popupset">
+    <popup id="outliner-context"
+           onpopupshowing="gController.onContextShowing(this)">
+      <menuitem id="spellCheckNoSuggestions"
+                label="(&spellCheckNoSuggestions.label;)"
+                disabled="true"/>
+      <menuseparator id="spellCheckAddSep"/>
+      <menuitem id="spellCheckAddToDictionary"
+                label="&spellCheckAddToDictionary.label;"
+                accesskey="&spellCheckAddToDictionary.accesskey;"
+                oncommand="InlineSpellChecker.addToDictionary(null,null);"/>  
+      <menuitem id="spellCheckIgnoreWord"
+                label="&spellCheckIgnoreWord.label;"
+                accesskey="&spellCheckIgnoreWord.accesskey;"
+                oncommand="InlineSpellChecker.ignoreWord(null, null)"/>  
+      <menuseparator id="spellCheckSuggestionsSeparator"/>
+      <menuitem id="editor-popup-cut"
+                label="&cutCmd.label;"
+                command="cmd_cut"/>
+      <menuitem id="editor-popup-copy"
+                label="&copyCmd.label;"
+                command="cmd_copy"/>
+      <menuitem id="editor-popup-paste"
+                label="&pasteCmd.label;"
+                command="cmd_paste"/>
+      <menuseparator id="wordCountSep"
+                     hidden="true"/>
+      <menuitem id="wordCountItem"
+                label="."
+                disabled="true"
+                style="color: MenuText;"
+                hidden="true"/>
+    </popup>
+  </popupset>
+
+  <keyset id="outliner-keyset">
+    <key id="key-bold"
+         key="&bold.commandkey;"
+         modifiers="accel"
+         oncommand="gController.doCommand('cmd_bold')"/>
+    <key id="key-italic"
+         key="&italic.commandkey;"
+         modifiers="accel"
+         oncommand="gController.doCommand('cmd_italic')"/>
+    <key id="key-underline"
+         key="&underline.commandkey;"
+         modifiers="accel"
+         oncommand="gController.doCommand('cmd_underline')"/>
+  </keyset>
+
+  <!-- Appears to be a Mac-only bug, but using an oncommand handler
+       instead of a command attribute can sometimes cause the menuitem to
+       stop responding to mouse clicks, so command attributes should always
+       be used in favour of oncommand in this menu. -->
+  <box hidden="true">
+    <menupopup id="novelPopup"
+               label="&novel.label;">
+      <!-- import.label is defined in browser.dtd -->
+      <menuitem label="&import.label;"
+                command="cmd-import"/>
+      <menuitem label="&export.label;&ellipsis;"
+                command="cmd-export"/>
+      <menuseparator />
+      <menuitem id="menu-toggle-breakdown"
+                type="checkbox"
+                autocheck="false"
+                label="&showBreakdownInScript.label;"
+                command="cmd-toggle-breakdown"/>
+      <menuitem id="menu-toggle-sidebar"
+                type="checkbox"
+                autocheck="false"
+                label="&toggleSidebarCmd.label;"
+                accesskey="&toggleSidebarCmd.accesskey;"
+                command="cmd-toggle-sidebar"/>
+    </menupopup>
+  </box>
+
+  <hbox id="scriptOnlyMessage"
+        align="center"
+        collapsed="true">
+    <label class="header"
+           style="text-align: center;"
+           flex="1"
+           value="This editor is in Novel Only mode" />
+    <spacer width="40" />
+    <label class="text-link"
+           value="Learn More"
+           onclick="showScriptOnlyFAQ();" />
+    <spacer width="20" />
+    <toolbarbutton image="chrome://celtx/skin/closetab.png"
+                   oncommand="hideScriptOnlyMessage();" />
+  </hbox>
+  <deck id="editordeck" flex="1">
+    <vbox id="editorcard" flex="1">
+      <toolbox id="outliner-toolbox">
+        <toolbar id="outliner-toolbar-1" class="editortoolbar">
+          <toolbaritem align="center">
+            <!-- Needs a default label or else it's initially collapsed on Windows -->
+            <menulist id="fontFaceMenu"
+                      oncommand="goDoCommand('cmd-font-face')"
+                      label="Times">
+              <menupopup/>
+            </menulist>
+          </toolbaritem>
+          <toolbarbutton class="celtx-decrease-fontsize"
+                         tooltiptext="&decreaseFontSizeCmd.tooltip;"
+                         oncommand="gController.decreaseFontSize()"/>
+          <toolbarbutton class="celtx-increase-fontsize"
+                         tooltiptext="&increaseFontSizeCmd.tooltip;"
+                         oncommand="gController.increaseFontSize()"/>
+          <toolbaritem>
+            <colorpicker id="fontColourPicker"
+                         type="button"
+                         value="rgb(0, 0, 0)"
+                         onchange="gController.cmdTextColour(this.color)"/>
+          </toolbaritem>
+          <toolbarseparator />
+          <toolbarbutton class="celtx-undo-button format-toolbar-button"
+                         tooltiptext="&undoCmd.label;"
+                         onclick="goDoCommand('cmd_undo')"/>
+          <toolbarbutton class="celtx-redo-button format-toolbar-button"
+                         tooltiptext="&redoCmd.label;"
+                         onclick="goDoCommand('cmd_redo')"/>
+          <toolbarseparator />
+          <toolbarbutton class="celtx-cut-button format-toolbar-button"
+                         tooltiptext="&cutCmd.label;"
+                         onclick="goDoCommand('cmd_cut')"/>
+          <toolbarbutton class="celtx-copy-button format-toolbar-button"
+                         tooltiptext="&copyCmd.label;"
+                         onclick="goDoCommand('cmd_copy')"/>
+          <toolbarbutton class="celtx-paste-button format-toolbar-button"
+                         tooltiptext="&pasteCmd.label;"
+                         onclick="goDoCommand('cmd_paste')"/>
+          <toolbarseparator />
+          <toolbarbutton class="celtx-find-button format-toolbar-button"
+                         tooltiptext="&findCmd.label;"
+                         oncommand="goDoCommand('cmd-find')" />
+          <toolbarbutton class="celtx-spell-button format-toolbar-button"
+                         tooltiptext="&spellCheckCmd.label;"
+                         oncommand="goDoCommand('cmd-check-spelling')" />
+          <toolbarseparator/>
+          <toolbaritem id="zoomitem" align="center">
+            <menulist id="zoomMenu"
+                      oncommand="gController.setZoom(Number(
+                                  this.selectedItem.value))">
+              <menupopup>
+                <menuitem label="50%" value="50"/>
+                <menuitem label="75%" value="75"/>
+                <menuitem label="100%" value="100" selected="true"/>
+                <menuitem label="120%" value="120"/>
+                <menuitem label="150%" value="150"/>
+                <menuitem label="200%" value="200"/>
+              </menupopup>
+            </menulist>
+          </toolbaritem>
+          <toolbarspacer id="outline-sidebar-spacer"
+                         flex="1"/>
+          <toolbarbutton id="outline-sidebar-button"
+                         class="celtx-sidebar-button format-toolbar-button"
+                         tooltiptext="&toggleSidebarCmd.label;"
+                         command="cmd-toggle-sidebar"/>
+        </toolbar>
+        <toolbar id="outliner-toolbar-2" class="editortoolbar">
+          <toolbarbutton label="&chapter.toolbarlabel;"
+                         oncommand="goDoCommand('cmd-heading-1')" />
+          <toolbarbutton class="celtx-bold-button format-toolbar-button"
+                         tooltiptext="&bold.label;"
+                         observes="cmd_bold"/>
+          <toolbarbutton class="celtx-italic-button format-toolbar-button"
+                         tooltiptext="&italic.label;"
+                         observes="cmd_italic"/>
+          <toolbarbutton class="celtx-underline-button format-toolbar-button"
+                         tooltiptext="&underline.label;"
+                         observes="cmd_underline"/>
+          <toolbarbutton class="celtx-strikethrough-button"
+                         tooltiptext="&strikethrough.label;"
+                         observes="cmd_strikethrough"
+                         oncommand="goDoCommand('cmd_strikethrough')"/>
+          <toolbarbutton class="celtx-uppercase-button format-toolbar-button"
+                         tooltiptext="&uppercaseCmd.tooltip;"
+                         onclick="goDoCommand('cmd-uppercase')"/>
+          <toolbarbutton class="celtx-lowercase-button format-toolbar-button"
+                         tooltiptext="&lowercaseCmd.tooltip;"
+                         oncommand="goDoCommand('cmd-lowercase')"/>
+          <toolbarseparator />
+          <toolbarbutton class="celtx-align-left"
+                         tooltiptext="&alignLeft.label;"
+                         oncommand="goDoCommand('cmd-align-left')"/>
+          <toolbarbutton class="celtx-align-center"
+                         tooltiptext="&alignCenter.label;"
+                         oncommand="goDoCommand('cmd-align-center')"/>
+          <toolbarbutton class="celtx-align-right"
+                         tooltiptext="&alignRight.label;"
+                         oncommand="goDoCommand('cmd-align-right')"/>
+          <toolbarbutton class="celtx-align-justify"
+                         tooltiptext="&alignJustified.label;"
+                         oncommand="goDoCommand('cmd-align-justify')"/>
+          <toolbarseparator/>
+          <toolbarbutton class="celtx-toggle-ul"
+                         tooltiptext="&unorderedList.label;"
+                         command="cmd-toggle-ul"/>
+          <toolbarbutton class="celtx-toggle-ol"
+                         tooltiptext="&orderedList.label;"
+                         command="cmd-toggle-ol"/>
+          <toolbarbutton class="celtx-decrease-indent"
+                         tooltiptext="&decreaseIndentCmd.tooltip;"
+                         command="cmd-decrease-indent"/>
+          <toolbarbutton class="celtx-increase-indent"
+                         tooltiptext="&increaseIndentCmd.tooltip;"
+                         command="cmd-increase-indent"/>
+          <toolbarseparator />
+        </toolbar>
+      </toolbox>
+      <hbox flex="1">
+        <outliner id="editor"
+                  editortype="html"
+                  type="content"
+                  context="outliner-context"
+                  flex="4"/>
+        <splitter collapse="after">
+          <grippy />
+        </splitter>
+#include sidebar.inc
+      </hbox>
+    </vbox>
+
+
+    <vbox id="indexcard"
+          flex="1">
+      <toolbar class="editortoolbar">
+        <toolbarbutton id="toggle-cardview-button"
+                       showing="front"
+                       label="&showContents.label;"
+                       command="cmd-cardview-toggle"/>
+        <toolbarbutton label="&addCardCmd.label;"
+                       command="cmd-create-card"/>
+        <toolbarbutton label="&deleteCardCmd.label;"
+                       command="cmd-delete-card"/>
+        <toolbarspacer flex="1"/>
+        <toolbaritem align="center">
+          <label value="&zoom.label;&colon;"/>
+          <menulist oncommand="gCardController.setZoom(this.selectedItem.value)">
+            <menupopup>
+              <menuitem label="100%"
+                        value="1.0"
+                        selected="true"/>
+              <menuitem label="75%"
+                        value="0.65"/>
+              <menuitem label="50%"
+                        value="0.5"/>
+            </menupopup>
+          </menulist>
+        </toolbaritem>
+      </toolbar>
+      <iframe id="cardview"
+              type="content"
+              flex="1"
+              src="about:blank"/>
+    </vbox>
+
+
+    <vbox id="titlecard"
+          flex="1">
+      <iframe id="titleframe"
+              flex="1"
+              type="content"
+              src="about:blank"/>
+    </vbox>
+  </deck>
+  <spacer id="EditModeToolbarTop"/>
+  <hbox id="EditModeToolbar">
+    <tabs id="EditModeTabs"
+          class="tabs-bottom"
+          pack="start"
+          oncommand="viewTabSelected(event)">
+      <tab id="editortab"
+           label="&editor.label;"
+           value="editorcard"
+           selected="true"/>
+      <tab label="&indexCards.label;"
+           value="indexcard"/>
+      <tab label="&titlePage.label;"
+           value="titlecard"/>
+    </tabs>
+    <hbox flex="1"
+          pack="center"
+          align="center">
+      <label id="statusmsg"/>
+    </hbox>
+  </hbox>
+
+</window>
+

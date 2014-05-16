@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE stylesheet [
+<!ENTITY % browserDTD SYSTEM "chrome://celtxapp/locale/browser.dtd" >
+%browserDTD;
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns="http://www.w3.org/1999/xhtml"
+                version="1.0">
+
+  <xsl:output method="xml"
+              encoding="UTF-8"/>
+
+  <xsl:param name="show-description">0</xsl:param>
+  <xsl:param name="show-media">0</xsl:param>
+
+  <xsl:template match="/breakdown">
+    <html>
+      <head>
+        <title><xsl:value-of select="@title"/></title>
+        <link href="chrome://celtx/skin/breakdownreport.css"
+              type="text/css" rel="stylesheet"/>
+      </head>
+      <body>
+        <div class="banner">
+          <xsl:value-of select="@title"/>
+        </div>
+        <xsl:apply-templates select="scene"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="scene">
+    <xsl:if test="department">
+      <div class="scene">
+        <xsl:value-of select="@ordinal"/>
+        -
+        <span class="bold">
+          <xsl:value-of select="@title"/>
+        </span>
+        <xsl:if test="$show-description = 1 and @description != ''">
+          ::
+          <xsl:value-of select="@description"/>
+        </xsl:if>
+      </div>
+      <xsl:choose>
+        <xsl:when test="$show-description = 1 or count(department) = 1">
+          <div class="unicontents">
+            <xsl:apply-templates select="department"/>
+          </div>
+        </xsl:when>
+        <xsl:otherwise>
+          <div class="contents">
+            <xsl:apply-templates select="department"/>
+          </div>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:variable name="images" select="department/item/image"/>
+      <xsl:if test="$show-media = 1 and $images">
+        <br style="page-break-before: always;"/>
+        <xsl:for-each select="$images">
+          <xsl:variable name="dept" select="../../@title"/>
+          <xsl:variable name="item" select="../@title"/>
+          <xsl:call-template name="mediaimage">
+            <xsl:with-param name="deptname" select="$dept"/>
+            <xsl:with-param name="itemname" select="$item"/>
+            <xsl:with-param name="imagesrc" select="@src"/>
+          </xsl:call-template>
+          <xsl:if test="position() mod 6 = 0">
+            <br style="clear: both; page-break-after: always;"/>
+            <!-- Next media item gets beheaded if we don't do this -->
+            <xsl:if test="position() != last()">
+              <br/>
+            </xsl:if>
+          </xsl:if>
+        </xsl:for-each>
+        <xsl:if test="count($images) mod 6 != 0">
+          <br style="clear: both; page-break-after: always;"/>
+        </xsl:if>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="department">
+    <div class="dept">
+      <span class="header">
+        <xsl:value-of select="@title"/>
+      </span>
+      <ul>
+        <xsl:apply-templates select="item"/>
+      </ul>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="department" mode="single">
+    <div class="singledept">
+      <span class="header">
+        <xsl:value-of select="@title"/>
+      </span>
+      <ul>
+        <xsl:apply-templates select="item"/>
+      </ul>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="item">
+    <li>
+      <xsl:value-of select="@title"/>
+    </li>
+    <xsl:if test="markuptext">
+      <li>
+        <xsl:apply-templates select="markuptext"/>
+      </li>
+    </xsl:if>
+    <xsl:if test="$show-description = 1 and @description != ''">
+      <span class="desc">
+        <xsl:value-of select="@description"/>
+      </span>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="markuptext">
+    <span class="markuptext">
+      <xsl:apply-templates select="text()"/>
+    </span>
+  </xsl:template>
+
+  <xsl:template name="mediaimage">
+    <xsl:param name="deptname"/>
+    <xsl:param name="itemname"/>
+    <xsl:param name="imagesrc"/>
+    <div class="itemimage">
+      <span class="header">
+        <xsl:value-of select="$deptname"/>
+      </span>
+      <br/>
+      <xsl:value-of select="$itemname"/>
+      <br/>
+      <img>
+        <xsl:attribute name="src">
+          <xsl:value-of select="$imagesrc"/>
+        </xsl:attribute>
+      </img>
+    </div>
+  </xsl:template>
+
+</xsl:stylesheet>
+          

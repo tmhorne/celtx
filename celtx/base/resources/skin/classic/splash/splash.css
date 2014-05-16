@@ -1,0 +1,320 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+html {
+background-color: #d6d6dd;
+background-image: url(chrome://celtx/skin/splash/body-bg.png);
+background-repeat: repeat-x;
+}
+
+body {
+margin-top: 55px;
+font-family: helvetica;
+font-size: 14px;
+counter-reset: projnum;
+}
+
+#container {
+margin-left: 45px;
+margin-top: 20px;}
+
+#tab0content, #tab1content, #tab2content, #tab3content, #tab4content {
+border: 1px solid #333;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+padding-left: 0px;
+width: 640px;
+height: 350px;
+background-color:#fff;
+}
+
+
+#tabSet {
+padding-left: 7px;
+margin-top: 10px;
+}
+
+div.tabContentShow {display:block}
+div.tabContentHide {display:none}
+
+#tabSet img {
+border: none;
+}
+
+a {
+  outline: none;
+}
+
+a.offtab {
+font-size: 16px;
+text-decoration: none;
+color: #333;
+padding: 4px 4px 0 4px;
+background-color: #ccc;
+border-top: 1px solid #000;
+border-right: 1px solid #000;
+border-left: 1px solid #000;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+}
+
+a.ontab {
+font-size: 16px;
+text-decoration: none;
+color: #000;
+padding: 4px 4px 2px 4px;
+background-color: #fff;
+border-top: 1px solid #000;
+border-right: 1px solid #000;
+border-left: 1px solid #000;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+outline:none;
+}
+
+.notifier {
+max-height: 80px;
+max-width: 640px;
+overflow: hidden;
+/*
+background-color: black;
+border: 1px solid yellow;
+color: yellow;
+*/
+margin: 20px 0px 0px 7px;
+/* padding-left: 5px; */
+clear: both;
+}
+
+#switch1 {
+margin-left: 10px;
+}
+
+.navcontainer
+{
+background: transparent;
+width: 220px;
+padding: 0.5em 0.5em;
+font-family: georgia, serif;
+font-size: 13px;
+float:left;
+}
+
+ul.navlist
+{
+text-align: left;
+list-style: none;
+padding: 0;
+width: 220px;
+}
+
+ul.navlist li
+{
+display: block;
+margin: 0;
+padding: 0;
+}
+
+ul.navlist li a
+{
+display: block;
+width: 100%;
+padding: 0.5em 0 0.5em 1.5em;
+border-width: 1px;
+border-color: #ffe #aaab9c #ccc #aaab9c;
+border-style: solid;
+color: #444;
+text-decoration: none;
+background: #fff;
+outline: none;
+overflow: hidden;
+height: 1.2em;
+}
+
+.header
+{
+font-weight: bold;
+padding: 0.5em 0em 0.5em 1.5em;
+background-color: #ccc;
+display: block;
+width: 199px;
+color: #000;
+text-decoration: none;
+outline: none;
+border: 1px solid #999;
+}
+
+a.numbered:before {
+  content: counter(projnum) ". ";
+  counter-increment: projnum;
+}
+
+.navcontainer>ul.navlist li a { width: auto; }
+
+ul.navlist li:active a
+{
+background: #ccc;
+color: #800000;
+}
+
+ul.navlist li a:hover, ul.navlist li:active a:hover
+{
+border-color: #fff #000 #000 #ccc;
+background-color: #eee;
+color: #000;
+}
+
+ul.navlist li a:active {
+border-color: #000 #ccc #fff #000;
+}
+
+ul.navlist li:hover .trans {
+display: block;
+}
+
+.trans {
+display:none;
+font-family: georgia, serif;
+background-color: #fff;
+opacity: 1;
+position: absolute;
+top: 90px;
+left: 330px;
+padding: 0 10px;
+height: 304px;
+width: 336px;
+}
+
+.trans h3 {
+text-align: center;
+padding-bottom: 10px;
+}
+
+.trans p {
+padding-bottom: 10px;
+}
+
+.welcome {
+font-family: georgia, serif;
+position: absolute;
+top: 102px;
+left: 330px;
+padding: 0 10px;
+height: 300px;
+width: 320px;
+}
+
+.inbox {
+  width: 300px;
+  height: 320px;
+}
+
+.dontshow {
+  display: none;
+}
+
+#feedpicker {
+  float: left;
+  border-right: 1px solid gray;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  margin-right: 12px;
+  padding-right: 12px;
+  height: 320px;
+  width: 140px;
+  overflow: auto;
+}
+
+#feedFrame {
+  float: right;
+  width: 465px;
+  height: 320px;
+  padding: .2em;
+  margin-top: 1em;
+
+}
+
+#feedFrame > iframe {
+  width: 465px;
+  height: 320px;
+  background-color: #FFFFFF;
+}
+
+#feedpicker > a {
+  font-size: 10pt;
+  display: block;
+  padding: 5px 0px 3px 15px;
+}
+
+.activefeed {
+  background-color: silver;
+  border-top:1px solid grey;
+  border-bottom:1px solid grey;
+}
+
+.inactivefeed {
+  background-color: white;
+  border-top:1px solid white;
+  border-bottom:1px solid white;
+}
+
+.loginbanner {
+  float: right;
+  margin-right: 3em;
+  font-size: 10pt;
+}
+
+#loginspan {
+  color: blue;
+  text-decoration: underline;
+}
+
+.recent {
+font-family: georgia, serif;
+margin-left: 22px;
+}
+
+#tab0content li img, #tab3content li img {
+border: 2px solid;
+border-color: #ccc #333 #333 #ccc;
+}
+
+ul.navlist li.empty {
+display: block;
+width: 199px;
+padding: 0.5em 0 0.5em 1.5em;
+border-width: 1px;
+border-color: #ffe #aaab9c #ccc #aaab9c;
+border-style: solid;
+color: #444;
+text-decoration: none;
+background: #fff;
+outline: none;
+}
+
+li.empty:before {
+content: counter(projnum) ". ";
+counter-increment: projnum;
+}

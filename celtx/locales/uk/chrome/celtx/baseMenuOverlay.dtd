@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "Згорнути">
+<!ENTITY bringAllToFront.label "Помістити все на передній план">
+<!ENTITY zoomWindow.label "Розгорнути">
+<!ENTITY windowMenu.label "Вікно">
+
+<!ENTITY helpMenu.label "Довідка">
+<!ENTITY helpMenu.accesskey "Д">
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label "Довідка">
+<!ENTITY helpMenuWin.accesskey "Д">
+<!ENTITY aboutCmd.label "Про &brandFullName;">
+<!ENTITY aboutCmd.accesskey "о">
+<!ENTITY helpContents.label "Зміст">
+<!ENTITY helpContents.accesskey "і">
+<!ENTITY helpContentsMac.label "Довідка &brandShortName;">
+<!ENTITY helpForIEUsers.label "Для користувачів Internet Explorer">
+<!ENTITY helpForIEUsers.accesskey "я">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+
+<!ENTITY helpReleaseNotes.label "Інформація про випуск">
+<!ENTITY helpReleaseNotes.accesskey "ф">
+<!ENTITY updateCmd.label "Перевірити наявність оновлень…">
+<!ENTITY updateCmd.accesskey "е">
+
+<!ENTITY preferencesCmdMac.label "Налаштування…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+
+<!ENTITY servicesMenuMac.label "Служби">
+
+<!ENTITY hideThisAppCmdMac.label "Приховати &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label "Приховати інші">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label "Показати все">

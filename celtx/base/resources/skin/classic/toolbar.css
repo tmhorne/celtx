@@ -1,0 +1,1190 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+toolbar[mode="none"] {
+  display: none;
+}
+
+toolbarbutton {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+toolbarbutton[type="menu-button"] > toolbarbutton {
+  padding: 0px;
+}
+
+/* Slightly more specific to override toolkit theme */
+toolbar > toolbarbutton[checked="true"] {
+  border-color: transparent !important;
+  background-image: none !important;
+  color: inherit !important;
+}
+
+%ifdef XP_MACOSX
+statusbarpanel {
+  background-color: #D7D7D7;
+  -moz-appearance: inherit !important;
+}
+
+%ifdef XP_MACOSX_METALLIC
+#project-toolbar {
+  background-image: url("chrome://global/skin/toolbar/toolbar-background.gif");
+  background-repeat: repeat-x;
+  background-position: right top;
+  background-color: rgb(158, 158, 158);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+window:not([active="true"]) #project-toolbar {
+  border-top-color: rgba(255,255,255,0.45);
+  border-bottom-color: rgba(0,0,0,0.35);
+  background-color: #cfcfcf;
+  background-image: url("chrome://global/skin/toolbar/toolbar-background-inactive.png");
+}
+%else
+#project-toolbar {
+  background-image: url("chrome://celtx/skin/bg_toolbar.png");
+  border-bottom: 1px solid #A3A3A3;
+}
+%endif
+
+%endif
+
+.project-toolbar-button {
+  list-style-image: url("chrome://celtx/skin/projtoolbar.png");
+  -moz-box-orient: vertical;
+}
+
+.format-toolbar-button {
+  list-style-image: url("chrome://celtx/skin/editorToolbar.png");
+}
+
+.format-toolbar-button > label {
+  display: none;
+}
+
+.library-toolbar-button {
+  list-style-image: url("chrome://celtx/skin/libraryToolbar.png");
+}
+
+.library-toolbar-button > label {
+  display: none;
+}
+
+.library-toolbar-button[label] > label {
+  display: inherit;
+}
+
+.storyboard-toolbar-button {
+  list-style-image: url("chrome://celtx/skin/storyboardToolbar.png");
+}
+
+.view-list {
+  list-style-image: url("chrome://celtx/skin/view_list.png");
+  border: 1px solid transparent;
+  padding: 4px;
+}
+
+.view-icons {
+  list-style-image: url("chrome://celtx/skin/view_icons.png");
+  border: 1px solid transparent;
+  padding: 4px;
+}
+
+.view-list > label, .view-icons > label {
+  display: none;
+}
+
+.view-list[checked="true"], .view-icons[checked="true"] {
+  background-color: ThreeDShadow;
+  border: 1px solid ThreeDLightShadow;
+  border-right-color: ThreeDDarkShadow;
+  border-bottom-color: ThreeDDarkShadow;
+}
+
+#add-document-button,
+.library-add-button {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+#add-document-button:hover,
+.library-add-button:hover {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+#add-document-button:hover:active,
+.library-add-button:hover:active {
+  -moz-image-region: rect(32px 16px 48px 0px);
+}
+#add-document-button[disabled="true"],
+.library-add-button[disabled="true"] {
+  -moz-image-region: rect(48px 16px 64px 0px) !important;
+}
+
+
+#add-folder-button {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+#add-folder-button:hover {
+  -moz-image-region: rect(16px 32px 32px 16px);
+}
+#add-folder-button:hover:active {
+  -moz-image-region: rect(32px 32px 48px 16px);
+}
+#add-folder-button[disabled="true"] {
+  -moz-image-region: rect(48px 32px 64px 16px) !important;
+}
+
+
+#remove-document-button,
+.library-remove-button {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+#remove-document-button:hover,
+.library-remove-button:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+#remove-document-button:hover:active,
+.library-remove-button:hover:active {
+  -moz-image-region: rect(32px 48px 48px 32px);
+}
+#remove-document-button[disabled="true"],
+.library-remove-button[disabled="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px) !important;
+}
+
+
+#nav-item-up-button {
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+#nav-item-up-button:hover {
+  -moz-image-region: rect(16px 64px 32px 48px);
+}
+#nav-item-up-button:hover:active {
+  -moz-image-region: rect(32px 64px 48px 48px);
+}
+#nav-item-up-button[disabled="true"] {
+  -moz-image-region: rect(48px 64px 64px 48px) !important;
+}
+
+
+#nav-item-down-button {
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+#nav-item-down-button:hover {
+  -moz-image-region: rect(16px 80px 32px 64px);
+}
+#nav-item-down-button:hover:active {
+  -moz-image-region: rect(32px 80px 48px 64px);
+}
+#nav-item-down-button[disabled="true"] {
+  -moz-image-region: rect(48px 80px 64px 64px) !important;
+}
+
+#nav-item-delete-button {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+#nav-item-delete-button:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+#nav-item-delete-button:hover:active {
+  -moz-image-region: rect(32px 48px 48px 32px);
+}
+#nav-item-delete-button[disabled="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px) !important;
+}
+
+
+#toggle-scratchpad-button {
+  -moz-image-region: rect(0px 96px 16px 80px);
+}
+#toggle-scratchpad-button:hover {
+  -moz-image-region: rect(16px 96px 32px 80px);
+}
+#toggle-scratchpad-button:hover:active {
+  -moz-image-region: rect(32px 96px 48px 80px);
+}
+#toggle-scratchpad-button[disabled="true"] {
+  -moz-image-region: rect(48px 96px 64px 80px) !important;
+}
+
+
+.toggle-editing-button {
+  list-style-image: url("chrome://celtx/skin/libraryToolbar.png");
+  -moz-box-orient: horizontal;
+  -moz-image-region: rect(0px 112px 16px 96px);
+}
+.toggle-editing-button:hover {
+  -moz-image-region: rect(16px 112px 32px 96px);
+}
+.toggle-editing-button:hover:active {
+  -moz-image-region: rect(32px 112px 48px 96px);
+}
+.toggle-editing-button[disabled="true"] {
+  -moz-image-region: rect(48px 112px 64px 96px);
+}
+
+
+/* New */
+#celtx-new-button {
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+#celtx-new-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+#celtx-new-button:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+#celtx-new-button[disabled="true"] {
+  -moz-image-region: rect(96px 32px 128px 0px) !important;
+}
+
+/* Open */
+#celtx-open-button {
+  -moz-image-region: rect(0px 64px 32px 32px);
+}
+#celtx-open-button:hover {
+  -moz-image-region: rect(32px 64px 64px 32px);
+}
+#celtx-open-button:hover:active {
+  -moz-image-region: rect(64px 64px 96px 32px);
+}
+#celtx-open-button[disabled="true"] {
+  -moz-image-region: rect(96px 64px 128px 32px) !important;
+}
+
+#celtx-open-button .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://celtx/skin/projtoolbar.png");
+  -moz-image-region: rect(8px 336px 24px 320px);
+}
+#celtx-open-button:hover .toolbarbutton-menubutton-dropmarker {
+  -moz-image-region: rect(40px 336px 56px 320px);
+}
+#celtx-open-button[open="true"] .toolbarbutton-menubutton-dropmarker {
+  -moz-image-region: rect(72px 336px 88px 320px);
+}
+#celtx-open-button[disabled="true"] .toolbarbutton-menubutton-dropmarker {
+  -moz-image-region: rect(104px 336px 120px 320px) !important;
+}
+
+/* Save */
+#celtx-save-button {
+  -moz-image-region: rect(0px 96px 32px 64px);
+}
+#celtx-save-button:hover {
+  -moz-image-region: rect(32px 96px 64px 64px);
+}
+#celtx-save-button:hover:active {
+  -moz-image-region: rect(64px 96px 96px 64px);
+}
+#celtx-save-button[disabled="true"] {
+  -moz-image-region: rect(96px 96px 128px 64px) !important;
+}
+
+/* Print */
+#celtx-print-button {
+  -moz-image-region: rect(0px 128px 32px 96px);
+}
+#celtx-print-button:hover {
+  -moz-image-region: rect(32px 128px 64px 96px);
+}
+#celtx-print-button:hover:active {
+  -moz-image-region: rect(64px 128px 96px 96px);
+}
+#celtx-print-button[disabled="true"] {
+  -moz-image-region: rect(96px 128px 128px 96px) !important;
+}
+
+/* Report */
+#celtx-breakdown-button {
+  -moz-image-region: rect(0px 160px 32px 128px);
+}
+#celtx-breakdown-button:hover {
+  -moz-image-region: rect(32px 160px 64px 128px);
+}
+#celtx-breakdown-button:hover:active {
+  -moz-image-region: rect(64px 160px 96px 128px);
+}
+#celtx-breakdown-button[disabled="true"] {
+  -moz-image-region: rect(96px 160px 128px 128px) !important;
+}
+
+/* Schedule */
+#celtx-schedule-button {
+  -moz-image-region: rect(0px 192px 32px 160px);
+}
+#celtx-schedule-button:hover {
+  -moz-image-region: rect(32px 192px 64px 160px);
+}
+#celtx-schedule-button:hover:active {
+  -moz-image-region: rect(64px 192px 96px 160px);
+}
+#celtx-schedule-button[disabled="true"] {
+  -moz-image-region: rect(96px 192px 128px 160px) !important;
+}
+
+/* Publish */
+/*
+#celtx-publish-button {
+  -moz-image-region: rect(0px 224px 32px 192px);
+}
+#celtx-publish-button:hover {
+  -moz-image-region: rect(32px 224px 64px 192px);
+}
+#celtx-publish-button:hover:active {
+  -moz-image-region: rect(64px 224px 96px 192px);
+}
+#celtx-publish-button[disabled="true"] {
+  -moz-image-region: rect(96px 224px 128px 192px) !important;
+}
+*/
+
+/* Download */
+/*
+#celtx-download-button {
+  -moz-image-region: rect(0px 256px 32px 224px);
+}
+#celtx-download-button:hover {
+  -moz-image-region: rect(32px 256px 64px 224px);
+}
+#celtx-download-button:hover:active {
+  -moz-image-region: rect(64px 256px 96px 224px);
+}
+#celtx-download-button[disabled="true"] {
+  -moz-image-region: rect(96px 256px 128px 224px) !important;
+}
+*/
+
+/* Web Panel */
+#celtx-webpanel-button {
+  -moz-image-region: rect(0px 368px 32px 336px);
+}
+#celtx-webpanel-button:hover {
+  -moz-image-region: rect(32px 368px 64px 336px);
+}
+#celtx-webpanel-button:hover:active {
+  -moz-image-region: rect(64px 368px 96px 336px);
+}
+#celtx-webpanel-button[disabled="true"] {
+  -moz-image-region: rect(96px 368px 128px 336px) !important;
+}
+
+/* Unused Toolbox */
+#celtx-unused1-button {
+  -moz-image-region: rect(0px 400px 32px 368px);
+}
+#celtx-unused1-button:hover {
+  -moz-image-region: rect(32px 400px 64px 368px);
+}
+#celtx-unused1-button:hover:active {
+  -moz-image-region: rect(64px 400px 96px 368px);
+}
+#celtx-unused1-button[disabled="true"] {
+  -moz-image-region: rect(96px 400px 128px 368px) !important;
+}
+
+/* Storyboard */
+#celtx-storyboard-button {
+  -moz-image-region: rect(0px 432px 32px 400px);
+}
+#celtx-storyboard-button:hover {
+  -moz-image-region: rect(32px 432px 64px 400px);
+}
+#celtx-storyboard-button:hover:active {
+  -moz-image-region: rect(64px 432px 96px 400px);
+}
+#celtx-storyboard-button[disabled="true"] {
+  -moz-image-region: rect(96px 432px 128px 400px) !important;
+}
+
+/* Toolbox */
+#celtx-toolbox-button {
+  -moz-image-region: rect(0px 464px 32px 432px);
+}
+#celtx-toolbox-button:hover {
+  -moz-image-region: rect(32px 464px 64px 432px);
+}
+#celtx-toolbox-button:hover:active {
+  -moz-image-region: rect(64px 464px 96px 432px);
+}
+#celtx-toolbox-button[disabled="true"] {
+  -moz-image-region: rect(96px 464px 128px 432px) !important;
+}
+
+/* Studio */
+#celtx-studio-button {
+  list-style-image: url("chrome://celtx/skin/cloud.png");
+}
+
+
+/* Bold */
+.celtx-bold-button {
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+.celtx-bold-button:hover {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+.celtx-bold-button:hover:active {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}
+.celtx-bold-button[disabled="true"] {
+  -moz-image-region: rect(72px 24px 96px 0px) !important;
+}
+toolbarbutton[state="true"] {
+  background-color: gray;
+}
+
+/* Italic */
+.celtx-italic-button {
+  -moz-image-region: rect(0px 48px 24px 24px);
+}
+.celtx-italic-button:hover {
+  -moz-image-region: rect(24px 48px 48px 24px);
+}
+.celtx-italic-button:hover:active {
+  -moz-image-region: rect(48px 48px 72px 24px);
+}
+.celtx-italic-button[disabled="true"] {
+  -moz-image-region: rect(72px 48px 96px 24px) !important;
+}
+
+/* Underline */
+.celtx-underline-button {
+  -moz-image-region: rect(0px 72px 24px 48px);
+}
+.celtx-underline-button:hover {
+  -moz-image-region: rect(24px 72px 48px 48px);
+}
+.celtx-underline-button:hover:active {
+  -moz-image-region: rect(48px 72px 72px 48px);
+}
+.celtx-underline-button[disabled="true"] {
+  -moz-image-region: rect(72px 72px 96px 48px) !important;
+}
+
+/* Strikethrough */
+.celtx-strikethrough-button {
+  list-style-image: url(chrome://celtx/skin/text_strikethrough.png);
+}
+
+/* Uppercase */
+.celtx-uppercase-button {
+  -moz-image-region: rect(0px 96px 24px 72px);
+}
+.celtx-uppercase-button:hover {
+  -moz-image-region: rect(24px 96px 48px 72px);
+}
+.celtx-uppercase-button:hover:active {
+  -moz-image-region: rect(48px 96px 72px 72px);
+}
+.celtx-uppercase-button[disabled="true"] {
+  -moz-image-region: rect(72px 96px 96px 72px) !important;
+}
+
+/* Lowercase */
+.celtx-lowercase-button {
+  -moz-image-region: rect(0px 120px 24px 96px);
+}
+.celtx-lowercase-button:hover {
+  -moz-image-region: rect(24px 120px 48px 96px);
+}
+.celtx-lowercase-button:hover:active {
+  -moz-image-region: rect(48px 120px 72px 96px);
+}
+.celtx-lowercase-button[disabled="true"] {
+  -moz-image-region: rect(72px 120px 96px 96px) !important;
+}
+
+/* Undo */
+.celtx-undo-button {
+  -moz-image-region:  rect(0px 144px 24px 120px);
+}
+.celtx-undo-button:hover {
+  -moz-image-region: rect(24px 144px 48px 120px);
+}
+.celtx-undo-button:hover:active {
+  -moz-image-region: rect(48px 144px 72px 120px);
+}
+.celtx-undo-button[disabled="true"] {
+  -moz-image-region: rect(72px 144px 96px 120px) !important;
+}
+
+/* Redo */
+.celtx-redo-button {
+  -moz-image-region:  rect(0px 168px 24px 144px);
+}
+.celtx-redo-button:hover {
+  -moz-image-region: rect(24px 168px 48px 144px);
+}
+.celtx-redo-button:hover:active {
+  -moz-image-region: rect(48px 168px 72px 144px);
+}
+.celtx-redo-button[disabled="true"] {
+  -moz-image-region: rect(72px 168px 96px 144px) !important;
+}
+
+
+/* Cut */
+.celtx-cut-button {
+  -moz-image-region:  rect(0px 192px 24px 168px);
+}
+.celtx-cut-button:hover {
+  -moz-image-region: rect(24px 192px 48px 168px);
+}
+.celtx-cut-button:hover:active {
+  -moz-image-region: rect(48px 192px 72px 168px);
+}
+.celtx-cut-button[disabled="true"] {
+  -moz-image-region: rect(72px 192px 96px 168px) !important;
+}
+
+/* Copy */
+.celtx-copy-button {
+  -moz-image-region:  rect(0px 216px 24px 192px);
+}
+.celtx-copy-button:hover {
+  -moz-image-region: rect(24px 216px 48px 192px);
+}
+.celtx-copy-button:hover:active {
+  -moz-image-region: rect(48px 216px 72px 192px);
+}
+.celtx-copy-button[disabled="true"] {
+  -moz-image-region: rect(72px 216px 96px 192px) !important;
+}
+
+/* Paste */
+.celtx-paste-button {
+  -moz-image-region:  rect(0px 240px 24px 216px);
+}
+.celtx-paste-button:hover {
+  -moz-image-region: rect(24px 240px 48px 216px);
+}
+.celtx-paste-button:hover:active {
+  -moz-image-region: rect(48px 240px 72px 216px);
+}
+.celtx-paste-button[disabled="true"] {
+  -moz-image-region: rect(72px 240px 96px 216px) !important;
+}
+
+/* Note */
+.celtx-note-button {
+  -moz-image-region:  rect(0px 264px 24px 240px);
+}
+.celtx-note-button:hover {
+  -moz-image-region: rect(24px 264px 48px 240px);
+}
+.celtx-note-button:hover:active {
+  -moz-image-region: rect(48px 264px 72px 240px);
+}
+.celtx-note-button[disabled="true"] {
+  -moz-image-region: rect(72px 264px 96px 240px) !important;
+}
+
+/* Spell */
+.celtx-spell-button {
+  -moz-image-region:  rect(0px 288px 24px 264px);
+}
+.celtx-spell-button:hover {
+  -moz-image-region: rect(24px 288px 48px 264px);
+}
+.celtx-spell-button:hover:active {
+  -moz-image-region: rect(48px 288px 72px 264px);
+}
+.celtx-spell-button[disabled="true"] {
+  -moz-image-region: rect(72px 288px 96px 264px) !important;
+}
+
+/* Find */
+.celtx-find-button {
+  -moz-image-region:  rect(0px 312px 24px 288px);
+}
+.celtx-find-button:hover {
+  -moz-image-region: rect(24px 312px 48px 288px);
+}
+.celtx-find-button:hover:active {
+  -moz-image-region: rect(48px 312px 72px 288px);
+}
+.celtx-find-button[disabled="true"] {
+  -moz-image-region: rect(72px 312px 96px 288px) !important;
+}
+
+/* Remove */
+.celtx-remove-button {
+  -moz-image-region:  rect(0px 336px 24px 312px);
+}
+.celtx-remove-button:hover {
+  -moz-image-region: rect(24px 336px 48px 312px);
+}
+.celtx-remove-button:hover:active {
+  -moz-image-region: rect(48px 336px 72px 312px);
+}
+.celtx-remove-button[disabled="true"] {
+  -moz-image-region: rect(72px 336px 96px 312px) !important;
+}
+
+/* Sidebar Closed */
+.celtx-sidebar-button {
+  -moz-image-region:  rect(0px 360px 24px 336px);
+}
+.celtx-sidebar-button:hover {
+  -moz-image-region: rect(24px 360px 48px 336px);
+}
+.celtx-sidebar-button:hover:active {
+  -moz-image-region: rect(48px 360px 72px 336px);
+}
+.celtx-sidebar-button[disabled="true"] {
+  -moz-image-region: rect(72px 360px 96px 336px) !important;
+}
+
+/* Sidebar Open */
+.celtx-sidebar-button[checked="true"] {
+  -moz-image-region:  rect(0px 384px 24px 360px);
+  background-color: transparent;
+  border: 0px;
+}
+.celtx-sidebar-button[checked="true"]:hover {
+  -moz-image-region: rect(24px 384px 48px 360px);
+}
+.celtx-sidebar-button[checked="true"]:hover:active {
+  -moz-image-region: rect(48px 384px 72px 360px);
+}
+.celtx-sidebar-button[checked="true"][disabled="true"] {
+  -moz-image-region: rect(72px 384px 96px 360px) !important;
+}
+
+/* Dual Dialog */
+.celtx-dual-button {
+  -moz-image-region: rect(0px 408px 24px 384px);
+}
+.celtx-dual-button:hover {
+  -moz-image-region: rect(24px 408px 48px 384px);
+}
+.celtx-dual-button:hover:active {
+  -moz-image-region: rect(48px 408px 72px 384px);
+}
+.celtx-dual-button[disabled="true"] {
+  -moz-image-region: rect(72px 408px 96px 384px) !important;
+}
+
+#preventEditingButton {
+  -moz-image-region: rect(0px 432px 24px 408px);
+}
+
+toolbar[mode="locked"] > #preventEditingButton {
+  -moz-image-region: rect(0px 456px 24px 432px);
+}
+
+
+/**** Navigator tree buttons *****/
+
+.nav-item-props-button,
+.nav-item-new-button,
+.nav-item-down-button,
+.nav-item-up-button,
+.nav-item-delete-button {
+  list-style-image: url("chrome://celtx/skin/navigator.png");
+  -moz-box-orient: vertical;
+}
+
+.nav-item-props-button {
+  -moz-image-region: rect(0px 15px 15px 0px);
+}
+.nav-item-props-button:hover:active {
+  -moz-image-region: rect(16px 15px 31px 0px);
+}
+.nav-item-props-button[disabled="true"] {
+  -moz-image-region: rect(32px 15px 47px 0px) !important;
+}
+
+
+.nav-item-new-button {
+  -moz-image-region: rect(0px 79px 15px 64px);
+}
+.nav-item-new-button:hover:active {
+  -moz-image-region: rect(16px 79px 31px 64px);
+}
+.nav-item-new-button[disabled="true"] {
+  -moz-image-region: rect(32px 79px 47px 64px) !important;
+}
+
+.nav-item-delete-menuitem {
+  list-style-image: url("chrome://celtx/skin/navigator.png");
+  -moz-image-region: rect(0px 63px 15px 48px);
+}
+.nav-item-delete-menuitem[disabled="true"] {
+  -moz-image-region: rect(32px 63px 47px 48px) !important;
+}
+
+.nav-char-new-button {
+  list-style-image: url("chrome://celtx/skin/CharacterAdd.png");
+}
+.nav-char-delete-button {
+  list-style-image: url("chrome://celtx/skin/CharacterDelete.png");
+}
+
+
+.celtx-decrease-fontsize {
+  list-style-image: url("chrome://celtx/skin/minus.png");
+}
+.celtx-increase-fontsize {
+  list-style-image: url("chrome://celtx/skin/plus.png");
+}
+
+.celtx-decrease-indent {
+  list-style-image: url("chrome://celtx/skin/indent_decrease.png");
+}
+.celtx-increase-indent {
+  list-style-image: url("chrome://celtx/skin/indent_increase.png");
+}
+
+.celtx-toggle-ol {
+  list-style-image: url("chrome://celtx/skin/text_list_numbers.png");
+}
+.celtx-toggle-ul {
+  list-style-image: url("chrome://celtx/skin/text_list_bullets.png");
+}
+
+.celtx-align-left {
+  list-style-image: url("chrome://celtx/skin/text_align_left.png");
+}
+.celtx-align-center {
+  list-style-image: url("chrome://celtx/skin/text_align_center.png");
+}
+.celtx-align-right {
+  list-style-image: url("chrome://celtx/skin/text_align_right.png");
+}
+.celtx-align-justify {
+  list-style-image: url("chrome://celtx/skin/text_align_justify.png");
+}
+
+/* Production navigator buttons */
+
+.bd-script-button {
+  /* list-style-image: url("chrome://celtx/skin/bdscript.png"); */
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+  border-left: 1px solid ThreeDHighlight;
+  background: ThreeDFace;
+  margin: 3px;
+}
+
+.adddaybutton {
+  list-style-image: url("chrome://calendar/skin/toolbar-large.png");
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+.adddaybutton:active {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+.adddaybutton[disabled="true"] {
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+
+.removedaybutton {
+  list-style-image: url("chrome://calendar/skin/toolbar-large.png");
+  -moz-image-region: rect(0px 96px 32px 64px);
+}
+.removedaybutton:active {
+  -moz-image-region: rect(32px 96px 64px 64px);
+}
+.removedaybutton[disabled="true"] {
+  -moz-image-region: rect(64px 96px 96px 64px);
+}
+
+.editortoolbar {
+%ifdef XP_MACOSX
+  background-image: url("chrome://celtx/skin/bg_editor.png");
+%endif
+  /* Why is toolbar min-height !important in the global skin settings? */
+  min-height: 33px !important;
+}
+
+toolbarseparator {
+  background-image: none !important;
+  border-right: 1px solid #AAA;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+toolbar .cx-menu-button {
+  -moz-binding: url("chrome://celtx/content/menubutton.xml#cx-menu-button");
+}
+
+.cx-menu-button label {
+  text-align: center;
+}
+
+toolbar[mode="icons"] .cx-menu-button label {
+  display: none;
+}
+
+.cx-menu-marker-box {
+  -moz-box-pack: center;
+}
+
+toolbar[mode="text"] .cx-menu-marker-box {
+  -moz-box-pack: start;
+}
+
+toolbar[mode="both"] .cx-menu-marker-box {
+  -moz-box-pack: start;
+  padding-top: 12px;
+}
+
+toolbar[mode="text"] #sponsorframe {
+  display: none;
+}
+
+.addsequence {
+  -moz-box-orient: horizontal;
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+.addsequence:hover {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+.addsequence:hover:active {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}
+.addsequence[disabled="true"] {
+  -moz-image-region: rect(72px 24px 96px 0px) !important;
+}
+
+.deletesequence {
+  -moz-box-orient: horizontal;
+  -moz-image-region: rect(0px 48px 24px 24px);
+}
+.deletesequence:hover {
+  -moz-image-region: rect(24px 48px 48px 24px);
+}
+.deletesequence:hover:active {
+  -moz-image-region: rect(48px 48px 72px 24px);
+}
+.deletesequence[disabled="true"] {
+  -moz-image-region: rect(72px 48px 96px 24px) !important;
+}
+
+.onecolumn {
+  -moz-image-region: rect(0px 192px 24px 168px);
+}
+.onecolumn:hover {
+  -moz-image-region: rect(24px 192px 48px 168px);
+}
+.onecolumn:hover:active {
+  -moz-image-region: rect(24px 192px 48px 168px);
+}
+.onecolumn[disabled="true"] {
+  -moz-image-region: rect(24px 192px 48px 168px);
+}
+
+.twocolumns {
+  -moz-image-region: rect(0px 216px 24px 192px);
+}
+.twocolumns:hover {
+  -moz-image-region: rect(24px 216px 48px 192px);
+}
+.twocolumns:hover:active {
+  -moz-image-region: rect(24px 216px 48px 192px);
+}
+.twocolumns[disabled="true"] {
+  -moz-image-region: rect(24px 216px 48px 192px);
+}
+
+.threecolumns {
+  -moz-image-region: rect(0px 240px 24px 216px);
+}
+.threecolumns:hover {
+  -moz-image-region: rect(24px 240px 48px 216px);
+}
+.threecolumns:hover:active {
+  -moz-image-region: rect(48px 240px 73px 216px);
+}
+.threecolumns[disabled="true"] {
+  -moz-image-region: rect(72px 240px 96px 216px);
+}
+
+.slideshow {
+  -moz-box-orient: horizontal;
+  -moz-image-region: rect(0px 72px 24px 48px);
+}
+.slideshow:hover {
+  -moz-image-region: rect(24px 72px 48px 48px);
+}
+.slideshow:hover:active {
+  -moz-image-region: rect(48px 72px 72px 48px);
+}
+.slideshow[disabled="true"] {
+  -moz-image-region: rect(72px 72px 96px 48px) !important;
+}
+
+.upsequence {
+  -moz-image-region: rect(0px 96px 24px 72px);
+}
+.upsequence:hover {
+  -moz-image-region: rect(24px 96px 48px 72px);
+}
+.upsequence:hover:active {
+  -moz-image-region: rect(48px 96px 72px 72px);
+}
+.upsequence[disabled="true"] {
+  -moz-image-region: rect(72px 96px 96px 72px) !important;
+}
+
+.uprow {
+  -moz-image-region: rect(0px 120px 24px 96px);
+}
+.uprow:hover {
+  -moz-image-region: rect(24px 120px 48px 96px);
+}
+.uprow:hover:active {
+  -moz-image-region: rect(48px 120px 72px 96px);
+}
+.uprow[disabled="true"] {
+  -moz-image-region: rect(72px 120px 96px 96px) !important;
+}
+
+.downrow {
+  -moz-image-region: rect(0px 144px 24px 120px);
+}
+.downrow:hover {
+  -moz-image-region: rect(24px 144px 48px 120px);
+}
+.downrow:hover:active {
+  -moz-image-region: rect(48px 144px 72px 120px);
+}
+.downrow[disabled="true"] {
+  -moz-image-region: rect(72px 144px 96px 120px) !important;
+}
+
+.downsequence {
+  -moz-image-region: rect(0px 168px 24px 144px);
+}
+.downsequence:hover {
+  -moz-image-region: rect(24px 168px 48px 144px);
+}
+.downsequence:hover:active {
+  -moz-image-region: rect(48px 168px 72px 144px);
+}
+.downsequence[disabled="true"] {
+  -moz-image-region: rect(72px 168px 96px 144px) !important;
+}
+
+.webpanel-toolbar-button {
+  -moz-box-orient: horizontal;
+  list-style-image: url("chrome://celtx/skin/webpanelToolbar.png");
+}
+
+#celtx-publish-button {
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#celtx-publish-button:hover {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+#celtx-publish-button:hover:active {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}
+#celtx-publish-button[disabled="true"] {
+  -moz-image-region: rect(72px 24px 96px 0px) !important;
+}
+
+#celtx-download-button {
+  -moz-image-region: rect(0px 48px 24px 24px);
+}
+#celtx-download-button:hover {
+  -moz-image-region: rect(24px 48px 48px 24px);
+}
+#celtx-download-button:hover:active {
+  -moz-image-region: rect(48px 48px 72px 24px);
+}
+#celtx-download-button[disabled="true"] {
+  -moz-image-region: rect(72px 48px 96px 24px) !important;
+}
+
+#toggle-cardview-button {
+  -moz-box-orient: horizontal;
+  list-style-image: url("chrome://celtx/skin/showcardback.png");
+}
+#toggle-cardview-button[showing="back"] {
+  list-style-image: url("chrome://celtx/skin/showcardfront.png");
+}
+
+.pdfpagefirst {
+  list-style-image: url("chrome://celtx/skin/pdf/page_first.png");
+}
+.pdfpageprev {
+  list-style-image: url("chrome://celtx/skin/pdf/page_prev.png");
+}
+.pdfpagenext {
+  list-style-image: url("chrome://celtx/skin/pdf/page_next.png");
+}
+.pdfpagelast {
+  list-style-image: url("chrome://celtx/skin/pdf/page_last.png");
+}
+
+/* Shot Toolbar */
+
+.shotbutton {
+  margin: 2px;
+  list-style-image: url("chrome://celtx/skin/shotToolbar.png");
+}
+
+.shotbutton > label {
+  display: none;
+}
+
+.pointerbutton {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+.linebutton {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+.arrowbutton {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+.rectanglebutton {
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+
+.ellipsebutton {
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+
+.textbutton {
+  -moz-image-region: rect(0px 96px 16px 80px);
+}
+
+.lowerbutton {
+  -moz-image-region: rect(0px 112px 16px 96px);
+}
+.lowerbutton[disabled="true"] {
+  -moz-image-region: rect(16px 112px 32px 96px);
+}
+
+.raisebutton {
+  -moz-image-region: rect(0px 128px 16px 112px);
+}
+.raisebutton[disabled="true"] {
+  -moz-image-region: rect(16px 128px 32px 112px);
+}
+
+.lowertobottombutton {
+  -moz-image-region: rect(0px 144px 16px 128px);
+}
+.lowertobottombutton[disabled="true"] {
+  -moz-image-region: rect(16px 144px 32px 128px);
+}
+
+.raisetotopbutton {
+  -moz-image-region: rect(0px 160px 16px 144px);
+}
+.raisetotopbutton[disabled="true"] {
+  -moz-image-region: rect(16px 160px 32px 144px);
+}
+
+.groupbutton {
+  -moz-image-region: rect(0px 176px 16px 160px);
+}
+.groupbutton[disabled="true"] {
+  -moz-image-region: rect(16px 176px 32px 160px);
+}
+
+.ungroupbutton {
+  -moz-image-region: rect(0px 192px 16px 176px);
+}
+.ungroupbutton[disabled="true"] {
+  -moz-image-region: rect(16px 192px 32px 176px);
+}
+
+.strokebutton {
+  -moz-image-region: rect(0px 208px 16px 192px);
+}
+.strokebutton[disabled="true"] {
+  -moz-image-region: rect(16px 208px 32px 192px);
+}
+
+.fillbutton {
+  -moz-image-region: rect(0px 224px 16px 208px);
+}
+.fillbutton[disabled="true"] {
+  -moz-image-region: rect(16px 224px 32px 208px);
+}
+
+
+/* Script Revisions Toolbar */
+
+.revision-toolbar-button {
+  list-style-image: url("chrome://celtx/skin/revtoolbar.png");
+}
+
+#createRevisionButton {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#lockScenesButton {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#omitSceneButton {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+#omitSceneButton[restore="true"] {
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+
+#resetLockingButton {
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+
+
+/* The Chat button */
+
+#chatbutton {
+  list-style-image: url("chrome://celtx/skin/dd.png");
+}
+
+#chatbutton[disabled="true"] {
+  list-style-image: url("chrome://celtx/skin/dd_disabled.png");
+}
+
+
+/* The CSV Export button */
+
+#csvexportbutton {
+  list-style-image: url("chrome://celtx/skin/csvexport.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#csvexportbutton:hover {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+
+#csvexportbutton:hover:active {
+  -moz-image-region: rect(32px 16px 48px 0px);
+}
+
+#csvexportbutton[disabled="true"] {
+  -moz-image-region: rect(48px 16px 64px 0px);
+}

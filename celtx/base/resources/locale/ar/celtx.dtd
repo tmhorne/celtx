@@ -1,0 +1,941 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "البريد الإلكتروني">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "الإعدادات">
+<!ENTITY timer.autostart.label "بدء الجلسة عند فتح ملف السيناريو.">
+<!ENTITY timer.schedule.label "جدول">
+<!ENTITY timer.useSchedule.label "بدء استراحات مجدولة">
+<!ENTITY timer.workMinutes.label "العمل(دقائق):">
+<!ENTITY timer.breakMinutes.label "الاستراحة (دقائق):">
+<!ENTITY timer.alertType.label "نوع التنبيه عند بدء/انتهاء الاستراحة">
+<!ENTITY timer.showDialog.label "اعرض مربع حوار">
+<!ENTITY timer.endSession.label "انهاء الجلسة">
+<!ENTITY timer.flashTimer.label "قم بإضاءة المؤقت">
+<!ENTITY timer.resetSession.label "اعد تشغيل الجلسة">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "التقارير">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "وقت بدء الجلسة:">
+<!ENTITY timer.totalWritingTime.label "وقت الكتابة الكلي:">
+<!ENTITY timer.totalBreakTime.label "وقت الاستراحة الكلي:">
+<!ENTITY timer.totalTime.label "الوقت الكلي:">
+<!ENTITY timer.wordsWritten.label "الكلمات المكتوبة">
+
+<!ENTITY timer.allSessions.label "جميع الجلسات">
+<!ENTITY timer.sessionDetail.label "تفاصيل الجلسة">
+<!ENTITY timer.scriptSummary.label "مختصر السيناريو">
+<!ENTITY timer.writingGoals.label "أهداف الكتابة">
+<!ENTITY timer.twitter.label "تويتر">
+
+<!ENTITY timer.sessionReport.label "تقرير الجلسة">
+<!ENTITY timer.totalSessionTime.header "وقت الجلسة الكلي">
+<!ENTITY timer.totalSessionTime.label "وقت الجلسة الكلي">
+<!ENTITY timer.totalWordsWritten.header "جميع الكلمات المكتوبة">
+<!ENTITY timer.totalWordsWritten.label "جميع الكلمات المكتوبة">
+<!ENTITY timer.noSessionsToDisplay.label "لا يوجد أي جلسة للعرض.">
+<!ENTITY timer.sessionNo.label "الجلسة رقم #">
+<!ENTITY timer.date.label "التاريخ">
+
+<!ENTITY timer.tweetThis.label "قم بتتويت هذا!">
+<!ENTITY timer.startDate.label "تاريخ البدء">
+<!ENTITY timer.startTime.label "Sوقت البدء">
+<!ENTITY timer.endTime.label "وقت الإنتهاءؤ">
+<!ENTITY timer.breakTime.label "وقت الاستراحة">
+
+<!ENTITY timer.sessionStartWords.label "الكلمات في بداية الجلسة">
+<!ENTITY timer.sessionEndWords.label "الكلمات في نهاية الجلسة">
+<!ENTITY timer.newWords.header "الكلمة الجديدة">
+<!ENTITY timer.noNewWords.label "لا يوججد زيادة في عدد الكلمات.">
+<!ENTITY timer.newDialog.header "حوار جديد">
+<!ENTITY timer.noNewDialog.label "لا يوجد زيادة في عدد الحوارات.">
+<!ENTITY timer.newCharacters.header "الشخصيات الجديدة">
+<!ENTITY timer.noNewCharacters.label "لا يزجد أي شخصية جديدة">
+<!ENTITY timer.newPages.header "الصفحات الجديدة">
+<!ENTITY timer.newScenes.header "المشاهد الجديدة">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "كلمات المشهد">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "كلمات الحوار">
+<!ENTITY timer.soundVoiceMusicWords.header "كلمات الـ صوت/كلام/موسيقا">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "الاسم">
+<!ENTITY timer.words.label "الكلمات">
+<!ENTITY timer.percentage.label "النسبة">
+
+<!ENTITY timer.summaryReport.label "تقرير ">
+<!ENTITY timer.contributionsByAuthor.label "المساهمات من الكاتب">
+<!ENTITY timer.weekdaySessions.label "الجلسات حسب يوم السبوع">
+<!ENTITY timer.weekdayWords.label "الكلمات بحسب يوم الاسبوع">
+<!ENTITY timer.numberOfSessions.label "عدد الجلسات">
+<!ENTITY timer.longest.label "الأطول">
+<!ENTITY timer.shortest.label "الأقصر">
+<!ENTITY timer.averageDuration.label "وسطي المدة المأخوذة">
+<!ENTITY timer.mostWords.label "أكثر الكلمات">
+<!ENTITY timer.leastWords.label "أقل الكلمات">
+<!ENTITY timer.averageWords.label "وسطي الكلمات">
+<!ENTITY timer.wordCounts.header "Wعدد الكلمات">
+<!ENTITY timer.element.label "العنصر">
+<!ENTITY timer.totalWords.header "عدد الكلمات">
+<!ENTITY timer.totalDialogWords.header "عدد كلمات الحوار">
+<!ENTITY timer.character.label "المحرف">
+<!ENTITY timer.weekday.label "يوم الاسبوع">
+<!ENTITY timer.sessions.label "الجلسات">
+<!ENTITY timer.pctOfTotal.label "&#37; من الجميع">
+<!ENTITY timer.author.label "الكاتب">
+
+<!ENTITY timer.writingGoalReport.label "تقرير هدف الكتابة">
+<!ENTITY timer.goalSession.header "هدف الجلسة">
+<!ENTITY timer.goalSession.label "هدف الجلسة">
+<!ENTITY timer.goalDaily.header "الهدف اليومي">
+<!ENTITY timer.goalDaily.label "الهدف اليومي">
+<!ENTITY timer.goalScript.header "هدف السيناريو">
+<!ENTITY timer.goalScript.label "هدف السيناريو">
+<!ENTITY timer.wordGoal.label "هدف الكلمة">
+
+<!ENTITY timer.message.label "رسالة">
+<!ENTITY timer.tags.label "وسوم">
+<!ENTITY timer.mostRecentSession.label "آخر جلسة">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "لون الخط">
+<!ENTITY fullscreen.backgroundColour.tooltip "لون الخلفيةr">
+<!ENTITY fullscreen.fullscreen.tooltip "ملئ الشاشة">
+
+<!ENTITY timer.alertDialog.title "مؤقت الجلسة">
+<!ENTITY timer.timerMenu.tooltip "اضغط للخيارات">
+
+<!ENTITY bbc.options.label "خيارات بي بي سي">
+<!ENTITY bbc.showTitle.label "عنوان العرض">
+<!ENTITY bbc.sketchTitle.label "عنوان السكيتش">
+<!ENTITY editText.title "حرر النص">
+<!ENTITY sketch.fillColour.tooltip "لون التعبئة">
+<!ENTITY sketch.group.tooltip "مجموعة">
+<!ENTITY sketch.lower.tooltip "الأسفل">
+<!ENTITY sketch.lowerToBottom.tooltip "اخفض للأسفل">
+<!ENTITY sketch.raise.tooltip "ارفع للأعلى">
+<!ENTITY sketch.strokeColour.tooltip "لون الخط">
+<!ENTITY sketch.ungroup.tooltip "فك المجموعة">
+
+<!ENTITY custom.label "تخصيص">
+<!ENTITY saveAsPreset.label "احفظ كقالب">
+<!ENTITY sceneLocking.title "قفل الجلسة">
+<!ENTITY sceneNumbering.label "Sترقيم المشاهد">
+<!ENTITY scenenumber.after.label "بعد">
+<!ENTITY scenenumber.before.label "قبل">
+<!ENTITY scenenumber.example.label "مثال">
+<!ENTITY scenenumber.letter.label "الحرف">
+<!ENTITY scenenumber.number.label "الرقم">
+<!ENTITY scenenumber.position.label "الموقع">
+<!ENTITY scenenumber.prefix.label "البداية">
+<!ENTITY scenenumbers.resetAll.label "تصفير جميع الأرقام">
+<!ENTITY scenenumber.suffix.label "اللاحقة">
+<!ENTITY scenenumber.type.label "النوع">
+<!ENTITY style.label "الموديل">
+
+<!ENTITY project.film.label "فيلم">
+<!ENTITY project.av.label "صوتي / صوري">
+<!ENTITY project.theatre.label "مسرح">
+<!ENTITY project.audioplay.label "مسرحيه إذاعيه">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+
+<!ENTITY addImage.label "أضف صورة">
+<!ENTITY addPaletteObjects.label "احصل على Arts Pack">
+<!ENTITY addShot.label "Add Shot">
+<!ENTITY bbcCueStyle.label "تلميح بي بي سي">
+<!ENTITY bbcSceneStyle.label "مشهد بي بي سي">
+<!ENTITY bdc.cameras "الكاميرات">
+<!ENTITY chat.label "الحوار">
+<!ENTITY colour.blue "أزرق">
+<!ENTITY colour.cherry "كرزي">
+<!ENTITY colour.gold "ذهبي">
+<!ENTITY colour.green "أخضر">
+<!ENTITY colour.pink "نهدي">
+<!ENTITY colour.salmon "Salmon">
+<!ENTITY colour.white "أبيض">
+<!ENTITY colour.yellow "أصفر">
+<!ENTITY currentRevision.label "الإصدارة الحالية">
+<!ENTITY createNewRevision.tooltip "إصدارة جديدة">
+<!ENTITY default.label "الإفتراضي">
+<!ENTITY enableSceneLocking.label "اقفل المشهد">
+<!ENTITY fixNumbers.label "تصليح">
+<!ENTITY furniture.label "Furniture">
+<!ENTITY hollywood.label "هوليوود">
+<!ENTITY light.flood.label "Flood">
+<!ENTITY light.spot.label "Spot">
+<!ENTITY linesBetweenScenes.label "الأسطر بين المشاهد">
+<!ENTITY man.label "الرجل">
+<!ENTITY numbers.bothNos "الإثنين #s">
+<!ENTITY numbers.leftNo "يسار #">
+<!ENTITY numbers.none "لا شيء">
+<!ENTITY numbers.rightNo "يمين #">
+<!ENTITY omitScene.label "احذف المشهد">
+<!ENTITY palette.label "باليت">
+<!ENTITY palettes.label "باليتات">
+<!ENTITY paletteTree.tooltip "قم بسحب وافلات الأشياء على السكيتش هذا">
+<!ENTITY people.label "أشخاص">
+<!ENTITY person.label "شخص">
+<!ENTITY preventEditing.label "قفل النص">
+<!ENTITY resetRevisionMode.label "اعدة اعداد حالة الإصدارة">
+<!ENTITY revisionColour.desc "سيستعمل هذا كاللون الإفتراضي للإصدارة لأي تعديل جديد على السيناريو">
+<!ENTITY revisionColour.label "لون التحديدة">
+<!ENTITY revisionMarks.all "جميع التحديدات">
+<!ENTITY revisionMarks.current "المحددات الحالية">
+<!ENTITY revisionMarks.hide "اخفاء المحددات">
+<!ENTITY revisionMarks.mark.label "تحديد">
+<!ENTITY revisionMarks.unmark.label "الغاء التحديد">
+<!ENTITY revisionMode.label "حالة الإصدارة">
+<!ENTITY revisionName.label "اسم الإصدارة">
+<!ENTITY revisionOptions.title "خيارات الإصدارة">
+<!ENTITY shotSetup.label "سكيتش">
+<!ENTITY shotSetup.desc "أضف سكيتش لمشروعك.">
+<!ENTITY showScriptHeader.label "اعرض ترويسة السيناريو">
+<!ENTITY standard.label "عادي">
+<!ENTITY startNewRevision.label "ابدأ اصدارة جديدة">
+<!ENTITY storyboard.showImages.label "اعرض الصور">
+<!ENTITY storyboard.showSetups.label "اعرض السكيتشات">
+<!ENTITY storyboard.showBoth.label "اعرض الإثنين">
+<!ENTITY woman.label "امرأة">
+
+<!ENTITY light.bank.label "ضوء بنك">
+<!ENTITY bathtub.label "حوض استحمام">
+<!ENTITY boy.label "صبي">
+<!ENTITY car.label "سيارة">
+<!ENTITY chair.label "كرسي">
+<!ENTITY coffeetable.label "طاولة قهوة">
+<!ENTITY couch.label "أريكة">
+<!ENTITY crowd.label "حشد">
+<!ENTITY endtable.label "نهاية الجدول">
+<!ENTITY girl.label "فتاة">
+<!ENTITY group.label "مجموعة">
+<!ENTITY building.label "بناء"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pickup Truck">
+<!ENTITY sink.label "حوض الجلي"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "لمديرة">
+<!ENTITY street.label "شارع">
+<!ENTITY toilet.label "تواليت">
+<!ENTITY tree.label "شجرة">
+<!ENTITY van.label "شاحنة">
+<!ENTITY videocamera.label "كاميرات فيديو">
+
+<!ENTITY access.label "وصول">
+<!ENTITY actorProfile.desc      "إضافة وصف لممثل">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "التكيف مع">
+<!ENTITY add.label    "إضافة">
+<!ENTITY addCardCmd.label "إضافة بطاقة">
+<!ENTITY addCmd.label "إضافة">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "تفاصيل العنصر">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "تحديد عنصر">
+<!ENTITY addFolder.label "إضافة مجلد...">
+<!ENTITY addFolderCmd.label "إضافة مجلد">
+<!ENTITY addItem.label "إضافة عنصر...">
+<!ENTITY addItemCmd.label "إضافة عنصر">
+<!ENTITY addNote.label "إضافة مذكرة">
+<!ENTITY addSequenceCmd.toolbarlabel "إضافة سلسلة">
+<!ENTITY advanced.label       "متقدم">
+<!ENTITY alignCenter.label "محاذاة للوسط">
+<!ENTITY alignJustified.label "محاذاة الجانبين">
+<!ENTITY alignLeft.label "محاذاة لليسار">
+<!ENTITY alignRight.label "محاذاة لليمين">
+<!ENTITY allShootDays.label "كل أيام التصوير">
+<!ENTITY allUppercase.label "الكل">
+<!ENTITY american.label "أمريكي">
+<!ENTITY appName "سيلتكس">
+<!ENTITY appliesToPDFOnly.label  "هذه الخصائص متوفرة فقط لإنشاء ملفات PDF">
+<!ENTITY audioplay.desc "إضافة مؤثرات صوتية لمشروعك">
+<!ENTITY audioplay.label "مؤثرات صوتية">
+<!ENTITY authDialog.description  "هذا الإجراء يتطلب أن تسجل الدخول لحسابك في سيلتكس">
+<!ENTITY authDialog.title       "تحقق سيلتكس">
+<!ENTITY author.label "المؤلف">
+<!ENTITY autoCharContinueds.label   "تابع إظهار الشخصيات">
+<!ENTITY autoSaveProject.label "حفظ المشروع تلقائيا">
+<!ENTITY autoparenthesize.label "وضع جملة اعتراضية عند الضغط على ’)’">
+<!ENTITY avScript.desc "إضافة سيناريو صوتي-مرئي لمشروعك">
+<!ENTITY avScript.label "سيناريو صوتي/مرئي">
+<!ENTITY basedOn.label "معتمد على">
+<!ENTITY bdc.actor        "ممثل">
+<!ENTITY bdc.addlabour    "عمل إضافي">
+<!ENTITY bdc.animals      "حيوانات">
+<!ENTITY bdc.camera       "كاميرا">
+<!ENTITY bdc.cast         "دور">
+<!ENTITY bdc.cgi          "سي جي آي">
+<!ENTITY bdc.construction "إنشاء">
+<!ENTITY bdc.crew         "طاقم">
+<!ENTITY bdc.electrics    "كهربائي">
+<!ENTITY bdc.equip        "معدات خاصة">
+<!ENTITY bdc.extras       "إضافات">
+<!ENTITY bdc.greenery     "خضرة">
+<!ENTITY bdc.hair         "شعر">
+<!ENTITY bdc.handler      "معالج الحيوانات">
+<!ENTITY bdc.lights       "إضاءة">
+<!ENTITY bdc.livestock    "ماشية">
+<!ENTITY bdc.location     "موقع">
+<!ENTITY bdc.makeup       "مكياج">
+<!ENTITY bdc.mechfx       "مؤثرات ميكانيكية">
+<!ENTITY bdc.misc         "متنوعة">
+<!ENTITY bdc.music        "موسيقى">
+<!ENTITY bdc.opticalfx    "مؤثرات بصرية">
+<!ENTITY bdc.painting     "التلوين">
+<!ENTITY bdc.prodnotes    "مذكرات الإنتاج">
+<!ENTITY bdc.props        "الدعائم">
+<!ENTITY bdc.security     "الأمان">
+<!ENTITY bdc.set          "مجموعة">
+<!ENTITY bdc.setdressing  "ديكور المجموعة">
+<!ENTITY bdc.sound        "صوت">
+<!ENTITY bdc.soundfx      "مؤثرات صوتية">
+<!ENTITY bdc.specialfx    "مؤثرات خاصة">
+<!ENTITY bdc.storyboard   "قصة مصورة">
+<!ENTITY bdc.stunts       "أعمال مثيرة">
+<!ENTITY bdc.vehicles     "مركبات">
+<!ENTITY bdc.wardrobe     "الخزانة">
+<!ENTITY bdc.weapons      "الأسلحة">
+<!ENTITY bold.commandkey "ع">
+<!ENTITY bold.label "عريض">
+<!ENTITY bookmark.desc      "إضافة رابط تشعبي">
+<!ENTITY bookmark.label     "علامة مرجعية">
+<!ENTITY both.label   "كلاهما">
+<!ENTITY bottomOfPage.label         "أسفل الصفحة">
+<!ENTITY brandFullName "&اسم التطبيق;">
+<!ENTITY brandShortName "&اسم التطبيق;">
+<!ENTITY breakdown.desc     "إضافة معلومات تفصيلية لسيناريو">
+<!ENTITY breakdown.label    "تفصيل">
+<!ENTITY breakdownReport.label "تقرير تفصيلي">
+<!ENTITY brokenSceneEventWarning.label "الحدث يشير إلى مسرح غير موجود">
+<!ENTITY browseCmd.label      "تصفح">
+<!ENTITY byline.label "بواسطة">
+<!ENTITY calendar.desc      "إضافة تقويم لمشروعك">
+<!ENTITY calendar.label     "تقويم">
+<!ENTITY callSheet.label "كشف المكالمات">
+<!ENTITY cast.label "دور">
+<!ENTITY castOfCharacters.label "أدوار الشخصيات">
+<!ENTITY catalog.desc "إضافة دليل عناصر الإنتاج لمشروعك">
+<!ENTITY catalog.label "دليل">
+<!ENTITY catalogAddItem.tooltip "إضافة عنصر للدليل">
+<!ENTITY catalogDeleteItem.tooltip "حذف عنصر من الدليل">
+<!ENTITY categories.label "فئات">
+<!ENTITY category.label     "فئة">
+<!ENTITY celtxAccountCmd.accessKey "ح">
+<!ENTITY celtxAccountCmd.label "&اسم التطبيق; الحساب...">
+<!ENTITY celtxError.title       "خطأ سيلتكس">
+<!ENTITY celtxTagline.label "الأمر كله يتعلق بالقصة">
+<!ENTITY celtxWikiCmd.label "&اسم التطبيق; ويكي">
+<!ENTITY charOutline.desc "نظرة عامة عن الشخصيات وعلاقاتها ببعضها البعض">
+<!ENTITY charOutline.label "موجز شخصية">
+<!ENTITY character.label        "شخصية">
+<!ENTITY characterProfile.desc  "إضافة وصف لشخصية جديدة">
+<!ENTITY characterProfile.existing  "يمكنك إضافة وصف لشخصية موجودة في القائمة أدناه">
+<!ENTITY characterProfile.label "&شخصية.ملصق;">
+<!ENTITY characterProfile.select    "اختر شخصية">
+<!ENTITY characters.label       "شخصيات">
+<!ENTITY clearCmd.label "مسح">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "إنشاء سيناريو لكتاب كوميدي">
+<!ENTITY comicBook.label "كتاب كوميدي">
+<!ENTITY comment.label "تعليق">
+<!ENTITY completed.label "مكتمل">
+<!ENTITY contact.label "جهة اتصال">
+<!ENTITY contactInformation.label "معلومات جهة اتصال">
+<!ENTITY contactName.label "اسم الاتصال">
+<!ENTITY contacts.label "جهات الاتصال">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "أكمل">
+<!ENTITY copyProject.title    "مشروع مكرر">
+<!ENTITY copyProjectCmd.label "مشروع مكرر">
+<!ENTITY copyright.label "حقوق النسخ">
+<!ENTITY create.label "إنشاء">
+<!ENTITY createAccount.label "إنشاء حساب">
+<!ENTITY createCatalogFromSelection.label "إنشاء دليل من التحديد">
+<!ENTITY createProject.label  "إنشاء مشروع">
+<!ENTITY createProject.title  "إنشاء مشروع">
+<!ENTITY createdCol.label  "تم إنشاؤه">
+<!ENTITY creatorCol.label  "المنشئ">
+<!ENTITY crew.desc "إنشاء وثيقة طاقم">
+<!ENTITY crew.label "طاقم">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "التاريخ">
+<!ENTITY datePicker.label "التقويم">
+<!ENTITY daynightHeader.label "ص/م">
+<!ENTITY daynightWarning.label "عنوان المشهد لا ينتهي بكلمه  نهار / ليل. لتصحيح هذه المشكله، عدٌل عنوان المشهد  في النص أو قائمه نهار / ليل الموجوده داخل ديالوج الإختيارات">
+<!ENTITY daynightWords.label "كلمتي  نهار / ليل">
+<!ENTITY dayoff.label "يوم إجازة">
+<!ENTITY daysOff.label "أيام إجازة">
+<!ENTITY decreaseDelayCmd.tooltip "إنقاص التأخير.">
+<!ENTITY decreaseFontSizeCmd.tooltip "إنقاص حجم الحرف">
+<!ENTITY decreaseIndentCmd.label "إنقاص الهامش">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "طول المشهد الإفتراضي">
+<!ENTITY delayLabel.tooltip "التأخير (ثواني) بين الصور">
+<!ENTITY deleteCardCmd.label "شطب بطاقه">
+<!ENTITY deleteItem.label "شطب الغرض">
+<!ENTITY deleteItemCmd.label        "شطب">
+<!ENTITY department.label   "قسم">
+<!ENTITY description.label  "الوصف">
+<!ENTITY details.label          "تفاصيل">
+<!ENTITY dialog.label           "ديالوج">
+<!ENTITY director.label "المخرج">
+<!ENTITY disabled.label "غير مفعْل">
+<!ENTITY displayMedia.label "إظهار وسائل الحفظ">
+<!ENTITY downloadProjectCmd.label "تنزيل المشروع،">
+<!ENTITY downloadProjectCmd.toolbarlabel "تنزيل">
+<!ENTITY downloadingPDF.label       "PDF تحويل الى ">
+<!ENTITY dragToSchedule.tooltip "جر وإسقاط في جدول زمني">
+<!ENTITY dualDialogCmd.label "ديالوج مزدوج">
+<!ENTITY dualDialogCmd.tooltip "ديالوج مزدوج">
+<!ENTITY duplicate.label "نسخ">
+<!ENTITY duplicateItemCmd.label "نسخ الغرض">
+<!ENTITY edit.label "تحرير">
+<!ENTITY editDates.label "تحرير التواريخ">
+<!ENTITY editProfile.label "تحرير البروفيل">
+<!ENTITY editSceneDialog.title "تحرير المشهد">
+<!ENTITY editTitlePageCmd.label "تحرير عنوان الصفحه">
+<!ENTITY editlabel.tooltip "أنقر لتحرر">
+<!ENTITY eighths.label "أثمان">
+<!ENTITY eighthsSuffix.label "أثمان">
+<!ENTITY element.label          "عنصر">
+<!ENTITY elements.label         "عناصر">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "This is used to count the number of active Celtx users. No personally identifying information or project data is transmitted in the process.">
+<!ENTITY enableStats.label    "اسمح لسيلتكس لعمل بينغ على سيرفر سيلتكس عند التشغيل">
+<!ENTITY enabled.label "مفعّل">
+<!ENTITY endOfShooting.label "نهايه التصوير">
+<!ENTITY enterEmbedTagPrompt.label "ضع كود الإيمبيد أو الأوبجيكت هنا:">
+<!ENTITY eventDetails.label "تفاصيل الحادثه">
+<!ENTITY every15Minutes.label "كل ١٥ دقيقه">
+<!ENTITY every30Minutes.label "كل نصف ساعه">
+<!ENTITY every5Minutes.label "كل ٥ دقائق">
+<!ENTITY everyHour.label "كل ساعه">
+<!ENTITY everyMinute.label "كل دقيقه">
+<!ENTITY exportList "تصدير قائمه">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label      "تصدير سيناريو">
+<!ENTITY externalFile.desc  "إضافه أي ملف حالي الى مشروعك.">
+<!ENTITY externalFile.label "ملف">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "إضافه سيناريو فيلم">
+<!ENTITY filmScript.label   "سيناريو فيلم">
+<!ENTITY filter.label "منقّي">
+<!ENTITY findAllCharacters.label "أوجد شخصيات الى الدليل">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "إيجاد...">
+<!ENTITY findPreviousCmd.label "إيجاد سابق">
+<!ENTITY findTab.label "إيجاد">
+<!ENTITY folder.label "مجلّد">
+<!ENTITY forceOverwrite.label "Force overwrite if server version is newer">
+<!ENTITY form.actorLink "عنوان URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "العنوان">
+<!ENTITY form.affectEvent "كيف تؤثر هذه الحادثه على الخطه؟">
+<!ENTITY form.age "العمر">
+<!ENTITY form.alternate "الأسم المرادف">
+<!ENTITY form.antag "الخصم">
+<!ENTITY form.antagWho "من هو الخصم في هذا المشهد؟">
+<!ENTITY form.availability "تواجد">
+<!ENTITY form.bestFriend "الصديق الوفي">
+<!ENTITY form.borrow "إستعاره">
+<!ENTITY form.build "بناء">
+<!ENTITY form.buy "شراء">
+<!ENTITY form.catalyst "مساعد">
+<!ENTITY form.cell "Cell #">
+<!ENTITY form.centralEvent "ما هي الحادثه الرئيسيه في هذا المشهد؟">
+<!ENTITY form.charBackground "خلفيه الشخصيه">
+<!ENTITY form.charGoal "ماهو هدف هذه الشخصيه؟">
+<!ENTITY form.charPlan "ماهي خطه الشخصيه لتحقيق الهدف؟">
+<!ENTITY form.charTraits "آثار الشخصية">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "شخصيات أستخدمت من قبل">
+<!ENTITY form.color "اللون">
+<!ENTITY form.comicRelief "ترويح كوميدي">
+<!ENTITY form.comments "الملاحظات">
+<!ENTITY form.confidante "كاتم الأسرار">
+<!ENTITY form.contactInfo "معلومات الإتصال">
+<!ENTITY form.cost "التكلفه">
+<!ENTITY form.crewLink "عنوان URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "التواريخ المتوفره">
+<!ENTITY form.dateNeed "التواريخ المرجوه">
+<!ENTITY form.dateReturn "تاريخ الإياب">
+<!ENTITY form.description "الوصف">
+<!ENTITY form.details "التفاصيل">
+<!ENTITY form.dislikes "مكروهات">
+<!ENTITY form.distFeatures "العلامات الفارقه">
+<!ENTITY form.dob "تاريخ الميلاد">
+<!ENTITY form.dress "الملبس">
+<!ENTITY form.education "الثقافه">
+<!ENTITY form.elevator "مصعد">
+<!ENTITY form.email "البريد الإلكتروني">
+<!ENTITY form.endDate "تاريخ الإنتهاء">
+<!ENTITY form.era "العصر">
+<!ENTITY form.eyes "العيون">
+<!ENTITY form.facilityInfo "معلومات عن الموقع">
+<!ENTITY form.familyBack "الخلفيه العائليه">
+<!ENTITY form.fullName "الأسم الكامل">
+<!ENTITY form.generic "تقليدي">
+<!ENTITY form.genericForm "نموذج تقليدي">
+<!ENTITY form.habits "هوايات / عادات سيئه">
+<!ENTITY form.hair "الشعر">
+<!ENTITY form.hat "القبعه">
+<!ENTITY form.height "الطول">
+<!ENTITY form.inScenes "في المشاهد">
+<!ENTITY form.jacket "الستره">
+<!ENTITY form.jobTitle "المسمى الوظيفي">
+<!ENTITY form.keyCharTraits "Key Character Traits">
+<!ENTITY form.lightSources "مصادر الإضاءه">
+<!ENTITY form.likes "Likes">
+<!ENTITY form.locationMap "خارطه الموقع">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "love interest">
+<!ENTITY form.media "وسائل الحفظ">
+<!ENTITY form.mentor "القدوه">
+<!ENTITY form.motiv "الدافع">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "لا">
+<!ENTITY form.noise "مشاكل الضجيج">
+<!ENTITY form.other "آخر">
+<!ENTITY form.pants "السروال">
+<!ENTITY form.parking "معلومات مواقف السيارات">
+<!ENTITY form.partner "الشريك">
+<!ENTITY form.person "الشخصيه">
+<!ENTITY form.phone "رقم الهاتف">
+<!ENTITY form.physicalDesc "الوصف التفصيلي الفيزيائي">
+<!ENTITY form.powerCapa "مقدرات الطاقه">
+<!ENTITY form.princFunction "ما هي الوظيفه الرئيسيه للشخصيه؟">
+<!ENTITY form.procure "المشتريات">
+<!ENTITY form.propProfile "مقطع داعم">
+<!ENTITY form.protag "بطل القصة">
+<!ENTITY form.protagAntag "البطل/الخصم">
+<!ENTITY form.protagWho "من هو البطل في هذا الخصم">
+<!ENTITY form.rent "الإيجار">
+<!ENTITY form.rentalCost "تكلفه الإيجار">
+<!ENTITY form.role "الدور">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "كيف يقوم الخصم بتحقيق هذا الهدف؟">
+<!ENTITY form.sceneAntagGoal "ما هو هدف الخصم في هذا المشهد">
+<!ENTITY form.sceneChars "من هي شخصيات المشهد؟">
+<!ENTITY form.sceneDetails "تفاصيل المشهد">
+<!ENTITY form.sceneMood "ما هو مزاج هذا المشهد؟">
+<!ENTITY form.sceneProtagAchieve "كيف يقوم البطل بتحقيق هذا الهدف؟">
+<!ENTITY form.sceneProtagGoal "ما هو هدف البطل في هذا المشهد">
+<!ENTITY form.sceneSetting "ماهي التركيبات الخاصه بالمشهد؟">
+<!ENTITY form.sceneWhen "متى حصول المشهد؟">
+<!ENTITY form.scenesUsed "مشاهد استخدمت في">
+<!ENTITY form.scoutSelect "Scouting and Selection">
+<!ENTITY form.scoutedFor "Scouted for Scenes">
+<!ENTITY form.scriptName "أسم السيناريو">
+<!ENTITY form.selectedFor "أختير للمشاهد">
+<!ENTITY form.sex "الجنس">
+<!ENTITY form.shirt "القميص">
+<!ENTITY form.shoes "الحذاء">
+<!ENTITY form.size "الحجم">
+<!ENTITY form.squareFoot "القدم المربٌع">
+<!ENTITY form.startDate "تاريخ البدء">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "أحجام خزائن الملابس">
+<!ENTITY form.washroom"مواقع الحمّامات">
+<!ENTITY form.weight "الوزن">
+<!ENTITY form.wornBy "يلبس من قبل">
+<!ENTITY form.yes "نعم">
+<!ENTITY format.label         "تقسيم">
+<!ENTITY formatAct.label      "الفصل">
+<!ENTITY formatAction.label   "أكشن">
+<!ENTITY formatBalloon.label  "بالون">
+<!ENTITY formatBalloonType.label "نوع البالون">
+<!ENTITY formatCaption.label  "تعليق">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "ترئيس المشهد">
+<!ENTITY formatMusic.label    "الموسيقى">
+<!ENTITY formatPage.label     "الصفحه">
+<!ENTITY formatPanel.label    "لوحه">
+<!ENTITY formatParen.label    "جملة اعتراضية">
+<!ENTITY formatProductionNote.label "ملاحظه الإنتاج">
+<!ENTITY formatShot.label     "لقطه">
+<!ENTITY formatSound.label    "الصوت">
+<!ENTITY formatStagedir.label "إخراج مسرحي">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "إنتقالي">
+<!ENTITY formatVoice.label    "الصوت">
+<!ENTITY fourHours.label "٤ ساعات">
+<!ENTITY freeAndSecure.label "مجاني ومؤمن">
+<!ENTITY general.label "عام">
+<!ENTITY generatePDFCmd.label "PDF تحضير">
+<!ENTITY generateReportCmd.label "تحضير التقرير">
+<!ENTITY generateReportCmd.toolbarlabel "تقرير">
+<!ENTITY getProjDialog.caption "المشاريع المتواجده">
+<!ENTITY getProjDialog.title   "تنزيل المشروع">
+<!ENTITY gotoItemCmd.label          "الإنتقال الى">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "حول &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "الإبلاغ عن مشكله">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "الدعم الفوري">
+<!ENTITY icons.label "أيقونات">
+<!ENTITY iconsAndText.label "أيقونات وكلام">
+<!ENTITY image.label "صوره">
+<!ENTITY images.label "صور">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "إستيراد سيناريو">
+<!ENTITY importScriptCmd.toolbarLabel "إستيراد">
+<!ENTITY includeInWorkweek.label "أضف هذه الأيام الى أسبوع العمل">
+<!ENTITY includeTitlePage.label     "أضف صفحه العنوان">
+<!ENTITY increaseDelayCmd.tooltip "زياده التأخير">
+<!ENTITY increaseFontSizeCmd.tooltip "زياده حجم الحرف">
+<!ENTITY increaseIndentCmd.label "زياده الهامش">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "عنوان بطاقه الفهرس">
+<!ENTITY indexCards.label "بطاقه الفهرس">
+<!ENTITY inlineSpellCheckCmd.label "التدقيق الإملائي الفوري">
+<!ENTITY insertNoteCmd.toolbarLabel "ملحوظه...">
+<!ENTITY international.label "عالمي">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "عنوان المشهد لا يبدأ ب دآخلي / خارجي.  لتصحيح هذه المشكله عدّل عنوان السيناريو  أو لائحه داخلي / خارجي ضمن ديالوج الإختيارات ">
+<!ENTITY intextWords.label " كلمات داخلي / خارجي">
+<!ENTITY invalidLogin.label   "خطأ في أسم المستخدم أو كلمه السر">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "مائل">
+<!ENTITY item.label         "الغرض">
+<!ENTITY language.label "اللغه">
+<!ENTITY left.label   "يسار">
+<!ENTITY linesPerPage.label "أسطر في الصفحه">
+<!ENTITY list.label "لائحه">
+<!ENTITY location.desc          "أضف تفاصيل الموقع">
+<!ENTITY location.label         "الموقع">
+<!ENTITY loginOnStartup.label "أدخل البرنامج خلال إقلاع البرنامج">
+<!ENTITY lowercaseCmd.label "الحاله الدنيا">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "وسائل حفظ">
+<!ENTITY mediaViewer.title "مشاهده وسائل الحفظ">
+<!ENTITY modified.label "معدّل">
+<!ENTITY modifiedCol.label "معدّل">
+<!ENTITY moveDownCmd.label          "نقل للأسفل">
+<!ENTITY moveUpCmd.label            "نقل للأعلى">
+<!ENTITY moving.label "نقل">
+<!ENTITY name.label         "أسم">
+<!ENTITY network.label "آلشبكه">
+<!ENTITY never.label "أبداً">
+<!ENTITY newMarkupItem.label        "&lt;New ...&gt;">
+<!ENTITY newProjectCmd.label "مشروع جديد...">
+<!ENTITY newProjectCmd.toolbarlabel "جديد">
+<!ENTITY noFileSelected.label   "&lt;no file selected&gt;">
+<!ENTITY noImageSelected.label "لم يتم إختيار صوره">
+<!ENTITY noScriptSelected.label "لم يتم إختيار سيناريو">
+<!ENTITY none.label "لا شيء">
+<!ENTITY noteDialog.title           "تعديل الملاحظه">
+<!ENTITY notes.label "ملاحظات">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "عدد الحروف">
+<!ENTITY numberOfScenes.label "عدد المشاهد">
+<!ENTITY oneHour.label "ساعه واحده">
+<!ENTITY oneLineSchedule.label "جدول ذو سطر واحد">
+<!ENTITY open.label "فتح">
+<!ENTITY openItemCmd.label "فتح غرض">
+<!ENTITY openProjectCmd.label "فتح المشروع">
+<!ENTITY openProjectCmd.toolbarlabel "إفتح">
+<!ENTITY openProjectFolder.label "فتح ملف المشروع">
+<!ENTITY openRecentCmd.label "فتح حديثاً">
+<!ENTITY options.label "إختيارات">
+<!ENTITY orderedList.label "قائمه مرتبه">
+<!ENTITY outline.desc       "إضافه نص ذو خطوط عريضه">
+<!ENTITY outline.label      "خطوط عريضه">
+<!ENTITY over14.label "أبلغ من العمر فوق ال ١٤ سنه.">
+<!ENTITY pageAndSceneNumbering.label  "ترقيم الصفحه والمشهد">
+<!ENTITY paperSize.label              "حجم الورقه">
+<!ENTITY password.label "كلمه السر">
+<!ENTITY passwordAgain.label "إعاده إدخال كلمه السر">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title     "PDF تحويل الى">
+<!ENTITY pdfErrorHeader "!واو">
+<!ENTITY pdfErrorText1 "يجب أن تكون موصول بالشبكه">
+<!ENTITY pdfErrorText2 "(AV) خاص ومؤمّن، خمه الويب المتطوره تقوم بترتيب السيناريو أوتوماتيكياً بما يتواءم مع الأفلام او المسرحيات أو البرامج الإذاعيه أو ثنائي الأعمده ">
+<!ENTITY pdfOptions.title           "PDF إختيارات">
+<!ENTITY pdfOptionsCmd.label "إضافات وتكملات">
+<!ENTITY pdfWarningHeader "مرحبا">
+<!ENTITY pdfWarningText "(AV) خاص ومؤمّن، خمه الويب المتطوره تقوم بترتيب السيناريو أوتوماتيكياً بما يتواءم مع الأفلام او المسرحيات أو البرامج الإذاعيه أو ثنائي الأعمده">
+<!ENTITY picklist.label "قائمه إختيار">
+<!ENTITY principalFunction.label "المهمه الرئيسيه">
+<!ENTITY printBackgroundColour.label "طباعه لون الخلفيه">
+<!ENTITY printCardBorders.label "طباعه إطارات البطاقه">
+<!ENTITY printCardsDialog.title "طباعه البطاقه">
+<!ENTITY printStoryboardDialog.title "إطبع اللوحه القصصيه">
+<!ENTITY privacy.label "خصوصيه">
+<!ENTITY producer.label "المنتج">
+<!ENTITY productionItems.label "مواد الإنتاج">
+<!ENTITY progressDialog.title "إنجاز">
+<!ENTITY project.label "المشروع">
+<!ENTITY projectItems.label   "المشاريع الجديده تحتوي">
+<!ENTITY projectLibrary.label "مكتبه المشروع">
+<!ENTITY projectProperties.label "تحميل الإختيارات">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "نماذج المشروع">
+<!ENTITY propSheet.desc         "Add a description for a new prop.">
+<!ENTITY propSheet.existing  "You may also describe an existing prop item from the list below.">
+<!ENTITY propSheet.label        "دعائم">
+<!ENTITY propSheet.select       "إختر دعائم">
+<!ENTITY properties.label "خواص">
+<!ENTITY publishDialog.findUsers    "أوجد المستخدمين">
+<!ENTITY publishDialog.ownerLabel   "صاحب المشروع">
+<!ENTITY publishDialog.privateDesc "خاص: حدد الدخول لي فقط">
+<!ENTITY publishDialog.privateLabel "خاص">
+<!ENTITY publishDialog.publicDesc " عام: أنشر المشروع ضمن المشروع المركزي">
+<!ENTITY publishDialog.publicLabel  "عام">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "مشاركه: شارك المشروع مع مستخدمين مختارين">
+<!ENTITY publishDialog.sharedLabel  "مشاركه مع">
+<!ENTITY publishDialog.title        "أنشر المشروع">
+<!ENTITY publishDialog.userList     "قائمه المستخدم">
+<!ENTITY publishMode.label "مراج النشر">
+<!ENTITY recent.label "حديث">
+<!ENTITY recentProjects.label "المشاريع الحديثه">
+<!ENTITY recoverPassword.label "إسترجاع كلمه السر">
+<!ENTITY recycleCmd.label           "أرسل الى المسودّه">
+<!ENTITY regWiz.aboutThis "بعد انشاء الحساب، سيتم تسجيل دخولك بشكل مباشر لجلسة العمل هذه.">
+<!ENTITY regWiz.accountInstructions "Choose a username and password for your &appName; account. (Please note: usernames and passwords are case sensitive.)">
+<!ENTITY regWiz.accountLabel "(3/5) حساب المستخدم">
+<!ENTITY regWiz.bullet1 "Remote Backups">
+<!ENTITY regWiz.bullet2 "Collaboration Workspaces">
+<!ENTITY regWiz.bullet3 "نشر المشروع ضمن المشروع المركزي">
+<!ENTITY regWiz.bullet4 "iPhone Project Viewing">
+<!ENTITY regWiz.checkLabel "فحص معلومات الحساب">
+<!ENTITY regWiz.clickFinish "Thank-You for becoming a member of the &appName; community.">
+<!ENTITY regWiz.clickFinish1 "You are now logged-in to the &appName; server and able to access our free online features">
+<!ENTITY regWiz.clickFinish2 "Try the Download/Upload features to make a secure back-up of your project, or, if you know someone else with a &appName; account use the project sharing features to collaborate on a common project.">
+<!ENTITY regWiz.clickNext "Everything looks good to us! Select 'Next' to complete your registration.">
+<!ENTITY regWiz.conclusion "(5/5) الإستنتاج">
+<!ENTITY regWiz.confirmIntro "لقد أدخلت التالي:">
+<!ENTITY regWiz.confirmLabel "(4/5) تأكيد الثوابت">
+<!ENTITY regWiz.createNewAccountLabel  "خلق حساب جديد">
+<!ENTITY regWiz.createYourAccountLabel "Get Your Own &appName; Account! (1/5)">
+<!ENTITY regWiz.emailLabel ":البريد الإلكتروني">
+<!ENTITY regWiz.finish "نهايه">
+<!ENTITY regWiz.identityInstructions "الرجاء إدخال اسمك ومؤسستك وبريدك الإلكتروني">
+<!ENTITY regWiz.identityLabel "Identity (2/5)">
+<!ENTITY regWiz.intro "Create an account on the &appName; Server and gain access to these free web features:">
+<!ENTITY regWiz.loginSuccessfulLabel  "شكرا، لقد تم تسجيل دخولك إلى: &appName;.">
+<!ENTITY regWiz.newOrExistingLabel  "أنشئ حسابا جديدا أو استخدم حسابا موجودا:">
+<!ENTITY regWiz.note Case Sensitive "&appName;  اسم المستخدم وكلمة المرور حساسة لحالة الأحرف ">
+<!ENTITY regWiz.notePassword "كلة المرور يجب أن لا تقل عن خمس خانات">
+<!ENTITY regWiz.noteUsername "اسم المستخدم يجب أن لا يقل عن ثلاث خانات ويمكن أن يحتوي على أحرف لاتينية وأرقام فقط">
+<!ENTITY regWiz.orgLabel   "جهة الانتماء:">
+<!ENTITY regWiz.title "نموذج التسجيل في سيلتكس">
+<!ENTITY regWiz.uidLabel   "&appName; اسم المستخدم:">
+<!ENTITY regWiz.useExistingAccountLabel  "استخدام حساب موجود">
+<!ENTITY regWiz.warn "You will need to create a &appName; account to access this feature.">
+<!ENTITY remove.label "إزالة">
+<!ENTITY removeCmd.label "إزالة">
+<!ENTITY removeMarkupCmd.label "إزالة العلامة">
+<!ENTITY rename.label "تغيير اسم">
+<!ENTITY renameItem.label "تغيير اسم عنصر...">
+<!ENTITY replaceCmd.label "استبدال...">
+<!ENTITY reportThisBug.label    "أبلغ عن هذه المشكلة">
+<!ENTITY reportThisBug.tooltip  "أرسل لنا تقريرا مجهول المصدر">
+<!ENTITY reports.label "تقارير">
+<!ENTITY right.label  "يمين">
+<!ENTITY sampleProjects.label "عينات مشاريع">
+<!ENTITY samples.label "عينات">
+<!ENTITY saveAsHTML.label "حفظ بصيغة إتش تي إم إل">
+<!ENTITY saveAsTemplate.label "حفظ بصيغة قالب">
+<!ENTITY savePDFCmd.label "حفظ بصيغة بي دي إف">
+<!ENTITY savePDFCmd.tooltip "حفظ بصيغة بي دي إف">
+<!ENTITY saveProjectAsCmd.label "حفظ مشروع بصيغة...">
+<!ENTITY saveProjectCmd.label "حفظ مشروع">
+<!ENTITY saveProjectCmd.toolbarlabel "حفظ">
+<!ENTITY scene.label "مشهد">
+<!ENTITY sceneBreakdown.label "فاصل مشهد">
+<!ENTITY sceneBreakdownWithDesc.label "فواصل المشاهد مع وصفها">
+<!ENTITY sceneDetails.desc      "إضافة وصف لمشهد جديد">
+<!ENTITY sceneDetails.existing  "يمكنك إضافة وصف للمشاهد المعروضة أدناه">
+<!ENTITY sceneDetails.label     "تفاصيل المشهد">
+<!ENTITY sceneDetails.select    "اختر مشهدا">
+<!ENTITY scenePageBreaks.label "فاصل صفحات بعد كل مشهد">
+<!ENTITY sceneSummary.label "ملخص المشهد">
+<!ENTITY sceneTag.label "وسم المشهد">
+<!ENTITY sceneTagDialog.title "اختر لونا">
+<!ENTITY scenes.label           "المشاهد">
+<!ENTITY schedule.desc      "أضف جدول تصوير لسيناريو">
+<!ENTITY schedule.label     "جدول الإنتاج">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "سيناريو الجدول">
+<!ENTITY scheduleID.label "رقم الجدول">
+<!ENTITY scheduled.label "جدول">
+<!ENTITY scratchpad.label "مسودة">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "إضافة سيناريو لمشروعك">
+<!ENTITY script.label "سيناريو">
+<!ENTITY scriptDay.label "يوم السيناريو">
+<!ENTITY scriptEditor.label "محرر السيناريو">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "خيارات التنسيق">
+<!ENTITY scriptHeader.label "عناوين السيناريو الرأسية">
+<!ENTITY scriptReport.desc  "تقرير تلقائي لسيناريو">
+<!ENTITY scriptReport.label "تقرير سيناريو">
+<!ENTITY scriptWithNotes.label  "سيناريو مع ملاحظات">
+<!ENTITY selectCatalogType.label "اختر نوع الدليل">
+<!ENTITY sequence.label "سلسلة">
+<!ENTITY sequences.label "سلاسل">
+<!ENTITY server.label "خادم">
+<!ENTITY setting.label "إعدادات">
+<!ENTITY sharing.label "مشاركة">
+<!ENTITY shootDay.label "يوم التصوير">
+<!ENTITY shootDays.label "أيام التصوير">
+<!ENTITY shootingSchedule.label "جدول التصوير">
+<!ENTITY shotList.label "قائمة اللقطه">
+<!ENTITY shotWords.label "كلمات اللقطه">
+<!ENTITY shotholder.label "انقر نقرا مزدوجا على الفأرة لإضافة اللقطه">
+<!ENTITY showContinuedCount.label   "اعرض عدد الصفحات التابعة">
+<!ENTITY showDialogBreaks.label     "اعرض فواصل النماذج">
+<!ENTITY showFirstPageNumber.label    "اعرض ترقيم الصفحات على الصفحة الأولى">
+<!ENTITY showIDNumbers.label "اعرض الأرقام التعريفية">
+<!ENTITY showNotes.label "اعرض الملاحظات">
+<!ENTITY showPageNumbers.label        "التصفح">
+<!ENTITY showProjectFileCmd.label "اعرض ملف المشروع">
+<!ENTITY showSceneBreaks.label      "اعرض فواصل المشاهد">
+<!ENTITY showSceneHeaders.label "اعرض عناوين المشاهد الرأسية">
+<!ENTITY showSceneNumbers.label       "اعرض أرقام المشاهد">
+<!ENTITY showScript.label "اعرض السيناريو">
+<!ENTITY showTagNames.label "اعرض اسماء الرموز الوسمية على البطاقات">
+<!ENTITY showTitlePage.label "اعرض صفحة العنوان">
+<!ENTITY showWorkdaysOnly.label "اعرض أيام العمل فقط">
+<!ENTITY signIn.label "تسجيل الدخول">
+<!ENTITY signOut.label "تسجيل الخروج">
+<!ENTITY signedOut.label "تم تسجيل الخروج">
+<!ENTITY slideshowCmd.toolbarlabel "اعرض">
+<!ENTITY source.label "مصدر">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "إضافة إلى القاموس">
+<!ENTITY spellCheckCmd.label "التدقيق الإملائي">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "تجاهل الكلمة">
+<!ENTITY spellCheckNoSuggestions.label "لا توجد أي اقتراحات">
+<!ENTITY splash.celtxCentral      "تسجيل الدخول لمركز المشاريع">
+<!ENTITY splash.celtxCentralDesc  "استخدم مركز المشاريع لتغيير كلمة المرور أو لتحديث ملفك الشخصي">
+<!ENTITY splash.discussion      "مناقشة">
+<!ENTITY splash.downloadProject     "قم بتنزيل مشروع">
+<!ENTITY splash.downloadProjectDesc "قم بتنزيل مشروع من خادم سيلتكس">
+<!ENTITY splash.featureTour         "جولة تعليمية">
+<!ENTITY splash.forums      "المنتديات">
+<!ENTITY splash.forumsDesc  "اضم إلى النقاشات في منتديات سيلتكس">
+<!ENTITY splash.gettingStarted  "البداية">
+<!ENTITY splash.guide               "دليل سيلتكس للمستخدم">
+<!ENTITY splash.help            "المساعدة">
+<!ENTITY splash.helpAccount     "إنشاء حساب">
+<!ENTITY splash.helpAccountDesc "Creating an account gives you access to the server side features which include collaboration and PDF generation">
+<!ENTITY splash.helpDesc        "الروابط في الجانب الأيسر تسلط الضوء على العديد من مصادر سيلتكس">
+<!ENTITY splash.helpOptions         "خيارات المساعدة">
+<!ENTITY splash.inbox           "صندوق الوارد">
+<!ENTITY splash.logIn "تسجيل الدخول">
+<!ENTITY splash.newProject      "البدء في مشروع جديد">
+<!ENTITY splash.newProjectDesc  "إنشاء مشروع جديد">
+<!ENTITY splash.openProject     "فتح مشروع موجود">
+<!ENTITY splash.openProjectDesc "الوصول إلى أو إضافة مشاريع موجودة">
+<!ENTITY splash.options             "خيارات">
+<!ENTITY splash.projectCentral  "مركز المشاريع">
+<!ENTITY splash.projects        "مشاريع">
+<!ENTITY splash.recentProjects      "المشاريع الحالية">
+<!ENTITY splash.sampleDesc      "we've used The Wizard of Oz to illustrate the different features in celtx. the various documents are used to flesh out the needs of producing a single scene. included in this sample are a script, character and scene details forms, breakdown information, and some schedule information.">
+<!ENTITY splash.sampleProject   "عينة لمشروع">
+<!ENTITY splash.videoWalkthrus      "عروض مرئية سريعة">
+<!ENTITY splash.videoWalkthrusDesc  "دروس تعليمية مرئية قصيرة لتساعدك على الانطلاق بسرعة">
+<!ENTITY splash.walkthru            "استعراض سريع في 3 دقائق">
+<!ENTITY splash.webServices     "خدمات الويب">
+<!ENTITY splash.welcomePrefix     "سيلتكس يرحب بكم">
+<!ENTITY splash.welcomePrefixDesc "مسودة وسائط">
+<!ENTITY splash.wiki      "دليل الويكي">
+<!ENTITY splash.wikiDesc  "المصدر الذي يساعدك في التعرف على سيلتكس">
+<!ENTITY splashScreen.label "شاشة لطخة">
+<!ENTITY stackTrace.desc        "في الأسفل بعض المعلومات المساعدة لنا.  الرجاء تضمينها في حال أردتم إبلاغنا عن هذه المشكلة.">
+<!ENTITY stageplay.desc  "إضافة سيناريو مسرحي بتنسيق دولي">
+<!ENTITY stageplay.label    "مسرحي">
+<!ENTITY start.label "البداية">
+<!ENTITY startOfDay.label "بداية اليوم">
+<!ENTITY startOfShooting.label "بداية التصوير">
+<!ENTITY startOfWeek.label "بداية الأسبوع">
+<!ENTITY statistics.label "إحصاءات">
+<!ENTITY storyboard.desc    "تنظيم صور اللوحة القصصية في شكل مصغرات متسلسلة">
+<!ENTITY storyboard.label   "لوحة قصصية">
+<!ENTITY strikethrough.label "تشريط">
+<!ENTITY stripboard.label "لوحة الشرائط">
+<!ENTITY subject.label "موضوع">
+<!ENTITY summary.label "خلاصة">
+<!ENTITY syncDialog.title "مزامنة">
+<!ENTITY tagItemCmd.label           "رمز وسمي">
+<!ENTITY tagline.label      "خط الرموز الوسمية">
+<!ENTITY tags.label "رموز وسمية">
+<!ENTITY text.label "نص">
+<!ENTITY textDocument.desc  "أضف ملفا نصيا. مفيد كعناوين موجزة، مراجعات، ملخصات">
+<!ENTITY textDocument.label "نص">
+<!ENTITY theatreTmplActTitle "قانون 1">
+<!ENTITY theatreTmplSceneTitle "مقطع 1">
+<!ENTITY thirtyMinutes.label "٣٠ دقيقة ">
+<!ENTITY threeHours.label "٣ ساعات">
+<!ENTITY time.label "الوقت">
+<!ENTITY title.label        "العنوان">
+<!ENTITY titlePage.label "صفحة العنوان">
+<!ENTITY toggleEditing.label "تبديل للتحرير">
+<!ENTITY togglePaginationCmd.label    "تفعيل التصفح">
+<!ENTITY toggleScratchpadCmd.label  "فتح/إغلاق مسودة">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "شريط جانبي">
+<!ENTITY topOfNextPage.label        "أعلى الصفحة التالية">
+<!ENTITY tryAgain.label "حاول لاحقا">
+<!ENTITY twoColumns.label "عامودين">
+<!ENTITY twoHours.label "ساعتين">
+<!ENTITY typeset.label "مجموعة نوعية">
+<!ENTITY under14.label "سني أقل من ١٤ سنة">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "تحت الخط">
+<!ENTITY unorderedList.label "قائمة غير مرتبة">
+<!ENTITY untitled.label "غير معنون">
+<!ENTITY update.label "تحديث">
+<!ENTITY updateInbox.label "تحديث صندوق الوارد">
+<!ENTITY uploadDialog.title         "تحميل مشروع">
+<!ENTITY uploadProjectCmd.label "حمّل المشروع...">
+<!ENTITY uploadProjectCmd.toolbarlabel "حمّل">
+<!ENTITY uppercaseCmd.label "حرف عالي">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "اسم المستخدم">
+<!ENTITY video.label "فيديو">
+<!ENTITY videoTutorialCmd.label "درس فيديو تعليمي">
+<!ENTITY viewProjectOnline.label "استعرض المشروع على الإنترنت">
+<!ENTITY wardrobeSheet.desc     "إضافة وصف لعنصر جديد في الخزانة">
+<!ENTITY wardrobeSheet.existing  "يمكنك وصف أحد عناصر الخزانة المدونة أدناه بعد اختيارها">
+<!ENTITY wardrobeSheet.label    "الخزانة">
+<!ENTITY wardrobeSheet.select   "اختر الخزانة">
+<!ENTITY webPanel.desc              "خدمات سيلتكس الشبكية">
+<!ENTITY webPanel.label             "خدمات الشبكة">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "إنشاء حساب سيلتكس">
+<!ENTITY webPanelIntro.text1 "احصل على الأفضل من سيلتكس بتسجيلك عن طريق الويب في عضوية سيلتكس المجانية والآمنة"> 
+<!ENTITY webPanelIntro.text2 "*قم بعمل نسخة احتياطية* لمشروعك إلى خادم سيلتكس البعيد والآمن لتتمكن من استرجاعها في حال تعرض مشروعك للسرقة أو التلف">
+<!ENTITY webPanelIntro.text3 "*تعاون* مع أعضاء الفريق بمشاركة مشروعك وإنشاء مساحة خاصة لمشروعك">
+<!ENTITY webPanelIntro.text4 "*انشر* مشروعك الإعلامي في موقع بروجكت سنترال للتقيم والملاحظات وانضم إلى مجتمعنا العالمي المتنامي لمبدعي الإعلام">
+<!ENTITY webPanelIntro.text5 "استعرض مشروعك في صيغة ملائمة لجهاز *آي فون*">
+<!ENTITY wiz.clickFinish "اضغط زر ’إنهاء’ لتكمل هذا المعالج التلقائي">
+<!ENTITY wiz.clickNext "اضغط زر ’التالي’ لتبدأ">
+<!ENTITY workweek.label "أسبوع عمل">
+<!ENTITY writer.label "الكاتب">
+<!ENTITY zoom.label "تكبير/تصغير">

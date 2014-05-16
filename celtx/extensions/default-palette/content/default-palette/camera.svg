@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+                     "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     width="7cm"
+     height="2.5cm"
+     viewBox="0 0 700 250">
+  <title>Camera</title>
+  <desc>A film camera, as viewed from above.</desc>
+  <rect x="0"
+        y="0"
+        width="550"
+        height="250"
+        fill="black" />
+  <rect x="550"
+        y="75"
+        width="50"
+        height="100"
+        fill="black" />
+  <polygon fill="black"
+           points="600,50 700,0 700,250 600,200" />
+</svg>

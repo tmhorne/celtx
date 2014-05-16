@@ -1,0 +1,495 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "이메일">
+
+<!ENTITY breakdown.label    "Breakdown">
+<!ENTITY breakdown.desc     "시나리오를 위한 Breakdown 정보 추가하기.">
+<!ENTITY splash.inbox           "Inbox">
+<-- Changed from "celtx central" to "project central" -->
+<!ENTITY splash.celtxCentral      "project central 로그인">
+<!ENTITY splash.celtxCentralDesc  "project central 을 이용하여 비밀번호나 프로필 수정">
+<-- Some locales may have this in an earlier revision -->
+<!ENTITY splash.sampleProject   "sample project">
+<!ENTITY splash.sampleDesc      "오즈의 마법사 시나리오를 이용해서 Celtx 의 다양한 기능을 소개하였습니다. 본 Sample을 통해 한 씬 에서 필요한 갖가지 서식들 (시나리오, 인물분석, 장면분석, 시나리오 Breakdown 정보, 그리고 스케줄) 을 어떻게 만들고 사용하는지 볼 수 있습니다.">
+<!ENTITY enableStats.label    "시동시 Celtx 가 Celtx 서버에 PING 을 보내는것을 허용.">
+<!ENTITY enableStats.desc  "이것은 Celtx 서버에 접속한 사용자 수를 확인하기 위한 것 입니다. 어떠한 개인정보나 프로젝트 내용도 전송되지 않습니다.">
+<!ENTITY addItemCmd.label "아이템 추가">
+<!ENTITY addFolderCmd.label "폴더 추가">
+<!ENTITY image.label "이미지">
+<!ENTITY video.label "비디오">
+<!ENTITY tagline.label      "Tagline">
+<!ENTITY bdc.actor        "배우">
+<!ENTITY viewProjectOnline.label "온라인에서 프로젝트 보기">
+<!ENTITY form.scriptName "시나리오 이름">
+<!ENTITY loginOnStartup.label "자동 로그인">
+<!ENTITY scriptEditor.label "시나라오 편집기">
+<!ENTITY autoparenthesize.label " '(' 가 입력될때 자동으로 괄호 만들기">
+<!ENTITY language.label "언어">
+<!ENTITY languagePrompt.label "&language.label;:">
+<!ENTITY splash.logIn "로그인">
+<!ENTITY publishDialog.publishDesc "공개: Project Central에 프로젝트 공개">
+<!ENTITY publishDialog.privateDesc "비공개: 본인만 접속가능">
+<!ENTITY publishDialog.sharedDesc "공동작업: 지정된 사용자와 프로젝트 공유하기">
+<!ENTITY openProjectFolder.label "프로젝트 폴더 열기">
+<!ENTITY clearCmd.label "삭제">
+<!ENTITY noImageSelected.label "선택된 이미지 없음">
+<!ENTITY enterEmbedTagPrompt.label "EMBED 나 OBJECT 태그 삽입:">
+<!ENTITY contacts.label "연락처">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY general.label "일반">
+<!ENTITY categories.label "카테고리">
+<!ENTITY privacy.label "Privacy">
+<!ENTITY disabledPrompt.label "비활성:">
+<!ENTITY enabledPrompt.label "활성:">
+<!ENTITY updateInboxPrompt.label "Update Inbox:">
+<!ENTITY everyMinute.label "매 분">
+<!ENTITY every5Minutes.label "매 5 분">
+<!ENTITY every15Minutes.label "매 15 분">
+<!ENTITY every30Minutes.label "매 30 분">
+<!ENTITY everyHour.label "매 시간">
+<!ENTITY never.label "Never">
+<!ENTITY form.genericForm "Generic Form">
+<!ENTITY form.genericPrompt "Generic:">
+<!ENTITY createAccount.label "계정 만들기">
+<!ENTITY recoverPassword.label "Password 복구">
+<!ENTITY add.label "더하기">
+<!ENTITY allUppercase.label "ALL">
+<!ENTITY appName "Celtx">
+<!ENTITY authDialog.description "이 기능을 사용하시려면 Celtx 계정으로 로그인 하셔야 합니다.">
+<!ENTITY authDialog.title "Celtx 로그인">
+<!ENTITY bdc.addlabour "추가적인 업무">
+<!ENTITY bdc.animals "동물">
+<!ENTITY bdc.camera "카메라">
+<!ENTITY bdc.cast "등장인물">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "세트/건축">
+<!ENTITY bdc.electrics "발전/전기">
+<!ENTITY bdc.equip "특수장비">
+<!ENTITY bdc.extras "엑스트라">
+<!ENTITY bdc.greenery "식물">
+<!ENTITY bdc.hair "헤어">
+<!ENTITY bdc.handler "동물조련사">
+<!ENTITY bdc.lights "조명">
+<!ENTITY bdc.livestock "가축">
+<!ENTITY bdc.location "로케이션">
+<!ENTITY bdc.makeup "메이크업">
+<!ENTITY bdc.mechfx "기술효과">
+<!ENTITY bdc.misc "기타">
+<!ENTITY bdc.music "음악">
+<!ENTITY bdc.opticalfx "시각효과">
+<!ENTITY bdc.painting "그림">
+<!ENTITY bdc.prodnotes "제작노트">
+<!ENTITY bdc.props "소품">
+<!ENTITY bdc.security "안전">
+<!ENTITY bdc.set "세트">
+<!ENTITY bdc.setdressing "프로덕션 디자인">
+<!ENTITY bdc.sound "음향">
+<!ENTITY bdc.soundfx "음향효과">
+<!ENTITY bdc.specialfx "특수효과">
+<!ENTITY bdc.storyboard "콘티">
+<!ENTITY bdc.stunts "스턴트">
+<!ENTITY bdc.vehicles "차량">
+<!ENTITY bdc.wardrobe "의상">
+<!ENTITY bdc.weapons "총기류">
+<!ENTITY bold.label "볼드">
+<!ENTITY breakdownReport.label "리포트 분석">
+<!ENTITY browseCmd.label "Browse...">
+<!ENTITY category.label "Category">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; 계정...">
+<!ENTITY characters.label "등장인물">
+<!ENTITY createdCol.label "작성일시">
+<!ENTITY creatorCol.label "작성자">
+<!ENTITY department.label "분과 Department">
+<!ENTITY description.label "설명">
+<!ENTITY displayMedia.label "미디어 보이기">
+<!ENTITY downloadingPDF.label "PDF로 변환...">
+<!ENTITY exportScriptCmd.label "시나리오 보내기...">
+<!ENTITY findCmd.label "찾기">
+<!ENTITY formatAction.label "지문">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "씬넘버/장소/시간">
+<!ENTITY formatParen.label "행동 지문">
+<!ENTITY formatShot.label "Shot">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTrans.label "전환">
+<!ENTITY getProjDialog.caption "공개 프로젝트">
+<!ENTITY getProjDialog.title "프로젝트 내려받기">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "&appName;에 관하여">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "버그 보고하기">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "온라인 지원">
+<!ENTITY insertNoteCmd.toolbarLabel "메모">
+<!ENTITY italic.label "이탤릭">
+<!ENTITY item.label "아이템">
+<!ENTITY list.label "리스트...">
+<!ENTITY mediaViewer.title "미디어 보기">
+<!ENTITY modifiedCol.label "수정일시">
+<!ENTITY moveDownCmd.label "아래로 이동">
+<!ENTITY moveUpCmd.label "위로 이동">
+<!ENTITY nameCol.label "이름">
+<!ENTITY noteDialog.title "메모 작성">
+<!ENTITY options.label "옵션">
+<!ENTITY pdfDownloadDialog.title "PDF로 변환">
+<!ENTITY publishDialog.findUsers "사용자 찾기">
+<!ENTITY publishDialog.privateLabel "비공개">
+<!ENTITY publishDialog.publicLabel "공개">
+<!ENTITY publishDialog.serverLabel "서버">
+<!ENTITY publishDialog.sharedLabel "특정인과 공유">
+<!ENTITY publishDialog.title "내려받을 수 있는 프로젝트">
+<!ENTITY publishDialog.userList "사용자목록">
+<!ENTITY publishMode.label "출판모드">
+<!ENTITY recycleCmd.label "메모장으로 보내기">
+<!ENTITY regWiz.aboutThis "이 마법사는 등록에 필요한 정보를 수집합니다.">
+<!ENTITY regWiz.accountInstructions "&appName; 계정으로 사용할 아이디와 비밀번호를 기입하시오.">
+<!ENTITY regWiz.accountLabel "사용자 계정">
+<!ENTITY regWiz.checkLabel "계정 정보 확인">
+<!ENTITY regWiz.clickFinish "기입하신 정보를 확인하신 후 '완료' 버튼을 눌러 등록을 실행합니다.">
+<!ENTITY regWiz.clickNext "기입하신 정보를 확인하신 후 '다음' 버튼을 눌러 등록을 실행합니다.">
+<!ENTITY regWiz.confirmIntro "당신은 다음 정보를 기입하셨습니다:">
+<!ENTITY regWiz.confirmLabel "셋팅 확인">
+<!ENTITY regWiz.createNewAccountLabel "새 계정 만들기.">
+<!ENTITY regWiz.emailLabel "이메일:">
+<!ENTITY regWiz.identityInstructions "이름과 소속기관, 그리고 이메일을 기입하시오.">
+<!ENTITY regWiz.identityLabel "등록자 정보">
+<!ENTITY regWiz.intro "&appName;의 온라인 기능을 사용하시려면, 우선 &appName;에 계정을 만들어야 합니다.">
+<!ENTITY regWiz.loginSuccessfulLabel "감사합니다. &appName; 로 로그인 되었습니다.">
+<!ENTITY regWiz.nameLabel "Name:">
+<!ENTITY regWiz.newOrExistingLabel "새 계정을 만들거나 기존 계정 사용하기:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; 계정 아이디와 비밀번호는 영문 대-소문자를 구분합니다.">
+<!ENTITY regWiz.notePassword "비밀번호는 다섯 글자 이상이어야 합니다.">
+<!ENTITY regWiz.noteUsername "아이디는 문자나 숫자만을 사용, 세 글자 이상이어야 합니다..">
+<!ENTITY regWiz.orgLabel "소속기관:">
+<!ENTITY regWiz.passwordAgainLabel "비밀번호 재기입:">
+<!ENTITY regWiz.passwordLabel "비밀번호:">
+<!ENTITY regWiz.title "&appName; 등록 마법사">
+<!ENTITY regWiz.uidLabel "&appName; 아이디:">
+<!ENTITY regWiz.useExistingAccountLabel "기존 계정 사용하기.">
+<!ENTITY regWiz.usernameLabel "아이디:">
+<!ENTITY remove.label "제거">
+<!ENTITY removeMarkupCmd.label "제거">
+<!ENTITY replaceCmd.label "대치">
+<!ENTITY scene.label "씬">
+<!ENTITY sceneBreakdown.label "씬 분석">
+<!ENTITY sceneBreakdownWithDesc.label "설명을 첨부한 씬 분석">
+<!ENTITY sceneDetails.label "씬 세부사항">
+<!ENTITY scenes.label "씬">
+<!ENTITY script.label "시나리오">
+<!ENTITY spellCheckCmd.label "맞춤법 검사">
+<!ENTITY splash.discussion "이용자 포럼">
+<!ENTITY splash.downloadProject "프로젝트 내려받기">
+<!ENTITY splash.featureTour "기능 둘러보기">
+<!ENTITY splash.forums "Celtx 포럼">
+<!ENTITY splash.guide "Celtx 사용자 가이드">
+<!ENTITY splash.help "도움말">
+<!ENTITY splash.helpAccount "계정 만들기">
+<!ENTITY splash.newProject "새 프로젝트">
+<!ENTITY splash.openProject "프로젝트 열기">
+<!ENTITY splash.projectCentral "프로젝트 센터">
+<!ENTITY splash.projects "프로젝트">
+<!ENTITY splash.walkthru "Celtx 둘러보기">
+<!ENTITY splash.webServices "웹 서비스">
+<!ENTITY splash.welcomePrefix "Celtx에 오신것을 환영합니다.">
+<!ENTITY tagItemCmd.label "태그">
+<!ENTITY title.label "제목">
+<!ENTITY underline.label "밑줄">
+<!ENTITY untitled.label "제목없음">
+<!ENTITY uploadDialog.title "내려받을 수 있는 프로젝트">
+<!ENTITY wiz.clickFinish "마법사를 마치시려면 '완료' 버튼을 누르시오.">
+<!ENTITY wiz.clickNext "시작하시려면 '다음' 버튼을 누르시오.">
+
+<!ENTITY actorProfile.desc "배우 프로필">
+<!ENTITY actorProfile.label "배우">
+<!ENTITY addCmd.label "추가">
+<!ENTITY addDocumentDialog.folderPrompt "폴더:">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "아이템 세부설명">
+<!ENTITY addDocumentDialog.itemPrompt "Name:">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "아이템 선택">
+<!ENTITY addFolder.label "새 폴더...">
+<!ENTITY addItem.label "새 아이템...">
+<!ENTITY advanced.label "고급기능">
+<!ENTITY appliesToPDFOnly.label "이 기능은 PDF 생성시 가능한 것들 입니다.">
+<!ENTITY autoCharContinueds.label "Show character continueds">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bookmark.desc "웹 링크 더하기.">
+<!ENTITY bookmark.label "북마크">
+<!ENTITY both.label "Both">
+<!ENTITY bottomOfPagePrompt.label "페이지 하단:">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY calendar.desc "프로젝트에 일정 첨부하기.">
+<!ENTITY calendar.label "일정">
+<!ENTITY celtxError.title "Celtx 에러">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY character.label "배역/캐릭터">
+<!ENTITY characterProfile.desc "새 배역/캐릭터 설명 추가.">
+<!ENTITY characterProfile.existing "아래 리스트의 이미 존재하는 배역/캐릭터의 세부설명를 쓸 수도 있습니다.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "캐릭터 선택">
+<!ENTITY copyProject.title "프로젝트 복사">
+<!ENTITY copyProjectCmd.label "프로젝트 복사">
+<!ENTITY createProject.title "새 프로젝트">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY decreaseIndentCmd.label "들여쓰기 감소">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY deleteItem.label "아이템 삭제">
+<!ENTITY deleteItemCmd.label "삭제">
+<!ENTITY details.label "자세히">
+<!ENTITY dialog.label "대화 ">
+<!ENTITY downloadProjectCmd.label "프로젝트 다운로드...">
+<!ENTITY downloadProjectCmd.toolbarlabel "다운로드">
+<!ENTITY editTitlePageCmd.label "표지 작성...">
+<!ENTITY element.label "요소">
+<!ENTITY elements.label "요소">
+<!ENTITY enableStats.label "사용 통계를 Celtx에 보내기.">
+<!ENTITY externalFile.desc "존재하는 파일을 프로젝트에 더하기.">
+<!ENTITY externalFile.label "파일">
+<!ENTITY filmScript.desc "작성된 시나리오 더하기.">
+<!ENTITY filmScript.label "시나리오">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findPreviousCmd.label "이전 찾기">
+<!ENTITY findTab.label "찾기">
+<!ENTITY forceOverwrite.label "서버의 버전이 높을경우, 덮어쓰기를 합니다.">
+<!ENTITY form.actorLink "배우 관련 링크">
+<!ENTITY form.actorProfile "배우 프로필">
+<!ENTITY form.address "주소">
+<!ENTITY form.affectEvent "이 사건이 전체적인 줄거리에 주는 영향은?">
+<!ENTITY form.age "나이">
+<!ENTITY form.alternate "다른 이름">
+<!ENTITY form.antag "악역">
+<!ENTITY form.antagWho "이 씬에서의 악역은 누구인가?">
+<!ENTITY form.availability "유효성 Availability">
+<!ENTITY form.bestFriend "친한 친구">
+<!ENTITY form.borrow "대여(무료)">
+<!ENTITY form.build "제작">
+<!ENTITY form.buy "구입">
+<!ENTITY form.catalyst "자극 catalyst">
+<!ENTITY form.cell "핸드폰">
+<!ENTITY form.centralEvent "이 씬의 중심사건은 무엇인가?">
+<!ENTITY form.charBackground "캐릭터의 배경">
+<!ENTITY form.charGoal "이 캐릭터의 목표는 무엇인가?">
+<!ENTITY form.charPlan "이 캐릭터는 목표를 달성하기 위해 어떤 계획을 가지고 있는가?">
+<!ENTITY form.charTraits "캐릭터 특성">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "캐릭터 프로필">
+<!ENTITY form.charactersUsed "아래의 배역/캐릭터에게 필요">
+<!ENTITY form.color "색">
+<!ENTITY form.comicRelief "희극적인 전환 comic relief">
+<!ENTITY form.comments "기타">
+<!ENTITY form.confidante "절친한 친구">
+<!ENTITY form.contactInfo "연락처">
+<!ENTITY form.cost "비용">
+<!ENTITY form.dateAvail "사용 가능 일자">
+<!ENTITY form.dateNeed "필요한 일자">
+<!ENTITY form.dateReturn "반납할 일자">
+<!ENTITY form.description "설명">
+<!ENTITY form.details "세부사항">
+<!ENTITY form.dislikes "싫어하는 것">
+<!ENTITY form.distFeatures "구분되어지는 특성">
+<!ENTITY form.dob "생년월일">
+<!ENTITY form.dress "의상">
+<!ENTITY form.education "교육 수준">
+<!ENTITY form.elevator "승강기 유무">
+<!ENTITY form.email "Email">
+<!ENTITY form.endDate "종료일">
+<!ENTITY form.era "연대/시대">
+<!ENTITY form.eyes "Eyes/눈색깔">
+<!ENTITY form.facilityInfo "현장 정보">
+<!ENTITY form.familyBack "가족/성장배경">
+<!ENTITY form.fullName "이름">
+<!ENTITY form.habits "습관/버릇">
+<!ENTITY form.hair "헤어 스타일">
+<!ENTITY form.hat "모자">
+<!ENTITY form.height "키">
+<!ENTITY form.jacket "복장">
+<!ENTITY form.keyCharTraits "배역의 주요 특성">
+<!ENTITY form.lightSources "광원">
+<!ENTITY form.likes "좋아하는 것">
+<!ENTITY form.locationMap "로케이션 지도">
+<!ENTITY form.locationProfile "로케이션 프로필">
+<!ENTITY form.loveInterest "애정관계">
+<!ENTITY form.media "매체">
+<!ENTITY form.mentor "조언자/스승">
+<!ENTITY form.motiv "동기">
+<!ENTITY form.name "이름">
+<!ENTITY form.no "No">
+<!ENTITY form.noise "소음 가능성 (사운드파트)">
+<!ENTITY form.other "other">
+<!ENTITY form.pants "바지">
+<!ENTITY form.parking "주차정보">
+<!ENTITY form.partner "동반자">
+<!ENTITY form.person "인간성/개성">
+<!ENTITY form.phone "전화번호">
+<!ENTITY form.physicalDesc "자세한 신체정보">
+<!ENTITY form.powerCapa "전력 사용 가능 여부">
+<!ENTITY form.princFunction "이 배역의 주요 역활/기능 은?">
+<!ENTITY form.procure "소품 조달">
+<!ENTITY form.propProfile "소품 프로필">
+<!ENTITY form.protag "주인공">
+<!ENTITY form.protagAntag "주인공/악역">
+<!ENTITY form.protagWho "이 씬의 주인공은?">
+<!ENTITY form.rent "대여">
+<!ENTITY form.rentalCost "대여료">
+<!ENTITY form.role "배역">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "악역은 어떻게 이 목적을 달성하는가?">
+<!ENTITY form.sceneAntagGoal "이 씬에서 악역의 목적은 무엇인가?">
+<!ENTITY form.sceneChars "이 씬에 나오는 등장인물">
+<!ENTITY form.sceneDetails "씬의 세부사항">
+<!ENTITY form.sceneMood "이 씬의 분위기는 무엇인가?">
+<!ENTITY form.sceneProtagAchieve "주인공은 어떻게 목적을 달성하는가?">
+<!ENTITY form.sceneProtagGoal "이 씬에서 주인공의 목적은 무엇인가?">
+<!ENTITY form.sceneSetting "씬의 세팅은 무엇인가?">
+<!ENTITY form.sceneWhen "씬의 시간적/공간적 배경">
+<!ENTITY form.scenesUsed "아래의 씬에 필요">
+<!ENTITY form.scoutSelect "로케이션 헌팅과 결정">
+<!ENTITY form.scoutedFor "이 로케이션은 아래의 씬을 위해 헌팅되었음">
+<!ENTITY form.selectedFor "이 로케이션은 아래의 씬을 위해 결정되었음">
+<!ENTITY form.sex "성별">
+<!ENTITY form.shirt "셔츠">
+<!ENTITY form.shoes "신발">
+<!ENTITY form.size "사이즈">
+<!ENTITY form.squareFoot "면적">
+<!ENTITY form.startDate "시작일">
+<!ENTITY form.wardProfile "의상 프로필">
+<!ENTITY form.wardrobeSizes "의상 사이즈">
+<!ENTITY form.washroom "화장실/욕실 위치">
+<!ENTITY form.weight "몸무게">
+<!ENTITY form.wornBy "Worn By">
+<!ENTITY form.yes "Yes">
+<!ENTITY generatePDFCmd.label "PDF 생성...">
+<!ENTITY generateReportCmd.label "리포트 생성">
+<!ENTITY generateReportCmd.toolbarlabel "리포트">
+<!ENTITY gotoItemCmd.label "Go To">
+<!ENTITY icons.label "아이콘">
+<!ENTITY iconsAndText.label "아이콘과 텍스트">
+<!ENTITY images.label "이미지">
+<!ENTITY importScriptCmd.label "스크립트 불러오기...">
+<!ENTITY importScriptCmd.toolbarLabel "불러오기">
+<!ENTITY includeTitlePage.label "표지 포함">
+<!ENTITY increaseIndentCmd.label "들여쓰기 증가">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY inlineSpellCheckCmd.label "Inline Spell Checking">
+<!ENTITY invalidLogin.label "아이디와 암호가 맞지 않습니다.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY left.label "Left">
+<!ENTITY location.desc "로케이선 설명.">
+<!ENTITY location.label "로케이션">
+<!ENTITY locationPrompt.label "로케이션:">
+<!ENTITY lowercaseCmd.label "소문자">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "미디어">
+<!ENTITY modifiedPrompt.label "수정된:">
+<!ENTITY name.label "Name">
+<!ENTITY namePrompt.label "Name:">
+<!ENTITY newMarkupItem.label "&lt;New ...&gt;">
+<!ENTITY newProjectCmd.label "새 프로젝트...">
+<!ENTITY newProjectCmd.toolbarlabel "New">
+<!ENTITY noFileSelected.label "&lt;no file selected&gt;">
+<!ENTITY none.label "None">
+<!ENTITY openItemCmd.label "아이템 열기">
+<!ENTITY openProjectCmd.label "프로젝트 열기...">
+<!ENTITY openProjectCmd.toolbarlabel "열기">
+<!ENTITY openRecentCmd.label "최근 프로젝트 열기">
+<!ENTITY outline.desc "Add a bulleted outline document.">
+<!ENTITY outline.label "아웃라인">
+<!ENTITY pageAndSceneNumbering.label "페이지와 씬 번호 매기기">
+<!ENTITY paperSizePrompt.label "종이 크기:">
+<!ENTITY passwordPrompt.label "비밀번호:">
+<!ENTITY pdfOptions.title "PDF Options">
+<!ENTITY pdfOptionsCmd.label "Mores and Continueds">
+<!ENTITY picklist.label "Picklist">
+<!ENTITY progressDialog.title "진행중">
+<!ENTITY projectItems.label "프로젝트 아이템">
+<!ENTITY projectProperties.label "프로젝트 셋팅...">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY propSheet.desc "새 소품에 대한 설명 적기.">
+<!ENTITY propSheet.existing "리스트에 있는 기존 소품에도 설명을 추가할 수 있습니다.">
+<!ENTITY propSheet.label "소품">
+<!ENTITY propSheet.select "소품 선택">
+<!ENTITY properties.label "Properties">
+<!ENTITY publishDialog.ownerLabel "프로젝트 소유자">
+<!ENTITY regWiz.bullet1 "개인적인 백 업">
+<!ENTITY regWiz.bullet2 "공동작업">
+<!ENTITY regWiz.bullet3 "PDF 생성">
+<!ENTITY regWiz.bullet4 "???">
+<!ENTITY regWiz.clickFinish1 "&appName; 서버에 접속하였습니다.">
+<!ENTITY regWiz.clickFinish2 "프로젝트의 안전한 백업을 위해 다운로드/업로드 기능을 사용해 보세요. 또는 &appName; 계정을 가진 사람과 공유하는 프로젝트에서 공동작업 기능을 사용하기 위하여 이 기능을 사용하실 수 있습니다.">
+<!ENTITY regWiz.conclusion "결론 (5/5)">
+<!ENTITY regWiz.createYourAccountLabel "&appName; 계정을 만드세요! (1/5)">
+<!ENTITY regWiz.finish "종료">
+<!ENTITY regWiz.warn "이 기능에 접속히기 위해서는  &appName; 계정이 필요합니다.">
+<!ENTITY removeCmd.label "제거">
+<!ENTITY renameItem.label "아이템 이름 바꾸기...">
+<!ENTITY reportThisBug.label "버그 보고">
+<!ENTITY reportThisBug.tooltip "익명으로 버그 보고하기.">
+<!ENTITY reports.label "보고">
+<!ENTITY right.label "Right">
+<!ENTITY saveProjectCmd.label "프로젝트 저장">
+<!ENTITY saveProjectCmd.toolbarlabel "저장">
+<!ENTITY sceneDetails.desc "새 씬에 대한 설명 적기.">
+<!ENTITY sceneDetails.existing "리스트에 있는 기존 씬에도 설명을 추가할 수 있습니다.">
+<!ENTITY sceneDetails.select "씬 선택">
+<!ENTITY scriptPrompt.label "&script.label;:">
+<!ENTITY scriptReport.desc "자동생성된 시나리오 리포트.">
+<!ENTITY scriptReport.label "시나리오 리포트">
+<!ENTITY scriptWithNotes.label "메모가 첨부된 시나리오">
+<!ENTITY serverPrompt.label "서버:">
+<!ENTITY sharing.label "공유">
+<!ENTITY showContinuedCount.label "페이지 번호 보기">
+<!ENTITY showDialogBreaks.label "대사 잘리보기:">
+<!ENTITY showFirstPageNumber.label "첫 장에 페이지 넘버 삽입">
+<!ENTITY showPageNumbers.label "번호 매기기">
+<!ENTITY showSceneBreaks.label "씬 별로 잘라보기:">
+<!ENTITY showSceneNumbers.label "씬 번호 보이기">
+<!ENTITY splash.celtxCentral "celtx central">
+<!ENTITY splash.celtxCentralDesc "Celtx central 에서 비밀번호를 바꾸거나 사용자 정보를 수정할 수 있습니다.">
+<!ENTITY splash.downloadProjectDesc "Celtx server에서 프로젝트 다운로드">
+<!ENTITY splash.forumsDesc "Celtx 이용자 포럼에 참여하기.">
+<!ENTITY splash.gettingStarted "시작하기">
+<!ENTITY splash.helpAccountDesc "아이디를 만드시면 공동작업 기능이나 PDF 생성등의 부가적인 기능을 가능하게 하는 서버에 접속하실 수 있습니다.">
+<!ENTITY splash.helpDesc "The links on the left highlight several celtx resources">
+<!ENTITY splash.helpOptions "도움말">
+<!ENTITY splash.newProjectDesc "새 프로젝트">
+<!ENTITY splash.openProjectDesc "기존 프로젝트에 접근 또는 추가.">
+<!ENTITY splash.options "options">
+<!ENTITY splash.recentProjects "최근 프로젝트">
+<!ENTITY splash.videoWalkthrus "Celtx 기능 둘러보기 (동영상)">
+<!ENTITY splash.videoWalkthrusDesc "Celtx를 알기위한 짧은 동영상 강좌">
+<!ENTITY splash.welcomePrefixDesc "미디어 Pre-Production">
+<!ENTITY splash.wiki "wiki 가이드">
+<!ENTITY splash.wikiDesc "Celtx를 알기위한 내용들">
+<!ENTITY stackTrace.desc "아래 내용은 Celtx 의 성능향상을 위해 유용한 것들입니다. 버그 보고를 하실때 포함시켜 주십시오..">
+<!ENTITY syncDialog.title "동기화">
+<!ENTITY text.label "텍스트">
+<!ENTITY textDocument.desc "아웃라인, 트리트먼트, 또는 시놉시스에 유용한 텍스트를 저장하시오.">
+<!ENTITY textDocument.label "텍스트">
+<!ENTITY titlePage.label "표지">
+<!ENTITY togglePaginationCmd.label "페이지 번호 매기기">
+<!ENTITY toggleScratchpadCmd.label "메모장">
+<!ENTITY toggleSidebarCmd.label "사이드 바">
+<!ENTITY topOfNextPagePrompt.label "다음 페이지 상단:">
+<!ENTITY underline.commandkey "u">
+<!ENTITY uploadProjectCmd.label "프로젝트 업로드...">
+<!ENTITY uploadProjectCmd.toolbarlabel "업로드">
+<!ENTITY uppercaseCmd.label "대문자">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY usernamePrompt.label "아이디:">
+<!ENTITY videoTutorialCmd.label "비디오 튜토리얼">
+<!ENTITY wardrobeSheet.desc "새 의상에 설명 첨부하기.">
+<!ENTITY wardrobeSheet.existing "리스트에 있는 기존 의상에도 설명을 추가할 수 있습니다..">
+<!ENTITY wardrobeSheet.label "의상">
+<!ENTITY wardrobeSheet.select "의상 선택">
+<!ENTITY wherePrompt.label "Where:">
+<!ENTITY spellCheckNoSuggestions.label "추천 단어 없음">
+<!ENTITY spellCheckIgnoreWord.label "무시하기">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckAddToDictionary.label "사전에 추가">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">

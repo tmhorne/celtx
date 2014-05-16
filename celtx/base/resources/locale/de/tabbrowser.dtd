@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Unbenannt)">
+<!ENTITY  newTab.label           "Neuer Tab">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "Tab schließen">
+<!ENTITY  closeTab.accesskey         "c">
+<!ENTITY  closeOtherTabs.accesskey  "A">
+<!ENTITY  closeOtherTabs.label   "Andere Tabs schließen">
+<!ENTITY  reloadAllTabs.label    "Alle Tabs neu laden">
+<!ENTITY  reloadAllTabs.accesskey         "T">
+<!ENTITY  reloadTab.label        "Tab neu laden">
+<!ENTITY  reloadTab.accesskey         "l">
+<!ENTITY  listAllTabs.label      "Alle Tabs auflisten">
+<!ENTITY  bookmarkAllTabs.label       "Lesezeichen für alle Tabs hinzufügen…">
+<!ENTITY  bookmarkAllTabs.accesskey   "L">
+<!ENTITY  bookmarkThisTab.label        "Lesezeichen für diesen Tab hinzufügen">
+<!ENTITY  bookmarkThisTab.accesskey    "T">
+<!ENTITY  undoCloseTab.label          "Geschlossenen Tab wiederherstellen">
+<!ENTITY  undoCloseTab.accesskey      "G">

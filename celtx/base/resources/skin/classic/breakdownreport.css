@@ -1,0 +1,97 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  font-family: helvetica;
+  font-size: 12px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+table {
+  width: 100%;
+  font-size: 12px;
+}
+td {
+  width: 33%;
+  vertical-align: top;
+}
+.header {
+  font-weight: bold;
+}
+ul {
+  padding: 0 0 1em 0;
+  margin: 0 0 5px 0;
+}
+li {
+  list-style: none;
+  padding: 5px 0 0 1em;
+}
+.scene {
+  background-color: #9EA1BE;
+  border: 1px solid #8D90A6;
+  padding: 6px 2px 3px 10px;
+  font-weight: normal;
+}
+.contents {
+  padding: 8px 6px 8px 24px;
+  -moz-column-count: 2;
+}
+.unicontents {
+  padding: 8px 6px 8px 24px;
+}
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.desc {
+  font-style: italic;
+  padding:0 10px 0 8px;
+}
+.banner {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: .67em 0;
+}
+.markuptext {
+  background-color: rgb(255, 255, 102);
+  border: 1px solid silver;
+  padding: 2px 2px 0px 2px;
+  margin-left: 4px;
+}
+@media print {
+  .banner {
+    display: none;
+  }
+}
+.itemimage {
+  float: left;
+  width: 50%;
+  height: 210pt;
+}
+img {
+  max-width: 200pt;
+  max-height: 180pt;
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?> 
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="authentication-dialog" 
+        title="&studioAuthDialog.title;"
+        buttons="accept,cancel" 
+        pack="right"
+        ondialogaccept="accepted()"
+        ondialogcancel="canceled()"
+        onload="loaded()">
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/rdfmodel.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/projectManager.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/app.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/authenticate.js"/>
+
+  <stringbundleset>
+    <stringbundle id="celtx-bundle"
+                  src="chrome://celtx/locale/celtx.properties"/>
+  </stringbundleset>
+
+  <hbox pack="end" align="center">
+    <label value="&location.label;&colon;" />
+    <menulist id="service-list"
+              oncommand="serviceSelectionChanged();">
+      <menupopup />
+    </menulist>
+  </hbox>
+
+  <grid>
+    <columns>
+      <column flex="1"/>
+      <column flex="2"/>
+    </columns>
+    <rows>
+      <row align="center">
+        <deck id="username-deck">
+          <label value="&email.label;&colon;"/>
+          <label value="&username.label;&colon;"/>
+        </deck>
+        <textbox id="username" maxlength="100"/>
+      </row>
+      <row align="center">
+        <label value="&password.label;&colon;"/>
+        <textbox id="password"
+                 type="password"
+                 maxlength="100"/>
+      </row>
+      <row>
+        <label />
+        <checkbox id="auto-login-checkbox"
+                  label="&loginOnStartup.label;"/>
+      </row>
+      <row>
+        <label />
+        <label class="text-link"
+               value="&recoverPassword.label;"
+               onclick="recoverPassword();" />
+      </row>
+      <row>
+        <label />
+        <label class="text-link"
+               value="&createAccount.label;"
+               onclick="createAccount();" />
+      </row>
+    </rows>
+  </grid>
+
+  <separator/>
+
+  <description id="msgfield"
+               failvalue="&invalidLogin.label;"
+               style="width: 300px; height: 2.2em; color: red;" />
+  <hbox pack="end">
+    <label id="msglink"
+           class="text-link"
+           onclick="gApp.openBrowser(this.getAttribute('src'));"
+           value=""
+           enabledvalue="&details.label;" />
+  </hbox>
+
+  <separator/>
+
+</dialog>

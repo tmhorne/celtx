@@ -1,0 +1,30 @@
+classic.jar:
+% skin celtx classic/1.0 %skin/classic/celtx/ os=WINNT osversion<6
+% skin celtx classic/1.0 %skin/classic/celtx/ os!=WINNT
+* skin/classic/celtx/tabeditor.css    (tabeditor.css)
+  skin/classic/celtx/tabeditor/alltabs-box-overflow-end-bkgnd-animate.png        (tabeditor/alltabs-box-overflow-end-bkgnd-animate.png)
+  skin/classic/celtx/tabeditor/alltabs-box-overflow-start-bkgnd-animate.png      (tabeditor/alltabs-box-overflow-start-bkgnd-animate.png)
+  skin/classic/celtx/tabeditor/tab-arrow-end.png                       (tabeditor/tab-arrow-end.png)
+  skin/classic/celtx/tabeditor/tab-arrow-start.png                     (tabeditor/tab-arrow-start.png)
+  skin/classic/celtx/tabeditor/tabbrowser-tabs-bkgnd.png               (tabeditor/tabbrowser-tabs-bkgnd.png)
+  skin/classic/celtx/tabeditor/tabDragIndicator.png                    (tabeditor/tabDragIndicator.png)
+  skin/classic/celtx/tabeditor/tab-bkgnd.png                           (tabeditor/tab-bkgnd.png)
+  skin/classic/celtx/tabeditor/tab-active-bkgnd.png                    (tabeditor/tab-active-bkgnd.png)
+  skin/classic/celtx/tabeditor/tab-hover-bkgnd.png                     (tabeditor/tab-hover-bkgnd.png)
+  skin/classic/celtx/tabeditor/tabstrip-bottom.png                     (tabeditor/tabstrip-bottom.png)
+
+#ifdef XP_WIN
+classic.jar:
+% skin celtx classic/1.0 %skin/classic/aero/celtx/ os=WINNT osversion>=6
+* skin/classic/aero/celtx/tabeditor.css                        (tabeditor.css)
+  skin/classic/aero/celtx/tabeditor/alltabs-box-overflow-end-bkgnd-animate.png   (tabeditor/alltabs-box-overflow-end-bkgnd-animate.png)
+  skin/classic/aero/celtx/tabeditor/alltabs-box-overflow-start-bkgnd-animate.png (tabeditor/alltabs-box-overflow-start-bkgnd-animate.png)
+  skin/classic/aero/celtx/tabeditor/tab-arrow-end.png                  (tabeditor/tab-arrow-end-aero.png)
+  skin/classic/aero/celtx/tabeditor/tab-arrow-start.png                (tabeditor/tab-arrow-start-aero.png)
+  skin/classic/aero/celtx/tabeditor/tabbrowser-tabs-bkgnd.png          (tabeditor/tabbrowser-tabs-bkgnd.png)
+  skin/classic/aero/celtx/tabeditor/tabDragIndicator.png               (tabeditor/tabDragIndicator-aero.png)
+  skin/classic/aero/celtx/tabeditor/tab-bkgnd.png                      (tabeditor/tab-bkgnd.png)
+  skin/classic/aero/celtx/tabeditor/tab-active-bkgnd.png               (tabeditor/tab-active-bkgnd.png)
+  skin/classic/aero/celtx/tabeditor/tab-hover-bkgnd.png                (tabeditor/tab-hover-bkgnd.png)
+  skin/classic/aero/celtx/tabeditor/tabstrip-bottom.png                (tabeditor/tabstrip-bottom.png)
+#endif

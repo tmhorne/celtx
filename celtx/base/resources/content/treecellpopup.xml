@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          id="treecellpopupbindings">
+
+  <binding id="treecellpopup"
+           extends="chrome://global/content/bindings/popup.xml#popup">
+    <resources>
+      <stylesheet src="chrome://celtx/skin/treecellpopup.css"/>
+    </resources>
+
+    <content>
+      <xul:textbox onkeypress="this.parentNode.keyPressed(event)"/>
+    </content>
+
+    <implementation>
+      <constructor>
+        this.setAttribute("ignorekeys", "true");
+      </constructor>
+
+      <property name="editbox"
+                readonly="true">
+        <getter>
+          return document.getAnonymousNodes(this)[0];
+        </getter>
+      </property>
+
+      <method name="getIndentation">
+        <parameter name="tree"/>
+        <body>
+        <![CDATA[
+          // Temporary workaround
+          if (isMac())
+            return 16;
+          else
+            return 18;
+
+          var treechildren = tree.lastChild;
+          var style = window.getComputedStyle(treechildren,
+            ":-moz-tree-indentation");
+          var cssvalue = style.getPropertyCSSValue("width");
+          if (cssvalue.cssValueType == CSSValue.CSS_PRIMITIVE_VALUE)
+            return Math.floor(cssvalue.getFloatValue(CSSPrimitiveValue.CSS_PX));
+          else
+            return 0;
+        ]]>
+        </body>
+      </method>
+
+      <method name="getTwistySize">
+        <parameter name="tree"/>
+        <body>
+        <![CDATA[
+          // Temporary workaround
+          if (isMac())
+            return 10;
+          else
+            return 9;
+
+          var treechildren = tree.lastChild;
+          var style = window.getComputedStyle(treechildren,
+            ":-moz-tree-twisty");
+          var cssvalue = style.getPropertyCSSValue("width");
+          if (cssvalue.cssValueType == CSSValue.CSS_PRIMITIVE_VALUE)
+            return Math.floor(cssvalue.getFloatValue(CSSPrimitiveValue.CSS_PX));
+          else
+            return 0;
+        ]]>
+        </body>
+      </method>
+
+      <method name="showForTreeCell">
+        <parameter name="tree"/>
+        <parameter name="row"/>
+        <parameter name="column"/>
+        <body>
+        <![CDATA[
+          var coords = { x: {}, y: {}, w: {}, h: {} };
+          tree.treeBoxObject.getCoordsForCellItem(row, column, "cell",
+            coords.x, coords.y, coords.w, coords.h);
+          if (coords.x.value < 0 || coords.y.value < 0) {
+            this.cancel();
+            return;
+          }
+
+          // TODO: find treechildren::moz-tree-indentation width value
+          // and treechildren::-moz-tree-twisty width value
+          if (column.primary) {
+            var indentation = this.getIndentation(tree);
+            indentation *= tree.view.getLevel(row) + 1;
+            var twistysize = this.getTwistySize(tree);
+            indentation += twistysize;
+            coords.x.value += indentation;
+            coords.w.value -= indentation;
+          }
+
+          var offsetx = tree.boxObject.screenX + coords.x.value;
+          var offsety = tree.boxObject.screenY + coords.y.value
+            + coords.h.value;
+          this.sizeTo(coords.w.value, coords.h.value);
+          this.showPopup(tree, offsetx, offsety, "popup", null, null);
+          this.editbox.value = tree.view.getCellText(row, column);
+          this.editbox.select();
+          // this.editbox.focus();
+        ]]>
+        </body>
+      </method>
+
+      <method name="accept">
+        <body>
+          this.hidePopup();
+          if (this.callback)
+            this.callback(this.editbox.value);
+        </body>
+      </method>
+
+      <method name="cancel">
+        <body>
+          this.hidePopup();
+        </body>
+      </method>
+
+      <method name="keyPressed">
+        <parameter name="event"/>
+        <body>
+        <![CDATA[
+          switch (event.keyCode) {
+            case KeyEvent.DOM_VK_ENTER:
+            case KeyEvent.DOM_VK_RETURN:
+              this.accept();
+              break;
+            case KeyEvent.DOM_VK_ESCAPE:
+              this.cancel();
+              break;
+          }
+        ]]>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+</bindings>

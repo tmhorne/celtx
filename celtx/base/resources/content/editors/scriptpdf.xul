@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+<!ENTITY % printPreviewDTD SYSTEM "chrome://global/locale/printPreview.dtd" >
+%printPreviewDTD;
+<!ENTITY % findDTD SYSTEM "chrome://global/locale/finddialog.dtd">
+%findDTD;
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <vbox id="pdfcard"
+          flex="1">
+      <toolbar>
+        <toolbarspacer width="4"/>
+        <toolbarbutton id="pdfsaveasbtn"
+                       label="&savePDFCmd.label;"
+                       tooltiptext="&savePDFCmd.label;"
+                       image="chrome://celtx/skin/pdf/save.png"
+                       style="height: 32px;"
+                       oncommand="gPDFController.cmdGeneratePDF()"/>
+        <toolbarbutton id="pdfoptionsbtn"
+                       label="&scriptFormatCmd.label;"
+                       image="chrome://celtx/skin/pdf/options.png"
+                       oncommand="gPDFController.cmdOptions()"/>
+
+        <toolbarseparator/>
+        <toolbarbutton class="pdfpagefirst"
+                       oncommand="gPDFController.firstPage()"/>
+        <toolbarbutton class="pdfpageprev"
+                       oncommand="gPDFController.prevPage()"/>
+        <toolbaritem orient="horizontal"
+                     align="center"
+                     pack="center">
+          <textbox id="pdfPageNumber"
+                   size="3"
+                   value="1"
+                   lastvalid="1"
+                   onchange="gPDFController.goToPage(Number(this.value));"/>
+          <label value="&of.label;"/>
+          <label id="pdfNumPages"
+                 value="1"/>
+        </toolbaritem>
+        <toolbarbutton class="pdfpagenext"
+                       oncommand="gPDFController.nextPage()"/>
+        <toolbarbutton class="pdfpagelast"
+                       oncommand="gPDFController.lastPage()"/>
+        <toolbarseparator/>
+
+        <toolbaritem align="center">
+          <label value="&zoom.label;&colon;"/>
+          <menulist id="pdfzoommenu"
+                    oncommand="gPDFController.setZoom(
+                                Number(this.selectedItem.value))">
+            <menupopup>
+              <menuitem label="50%" value="50"/>
+              <menuitem label="75%" value="80"/>
+              <menuitem label="100%" value="100" selected="true"/>
+              <menuitem label="120%" value="120"/>
+              <menuitem label="150%" value="150"/>
+              <menuitem label="200%" value="200"/>
+            </menupopup>
+          </menulist>
+        </toolbaritem>
+      </toolbar>
+      <hbox id="pdfprogressbox"
+            collapsed="false"
+            align="center"
+            class="celtxtoolbar">
+        <image src="chrome://celtx/skin/lock.png"/>
+        <progressmeter id="pdfprogressmeter"
+                       mode="determined"
+                       value="0"
+                       width="300"/>
+        <label id="pdfprogressmsg"
+               value=""
+               flex="1"/>
+        <button id="pdfcancel"
+                label="&cancelButton.label;"
+                oncommand="gPDFController.cancel()"/>
+        <toolbarbutton image="chrome://celtx/skin/closetab.png"
+                       oncommand="gPDFController.hideProgressBox()"/>
+      </hbox>
+      <iframe id="pdfview"
+              flex="1"
+              src="about:blank"/>
+    </vbox>
+
+</overlay>

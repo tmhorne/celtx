@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE dialog [
+#include celtx-entities.inc
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/celtx.css" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&saveToStudio.label;"
+        width="600"
+        height="400"
+        onload="loaded();"
+        ondialogaccept="return accepted();"
+        ondialogcancel="return canceled();">
+
+#include celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/json2.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/server.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/savestudiodialog.js"/>
+
+  <deck id="loadingdeck"
+        flex="1">
+    <hbox flex="1"
+          pack="center"
+          align="center">
+      <label id="loadingmsg"
+             value="&fetchingList.label;&ellipsis;"/>
+    </hbox>
+    <vbox flex="1">
+      <tree id="projecttree"
+            seltype="single"
+            flex="1"
+            onselect="itemSelected();">
+        <treecols>
+          <treecol id="titlecol"
+                   label="&title.label;"
+                   flex="3"
+                   primary="true" />
+          <treecol id="modifiedcol"
+                   label="&modified.label;"
+                   flex="1" />
+          <treecol id="savedbycol"
+                   label="&savedBy.label;"
+                   flex="1" />
+        </treecols>
+        <treechildren id="projectitems" />
+      </tree>
+      <separator/>
+      <hbox align="center">
+        <label value="&title.label;&colon;"/>
+        <textbox id="titlebox"
+                 oninput="titleChanged();"
+                 flex="1"/>
+      </hbox>
+    </vbox>
+  </deck>
+
+</dialog>

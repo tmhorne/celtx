@@ -1,0 +1,7 @@
+.mozconfig
+.mozconfig.mk
+.mozconfig.out
+mozconfig-nodebug-linux
+mozconfig-nodebug-osx
+mozconfig-nodebug-win
+*.pyc

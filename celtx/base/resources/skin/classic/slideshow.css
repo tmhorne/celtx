@@ -1,0 +1,167 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+.slideviewer {
+  background-color: black;
+  color: white;
+}
+
+.slideviewer .header {
+  font-size: 12pt;
+}
+
+.slideviewer > image {
+  width: 640px;
+  height: 480px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.slideviewer description {
+  width: 480px;
+  max-width: 480px;
+  height: 3em;
+  max-height: 3em;
+}
+
+toolbarbutton {
+  list-style-image: url("chrome://celtx/skin/slideshow.png");
+}
+toolbarbutton label {
+  display: none;
+}
+
+#firstbtn {
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+#firstbtn:hover {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+#firstbtn:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+#firstbtn[disabled="true"] {
+  -moz-image-region: rect(96px 32px 128px 0px) !important;
+}
+
+#prevbtn {
+  -moz-image-region: rect(0px 64px 32px 32px);
+}
+#prevbtn:hover {
+  -moz-image-region: rect(32px 64px 64px 32px);
+}
+#prevbtn:hover:active {
+  -moz-image-region: rect(64px 64px 96px 32px);
+}
+#prevbtn[disabled="true"] {
+  -moz-image-region: rect(96px 64px 128px 32px) !important;
+}
+
+#playbtn {
+  -moz-image-region: rect(0px 96px 32px 64px);
+}
+#playbtn:hover {
+  -moz-image-region: rect(32px 96px 64px 64px);
+}
+#playbtn:hover:active {
+  -moz-image-region: rect(64px 96px 96px 64px);
+}
+#playbtn[disabled="true"] {
+  -moz-image-region: rect(96px 96px 128px 64px) !important;
+}
+
+#playbtn[playing="true"] {
+  -moz-image-region: rect(0px 128px 32px 96px);
+}
+#playbtn[playing="true"]:hover {
+  -moz-image-region: rect(32px 128px 64px 96px);
+}
+#playbtn[playing="true"]:hover:active {
+  -moz-image-region: rect(64px 128px 96px 96px);
+}
+#playbtn[playing="true"][disabled="true"] {
+  -moz-image-region: rect(96px 128px 128px 96px) !important;
+}
+
+#nextbtn {
+  -moz-image-region: rect(0px 160px 32px 128px);
+}
+#nextbtn:hover {
+  -moz-image-region: rect(32px 160px 64px 128px);
+}
+#nextbtn:hover:active {
+  -moz-image-region: rect(64px 160px 96px 128px);
+}
+#nextbtn[disabled="true"] {
+  -moz-image-region: rect(96px 160px 128px 128px) !important;
+}
+
+#lastbtn {
+  -moz-image-region: rect(0px 192px 32px 160px);
+}
+#lastbtn:hover {
+  -moz-image-region: rect(32px 192px 64px 160px);
+}
+#lastbtn:hover:active {
+  -moz-image-region: rect(64px 192px 96px 160px);
+}
+#lastbtn[disabled="true"] {
+  -moz-image-region: rect(96px 192px 128px 160px) !important;
+}
+
+#decrbtn {
+  -moz-image-region: rect(8px 216px 24px 200px);
+}
+#decrbtn:hover {
+  -moz-image-region: rect(40px 216px 56px 200px);
+}
+#decrbtn:hover:active {
+  -moz-image-region: rect(72px 216px 88px 200px);
+}
+#decrbtn[disabled="true"] {
+  -moz-image-region: rect(104px 216px 120px 200px) !important;
+}
+
+#incrbtn {
+  -moz-image-region: rect(8px 248px 24px 232px);
+}
+#incrbtn:hover {
+  -moz-image-region: rect(40px 248px 56px 232px);
+}
+#incrbtn:hover:active {
+  -moz-image-region: rect(72px 248px 88px 232px);
+}
+#incrbtn[disabled="true"] {
+  -moz-image-region: rect(104px 248px 120px 232px) !important;
+}
+
+#delaylbl {
+  width: 2em;
+  height: 16px;
+  text-align: center;
+  border: 1px solid #CCCCCC;
+  background-color: rgb(22%, 21%, 21%);
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!ENTITY minimizeWindow.key       "m">
+<!ENTITY minimizeWindow.label     "Minimera">
+<!ENTITY bringAllToFront.label    "Lägg alla överst">
+<!ENTITY zoomWindow.label         "Zooma">
+<!ENTITY windowMenu.label         "Fönster">
+
+<!ENTITY helpMenu.label           "Hjälp"> 
+<!ENTITY helpMenu.accesskey       "H"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "Hjälp"> 
+<!ENTITY helpMenuWin.accesskey    "H">
+<!ENTITY aboutCmd.label           "Om &brandFullName;">
+<!ENTITY aboutCmd.accesskey       "O">
+<!ENTITY helpContents.label       "Hjälpinnehåll">
+<!ENTITY helpContents.accesskey   "H">
+<!ENTITY helpContentsMac.label    "&brandShortName; Hjälp">
+<!ENTITY helpForIEUsers.label     "För Internet Explorer-användare">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "+">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.label         "Versionsfakta">
+<!ENTITY helpReleaseNotes.accesskey     "V">
+<!ENTITY updateCmd.label                "Sök efter uppdateringar…">
+<!-- SVENSK NOTERING: updateCmd.accesskey används även för menyposterna
+  updatesItem_xxx som finns i browser.properties. Bokstaven måste alltså finnas
+  både i updateCmd.label och i updatesItem_xxx-strängarna. Se bugg 315226 -->
+<!ENTITY updateCmd.accesskey            "a">
+
+<!ENTITY preferencesCmdMac.label        "Inställningar…">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Tjänster">
+
+<!ENTITY hideThisAppCmdMac.label        "Göm &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Göm övriga">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Visa alla">

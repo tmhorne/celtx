@@ -1,0 +1,291 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+outliner {
+  -moz-binding: url(chrome://celtx/content/editors/outliner.xml#outliner);
+}
+
+scripteditor {
+  -moz-binding: url(chrome://celtx/content/editors/script.xml#scripteditor);
+}
+
+datasheet {
+  -moz-binding: url(chrome://celtx/content/editors/datasheet.xml#datasheet);
+  background-color: white;
+}
+
+popup[type="autotext"] {
+  -moz-binding: url(chrome://celtx/content/editors/autotext.xml#autotext-popup);
+  min-width: 250px;
+}
+
+.autotext-tree {
+  -moz-binding: url("chrome://celtx/content/editors/autotext.xml#autotext-tree");
+  -moz-appearance: none !important;
+  border: none !important;
+  background-color: -moz-field !important;
+}
+
+.autotext-treebody {
+  -moz-binding: url("chrome://celtx/content/editors/autotext.xml#autotext-treebody");
+}
+
+.autotext-treerows {
+  -moz-binding: url("chrome://celtx/content/editors/autotext.xml#autotext-treerows");
+}
+
+.autotext-treebody::-moz-tree-cell-text {
+  padding-left: 8px;
+}
+
+treechildren.autotext-treebody::-moz-tree-row(selected) {
+ background-color: Highlight;
+}
+
+treechildren.autotext-treebody::-moz-tree-cell-text(selected) {
+  color: HighlightText !important;
+}
+
+.autotext-treecol {
+  -moz-appearance: none !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Needed? */
+
+.autotext-treebody::-moz-tree-row(menuactive) {
+  background-color: Highlight;
+}
+
+.autotext-treebody::-moz-tree-cell-text(menuactive)  {
+  color: HighlightText !important;
+}
+
+imagepreview {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#imagepreview");
+}
+
+img.thumbnail {
+  margin: 2px;
+  border: 1px solid silver;
+  max-height: 75px;
+  max-width: 75px;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+titlebox {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#title-box");
+}
+
+descbox {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#desc-box");
+}
+
+textbox[type="autosave"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#autosave-textbox");
+  -moz-appearance: none !important;
+}
+
+textbox[type="autosave"][multiline="true"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#autosave-textarea");
+  -moz-appearance: none !important;
+}
+
+.mp-textbox {
+  background-color: #E2E2E2;
+}
+
+.mp-textbox[focused="true"] {
+  background-color: #FFFFFF;
+}
+
+editlabel {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#editable-label");
+}
+
+description.editable {
+  padding: 1px 3px 2px 3px;
+  border: 1px dotted #000;
+  background-color: #E2E2E2;
+  min-width: 120px;
+  -moz-border-radius: 3px;
+}
+
+mediaview {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-view");
+  -moz-user-focus: normal;
+  overflow: auto;
+  margin: 4px 4px;
+  border: 3px solid;
+  -moz-border-top-colors: transparent #888888 #000000;
+  -moz-border-right-colors: transparent #FFFFFF #000000;
+  -moz-border-bottom-colors: transparent #FFFFFF #000000;
+  -moz-border-left-colors: transparent #888888 #000000;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+}
+
+mediaview[dragover]:hover {
+  border: 6px solid black;
+}
+
+/*
+ * richviewInner2 is pinstripe theme (Mac OS X), qute theme (Linux)
+ * richviewInner is winstripe theme (Windows)
+ */
+
+/*
+#media-view .richviewInner2, .richviewInner {
+  background-color: #EEEEEE;
+  background-image: url("chrome://celtx/skin/media-tile.png");
+  background-position: top center;
+  background-repeat: repeat-y;
+}
+*/
+
+#panel-media-view .richviewInner2, .richviewInner {
+  background-color: #FFFFFF;
+  background-image: none !important;
+}
+
+mediaitem {
+  /*
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-item");
+  */
+  -moz-box-orient: vertical;
+  padding: 5px;
+  margin: 0px;
+  border-bottom: 1px solid;
+  background: white;
+}
+
+
+.hoveronly {
+  display: none;
+}
+
+
+*:hover > .hoveronly,
+.hoveronly:hover {
+  display: inherit;
+}
+
+
+mediaitem[type="http://celtx.com/NS/v1/Image"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-item-image");
+}
+
+mediaitem[type="http://celtx.com/NS/v1/Video"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-item-video");
+}
+
+mediaitem[type="http://celtx.com/NS/v1/Audio"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-item-audio");
+}
+
+/* This must come after the type-based bindings */
+
+mediaitem[state="downloading"] {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#media-item-downloading");
+}
+
+mediaitem[selected="true"] {
+  background-color: Highlight;
+}
+
+.mediaitem-icon {
+  width: 72px;
+  height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+}
+
+.media-download-meter {
+  height: 12px;
+}
+
+.media-box {
+  min-height: 80px;
+}
+
+scriptnote {
+  -moz-binding: url("chrome://celtx/content/editors/scriptnote.xml#scriptnote");
+  -moz-border-radius: 3px;
+  margin: 4px 8px;
+  padding: 0em 0.5em 0.5em 0.5em;
+  background-color: rgb(253,247,161);
+  -moz-box-sizing: border-box;
+  background-image: url("chrome://celtx/skin/scriptnote-overlay.png");
+  background-repeat: repeat-x;
+  background-position: 0 -3px;
+  -moz-border-top-colors: rgba(100,100,100,0.3) transparent transparent transparent;
+  -moz-border-right-colors: rgba(100,100,100,0.3) transparent transparent transparent;
+  -moz-border-bottom-colors: rgba(100,100,100,0.3) transparent transparent transparent;
+  -moz-border-left-colors: rgba(100,100,100,0.3) transparent transparent transparent;
+  border: 4px solid;
+}
+
+scriptnote:first-child {
+  margin-top: 8px;
+}
+
+scriptnote[selected="true"] {
+  -moz-border-top-colors: Highlight Highlight Highlight Highlight;
+  -moz-border-right-colors: Highlight Highlight Highlight Highlight;
+  -moz-border-bottom-colors: Highlight Highlight Highlight Highlight;
+  -moz-border-left-colors: Highlight Highlight Highlight Highlight;
+}
+
+scriptnote .library-remove-button {
+  visibility: hidden;
+}
+
+scriptnote:hover .library-remove-button {
+  visibility: visible;
+}
+
+.noteeditbox {
+  -moz-appearance: none;
+  background-color: inherit;
+  color: inherit;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*
+ * For the script editor, this allows hiding of unavailable features
+ * while the script is locked.
+ */
+toolbar[mode="locked"] > *:not([lockenabled="true"]) {
+  display: none;
+}
+
+#scriptOnlyMessage {
+  background-color: lightblue;
+  height: 40px;
+}

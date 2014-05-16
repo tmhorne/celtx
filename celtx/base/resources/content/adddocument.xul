@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/celtx.css" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="adddocument"
+        title="&addItem.label;"
+        buttons="accept,cancel"
+#ifdef XP_UNIX
+#ifndef XP_MACOSX
+        minwidth="400"
+        minheight="500"
+#endif
+#endif
+        onload="loaded()"
+        ondialogaccept="return accepted()"
+        ondialogcancel="return canceled()">
+
+#include celtx-scripts.inc
+
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/adddocument.js"/>
+
+  <vbox flex="1">
+    <groupbox flex="1">
+      <caption label="&addDocumentDialog.selectItemGroupLabel;"/>
+
+      <hbox flex="1">
+        <tree id="doctype-tree"
+              flex="1"
+              rows="12"
+              minwidth="150"
+              seltype="single"
+              hidecolumnpicker="true"
+              ref="chrome://celtx/content/doctypes.rdf#documentList"
+              datasources="chrome://celtx/content/doctypes.rdf"
+              flags="dont-build-content"
+              onselect="doctypeSelected()">
+          <treecols>
+            <treecol flex="1"
+                     hideheader="true"/>
+          </treecols>
+          <template>
+            <!-- Top-level folders -->
+            <!--
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?doc"/>
+                <triple subject="?doc"
+                        predicate="&ns_rdf;instanceOf"
+                        object="&ns_rdf;Seq"/>
+                <triple subject="?doc"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc"
+                            iscontainer="true">
+                    <treerow>
+                      <treecell src="chrome://celtx/skin/folder.png"
+                                label="?title"/>
+                    </treerow>
+                    <treechildren/>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            -->
+            <!-- Regular documents -->
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?doc"/>
+                <triple subject="?doc"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+                <triple subject="?doc"
+                        predicate="&ns_cx;thumbnail"
+                        object="?thumbnail"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?doc">
+                    <treerow>
+                      <treecell src="?thumbnail"
+                                label="?title"/>
+                    </treerow>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+        <vbox maxwidth="200"
+              flex="1">
+          <hbox align="center">
+            <image id="doctype-image"
+                   width="16"
+                   height="16"/>
+            <label id="doctype-title"/>
+          </hbox>
+          <separator/>
+          <description id="doctype-description">
+          </description>
+          <deck id="custom-deck" flex="1">
+            <vbox flex="1"/>
+            <vbox id="custom-script"
+                  flex="1">
+              <radiogroup id="scripttype"
+                  onselect="scriptTypeSelected();">
+                <radio label="&filmScript.label;"
+                       value="&ns_cx;ScriptDocument"
+                       selected="true"/>
+                <radio label="&stageplay.label;"
+                       value="&ns_cx;TheatreDocument"/>
+                <radio label="&avScript.label;"
+                       value="&ns_cx;AVDocument"/>
+                <radio label="&audioplay.label;"
+                       value="&ns_cx;RadioDocument"/>
+                <radio label="&comicBook.label;"
+                       value="&ns_cx;ComicDocument"/>
+              </radiogroup>
+            </vbox>
+            <vbox id="custom-scene"
+                  flex="1">
+              <description>&sceneDetails.existing;</description>
+              <listbox id="scene-list"
+                       rows="5"
+                       onselect="existingItemSelected(event)"/>
+            </vbox>
+            <vbox id="custom-catalog"
+                  flex="1"
+                  pack="start">
+              <label value="&selectCatalogType.label;"/>
+              <tree id="cataloglist"
+                    flex="1"
+                    seltype="single"
+                    hidecolumnpicker="true"
+                    onselect="catalogTypeSelected();"
+                    datasources="chrome://celtx/content/schema.rdf"
+                    ref="chrome://celtx/content/schema.rdf#default-markup">
+                <treecols>
+                  <treecol flex="1"
+                           hideheader="true"/>
+                </treecols>
+                <template>
+                  <rule>
+                    <conditions>
+                      <content uri="?uri"/>
+                      <member container="?uri"
+                              child="?item"/>
+                      <triple subject="?item"
+                              predicate="&ns_rdfs;label"
+                              object="?title"/>
+                    </conditions>
+                    <action>
+                      <treechildren>
+                        <treeitem uri="?item"
+                                  label="?title"
+                                  value="?item"/>
+                      </treechildren>
+                    </action>
+                  </rule>
+                </template>
+              </tree>
+            </vbox>
+          </deck>
+        </vbox>
+      </hbox>
+    </groupbox>
+    <groupbox>
+      <caption label="&addDocumentDialog.itemDetailsGroupLabel;"/>
+      <hbox align="center">
+        <label value="&name.label;&colon;"/>
+        <textbox id="title-box"
+                 flex="1"
+                 oninput="validate()"/>
+      </hbox>
+      <deck id="locationdeck">
+        <hbox align="center">
+          <label value="&folder.label;&colon;"/>
+          <menulist id="location-list">
+            <menupopup/>
+          </menulist>
+        </hbox>
+        <hbox flex="1"/>
+      </deck>
+      <deck id="source-deck">
+        <vbox flex="1"/>
+        <hbox id="bookmark-panel"
+              align="center">
+          <label value="URL:"/>
+          <textbox id="url-box"
+                   flex="1"
+                   value="http://"/>
+        </hbox>
+        <hbox id="file-panel"
+              align="center">
+          <image id="file-image"
+                 height="16"
+                 width="16"/>
+          <label id="file-name"
+                 flex="1"
+                 crop="end"
+                 value="&noFileSelected.label;"/>
+          <button label="&browseCmd.label;&ellipsis;"
+                  oncommand="browseExternalFile()"/>
+        </hbox>
+        <hbox id="script-panel"
+              align="center">
+          <label value="&script.label;&colon;"/>
+          <menulist id="scriptlist"
+                    flex="1"
+                    oncommand="validate()">
+            <menupopup id="scriptpopup">
+              <menuitem label="&noScriptSelected.label;"
+                        selected="true"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+      </deck>
+    </groupbox>
+  </vbox>
+  <iframe id="script-frame"
+          collapsed="true"
+          src="about:blank"/>
+
+</dialog>
+

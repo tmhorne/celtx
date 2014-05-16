@@ -1,0 +1,58 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#include "nsISupports.idl"
+
+interface nsIDOMNode;
+interface nsIDOMElement;
+interface nsIDOMRange;
+interface nsIRDFNode;
+interface nsIRDFResource;
+interface nsIRDFDataSource;
+
+
+[scriptable, uuid(e7888958-6d03-4bb9-a137-0ffd2cf4067d)]
+interface nsIScriptMarkupValidator : nsISupports
+{
+  DOMString getCanonicalCharacterName (in nsIDOMNode node);
+  DOMString getCanonicalNameFromLit (in nsIRDFNode node);
+  boolean isWhitespaceOnly (in nsIDOMNode node);
+};
+
+
+[scriptable, uuid(43aaa461-4f58-4a30-b336-b7f01a4e8210)]
+interface nsIScriptScene : nsISupports
+{
+  void init (in nsIRDFDataSource ds, in nsIRDFResource sceneres);
+  void extractBreakdownFromScene (in nsIDOMElement sceneheading, in nsIScriptMarkupValidator validator);
+  void extractBreakdownInRange(in nsIDOMRange range, in nsIScriptMarkupValidator validator);
+
+  void addItem (in nsIRDFResource itemres, in boolean suppressSizeUpdate);
+  void removeItem (in nsIRDFResource itemres);
+  boolean containsItem (in nsIRDFResource itemres);
+
+  void addToMarkup (in nsIRDFResource itemres);
+  void removeFromMarkup (in nsIRDFResource itemres);
+  boolean containsInMarkup (in nsIRDFResource itemres);
+};

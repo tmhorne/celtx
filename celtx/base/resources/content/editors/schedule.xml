@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings id="scheduleBindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <binding id="shootday">
+    <content>
+      <xul:box class="banner">
+        <xul:hbox class="shootdayheader">
+          <xul:image/>
+          <xul:label xbl:inherits="value=label"/>
+          <xul:spacer flex="1"/>
+          <xul:label/>
+        </xul:hbox>
+      </xul:box>
+    </content>
+    <implementation>
+      <constructor>
+      <![CDATA[
+        var anons = document.getAnonymousNodes(this)[0].firstChild.childNodes;
+        this._image = anons[0];
+        this._label = anons[1];
+        this._datelabel = anons[3];
+        this._date = new Date();
+      ]]>
+      </constructor>
+      <property name="date">
+        <getter>
+          return new Date(this._date.valueOf());
+        </getter>
+        <setter>
+          this._date = new Date(val.valueOf());
+          this._datelabel.value = this._date.toLocaleDateString();
+          return val;
+        </setter>
+      </property>
+    </implementation>
+  </binding>
+
+  <binding id="banner">
+    <content>
+      <xul:vbox anonid="bannerbox"
+               xbl:inherits="height"
+               flex="1">
+        <xul:hbox class="shootdayheader"
+                  flex="1">
+          <xul:image xbl:inherits="src=image"/>
+          <xul:label xbl:inherits="value=label"/>
+          <xul:spacer flex="1"/>
+          <xul:label/>
+        </xul:hbox>
+        <xul:bannergrippy anonid="gripbar"/>
+      </xul:vbox>
+    </content>
+    <implementation>
+      <constructor>
+      <![CDATA[
+        var anons = document.getAnonymousNodes(this)[0].firstChild.childNodes;
+        this._image = anons[0];
+        this._label = anons[1];
+        this._datelabel = anons[3];
+        this._date = new Date();
+      ]]>
+      </constructor>
+    </implementation>
+  </binding>
+
+  <binding id="bannergrippy">
+    <content>
+      <xul:box anonid="thebox" flex="1"/>
+    </content>
+
+    <implementation implements="nsIDOMEventListener">
+      <field name="mPixPerDay">32</field>
+
+      <method name="handleEvent">
+        <parameter name="event"/>
+        <body>
+        <![CDATA[
+          if (event.type == "mouseup") {
+            window.removeEventListener("mousemove", this, false);
+            window.removeEventListener("mouseup", this, false);
+          }
+          var evbox = this.parentNode.parentNode;
+          var delta = event.screenY - evbox.boxObject.screenY;
+          var days = Math.floor(delta / this.mPixPerDay);
+          if (days < 1)
+            days = 1;
+          var height = days * this.mPixPerDay;
+          evbox.setAttribute("height", height);
+        ]]>
+        </body>
+      </method>
+
+      <method name="onDragMouseUp">
+        <parameter name="event"/>
+        <body>
+        <![CDATA[
+          window.removeEventListener("mousemove", this, false);
+          window.removeEventListener("mouseup", this, false);
+          dump("--- onDragMouseUp:\n");
+          var node = event.target;
+          var nodes = [];
+          while (node) {
+            nodes.unshift(node);
+            node = node.parentNode;
+          }
+          for (var i = 0; i < nodes.length; ++i) {
+            dump("  " + nodes[i].localName);
+            if (nodes[i].id)
+              dump("[@id=" + nodes[i].id + "]");
+            dump("\n");
+          }
+          return;
+          var evbox = this.parentNode.parentNode;
+          var delta = event.screenY - evbox.boxObject.screenY;
+          var days = Math.floor(delta / this.mPixPerDay);
+          if (days < 1)
+            days = 1;
+          var height = days * this.mPixPerDay;
+          evbox.setAttribute("height", height);
+        ]]>
+        </body>
+      </method>
+    </implementation>
+
+    <handlers>
+      <handler event="mousedown" button="0">
+      <![CDATA[
+        event.stopPropagation();
+
+        // this gets us to the banner
+        var evbox = this.parentNode.parentNode;
+
+        // Calculate the current number of days for a snap resize
+        var delta = event.screenY - evbox.boxObject.screenY;
+        var days = Math.floor(delta / this.mPixPerDay);
+        if (days < 1)
+          days = 1;
+        var height = days * this.mPixPerDay;
+        evbox.setAttribute("height", height);
+        window.addEventListener("mousemove", this, false);
+        window.addEventListener("mouseup", this, false);
+      ]]>
+      </handler>
+    </handlers>
+  </binding>
+</bindings>

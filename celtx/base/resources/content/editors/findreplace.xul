@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/browser.css" type="text/css"?>
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+<!ENTITY % findDTD SYSTEM "chrome://global/locale/finddialog.dtd">
+%findDTD;
+<!ENTITY % replaceDTD SYSTEM "chrome://celtx/locale/findreplace.dtd">
+%replaceDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="findreplace"
+        title="&replaceDialog.title;"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+  <broadcaster id="replace-visible"
+               collapsed="true"/>
+
+  <commandset id="find-replace-commandset"
+              commandupdater="true"
+              events="clipboard,undo"
+              oncommandupdate="updateCommands()">
+    <command id="cmd-replace-and-find"
+             oncommand="goDoCommand('cmd-replace-and-find')"
+             disabled="true"/>
+    <command id="cmd-replace-all"
+             oncommand="goDoCommand('cmd-replace-all')"
+             disabled="true"/>
+  </commandset>
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/findreplace.js"/>
+
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include ../celtx-menubar.inc
+  </toolbar>
+
+  <tabbox id="findtabs">
+    <hbox class="tabbrowser-strip">
+      <tabs class="tabbrowser-tabs"
+            closebutton="false"
+            flex="1"
+            onselect="setReplaceVisible(this.selectedIndex == 1)">
+        <tab id="findtab"
+             class="tabbrowser-tab noimagetab"
+             label="&findTab.label;"/>
+        <tab id="replacetab"
+             class="tabbrowser-tab noimagetab"
+             label="&replaceButton.label;"/>
+      </tabs>
+    </hbox>
+    <tabpanels collapsed="true" class="plain">
+      <vbox/>
+      <vbox/>
+    </tabpanels>
+  </tabbox>
+  <vbox id="findfields"
+        pack="start">
+    <grid>
+      <columns>
+        <column/>
+        <column flex="1"/>
+      </columns>
+      <rows>
+        <row align="center">
+          <hbox>
+            <spacer flex="1"/>
+            <label value="&findField.label;"
+                   accesskey="f"
+                   control="find-field"/>
+          </hbox>
+          <textbox id="find-field"
+                   oninput="findFieldInput()"/>
+        </row>
+
+        <row align="center">
+          <spacer flex="1" />
+          <label id="not-found-label" value="" />
+        </row>
+
+        <row align="center">
+          <hbox>
+            <spacer flex="1"/>
+            <label value="&replaceField.label;"
+                   accesskey="w"
+                   control="replace-field"
+                   observes="replace-visible"/>
+          </hbox>
+          <textbox id="replace-field"
+                   oninput="replaceFieldInput()"
+                   observes="replace-visible"/>
+        </row>
+      </rows>
+    </grid>
+  </vbox>
+  <vbox pack="start" flex="1">
+    <grid>
+      <columns>
+        <column/>
+        <column/>
+      </columns>
+      <rows>
+        <row>
+          <spacer/>
+          <checkbox id="case-sensitive-option"
+                    label="&caseSensitiveCheckbox.label;"
+                    accesskey="&caseSensitiveCheckbox.accesskey;"/>
+        </row>
+        <row>
+          <label value="&direction.label;"/>
+          <radiogroup orient="horizontal">
+            <radio id="search-backwards-option"
+                   accesskey="&up.accesskey;"
+                   label="&up.label;"/>
+            <radio label="&down.label;"
+                   accesskey="&down.accesskey;"
+                   selected="true"/>
+          </radiogroup>
+        </row>
+      </rows>
+    </grid>
+    <spacer flex="1"/>
+    <hbox pack="end">
+      <button id="replace-and-find-button"
+              label="&replaceButton.label;"
+              accesskey="&replaceButton.accesskey;"
+              command="cmd-replace-and-find"
+              observes="replace-visible"/>
+      <button id="replace-all-button"
+              label="&replaceAllButton.label;"
+              accesskey="&replaceAllButton.accesskey;"
+              command="cmd-replace-all"
+              observes="replace-visible"/>
+      <button id="find-button"
+              label="&findNextButton.label;"
+              accesskey="&findNextButton.accesskey;"
+              command="cmd-find"
+              default="true"/>
+      <button id="cancel-button"
+              label="&cancelButton.label;"
+              oncommand="window.close()"/>
+    </hbox>
+  </vbox>
+
+</window>
+

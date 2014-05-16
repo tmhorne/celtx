@@ -1,0 +1,19 @@
+. $topsrcdir/celtx/config/mozconfig
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../objdir
+mk_add_options WIN32_REDIST_DIR=@TOPSRCDIR@/redist/microsoft/system
+
+ac_add_options --enable-ui-locale=%LOCALE%
+
+ac_add_options --enable-official-branding
+
+ac_add_options --enable-extensions=default
+
+# ac_add_options --enable-optimize=/O1
+ac_add_options --enable-optimize=""
+ac_add_options --disable-debug
+ac_add_options --disable-tests
+ac_add_options --enable-static
+ac_add_options --disable-shared
+# ac_add_options --disable-vista-sdk-requirements
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE RDF [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<RDF:RDF xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cx="http://celtx.com/NS/v1/"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <RDF:Seq RDF:ID="categories">
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Cameras" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Lights" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/People" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Furniture" />
+    <RDF:li RDF:resource="http://celtx.com/NS/v1/Misc" />
+  </RDF:Seq>
+
+  <!-- Don't declare this as an RDF:Seq here, that's done at runtime -->
+  <RDF:Description RDF:about="http://celtx.com/NS/v1/Cameras"
+                   dc:title="&bdc.cameras;"
+                   cx:icon="chrome://celtx/skin/documents/camera.png" />
+
+  <!-- Don't declare this as an RDF:Seq here, that's done at runtime -->
+  <RDF:Description RDF:about="http://celtx.com/NS/v1/Lights"
+                   dc:title="&bdc.lights;"
+                   cx:icon="chrome://celtx/skin/documents/lights.png" />
+
+  <!-- Don't declare this as an RDF:Seq here, that's done at runtime -->
+  <RDF:Description RDF:about="http://celtx.com/NS/v1/People"
+                   dc:title="&people.label;"
+                   cx:icon="chrome://celtx/skin/documents/character.png" />
+
+  <!-- Don't declare this as an RDF:Seq here, that's done at runtime -->
+  <RDF:Description RDF:about="http://celtx.com/NS/v1/Furniture"
+                   dc:title="&furniture.label;"
+                   cx:icon="chrome://celtx/skin/documents/set.png" />
+
+  <!-- Don't declare this as an RDF:Seq here, that's done at runtime -->
+  <RDF:Description RDF:about="http://celtx.com/NS/v1/Misc"
+                   dc:title="&bdc.misc;"
+                   cx:icon="chrome://celtx/skin/documents/misc.png" />
+
+</RDF:RDF>

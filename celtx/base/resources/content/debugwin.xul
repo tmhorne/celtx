@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+#include celtx-entities.inc
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="Testing Tools"
+        width="540"
+        height="320"
+        onload="loaded()"
+        onclose="return tryToClose();">
+
+#include celtx-sets.inc
+
+#include celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/json2.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptscene.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/dataexport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/debugwin.js"/>
+
+  <toolbar type="menubar" id="toolbar-menubar" class="chromeclass-menubar">
+#include celtx-menubar.inc
+  </toolbar>
+
+  <tabbox flex="1">
+    <tabs>
+      <tab label="Projects"/>
+      <tab label="Documents"/>
+      <tab label="Media"/>
+      <tab label="JSON"/>
+    </tabs>
+    <tabpanels flex="1">
+      <tabpanel flex="1"
+                orient="vertical">
+        <tree id="projectlist"
+              flex="1"
+              seltype="single"
+              onselect="projectSelected();">
+          <treecols>
+            <treecol label="Original Project"
+                     flex="1"/>
+            <treecol label="Cloned Project"
+                     flex="1"/>
+          </treecols>
+          <treechildren/>
+        </tree>
+        <hbox align="center"
+              pack="end">
+          <button id="cloneproject"
+                  label="Clone Project"
+                  oncommand="cloneProject();"
+                  disabled="true"/>
+          <button id="reloadproject"
+                  label="Refresh Project"
+                  oncommand="reloadProject();"
+                  disabled="true"/>
+        </hbox>
+      </tabpanel>
+      <tabpanel flex="1"
+                orient="vertical">
+        <label value="Open Tabs:"/>
+        <tree id="opentabslist"
+              flex="1"
+              rows="5"
+              seltype="single"
+              onselect="documentSelected();">
+          <treecols>
+            <treecol label="Original Document"
+                     flex="1"/>
+            <treecol label="Modified Document"
+                     flex="1"/>
+          </treecols>
+          <treechildren/>
+        </tree>
+        <hbox align="center"
+              pack="end">
+          <button id="lockdocumentbutton"
+                  label="Lock"
+                  disabled="true"/>
+          <button id="saveorigbutton"
+                  label="Save"
+                  disabled="true"
+                  oncommand="saveOriginalDocument();"/>
+          <button id="saveclonebutton"
+                  label="Save Clone"
+                  disabled="true"
+                  hidden="true"
+                  oncommand="saveClonedDocument();"/>
+          <button id="reloadbutton"
+                  label="Reload"
+                  hidden="true"
+                  disabled="true"/>
+        </hbox>
+      </tabpanel>
+      <tabpanel flex="1"
+                orient="vertical">
+        <label value="Unassociated Media Files:"/>
+        <listbox id="medialist"
+                 flex="1"
+                 seltype="multiple"
+                 onselect="mediaFilesSelected();"/>
+        <hbox align="center"
+              pack="end">
+          <button id="deletemediabutton"
+                  label="Delete"
+                  disabled="true"
+                  oncommand="deleteMediaFiles();"/>
+          <button label="Refresh List"
+                  oncommand="refreshUnassociatedMediaFiles();"/>
+        </hbox>
+        <separator/>
+        <label value="Broken Media Resources:"/>
+        <listbox id="mediareslist"
+                 flex="1"
+                 seltype="multiple"
+                 onselect="mediaResourcesSelected();"/>
+        <hbox align="center"
+              pack="end">
+          <button id="deletemediaresbutton"
+                  label="Delete"
+                  disabled="true"
+                  oncommand="deleteMediaResources();"/>
+          <button label="Refresh List"
+                  oncommand="refreshBrokenMediaResources();"/>
+        </hbox>
+      </tabpanel>
+      <tabpanel flex="1"
+                orient="vertical">
+        <vbox align="end"
+              pack="start"
+              flex="1">
+          <button label="Export JSON Tree…"
+                  oncommand="exportJSONTree();"/>
+        </vbox>
+      </tabpanel>
+    </tabpanels>
+  </tabbox>
+
+</window>

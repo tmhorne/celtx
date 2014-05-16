@@ -1,0 +1,66 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@media screen {
+
+span.camera,
+span.lights,
+span.electrics,
+span.opticalfx,
+span.music,
+span.sound,
+span.soundfx,
+span.cgi,
+span.construction,
+span.painting,
+span.set,
+span.setdressing,
+span.specialfx,
+span.hair,
+span.makeup,
+span.props,
+span.wardrobe,
+span.weapons,
+span.equip,
+span.mechfx,
+span.stunts,
+span.animals,
+span.equip,
+span.greenery,
+span.handler,
+span.livestock,
+span.misc,
+span.vehicles,
+span.actor,
+span.cast,
+span.crew,
+span.extras,
+span.addlabour,
+span.location,
+span.prodnotes,
+span.security {
+  color: inherit !important;
+}
+
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/content/editors/titlepage.css"
+                 type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % browserDTD SYSTEM "chrome://celtxapp/locale/browser.dtd" >
+%browserDTD;
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="titlepage"
+        title="&titlePage.label;"
+        onload="loaded()"
+        ondialogaccept="return accepted()"
+        ondialogcancel="return canceled()">
+
+  <commandset id="titlepageCommandSet">
+    <command id="cmd-print"
+             oncommand="print()"/>
+  </commandset>
+
+  <script type="application/x-javascript"
+          src="chrome://global/content/globalOverlay.js"/>
+  <script type="application/x-javascript"
+          src="chrome://global/content/printUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/util.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/titlepage.js"/>
+
+  <deck id="renderdeck"
+        flex="1">
+    <vbox flex="1"
+          align="stretch">
+      <hbox>
+        <spacer flex="1"/>
+        <button label="&printCmd.label;"
+                command="cmd-print"/>
+      </hbox>
+      <textbox id="titlebox"
+               class="tpeditbox"/>
+      <textbox id="bylinebox"
+               class="tpeditbox"/>
+      <textbox id="authorbox"
+               class="tpeditbox"/>
+      <textbox id="sourcebox"
+               class="tpeditbox"/>
+      <hbox id="bottomrect">
+        <textbox id="rightsbox"
+                 multiline="true"
+                 rows="5"
+                 class="tpeditbox"/>
+        <spacer flex="1"/>
+        <textbox id="contactbox"
+                 multiline="true"
+                 rows="5"
+                 class="tpeditbox"/>
+      </hbox>
+    </vbox>
+    <browser id="renderframe"
+             flex="1"
+             type="content-primary"
+             src="chrome://celtx/content/editors/titlepage_tmpl.html"/>
+  </deck>
+
+</dialog>
+

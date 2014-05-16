@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" [
+
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+
+]>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&form.crewProfile;</title>
+<style>
+
+@import url(chrome://celtx/content/editors/datasheet.css);
+@import url(chrome://celtx/content/editors/editors.css);
+
+.scene {
+	background-color: #207db2;
+}
+
+</style>
+
+<script type="application/x-javascript"
+        src="chrome://celtx/content/editors/datasheet.js" />
+
+</head>
+<body>
+<form>
+
+<div class="container0">
+  <div class="scene">
+    <span style="font-weight:bold;">&form.crewProfile;&colon; </span> <span> <input type="text" id="name" name="title" style="width:35%;"/><div class="print"></div></span> <span style="font-weight:bold;padding-left: 3%;">&tags.label;&colon; </span> <span> <input type="text" id="tags" name="tags" style="width:35%;"/><div class="print"></div></span>
+  </div>
+  <div class="contents">
+  <table width="100%">
+  <tr><td>&form.fullName;&colon;</td><td>&form.media;&colon;</td></tr>
+  <tr><td>
+    <input type="text" name="crewFullName" style="width: 95%;" /><div class="print"></div><br />
+    <p>&department.label;&colon;</p><br />
+    <input type="text" name="crewDepartment" style="width: 95%;" /><div class="print"></div><br />
+    <p>&form.jobTitle;</p><br />
+    <input type="text" name="crewJobTitle" style="width: 95%;" /><div class="print"></div><br /></td>
+    <td><medialist name="media"></medialist></td></tr>
+  </table>
+    <br />
+  </div>
+</div>
+
+<br/>
+
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-4', 'expand-4');">
+      <img id="toggle-4" class="plusminus" alt="expand"
+           src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.inScenes;</span>
+  </div>
+  <div id="expand-4" class="contents">
+    <p>&form.inScenes;&colon;<br />
+    <textarea type="text" id="scenesUsed" name="scenesUsed" readonly="true"></textarea><div class="print"></div></p>
+    <br/>
+  </div>
+</div>
+
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-2', 'expand-2');">
+      <img id="toggle-2" class="plusminus" alt="expand"
+           src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.availability;</span>
+  </div>
+  <div id="expand-2" class="contents">
+    <p>&form.startDate;&colon;<br />
+    <input type="text" name="startDate" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.endDate;&colon;<br />
+    <input type="text" name="endDate" style="width:90%;"/><div class="print"></div></p>
+    <br/>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="scene">
+    <a href="javascript: expandCollapse('toggle-3', 'expand-3');">
+    <img id="toggle-3" class="plusminus" alt="expand"
+         src="chrome://celtx/skin/minus.png" />
+    </a>
+    <span style="font-weight:bold;">&form.contactInfo;</span>
+  </div>
+  <div id="expand-3" class="contents">
+    <p>&form.name;&colon;<br />
+    <input type="text" name="contact-name" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.email;&colon;<br />
+    <input type="text" name="contact-email" style="width:90%;"/><div class="print"></div></p>
+    <br />
+    <p>&form.phone;&colon;<br />
+    <input type="text" name="contact-phone" style="width:90%;"/><div class="print"></div></p>
+    <p>&form.cell;&colon;<br />
+    <input type="text" name="contact-cell" style="width:90%;"/><div class="print"></div></p>
+    <br />
+    <p>&form.address;&colon;<br />
+    <textarea type="text" name="contact-address" /><div class="print"></div></p> 
+    <p>&form.comments;&colon;<br />
+    <textarea type="text" name="contact-comments" /><div class="print"></div></p>
+    <br />
+    <p>&form.crewLink;&colon;<br />
+    <input type="siteLink" name="role" style="width:90%;"/><div class="print"></div></p>
+    <br />
+  </div>
+</div>
+
+</form>
+</body>
+
+</html>

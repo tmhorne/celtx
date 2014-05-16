@@ -1,0 +1,301 @@
+<!ENTITY mainWindow.title "&brandFullName;">
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+<!ENTITY tabCmd.label "Nuova scheda">
+<!ENTITY tabCmd.accesskey "h">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Apri indirizzo…">
+<!ENTITY openLocationCmd.accesskey "r">
+<!ENTITY openFileCmd.label "Apri file…">
+<!ENTITY openFileCmd.accesskey "A">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Imposta pagina…">
+<!ENTITY printSetupCmd.accesskey "t">
+<!ENTITY printPreviewCmd.label "Anteprima di stampa">
+<!ENTITY printPreviewCmd.accesskey "p">
+<!ENTITY printCmd.label "Stampa…">
+<!ENTITY printCmd.accesskey "m">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Importa…">
+<!ENTITY import.accesskey "I">
+<!ENTITY goOfflineCmd.label "Lavora non in linea">
+<!ENTITY goOfflineCmd.accesskey "v">
+<!ENTITY navbarCmd.label "Barra di navigazione">
+<!ENTITY navbarCmd.accesskey "n">
+<!ENTITY personalbarCmd.label "Barra dei segnalibri">
+<!ENTITY personalbarCmd.accesskey "s">
+<!ENTITY bookmarksToolbarItem.label "Oggetti della barra dei segnalibri">
+<!ENTITY taskbarCmd.label "Barra di stato">
+<!ENTITY taskbarCmd.accesskey "o">
+<!ENTITY pageSourceCmd.label "Sorgente pagina">
+<!ENTITY pageSourceCmd.accesskey "n">
+<!ENTITY pageSourceCmd.commandkey "U">
+<!ENTITY pageInfoCmd.label "Informazioni sulla pagina">
+<!ENTITY pageInfoCmd.accesskey "I">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "A tutto schermo">
+<!ENTITY fullScreenCmd.accesskey "u">
+<!ENTITY fullScreenMinimize.tooltip "Riduci a icona">
+<!ENTITY fullScreenRestore.tooltip "Ripristina">
+<!ENTITY fullScreenClose.tooltip "Chiudi">
+<!ENTITY fullScreenAutohide.label "Nascondi barre degli strumenti">
+<!ENTITY fullScreenAutohide.accesskey "N">
+<!ENTITY fullScreenExit.label "Ritorna a schermo normale">
+<!ENTITY fullScreenExit.accesskey "R">
+<!ENTITY closeWindow.label "Chiudi finestra">
+<!ENTITY closeWindow.accesskey "d">
+<!ENTITY bookmarksMenu.label "Segnalibri">
+<!ENTITY bookmarksMenu.accesskey "e">
+<!ENTITY bookmarkThisPageCmd.label "Aggiungi pagina nei segnalibri…">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Abbonati a questa pagina">
+<!ENTITY subscribeToPageMenuitem.label "Abbonati a questa pagina…">
+<!ENTITY addCurPagesCmd.label "Tutte le schede nei segnalibri…">
+<!ENTITY organizeBookmarks.label "Organizza i segnalibri…">
+<!ENTITY bookmarkAllCmd.label "Tutte le schede nei segnalibri…">
+<!ENTITY backCmd.label "Indietro">
+<!ENTITY backCmd.accesskey "I">
+<!ENTITY backButton.tooltip "Torna indietro una pagina">
+<!ENTITY forwardCmd.label "Avanti">
+<!ENTITY forwardCmd.accesskey "A">
+<!ENTITY forwardButton.tooltip "Vai avanti una pagina">
+<!ENTITY backForwardMenu.tooltip "Pagine recenti">
+<!ENTITY reloadCmd.label "Ricarica">
+<!ENTITY reloadCmd.accesskey "R">
+<!ENTITY reloadButton.tooltip "Ricarica la pagina corrente">
+<!ENTITY stopCmd.label "Stop">
+<!ENTITY stopCmd.accesskey "t">
+<!ENTITY stopCmd.macCommandKey ".">
+<!ENTITY stopButton.tooltip "Interrompi il caricamento della pagina">
+<!ENTITY goEndCap.tooltip "Vai all'url inserito nella barra degli indirizzi">
+<!ENTITY printButton.label "Stampa">
+<!ENTITY printButton.tooltip "Stampa questa pagina">
+<!ENTITY locationItem.title "Indirizzo">
+<!ENTITY searchItem.title "Cerca">
+<!ENTITY throbberItem.title "Indicatore attività">
+<!ENTITY bookmarksItem.title "Segnalibri">
+<!ENTITY homeButton.label "Pagina iniziale">
+<!ENTITY bookmarksButton.label "Segnalibri">
+<!ENTITY bookmarksButton.tooltip "Mostra i segnalibri">
+<!ENTITY bookmarksSidebarCmd.accesskey "b">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+<!ENTITY historyButton.label "Cronologia">
+<!ENTITY historyButton.tooltip "Visualizza le pagine visitate recentemente">
+<!ENTITY historySidebarCmd.accesskey "C">
+<!ENTITY historySidebarCmd.commandKey "h">
+<!ENTITY toolsMenu.label "Strumenti">
+<!ENTITY toolsMenu.accesskey "S">
+<!ENTITY keywordfield.label "Aggiungi una parola chiave per questa ricerca…">
+<!ENTITY keywordfield.accesskey "p">
+<!ENTITY search.label "Cerca sul web">
+<!ENTITY search.accesskey "r">
+<!ENTITY downloads.label "Download">
+<!ENTITY downloads.tooltip "Mostra l'avanzamento dei download in corso">
+<!ENTITY downloads.accesskey "d">
+<!ENTITY downloads.commandkey "j">
+<!ENTITY downloadsUnix.commandkey "y">
+<!ENTITY addons.label "Componenti aggiuntivi">
+<!ENTITY addons.tooltip "Mostra e gestisci i Componenti aggiuntivi installati">
+<!ENTITY addons.accesskey "a">
+<!ENTITY errorConsoleCmd.label "Console degli errori">
+<!ENTITY errorConsoleCmd.accesskey "C">
+<!ENTITY errorConsoleCmd.commandkey "j">
+<!ENTITY fileMenu.label "File">
+<!ENTITY fileMenu.accesskey "F">
+<!ENTITY newNavigatorCmd.label "Nuova finestra">
+<!ENTITY newNavigatorCmd.key "N">
+<!ENTITY newNavigatorCmd.accesskey "f">
+<!ENTITY editMenu.label "Modifica">
+<!ENTITY editMenu.accesskey "M">
+<!ENTITY undoCmd.label "Annulla">
+<!ENTITY undoCmd.key "Z">
+<!ENTITY undoCmd.accesskey "A">
+<!ENTITY redoCmd.label "Ripeti">
+<!ENTITY redoCmd.key "Y">
+<!ENTITY redoCmd.accesskey "R">
+<!ENTITY cutCmd.label "Taglia">
+<!ENTITY cutCmd.key "X">
+<!ENTITY cutCmd.accesskey "T">
+<!ENTITY copyCmd.label "Copia">
+<!ENTITY copyCmd.key "C">
+<!ENTITY copyCmd.accesskey "C">
+<!ENTITY pasteCmd.label "Incolla">
+<!ENTITY pasteCmd.key "V">
+<!ENTITY pasteCmd.accesskey "I">
+<!ENTITY deleteCmd.label "Elimina">
+<!ENTITY deleteCmd.key "D">
+<!ENTITY deleteCmd.accesskey "E">
+<!ENTITY selectAllCmd.label "Seleziona tutto">
+<!ENTITY selectAllCmd.key "A">
+<!ENTITY selectAllCmd.accesskey "S">
+<!ENTITY preferencesCmd.label "Opzioni…">
+<!ENTITY preferencesCmd.accesskey "O">
+<!ENTITY preferencesCmdUnix.label "Preferenze">
+<!ENTITY preferencesCmdUnix.accesskey "n">
+<!ENTITY clearPrivateDataCmd.label "Elimina i dati personali">
+<!ENTITY clearPrivateDataCmd.accesskey "E">
+<!ENTITY viewMenu.label "Visualizza">
+<!ENTITY viewMenu.accesskey "V">
+<!ENTITY viewToolbarsMenu.label "Barre degli strumenti">
+<!ENTITY viewToolbarsMenu.accesskey "B">
+<!ENTITY viewSidebarMenu.label "Barra laterale">
+<!ENTITY viewSidebarMenu.accesskey "e">
+<!ENTITY viewCustomizeToolbar.label "Personalizza…">
+<!ENTITY viewCustomizeToolbar.accesskey "P">
+<!ENTITY historyMenu.label "Cronologia">
+<!ENTITY historyMenu.accesskey "C">
+<!ENTITY historyUndoMenu.label "Schede chiuse di recente">
+<!ENTITY historyHomeCmd.label "Pagina iniziale">
+<!ENTITY showAllHistoryCmd2.label "Visualizza la cronologia">
+<!ENTITY showAllHistoryCmd.commandkey "V">
+<!ENTITY openCmd.commandkey "l">
+<!ENTITY urlbar.emptyText "Cerca segnalibri e cronologia">
+<!ENTITY urlbar.accesskey "d">
+<!ENTITY searchFocus.commandkey "k">
+<!ENTITY searchFocus.commandkey2 "e">
+<!ENTITY searchFocusUnix.commandkey "j">
+<!ENTITY openLinkCmd.label "Apri in nuova finestra">
+<!ENTITY openLinkCmd.accesskey "f">
+<!ENTITY openLinkCmdInTab.label "Apri in nuova scheda">
+<!ENTITY openLinkCmdInTab.accesskey "s">
+<!ENTITY openFrameCmd.label "Apri riquadro in nuova finestra">
+<!ENTITY openFrameCmd.accesskey "A">
+<!ENTITY openFrameCmdInTab.label "Apri riquadro in nuova scheda">
+<!ENTITY openFrameCmdInTab.accesskey "c">
+<!ENTITY showOnlyThisFrameCmd.label "Visualizza solo questo riquadro">
+<!ENTITY showOnlyThisFrameCmd.accesskey "V">
+<!ENTITY reloadCmd.commandkey "r">
+<!ENTITY reloadFrameCmd.label "Ricarica riquadro">
+<!ENTITY reloadFrameCmd.accesskey "R">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Visualizza sorgente selezione">
+<!ENTITY viewPartialSourceForMathMLCmd.label "Visualizza sorgente MathML">
+<!ENTITY viewPartialSourceCmd.accesskey "u">
+<!ENTITY viewPageSourceCmd.label "Visualizza sorgente pagina">
+<!ENTITY viewPageSourceCmd.accesskey "u">
+<!ENTITY viewFrameSourceCmd.label "Visualizza sorgente riquadro">
+<!ENTITY viewFrameSourceCmd.accesskey "o">
+<!ENTITY viewPageInfoCmd.label "Visualizza info pagina">
+<!ENTITY viewPageInfoCmd.accesskey "f">
+<!ENTITY viewFrameInfoCmd.label "Visualizza info riquadro">
+<!ENTITY viewFrameInfoCmd.accesskey "n">
+<!ENTITY showImageCmd.label "Mostra immagine">
+<!ENTITY showImageCmd.accesskey "M">
+<!ENTITY viewImageCmd.label "Visualizza immagine">
+<!ENTITY viewImageCmd.accesskey "V">
+<!ENTITY viewBGImageCmd.label "Visualizza immagine di sfondo">
+<!ENTITY viewBGImageCmd.accesskey "V">
+<!ENTITY setDesktopBackgroundCmd.label "Imposta come sfondo del desktop…">
+<!ENTITY setDesktopBackgroundCmd.accesskey "f">
+<!ENTITY bookmarkPageCmd2.label "Aggiungi pagina nei segnalibri…">
+<!ENTITY bookmarkPageCmd2.accesskey "b">
+<!ENTITY bookmarkThisLinkCmd.label "Aggiungi link nei segnalibri…">
+<!ENTITY bookmarkThisLinkCmd.accesskey "A">
+<!ENTITY bookmarkThisFrameCmd.label "Aggiungi riquadro nei segnalibri…">
+<!ENTITY bookmarkThisFrameCmd.accesskey "e">
+<!ENTITY sendPageCmd.label "Invia link…">
+<!ENTITY sendPageCmd.accesskey "n">
+<!ENTITY savePageCmd.label "Salva pagina con nome…">
+<!ENTITY savePageCmd.accesskey "l">
+<!ENTITY savePageCmd.accesskey2 "g">
+<!ENTITY savePageCmd.commandkey "s">
+<!ENTITY saveFrameCmd.label "Salva riquadro con nome…">
+<!ENTITY saveFrameCmd.accesskey "S">
+<!ENTITY printFrameCmd.label "Stampa riquadro…">
+<!ENTITY printFrameCmd.accesskey "u">
+<!ENTITY saveLinkCmd.label "Salva destinazione con nome…">
+<!ENTITY saveLinkCmd.accesskey "d">
+<!ENTITY sendLinkCmd.label "Invia link…">
+<!ENTITY sendLinkCmd.accesskey "I">
+<!ENTITY saveImageCmd.label "Salva immagine con nome…">
+<!ENTITY saveImageCmd.accesskey "e">
+<!ENTITY sendImageCmd.label "Invia immagine…">
+<!ENTITY sendImageCmd.accesskey "n">
+<!ENTITY copyLinkCmd.label "Copia indirizzo">
+<!ENTITY copyLinkCmd.accesskey "z">
+<!ENTITY copyLinkTextCmd.label "Copia testo del link">
+<!ENTITY copyLinkTextCmd.accesskey "k">
+<!ENTITY copyImageCmd.label "Copia indirizzo immagine">
+<!ENTITY copyImageCmd.accesskey "m">
+<!ENTITY copyImageContentsCmd.label "Copia immagine">
+<!ENTITY copyImageContentsCmd.accesskey "o">
+<!ENTITY blockImageCmd.accesskey "B">
+<!ENTITY metadataCmd.label "Proprietà">
+<!ENTITY metadataCmd.accesskey "P">
+<!ENTITY copyEmailCmd.label "Copia indirizzo e-mail">
+<!ENTITY copyEmailCmd.accesskey "e">
+<!ENTITY thisFrameMenu.label "Questo riquadro">
+<!ENTITY thisFrameMenu.accesskey "Q">
+<!ENTITY fullZoomEnlargeCmd.label "Aumenta zoom">
+<!ENTITY fullZoomEnlargeCmd.accesskey "u">
+<!ENTITY fullZoomEnlargeCmd.commandkey "+">
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "=">
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+<!ENTITY fullZoomReduceCmd.label "Riduci zoom">
+<!ENTITY fullZoomReduceCmd.accesskey "z">
+<!ENTITY fullZoomReduceCmd.commandkey "-">
+<!ENTITY fullZoomReduceCmd.commandkey2 "">
+<!ENTITY fullZoomResetCmd.label "Reimposta">
+<!ENTITY fullZoomResetCmd.accesskey "R">
+<!ENTITY fullZoomResetCmd.commandkey "0">
+<!ENTITY fullZoomResetCmd.commandkey2 "">
+<!ENTITY fullZoomToggleCmd.label "Zoom solo del testo">
+<!ENTITY fullZoomToggleCmd.accesskey "t">
+<!ENTITY fullZoom.label "Zoom">
+<!ENTITY fullZoom.accesskey "Z">
+<!ENTITY newTabButton.tooltip "Apri una nuova scheda">
+<!ENTITY newWindowButton.tooltip "Apri una nuova finestra">
+<!ENTITY sidebarCloseButton.tooltip "Chiudi barra laterale">
+<!ENTITY cutButton.tooltip "Taglia">
+<!ENTITY copyButton.tooltip "Copia">
+<!ENTITY pasteButton.tooltip "Incolla">
+<!ENTITY quitApplicationCmdWin.label "Esci">
+<!ENTITY quitApplicationCmdWin.accesskey "E">
+<!ENTITY goBackCmd.commandKey "[">
+<!ENTITY goForwardCmd.commandKey "]">
+<!ENTITY quitApplicationCmd.label "Esci">
+<!ENTITY quitApplicationCmd.accesskey "E">
+<!ENTITY quitApplicationCmdMac.label "Esci da &brandShortName;">
+<!ENTITY quitApplicationCmdMac.key "Q">
+<!ENTITY closeCmd.label "Chiudi">
+<!ENTITY closeCmd.key "W">
+<!ENTITY closeCmd.accesskey "C">
+<!ENTITY pageStyleMenu.label "Stile pagina">
+<!ENTITY pageStyleMenu.accesskey "a">
+<!ENTITY pageStyleNoStyle.label "Nessuno stile">
+<!ENTITY pageStyleNoStyle.accesskey "N">
+<!ENTITY pageStylePersistentOnly.label "Stile di pagina base">
+<!ENTITY pageStylePersistentOnly.accesskey "S">
+<!ENTITY pageReportIcon.tooltip "Cambia le impostazioni del blocco finestre pop-up per questo sito">
+<!ENTITY allowPopups.accesskey "P">
+<!ENTITY editPopupSettingsUnix.label "Modifica le preferenze per le finestre pop-up…">
+<!ENTITY editPopupSettings.label "Modifica le opzioni di blocco finestre pop-up…">
+<!ENTITY editPopupSettings.accesskey "M">
+<!ENTITY dontShowMessage.accesskey "N">
+<!ENTITY bidiSwitchPageDirectionItem.label "Cambia direzione di pagina">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey "g">
+<!ENTITY bidiSwitchTextDirectionItem.label "Cambia direzione testo">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey "d">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey "X">
+<!ENTITY findOnCmd.label "Trova in questa pagina…">
+<!ENTITY findOnCmd.accesskey "v">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label "Trova successivo">
+<!ENTITY findAgainCmd.accesskey "u">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+<!ENTITY spellAddDictionaries.label "Aggiungi dizionari…">
+<!ENTITY spellAddDictionaries.accesskey "A">
+<!ENTITY editBookmark.done.label "Fatto">
+<!ENTITY editBookmark.cancel.label "Annulla">
+<!ENTITY editBookmark.removeBookmark.label "Elimina segnalibro">
+<!ENTITY editBookmark.removeBookmark.accessKey "s">
+<!ENTITY editBookmark.undo.label "Ripristina">
+<!ENTITY editBookmark.undo.accessKey "R">
+<!ENTITY editBookmark.edit.label "Modifica…">
+<!ENTITY editBookmark.edit.accessKey "M">
+<!ENTITY identity.unverifiedsite2 "Questo sito web non fornisce informazioni relative all'identità.">
+<!ENTITY identity.connectedTo "Si è connessi con">
+<!ENTITY identity.runBy "Questo sito è gestito da">
+<!ENTITY identity.moreInfoLinkText "Altre informazioni su questo sito…">
+<!ENTITY downloadMonitor2.tooltip "Fare clic per aprire la finestra dei download">

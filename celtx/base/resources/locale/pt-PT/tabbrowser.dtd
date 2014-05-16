@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Sem Título)">
+<!ENTITY  newTab.label           "Novo Separador">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "Fechar Separador">
+<!ENTITY  closeTab.accesskey         "F">
+<!ENTITY  closeOtherTabs.accesskey  "O">
+<!ENTITY  closeOtherTabs.label   "Fechar Outros Separadores">
+<!ENTITY  reloadAllTabs.label    "Recarregar Todos os Separadores">
+<!ENTITY  reloadAllTabs.accesskey         "T">
+<!ENTITY  reloadTab.label        "Recarregar Separador">
+<!ENTITY  reloadTab.accesskey         "R">
+<!ENTITY  listAllTabs.label      "Listar Todos os Separadores">
+<!ENTITY  bookmarkAllTabs.label       "Guardar Separadores como Marcadores...">
+<!ENTITY  bookmarkAllTabs.accesskey   "S">
+<!ENTITY  bookmarkThisTab.label        "Adicionar Separador aos Marcadores">
+<!ENTITY  bookmarkThisTab.accesskey    "d">
+<!ENTITY  undoCloseTab.label          "Reabrir Separador Fechado">
+<!ENTITY  undoCloseTab.accesskey      "a">

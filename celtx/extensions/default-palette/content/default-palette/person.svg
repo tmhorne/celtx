@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cx="http://celtx.com/NS/v1/"
+     height="100" width="100" viewBox="0 0 100 80" overflow="visible">
+  <circle fill="white" stroke="black" stroke-width="4"
+          r="25" cx="50" cy="40"/>
+  <path stroke="black" stroke-width="2" fill="none"
+        d="M 74.62 35.66 L 90 40 L 74.62 44.34" />
+</svg>

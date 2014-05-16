@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns="http://www.w3.org/1999/xhtml"
+                version="1.0">
+
+  <xsl:output method="xml"
+              encoding="UTF-8"/>
+
+  <xsl:param name="show-action">0</xsl:param>
+  <xsl:param name="show-caption">0</xsl:param>
+  <xsl:param name="show-character">0</xsl:param>
+  <xsl:param name="show-dialog">0</xsl:param>
+  <xsl:param name="show-parenthetical">0</xsl:param>
+  <xsl:param name="show-transition">0</xsl:param>
+  <xsl:param name="show-shot">0</xsl:param>
+  <xsl:param name="show-text">0</xsl:param>
+  <xsl:param name="show-notes">0</xsl:param>
+  <xsl:param name="show-sound">0</xsl:param>
+  <xsl:param name="show-music">0</xsl:param>
+  <xsl:param name="show-voice">0</xsl:param>
+  <xsl:param name="limit-chars">0</xsl:param>
+  <xsl:param name="chars"/>
+  <xsl:param name="limit-scenes">0</xsl:param>
+  <xsl:param name="scenes"/>
+  <xsl:param name="show-dialog-numbers">false</xsl:param>
+
+  <xsl:template match="/script">
+    <html>
+      <head>
+        <title><xsl:value-of select="@title"/></title>
+        <link href="chrome://celtx/content/style/{@scriptmode}/{@papersize}/Normal.css"
+              type="text/css" rel="stylesheet"/>
+        <link href="chrome://celtx/content/editor.css"
+              type="text/css" rel="stylesheet"/>
+        <link href="chrome://celtx/skin/scriptreport.css"
+              type="text/css" rel="stylesheet"/>
+        <xsl:if test="not($show-dialog-numbers)">
+          <style>
+            <xsl:text>
+.character:before,
+.sound:before,
+.music:before,
+.voice:before {
+  display: none !important;
+}
+            </xsl:text>
+          </style>
+        </xsl:if>
+      </head>
+      <body>
+        <xsl:apply-templates select="scene|act"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="act">
+    <p class="act">
+      <xsl:apply-templates/>
+    </p>
+    <xsl:apply-templates select="note" mode="appendnotes"/>
+  </xsl:template>
+
+  <xsl:template match="scene">
+    <xsl:if test="@act != ''">
+      <p class="act">
+        <xsl:value-of select="@act"/>
+      </p>
+    </xsl:if>
+    <xsl:if test="$limit-scenes = 0 or
+                  contains($scenes, concat('|', @id, '|'))">
+      <p class="sceneheading" id="{@id}" ordinal="{@ordinal}">
+        <xsl:value-of select="@title"/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+      <xsl:apply-templates/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="action">
+    <xsl:if test="$show-action = 1">
+      <p class="action">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="caption">
+    <xsl:if test="$show-caption = 1">
+      <p class="caption">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="speech">
+    <!-- Handle speakers with (V.O.) and such after their name. We need to
+         translate non-breaking spaces into spaces, or else normalize-space
+         won't strip them. -->
+    <xsl:variable name="trimmedspeaker"
+                  select="normalize-space(translate(substring-before(@speaker, '('), ' ', ' '))"/>
+    <xsl:if test="$limit-chars = 0 or
+                  contains($chars, concat('|', @speaker, '|')) or
+                  contains($chars, concat('|', $trimmedspeaker, '|'))">
+      <xsl:if test="$show-character = 1">
+        <p class="character">
+          <xsl:apply-templates select="@speaker"/>
+        </p>
+        <xsl:apply-templates select="note" mode="appendnotes"/>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="dialog">
+    <xsl:if test="$show-dialog = 1 and ($limit-chars = 0 or parent::speech)">
+      <p class="dialog">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="parenthetical">
+    <xsl:if test="$show-parenthetical = 1 and ($limit-chars = 0 or parent::speech)">
+      <p class="parenthetical">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="transition">
+    <xsl:if test="$show-transition = 1">
+      <p class="transition">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="shot">
+    <xsl:if test="$show-shot = 1">
+      <p class="shot">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="music">
+    <xsl:if test="$show-music = 1">
+      <p class="music">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="sound">
+    <xsl:if test="$show-sound = 1">
+      <p class="sound">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="voice">
+    <xsl:if test="$show-voice = 1">
+      <p class="voice">
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="text">
+    <xsl:if test="$show-text = 1">
+      <p>
+        <xsl:apply-templates/>
+      </p>
+      <xsl:apply-templates select="note" mode="appendnotes"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="note"/>
+
+  <xsl:template match="note" mode="appendnotes">
+    <xsl:if test="$show-notes = 1">
+      <div class="note">
+        <xsl:if test="@style">
+          <xsl:attribute name="style">
+            <xsl:value-of select="@style"/>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:apply-templates/>
+      </div>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="span">
+    <span>
+      <xsl:for-each select="@*">
+        <xsl:copy/>
+      </xsl:for-each>
+      <xsl:apply-templates select="node()"/>
+    </span>
+  </xsl:template>
+
+</xsl:stylesheet>

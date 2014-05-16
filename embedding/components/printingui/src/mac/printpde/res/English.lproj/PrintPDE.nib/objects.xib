@@ -1,0 +1,429 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <object name="rootObject" class="NSCustomObject" id="1">
+  </object>
+  <array count="65" name="allObjects">
+    <object class="IBCarbonRadioGroup" id="213">
+      <ostype name="controlSignature">MOZZ</ostype>
+      <int name="controlID">4001</int>
+      <int name="numRows">3</int>
+      <int name="intercellHeight">4</int>
+      <array count="3" name="radioTitles">
+        <array count="1">
+          <string>Radio1</string>
+        </array>
+        <array count="1">
+          <string>Radio2</string>
+        </array>
+        <array count="1">
+          <string>Radio</string>
+        </array>
+      </array>
+      <string name="bounds">135 116 196 325 </string>
+    </object>
+    <object class="IBCarbonMenuItem" id="264">
+      <string name="title">Page # of #</string>
+    </object>
+    <object class="IBCarbonMenuItem" id="297">
+      <string name="title">(Blank)</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <object class="IBCarbonPopupButton" id="266">
+      <ostype name="controlSignature">MOZZ</ostype>
+      <int name="controlID">4007</int>
+      <int name="controlSize">1</int>
+      <object name="menu" class="IBCarbonMenu" id="260">
+        <string name="title">Popup:</string>
+        <array count="7" name="items">
+          <object class="IBCarbonMenuItem" id="263">
+            <string name="title">(Blank)</string>
+            <boolean name="checked">TRUE</boolean>
+          </object>
+          <object class="IBCarbonMenuItem" id="265">
+            <string name="title">Title</string>
+          </object>
+          <object class="IBCarbonMenuItem" id="258">
+            <string name="title">URL</string>
+          </object>
+          <object class="IBCarbonMenuItem" id="259">
+            <string name="title">Date/Time</string>
+          </object>
+          <object class="IBCarbonMenuItem" id="261">
+            <string name="title">Page #</string>
+          </object>
+          <reference idRef="264"/>
+          <object class="IBCarbonMenuItem" id="308">
+            <string name="title">Custom</string>
+            <boolean name="disabled">TRUE</boolean>
+          </object>
+        </array>
+      </object>
+      <string name="bounds">207 216 224 308 </string>
+    </object>
+    <object class="IBCarbonMenuItem" id="273">
+      <string name="title">Date/Time</string>
+    </object>
+    <object class="IBCarbonMenuItem" id="302">
+      <string name="title">Title</string>
+    </object>
+    <object class="IBCarbonMenuItem" id="257">
+      <string name="title">Title</string>
+    </object>
+    <object class="IBCarbonMenu" id="267">
+      <string name="title">Popup:</string>
+      <array count="6" name="items">
+        <object class="IBCarbonMenuItem" id="270">
+          <string name="title">(Blank)</string>
+          <boolean name="checked">TRUE</boolean>
+        </object>
+        <object class="IBCarbonMenuItem" id="269">
+          <string name="title">Title</string>
+        </object>
+        <object class="IBCarbonMenuItem" id="272">
+          <string name="title">URL</string>
+        </object>
+        <reference idRef="273"/>
+        <object class="IBCarbonMenuItem" id="274">
+          <string name="title">Page #</string>
+        </object>
+        <object class="IBCarbonMenuItem" id="275">
+          <string name="title">Page # of #</string>
+        </object>
+      </array>
+    </object>
+    <object class="IBCarbonStaticText" id="228">
+      <string name="title">Page Footers:</string>
+      <string name="bounds">255 25 271 109 </string>
+    </object>
+    <object class="IBCarbonMenuItem" id="283">
+      <string name="title">(Blank)</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <reference idRef="269"/>
+    <object class="IBCarbonWindow" id="166">
+      <string name="title">Window</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="167">
+        <array count="1" name="subviews">
+          <object class="IBCarbonUserPane" id="212">
+            <ostype name="controlSignature">MOZZ</ostype>
+            <int name="controlID">4000</int>
+            <int name="featureBits">2</int>
+            <array count="19" name="subviews">
+              <object class="IBCarbonCheckBox" id="210">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4002</int>
+                <string name="title">Print Selection Only</string>
+                <string name="bounds">20 117 38 325 </string>
+              </object>
+              <object class="IBCarbonCheckBox" id="211">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4003</int>
+                <string name="title">Shrink To Fit Page Width</string>
+                <string name="bounds">46 117 60 325 </string>
+              </object>
+              <object class="IBCarbonCheckBox" id="216">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4004</int>
+                <string name="title">Print Background Colors</string>
+                <string name="bounds">82 117 96 325 </string>
+              </object>
+              <object class="IBCarbonCheckBox" id="214">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4005</int>
+                <string name="title">Print Background Images</string>
+                <string name="bounds">104 117 118 325 </string>
+              </object>
+              <reference idRef="213"/>
+              <object class="IBCarbonStaticText" id="218">
+                <string name="title">Frames:</string>
+                <int name="justification">-1</int>
+                <string name="bounds">133 20 149 109 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="215">
+                <string name="title">Options:</string>
+                <int name="justification">-1</int>
+                <string name="bounds">20 20 36 109 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="217">
+                <string name="title">Appearance:</string>
+                <int name="justification">-1</int>
+                <string name="bounds">80 20 96 109 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="219">
+                <string name="title">Page Headers:</string>
+                <string name="bounds">206 20 222 109 </string>
+              </object>
+              <object class="IBCarbonPopupButton" id="220">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4006</int>
+                <int name="controlSize">1</int>
+                <object name="menu" class="IBCarbonMenu" id="223">
+                  <string name="title">Popup:</string>
+                  <array count="6" name="items">
+                    <object class="IBCarbonMenuItem" id="224">
+                      <string name="title">(Blank)</string>
+                      <boolean name="checked">TRUE</boolean>
+                    </object>
+                    <reference idRef="257"/>
+                    <object class="IBCarbonMenuItem" id="221">
+                      <string name="title">URL</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="222">
+                      <string name="title">Date/Time</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="254">
+                      <string name="title">Page #</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="255">
+                      <string name="title">Page # of #</string>
+                    </object>
+                  </array>
+                </object>
+                <int name="titleJustification">1</int>
+                <string name="bounds">207 116 224 208 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="225">
+                <string name="title">Left</string>
+                <int name="justification">1</int>
+                <string name="bounds">232 116 248 208 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="226">
+                <string name="title">Center</string>
+                <int name="justification">1</int>
+                <string name="bounds">232 216 248 308 </string>
+              </object>
+              <object class="IBCarbonStaticText" id="227">
+                <string name="title">Right</string>
+                <int name="justification">1</int>
+                <string name="bounds">231 316 247 408 </string>
+              </object>
+              <reference idRef="228"/>
+              <reference idRef="266"/>
+              <object class="IBCarbonPopupButton" id="268">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4008</int>
+                <int name="controlSize">1</int>
+                <reference name="menu" idRef="267"/>
+                <string name="bounds">207 316 224 408 </string>
+              </object>
+              <object class="IBCarbonPopupButton" id="277">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4009</int>
+                <int name="controlSize">1</int>
+                <object name="menu" class="IBCarbonMenu" id="280">
+                  <string name="title">Popup:</string>
+                  <array count="6" name="items">
+                    <reference idRef="283"/>
+                    <object class="IBCarbonMenuItem" id="282">
+                      <string name="title">Title</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="281">
+                      <string name="title">URL</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="276">
+                      <string name="title">Date/Time</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="284">
+                      <string name="title">Page #</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="278">
+                      <string name="title">Page # of #</string>
+                    </object>
+                  </array>
+                </object>
+                <string name="bounds">256 116 273 208 </string>
+              </object>
+              <object class="IBCarbonPopupButton" id="285">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4010</int>
+                <int name="controlSize">1</int>
+                <object name="menu" class="IBCarbonMenu" id="291">
+                  <string name="title">Popup:</string>
+                  <array count="6" name="items">
+                    <object class="IBCarbonMenuItem" id="289">
+                      <string name="title">(Blank)</string>
+                      <boolean name="checked">TRUE</boolean>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="287">
+                      <string name="title">Title</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="288">
+                      <string name="title">URL</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="290">
+                      <string name="title">Date/Time</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="286">
+                      <string name="title">Page #</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="293">
+                      <string name="title">Page # of #</string>
+                    </object>
+                  </array>
+                </object>
+                <string name="bounds">255 216 272 308 </string>
+              </object>
+              <object class="IBCarbonPopupButton" id="298">
+                <ostype name="controlSignature">MOZZ</ostype>
+                <int name="controlID">4011</int>
+                <int name="controlSize">1</int>
+                <object name="menu" class="IBCarbonMenu" id="296">
+                  <string name="title">Popup:</string>
+                  <array count="6" name="items">
+                    <reference idRef="297"/>
+                    <reference idRef="302"/>
+                    <object class="IBCarbonMenuItem" id="294">
+                      <string name="title">URL</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="301">
+                      <string name="title">Date/Time</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="300">
+                      <string name="title">Page #</string>
+                    </object>
+                    <object class="IBCarbonMenuItem" id="295">
+                      <string name="title">Page # of #</string>
+                    </object>
+                  </array>
+                </object>
+                <string name="bounds">255 316 272 408 </string>
+              </object>
+            </array>
+            <string name="bounds">0 0 292 472 </string>
+          </object>
+        </array>
+        <string name="bounds">0 0 312 492 </string>
+      </object>
+      <string name="windowRect">101 176 413 668 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="285"/>
+    <reference idRef="224"/>
+    <reference idRef="286"/>
+    <reference idRef="293"/>
+    <reference idRef="219"/>
+    <reference idRef="218"/>
+    <reference idRef="301"/>
+    <reference idRef="265"/>
+    <reference idRef="254"/>
+    <reference idRef="221"/>
+    <reference idRef="220"/>
+    <reference idRef="261"/>
+    <reference idRef="277"/>
+    <reference idRef="226"/>
+    <reference idRef="215"/>
+    <reference idRef="291"/>
+    <reference idRef="282"/>
+    <reference idRef="298"/>
+    <reference idRef="296"/>
+    <reference idRef="268"/>
+    <reference idRef="275"/>
+    <reference idRef="290"/>
+    <reference idRef="272"/>
+    <reference idRef="223"/>
+    <reference idRef="276"/>
+    <reference idRef="227"/>
+    <reference idRef="214"/>
+    <reference idRef="217"/>
+    <reference idRef="225"/>
+    <reference idRef="278"/>
+    <reference idRef="281"/>
+    <reference idRef="255"/>
+    <reference idRef="222"/>
+    <reference idRef="274"/>
+    <reference idRef="270"/>
+    <reference idRef="211"/>
+    <reference idRef="300"/>
+    <reference idRef="210"/>
+    <reference idRef="263"/>
+    <reference idRef="288"/>
+    <reference idRef="167"/>
+    <reference idRef="216"/>
+    <reference idRef="260"/>
+    <reference idRef="280"/>
+    <reference idRef="259"/>
+    <reference idRef="284"/>
+    <reference idRef="287"/>
+    <reference idRef="289"/>
+    <reference idRef="308"/>
+    <reference idRef="212"/>
+    <reference idRef="295"/>
+    <reference idRef="294"/>
+    <reference idRef="258"/>
+  </array>
+  <array count="65" name="allParents">
+    <reference idRef="212"/>
+    <reference idRef="260"/>
+    <reference idRef="296"/>
+    <reference idRef="212"/>
+    <reference idRef="267"/>
+    <reference idRef="296"/>
+    <reference idRef="223"/>
+    <reference idRef="268"/>
+    <reference idRef="212"/>
+    <reference idRef="280"/>
+    <reference idRef="267"/>
+    <reference idRef="1"/>
+    <reference idRef="212"/>
+    <reference idRef="223"/>
+    <reference idRef="291"/>
+    <reference idRef="291"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="296"/>
+    <reference idRef="260"/>
+    <reference idRef="223"/>
+    <reference idRef="223"/>
+    <reference idRef="212"/>
+    <reference idRef="260"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="285"/>
+    <reference idRef="280"/>
+    <reference idRef="212"/>
+    <reference idRef="298"/>
+    <reference idRef="212"/>
+    <reference idRef="267"/>
+    <reference idRef="291"/>
+    <reference idRef="267"/>
+    <reference idRef="220"/>
+    <reference idRef="280"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="212"/>
+    <reference idRef="280"/>
+    <reference idRef="280"/>
+    <reference idRef="223"/>
+    <reference idRef="223"/>
+    <reference idRef="267"/>
+    <reference idRef="267"/>
+    <reference idRef="212"/>
+    <reference idRef="296"/>
+    <reference idRef="212"/>
+    <reference idRef="260"/>
+    <reference idRef="291"/>
+    <reference idRef="166"/>
+    <reference idRef="212"/>
+    <reference idRef="266"/>
+    <reference idRef="277"/>
+    <reference idRef="260"/>
+    <reference idRef="280"/>
+    <reference idRef="291"/>
+    <reference idRef="291"/>
+    <reference idRef="260"/>
+    <reference idRef="167"/>
+    <reference idRef="296"/>
+    <reference idRef="296"/>
+    <reference idRef="260"/>
+  </array>
+  <dictionary count="2" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>PrintPDE</string>
+    <reference idRef="166"/>
+  </dictionary>
+  <string name="targetFramework">IBCarbonFramework</string>
+  <unsigned_int name="nextObjectID">309</unsigned_int>
+</object>

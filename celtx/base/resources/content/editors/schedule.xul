@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+<!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %dtd2;
+<!ENTITY % dtd3 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd3;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+
+<?xml-stylesheet href="chrome://celtx/content/editors/calview.css"
+                 type="text/css"?>
+                 
+<?xml-stylesheet href="chrome://calendar/skin/calendar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/widgets/minimonth.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/widgets/calendar-widget-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/widgets/calendar-widgets.css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-view-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-views.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-toolbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-bindings.css" type="text/css"?>
+
+<?xml-stylesheet href="chrome://calendar/skin/calendar-toolbar.css"
+                 type="text/css"?>
+
+<?xul-overlay href="chrome://celtx/content/editors/schedulereport.xul"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="scheduleeditor"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_calendar"
+                  src="chrome://calendar/locale/calendar.properties"/>
+  </stringbundleset>
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/editorcontroller.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/schedule.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/schedulereport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/stripboardreport.js "/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/shootdayreport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/callsheetreport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scenesummaryreport.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptscene.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-ui-utils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendarCreation.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-dnd-listener.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-item-editing.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/mouseoverPreviews.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/publish.js"/>
+
+<broadcasterset id="calendar_broadcasters">
+  <broadcaster id="modeBroadcaster" mode="calendar"/>
+</broadcasterset>
+
+  <commandset id="calendar_dummy_commandset">
+    <command id="calendar_toggle_orientation_command"
+             persist="checked"
+             oncommand="return; toggleOrientation()"
+             disabled="true"/>
+    <command id="calendar_toggle_workdays_only_command"
+             persist="checked"
+             oncommand="return; toggleWorkdaysOnly()"/>
+    <command id="calendar_toggle_tasks_in_view_command"
+             persist="checked"
+             oncommand="return; toggleTasksInView()"/>
+    <command id="calendar_toggle_show_completed_in_view_command"
+             persist="checked"
+             oncommand="return; toggleShowCompletedInView()"/>
+  </commandset>
+
+  <commandset id="calendar_commands">
+    <command id="calendar_delete_event_command"
+              oncommand="goDoCommand('calendar_delete_event_command')"/>
+  </commandset>
+
+  <keyset id="calendar_keyset">
+    <key id="calendar-delete-item-key"
+         keycode="VK_DELETE"
+         observes="calendar_delete_event_command"/>
+    <key id="calendar-delete-item-key"
+         keycode="VK_BACK"
+         observes="calendar_delete_event_command"/>
+  </keyset>
+
+  <vbox style="background-color: rgb(235, 235, 235);"
+        flex="1">
+  <deck id="scheduletabdeck"
+        flex="1">
+  <vbox id="scheduleview"
+        flex="1">
+  <tree id="scenelist"
+        rows="5"
+        seltype="single"
+        flags="dont-build-content"
+        datasources="rdf:null"
+        ref=""
+        flex="1"
+        ondraggesture="gScheduleController.onSceneDrag(event)"
+        ondblclick="gScheduleController.onSceneDblClick(event)">
+    <treecols>
+      <treecol id="ordinalcol"
+               label="#"
+               width="30"
+               sort="?sortord"
+               sortActive="true"
+               sortDirection="ascending"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="intextcol"
+               label="&intextHeader.label;"
+               flex="1"
+               sort="?intext"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="settingcol"
+               label="&setting.label;"
+               flex="25"
+               sort="?setting"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="daynightcol"
+               label="&daynightHeader.label;"
+               flex="2"
+               sort="?daynight"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="eighthscol"
+               label="&eighths.label;"
+               flex="1"
+               sort="?eighths"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="scriptdaycol"
+               label="&scriptDay.label;"
+               flex="1"
+               sort="?scriptday"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="locationcol"
+               label="&location.label;"
+               flex="10"
+               sort="?location"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="scheduledcol"
+               label="&scheduled.label;"
+               type="checkbox"
+               flex="1"
+               sort="?scheduled"/>
+      <splitter class="tree-splitter"/>
+      <treecol id="completedcol"
+               label="&completed.label;"
+               type="checkbox"
+               flex="1"
+               sort="?completed"/>
+    </treecols>
+    <template>
+      <rule>
+        <conditions>
+          <content uri="?uri"/>
+          <triple subject="?uri"
+                  predicate="&ns_cx;scenes"
+                  object="?scenes"/>
+          <member container="?scenes"
+                  child="?scene"/>
+          <triple subject="?scene"
+                  predicate="&ns_cx;ordinal"
+                  object="?ord"/>
+          <triple subject="?scene"
+                  predicate="&ns_cx;sortord"
+                  object="?sortord"/>
+          <triple subject="?scene"
+                  predicate="&ns_cx;setting"
+                  object="?setting"/>
+        </conditions>
+        <bindings>
+          <binding subject="?scene"
+                   predicate="&ns_cx;intext"
+                   object="?intext"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;daynight"
+                   object="?daynight"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;scheduled"
+                   object="?scheduled"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;completed"
+                   object="?completed"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;location"
+                   object="?location"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;eighths"
+                   object="?eighths"/>
+          <binding subject="?scene"
+                   predicate="&ns_cx;scriptday"
+                   object="?scriptday"/>
+        </bindings>
+        <action>
+          <treechildren>
+            <treeitem uri="?scene">
+              <treerow>
+                <treecell label="?ord"/>
+                <treecell label="?intext"/>
+                <treecell label="?setting"/>
+                <treecell label="?daynight"/>
+                <treecell label="?eighths"/>
+                <treecell label="?scriptday"/>
+                <treecell label="?location"/>
+                <treecell value="?scheduled"
+                          properties="checkmark"/>
+                <treecell value="?completed"
+                          properties="checkmark"/>
+              </treerow>
+            </treeitem>
+          </treechildren>
+        </action>
+      </rule>
+    </template>
+  </tree>
+
+  <splitter collapse="before">
+    <grippy/>
+  </splitter>
+
+  <vbox id="schedulebox"
+        flex="1"
+        persist="height">
+  <toolbar>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-month-view-button"
+                   label="&calendar.month.button.label;"
+                   tooltiptext="&calendar.month.button.label;"
+                   oncommand="gScheduleController.switchView('month')"/>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-week-view-button"
+                   label="&calendar.week.button.label;"
+                   tooltiptext="&calendar.week.button.label;"
+                   oncommand="gScheduleController.switchView('week')"/>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-day-view-button"
+                   label="&calendar.day.button.label;"
+                   tooltiptext="&calendar.day.button.label;"
+                   oncommand="gScheduleController.switchView('day')"/>
+    <toolbarbutton class="cal-toolbarbutton-1"
+                   id="calendar-day-view-button"
+                   hidden="true"
+                   label="&stripboard.label;"
+                   tooltiptext="&stripboard.label;"
+                   oncommand="gScheduleController.switchView('stripboard')"/>
+    <toolbarspacer flex="1"/>
+    <toolbaritem pack="center"
+                 orient="vertical">
+      <hbox align="center">
+        <label value="&startOfShooting.label;&colon;"/>
+        <spacer flex="1"/>
+        <label id="startshootlabel"
+               class="text-link"
+               value=""
+               onclick="gScheduleController.editShootDays();"/>
+      </hbox>
+      <hbox align="center">
+        <label value="&endOfShooting.label;&colon;"/>
+        <spacer flex="1"/>
+        <label id="endshootlabel"
+               class="text-link"
+               value=""
+               onclick="gScheduleController.editShootDays();"/>
+      </hbox>
+    </toolbaritem>
+    <toolbarspacer flex="1"/>
+    <toolbaritem align="center">
+      <toolbarbutton id="movingitem"
+                     orient="horizontal"
+                     image="chrome://celtx/skin/documents/vehicles.png"
+                     style="cursor: move;"
+                     label="&moving.label;"
+                     tooltiptext="&dragToSchedule.tooltip;"
+                     ondraggesture="gScheduleController.startDrag(event)"/>
+      <toolbarbutton id="dayoffitem"
+                     orient="horizontal"
+                     image="chrome://celtx/skin/dayoff.png"
+                     style="cursor: move;"
+                     label="&dayoff.label;"
+                     tooltiptext="&dragToSchedule.tooltip;"
+                     ondraggesture="gScheduleController.startDrag(event)"/>
+    </toolbaritem>
+    <toolbarspacer/>
+  </toolbar>
+  <tooltip id="itemTooltip" noautohide="true"/>
+  <!-- Scrolling list of shoot days -->
+  <separator/>
+  <deck id="scheduleviewdeck"
+        flex="1">
+    <calendar-decorated-month-view id="schedulemonthview"
+                                   flex="1"/>
+    <calendar-decorated-week-view id="scheduleweekview"
+                                  flex="1"/>
+    <calendar-decorated-day-view id="scheduledayview"
+                                  flex="1"/>
+    <stripboard id="schedulestripview"
+                flex="1"/>
+  </deck>
+  </vbox>
+  </vbox>
+  <vbox id="reportview"
+        flex="1"/>
+  </deck>
+  <spacer id="EditModeToolbarTop"/>
+  <hbox id="EditModeToolbar">
+    <tabs id="EditModeTabs"
+          class="tabs-bottom"
+          pack="start"
+          oncommand="tabSelected(event)">
+      <tab id="scheduletab"
+           label="&schedule.label;"
+           value="scheduleview"
+           selected="true"/>
+      <tab label="&reports.label;"
+           value="reportview"/>
+    </tabs>
+  </hbox>
+  </vbox>
+
+</window>

@@ -1,0 +1,965 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "電子郵件">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC選項">
+<!ENTITY bbc.showTitle.label "表演會標題">
+<!ENTITY bbc.sketchTitle.label "草圖標題">
+<!ENTITY editText.title "編輯文字">
+<!ENTITY sketch.fillColour.tooltip "填色">
+<!ENTITY sketch.group.tooltip "群組">
+<!ENTITY sketch.lower.tooltip "降低">
+<!ENTITY sketch.lowerToBottom.tooltip "降低至底部">
+<!ENTITY sketch.raise.tooltip "升高">
+<!ENTITY sketch.raiseToTop.tooltip "升高至頂端">
+<!ENTITY sketch.strokeColour.tooltip "線條顏色">
+<!ENTITY sketch.ungroup.tooltip "解除群組">
+
+<!ENTITY custom.label "自訂">
+<!ENTITY saveAsPreset.label "儲存成預設">
+<!ENTITY sceneLocking.title "鎖定場景">
+<!ENTITY sceneNumbering.label "場景編號">
+<!ENTITY scenenumber.after.label "之後">
+<!ENTITY scenenumber.before.label "之前">
+<!ENTITY scenenumber.example.label "範例">
+<!ENTITY scenenumber.letter.label "字母">
+<!ENTITY scenenumber.number.label "編號">
+<!ENTITY scenenumber.position.label "位置">
+<!ENTITY scenenumber.prefix.label "字頭">
+<!ENTITY scenenumbers.resetAll.label "重設所有編號">
+<!ENTITY scenenumber.suffix.label "字尾">
+<!ENTITY scenenumber.type.label "種類">
+<!ENTITY style.label "風格">
+
+<!ENTITY project.film.label "電影">
+<!ENTITY project.av.label "影音製作">
+<!ENTITY project.theatre.label "劇場">
+<!ENTITY project.audioplay.label "廣播劇本">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "新增圖片">
+<!ENTITY addPaletteObjects.label "取得美工套包">
+<!ENTITY addShot.label "新增鏡頭">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC場景">
+<!ENTITY bdc.cameras "攝影機">
+<!ENTITY chat.label "討論">
+<!ENTITY colour.blue "藍色">
+<!ENTITY colour.cherry "櫻桃色">
+<!ENTITY colour.gold "金色">
+<!ENTITY colour.green "綠色">
+<!ENTITY colour.pink "粉紅色">
+<!ENTITY colour.salmon "三文魚色">
+<!ENTITY colour.white "白色">
+<!ENTITY colour.yellow "黃色">
+<!ENTITY currentRevision.label "目前版本">
+<!ENTITY createNewRevision.tooltip "製作新版本">
+<!ENTITY default.label "預設">
+<!ENTITY enableSceneLocking.label "鎖定場景">
+<!ENTITY fixNumbers.label "Fix">
+<!ENTITY furniture.label "傢具">
+<!ENTITY hollywood.label "荷里活">
+<!ENTITY light.flood.label "泛光燈">
+<!ENTITY light.spot.label "射燈">
+<!ENTITY linesBetweenScenes.label "場景之間的分行">
+<!ENTITY man.label "男人">
+<!ENTITY numbers.bothNos "兩個 #">
+<!ENTITY numbers.leftNo "左 #">
+<!ENTITY numbers.none "沒有">
+<!ENTITY numbers.rightNo "右 #">
+<!ENTITY omitScene.label "忽略場景">
+<!ENTITY palette.label "調色板">
+<!ENTITY palettes.label "調色板">
+<!ENTITY paletteTree.tooltip "拖放物件到你的草圖">
+<!ENTITY people.label "人們">
+<!ENTITY person.label "個人">
+<!ENTITY preventEditing.label "文字鎖">
+<!ENTITY resetRevisionMode.label "重設版本模式">
+<!ENTITY revisionColour.desc "這會成為所有將來編輯這劇本的預設版本顏色.">
+<!ENTITY revisionColour.label "標記顏色">
+<!ENTITY revisionMarks.all "所有標記">
+<!ENTITY revisionMarks.current "目前標記">
+<!ENTITY revisionMarks.hide "隱藏標記">
+<!ENTITY revisionMarks.mark.label "加上標記">
+<!ENTITY revisionMarks.unmark.label "取消標記">
+<!ENTITY revisionMode.label "版本模式">
+<!ENTITY revisionName.label "版本名稱">
+<!ENTITY revisionOptions.title "版本選項">
+<!ENTITY shotSetup.label "草圖">
+<!ENTITY shotSetup.desc "給項目加入草圖.">
+<!ENTITY showScriptHeader.label "顯示劇本頁頂">
+<!ENTITY standard.label "標準">
+<!ENTITY startNewRevision.label "開新版本">
+<!ENTITY storyboard.showImages.label "顯示圖像">
+<!ENTITY storyboard.showSetups.label "顯示草圖">
+<!ENTITY storyboard.showBoth.label "顯示圖像及草圖">
+<!ENTITY woman.label "女人">
+
+<!ENTITY light.bank.label "Banklight">
+<!ENTITY bathtub.label "浴缸">
+<!ENTITY boy.label "男孩">
+<!ENTITY car.label "汽車">
+<!ENTITY chair.label "椅子">
+<!ENTITY coffeetable.label "咖啡桌">
+<!ENTITY couch.label "Couch">
+<!ENTITY crowd.label "群眾">
+<!ENTITY endtable.label "End Table">
+<!ENTITY girl.label "女孩">
+<!ENTITY group.label "Group"> <!-- Group of people -->
+<!ENTITY house.label "房子">
+<!ENTITY building.label "Building"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "吊雞車">
+<!ENTITY sink.label "Sink"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "射燈">
+<!ENTITY street.label "街道">
+<!ENTITY toilet.label "Toilet">
+<!ENTITY tree.label "樹木">
+<!ENTITY van.label "客貨車">
+<!ENTITY videocamera.label "攝錄機">
+
+<!ENTITY createTemplate.label "製作範本">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "取得 Celtx 工具">
+<!ENTITY myStudio.label "我的 Celtx">
+<!ENTITY openFromStudio.label "從 Celtx 開啟">
+<!ENTITY owner.label "擁有者">
+<!ENTITY personal.label "個人">
+<!ENTITY saveCommentCheckbox.label "Ask me for a comment when saving to Celtx.">
+<!ENTITY saveToStudio.label "儲存至 Celtx">
+<!ENTITY savedBy.label "儲存者">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx 身份確認">
+<!ENTITY studioAuthDialog.desc "Celtx 登入">
+<!ENTITY studioProjects.label "Celtx 項目">
+<!ENTITY toolbox.label "工具箱">
+
+<!ENTITY access.label "使用">
+<!ENTITY actorProfile.desc "演員簡介">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Adapt To">
+<!ENTITY add.label "新增">
+<!ENTITY addCardCmd.label "新增卡片">
+<!ENTITY addCmd.label "新增">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "主題細節">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "選擇主題">
+<!ENTITY addFolder.label "新增資料夾">
+<!ENTITY addFolderCmd.label "新增資料夾">
+<!ENTITY addImages.label "插入圖檔">
+<!ENTITY addItem.label "新增主題">
+<!ENTITY addItemCmd.label "新增主題">
+<!ENTITY addNote.label "新增註釋">
+<!ENTITY addSequenceCmd.toolbarlabel "新增段落">
+<!ENTITY advanced.label "高級">
+<!ENTITY alignCenter.label "置中對齊">
+<!ENTITY alignJustified.label "左右對齊">
+<!ENTITY alignLeft.label "靠左對齊">
+<!ENTITY alignRight.label "靠右對齊">
+<!ENTITY allShootDays.label "全部拍攝日">
+<!ENTITY allUppercase.label "全部大寫">
+<!ENTITY american.label "美國的">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "在PDF保留特性.">
+<!ENTITY audioplay.desc "加入音樂／音效">
+<!ENTITY audioplay.label "播放音樂／音效">
+<!ENTITY authDialog.description "登錄Celtx帳戶">
+<!ENTITY authDialog.title "Celtx 鑑定">
+<!ENTITY author.label "作者／撰稿人：">
+<!ENTITY autoCharContinueds.label "顯示角色連續性">
+<!ENTITY autoSaveProject.label "自動儲存企劃">
+<!ENTITY autoparenthesize.label "當輸入“(”時，作為附加說明">
+<!ENTITY avScript.desc "給你的項目加入影音劇本.">
+<!ENTITY avScript.label "影音製作劇本">
+<!ENTITY basedOn.label "改編自">
+<!ENTITY bdc.actor "演員">
+<!ENTITY bdc.addlabour "額外員工">
+<!ENTITY bdc.animals "動物">
+<!ENTITY bdc.camera "攝影機">
+<!ENTITY bdc.cast "演員">
+<!ENTITY bdc.cgi "CG特效">
+<!ENTITY bdc.construction "建築">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "電工">
+<!ENTITY bdc.equip "器材">
+<!ENTITY bdc.extras "臨演">
+<!ENTITY bdc.greenery "植物">
+<!ENTITY bdc.hair "髮型">
+<!ENTITY bdc.handler "馴獸師">
+<!ENTITY bdc.lights "燈光">
+<!ENTITY bdc.livestock "動物">
+<!ENTITY bdc.location "外景地">
+<!ENTITY bdc.makeup "化裝">
+<!ENTITY bdc.mechfx "機械特效">
+<!ENTITY bdc.misc "雜項">
+<!ENTITY bdc.music "音樂">
+<!ENTITY bdc.opticalfx "光學特效">
+<!ENTITY bdc.painting "繪畫">
+<!ENTITY bdc.prodnotes "製作記錄">
+<!ENTITY bdc.props "道具">
+<!ENTITY bdc.security "保安">
+<!ENTITY bdc.set "佈景">
+<!ENTITY bdc.setdressing "佈景裝飾">
+<!ENTITY bdc.sound "音效">
+<!ENTITY bdc.soundfx "音效效果">
+<!ENTITY bdc.specialfx "SFX">
+<!ENTITY bdc.storyboard "分鏡">
+<!ENTITY bdc.stunts "特技替身">
+<!ENTITY bdc.vehicles "交通工具">
+<!ENTITY bdc.wardrobe "服裝">
+<!ENTITY bdc.weapons "武器">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "粗體">
+<!ENTITY bookmark.desc "新增網路連結">
+<!ENTITY bookmark.label "書籤">
+<!ENTITY both.label "全部">
+<!ENTITY bottomOfPage.label "頁面底部">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "新增錯誤報告">
+<!ENTITY breakdown.label    "錯誤報告">
+<!ENTITY breakdownReport.label "細分報告">
+<!ENTITY brokenSceneEventWarning.label "本專案與不存在的場景相關.">
+<!ENTITY browseCmd.label "瀏覽">
+<!ENTITY byline.label "由">
+<!ENTITY calendar.desc "新增工作計劃表">
+<!ENTITY calendar.label "月曆">
+<!ENTITY callSheet.label "通告">
+<!ENTITY cast.label "角色">
+<!ENTITY castOfCharacters.label "角色卡士">
+<!ENTITY catalog.desc "Add a catalog of production items to your project.">
+<!ENTITY catalog.label "目錄">
+<!ENTITY catalogAddItem.tooltip "新增物件至目錄中">
+<!ENTITY catalogDeleteItem.tooltip "從目錄中刪除物件">
+<!ENTITY categories.label "分類">
+<!ENTITY category.label "分類">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; 帳戶...(C)">
+<!ENTITY celtxError.title "Celtx 錯誤">
+<!ENTITY celtxTagline.label "有關故事的所有.">
+<!ENTITY celtxWikiCmd.label "&appName; 百科">
+<!ENTITY charOutline.desc "角色及其它關係概述總覽.">
+<!ENTITY charOutline.label "角色大綱">
+<!ENTITY character.label "角色">
+<!ENTITY characterProfile.desc "新增角色個人資料">
+<!ENTITY characterProfile.existing "新增現有角色描述">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "選擇角色">
+<!ENTITY characters.label "角色">
+<!ENTITY clearCmd.label "清除">
+<!ENTITY colon "：">
+<!ENTITY comicBook.desc "建立漫畫劇本。">
+<!ENTITY comicBook.label "漫畫">
+<!ENTITY comment.label "意見">
+<!ENTITY completed.label "完成">
+<!ENTITY contact.label "聯絡">
+<!ENTITY contactInformation.label "聯絡資料">
+<!ENTITY contactName.label "聯絡人">
+<!ENTITY contacts.label "聯絡">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "繼續">
+<!ENTITY copyProject.title "複製項目">
+<!ENTITY copyProjectCmd.label "複製項目">
+<!ENTITY copyright.label "版權所有">
+<!ENTITY create.label "建立">
+<!ENTITY createAccount.label "新增帳戶">
+<!ENTITY createCatalogFromSelection.label "從選項製作目錄">
+<!ENTITY createProject.label  "建立一個專案">
+<!ENTITY createProject.title "建立專案">
+<!ENTITY createdCol.label "建立">
+<!ENTITY creatorCol.label "建立者">
+<!ENTITY crew.desc "加入員工文件.">
+<!ENTITY crew.label "工作人員">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "日期">
+<!ENTITY datePicker.label "日期選取器">
+<!ENTITY daynightHeader.label "日/夜">
+<!ENTITY daynightWarning.label "場景標題未有效的日景/夜景描述結束。要修正此問題，編輯劇本中的場景標題或在選項中改變日景/夜景描述。">
+<!ENTITY daynightWords.label "日景/夜景 ">
+<!ENTITY dayoff.label "休假日">
+<!ENTITY daysOff.label "休假日">
+<!ENTITY decreaseDelayCmd.tooltip "增加縮排">
+<!ENTITY decreaseFontSizeCmd.tooltip "縮小字體">
+<!ENTITY decreaseIndentCmd.label "減少縮排">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "預設場景長度">
+<!ENTITY delayLabel.tooltip "在圖片之間延遲(秒)">
+<!ENTITY deleteCardCmd.label "Delete Card">
+<!ENTITY deleteItem.label "移除主題">
+<!ENTITY deleteItemCmd.label "刪除">
+<!ENTITY department.label "部門">
+<!ENTITY description.label "描述">
+<!ENTITY details.label "細節">
+<!ENTITY dialog.label "對話">
+<!ENTITY director.label "導演">
+<!ENTITY disabled.label "停用">
+<!ENTITY displayMedia.label "顯示媒體">
+<!ENTITY downloadProjectCmd.label "下載專案">
+<!ENTITY downloadProjectCmd.toolbarlabel "下載">
+<!ENTITY downloadingPDF.label "轉換到PDF...">
+<!ENTITY dragToSchedule.tooltip "拖曳至日程表">
+<!ENTITY dualDialogCmd.label "雙對白">
+<!ENTITY dualDialogCmd.tooltip "雙對白">
+<!ENTITY duplicate.label "Duplicate">
+<!ENTITY duplicateItemCmd.label "重覆物件">
+<!ENTITY edit.label "編輯">
+<!ENTITY editDates.label "編輯日期">
+<!ENTITY editProfile.label "更改個人資料">
+<!ENTITY editSceneDialog.title "場景編輯">
+<!ENTITY editTitlePageCmd.label "編輯封面頁">
+<!ENTITY editlabel.tooltip "編輯">
+<!ENTITY eighths.label "Eighths">
+<!ENTITY eighthsSuffix.label "8ths">
+<!ENTITY element.label "元素">
+<!ENTITY elements.label "元素">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc "這是用來計算活動的，在過程中無個人身份或其它資料被發送">
+<!ENTITY enableStats.label "允許Celtx於啟動時PING Celtx Server">
+<!ENTITY enabled.label "啟動">
+<!ENTITY end.label "結束">
+<!ENTITY endOfShooting.label "拍攝中止">
+<!ENTITY enterEmbedTagPrompt.label "輸入或物件標籤：">
+<!ENTITY eventDetails.label "選項詳情">
+<!ENTITY every15Minutes.label "每十五鐘 ">
+<!ENTITY every30Minutes.label "每半小時">
+<!ENTITY every5Minutes.label "每五鐘 ">
+<!ENTITY everyHour.label "每小時">
+<!ENTITY everyMinute.label "每分鐘">
+<!ENTITY exportList "匯出名單">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "匯出劇本(E)">
+<!ENTITY externalFile.desc "新增已存在的的專案">
+<!ENTITY externalFile.label "檔案">
+<!ENTITY fileLocation "外景拍攝場地">
+<!ENTITY filmScript.desc "新增電影劇本格式">
+<!ENTITY filmScript.label "劇本">
+<!ENTITY filter.label "Filter">
+<!ENTITY findAllCharacters.label "新增角色至目錄中">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "尋找">
+<!ENTITY findPreviousCmd.label "最近文件">
+<!ENTITY findTab.label "尋找">
+<!ENTITY folder.label "資料夾">
+<!ENTITY forceOverwrite.label "強制更新伺服器上的新版">
+<!ENTITY form.actorLink "網址">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "住址">
+<!ENTITY form.affectEvent "這個事件如何影響整個情節？">
+<!ENTITY form.age "年齡">
+<!ENTITY form.alternate "供選擇的姓名">
+<!ENTITY form.antag "對立者">
+<!ENTITY form.antagWho "誰是這場戲中的對立者？">
+<!ENTITY form.availability "有效的">
+<!ENTITY form.bestFriend "好友">
+<!ENTITY form.borrow "瀏覽">
+<!ENTITY form.build "建立">
+<!ENTITY form.buy "購買">
+<!ENTITY form.catalyst "催化劑">
+<!ENTITY form.cell "行動電話">
+<!ENTITY form.centralEvent "這場戲的中心事件是什麼？">
+<!ENTITY form.charBackground "角色背景">
+<!ENTITY form.charGoal "這個角色的目標是什麼？">
+<!ENTITY form.charPlan "為了達到目標，角色該做什麼事？">
+<!ENTITY form.charTraits "角色個性">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "角色出場在">
+<!ENTITY form.color "顏色">
+<!ENTITY form.comicRelief "嬉鬧特色">
+<!ENTITY form.comments "註釋說明">
+<!ENTITY form.confidante "女性好友">
+<!ENTITY form.contactInfo "聯絡資訊">
+<!ENTITY form.cost "費用">
+<!ENTITY form.crewLink "網址">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "空閒時間">
+<!ENTITY form.dateNeed "所需時間">
+<!ENTITY form.dateReturn "返回日期">
+<!ENTITY form.description "敘述">
+<!ENTITY form.details "細節">
+<!ENTITY form.dislikes "厭惡">
+<!ENTITY form.distFeatures "特色">
+<!ENTITY form.dob "生日">
+<!ENTITY form.dress "服裝">
+<!ENTITY form.education "教育程度">
+<!ENTITY form.elevator "體重">
+<!ENTITY form.email "電子郵件">
+<!ENTITY form.endDate "結束日期">
+<!ENTITY form.era "時代">
+<!ENTITY form.eyes "眼睛">
+<!ENTITY form.facilityInfo "設施資訊">
+<!ENTITY form.familyBack "家庭背景">
+<!ENTITY form.fullName "全名">
+<!ENTITY form.generic "一般">
+<!ENTITY form.genericForm "一般形式">
+<!ENTITY form.habits "習慣／犯罪">
+<!ENTITY form.hair "髮型">
+<!ENTITY form.hat "帽子">
+<!ENTITY form.height "身高">
+<!ENTITY form.inScenes "出現場口">
+<!ENTITY form.jacket "上衣">
+<!ENTITY form.jobTitle "職銜">
+<!ENTITY form.keyCharTraits "關鍵角色特徵">
+<!ENTITY form.lightSources "光源">
+<!ENTITY form.likes "喜好">
+<!ENTITY form.locationMap "外景地圖">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "愛情故事">
+<!ENTITY form.media "多媒體">
+<!ENTITY form.mentor "好友">
+<!ENTITY form.motiv "行動方式">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "否">
+<!ENTITY form.noise "雜音問題">
+<!ENTITY form.other "其它">
+<!ENTITY form.pants "褲子">
+<!ENTITY form.parking "停車資料">
+<!ENTITY form.partner "夥伴">
+<!ENTITY form.person "個性">
+<!ENTITY form.phone "電話 #">
+<!ENTITY form.physicalDesc "狀況描述">
+<!ENTITY form.powerCapa "電源管理">
+<!ENTITY form.princFunction "這個角色的主要功能是什麼？">
+<!ENTITY form.procure "採購">
+<!ENTITY form.propProfile "道具">
+<!ENTITY form.protag "主演">
+<!ENTITY form.protagAntag "主角/對手">
+<!ENTITY form.protagWho "誰是這場戲的主要人物？">
+<!ENTITY form.rent "租金">
+<!ENTITY form.rentalCost "租金費用">
+<!ENTITY form.role "角色">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "對手如何才能達成這個目標？">
+<!ENTITY form.sceneAntagGoal "對手在這場戲的目標是什麼？">
+<!ENTITY form.sceneChars "這場戲裡有哪些角色?">
+<!ENTITY form.sceneDetails " 場景細節">
+<!ENTITY form.sceneMood "場景基調?">
+<!ENTITY form.sceneProtagAchieve "主角如何才能達成目標?">
+<!ENTITY form.sceneProtagGoal "這場戲裡主角的目標是什麼?">
+<!ENTITY form.sceneSetting "場景設定基調?">
+<!ENTITY form.sceneWhen "場景事件?">
+<!ENTITY form.scenesUsed "場景用於">
+<!ENTITY form.scoutSelect "搜索和選擇">
+<!ENTITY form.scoutedFor "搜索場景">
+<!ENTITY form.scriptName "劇本名稱">
+<!ENTITY form.selectedFor "選擇場景">
+<!ENTITY form.sex "性別">
+<!ENTITY form.shirt "襯衫">
+<!ENTITY form.shoes "鞋子">
+<!ENTITY form.size "尺碼">
+<!ENTITY form.squareFoot "建築面積">
+<!ENTITY form.startDate "開始日期">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "戲服尺寸">
+<!ENTITY form.washroom "洗手間位置">
+<!ENTITY form.weight "體重">
+<!ENTITY form.wornBy "穿戴">
+<!ENTITY form.yes "確定">
+<!ENTITY format.label "格式">
+<!ENTITY formatAct.label "表演">
+<!ENTITY formatAction.label "動作">
+<!ENTITY formatBalloon.label  "說話氣球">
+<!ENTITY formatBalloonType.label "說話氣球種類">
+<!ENTITY formatCaption.label  "內文">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "場景標題">
+<!ENTITY formatMusic.label    "音樂">
+<!ENTITY formatPage.label     "頁">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;">
+<!ENTITY formatPanel.label    "欄l">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;">
+<!ENTITY formatParen.label "插入">
+<!ENTITY formatProductionNote.label "製作通告">
+<!ENTITY formatShot.label "鏡頭">
+<!ENTITY formatSound.label    "音效">
+<!ENTITY formatStagedir.label "舞臺指導">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "劇目">
+<!ENTITY formatTrans.label "格式轉換">
+<!ENTITY formatVoice.label    "聲音">
+<!ENTITY fourHours.label "4 小時">
+<!ENTITY freeAndSecure.label "免費及安全">
+<!ENTITY general.label "一般">
+<!ENTITY generatePDFCmd.label "生成PDF">
+<!ENTITY generateReportCmd.label "紀錄報告">
+<!ENTITY generateReportCmd.toolbarlabel "紀錄">
+<!ENTITY getProjDialog.caption "可用方案">
+<!ENTITY getProjDialog.title "下載專案對話">
+<!ENTITY gotoItemCmd.label "移至">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "關於 &appName;(A)">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "回報錯誤(R)">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "線上支援(O)">
+<!ENTITY icons.label "圖示">
+<!ENTITY iconsAndText.label "圖示和文字 ">
+<!ENTITY image.label "圖片">
+<!ENTITY images.label "圖片">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "輸入劇本">
+<!ENTITY importScriptCmd.toolbarLabel "輸入">
+<!ENTITY includeInWorkweek.label "在工作週包含的日子">
+<!ENTITY includeTitlePage.label "包含封面頁">
+<!ENTITY increaseDelayCmd.tooltip "增加延遲.">
+<!ENTITY increaseFontSizeCmd.tooltip "放大字體">
+<!ENTITY increaseIndentCmd.label "增加增進">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "索引卡標題">
+<!ENTITY indexCards.label "索引卡">
+<!ENTITY inlineSpellCheckCmd.label "拼字檢查">
+<!ENTITY insertNoteCmd.toolbarLabel "注釋">
+<!ENTITY international.label "國際">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "場景未明確標示日景／夜景，為修正錯誤，請編輯劇本中的場景標題，或在選項中改變日景／夜景">
+<!ENTITY intextWords.label "日景/夜景 ">
+<!ENTITY invalidLogin.label "帳號或密碼錯誤">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "斜體">
+<!ENTITY item.label "項目">
+<!ENTITY language.label "語言">
+<!ENTITY left.label "靠左">
+<!ENTITY linesPerPage.label "每頁行數">
+<!ENTITY list.label "清單">
+<!ENTITY location.desc "新增外景描述">
+<!ENTITY location.label "外景地">
+<!ENTITY loginOnStartup.label "在啟動時登入">
+<!ENTITY lowercaseCmd.label "小寫">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "多媒體">
+<!ENTITY mediaViewer.title "播放預覽 ">
+<!ENTITY modified.label "編輯">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "下移">
+<!ENTITY moveUpCmd.label "上移">
+<!ENTITY moving.label "劇組換場">
+<!ENTITY name.label "名稱">
+<!ENTITY network.label "區域網路">
+<!ENTITY never.label "從不">
+<!ENTITY newMarkupItem.label "&lt;新增&gt;">
+<!ENTITY newProjectCmd.label "新增專案">
+<!ENTITY newProjectCmd.toolbarlabel "新增">
+<!ENTITY noFileSelected.label "&lt;無文件選擇&gt;">
+<!ENTITY noImageSelected.label "未發現圖片">
+<!ENTITY noScriptSelected.label "未選取劇本">
+<!ENTITY none.label "無">
+<!ENTITY noteDialog.title "編輯注釋">
+<!ENTITY notes.label "Notes">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "角色編號">
+<!ENTITY numberOfScenes.label "場景編號">
+<!ENTITY oneHour.label "1 hour">
+<!ENTITY oneLineSchedule.label "One Line Schedule">
+<!ENTITY open.label "開啟">
+<!ENTITY openItemCmd.label "開啟項目">
+<!ENTITY openProjectCmd.label "開啟專案">
+<!ENTITY openProjectCmd.toolbarlabel "開啟">
+<!ENTITY openProjectFolder.label "開啟專案資料夾">
+<!ENTITY openRecentCmd.label "最近的文件">
+<!ENTITY options.label "選項">
+<!ENTITY orderedList.label "順序排列">
+<!ENTITY outline.desc "新增已編號文件">
+<!ENTITY outline.label "概述">
+<!ENTITY over14.label "我已14歲或以上">
+<!ENTITY pageAndSceneNumbering.label "頁面和場景編號">
+<!ENTITY paperSize.label "文件大小 ">
+<!ENTITY password.label "密碼">
+<!ENTITY passwordAgain.label "重新輸入密碼">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "轉出至PDF">
+<!ENTITY pdfErrorHeader "噢!">
+<!ENTITY pdfErrorText1 "必須有網絡帳戶才能使用此功能。">
+<!ENTITY pdfErrorText2 "Secure and private, this advanced Celtx web service automatically formats your script to an industry standard Screenplay, Stageplay, Audio Play or Dual Column (AV).">
+<!ENTITY pdfOptions.title "PDF 選項">
+<!ENTITY pdfOptionsCmd.label "繼續進行其他">
+<!ENTITY pdfWarningHeader "你好呀！">
+<!ENTITY pdfWarningText "Secure and private, this advanced Celtx web service automatically formats your script to an industry standard Screenplay, Stageplay, Audio Play or Dual Column (AV).">
+<!ENTITY picklist.label "字串清單">
+<!ENTITY principalFunction.label "主要功能">
+<!ENTITY printBackgroundColour.label "列印背景顏色">
+<!ENTITY printCardBorders.label "列印咭片邊框">
+<!ENTITY printCardsDialog.title "列印咭片">
+<!ENTITY printStoryboardDialog.title "列印分鏡">
+<!ENTITY privacy.label "隱私">
+<!ENTITY producer.label "制作人／監制">
+<!ENTITY productionItems.label "製作項目">
+<!ENTITY progressDialog.title "進度">
+<!ENTITY project.label "企劃">
+<!ENTITY projectItems.label "新增專案">
+<!ENTITY projectLibrary.label "專案資料庫">
+<!ENTITY projectProperties.label "專案設定">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "專案範本">
+<!ENTITY propSheet.desc "新增道具描述">
+<!ENTITY propSheet.existing "對下列導具添加描述">
+<!ENTITY propSheet.label " 道具">
+<!ENTITY propSheet.select "選擇道具">
+<!ENTITY properties.label "道具">
+<!ENTITY publishDialog.findUsers "尋找使用者">
+<!ENTITY publishDialog.ownerLabel "專案擁有者">
+<!ENTITY publishDialog.privateDesc "私人可見">
+<!ENTITY publishDialog.privateLabel "私人">
+<!ENTITY publishDialog.publicDesc "公開：發佈至專案中心">
+<!ENTITY publishDialog.publicLabel "公開">
+<!ENTITY publishDialog.serverLabel "&server.label;;">
+<!ENTITY publishDialog.sharedDesc "分享：分與指定使用者分享共用">
+<!ENTITY publishDialog.sharedLabel "分享">
+<!ENTITY publishDialog.title "公開發表">
+<!ENTITY publishDialog.userList "用戶名單">
+<!ENTITY publishMode.label "公開模式">
+<!ENTITY recent.label "最近">
+<!ENTITY recentProjects.label "最近的企劃">
+<!ENTITY recoverPassword.label "回復密碼">
+<!ENTITY recycleCmd.label "輸出草稿">
+<!ENTITY regWiz.aboutThis "註冊嚮導會收集註冊所需資訊.">
+<!ENTITY regWiz.accountInstructions "請為&appName;帳戶選用戶名和密碼">
+<!ENTITY regWiz.accountLabel "用戶帳號">
+<!ENTITY regWiz.bullet1 "遠端備份">
+<!ENTITY regWiz.bullet2 "協同工作間">
+<!ENTITY regWiz.bullet3 "出版至Project Central">
+<!ENTITY regWiz.bullet4 "iPhone 項目觀看">
+<!ENTITY regWiz.checkLabel "檢查帳戶資訊">
+<!ENTITY regWiz.clickFinish "如已確定,請按'完成'按鈕註冊.">
+<!ENTITY regWiz.clickFinish1 "您已登錄 &appName; 伺服器，現在您可以使用我們的免費線上功能">
+<!ENTITY regWiz.clickFinish2 "使用下載／上傳功能來為您的專案製作安全備份。或者您可以使用共用功能來與其他擁有 &appName; 帳號的朋友合作專案。">
+<!ENTITY regWiz.clickNext "如已確定,請按'下一步'確認註冊.">
+<!ENTITY regWiz.conclusion "確定 (5/5)">
+<!ENTITY regWiz.confirmIntro "你已輸入下列項目:">
+<!ENTITY regWiz.confirmLabel "確定設置">
+<!ENTITY regWiz.createNewAccountLabel "建立新帳戶">
+<!ENTITY regWiz.createYourAccountLabel "獲得自己的&appName; 帳戶! (1/5)">
+<!ENTITY regWiz.emailLabel "電子郵件:">
+<!ENTITY regWiz.finish "完成">
+<!ENTITY regWiz.identityInstructions "輸名姓名,單位,和電子郵件">
+<!ENTITY regWiz.identityLabel "身份">
+<!ENTITY regWiz.intro "要網上獲得&appName;資訊,先註冊&appName;帳戶">
+<!ENTITY regWiz.loginSuccessfulLabel "成功登錄&appName;">
+<!ENTITY regWiz.newOrExistingLabel "建立新帳戶或使用現有帳戶:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; 帳戶名稱和密碼要區分大小寫">
+<!ENTITY regWiz.notePassword "密碼最少5個字">
+<!ENTITY regWiz.noteUsername "用戶名最短3個字，只可用字母和數位">
+<!ENTITY regWiz.orgLabel "機構:">
+<!ENTITY regWiz.title "&appName; 註冊嚮導">
+<!ENTITY regWiz.uidLabel "&appName; 用戶名:">
+<!ENTITY regWiz.useExistingAccountLabel "使用者帳戶">
+<!ENTITY regWiz.warn "要使用此項功能，你必須建立 &appName; 帳戶">
+<!ENTITY remove.label "移除">
+<!ENTITY removeCmd.label "回復">
+<!ENTITY removeMarkupCmd.label "移開">
+<!ENTITY rename.label "重新命名">
+<!ENTITY renameItem.label "重新命名">
+<!ENTITY replaceCmd.label "替換">
+<!ENTITY reportThisBug.label "錯誤回報">
+<!ENTITY reportThisBug.tooltip "寄給我們一份匿名錯誤報告">
+<!ENTITY reports.label "報告">
+<!ENTITY right.label "權利">
+<!ENTITY sampleProjects.label "Sample Projects">
+<!ENTITY samples.label "例子">
+<!ENTITY saveAsHTML.label "儲存為HTML">
+<!ENTITY saveAsTemplate.label "儲存為 範本">
+<!ENTITY savePDFCmd.label "儲存PDF">
+<!ENTITY savePDFCmd.tooltip "儲存PDF">
+<!ENTITY saveProjectAsCmd.label "儲存專案至...">
+<!ENTITY saveProjectCmd.label "儲存專案">
+<!ENTITY saveProjectCmd.toolbarlabel "存檔">
+<!ENTITY scene.label "場景">
+<!ENTITY sceneBreakdown.label "分場大綱">
+<!ENTITY sceneBreakdownWithDesc.label "分析場景">
+<!ENTITY sceneDetails.desc "新增場景描述">
+<!ENTITY sceneDetails.existing "為下列已存在的場景添加描述">
+<!ENTITY sceneDetails.label "場景細節">
+<!ENTITY sceneDetails.select "選擇場景">
+<!ENTITY scenePageBreaks.label "於每場之間分頁">
+<!ENTITY sceneSummary.label "場景概述">
+<!ENTITY sceneTag.label "場景tag">
+<!ENTITY sceneTagDialog.title "選擇一種顏色">
+<!ENTITY scenes.label "場景">
+<!ENTITY schedule.desc "新增拍攝日程表在劇本">
+<!ENTITY schedule.label "日程表">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "日程表劇本">
+<!ENTITY scheduleID.label "Schedule ID">
+<!ENTITY scheduled.label "已安排日程">
+<!ENTITY scratchpad.label "Scratchpad">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "新增劇本至您的專案。">
+<!ENTITY script.label "劇本">
+<!ENTITY scriptDay.label "Script Day">
+<!ENTITY scriptEditor.label "編寫劇本">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "格式選項">
+<!ENTITY scriptHeader.label "Script Header">
+<!ENTITY scriptReport.desc "自動生成劇本報告">
+<!ENTITY scriptReport.label "劇本報告">
+<!ENTITY scriptWithNotes.label "劇本含有註釋">
+<!ENTITY selectCatalogType.label "選擇目錄類型。">
+<!ENTITY sequence.label "情節">
+<!ENTITY sequences.label "序列">
+<!ENTITY server.label "伺服器">
+<!ENTITY setting.label "設定">
+<!ENTITY sharing.label "共同分享">
+<!ENTITY shootDay.label "Shoot Day">
+<!ENTITY shootDays.label "Shoot Days">
+<!ENTITY shootingSchedule.label "拍攝日程">
+<!ENTITY shotList.label "Shot List">
+<!ENTITY shotWords.label "Shot Words">
+<!ENTITY shotholder.label "新增圖片">
+<!ENTITY showContinuedCount.label "顯示連續頁面數">
+<!ENTITY showDialogBreaks.label "顯示對白停頓">
+<!ENTITY showFirstPageNumber.label "在第一頁顯示頁數">
+<!ENTITY showIDNumbers.label "顯示ID Numbers">
+<!ENTITY showNotes.label "顯示備註">
+<!ENTITY showPageNumbers.label "頁數">
+<!ENTITY showProjectFileCmd.label "顯示Project File">
+<!ENTITY showSceneBreaks.label "顯示場景停頓">
+<!ENTITY showSceneHeaders.label "顯示Scene Headers">
+<!ENTITY showSceneNumbers.label "顯示場景編號">
+<!ENTITY showScript.label "顯示劇本">
+<!ENTITY showTagNames.label "顯示tag names on cards">
+<!ENTITY showTitlePage.label "顯示Title Page">
+<!ENTITY showWorkdaysOnly.label "顯示工作日">
+<!ENTITY signIn.label "登入">
+<!ENTITY signOut.label "登出">
+<!ENTITY signedOut.label "已登出">
+<!ENTITY slideshowCmd.toolbarlabel "播放">
+<!ENTITY source.label "來源">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "加入字典">
+<!ENTITY spellCheckCmd.label "拼字檢查">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "忽略單字">
+<!ENTITY spellCheckNoSuggestions.label "找不到任何建議">
+<!ENTITY splash.celtxCentral "celtx 交流中心">
+<!ENTITY splash.celtxCentralDesc "使用celtx中心來更改您的密碼及更新您的檔案">
+<!ENTITY splash.discussion "討論">
+<!ENTITY splash.downloadProject "下載專案">
+<!ENTITY splash.downloadProjectDesc "從Celtx伺服器下載專案">
+<!ENTITY splash.featureTour "重點介紹">
+<!ENTITY splash.forums "Celtx 論壇">
+<!ENTITY splash.forumsDesc "加入Celtx論壇的討論">
+<!ENTITY splash.gettingStarted "開始使用">
+<!ENTITY splash.guide "Celtx 使用手冊">
+<!ENTITY splash.help "說明">
+<!ENTITY splash.helpAccount "建立帳戶">
+<!ENTITY splash.helpAccountDesc "創建帳戶使您能使用伺服器端特性，包括合作及PDF生成功能">
+<!ENTITY splash.helpDesc "左邊的連結顯示了許多 celtx 資源">
+<!ENTITY splash.helpOptions "說明選項">
+<!ENTITY splash.inbox "收件匣">
+<!ENTITY splash.logIn "登入">
+<!ENTITY splash.newProject "新專案">
+<!ENTITY splash.newProjectDesc "開啟新專案">
+<!ENTITY splash.openProject "開啟專案">
+<!ENTITY splash.openProjectDesc "使用現有專案">
+<!ENTITY splash.options "選項">
+<!ENTITY splash.projectCentral "專案管理">
+<!ENTITY splash.projects "專案">
+<!ENTITY splash.recentProjects "近期專案">
+<!ENTITY splash.sampleDesc      "我們使用《綠野仙蹤》來展示celtx的不同特性. 這些文檔被可以顯示一個場景的所需資料。包含在這例子中的是一個劇本，角色和場景細節，分析資訊和一些日程表。">
+<!ENTITY splash.sampleProject   "範例專案">
+<!ENTITY splash.videoWalkthrus "影片範例">
+<!ENTITY splash.videoWalkthrusDesc "易懂的影片範例讓你更快上手">
+<!ENTITY splash.walkthru "3分鐘簡介">
+<!ENTITY splash.webServices "網絡服務">
+<!ENTITY splash.welcomePrefix "歡迎使用Celtx">
+<!ENTITY splash.welcomePrefixDesc "前期作業">
+<!ENTITY splash.wiki "百科嚮導">
+<!ENTITY splash.wikiDesc "開始熟悉Celtx所用的資源">
+<!ENTITY splashScreen.label "Celtx主頁">
+<!ENTITY stackTrace.desc "以下是可能對我們有説明的資訊。如果您決定提交報告，請包含下列資訊。">
+<!ENTITY stageplay.desc  "新增國際標準格式的舞臺劇劇本">
+<!ENTITY stageplay.label    "舞臺劇">
+<!ENTITY start.label "開始">
+<!ENTITY startOfDay.label "每日開始時間">
+<!ENTITY startOfShooting.label "拍攝開始">
+<!ENTITY startOfWeek.label "每週開始時間">
+<!ENTITY statistics.label "統計">
+<!ENTITY storyboard.desc    "分鏡排列">
+<!ENTITY storyboard.label   "分鏡">
+<!ENTITY strikethrough.label "Strikethrough">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY subject.label "主題">
+<!ENTITY summary.label "概述">
+<!ENTITY syncDialog.title "同步">
+<!ENTITY tagItemCmd.label "附加標簽">
+<!ENTITY tagline.label      "標籤">
+<!ENTITY tags.label "標籤">
+<!ENTITY text.label "文字">
+<!ENTITY textDocument.desc "新增文件，有於於提網論述或一覽">
+<!ENTITY textDocument.label "文字">
+<!ENTITY theatreTmplActTitle "動作 I">
+<!ENTITY theatreTmplSceneTitle "場景1">
+<!ENTITY thirtyMinutes.label "三十分鐘">
+<!ENTITY threeHours.label "三小時">
+<!ENTITY time.label "時間">
+<!ENTITY title.label "標題">
+<!ENTITY titlePage.label "封面頁">
+<!ENTITY toggleEditing.label "Toggle Editing">
+<!ENTITY togglePaginationCmd.label "啟用頁碼">
+<!ENTITY toggleScratchpadCmd.label "開啟／關閉 便條紙">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "側邊欄">
+<!ENTITY topOfNextPage.label "下一頁頂部">
+<!ENTITY tryAgain.label "重試">
+<!ENTITY twoColumns.label "兩欄">
+<!ENTITY twoHours.label "二小時">
+<!ENTITY typeset.label "TypeSet">
+<!ENTITY under14.label "我的年齡小於14歲.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "底線">
+<!ENTITY unorderedList.label "Unordered List">
+<!ENTITY untitled.label "無標題">
+<!ENTITY update.label "更新">
+<!ENTITY updateInbox.label "更新收件夾">
+<!ENTITY uploadDialog.title "上傳方案">
+<!ENTITY uploadProjectCmd.label "上傳專案">
+<!ENTITY uploadProjectCmd.toolbarlabel "上傳">
+<!ENTITY uppercaseCmd.label "大寫">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "使用者名稱">
+<!ENTITY video.label "影片">
+<!ENTITY videoTutorialCmd.label "影片教學">
+<!ENTITY viewProjectOnline.label "線上教學專案">
+<!ENTITY wardrobeSheet.desc "新增戲裝描述">
+<!ENTITY wardrobeSheet.existing "為下列已存在的戲裝添加描述">
+<!ENTITY wardrobeSheet.label "戲裝">
+<!ENTITY wardrobeSheet.select "選擇戲裝">
+<!ENTITY webPanel.desc              "Celtx網路服務">
+<!ENTITY webPanel.label             "線上服務">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "建立Celtx帳戶">
+<!ENTITY webPanelIntro.text1 "Get the most out of Celtx by signing up for free and secure web services.">
+<!ENTITY webPanelIntro.text2 "*Back up* your entire project to the remote, secure Celtx server to have a safe copy in the event of theft, or disaster strikes your hard drive.">
+<!ENTITY webPanelIntro.text3 "*Collaborate* with team members by sharing your project and creating a private project space.">
+<!ENTITY webPanelIntro.text4 "*Publish* your media project to Project Central for reviews and comments, and join our growing world community of media creators.">
+<!ENTITY webPanelIntro.text5 "View your Celtx project in a format optimized for your *iPhone*.">
+<!ENTITY wiz.clickFinish "結束完成.">
+<!ENTITY wiz.clickNext "下一步.">
+<!ENTITY workweek.label "本週進度">
+<!ENTITY writer.label "作者">
+<!ENTITY zoom.label "縮放">

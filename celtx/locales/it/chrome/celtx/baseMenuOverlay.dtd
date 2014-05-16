@@ -1,0 +1,36 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "Contrai">
+<!ENTITY bringAllToFront.label "Porta tutto in primo piano">
+<!ENTITY zoomWindow.label "Zoom">
+<!ENTITY windowMenu.label "Finestra">
+<!ENTITY helpMenu.label "Guida">
+<!ENTITY helpMenu.accesskey "G">
+<!ENTITY helpMenuWin.label "?">
+<!ENTITY helpMenuWin.accesskey "?">
+<!ENTITY aboutCmd.label "Informazioni su &brandFullName;">
+<!ENTITY aboutCmd.accesskey "I">
+<!ENTITY helpContents.label "Contenuti guida">
+<!ENTITY helpContents.accesskey "C">
+<!ENTITY helpContentsMac.label "Guida di &brandShortName;">
+<!ENTITY helpForIEUsers.label "Per gli utenti di Internet Explorer">
+<!ENTITY helpForIEUsers.accesskey "x">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+<!ENTITY helpReleaseNotes.label "Note di versione">
+<!ENTITY helpReleaseNotes.accesskey "v">
+<!ENTITY updateCmd.label "Controlla gli aggiornamenti…">
+<!ENTITY updateCmd.accesskey "A">
+<!ENTITY preferencesCmdMac.label "Preferenze…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+<!ENTITY servicesMenuMac.label "Servizi">
+<!ENTITY hideThisAppCmdMac.label "Nascondi &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+<!ENTITY hideOtherAppsCmdMac.label "Nascondi altre">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+<!ENTITY showAllAppsCmdMac.label "Mostra tutte">

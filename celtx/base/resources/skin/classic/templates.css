@@ -1,0 +1,215 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+#banner {
+  width: 670px;
+  height: 94px;
+  margin: 2px 1px 8px 2px;
+  background-image: url(chrome://celtx/skin/splash/splashHeader.png);
+  background-repeat: no-repeat;
+}
+
+.byLine {
+  font-size: 14px;
+  color: white;
+  float: right;
+  padding: 63px 20px 20px 0px;
+}
+
+/*
+.projectlist {
+  background-color: white;
+  overflow: auto;
+}
+*/
+
+.projectlist {
+  min-height: 125px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.listgroup {
+  max-height: 320px;
+}
+
+.projectitem {
+  border: 2px solid transparent;
+}
+
+.projectitem:hover {
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow;
+  background-color: ThreeDFace;
+}
+
+.projectitem > image {
+  /*
+  width: 37px;
+  height: 37px;
+  */
+  width: 32px;
+  height: 32px;
+  padding: 2px 2px 0px 2px;
+}
+
+.projectitem > label,
+.projectitem > description {
+  font-size: 9pt;
+  padding: 0px 2px;
+  margin-top: 0px;
+  max-width: 300px;
+}
+
+/*
+.projectitem[selected="true"] > image,
+.projectitem[selected="true"] > label {
+  background-color: Highlight;
+}
+*/
+
+.projectlistheader {
+  font-weight: bold;
+  font-size: 10pt;
+  padding: 8px;
+  margin: 0px;
+  background-image: url("chrome://celtx/skin/splash/listHeader.png");
+  border: 1px solid gray;
+  color: white;
+/*
+  width: 296px;
+  height: 15px;
+*/
+}
+
+.projectlistheader > label {
+  margin: 0px;
+}
+
+#templatewindow > vbox {
+  background-color: white;
+}
+
+#newprojectdialog {
+  padding: 0px;
+}
+
+/*
+#newprojectdialog > vbox {
+  background-color: silver;
+}
+*/
+
+#notifier {
+  height: 124px;
+  width: 480px;
+  overflow: hidden;
+  margin: 0px 0px 10px 7px;
+}
+
+#powbox {
+  margin-top: 6px;
+  min-width: 316px;
+  max-width: 336px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.powheader {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0px;
+}
+
+.powproject {
+  max-width: 336px;
+  background-color: #FFFEF2;
+  border: 1px solid gray;
+  padding: 0px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/*
+.powproject > image {
+  margin: 5px;
+}
+*/
+
+.listcolumn {
+  padding: 10px;
+  width: 336px;
+}
+
+/* If we don't use !important, the Windows toolbarbutton CSS overrides */
+.minibutton {
+  font-size: 8pt !important;
+  font-weight: bold;
+  color: white;
+  background-color: #353535 !important;
+  padding: 0px !important;
+  min-width: 70px;
+  border: 3px solid black !important;
+  -moz-border-top-colors: black #151515 #353535 !important;
+  -moz-border-right-colors: black #151515 #353535 !important;
+  -moz-border-bottom-colors: black #151515 #353535 !important;
+  -moz-border-left-colors: black #151515 #353535 !important;
+  -moz-border-radius: 2px !important;
+  margin: 4px !important;
+}
+.minibutton > label {
+  margin: 1px !important;
+}
+
+.deletebtn {
+  list-style-image: url("chrome://celtx/skin/closetab.png");
+  display: none;
+}
+
+.projectitem:hover .deletebtn {
+  display: inherit;
+}
+
+.hoverclosebtn {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 10pt;
+  color: silver;
+  background: transparent;
+  border: 0px;
+}
+
+.hoverclosebtn:hover {
+  color: black;
+  background: transparent;
+  border: 0px;
+}
+
+.text-link {
+  color: white !important;
+  font-size: 8pt;
+}

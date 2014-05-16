@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cx="http://celtx.com/NS/v1/">
+
+  <!-- Axioms -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/rdftype"
+              cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              cx:arctype="Resource"
+              cx:unique="true"
+              cx:owner="false"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/doctype"
+              cx:arcname="http://celtx.com/NS/v1/doctype"
+              cx:arctype="Resource"
+              cx:unique="true"
+              cx:owner="false"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/title"
+              cx:arcname="http://purl.org/dc/elements/1.1/title"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/description"
+              cx:arcname="http://purl.org/dc/elements/1.1/description"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/modified"
+              cx:arcname="http://purl.org/dc/elements/1.1/modified"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/language"
+              cx:arcname="http://purl.org/dc/elements/1.1/language"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/creator"
+              cx:arcname="http://purl.org/dc/elements/1.1/creator"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/localFile"
+              cx:arcname="http://celtx.com/NS/v1/localFile"
+              cx:arctype="File"
+              cx:unique="true"
+              cx:owner="true"/>
+
+  <!-- Special rule for "project namespace" form fields -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/_projectns_"
+              cx:arcname="_projectns_"
+              cx:arctype="Literal"
+              cx:unique="true"/>
+
+  <!-- Copies a project EXCEPT for its document tree (cx:components) -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/Project"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/modified"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/language"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/fileVersion"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/revision"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/publishMode"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sharedUsers"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/projectTagLine"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/projectImageFile"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/projectEmbedMarkup"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <!-- Catalog Document -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/CatalogDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/CatalogDocument"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/filter"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="false"/>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/members"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="false"/>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/departments"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="true">
+            <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/department"
+                          cx:arctype="Resource"
+                          cx:unique="true"
+                          cx:owner="false"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                          cx:arctype="Resource"
+                          cx:unique="false"
+                          cx:owner="true"/>
+            </cx:subrule>
+          </cx:DocRule>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+  </cx:DocRule>
+        
+
+  <!-- Script Document -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/ScriptDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ScriptDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/TheatreDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/RadioDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/AVDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ComicDocument"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sidebarvisible"
+                  cx:arctype="Literal"
+                  cx:unique="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/auxFile"
+                  cx:arctype="File"
+                  cx:unique="true"
+                  cx:owner="true"/>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/tagnames"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule>
+          <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Literal"
+                      cx:unique="false"/>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/scenes"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="true">
+            <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+            <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/alttitle"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sceneid"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sortord"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/ordinal"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/location"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/intext"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/setting"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/daynight"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/colour"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+          </cx:DocRule>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/AVDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sequences"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="true">
+            <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/sequenceid"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+          </cx:DocRule>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://celtx.com/NS/v1/shots"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="true">
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/rdftype"/>
+        <cx:subrule>
+          <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                      cx:arctype="Resource"
+                      cx:unique="false"
+                      cx:owner="true">
+            <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+            <cx:subrule>
+              <cx:DocRule cx:arcname="http://celtx.com/NS/v1/shotid"
+                          cx:arctype="Literal"
+                          cx:unique="true"/>
+            </cx:subrule>
+          </cx:DocRule>
+        </cx:subrule>
+      </cx:DocRule>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/StoryboardDocument2"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/StoryboardDocument2"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/media"/>
+  </cx:DocRule>
+
+  <!-- Common rule for documents with a single related file  -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/SingleFileDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/TextDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/OutlineDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/CalendarDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ExternalDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SingleShotDocument"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+  </cx:DocRule>
+
+  <!-- Schedule Document -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/ScheduleDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ScheduleDocument"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://purl.org/dc/elements/1.1/source"
+                  cx:arctype="Resource"
+                  cx:unique="true"
+                  cx:owner="false"/>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/BookmarkDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/BookmarkDocument"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://purl.org/dc/elements/1.1/source"
+                  cx:arctype="Literal"
+                  cx:unique="true"
+                  cx:owner="true"/>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <!-- Breakdown Item Document -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/BreakdownDocument"
+              cx:arctype="Root"
+              cx:owner="true">
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ActorDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/CharacterDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/LocationDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/PropDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SceneDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/WardrobeDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/AdditionalLabourDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/AnimalsDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/AnimalHandlerDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/CameraDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/CGIDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ConstructionDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ElectricsDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ExtrasDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/GreeneryDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/HairDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/LightsDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/LivestockDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/MakeupDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/MechFXDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/MiscDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/MusicDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/OpticalFXDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/PaintingDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/ProductionNotesDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SecurityDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SetDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SetDressingDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SoundDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SoundFXDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SpecialEquipmentDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/SpecialFXDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/StoryboardDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/StuntsDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/VehiclesDocument"/>
+    <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/WeaponsDocument"/>
+
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/doctype"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/_projectns_"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/media"/>
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/BreakdownItem"/>
+  </cx:DocRule>
+
+  <!-- Breakdown Item -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/BreakdownItem"
+              cx:arcname="http://purl.org/dc/elements/1.1/source"
+              cx:arctype="Resource"
+              cx:owner="false"/>
+
+  <!-- Media -->
+  <cx:DocRule rdf:about="http://celtx.com/NS/v1/DocRule/media"
+              cx:arcname="http://celtx.com/NS/v1/media"
+              cx:arctype="Resource"
+              cx:owner="true">
+    <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+    <cx:subrule>
+      <cx:DocRule cx:arcname="http://www.w3.org/1999/02/22-rdf-syntax-ns#li"
+                  cx:arctype="Resource"
+                  cx:owner="true">
+        <cx:appliesTo rdf:resource="http://celtx.com/NS/v1/Image"/>
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/rdftype"/>
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/title"/>
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/description"/>
+        <cx:subrule rdf:resource="http://celtx.com/NS/v1/DocRule/localFile"/>
+      </cx:DocRule>
+    </cx:subrule>
+  </cx:DocRule>
+
+  <!-- Image -->
+</rdf:RDF>

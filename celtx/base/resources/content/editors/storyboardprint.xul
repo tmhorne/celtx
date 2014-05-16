@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE dialog [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+<!ENTITY % printDTD SYSTEM "chrome://global/locale/printPageSetup.dtd">
+%printDTD;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&printStoryboardDialog.title;"
+        buttons="accept,cancel"
+        onload="loaded()"
+        ondialogaccept="return accepted()"
+        ondialogcancel="return canceled()">
+
+  <script type="application/x-javascript">
+var gWindow = {};
+
+function loaded () {
+  gWindow.config = window.arguments[0];
+  gWindow.orientgroup = document.getElementById("orientation");
+  var pref = Components.classes["@mozilla.org/preferences-service;1"]
+    .getService(Components.interfaces.nsIPrefService);
+  pref = pref.getBranch("celtx.storyboard.print.");
+  var orientation = pref.getCharPref("orientation");
+  if (orientation == "portrait")
+    gWindow.orientgroup.selectedIndex = 0;
+  else if (orientation == "landscape")
+    gWindow.orientgroup.selectedIndex = 1;
+  else
+    dump("*** loaded: orientation is " + orientation + "\n");
+}
+
+function accepted () {
+  gWindow.config.accepted = true;
+  gWindow.config.orientation = gWindow.orientgroup.value;
+  var pref = Components.classes["@mozilla.org/preferences-service;1"]
+    .getService(Components.interfaces.nsIPrefService);
+  pref = pref.getBranch("celtx.storyboard.print.");
+  pref.setCharPref("orientation", gWindow.orientgroup.value);
+  return true;
+}
+
+function canceled () {
+  return true;
+}
+  </script>
+
+  <vbox align="center">
+    <radiogroup id="orientation"
+                orient="horizontal">
+      <vbox align="center">
+        <image src="chrome://celtx/skin/sbportrait.png"/>
+        <radio label="&portrait; (2x3)"
+               value="portrait"/>
+      </vbox>
+      <vbox align="center">
+        <image src="chrome://celtx/skin/sblandscape.png"/>
+        <radio label="&landscape; (3x3)"
+               value="landscape"/>
+      </vbox>
+    </radiogroup>
+  </vbox>
+
+</dialog>

@@ -1,0 +1,35 @@
+. $topsrcdir/celtx/config/mozconfig
+
+mk_add_options MOZ_MAKE_FLAGS=-j4
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../debugdir
+
+ac_add_options --enable-ui-locale=en-US
+
+ac_add_options --target=i386-apple-darwin$DARWIN_VERSION
+ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+ac_add_options --enable-macos-target=10.5
+
+CC="gcc-4.2 -arch i386"
+CXX="g++-4.2 -arch i386"
+HOST_CC="gcc-4.2 -arch i386"
+HOST_CXX="g++-4.2 -arch i386"
+RANLIB=ranlib
+AR=ar
+AS=$CC
+LD=ld
+STRIP="strip -x -S"
+CROSS_COMPILE=1
+
+export CC CXX HOST_CC HOST_CXX RANLIB AR AS LD STRIP
+
+ac_add_options --enable-extensions=default
+
+ac_add_options --disable-optimize
+ac_add_options --enable-debug
+ac_add_options --disable-tests
+ac_add_options --disable-static
+ac_add_options --enable-shared
+ac_add_options --disable-oji
+ac_add_options --disable-javaxpcom
+ac_add_options --disable-plugins
+

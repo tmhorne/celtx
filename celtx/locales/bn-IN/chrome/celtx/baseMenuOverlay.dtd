@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key       "m">
+<!ENTITY minimizeWindow.label     "ছোট করুন">
+<!ENTITY bringAllToFront.label    "সমস্ত সামনে আনা হবে">
+<!ENTITY zoomWindow.label         "বড় করে প্রদর্শন">
+<!ENTITY windowMenu.label         "উইন্ডো">
+
+<!ENTITY helpMenu.label           "সহায়তা"> 
+<!ENTITY helpMenu.accesskey       "H"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "সহায়তা"> 
+<!ENTITY helpMenuWin.accesskey    "H">
+<!ENTITY aboutCmd.label           "&brandFullName; পরিচিতি">
+<!ENTITY aboutCmd.accesskey       "A">
+<!ENTITY helpContents.label       "সহায়িকার সূচী">
+<!ENTITY helpContents.accesskey   "H">
+<!ENTITY helpContentsMac.label    "&brandShortName; সহায়তা">
+<!ENTITY helpForIEUsers.label     "Internet Explorer ব্যবহারকারীদের জন্য">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "/">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.label         "রিলিজ নোটস">
+<!ENTITY helpReleaseNotes.accesskey     "N">
+<!ENTITY updateCmd.label                "আপডেট পরীক্ষা করা হবে...">
+<!ENTITY updateCmd.accesskey            "o">
+
+<!ENTITY preferencesCmdMac.label        "পছন্দ...">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "পরিসেবা">
+
+<!ENTITY hideThisAppCmdMac.label        "&brandShortName; আড়াল করা হবে">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "অন্যান্য আড়াল করা হবে">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "সমস্ত প্রদর্শন করা হবে">

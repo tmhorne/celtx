@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+#include ../celtx-entities.inc
+<!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %dtd2;
+<!ENTITY % dtd3 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd3;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+
+<overlay id="scheduleReportBindings"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <vbox id="reportview">
+    <deck id="reporttoolbardeck">
+      <toolbar id="daterangetoolbar">
+        <radiogroup orient="horizontal">
+        <toolbaritem align="center">
+          <radio id="alldates"
+                 label="&calendar.events.filter.all.label;"
+                 selected="true"/>
+        </toolbaritem>
+        <toolbarspacer flex="1"/>
+        <toolbaritem align="center">
+          <radio label="&calendar.print.from.label;"/>
+          <datelabel id="reportstartdate"/>
+        </toolbaritem>
+        <toolbaritem align="center">
+          <label value="&calendar.print.to.label;"/>
+          <datelabel id="reportenddate"/>
+        </toolbaritem>
+        </radiogroup>
+        <toolbaritem>
+          <button label="&update.label;"
+                  oncommand="gReportController.refresh()"/>
+        </toolbaritem>
+      </toolbar>
+
+      <toolbar id="shootdaystoolbar">
+        <radiogroup orient="horizontal">
+          <toolbaritem align="center">
+            <radio id="allevents"
+                   label="&allShootDays.label;"
+                   selected="true"/>
+          </toolbaritem>
+          <toolbarspacer flex="1"/>
+          <toolbaritem align="center">
+            <radio label="&calendar.print.from.label;"/>
+            <label id="reportstartshootdate"
+                   class="text-link"
+                   onclick="gReportController.editShootDayPicker(this);"/>
+          </toolbaritem>
+          <toolbaritem align="center">
+            <label value="&calendar.print.to.label;"/>
+            <label id="reportendshootdate"
+                   class="text-link"
+                   onclick="gReportController.editShootDayPicker(this);"/>
+          </toolbaritem>
+        </radiogroup>
+        <toolbaritem>
+          <button label="&update.label;"
+                  oncommand="gReportController.refresh()"/>
+        </toolbaritem>
+      </toolbar>
+
+      <toolbar id="singledaytoolbar">
+        <toolbaritem align="center">
+          <label value="&shootDay.label;&colon;"/>
+          <label id="reportsingleshootdate"
+                   class="text-link"
+                   onclick="gReportController.editShootDayPicker(this);"/>
+        </toolbaritem>
+        <toolbaritem>
+          <button label="&update.label;"
+                  oncommand="gReportController.refresh()"/>
+        </toolbaritem>
+      </toolbar>
+
+      <toolbar id="updateonlytoolbar">
+        <toolbaritem>
+          <button label="&update.label;"
+                  oncommand="gReportController.refresh()"/>
+        </toolbaritem>
+      </toolbar>
+    </deck>
+    <browser id="reportframe"
+             flex="1"
+             type="content"
+             src="about:blank"/>
+  </vbox>
+
+</overlay>

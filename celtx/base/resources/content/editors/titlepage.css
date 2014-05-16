@@ -1,0 +1,123 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  padding-left: 3em;
+  font-family: monospace;
+  background-color: white;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+td {
+  padding-right: 1em;
+}
+
+@media screen {
+  body {
+    font-size: 10pt;
+  }
+  input, textarea {
+    border: 1px dotted black;
+    font-family: monospace;
+    font-size: 10pt;
+  }
+  #titlediv {
+    margin-top: 4em;
+  }
+  .hint {
+    font-size: 10pt;
+    color: gray;
+  }
+}
+@media print {
+  body {
+    font-size: 12pt;
+  }
+  input, textarea {
+    border: 0px;
+    font-family: monospace;
+    font-size: 12pt;
+  }
+  #titlediv {
+    margin-top: 2.5in;
+  }
+  .hint {
+    display: none;
+  }
+  #bottomrect {
+    padding-top: 0.5in;
+    margin-top: 0em;
+  }
+}
+
+#title, #author, #source {
+  height: 3.2em;
+  text-align: center;
+  width: 90%;
+  overflow: hidden;
+}
+
+#byline {
+  text-align: center;
+  width: 90%;
+  height: 1em;
+}
+#bylinediv {
+  margin-top: 1em;
+}
+
+#authordiv {
+  margin-top: 3em;
+}
+
+#sourcediv {
+  margin-top: 4em;
+}
+
+#bottomrect {
+  margin-top: 5em;
+}
+
+#rights {
+  height: 7em;
+  width: 100%;
+}
+#rightsdiv {
+  margin-left: 2em;
+  width: 40%;
+  float: left;
+}
+
+#contact {
+  height: 7em;
+  width: 100%;
+}
+#contactdiv {
+  margin-right: 2em;
+  width: 40%;
+  float: right;
+}

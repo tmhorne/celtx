@@ -1,0 +1,36 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "最小化">
+<!ENTITY bringAllToFront.label "全部前置">
+<!ENTITY zoomWindow.label "缩放">
+<!ENTITY windowMenu.label "窗口">
+<!ENTITY helpMenu.label "帮助">
+<!ENTITY helpMenu.accesskey "H">
+<!ENTITY helpMenuWin.label "帮助">
+<!ENTITY helpMenuWin.accesskey "H">
+<!ENTITY aboutCmd.label "关于 &brandFullName;">
+<!ENTITY aboutCmd.accesskey "A">
+<!ENTITY helpContents.label "帮助内容">
+<!ENTITY helpContents.accesskey "H">
+<!ENTITY helpContentsMac.label "&brandShortName; 帮助">
+<!ENTITY helpForIEUsers.label "致 Internet Explorer 用户">
+<!ENTITY helpForIEUsers.accesskey "I">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+<!ENTITY helpReleaseNotes.label "发行说明">
+<!ENTITY helpReleaseNotes.accesskey "N">
+<!ENTITY updateCmd.label "检查更新…">
+<!ENTITY updateCmd.accesskey "o">
+<!ENTITY preferencesCmdMac.label "首选项…">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+<!ENTITY servicesMenuMac.label "服务">
+<!ENTITY hideThisAppCmdMac.label "隐藏 &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey "H">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+<!ENTITY hideOtherAppsCmdMac.label "隐藏其它">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+<!ENTITY showAllAppsCmdMac.label "全部显示">

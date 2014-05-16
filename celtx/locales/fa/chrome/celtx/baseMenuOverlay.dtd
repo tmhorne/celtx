@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key "m">
+<!ENTITY minimizeWindow.label "حداقل کردن">
+<!ENTITY bringAllToFront.label "آوردن همه به جلو">
+<!ENTITY zoomWindow.label "زوم">
+<!ENTITY windowMenu.label "پنجره">
+
+<!ENTITY helpMenu.label "راهنما">
+<!ENTITY helpMenu.accesskey "ر">
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label "راهنما">
+<!ENTITY helpMenuWin.accesskey "ر">
+<!ENTITY aboutCmd.label "دربارهٔ &brandFullName;">
+<!ENTITY aboutCmd.accesskey "د">
+<!ENTITY helpContents.label "محتوای راهنما">
+<!ENTITY helpContents.accesskey "م">
+<!ENTITY helpContentsMac.label "راهنمای &brandShortName;">
+<!ENTITY helpForIEUsers.label "اینترنت اکسپلورر مایکروسافت">
+<!ENTITY helpForIEUsers.accesskey "م">
+<!ENTITY openHelp.commandkey "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey "/">
+<!ENTITY openHelpMac.modifiers "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey "?">
+<!ENTITY openHelpMac.frontendModifiers "accel">
+
+<!ENTITY helpReleaseNotes.label "یادداشت‌های انتشار">
+<!ENTITY helpReleaseNotes.accesskey "ی">
+<!ENTITY updateCmd.label "گشتن به دنبال به‌هنگام‌سازی‌ها...">
+<!ENTITY updateCmd.accesskey "گ">
+
+<!ENTITY preferencesCmdMac.label "ترجیحات...">
+<!ENTITY preferencesCmdMac.commandkey ",">
+<!ENTITY preferencesCmdMac.modifiers "accel">
+
+<!ENTITY servicesMenuMac.label "خدمات">
+
+<!ENTITY hideThisAppCmdMac.label "&brandShortName; را مخفی کن">
+<!ENTITY hideThisAppCmdMac.commandkey "ه">
+<!ENTITY hideThisAppCmdMac.modifiers "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label "دیگر برنامه‌ها را مخفی کن">
+<!ENTITY hideOtherAppsCmdMac.commandkey "ه">
+<!ENTITY hideOtherAppsCmdMac.modifiers "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label "نشان دادن همه">

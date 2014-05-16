@@ -1,0 +1,797 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+@import url("chrome://global/skin/");
+
+datelabel {
+  -moz-binding: url("chrome://celtx/content/datelabel.xml#datelabel");
+}
+
+imagelist {
+  -moz-binding: url("chrome://celtx/content/imagelist.xml#imagelist");
+  overflow: auto;
+  font-size: 7pt;
+}
+
+.imagelistcontainer {
+  background-color: white;
+}
+
+.imagerow {
+  overflow: hidden;
+}
+
+itemthumbnail {
+  -moz-binding: url("chrome://celtx/content/imagelist.xml#itemthumbnail");
+  -moz-box-orient: vertical;
+  padding: 2px;
+  width: 92px;
+  height: 92px;
+  overflow: hidden;
+}
+
+itemthumbnail > image {
+  max-width: 92px;
+}
+
+itemthumbnail > label {
+  text-align: center;
+}
+
+itemthumbnail[selected="true"] {
+  background-color: Highlight;
+}
+itemthumbnail[selected="true"] > label {
+  color: HighlightText;
+}
+
+#sidebar {
+  border-left: 1px solid #A3A3A3;
+  min-width: 200px;
+  width: 232px;
+%ifdef XP_MACOSX
+  background-color:#E8EBED;
+%endif
+}
+
+%ifdef XP_MACOSX
+splitter {
+  background-color: #D7D7D7;
+}
+
+splitter[orient="horizontal"][collapse="before"] {
+  border-right: 1px solid #A3A3A3;
+}
+
+splitter[orient="vertical"][collapse="after"] {
+  border-top: 1px solid #A3A3A3;
+}
+%endif
+
+%ifdef XP_WIN
+splitter {
+  border: 0px;
+}
+%endif
+
+toolbar[printpreview="true"] {
+  -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
+}
+
+/* tabeditor */
+
+tabeditor {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor");
+}
+
+.tabeditor-tabs {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-tabs");
+}
+
+.tabeditor-tab {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-tab");
+}
+
+%ifdef XP_MACOSX
+.tabeditor-arrowscrollbox {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-arrowscrollbox");
+}
+%endif
+
+.tabs-alltabs-popup {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-alltabs-popup");
+}
+
+.tab-close-button, .tabs-closebutton {
+  -moz-binding: url("chrome://celtx/content/tabeditor.xml#tabeditor-close-tab-button");
+}
+
+.tab-close-button {
+  display: none;
+}
+
+.tabeditor-tabs:not([closebuttons="noclose"]):not([closebuttons="closeatend"]) > .tabeditor-tab[selected="true"] > .tab-close-button {
+  display: -moz-box;
+}
+
+.tabeditor-tabs[closebuttons="alltabs"] > .tabeditor-tab > .tab-close-button {
+  display: -moz-box;
+}
+
+
+
+navpanel {
+  -moz-binding: url("chrome://celtx/content/navpanel.xml#navpanel");
+  display: -moz-deck;
+}
+
+expandbox {
+  -moz-binding: url("chrome://celtx/content/expander.xml#expander");
+  -moz-box-orient: vertical;
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+  border-left: 1px solid ThreeDHighlight;
+  background: ThreeDFace;
+}
+
+.expanderButton {
+  -moz-appearance: treetwisty;
+  width: 10px;
+  margin-top: -2px;
+  font-weight: bold;
+}
+
+.expanderButton:hover:active,
+.expanderBtton[open="true"]:hover:active {
+  background: transparent;
+}
+
+.expanderButton[open="true"] {
+  -moz-appearance: treetwistyopen;
+}
+
+#celtx {
+  width: 1020px;
+  height: 700px;
+}
+
+%ifdef XP_MACOSX_METALLIC
+#celtx {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#unifiedWindow");
+}
+
+#celtx[chromehidden~="toolbar"] {
+  border-top: 1px solid rgba(0,0,0,0.65);
+  -moz-appearance: none;
+  background-color: #eeeeee;
+}
+%endif
+
+#navigation-sidebar {
+  min-width: 150px;
+  width: 200px;
+}
+
+#quickAddPopup {
+  max-height: 24em;
+}
+
+#mediaGISButton {
+  list-style-image: url("chrome://celtx/skin/google.ico");
+}
+
+#newproject {
+  width: 440px;
+}
+
+#findreplace {
+  width: 500px;
+  height: 220px;
+}
+
+#findfields {
+  min-height: 72px;
+}
+
+#spellcheck-dialog {
+  height: 300px;
+  width: 550px
+}
+
+.sync-box {
+  background-image: url("chrome://celtx/skin/celtx.png");
+  background-repeat: no-repeat;
+  padding-left: 70px;
+}
+
+picklistitem {
+  display: -moz-box;
+  -moz-binding:
+    url("chrome://celtx/content/editors/datasheet.xml#picklistitem");
+}
+
+#statusbar-left {
+  width: 100px;
+}
+
+#statusbar-display label {
+  text-align: center;
+}
+
+#statusbar-display {
+  width: 100px;
+}
+
+#note-popup {
+  width: 300px;
+  max-width: 300px;
+  min-height: 200px;
+  max-height: 500px;
+}
+
+#note-popup > .popup-internal-box {
+  -moz-border-top-colors: rgb(176,170,71) rgb(255,253,192);
+  -moz-border-right-colors: rgb(176,170,71) rgb(255,253,192);
+  -moz-border-bottom-colors: rgb(176,170,71) rgb(255,253,192);
+  -moz-border-left-colors: rgb(176,170,71) rgb(255,253,192);
+  border: 2px solid;
+  background-color: rgb(253,247,161);
+}
+
+#note-vbox {
+  padding-left: 5px;
+}
+
+#download-project-dialog {
+  width: 600px;
+  height: 350px;
+  padding: 15px;
+}
+
+#celtxerror {
+  max-width: 400px;
+}
+
+/* Reduces overflow/underflow cycle on OS X */
+.tree-bodybox {
+  padding-bottom: 3px;
+}
+
+#registration-wizard {
+  width: 45em;
+  height: 35em;
+}
+
+.wizard-header-icon {
+  list-style-image: url(chrome://celtx/skin/celtx.png) !important;
+  width: 48px;
+  height: 48px;
+}
+
+#doctype-description {
+%ifdef XP_UNIX
+%ifndef XP_MACOSX
+  min-height: 4em;
+%else
+  min-height: 3em;
+%endif
+%else
+  min-height: 3em;
+%endif
+}
+
+#existing-desc-deck {
+  min-height: 5em;
+}
+
+#existing-select-deck {
+  min-height: 5em;
+}
+
+#progressdialog {
+  width: 300px;
+  height: 100px;
+  padding: 15px;
+}
+
+treechildren::-moz-tree-image {
+  margin-right: 5px;
+}
+
+.miniaddbtn {
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://celtx/skin/plus.png");
+}
+
+.minidelbtn {
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://celtx/skin/minus.png");
+}
+
+.shootdayheader {
+  padding: 5px;
+  font-weight: bold;
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+  border-left: 1px solid ThreeDHighlight;
+  margin: 0px;
+  color: #EEEEEE;
+  background-color: #666666;
+}
+
+.moving {
+  background-color: #DD55DD !important;
+}
+
+.dayoff {
+  background-color: #55DD55 !important;
+}
+
+.shootdaylist {
+  background-color: white;
+  border: 1px solid #666666;
+  width: 600px;
+  overflow: auto;
+}
+
+.shootdaybox {
+  padding: 0.5em 0.5em 1.5em 0.5em;
+}
+
+.shootscene {
+  margin: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: silver;
+  border: 1px solid black;
+  font-family: monospace;
+}
+
+.shootmoving {
+  margin: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #DD55DD;
+  border: 1px solid black;
+}
+
+#movingitem {
+  background-color: #DD55DD;
+  border: 1px solid black;
+  padding: 0px 15px 0px 5px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+#dayoffitem {
+  background-color: #55DD55;
+  border: 1px solid black;
+  padding: 0px 15px 0px 5px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+banner {
+  -moz-binding: url("chrome://celtx/content/editors/schedule.xml#banner");
+}
+
+bannergrippy {
+  -moz-binding: url("chrome://celtx/content/editors/schedule.xml#bannergrippy");
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  min-height: 3px;
+  min-width: 3px;
+  cursor: s-resize;
+}
+
+schedule-decorated-month-view {
+  -moz-binding: url("chrome://celtx/content/editors/calview.xml#calendar-decorated-month-view");
+}
+
+schedule-month-view {
+  -moz-binding: url("chrome://celtx/content/editors/calview.xml#calendar-month-view");
+}
+
+schedule-month-day-box {
+  -moz-binding: url("chrome://celtx/content/editors/calview.xml#calendar-month-day-box");
+}
+
+charactercard {
+  -moz-binding: url("chrome://celtx/content/editors/cards.xml#mediacard");
+  max-height: 300px;
+  background: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+editlabel {
+  -moz-binding: url("chrome://celtx/content/editors/mediaview.xml#editable-label");
+}
+
+editlabel description {
+  padding-left: 3px;
+  padding-top: 2px;
+}
+
+#boardbox {
+  background-color: #EBEBEB;
+}
+
+shotcell {
+  -moz-binding: url("chrome://celtx/content/editors/cards.xml#shotcard");
+  margin: 2px;
+  padding: 4px;
+}
+
+/*
+shotcell[dropbefore="true"] {
+  border-left: 2px solid gray;
+}
+
+shotcell[dropafter="true"] {
+  border-right: 2px solid gray;
+}
+*/
+
+shotcell editlabel {
+  min-height: 2em;
+  min-width: 80px;
+}
+
+shotcell toolbar {
+  display: none;
+  margin: 2px;
+}
+
+shotcell:hover toolbar {
+  display: inherit;
+}
+
+/* Slideshow images */
+#shotimg {
+  padding: 5px;
+  background: white;
+}
+
+#shotlabel {
+  font-size: 10pt;
+  height: 4em;
+}
+
+shotcell[selected="true"] image {
+  outline: 2px solid black;
+}
+
+shotcell[ratio="16x9"] image {
+  max-width: 176px;
+  max-height: 99px;
+}
+
+shotcell[ratio="4x3"] image {
+  max-width: 180px;
+  max-height: 135px;
+}
+
+shotholder {
+  -moz-binding: url("chrome://celtx/content/editors/cards.xml#shotholder");
+  width: 180px;
+  max-width: 180px;
+  height: 135px;
+  max-height: 135px;
+  padding: 2px;
+  margin: 2px 2px 7em 2px;
+  border: 2px dashed black;
+  background-color: white;
+}
+
+.seqheader {
+  border: 1px solid black;
+  background-color: white;
+  margin: 6px;
+}
+
+.seqheader > label, .seqheader > editlabel {
+  font-size: 10pt;
+}
+
+treechildren::-moz-tree-checkbox(checked, checkmark) {
+  list-style-image: url("chrome://celtx/skin/checkmark.png");
+}
+
+treechildren::-moz-tree-checkbox(checked, attachment) {
+  list-style-image: url("chrome://celtx/skin/attach.png");
+}
+
+#summarygroup {
+  min-height: 10em;
+}
+
+.helpterm {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.panelheader {
+  background-color: #000;
+  height: 32px;
+  background-image: url("chrome://celtx/skin/bg_header.png");
+  border: 1px solid #333;
+  margin: 4px 4px 0px 4px;
+}
+
+#sidebar > .panelheader {
+  margin: 0px;
+}
+
+.panelheader > label {
+  color: #FFF;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.errorlabel {
+  color: red;
+  text-decoration: underline;
+}
+
+/* used in celtx/content/editors/eventdialog.xul */
+.errorblock {
+  background-color: yellow;
+  border: 1px dashed black;
+  padding: 1em;
+}
+
+#intextpopup, #daynightpopup {
+  width: 200px;
+  height: 100px;
+  padding: 5px;
+}
+
+.vertline {
+  border-left: 1px solid #676767;
+  margin: 0px 8px 0px 0px;
+  padding: 0px;
+  min-width: 1px;
+}
+
+/* ::::: edit mode toolbar ::::: */
+
+#EditModeToolbar,
+.plaintabbar {
+  -moz-box-align: start;
+  background-color: #D7D7D7;
+  border-left: 1px solid ThreeDDarkShadow;
+  border-right: 1px solid ThreeDLightShadow;
+  border-top: 2px solid;
+  -moz-border-top-colors: #939393 #D8D8D8;
+  padding: 0px 2px 2px 2px;
+  min-width: 1px;
+}
+
+#EditModeToolbarTop {
+  height: 5px;
+  background-color: ThreeDFace;
+}
+
+#EditModeTabs,
+.plaintabbar .tabs-bottom {
+  margin-bottom: 0px;
+  margin-top: -2px;
+}
+.plaintabbar .tabs-top {
+  margin-bottom: -2px;
+  margin-top: 0px;
+}
+
+#EditModeToolbar .tabs-left,
+.plaintabbar .tabs-left {
+  display: none;
+}
+
+#EditModeToolbar label,
+.plaintabbar label {
+  font-size: 8pt;
+}
+
+#EditModeToolbar tab,
+.plaintabbar .tabs-bottom tab {
+  -moz-appearance: none;
+  border: 2px solid;
+  margin: 0px 2px 2px 2px;
+  -moz-border-radius: 0px 0px 1px 1px;
+  -moz-border-top-colors: #939393 #D8D8D8;
+  -moz-border-right-colors: #9B9B9B #939393;
+  -moz-border-bottom-colors: #9B9B9B #939393;
+  -moz-border-left-colors: #9B9B9B #939393;
+  background-color: #D2D2D2;
+}
+.plaintabbar .tabs-top tab {
+  -moz-appearance: none;
+  border: 2px solid;
+  margin: 2px 2px 0px 2px;
+  -moz-border-radius: 0px 0px 1px 1px;
+  -moz-border-top-colors: #9B9B9B #939393;
+  -moz-border-right-colors: #9B9B9B #939393;
+  -moz-border-bottom-colors: #939393 #D8D8D8;
+  -moz-border-left-colors: #9B9B9B #939393;
+  background-color: #D2D2D2;
+}
+
+#EditModeToolbar tab[selected="true"],
+.plaintabbar .tabs-bottom tab[selected="true"] {
+  background-color: ThreeDFace;
+  -moz-border-top-colors: ThreeDFace ThreeDFace;
+  -moz-border-bottom-colors: #00ABEF #00ABEF;
+}
+.plaintabbar .tabs-top tab[selected="true"] {
+  background-color: ThreeDFace;
+  -moz-border-top-colors: #00ABEF #00ABEF;
+  -moz-border-bottom-colors: ThreeDFace ThreeDFace;
+}
+
+treechildren::-moz-tree-row(grey) {
+  background-color: #D8D8D8;
+}
+treechildren::-moz-tree-row(grey,selected) {
+  background-color: #6C6C6C;
+}
+treechildren::-moz-tree-row(blue) {
+  background-color: #C8E6FF;
+}
+treechildren::-moz-tree-row(blue,selected) {
+  background-color: #647366;
+}
+treechildren::-moz-tree-row(green) {
+  background-color: #CCFFCC;
+}
+treechildren::-moz-tree-row(green,selected) {
+  background-color: #668866;
+}
+treechildren::-moz-tree-row(orange) {
+  background-color: #FFD8B2;
+}
+treechildren::-moz-tree-row(orange,selected) {
+  background-color: #887461;
+}
+treechildren::-moz-tree-row(pink) {
+  background-color: #FFCCFF;
+}
+treechildren::-moz-tree-row(pink,selected) {
+  background-color: #886688;
+}
+treechildren::-moz-tree-row(purple) {
+  background-color: #E0B4FF;
+}
+treechildren::-moz-tree-row(purple,selected) {
+  background-color: #706288;
+}
+treechildren::-moz-tree-row(red) {
+  background-color: #FFCCCC;
+}
+treechildren::-moz-tree-row(red,selected) {
+  background-color: #886666;
+}
+treechildren::-moz-tree-row(yellow) {
+  background-color: #FFFFCC;
+}
+treechildren::-moz-tree-row(yellow,selected) {
+  background-color: #888866;
+}
+
+.statustoolbar {
+  border-top: 1px solid #A3A3A3 !important;
+  background-color: #ECECEC;
+  min-height: 15px;
+  margin: 0px;
+  padding: 0px 16px 1px 1px;
+  -moz-appearance: none;
+}
+
+#notificationarea {
+  background-color: transparent;
+}
+
+#messagepopup {
+  max-width: 250px;
+  max-height: 420px;
+  height: 200px;
+  border: 0px !important;
+}
+
+#messagepopup > .popup-internal-box {
+  /* border: 1px ridge rgb(140,166,213); */
+  -moz-border-top-colors: rgb(69,107,173) rgb(192,215,255);
+  -moz-border-right-colors: rgb(69,107,173) rgb(192,215,255);
+  -moz-border-bottom-colors: rgb(69,107,173) rgb(192,215,255);
+  -moz-border-left-colors: rgb(69,107,173) rgb(192,215,255);
+  border: 2px solid;
+  background-color: rgb(161,194,251);
+  background-image: url("chrome://celtx/skin/cardbkgnd.png");
+}
+
+.messagenextbtn {
+  list-style-image: url("chrome://celtx/skin/next.png");
+}
+.messagenextbtn label {
+  display: none;
+}
+
+.notification {
+  font-size: 10pt;
+  padding: 2px 5px;
+}
+
+.notification  .header {
+  margin-left: 0px;
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+.notification .close-button {
+  list-style-image: url("chrome://celtx/skin/closepopup.png");
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.close-button > .toolbarbutton-icon {
+  margin: 0px;
+}
+
+.close-button > .toolbarbutton-text {
+  display: none;
+}
+
+.treecellpopup {
+  -moz-binding: url("chrome://celtx/content/treecellpopup.xml#treecellpopup");
+}
+
+.noimagetab .tab-icon-image {
+  display: none !important;
+}
+
+.nolabeltab .tab-text {
+  display: none !important;
+}
+
+.noclosetab .tab-close-button {
+  display: none !important;
+}
+/*
+.tabbrowser-tabpanels {
+  -moz-appearance: none !important;
+  border: 0px !important;
+}
+*/
+.noalltabs .tabs-alltabs-stack {
+  display: none;
+}
+
+toolbarbutton[type="menu-vertical"] {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#menu-vertical");
+}

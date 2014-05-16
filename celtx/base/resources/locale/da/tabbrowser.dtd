@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(Ikke navngivet)">
+<!ENTITY  newTab.label           "Nyt faneblad">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "Luk faneblad">
+<!ENTITY  closeTab.accesskey         "L">
+<!ENTITY  closeOtherTabs.accesskey  "u">
+<!ENTITY  closeOtherTabs.label   "Luk andre faneblade">
+<!ENTITY  reloadAllTabs.label    "Genindlæs alle faneblade">
+<!ENTITY  reloadAllTabs.accesskey         "a">
+<!ENTITY  reloadTab.label        "Genindlæs faneblad">
+<!ENTITY  reloadTab.accesskey         "G">
+<!ENTITY  listAllTabs.label      "Vis alle faneblade">
+<!ENTITY  bookmarkAllTabs.label       "Bogmærk alle faneblade…">
+<!ENTITY  bookmarkAllTabs.accesskey   "o">
+<!ENTITY  bookmarkThisTab.label       "Bogmærk dette faneblad">
+<!ENTITY  bookmarkThisTab.accesskey   "B">
+<!ENTITY  undoCloseTab.label          "Fortryd lukning af faneblad">
+<!ENTITY  undoCloseTab.accesskey      "F">

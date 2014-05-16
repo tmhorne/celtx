@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(Nenosaukta)">
+<!ENTITY newTab.label "Jauna cilne">
+<!ENTITY newTab.accesskey "N">
+<!ENTITY closeTab.label "Aizvērt cilni">
+<!ENTITY closeTab.accesskey "C">
+<!ENTITY closeOtherTabs.accesskey "v">
+<!ENTITY closeOtherTabs.label "Aizvērt citas cilnes">
+<!ENTITY reloadAllTabs.label "Pārlādēt visas cilnes">
+<!ENTITY reloadAllTabs.accesskey "A">
+<!ENTITY reloadTab.label "Pārlādēt cilni">
+<!ENTITY reloadTab.accesskey "R">
+<!ENTITY listAllTabs.label "Visu ciļņu saraksts">
+<!ENTITY bookmarkAllTabs.label "Saglabāt visas cilnes grāmatzīmēs...">
+<!ENTITY bookmarkAllTabs.accesskey "T">
+<!ENTITY bookmarkThisTab.label "Saglabāt šo cilni grāmatzīmēs">
+<!ENTITY bookmarkThisTab.accesskey "B">
+<!ENTITY undoCloseTab.label "Atsaukt cilnes aizvēršanu">
+<!ENTITY undoCloseTab.accesskey "U">

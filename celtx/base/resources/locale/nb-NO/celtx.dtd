@@ -1,0 +1,965 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "E-post">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC Options">
+<!ENTITY bbc.showTitle.label "Title of Show">
+<!ENTITY bbc.sketchTitle.label "Title of Sketch">
+<!ENTITY editText.title "Edit Text">
+<!ENTITY sketch.fillColour.tooltip "Fill Colour">
+<!ENTITY sketch.group.tooltip "Group">
+<!ENTITY sketch.lower.tooltip "Lower">
+<!ENTITY sketch.lowerToBottom.tooltip "Lower to Bottom">
+<!ENTITY sketch.raise.tooltip "Raise">
+<!ENTITY sketch.raiseToTop.tooltip "Raise to Top">
+<!ENTITY sketch.strokeColour.tooltip "Stroke Colour">
+<!ENTITY sketch.ungroup.tooltip "Ungroup">
+
+<!ENTITY custom.label "Custom">
+<!ENTITY saveAsPreset.label "Save as Preset">
+<!ENTITY sceneLocking.title "Scene Locking">
+<!ENTITY sceneNumbering.label "Scene Numbering">
+<!ENTITY scenenumber.after.label "After">
+<!ENTITY scenenumber.before.label "Before">
+<!ENTITY scenenumber.example.label "Example">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Number">
+<!ENTITY scenenumber.position.label "Position">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Reset All Numbers">
+<!ENTITY scenenumber.suffix.label "Suffix">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "Film">
+<!ENTITY project.av.label "A/V">
+<!ENTITY project.theatre.label "Teater">
+<!ENTITY project.audioplay.label "Hørespill">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Add Image">
+<!ENTITY addPaletteObjects.label "Get Art Packs">
+<!ENTITY addShot.label "Add Shot">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC Scene">
+<!ENTITY bdc.cameras "Cameras">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Blue">
+<!ENTITY colour.cherry "Cherry">
+<!ENTITY colour.gold "Gold">
+<!ENTITY colour.green "Green">
+<!ENTITY colour.pink "Pink">
+<!ENTITY colour.salmon "Salmon">
+<!ENTITY colour.white "White">
+<!ENTITY colour.yellow "Yellow">
+<!ENTITY currentRevision.label "Current Revision">
+<!ENTITY createNewRevision.tooltip "Create New Revision">
+<!ENTITY default.label "Default">
+<!ENTITY enableSceneLocking.label "Lock Scenes">
+<!ENTITY fixNumbers.label "Fix">
+<!ENTITY furniture.label "Furniture">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Flood">
+<!ENTITY light.spot.label "Spot">
+<!ENTITY linesBetweenScenes.label "Lines between scenes">
+<!ENTITY man.label "Man">
+<!ENTITY numbers.bothNos "Both #s">
+<!ENTITY numbers.leftNo "Left #">
+<!ENTITY numbers.none "None">
+<!ENTITY numbers.rightNo "Right #">
+<!ENTITY omitScene.label "Omit Scene">
+<!ENTITY palette.label "Palette">
+<!ENTITY palettes.label "Palettes">
+<!ENTITY paletteTree.tooltip "Drag and drop objects onto your sketch">
+<!ENTITY people.label "People">
+<!ENTITY person.label "Person">
+<!ENTITY preventEditing.label "Text Lock">
+<!ENTITY resetRevisionMode.label "Reset Revision Mode">
+<!ENTITY revisionColour.desc "This will be used as the default revision colour for any edits made to the script.">
+<!ENTITY revisionColour.label "Revision Colour">
+<!ENTITY revisionMarks.all "All Marks">
+<!ENTITY revisionMarks.current "Current Marks">
+<!ENTITY revisionMarks.hide "Hide Marks">
+<!ENTITY revisionMarks.mark.label "Mark">
+<!ENTITY revisionMarks.unmark.label "Unmark">
+<!ENTITY revisionMode.label "Revision Mode">
+<!ENTITY revisionName.label "Revision Name">
+<!ENTITY revisionOptions.title "Revision Options">
+<!ENTITY shotSetup.label "Sketch">
+<!ENTITY shotSetup.desc "Add a sketch to your project.">
+<!ENTITY showScriptHeader.label "Show Script Header">
+<!ENTITY standard.label "Standard">
+<!ENTITY startNewRevision.label "Start a New Revision">
+<!ENTITY storyboard.showImages.label "Show Images">
+<!ENTITY storyboard.showSetups.label "Show Sketches">
+<!ENTITY storyboard.showBoth.label "Show Both">
+<!ENTITY woman.label "Woman">
+
+<!ENTITY light.bank.label "Banklight">
+<!ENTITY bathtub.label "Bath Tub">
+<!ENTITY boy.label "Boy">
+<!ENTITY car.label "Car">
+<!ENTITY chair.label "Chair">
+<!ENTITY coffeetable.label "Coffee Table">
+<!ENTITY couch.label "Couch">
+<!ENTITY crowd.label "Crowd">
+<!ENTITY endtable.label "End Table">
+<!ENTITY girl.label "Girl">
+<!ENTITY group.label "Group"> <!-- Group of people -->
+<!ENTITY house.label "House">
+<!ENTITY building.label "Building"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pickup Truck">
+<!ENTITY sink.label "Sink"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Spotlight">
+<!ENTITY street.label "Street">
+<!ENTITY toilet.label "Toilet">
+<!ENTITY tree.label "Tree">
+<!ENTITY van.label "Van">
+<!ENTITY videocamera.label "Video Camera">
+
+<!ENTITY createTemplate.label "Create Template">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "Get Celtx Tools">
+<!ENTITY myStudio.label "My Celtx">
+<!ENTITY openFromStudio.label "Open from Celtx">
+<!ENTITY owner.label "Owner">
+<!ENTITY personal.label "Personal">
+<!ENTITY saveCommentCheckbox.label "Ask me for a comment when saving to Celtx.">
+<!ENTITY saveToStudio.label "Save to Celtx">
+<!ENTITY savedBy.label "Saved By">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx Authentication">
+<!ENTITY studioAuthDialog.desc "Celtx Login">
+<!ENTITY studioProjects.label "Celtx Projects">
+<!ENTITY toolbox.label "Toolbox">
+
+<!ENTITY access.label "Tilgang">
+<!ENTITY actorProfile.desc "Legg til en beskrivelse for en skuespiller.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Tilpass til">
+<!ENTITY add.label "Legg til">
+<!ENTITY addCardCmd.label "Legg til kort">
+<!ENTITY addCmd.label "&add.label;">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Objektdetaljer">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Velg objekt">
+<!ENTITY addFolder.label "Legg til en mappe...">
+<!ENTITY addFolderCmd.label "Ny mappe">
+<!ENTITY addImages.label "Legg til bilder">
+<!ENTITY addItem.label "Legg til et objekt...">
+<!ENTITY addItemCmd.label "Ny postering">
+<!ENTITY addNote.label "Legg til notat">
+<!ENTITY addSequenceCmd.toolbarlabel "Legg til sekvens">
+<!ENTITY advanced.label "Avansert">
+<!ENTITY alignCenter.label "Midtstill">
+<!ENTITY alignJustified.label "Blokkjuster">
+<!ENTITY alignLeft.label "Venstrejuster">
+<!ENTITY alignRight.label "Høyrejuster">
+<!ENTITY allShootDays.label "Alle innspillingsdager">
+<!ENTITY allUppercase.label "ALLE">
+<!ENTITY american.label "Amerika">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label "Disse funksjonene er kun tilgjengelige for PDF-generering.">
+<!ENTITY audioplay.desc "Legg til lydklipp i prosjektet">
+<!ENTITY audioplay.label "Lydklipp">
+<!ENTITY authDialog.description "Denne handlingen forutsetter at du er logget på med din Celtx konto">
+<!ENTITY authDialog.title "Celtx autentisering">
+<!ENTITY author.label "Forfatter">
+<!ENTITY autoCharContinueds.label "Vis karakterfortsettelser">
+<!ENTITY autoSaveProject.label "Lagre prosjekt automatisk">
+<!ENTITY autoparenthesize.label "Lag parenteser når '(' tastes inn">
+<!ENTITY avScript.desc "Legg til et audiovisuelt manus til ditt prosjekt.">
+<!ENTITY avScript.label "A/V-manus">
+<!ENTITY basedOn.label "Based on">
+<!ENTITY bdc.actor        "Skuespiller">
+<!ENTITY bdc.addlabour "Tilleggsarbeid">
+<!ENTITY bdc.animals "Dyr">
+<!ENTITY bdc.camera "Kamera">
+<!ENTITY bdc.cast "Rollebesetning">
+<!ENTITY bdc.cgi "CGI">
+<!ENTITY bdc.construction "Konstruksjon">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics "Elektronikk">
+<!ENTITY bdc.equip "Spesialutstyr">
+<!ENTITY bdc.extras "Statister">
+<!ENTITY bdc.greenery "Løvverk">
+<!ENTITY bdc.hair "Hår">
+<!ENTITY bdc.handler "Dyrepasser">
+<!ENTITY bdc.lights "Lys">
+<!ENTITY bdc.livestock "Buskap">
+<!ENTITY bdc.location "Innspillingssted">
+<!ENTITY bdc.makeup "Sminke">
+<!ENTITY bdc.mechfx "Mekaniske effekter">
+<!ENTITY bdc.misc "Diverse">
+<!ENTITY bdc.music "Musikk">
+<!ENTITY bdc.opticalfx "Optiske effekter">
+<!ENTITY bdc.painting "Maling">
+<!ENTITY bdc.prodnotes "Produksjonsnotater">
+<!ENTITY bdc.props "Rekvisitter">
+<!ENTITY bdc.security "Sikkerhet">
+<!ENTITY bdc.set "Sett">
+<!ENTITY bdc.setdressing "Settpåkledning">
+<!ENTITY bdc.sound "Lyd">
+<!ENTITY bdc.soundfx "Lydeffekter">
+<!ENTITY bdc.specialfx "Spesialeffekter">
+<!ENTITY bdc.storyboard "Dreiebok">
+<!ENTITY bdc.stunts "Stunts">
+<!ENTITY bdc.vehicles "Kjøretøy">
+<!ENTITY bdc.wardrobe "Garderobe">
+<!ENTITY bdc.weapons "Våpen">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Fet">
+<!ENTITY bookmark.desc "Legg til et bokmerke.">
+<!ENTITY bookmark.label "Bokmerke">
+<!ENTITY both.label "Begge">
+<!ENTITY bottomOfPage.label "Bunnen av siden">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Legg til klassifiseringsinformasjon for et manuskript.">
+<!ENTITY breakdown.label    "Klassifisering">
+<!ENTITY breakdownReport.label "Gjennomgangsrapport">
+<!ENTITY brokenSceneEventWarning.label "Hendelsen er koblet til en scene som er fjernet.">
+<!ENTITY browseCmd.label "Bla i">
+<!ENTITY byline.label "av">
+<!ENTITY calendar.desc "Legg til en kalender for ditt prosjekt.">
+<!ENTITY calendar.label "Kalender">
+<!ENTITY callSheet.label "Dagsplan">
+<!ENTITY cast.label "Rolleliste">
+<!ENTITY castOfCharacters.label "Liste over rollene">
+<!ENTITY catalog.desc "Opprett en katalog med produksjonselementer.">
+<!ENTITY catalog.label "Liste">
+<!ENTITY catalogAddItem.tooltip "Opprett element i katalog">
+<!ENTITY catalogDeleteItem.tooltip "Slett element fra katalog">
+<!ENTITY categories.label "Kategorier">
+<!ENTITY category.label "Kategori">
+<!ENTITY celtxAccountCmd.accessKey "K">
+<!ENTITY celtxAccountCmd.label "&appName; konto ...">
+<!ENTITY celtxError.title "Celtx Feilmelding">
+<!ENTITY celtxTagline.label "Det er historien det handler om.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "En oversikt over rollefigurer og deres forhold til hverandre.">
+<!ENTITY charOutline.label "Rollefiguroversikt">
+<!ENTITY character.label "Rollefigur">
+<!ENTITY characterProfile.desc "Legg til en beskrivelse for en ny rollefigur.">
+<!ENTITY characterProfile.existing "Du kan også legge til en beskrivelse for en eksisterende rollefigur fra listen under.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select "Velg en rollefigur">
+<!ENTITY characters.label "Rollefigurer">
+<!ENTITY clearCmd.label "Tøm">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Lag et tegneseriemanus.">
+<!ENTITY comicBook.label "Tegneserie">
+<!ENTITY comment.label "Kommentar">
+<!ENTITY completed.label "Fullført">
+<!ENTITY contact.label "kontakt">
+<!ENTITY contactInformation.label "Kontaktinformasjon">
+<!ENTITY contactName.label "Kontaktnavn">
+<!ENTITY contacts.label "Kontakter">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Fortsett">
+<!ENTITY copyProject.title "Dupliser prosjekt">
+<!ENTITY copyProjectCmd.label "Dupliser prosjekt">
+<!ENTITY copyright.label "Copyright">
+<!ENTITY create.label "Opprett">
+<!ENTITY createAccount.label "Lag en konto">
+<!ENTITY createCatalogFromSelection.label "Opprett en liste fra utvalg">
+<!ENTITY createProject.label  "Create a Project">
+<!ENTITY createProject.title "Opprett prosjekt">
+<!ENTITY createdCol.label "Opprettet">
+<!ENTITY creatorCol.label "Forfatter">
+<!ENTITY crew.desc "Opprett et mannskapsdokument.">
+<!ENTITY crew.label "Mannskap">
+<!ENTITY cx "http://celtx.com/NS/v1/">
+<!ENTITY date.label "Dato">
+<!ENTITY datePicker.label "Datovelger">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "Scenetittelen ender ikke med et gyldig DAG/NATT ord. For å ordne dette må du redigere scenetittelen i skriptet eller endre DAG/NATT ordlisten i Skript-fanen i Valg.">
+<!ENTITY daynightWords.label "DAG/NATT-ord">
+<!ENTITY dayoff.label "Fridag">
+<!ENTITY daysOff.label "Fridager">
+<!ENTITY decreaseDelayCmd.tooltip "Reduser forsinkelse.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Reduser skriftstørrelse">
+<!ENTITY decreaseIndentCmd.label "Forminsk inntrykk">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Standard scenelengde">
+<!ENTITY delayLabel.tooltip "Forsinkelse (sekunder) mellom bildene">
+<!ENTITY deleteCardCmd.label "Slett kort">
+<!ENTITY deleteItem.label "Slett objekt">
+<!ENTITY deleteItemCmd.label "Slett">
+<!ENTITY department.label "Avdeling">
+<!ENTITY description.label "Beskrivelse">
+<!ENTITY details.label "Detaljer">
+<!ENTITY dialog.label "Dialog">
+<!ENTITY director.label "Regissør">
+<!ENTITY disabled.label "Deaktivert">
+<!ENTITY displayMedia.label "Vis media">
+<!ENTITY downloadProjectCmd.label "Last ned prosjekt...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Last ned">
+<!ENTITY downloadingPDF.label "Konverterer til PDF ...">
+<!ENTITY dragToSchedule.tooltip "Dra og slipp til planlegger.">
+<!ENTITY dualDialogCmd.label "Dobbel dialog">
+<!ENTITY dualDialogCmd.tooltip "Dobbel dialog">
+<!ENTITY duplicate.label "Dupliser">
+<!ENTITY duplicateItemCmd.label "Duplicate Item">
+<!ENTITY edit.label "Rediger">
+<!ENTITY editDates.label "Rediger datoer">
+<!ENTITY editProfile.label "Endre online profil">
+<!ENTITY editSceneDialog.title "Rediger scene">
+<!ENTITY editTitlePageCmd.label "Rediger tittelsiden...">
+<!ENTITY editlabel.tooltip "Klikk for å redigere">
+<!ENTITY eighths.label "Åttendedeler">
+<!ENTITY eighthsSuffix.label "8s">
+<!ENTITY element.label "Element">
+<!ENTITY elements.label "Elementer">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Dette brukes til å telle antall aktive Celtx-brukere. Ingen personelig, identifiserbar informasjon er overført under prosessen.">
+<!ENTITY enableStats.label "Send bruksstatistikk til Celtx.">
+<!ENTITY enabled.label "Aktivert">
+<!ENTITY end.label "Slutt">
+<!ENTITY endOfShooting.label "Innspillingsslutt">
+<!ENTITY enterEmbedTagPrompt.label "Skriv inn en EMBED eller OBJECT tag her:">
+<!ENTITY eventDetails.label "Hendelsesdetaljer">
+<!ENTITY every15Minutes.label "Hvert 15. minutt">
+<!ENTITY every30Minutes.label "Hver halvtime">
+<!ENTITY every5Minutes.label "Hvert 5. minutt">
+<!ENTITY everyHour.label "Hver time">
+<!ENTITY everyMinute.label "Hvert minutt">
+<!ENTITY exportList "Eksporter liste">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label "Eksporter manus ...">
+<!ENTITY externalFile.desc "Legg til en eksisterende fil til prosjektet ditt.">
+<!ENTITY externalFile.label "Fil">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc "Legg til et formatert filmmanus.">
+<!ENTITY filmScript.label "Filmmanus">
+<!ENTITY filter.label "Filtrer">
+<!ENTITY findAllCharacters.label "Opprett rollefigurer i katalogen">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Finn">
+<!ENTITY findPreviousCmd.label "Finn forrige">
+<!ENTITY findTab.label "Søk">
+<!ENTITY folder.label "Mappe">
+<!ENTITY forceOverwrite.label "Overskriv hvis server-versjonen er nyest">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Adresse">
+<!ENTITY form.affectEvent "Hvordan påvirker denne hendelsen den overordnede handlingen?">
+<!ENTITY form.age "Alder">
+<!ENTITY form.alternate "Alternativt navn">
+<!ENTITY form.antag "Antagonist">
+<!ENTITY form.antagWho "Hvem er antagonist i denne scenen?">
+<!ENTITY form.availability "Ledighet">
+<!ENTITY form.bestFriend "Bestevenn">
+<!ENTITY form.borrow "Lån">
+<!ENTITY form.build "Bygg">
+<!ENTITY form.buy "Kjøp">
+<!ENTITY form.catalyst "Katalysator">
+<!ENTITY form.cell "Celle #">
+<!ENTITY form.centralEvent "Hva er den mest sentrale hendelsen i denne scenen?">
+<!ENTITY form.charBackground "Karakterbakgrunn">
+<!ENTITY form.charGoal "Hva er denne rollefigurens mål?">
+<!ENTITY form.charPlan "Hva er denne rollefigurens plan for å oppnå sitt mål?">
+<!ENTITY form.charTraits "Rollefigurens særegenheter">
+<!ENTITY form.character "Rollefigur">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Rollefigurer benyttet av">
+<!ENTITY form.color "Farge">
+<!ENTITY form.comicRelief "humoristisk avbrekk">
+<!ENTITY form.comments "Kommentarer">
+<!ENTITY form.confidante "Betrodd venn">
+<!ENTITY form.contactInfo "Kontaktinformasjon">
+<!ENTITY form.cost "Kostnader">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Datoer ledig">
+<!ENTITY form.dateNeed "Datoer trengt">
+<!ENTITY form.dateReturn "Tilbakedato">
+<!ENTITY form.description "Beskrivelse">
+<!ENTITY form.details "Detaljer">
+<!ENTITY form.dislikes "Misliker">
+<!ENTITY form.distFeatures "Særegenheter">
+<!ENTITY form.dob "Fødselsdag">
+<!ENTITY form.dress "Antrekk">
+<!ENTITY form.education "Utdannelse">
+<!ENTITY form.elevator "Heis">
+<!ENTITY form.email "Epostadresse">
+<!ENTITY form.endDate "Sluttdato">
+<!ENTITY form.era "Æra">
+<!ENTITY form.eyes "Øyne">
+<!ENTITY form.facilityInfo "Fasilitetsinformasjon">
+<!ENTITY form.familyBack "Familiebakgrunn">
+<!ENTITY form.fullName "Fullt navn">
+<!ENTITY form.generic "Felles">
+<!ENTITY form.genericForm "Felles Tabell">
+<!ENTITY form.habits "Vaner/Uvaner">
+<!ENTITY form.hair "Hår">
+<!ENTITY form.hat "Hatt">
+<!ENTITY form.height "Høyde">
+<!ENTITY form.inScenes "I scener">
+<!ENTITY form.jacket "Jakke">
+<!ENTITY form.jobTitle "Tittel">
+<!ENTITY form.keyCharTraits "Hovedegenskaper for rollefigur">
+<!ENTITY form.lightSources "Lyskilder">
+<!ENTITY form.likes "Liker">
+<!ENTITY form.locationMap "Innspillingssted kart">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "Kjærlighetsinteressser">
+<!ENTITY form.media "Media">
+<!ENTITY form.mentor "Mentor">
+<!ENTITY form.motiv "Motivasjon">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Nr">
+<!ENTITY form.noise "Lydproblemer">
+<!ENTITY form.other "Andre">
+<!ENTITY form.pants "Bukser">
+<!ENTITY form.parking "Parkeringsinformasjon">
+<!ENTITY form.partner "Partner">
+<!ENTITY form.person "Personalitet">
+<!ENTITY form.phone "Telefonnummer #">
+<!ENTITY form.physicalDesc "Detaljert fysisk beskrivelse">
+<!ENTITY form.powerCapa "Strømmuligheter">
+<!ENTITY form.princFunction "Hva er hovedfunksjonen til denne rollefiguren?">
+<!ENTITY form.procure "Formidling">
+<!ENTITY form.propProfile "Prop">
+<!ENTITY form.protag "protagonist">
+<!ENTITY form.protagAntag "Protagonist/Antagonist">
+<!ENTITY form.protagWho "Hvem er protagonist i denne scenen?">
+<!ENTITY form.rent "Leie">
+<!ENTITY form.rentalCost "Leiekostnader">
+<!ENTITY form.role "Rolle">
+<!ENTITY form.scene "Scene">
+<!ENTITY form.sceneAntagAchieve "Hvordan oppnår antagonisten dette målet?">
+<!ENTITY form.sceneAntagGoal "Hva er målet til antagonisten i denne scenen?">
+<!ENTITY form.sceneChars "Hvilke karakterer medvirker i denne scenen?">
+<!ENTITY form.sceneDetails "Scenedetaljer">
+<!ENTITY form.sceneMood "Hvordan er stemningen i denne scenen?">
+<!ENTITY form.sceneProtagAchieve "Hvordan oppnår protagonisten dette målet?">
+<!ENTITY form.sceneProtagGoal "Hva er målet til protagonisten i denne scenen?">
+<!ENTITY form.sceneSetting "Hva er settingen i denne scenen?">
+<!ENTITY form.sceneWhen "Når finner denne scenen sted?">
+<!ENTITY form.scenesUsed "Scener brukt i">
+<!ENTITY form.scoutSelect "Speiding og utvalg">
+<!ENTITY form.scoutedFor "Speidet for scener">
+<!ENTITY form.scriptName "Manuskriptets navn">
+<!ENTITY form.selectedFor "Valgt for scener">
+<!ENTITY form.sex "Kjønn">
+<!ENTITY form.shirt "Skjorte">
+<!ENTITY form.shoes "Sko">
+<!ENTITY form.size "Størrelse">
+<!ENTITY form.squareFoot "Kvadratfot">
+<!ENTITY form.startDate "Startdato">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Garderobestørrelser">
+<!ENTITY form.washroom "Toaletter">
+<!ENTITY form.weight "Vekt">
+<!ENTITY form.wornBy "Brukt av">
+<!ENTITY form.yes "Ja">
+<!ENTITY format.label "Format">
+<!ENTITY formatAct.label      "Akt">
+<!ENTITY formatAction.label "Handling">
+<!ENTITY formatBalloon.label  "Snakkeboble">
+<!ENTITY formatBalloonType.label "Snakkebobletype">
+<!ENTITY formatCaption.label  "Teksting">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label "&character.label;">
+<!ENTITY formatDialog.label "&dialog.label;">
+<!ENTITY formatHeading.label "Overskrift">
+<!ENTITY formatMusic.label    "Musikk">
+<!ENTITY formatPage.label     "Side">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;">
+<!ENTITY formatPanel.label    "Panel">
+<!ENTITY formatPanel.shortlabel    "&formatPanel.label;">
+<!ENTITY formatParen.label "Parantes">
+<!ENTITY formatProductionNote.label "Produksjonsnotater">
+<!ENTITY formatShot.label "Tagning">
+<!ENTITY formatSound.label    "Lyd">
+<!ENTITY formatStagedir.label "Sceneveiledning">
+<!ENTITY formatText.label "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label "Overgang">
+<!ENTITY formatVoice.label    "Stemme">
+<!ENTITY fourHours.label "4 timer">
+<!ENTITY freeAndSecure.label "Gratis og sikker">
+<!ENTITY general.label "Generelt">
+<!ENTITY generatePDFCmd.label "Generer PDF...">
+<!ENTITY generateReportCmd.label "Generer rapport">
+<!ENTITY generateReportCmd.toolbarlabel "Rapport">
+<!ENTITY getProjDialog.caption "Tilgjengelige prosjekter">
+<!ENTITY getProjDialog.title "Last ned prosjekt">
+<!ENTITY gotoItemCmd.label "Gå til">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Om &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Rapporter en feil">
+<!ENTITY helpSupportCmd.accessKey "S">
+<!ENTITY helpSupportCmd.label "Støtte på nettet">
+<!ENTITY icons.label "Ikoner">
+<!ENTITY iconsAndText.label "Ikoner og tekst">
+<!ENTITY image.label "Bilde">
+<!ENTITY images.label "Bilder">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Importer manus">
+<!ENTITY importScriptCmd.toolbarLabel "Importer">
+<!ENTITY includeInWorkweek.label "Inkluder disse dagene i arbeidsuken">
+<!ENTITY includeTitlePage.label "Inkluder tittelsiden">
+<!ENTITY increaseDelayCmd.tooltip "Øk forsinkelse.">
+<!ENTITY increaseFontSizeCmd.tooltip "Øk fontstørrelse">
+<!ENTITY increaseIndentCmd.label "Øk inntrykk">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Overskrift indekskort">
+<!ENTITY indexCards.label "Indekskort">
+<!ENTITY inlineSpellCheckCmd.label "Automatisk grammatikksjekk">
+<!ENTITY insertNoteCmd.toolbarLabel "Notat">
+<!ENTITY international.label "Internasjonal">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "Scenetittlen begynner ikke med et gyldig INT/EKS ord. For å ordne dette problemet, rediger scenetittelen i skriptet eller endre INT/EKS ordlisten i Skript-fanen i Valg.">
+<!ENTITY intextWords.label "INT/EKS ord">
+<!ENTITY invalidLogin.label "Feil brukernavn eller passord.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Kursiv">
+<!ENTITY item.label "Objekt">
+<!ENTITY language.label "Språk">
+<!ENTITY left.label "Venstre">
+<!ENTITY linesPerPage.label "Lines per page">
+<!ENTITY list.label "Liste ...">
+<!ENTITY location.desc "Legg til en beskrivelse for en location.">
+<!ENTITY location.label "Optakssted">
+<!ENTITY loginOnStartup.label "Logg på ved oppstart">
+<!ENTITY lowercaseCmd.label "Små bokstaver">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Media">
+<!ENTITY mediaViewer.title "Mediaviser">
+<!ENTITY modified.label "Redigert">
+<!ENTITY modifiedCol.label "&modified.label;">
+<!ENTITY moveDownCmd.label "Flytt ned">
+<!ENTITY moveUpCmd.label "Flytt opp">
+<!ENTITY moving.label "Flytter">
+<!ENTITY name.label "Navn">
+<!ENTITY network.label "Nettverk">
+<!ENTITY never.label "Aldri">
+<!ENTITY newMarkupItem.label "&lt;Ny ...&gt;">
+<!ENTITY newProjectCmd.label "Nytt prosjekt...">
+<!ENTITY newProjectCmd.toolbarlabel "Ny">
+<!ENTITY noFileSelected.label "&lt;ingen fil valgt&gt;">
+<!ENTITY noImageSelected.label "Intet bilde er valgt">
+<!ENTITY noScriptSelected.label "Intet manus valgt">
+<!ENTITY none.label "Ingen">
+<!ENTITY noteDialog.title "Rediger notat">
+<!ENTITY notes.label "Notater">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Antall karakterer">
+<!ENTITY numberOfScenes.label "Antall scener">
+<!ENTITY oneHour.label "1 time">
+<!ENTITY oneLineSchedule.label "Enkel innspillingsplan">
+<!ENTITY open.label "Åpne">
+<!ENTITY openItemCmd.label "Åpent objekt">
+<!ENTITY openProjectCmd.label "Åpne prosjekt...">
+<!ENTITY openProjectCmd.toolbarlabel "Åpne">
+<!ENTITY openProjectFolder.label "Åpne prosjektmappen">
+<!ENTITY openRecentCmd.label "Åpne nylig redigert">
+<!ENTITY options.label "Valg">
+<!ENTITY orderedList.label "Ordered List">
+<!ENTITY outline.desc "Legg til en disposisjon med punkter.">
+<!ENTITY outline.label "Disposisjon">
+<!ENTITY over14.label "Jeg er 14 år eller eldre.">
+<!ENTITY pageAndSceneNumbering.label "Side- og scenenummerering">
+<!ENTITY paperSize.label "Papirstørrelse">
+<!ENTITY password.label "Passord">
+<!ENTITY passwordAgain.label "Gjenta passordet">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title "Konverterer til PDF">
+<!ENTITY pdfErrorHeader "OBS!">
+<!ENTITY pdfErrorText1 "Du må være online for å bruke denne funksjonaliteten.">
+<!ENTITY pdfErrorText2 "Denne Celtx web tjenesten vil på en sikker og konfidensiell måte formattere ditt manus til industristandard Screenplay, Stageplay, Audio Play eller dobbelkolonne (AV).">
+<!ENTITY pdfOptions.title "PDF-valg">
+<!ENTITY pdfOptionsCmd.label "Flere og fortsettelser">
+<!ENTITY pdfWarningHeader "Hei!">
+<!ENTITY pdfWarningText "Denne Celtx web tjenesten vil på en sikker og konfidensiell måte formattere ditt manus til industristandard Screenplay, Stageplay, Audio Play eller dobbelkolonne (AV).">
+<!ENTITY picklist.label "Plukkliste">
+<!ENTITY principalFunction.label "Hovedfunksjon">
+<!ENTITY printBackgroundColour.label "Skriv ut bakgrunnsfarver">
+<!ENTITY printCardBorders.label "Skriv ut kortkanter">
+<!ENTITY printCardsDialog.title "Skriv ut kort">
+<!ENTITY printStoryboardDialog.title "Skriv ut dreiebok">
+<!ENTITY privacy.label "Privatliv">
+<!ENTITY producer.label "Producer">
+<!ENTITY productionItems.label "Produksjonsgjenstander">
+<!ENTITY progressDialog.title "Framdrift">
+<!ENTITY project.label "Project">
+<!ENTITY projectItems.label "Nytt prosjekt inneholder">
+<!ENTITY projectLibrary.label "Prosjektbibliotek">
+<!ENTITY projectProperties.label "Prosjektinnstillinger">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Prosjektmal">
+<!ENTITY propSheet.desc "Legg til en beskrivelse for en ny rekvisitt.">
+<!ENTITY propSheet.existing "Du kan også beskrive en eksisterende rekvisitt fra listen under.">
+<!ENTITY propSheet.label "Rekvisitter">
+<!ENTITY propSheet.select "Velg en rekvisitt">
+<!ENTITY properties.label "Egenskaper">
+<!ENTITY publishDialog.findUsers "Finn brukere">
+<!ENTITY publishDialog.ownerLabel "Prosjekteier">
+<!ENTITY publishDialog.privateDesc "Privat: Bare jeg har tilgang til prosjektet">
+<!ENTITY publishDialog.privateLabel "Privat">
+<!ENTITY publishDialog.publicDesc "Offentlig: Offentliggjør prosjektet via hjemmesidene til Celtx">
+<!ENTITY publishDialog.publicLabel "Offentlig">
+<!ENTITY publishDialog.serverLabel "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Del: Del prosjektet med utvalgte brukere">
+<!ENTITY publishDialog.sharedLabel "Delt av">
+<!ENTITY publishDialog.title "Publiser prosjekt">
+<!ENTITY publishDialog.userList "Brukerliste">
+<!ENTITY publishMode.label "Legg-ut-modus">
+<!ENTITY recent.label "Nylig">
+<!ENTITY recentProjects.label "Nylige prosjekter">
+<!ENTITY recoverPassword.label "Tilbakestill passord">
+<!ENTITY recycleCmd.label "Send til notatblokk">
+<!ENTITY regWiz.aboutThis "Denne veiviseren vil samle all nødvendig informasjon som er nødvendig til registreringen.">
+<!ENTITY regWiz.accountInstructions "Vennligst velg et brukernavn og passord for din &appName; konto.">
+<!ENTITY regWiz.accountLabel "Brukerkonto">
+<!ENTITY regWiz.bullet1 "Fjern-backup">
+<!ENTITY regWiz.bullet2 "Samarbeidsområder">
+<!ENTITY regWiz.bullet3 "Publiserer til prosjektsentral">
+<!ENTITY regWiz.bullet4 "iPhone-visning av prosjekt">
+<!ENTITY regWiz.checkLabel "Sjekk kontoinformasjon">
+<!ENTITY regWiz.clickFinish "Hvis du er fornøyd med disse opplysningene, klikk 'Fullfør' for å sende inn din registrering.">
+<!ENTITY regWiz.clickFinish1 "Du er nå logget inn på &appName; serveren og har tilgang til alle våre gratis online funksjoner">
+<!ENTITY regWiz.clickFinish2 "Prøv last ned/last opp mulighetene for å lage en sikkerhetskopi av ditt prosjekt, eller hvis du kjenner noen andre med en &appName; konto, bruk prosjektdeling til å samarbeide på et felles prosjekt.">
+<!ENTITY regWiz.clickNext "Hvis du er fornøyd med disse opplysningene, klikk 'Neste' for å sende inn din registrering.">
+<!ENTITY regWiz.conclusion "Siste steg (5/5)">
+<!ENTITY regWiz.confirmIntro "Du har oppgitt følgende:">
+<!ENTITY regWiz.confirmLabel "Godta innstillingene">
+<!ENTITY regWiz.createNewAccountLabel "Lag en ny konto.">
+<!ENTITY regWiz.createYourAccountLabel "Få din egen &appName; konto! (1/5)">
+<!ENTITY regWiz.emailLabel "E-post:">
+<!ENTITY regWiz.finish "Ferdig">
+<!ENTITY regWiz.identityInstructions "Vennligst oppgi navn, organisasjon og emailadresse.">
+<!ENTITY regWiz.identityLabel "Identitet">
+<!ENTITY regWiz.intro "For å få tilgang til nettjenestene til &appName;, må du først opprette en &appName; konto.">
+<!ENTITY regWiz.loginSuccessfulLabel "Takk, du er nå logget inn på &appName;.">
+<!ENTITY regWiz.newOrExistingLabel "Lag en ny konto eller bruk en eksisterende:">
+<!ENTITY regWiz.noteCaseSensitive "Pass på forskjellen ved små og store bokstaver i brukernavnet og passordet på din &appName; konto.">
+<!ENTITY regWiz.notePassword "Ditt passord må være på minst fem tegn.">
+<!ENTITY regWiz.noteUsername "Ditt brukernavn må være på minst tre tegn, og kan kun inneholde bokstaver og tall.">
+<!ENTITY regWiz.orgLabel "Organisasjon:">
+<!ENTITY regWiz.title "&appName; registreringsveiviser">
+<!ENTITY regWiz.uidLabel "&appName; brukernavn:">
+<!ENTITY regWiz.useExistingAccountLabel "Bruk en eksisterende konto.">
+<!ENTITY regWiz.warn "Du må opprette en &appName; konto for å få tilgang til denne funksjonen.">
+<!ENTITY remove.label "Fjern">
+<!ENTITY removeCmd.label "Fjern">
+<!ENTITY removeMarkupCmd.label "Fjern">
+<!ENTITY rename.label "Omdøp">
+<!ENTITY renameItem.label "Gi objektet nytt navn...">
+<!ENTITY replaceCmd.label "Erstatt">
+<!ENTITY reportThisBug.label "Rapporter denne feilen">
+<!ENTITY reportThisBug.tooltip "Send oss en anonym feilrapport.">
+<!ENTITY reports.label "Rapporter">
+<!ENTITY right.label "Høyre">
+<!ENTITY sampleProjects.label "Prøveprosjekter">
+<!ENTITY samples.label "Prøver">
+<!ENTITY saveAsHTML.label "Lagre som HTML">
+<!ENTITY saveAsTemplate.label "Lagre som mal">
+<!ENTITY savePDFCmd.label "Lagre PDF">
+<!ENTITY savePDFCmd.tooltip "Lagre PDF">
+<!ENTITY saveProjectAsCmd.label "Lagre som...">
+<!ENTITY saveProjectCmd.label "Lagre prosjekt">
+<!ENTITY saveProjectCmd.toolbarlabel "Lagre">
+<!ENTITY scene.label "Scene">
+<!ENTITY sceneBreakdown.label "Gjennomgå scene">
+<!ENTITY sceneBreakdownWithDesc.label "Gjennomgå scene med beskrivelser">
+<!ENTITY sceneDetails.desc "Legg til en beskrivelse for en ny scene.">
+<!ENTITY sceneDetails.existing "Du kan også legge til en beskrivelse av en eksisterende scene fra listen under.">
+<!ENTITY sceneDetails.label "Scenedetaljer">
+<!ENTITY sceneDetails.select "Velg en scene">
+<!ENTITY scenePageBreaks.label "Sideskift etter hver scene">
+<!ENTITY sceneSummary.label "Sammendrag scene">
+<!ENTITY sceneTag.label "Scene merkelapp">
+<!ENTITY sceneTagDialog.title "Velg farve">
+<!ENTITY scenes.label "Scener">
+<!ENTITY schedule.desc      "Legg til en opptaksplan for manuskriptet.">
+<!ENTITY schedule.label     "Plan">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Planlegg manuskript">
+<!ENTITY scheduleID.label "Plan ID">
+<!ENTITY scheduled.label "Planlagt">
+<!ENTITY scratchpad.label "Notatblokk">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Opprett et manus i prosjektet.">
+<!ENTITY script.label "Manus">
+<!ENTITY scriptDay.label "Manus dag">
+<!ENTITY scriptEditor.label "Manuskriptets redigerer">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Formatvalg">
+<!ENTITY scriptHeader.label "Manus overskrift">
+<!ENTITY scriptReport.desc "En automatisk generert manusrapport.">
+<!ENTITY scriptReport.label "Manusrapport">
+<!ENTITY scriptWithNotes.label "Manus med notater">
+<!ENTITY selectCatalogType.label "Velg katalogtype.">
+<!ENTITY sequence.label "Sekvens">
+<!ENTITY sequences.label "Sekvenser">
+<!ENTITY server.label "Server">
+<!ENTITY setting.label "Innstilling">
+<!ENTITY sharing.label "Deling">
+<!ENTITY shootDay.label "Opptaksdag">
+<!ENTITY shootDays.label "Opptak dager">
+<!ENTITY shootingSchedule.label "Opptak plan">
+<!ENTITY shotList.label "Skuddliste">
+<!ENTITY shotWords.label "Skuddord">
+<!ENTITY shotholder.label "Dobbelklikk for å legge til et bilde.">
+<!ENTITY showContinuedCount.label "Vis neste sideantall">
+<!ENTITY showDialogBreaks.label "Vis dialogpauser">
+<!ENTITY showFirstPageNumber.label "Vis sidenummer på førstesiden">
+<!ENTITY showIDNumbers.label "Vis ID nummer">
+<!ENTITY showNotes.label "Vis notater">
+<!ENTITY showPageNumbers.label "Vis sidenumre">
+<!ENTITY showProjectFileCmd.label "Vis prosjektfil">
+<!ENTITY showSceneBreaks.label "Vis scenepauser">
+<!ENTITY showSceneHeaders.label "Show Scene Headers">
+<!ENTITY showSceneNumbers.label "Vis scenenumre">
+<!ENTITY showScript.label "Vis manus">
+<!ENTITY showTagNames.label "Vis merkelapper på kort">
+<!ENTITY showTitlePage.label "Vis tittelside">
+<!ENTITY showWorkdaysOnly.label "Vis kun arbeidsdager">
+<!ENTITY signIn.label "Logg inn">
+<!ENTITY signOut.label "Logg ut">
+<!ENTITY signedOut.label "Logget ut">
+<!ENTITY slideshowCmd.toolbarlabel "Spill">
+<!ENTITY source.label "Kilde">
+<!ENTITY spellCheckAddToDictionary.accesskey "L">
+<!ENTITY spellCheckAddToDictionary.label "Legg til i ordboken">
+<!ENTITY spellCheckCmd.label "Korrektur">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Ignorer ord">
+<!ENTITY spellCheckNoSuggestions.label "Ingen forslag funnet">
+<!ENTITY splash.celtxCentral "Celtx Central">
+<!ENTITY splash.celtxCentralDesc  "Bruk prosjektsentralen for å endre passordet ditt eller for å oppdatere din profil">
+<!ENTITY splash.discussion "Diskusjon">
+<!ENTITY splash.downloadProject "Last ned et prosjekt">
+<!ENTITY splash.downloadProjectDesc "Last ned et prosjekt fra Celtx-serveren">
+<!ENTITY splash.featureTour "Funksjonsveiviser">
+<!ENTITY splash.forums "Celtx forum">
+<!ENTITY splash.forumsDesc "Ta del i diskusjoner på Celtx forumet">
+<!ENTITY splash.gettingStarted "Oppstart">
+<!ENTITY splash.guide "Celtx brukerveiledning">
+<!ENTITY splash.help "Hjelp">
+<!ENTITY splash.helpAccount "Opprett en konto">
+<!ENTITY splash.helpAccountDesc "Ved å opprette en konto for du tilgang til server-funksjoner som for eksempel samarbeidsmuligheter med andre brukere, og PDF-generering">
+<!ENTITY splash.helpDesc "Linkene til venstre fremhever flere Celtx-ressursser">
+<!ENTITY splash.helpOptions "Valg for hjelp">
+<!ENTITY splash.inbox           "Innboks">
+<!ENTITY splash.logIn "Logg inn">
+<!ENTITY splash.newProject "Start et nytt prosjekt">
+<!ENTITY splash.newProjectDesc "Opprett et nytt prosjekt">
+<!ENTITY splash.openProject "Åpne et eksisterende prosjekt">
+<!ENTITY splash.openProjectDesc "Åpne eller legg til eksisterende prosjekter.">
+<!ENTITY splash.options "Valg">
+<!ENTITY splash.projectCentral "Prosjektområde">
+<!ENTITY splash.projects "Prosjekter">
+<!ENTITY splash.recentProjects "Nylige prosjekter">
+<!ENTITY splash.sampleDesc      "Vi har brukt Trollmannen fra Oz for å illustrere de ulike mulighetene i Celtx. De ulike dokumentene er brukt til å vise hvor mye som kreves for  produsere en enkelt scene. Inkludert i dette test-prosjektet finner du et manus, rollefigurer og skjemaer for scenedetaljer, side for praktisk informasjon og noe dedikert til selve planleggingen.">
+<!ENTITY splash.sampleProject   "Test-prosjekt">
+<!ENTITY splash.videoWalkthrus "Videogjennomganger">
+<!ENTITY splash.videoWalkthrusDesc "Kort videoveiledning for å komme raskt igang.">
+<!ENTITY splash.walkthru "Tre-minutters gjennomgang">
+<!ENTITY splash.webServices "Nettjenester">
+<!ENTITY splash.welcomePrefix "Velkommen til Celtx">
+<!ENTITY splash.welcomePrefixDesc "Media før-produksjon">
+<!ENTITY splash.wiki "Wiki guide">
+<!ENTITY splash.wikiDesc "Kilden for å lære mer om Celtx.">
+<!ENTITY splashScreen.label "Oppstartsbilde">
+<!ENTITY stackTrace.desc "Under finnes det informasjon som kan være nyttige for oss. Vennligst inkluder dette hvis du bestemmer deg for å melde ifra om feilen.">
+<!ENTITY stageplay.desc  "Legg til et scenespill-skript med internasjonalt-format.">
+<!ENTITY stageplay.label    "Skuespill">
+<!ENTITY start.label "Start">
+<!ENTITY startOfDay.label "Start på dagen">
+<!ENTITY startOfShooting.label "Innspillingsstart">
+<!ENTITY startOfWeek.label "Ukestart">
+<!ENTITY statistics.label "Statistikk">
+<!ENTITY storyboard.desc    "Organiser dreiebokbilder i opptaksrekkefølge.">
+<!ENTITY storyboard.label   "Dreiebok">
+<!ENTITY strikethrough.label "Gjennomstreking">
+<!ENTITY stripboard.label "Stripebord">
+<!ENTITY subject.label "Emne">
+<!ENTITY summary.label "Sammendrag">
+<!ENTITY syncDialog.title "Synk">
+<!ENTITY tagItemCmd.label "Hekte">
+<!ENTITY tagline.label      "Merkelapp">
+<!ENTITY tags.label "Merkelapper">
+<!ENTITY text.label "Tekst">
+<!ENTITY textDocument.desc "Legg til et tekstdokument. Nyttig for en disposisjon eller skissering av ideer.">
+<!ENTITY textDocument.label "&text.label;">
+<!ENTITY theatreTmplActTitle "AKT I">
+<!ENTITY theatreTmplSceneTitle "Scene 1">
+<!ENTITY thirtyMinutes.label "30 minutter">
+<!ENTITY threeHours.label "3 timer">
+<!ENTITY time.label "Time">
+<!ENTITY title.label "Tittel">
+<!ENTITY titlePage.label "Tittelside">
+<!ENTITY toggleEditing.label "Veksle redigering">
+<!ENTITY togglePaginationCmd.label "Slå på sideordning">
+<!ENTITY toggleScratchpadCmd.label "Vis/skjul notatblokk">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Sidestolpe">
+<!ENTITY topOfNextPage.label "Øverst på neste side">
+<!ENTITY tryAgain.label "Forsøk igjen">
+<!ENTITY twoColumns.label "Dobbelkolonne">
+<!ENTITY twoHours.label "2 timer">
+<!ENTITY typeset.label "TypeSet">
+<!ENTITY under14.label "Jeg er under 14.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Understrek">
+<!ENTITY unorderedList.label "Punktliste">
+<!ENTITY untitled.label "Uten tittel">
+<!ENTITY update.label "Oppdater">
+<!ENTITY updateInbox.label "Oppdater innboks">
+<!ENTITY uploadDialog.title "Last opp prosjekt">
+<!ENTITY uploadProjectCmd.label "Last opp prosjekt...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Last opp">
+<!ENTITY uppercaseCmd.label "Store bokstaver">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Brukernavn">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Videoveiledning">
+<!ENTITY viewProjectOnline.label "Se prosjektet på internett">
+<!ENTITY wardrobeSheet.desc "Legg til en beskrivelse for et nytt garderobeobjekt.">
+<!ENTITY wardrobeSheet.existing "Du kan også legge til en beskrivelse av et eksisterende garderobeobjekt fra listen under.">
+<!ENTITY wardrobeSheet.label "Garderobe">
+<!ENTITY wardrobeSheet.select "Velg garderobe">
+<!ENTITY webPanel.desc              "Celtx web-tjenester.">
+<!ENTITY webPanel.label             "Web-tjenester">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Lag en Celtx-konto">
+<!ENTITY webPanelIntro.text1 "Få mest mulig ut av Celtx ved å melde deg på gratis og sikre web-tjenester.">
+<!ENTITY webPanelIntro.text2 "Ta *Back up* av hele prosjektet ditt til Celtx sikre server så du har en trygg kopi i tilfelle tyveri eller harddisken din blir ødelagt.">
+<!ENTITY webPanelIntro.text3 "*Collaborate* med andre på laget ved å dele ditt prosjekt og lage et privat prosjektområde.">
+<!ENTITY webPanelIntro.text4 "*Publish* ditt mediaprosjekt til prosjektsentralen for anmeldelsre og kommentarer, og bli med i vårt voksende samfunn av mediaskapere.">
+<!ENTITY webPanelIntro.text5 "Se Celtx-prosjektet ditt i et format tilpasset din *iPhone*.">
+<!ENTITY wiz.clickFinish "Klikk på 'Fullfør' knappen for å fullføre denne veiviseren.">
+<!ENTITY wiz.clickNext "Klikk på 'Neste' knappen for å starte.">
+<!ENTITY workweek.label "Arbeidsuke">
+<!ENTITY writer.label "Forfatter">
+<!ENTITY zoom.label "Zoom">

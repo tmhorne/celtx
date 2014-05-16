@@ -1,0 +1,966 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "E-pasts">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Uzstādījumi">
+<!ENTITY timer.autostart.label "Sākt sesiju, kad atveras skripts.">
+<!ENTITY timer.schedule.label "Grafiks">
+<!ENTITY timer.useSchedule.label "Lietot ieplānotos pārtraukumus">
+<!ENTITY timer.workMinutes.label "Darbs (minūtes):">
+<!ENTITY timer.breakMinutes.label "Pārtraukums (minūtes):">
+<!ENTITY timer.alertType.label "Trauksmes veids, kad pārtraukums sākas/beidzas">
+<!ENTITY timer.showDialog.label "rādīt dialogu">
+<!ENTITY timer.endSession.label "Beigt sesiju">
+<!ENTITY timer.flashTimer.label "Uzliesmot taimeri">
+<!ENTITY timer.resetSession.label "Atgriezt sesiju">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Atskaites">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Sesijas sākšanas laiks:">
+<!ENTITY timer.totalWritingTime.label "Kopējais rakstīšanas laiks:">
+<!ENTITY timer.totalBreakTime.label "Kopējais pārtraukuma laiks:">
+<!ENTITY timer.totalTime.label "Kopējais laiks:">
+<!ENTITY timer.wordsWritten.label "Uzrakstīti vārdi">
+
+<!ENTITY timer.allSessions.label "Visas sesijas">
+<!ENTITY timer.sessionDetail.label "Sesijas Detaļas">
+<!ENTITY timer.scriptSummary.label "Skripta kopsavilkums">
+<!ENTITY timer.writingGoals.label "Rakstīšanas mērķi">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Sesijas atskaite">
+<!ENTITY timer.totalSessionTime.header "Kopējais sesijas laiks">
+<!ENTITY timer.totalSessionTime.label "Kopējais sesijas laiks">
+<!ENTITY timer.totalWordsWritten.header "Kopā uzrakstīti vārdi">
+<!ENTITY timer.totalWordsWritten.label "Kopā uzrakstīti vārdi">
+<!ENTITY timer.noSessionsToDisplay.label "Nav sesiju ko pārādīt.">
+<!ENTITY timer.sessionNo.label "Sesija #">
+<!ENTITY timer.date.label "Datums">
+
+<!ENTITY timer.tweetThis.label "Tweet Šo!">
+<!ENTITY timer.startDate.label "Sākuma datums">
+<!ENTITY timer.startTime.label "Sākuma laiks">
+<!ENTITY timer.endTime.label "Beigu laiks">
+<!ENTITY timer.breakTime.label "Pārtraukuma laiks">
+
+<!ENTITY timer.sessionStartWords.label "Vārdi sesijas sākumā">
+<!ENTITY timer.sessionEndWords.label "Vārdi sesijas beigās">
+<!ENTITY timer.newWords.header "Jauni vārdi">
+<!ENTITY timer.noNewWords.label "Vārdu skaits nav palielinājies.">
+<!ENTITY timer.newDialog.header "Jauns Dialogs">
+<!ENTITY timer.noNewDialog.label "Nav palielinājies dialogu skaits.">
+<!ENTITY timer.newCharacters.header "Jauni personāži">
+<!ENTITY timer.noNewCharacters.label "Nav jaunu personāžu.">
+<!ENTITY timer.newPages.header "Jaunas Lapas">
+<!ENTITY timer.newScenes.header "Jaunas Scēnas">
+<!ENTITY timer.newPanels.header "Jauni Paneļi">
+<!ENTITY timer.shotWords.header "Kadra Vārdi">
+<!ENTITY timer.actionWords.header "Darbības Vārdi">
+<!ENTITY timer.dialogWords.header "Dialoga vārdi">
+<!ENTITY timer.soundVoiceMusicWords.header "Skaņas/Balss/Mūzikas Vārdi">
+<!ENTITY timer.stageDirWords.header "Skatuves Vadīšanas Vārdi">
+
+<!ENTITY timer.name.label "Vārds">
+<!ENTITY timer.words.label "Vārdi">
+<!ENTITY timer.percentage.label "Procentuāli">
+
+<!ENTITY timer.summaryReport.label "Kopsavilkuma atskaite">
+<!ENTITY timer.contributionsByAuthor.label "Autora Devums">
+<!ENTITY timer.weekdaySessions.label "Sesijas pēc Nedēļas Dienām">
+<!ENTITY timer.weekdayWords.label "Vārdi pēc Nedēļas Dienām">
+<!ENTITY timer.numberOfSessions.label "Sesiju skaits">
+<!ENTITY timer.longest.label "Garākā">
+<!ENTITY timer.shortest.label "Īssākā">
+<!ENTITY timer.averageDuration.label "Vidējais Ilgums">
+<!ENTITY timer.mostWords.label "Visvairāk vārdu">
+<!ENTITY timer.leastWords.label "Vismazāk vārdu">
+<!ENTITY timer.averageWords.label "Vidēji vārdi">
+<!ENTITY timer.wordCounts.header "Vārdu skaits">
+<!ENTITY timer.element.label "Elementi">
+<!ENTITY timer.totalWords.header "Kopā vārdi">
+<!ENTITY timer.totalDialogWords.header "Kopā dialoga vārdi">
+<!ENTITY timer.character.label "Personāžs">
+<!ENTITY timer.weekday.label "Nedēļas diena">
+<!ENTITY timer.sessions.label "Sesijas">
+<!ENTITY timer.pctOfTotal.label "&#37; no Kopējā">
+<!ENTITY timer.author.label "Autors">
+
+<!ENTITY timer.writingGoalReport.label "Rakstīšanas mērķa atskaite">
+<!ENTITY timer.goalSession.header "Sesijas Mērķis">
+<!ENTITY timer.goalSession.label "Sesijas mērķis">
+<!ENTITY timer.goalDaily.header "Dienas Mērķis">
+<!ENTITY timer.goalDaily.label "Dienas mērķis">
+<!ENTITY timer.goalScript.header "Skripta Mērķis">
+<!ENTITY timer.goalScript.label "Skripta mērķis">
+<!ENTITY timer.wordGoal.label "Vārdu mērķis">
+
+<!ENTITY timer.message.label "Vēstule">
+<!ENTITY timer.tags.label "Birkas">
+<!ENTITY timer.mostRecentSession.label "Pēdējā sesija">
+
+<!ENTITY timer.alertDialog.title "Sesijas taimeris">
+<!ENTITY timer.timerMenu.tooltip "Spiest priekš iespējām">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Priekšplāna krāsa">
+<!ENTITY fullscreen.backgroundColour.tooltip "Fona krāsa">
+<!ENTITY fullscreen.fullscreen.tooltip "Pilnekrāna">
+
+<!ENTITY bbc.options.label "BBC Iespējas">
+<!ENTITY bbc.showTitle.label "Šova nosaukums">
+<!ENTITY bbc.sketchTitle.label "Skices nosaukums">
+<!ENTITY editText.title "Labot tekstu">
+<!ENTITY sketch.fillColour.tooltip "Pildījuma krāsa">
+<!ENTITY sketch.group.tooltip "Grupa">
+<!ENTITY sketch.lower.tooltip "Nolaist">
+<!ENTITY sketch.lowerToBottom.tooltip "Nolaist uz leju">
+<!ENTITY sketch.raise.tooltip "Pacelt">
+<!ENTITY sketch.raiseToTop.tooltip "Pacelt uz augšu">
+<!ENTITY sketch.strokeColour.tooltip "Triepiena krāsa">
+<!ENTITY sketch.ungroup.tooltip "Atgrupēt">
+
+<!ENTITY custom.label "Pielāgot">
+<!ENTITY saveAsPreset.label "Saglabāt kā iepriekšnorādīto">
+<!ENTITY sceneLocking.title "Scēnas slēgšana">
+<!ENTITY sceneNumbering.label "Scēnas numerācija">
+<!ENTITY scenenumber.after.label "Pēc">
+<!ENTITY scenenumber.before.label "Iepriekš">
+<!ENTITY scenenumber.example.label "Piemērs">
+<!ENTITY scenenumber.letter.label "Burts">
+<!ENTITY scenenumber.number.label "Numurs">
+<!ENTITY scenenumber.position.label "Pozīcija">
+<!ENTITY scenenumber.prefix.label "Prefikss">
+<!ENTITY scenenumbers.resetAll.label "Atgriezt visus Numurus">
+<!ENTITY scenenumber.suffix.label "Sufikss">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "Filma">
+<!ENTITY project.av.label "Audio-vizuāls">
+<!ENTITY project.theatre.label "Teātris">
+<!ENTITY project.audioplay.label "Audio luga">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Pievienot bildi">
+<!ENTITY addPaletteObjects.label "Iegūt mākslas pakas">
+<!ENTITY addShot.label "Pievienot kadru">
+<!ENTITY bbcCueStyle.label "BBC Replika">
+<!ENTITY bbcSceneStyle.label "BBC Scēna">
+<!ENTITY bdc.cameras "Kameras">
+<!ENTITY chat.label "Sarakste">
+<!ENTITY colour.blue "Zils">
+<!ENTITY colour.cherry "Ķiršu">
+<!ENTITY colour.gold "Zelta">
+<!ENTITY colour.green "Zaļš">
+<!ENTITY colour.pink "Rozā">
+<!ENTITY colour.salmon "Lasis">
+<!ENTITY colour.white "Rakstīt">
+<!ENTITY colour.yellow "Dzeltens">
+<!ENTITY currentRevision.label "Esošā revīzija">
+<!ENTITY createNewRevision.tooltip "Veidot jaunu revīziju">
+<!ENTITY default.label "Noklusējuma">
+<!ENTITY enableSceneLocking.label "Slēgt scēnas">
+<!ENTITY fixNumbers.label "Labot">
+<!ENTITY furniture.label "Furnitūra">
+<!ENTITY hollywood.label "Holivuda">
+<!ENTITY light.flood.label "Plūdi">
+<!ENTITY light.spot.label "Vieta">
+<!ENTITY linesBetweenScenes.label "Līnijas starp scēnām">
+<!ENTITY man.label "Vīrietis">
+<!ENTITY numbers.bothNos "Abus #s">
+<!ENTITY numbers.leftNo "Pa kreisi #">
+<!ENTITY numbers.none "Nekur">
+<!ENTITY numbers.rightNo "Pa labi #">
+<!ENTITY omitScene.label "Izlaist scēnu">
+<!ENTITY palette.label "Palete">
+<!ENTITY palettes.label "Paletes">
+<!ENTITY paletteTree.tooltip "Velc un nomet objektus uz savas skices">
+<!ENTITY people.label "Cilvēki">
+<!ENTITY person.label "Persona">
+<!ENTITY preventEditing.label "Teksta atslēga">
+<!ENTITY resetRevisionMode.label "Atgriezt Revīzijas veidu">
+<!ENTITY revisionColour.desc "Šī būs noklusējuma krāsa visiem labojumiem šajā skriptā.">
+<!ENTITY revisionColour.label "Revīzijas krāsa">
+<!ENTITY revisionMarks.all "Visi marķējumi">
+<!ENTITY revisionMarks.current "Esošie marķējumi">
+<!ENTITY revisionMarks.hide "Paslēpt marķējumus">
+<!ENTITY revisionMarks.mark.label "Marķēt">
+<!ENTITY revisionMarks.unmark.label "Atmarķēt">
+<!ENTITY revisionMode.label "Revīzijas Veids">
+<!ENTITY revisionName.label "Revīzijas Nosaukums">
+<!ENTITY revisionOptions.title "Revīziju iespējas">
+<!ENTITY shotSetup.label "Skice">
+<!ENTITY shotSetup.desc "Pievienot skici projektam.">
+<!ENTITY showScriptHeader.label "Rādīt Skripta Galveni">
+<!ENTITY standard.label "Standarts">
+<!ENTITY startNewRevision.label "Sākt jaunu revīziju">
+<!ENTITY storyboard.showImages.label "rādīt Bildes">
+<!ENTITY storyboard.showSetups.label "Rādīt Skices">
+<!ENTITY storyboard.showBoth.label "Rādīt abus">
+<!ENTITY woman.label "Sieviete">
+
+<!ENTITY light.bank.label "Sasvērtā lampa">
+<!ENTITY bathtub.label "Vanna">
+<!ENTITY boy.label "Zēns">
+<!ENTITY car.label "Mašīna">
+<!ENTITY chair.label "Krēsls">
+<!ENTITY coffeetable.label "Kafijas Galds">
+<!ENTITY couch.label "Dīvāns">
+<!ENTITY crowd.label "Pūlis">
+<!ENTITY endtable.label "Beigu galds">
+<!ENTITY girl.label "Meitene">
+<!ENTITY group.label "Grupa"> <!-- Group of people -->
+<!ENTITY house.label "Māja">
+<!ENTITY building.label "Būve"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pikaps">
+<!ENTITY sink.label "Izlietne"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Prožektors">
+<!ENTITY street.label "Iela">
+<!ENTITY toilet.label "Tualete">
+<!ENTITY tree.label "Koks">
+<!ENTITY van.label "Furgons">
+<!ENTITY videocamera.label "Video Kamera">
+
+<!ENTITY addImages.label "Pievienot attēus">
+
+<!ENTITY studioAuthDialog.title "Celtx autorizācija">
+<!ENTITY studioAuthDialog.desc "Pieslēgties Celtx">
+
+<!ENTITY access.label "Pieeja">
+<!ENTITY actorProfile.desc      "Pievienot aktierim aprakstu.">
+<!ENTITY actorProfile.label     "&bdc.actor;">
+<!ENTITY adaptTo.label "Pielāgot">
+<!ENTITY add.label    "Pievienot">
+<!ENTITY addCardCmd.label "Pievienot Kartiņu">
+<!ENTITY addCmd.label "Pievienot">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Sīkāk par elementu">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Izvēlēties elementu">
+<!ENTITY addFolder.label "Pievienot Mapi...">
+<!ENTITY addFolderCmd.label "Pievienot Mapi">
+<!ENTITY addItem.label "Pievienot elementu...">
+<!ENTITY addItemCmd.label "Pievienot elementu">
+<!ENTITY addNote.label "Pievienot piezīmi">
+<!ENTITY addSequenceCmd.toolbarlabel "Pievienot sekvenci">
+<!ENTITY advanced.label       "Paplašināts">
+<!ENTITY alignCenter.label "Izlīdzināt centrējot ">
+<!ENTITY alignJustified.label "Izlīdzināt">
+<!ENTITY alignLeft.label "Izlīdzināt pa kreisi">
+<!ENTITY alignRight.label "Izlīdzināt pa labi">
+<!ENTITY allShootDays.label "Visas filmēšanas dienas">
+<!ENTITY allUppercase.label "VISS">
+<!ENTITY american.label "Amerikāņu">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label  "Šīs iespējas ir pieejamas tikai lai ģenerētu PDF.">
+<!ENTITY audioplay.desc "Pievienot audio scenāriju Jūsu projektam.">
+<!ENTITY audioplay.label "Audio scenārijs">
+<!ENTITY authDialog.description  "Lai veiktu šo darbību, nepieciešams pieslēgties Jūsu Celtx lietotāja kontam">
+<!ENTITY authDialog.title       "Celtx autorizācija">
+<!ENTITY author.label "Autors">
+<!ENTITY autoCharContinueds.label   "Rādīt personāžu runas pārrāvumu">
+<!ENTITY autoSaveProject.label "Automātiski saglabāt projektu">
+<!ENTITY autoparenthesize.label "Aizvērt iekavas pēc '(' uzrakstīšanas">
+<!ENTITY avScript.desc "Pievienot projektam audio-vizuālu scenāriju.">
+<!ENTITY avScript.label "Audio-vizuāls scenārijs">
+<!ENTITY basedOn.label "Pēc">
+<!ENTITY bdc.actor        "Aktieris">
+<!ENTITY bdc.addlabour    "Papildus resursi">
+<!ENTITY bdc.animals      "Dzīvnieki">
+<!ENTITY bdc.camera       "Kamera">
+<!ENTITY bdc.cast         "Tēlotāju sastāvs">
+<!ENTITY bdc.cgi          "Datorgrafika">
+<!ENTITY bdc.construction "Konstrukcijas">
+<!ENTITY bdc.crew         "&crew.label;">
+<!ENTITY bdc.electrics    "Elektronika">
+<!ENTITY bdc.equip        "Specializētās iekārtas">
+<!ENTITY bdc.extras       "Statisti">
+<!ENTITY bdc.greenery     "Zaļumi">
+<!ENTITY bdc.hair         "Frizūras">
+<!ENTITY bdc.handler      "Dzīvnieku dresētājs">
+<!ENTITY bdc.lights       "Apgaismojums">
+<!ENTITY bdc.livestock    "Mājlopi">
+<!ENTITY bdc.location     "Filmēšanas vieta">
+<!ENTITY bdc.makeup       "Grims">
+<!ENTITY bdc.mechfx       "Mehāniskie efekti">
+<!ENTITY bdc.misc         "Dažādi">
+<!ENTITY bdc.music        "Mūzika">
+<!ENTITY bdc.opticalfx    "Optiskie efekti">
+<!ENTITY bdc.painting     "Krāsojums">
+<!ENTITY bdc.prodnotes    "Producenta piezīmes">
+<!ENTITY bdc.props        "Rekvizīti">
+<!ENTITY bdc.security     "Drošība">
+<!ENTITY bdc.set          "Filmēšanas laukums">
+<!ENTITY bdc.setdressing  "Filmēšanas laukuma noformējums">
+<!ENTITY bdc.sound        "Skaņa">
+<!ENTITY bdc.soundfx      "Skaņu efekti">
+<!ENTITY bdc.specialfx    "Vizuālie efekti">
+<!ENTITY bdc.storyboard   "Sižeta makets (Storyboard)">
+<!ENTITY bdc.stunts       "Triki un kaskadieri">
+<!ENTITY bdc.vehicles     "Transports">
+<!ENTITY bdc.wardrobe     "Kostīms">
+<!ENTITY bdc.weapons      "Ieroči">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Treknraksts">
+<!ENTITY bookmark.desc      "Pievienot interneta saiti.">
+<!ENTITY bookmark.label     "Grāmatzīme">
+<!ENTITY both.label   "Abus">
+<!ENTITY bottomOfPage.label         "Lapas leja">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Pievienot skriptam analītisku informāciju.">
+<!ENTITY breakdown.label    "Analītika">
+<!ENTITY breakdownReport.label "Sadalījumu atskaite">
+<!ENTITY brokenSceneEventWarning.label "Notikums attiecas uz scēnu, kura vairs neeksistē.">
+<!ENTITY browseCmd.label      "Pārlūkot">
+<!ENTITY byline.label "autors">
+<!ENTITY calendar.desc      "Pievienot projektam Kalendāru.">
+<!ENTITY calendar.label     "Kalendārs">
+<!ENTITY callSheet.label "Dienas plāns">
+<!ENTITY cast.label "Tēlotāju sastāvs">
+<!ENTITY castOfCharacters.label "Tēlotāju sastāvs un personāži">
+<!ENTITY catalog.desc "Pievienot producēšanas priekšmetu Katalogu Jūsu projektam.">
+<!ENTITY catalog.label "Katalogs">
+<!ENTITY catalogDeleteItem.tooltip "Dzēst priekšmetu no kataloga">
+<!ENTITY catalogAddItem.tooltip "Pievienot priekšmetu katalogam">
+<!ENTITY categories.label "Kategorijas">
+<!ENTITY category.label     "Kategorija">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; konts...">
+<!ENTITY celtxError.title       "Celtx Kļūda">
+<!ENTITY celtxTagline.label "Galvenais lai ir laba ideja!">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Personāžu apraksts un to savstarpējās attiecības.">
+<!ENTITY charOutline.label "Personāža apraksts">
+<!ENTITY character.label        "Personāžs">
+<!ENTITY characterProfile.desc  "Pievienot aprakstu jaunam personāžam.">
+<!ENTITY characterProfile.existing  "Izmainīt aprakstu personāžam no sekojošā saraksta.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "Izvēlēties personāžu">
+<!ENTITY characters.label       "Personāžas">
+<!ENTITY clearCmd.label "Notīrīt">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Izveidot komiksa scenāriju.">
+<!ENTITY comicBook.label "Komikss">
+<!ENTITY comment.label "Komentārs">
+<!ENTITY completed.label "Pabeigts">
+<!ENTITY contact.label "Kontakti">
+<!ENTITY contactInformation.label "Kontaktinformācija">
+<!ENTITY contactName.label "Kontakta vārds">
+<!ENTITY contacts.label "Kontaktinformācija">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Turpināt">
+<!ENTITY copyProject.title    "Dublēt projektu">
+<!ENTITY copyProjectCmd.label "Dublēt projektu">
+<!ENTITY copyright.label "Autortiesības">
+<!ENTITY create.label "Izveidot">
+<!ENTITY createAccount.label "Izveidot lietotāja kontu">
+<!ENTITY createCatalogFromSelection.label "Izveidot katalogu no atlasītajiem elementiem">
+<!ENTITY createProject.label  "Izveidot projektu">
+<!ENTITY createProject.title  "Izveidot projektu">
+<!ENTITY createTemplate.label "Izveidot sagatavi">
+<!ENTITY createdCol.label  "Izveidots">
+<!ENTITY creatorCol.label  "Autors">
+<!ENTITY crew.desc "Pievienot ekipāžas dokumentu.">
+<!ENTITY crew.label "Ekipāža">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "Datums">
+<!ENTITY datePicker.label "Datuma izvēle">
+<!ENTITY daynightHeader.label "D/N">
+<!ENTITY daynightWarning.label "Scēnas virsrakts nebeidzas ar vārdiem DIENA/NAKTS. Lai novērstu šo problēmu, labojiet scēnas virsrakstu scenārijā, vai arī Uzstādījumu loga Scenārija cilnē koriģējiet DIENA/NAKTS vārdu sarakstu.">
+<!ENTITY daynightWords.label "Vārdi DIENA/NAKTS">
+<!ENTITY dayoff.label "Brīvdiena">
+<!ENTITY daysOff.label "Brīvdienas">
+<!ENTITY decreaseDelayCmd.tooltip "Palielināt aizturi.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Samazināt fonta izmēru">
+<!ENTITY decreaseIndentCmd.label "Pamazināt atkāpi">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Noklusētais scēnas garums">
+<!ENTITY delayLabel.tooltip "Aizture (sekundēs) starp bildēm">
+<!ENTITY deleteCardCmd.label "Dzēst kariņu">
+<!ENTITY deleteItem.label "Dzēst elementu">
+<!ENTITY deleteItemCmd.label        "Dzēst">
+<!ENTITY department.label   "Departaments">
+<!ENTITY description.label  "Apraksts">
+<!ENTITY details.label          "Detaļas">
+<!ENTITY dialog.label           "Dialogs">
+<!ENTITY director.label "Režisors">
+<!ENTITY disabled.label "Atslēgts">
+<!ENTITY displayMedia.label "Rādīt multivides-failus">
+<!ENTITY downloadProjectCmd.label "Lejupielādēt projektu...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Lejupielādēt">
+<!ENTITY downloadingPDF.label       "Konvertē uz PDF...">
+<!ENTITY dragToSchedule.tooltip "Vilkt un nomest lai pievienotu sarakstam.">
+<!ENTITY dualDialogCmd.label "Vienlaicīgais dialogs">
+<!ENTITY dualDialogCmd.tooltip "Vienlaicīgais dialogs">
+<!ENTITY duplicate.label "Dublicēt">
+<!ENTITY duplicateItemCmd.label "Dublicēt elementu">
+<!ENTITY edit.label "Rediģēt">
+<!ENTITY editDates.label "Rediģēt datumus">
+<!ENTITY editProfile.label "Rediģēt Profilu">
+<!ENTITY editSceneDialog.title "Rediģēt scēnu">
+<!ENTITY editTitlePageCmd.label "Rediģēt Titullapu...">
+<!ENTITY editlabel.tooltip "Klikšķināt lai rediģētu">
+<!ENTITY eighths.label "Astotdaļa">
+<!ENTITY eighthsSuffix.label "1/8">
+<!ENTITY element.label          "Elements">
+<!ENTITY elements.label         "Elementi">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "Šis ir paredzēts lai saskaitītu Celtx aktīvos lietotājus. Nekāda personīgā informācija vai projekta dati šajā procesā netiek nosūtīti.">
+<!ENTITY enableStats.label    "Pie palaišanas atļaut savienoties ar centrālo serveri.">
+<!ENTITY enabled.label "Aktivizēts">
+<!ENTITY end.label "Beigas">
+<!ENTITY endOfShooting.label "Filmēšanas beigas">
+<!ENTITY enterEmbedTagPrompt.label "Ievadiet šeit EMBED vai OBJECT tagu:">
+<!ENTITY eventDetails.label "Notikuma detaļas">
+<!ENTITY every15Minutes.label "Ik pēc 15 minūtēm">
+<!ENTITY every30Minutes.label "Ik pēc pusstundas">
+<!ENTITY every5Minutes.label "Ik pēc 5 minūtēm">
+<!ENTITY everyHour.label "Katru stundu">
+<!ENTITY everyMinute.label "Katru minūti">
+<!ENTITY exportList "Eksportēšanas saraksts">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label      "Eksportēt scenāriju">
+<!ENTITY externalFile.desc  "Pievienot projektam jebkādu failu.">
+<!ENTITY externalFile.label "Fails">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "Pievienot formatētu kinoscenāriju.">
+<!ENTITY filmScript.label   "Kinoscenārijs">
+<!ENTITY filter.label "Filtrs">
+<!ENTITY findAllCharacters.label "Pievienot personāžu katalogam">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Meklēt...">
+<!ENTITY findPreviousCmd.label "Meklēt iepriekšējo">
+<!ENTITY findTab.label "Meklēt">
+<!ENTITY folder.label "Mape">
+<!ENTITY forceOverwrite.label "Pārrakstīt, ja versija uz servera ir jaunāka.">
+<!ENTITY form.actorLink "URL">
+<!ENTITY form.actorProfile "&bdc.actor;">
+<!ENTITY form.address "Adrese">
+<!ENTITY form.affectEvent "Kā šis notikums iespaido sižetu kopumā?">
+<!ENTITY form.age "Vecums">
+<!ENTITY form.alternate "Alternatīvs nosaukums">
+<!ENTITY form.antag "ļaunais tēls">
+<!ENTITY form.antagWho "Kuri ir ļaunie tēli šajā scēnā?">
+<!ENTITY form.availability "Pieejamība">
+<!ENTITY form.bestFriend "labākais draugs">
+<!ENTITY form.borrow "Aizņemties">
+<!ENTITY form.build "Izgatavot">
+<!ENTITY form.buy "Pirkt">
+<!ENTITY form.catalyst "katalizators">
+<!ENTITY form.cell "Mobilais telefons">
+<!ENTITY form.centralEvent "Kas ir centrālais notikums šajā scēnā?">
+<!ENTITY form.charBackground "Personāža izcelsme">
+<!ENTITY form.charGoal "Kāds ir šī personāža mērķis?">
+<!ENTITY form.charPlan "Kā personāžs plāno sasniegt mērķi?">
+<!ENTITY form.charTraits "Personāža raksturīgās īpašības">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "&character.label;">
+<!ENTITY form.charactersUsed "Personāži kuri izmanto">
+<!ENTITY form.color "Krāsa">
+<!ENTITY form.comicRelief "komiķis">
+<!ENTITY form.comments "Komentāri">
+<!ENTITY form.confidante "mīlulis">
+<!ENTITY form.contactInfo "Kontaktinformācija">
+<!ENTITY form.cost "Cena">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "&crew.label;">
+<!ENTITY form.dateAvail "Pieejamība (laiki, datumi)">
+<!ENTITY form.dateNeed "Pieprasītais datums">
+<!ENTITY form.dateReturn "Atgriešanas datums">
+<!ENTITY form.description "Apraksts">
+<!ENTITY form.details "Detaļas">
+<!ENTITY form.dislikes "Nepatīk">
+<!ENTITY form.distFeatures "Atšķirīgās pazīmes">
+<!ENTITY form.dob "Dzimšanas datums">
+<!ENTITY form.dress "Kleita">
+<!ENTITY form.education "Izglītība">
+<!ENTITY form.elevator "Lifts">
+<!ENTITY form.email "Epasta adrese">
+<!ENTITY form.endDate "Beigu datums">
+<!ENTITY form.era "Ēra">
+<!ENTITY form.eyes "Acis">
+<!ENTITY form.facilityInfo "Informācija par aprīkojumu">
+<!ENTITY form.familyBack "Ģimene">
+<!ENTITY form.fullName "Pilns vārds un uzvārds">
+<!ENTITY form.generic "Vispārīgs">
+<!ENTITY form.genericForm "Standarta forma">
+<!ENTITY form.habits "Ieradumi/Trūkumi">
+<!ENTITY form.hair "Mati">
+<!ENTITY form.hat "Cepure">
+<!ENTITY form.height "Garums">
+<!ENTITY form.inScenes "Scēnās">
+<!ENTITY form.jacket "Jaka">
+<!ENTITY form.jobTitle "Nosaukums">
+<!ENTITY form.keyCharTraits "Vadošā personāža rakstura īpašības">
+<!ENTITY form.lightSources "Gaismas avoti">
+<!ENTITY form.likes "Patīk">
+<!ENTITY form.locationMap "Filmēšanas vietas plāns">
+<!ENTITY form.locationProfile "&location.label;">
+<!ENTITY form.loveInterest "mīlas aizraušanās">
+<!ENTITY form.media "Multivides faili">
+<!ENTITY form.mentor "padomdevējs">
+<!ENTITY form.motiv "Motivācija">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Nē">
+<!ENTITY form.noise "Trokšņa problēmas">
+<!ENTITY form.other "cits">
+<!ENTITY form.pants "Bikses">
+<!ENTITY form.parking "Noparkošanās informācija">
+<!ENTITY form.partner "partneris">
+<!ENTITY form.person "Personība">
+<!ENTITY form.phone "Telefons">
+<!ENTITY form.physicalDesc "Detalizēts fiziskais apraksts">
+<!ENTITY form.powerCapa "Pieļaujamā elektroiekārtu jauda">
+<!ENTITY form.princFunction "Kādas ir šī tēla pamatfunkcijas?">
+<!ENTITY form.procure "Sagādes veids">
+<!ENTITY form.propProfile "Rekvizīts">
+<!ENTITY form.protag "Labais tēls">
+<!ENTITY form.protagAntag "Labie un ļaunie tēli">
+<!ENTITY form.protagWho "Kari ir labie tēli šajā scēnā?">
+<!ENTITY form.rent "Noma">
+<!ENTITY form.rentalCost "Nomas maksa">
+<!ENTITY form.role "Loma">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Kā sliktie tēli sasniedz šo mērķi?">
+<!ENTITY form.sceneAntagGoal "Kāds ir slikto tēlu mērķis šajā scēnā?">
+<!ENTITY form.sceneChars "Kuri personāži piedalās šajā scēnā?">
+<!ENTITY form.sceneDetails "Scēnas detaļas">
+<!ENTITY form.sceneMood "Kāda ir šīs scēnas noskaņa?">
+<!ENTITY form.sceneProtagAchieve "Kā labais tēls sasniedz šo mērķi?">
+<!ENTITY form.sceneProtagGoal "Kāds ir labā tēla mērķis šajā scēnā?">
+<!ENTITY form.sceneSetting "Kāds ir šīs scēnas aranžējums?">
+<!ENTITY form.sceneWhen "Kad norisinās šī scēna?">
+<!ENTITY form.scenesUsed "Scēnas kurās tiek izmantots">
+<!ENTITY form.scoutSelect "Talantu nolūkošana un izvēle">
+<!ENTITY form.scoutedFor "Nolūkots scēnām">
+<!ENTITY form.scriptName "Scenārija nosaukums">
+<!ENTITY form.selectedFor "Izvēlēts scēnām">
+<!ENTITY form.sex "Dzimums">
+<!ENTITY form.shirt "Krekls">
+<!ENTITY form.shoes "Apavi">
+<!ENTITY form.size "Izmērs">
+<!ENTITY form.squareFoot "Platība">
+<!ENTITY form.startDate "Sākuma datums">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Kostīmu izmēri">
+<!ENTITY form.washroom "Labierīcību izvietojums">
+<!ENTITY form.weight "Svars">
+<!ENTITY form.wornBy "Valkā/Lieto">
+<!ENTITY form.yes "Jā">
+<!ENTITY format.label         "Formāts">
+<!ENTITY formatAct.label      "Akts">
+<!ENTITY formatAction.label   "Darbība">
+<!ENTITY formatBalloon.label  "Balons">
+<!ENTITY formatBalloonType.label "Balona veids">
+<!ENTITY formatCaption.label  "Subtitri">
+<!ENTITY formatCaption.shortlabel  "&formatCaption.label;">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "Virsraksts">
+<!ENTITY formatMusic.label    "Mūzika">
+<!ENTITY formatPage.label     "Lapa">
+<!ENTITY formatPage.shortlabel     "&formatPage.label;">
+<!ENTITY formatPanel.label    "Panelis">
+<!ENTITY formatPanel.shortlabel    "Pan.">
+<!ENTITY formatParen.label    "Iestarpinājums">
+<!ENTITY formatProductionNote.label "Ražošanas piezīme">
+<!ENTITY formatShot.label     "Kadrs">
+<!ENTITY formatSound.label    "Skaņa">
+<!ENTITY formatStagedir.label "Skatuves norādījumi">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "Pāreja">
+<!ENTITY formatVoice.label    "Balss">
+<!ENTITY fourHours.label "Četras stundas">
+<!ENTITY freeAndSecure.label "Bezmaksas un droši">
+<!ENTITY general.label "Vispārējs">
+<!ENTITY generatePDFCmd.label "Ģenerēt PDF failu...">
+<!ENTITY generateReportCmd.label "Ģenerēt atskaiti">
+<!ENTITY generateReportCmd.toolbarlabel "Atskaite">
+<!ENTITY getCeltxTools.label "Iegūt Celtx rīkus">
+<!ENTITY getProjDialog.caption "Pieejamie projekti">
+<!ENTITY getProjDialog.title   "Lejupielādēt projektu">
+<!ENTITY gotoItemCmd.label          "Iet uz">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "Par &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Ziņot par kļūdu">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Tiešsaistes atbalsts">
+<!ENTITY icons.label "Ikonas">
+<!ENTITY iconsAndText.label "Ikonas un teksts">
+<!ENTITY image.label "Attēls">
+<!ENTITY images.label "Attēli">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Importēt scenāriju">
+<!ENTITY importScriptCmd.toolbarLabel "Importēt">
+<!ENTITY includeInWorkweek.label "Iekļaut šīs dienas darba nedēļā">
+<!ENTITY includeTitlePage.label "Iekļaut titullapu">
+<!ENTITY increaseDelayCmd.tooltip "Palielināt aizturi.">
+<!ENTITY increaseFontSizeCmd.tooltip "Palielināt fonta lielumu">
+<!ENTITY increaseIndentCmd.label "Palielināt atkāpi">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Indeksa kartiņas virsrakts">
+<!ENTITY indexCards.label "Indeksa kartiņas">
+<!ENTITY inlineSpellCheckCmd.label "Pareizrakstības pārbaude">
+<!ENTITY insertNoteCmd.toolbarLabel "Piezīme">
+<!ENTITY international.label "Starptautisks">
+<!ENTITY intextHeader.label "I/E">
+<!ENTITY intextWarning.label "Scēnas virsraksts nesākas ar korektu INT/EXT vārdu. Lai novērstu šo problēmu, labojiet scēnas virsraktu scenārijā, vai arī Uzstādījumu loga Scenārija cilnē koriģējiet INT/EXT vārdu sarakstu.">
+<!ENTITY intextWords.label "INT/EXT vārdi">
+<!ENTITY invalidLogin.label   "Nepareizs lietotāja vārds vai parole.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Slīpraksts">
+<!ENTITY item.label         "Elements">
+<!ENTITY language.label "Valoda">
+<!ENTITY left.label   "Pa kreisi">
+<!ENTITY linesPerPage.label "Līnijas lapā">
+<!ENTITY list.label "Parādīt...">
+<!ENTITY location.desc "Pievienot notikuma vietas aprakstu">
+<!ENTITY location.label "Notikuma vieta">
+<!ENTITY loginOnStartup.label "Programmai startējot automātiski pieslēgties">
+<!ENTITY lowercaseCmd.label "Mazie burti">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Mēdiji">
+<!ENTITY mediaViewer.title "Audio/Video">
+<!ENTITY modified.label "Labots">
+<!ENTITY modifiedCol.label "Labots">
+<!ENTITY moveDownCmd.label "virzīt uz leju">
+<!ENTITY moveUpCmd.label "virzīt uz augšu">
+<!ENTITY moving.label "Pārbraucieni">
+<!ENTITY myStudio.label "Mana Celtx">
+<!ENTITY name.label "Vārds">
+<!ENTITY network.label "Tīkls">
+<!ENTITY never.label "Nekad">
+<!ENTITY newMarkupItem.label "&lt;Jauns ...&gt;">
+<!ENTITY newProjectCmd.label "Jauns projekts...">
+<!ENTITY newProjectCmd.toolbarlabel "Jauns">
+<!ENTITY noFileSelected.label   "&lt;fails nav izvēlēts&gt;">
+<!ENTITY noImageSelected.label "Neviens attēls nav izvēlēts">
+<!ENTITY noScriptSelected.label "Neviens scenārijs nav izvēlēts">
+<!ENTITY none.label "Nevienu">
+<!ENTITY noteDialog.title           "Labot piezīmi">
+<!ENTITY notes.label "Piezīmes">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Personāžu skaits">
+<!ENTITY numberOfScenes.label "Scēnu skaits">
+<!ENTITY oneHour.label "Viena stunda">
+<!ENTITY oneLineSchedule.label "Īsais grafiks">
+<!ENTITY open.label "Atvērt">
+<!ENTITY openFromStudio.label "Atvērt no Celtx">
+<!ENTITY openItemCmd.label "Atvērt vienību">
+<!ENTITY openProjectCmd.label "Atvērt projektu...">
+<!ENTITY openProjectCmd.toolbarlabel "Atvērt">
+<!ENTITY openProjectFolder.label "Atvērt projekta mapi">
+<!ENTITY openRecentCmd.label "Atvērt neseno...">
+<!ENTITY options.label "Opcijas">
+<!ENTITY orderedList.label "Sakārtots saraksts">
+<!ENTITY outline.desc       "Pievienot īsu konspektu.">
+<!ENTITY outline.label      "Konspekts">
+<!ENTITY over14.label "Es esmu 14 vai vairāk gadus vecs.">
+<!ENTITY owner.label "Īpašnieks">
+<!ENTITY pageAndSceneNumbering.label  "Lapas un scēnas numerācija">
+<!ENTITY paperSize.label "Papīra formāts">
+<!ENTITY password.label "Parole">
+<!ENTITY passwordAgain.label "Atkārtojiet paroli">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title    "Konvertē uz PDF">
+<!ENTITY pdfErrorHeader "Oppā!">
+<!ENTITY pdfErrorText1 "Lai lietotu šo paplašināto iespēju, jums jābūt tiešsaistē.">
+<!ENTITY pdfErrorText2 "Drošs un privāts, šis paplašinātais Celtx serviss, automātiski formatē Jūsu scenāriju atbilstoši kino, skatuves uzvedumu, audio vai audiovizuālu uzvedumu industriju standartiem.">
+<!ENTITY pdfOptions.title           "PDF Opcijas">
+<!ENTITY pdfOptionsCmd.label "Papildinošie apzīmējumi">
+<!ENTITY pdfWarningHeader "Sveiki!">
+<!ENTITY pdfWarningText "Drošs un privāts, šis paplašinātais Celtx serviss, automātiski formatē Jūsu scenāriju atbilstoši kino, skatuves, audio vai audiovizuālu uzvedumu industriju standartiem.">
+<!ENTITY personal.label "Privāts">
+<!ENTITY picklist.label "Saraksts">
+<!ENTITY principalFunction.label "Pamatfunkcijas">
+<!ENTITY printBackgroundColour.label "Drukāt fonu">
+<!ENTITY printCardBorders.label "Drukāt kartiņu apmales">
+<!ENTITY printCardsDialog.title "Drukāt kartiņas">
+<!ENTITY printStoryboardDialog.title "Drukāt Sižeta maketu (Storyboard)">
+<!ENTITY privacy.label "Privātums">
+<!ENTITY producer.label "Producents">
+<!ENTITY productionItems.label "Ražošanas elementi">
+<!ENTITY progressDialog.title "Progress">
+<!ENTITY project.label "Projekts">
+<!ENTITY projectItems.label   "Jaunu projektu saturs">
+<!ENTITY projectLibrary.label "Projektu bibliotēka">
+<!ENTITY projectProperties.label "Projekta Iestatījumi">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Projekta sagataves">
+<!ENTITY propSheet.desc         "Pievienot jauna rekvizīta aprakstu.">
+<!ENTITY propSheet.existing  "Jūs varat arī aprakstīt jau esošu rekvizītu no sekojošā saraksta:">
+<!ENTITY propSheet.label        "Butaforijas">
+<!ENTITY propSheet.select       "Izvēlēties butaforiju">
+<!ENTITY properties.label "Īpašības">
+<!ENTITY publishDialog.findUsers    "Atrast Lietotājus">
+<!ENTITY publishDialog.ownerLabel   "Projekta īpašnieks">
+<!ENTITY publishDialog.privateDesc "Privāts: Tikai man ir piekļuves atļauja.">
+<!ENTITY publishDialog.privateLabel "Privāts">
+<!ENTITY publishDialog.publicDesc "Publisks: Publicēt projektu Projektu centrālē.">
+<!ENTITY publishDialog.publicLabel  "Publisks">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Koplietojams: Koplietot projektu ar manis izvēlētiem lietotājiem.">
+<!ENTITY publishDialog.sharedLabel  "Koplietot ar">
+<!ENTITY publishDialog.title        "Publicēt projektu">
+<!ENTITY publishDialog.userList     "Lietotāju saraksts">
+<!ENTITY publishMode.label "Publicēšanas veids">
+<!ENTITY recent.label "Nesenie">
+<!ENTITY recentProjects.label "Nesenie projekti">
+<!ENTITY recoverPassword.label "Atjaunot paroli">
+<!ENTITY recycleCmd.label "Sūtīt uz piezīmju blociņu">
+<!ENTITY regWiz.aboutThis "Tiklīdz Jūsu konts tiks izveidots, Jūs automātiski tiksiet pieslēgts sistēmai.">
+<!ENTITY regWiz.accountInstructions "Izvēlieties lietotājvārdu un paroli Jūsu &appName; kontam. (Uzmanību: lietotājvārdos un parolēs, lielie un mazie burti tiek uztverti kā atšķirīgi simboli.)">
+<!ENTITY regWiz.accountLabel "Lietotāja konts (3/5)">
+<!ENTITY regWiz.bullet1 "Attālināti rezerves dublējumi">
+<!ENTITY regWiz.bullet2 "Kopdarbības iespējas">
+<!ENTITY regWiz.bullet3 "Projektu publicēšana Projektu centrālē">
+<!ENTITY regWiz.bullet4 "Projektu pārlūkošana ar iPhone">
+<!ENTITY regWiz.checkLabel "Konta Informācijas pārbaude">
+<!ENTITY regWiz.clickFinish "Paldies, ka kļuvāt par &appName; kopienas biedru.">
+<!ENTITY regWiz.clickFinish1 "Jūs esat pieslēdzies &appName; serverim un varat izmantot mūsu bezmaksas tiešaistes iespējas">
+<!ENTITY regWiz.clickFinish2 "Izmēģiniet lejup/augšupielādes iespējas, lai izveidotu drošu Jūsu projekta rezerves kopiju. Vai arī izmantojiet koplietošanas iespēju, lai sadarbotos ar kādu personu, kam arī ir &appName; konts, pie kopēja projekta.">
+<!ENTITY regWiz.clickNext "Viss kārtībā! Spiediet turpināt, lai pabeigtu reģistrāciju.">
+<!ENTITY regWiz.conclusion "Beigas (5/5)">
+<!ENTITY regWiz.confirmIntro "Jūs ievadījāt sekojošo:">
+<!ENTITY regWiz.confirmLabel "Apstiprināt ievadītos datus (4/5)">
+<!ENTITY regWiz.createNewAccountLabel  "Izveidot jaunu kontu.">
+<!ENTITY regWiz.createYourAccountLabel "Izveidojiet personīgo &appName; kontu! (1/5)">
+<!ENTITY regWiz.emailLabel "E-pasts:">
+<!ENTITY regWiz.finish "Pabeigt">
+<!ENTITY regWiz.identityInstructions "Lūdzu ievadiet Jūsu vārdu, organizāciju un e-pasta adresi.">
+<!ENTITY regWiz.identityLabel "Identifikācija (2/5)">
+<!ENTITY regWiz.intro "Izveidojiet kontu uz &appName; servera un iegūstiet pieeju šādām bezmaksas iespējām:">
+<!ENTITY regWiz.loginSuccessfulLabel  "Paldies, jūs esat pieslēdzies &appName;.">
+<!ENTITY regWiz.newOrExistingLabel  "Izveidot jaunu kontu vai arī izmantot jau esošu:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; konta lietotājvārdi un paroles ir rakstzīmju jutīgi.">
+<!ENTITY regWiz.notePassword "Parolei jāsastāv vismaz no pieciem simboliem.">
+<!ENTITY regWiz.noteUsername "Lietotājvārda minimālais garums ir trīs zīmes, un tas var sastāvēt tikai no burtiem un cipariem. ">
+<!ENTITY regWiz.orgLabel   "Organizācija:">
+<!ENTITY regWiz.title "Celtx reģistrācijas palīgs">
+<!ENTITY regWiz.uidLabel   "&appName; Lietotājvārds:">
+<!ENTITY regWiz.useExistingAccountLabel  "Izmantot jau eksistējošu kontu.">
+<!ENTITY regWiz.warn "Lai izmantotu šo iespēju, jums ir nepieciešams izveidot &appName; kontu.">
+<!ENTITY remove.label "Dzēst">
+<!ENTITY removeCmd.label "Aizvākt">
+<!ENTITY removeMarkupCmd.label "Nodzēst">
+<!ENTITY rename.label "Pārsaukt">
+<!ENTITY renameItem.label "Pārsaukt elementu...">
+<!ENTITY replaceCmd.label "Aizstāt...">
+<!ENTITY reportThisBug.label    "Paziņot par šo kļūdu">
+<!ENTITY reportThisBug.tooltip  "Anonīmi nosūtīt programmas izstradātājiem šo kļūdas ziņojumu.">
+<!ENTITY reports.label "Atskaites">
+<!ENTITY right.label  "Pa labi">
+<!ENTITY sampleProjects.label "Piemēra Projekti">
+<!ENTITY samples.label "Piemēri">
+<!ENTITY saveAsHTML.label "Saglabāt kā HTML">
+<!ENTITY saveAsTemplate.label "Saglabāt kā Sagatavi">
+<!ENTITY saveCommentCheckbox.label "Saglabājot Celtx pajautāt komentārus.">
+<!ENTITY savePDFCmd.label "Saglabāt PDF">
+<!ENTITY savePDFCmd.tooltip "Saglabāt PDF">
+<!ENTITY saveProjectAsCmd.label "Saglabāt Projektu kā...">
+<!ENTITY saveProjectCmd.label "Saglabāt Projektu">
+<!ENTITY saveProjectCmd.toolbarlabel "Saglabāt">
+<!ENTITY saveToStudio.label "Saglabāt Celtx">
+<!ENTITY savedBy.label "Saglabāts">
+<!ENTITY scene.label "Scēna">
+<!ENTITY sceneBreakdown.label "Scēnu saraksts">
+<!ENTITY sceneBreakdownWithDesc.label "Scēnu saraksts ar aprakstiem">
+<!ENTITY sceneDetails.desc      "Pievienot aprakstu jaunai scēnai.">
+<!ENTITY sceneDetails.existing  "Aprakstīt jau eksistējošu scēnu no sekojošā saraksta.">
+<!ENTITY sceneDetails.label     "Scēnas detaļas">
+<!ENTITY sceneDetails.select    "Izvēlieties scēnu">
+<!ENTITY scenePageBreaks.label "Pārtraukt lappusi pēc katras scēnas">
+<!ENTITY sceneSummary.label "Scēnas kopsavilkums">
+<!ENTITY sceneTag.label "Scēnas birka">
+<!ENTITY sceneTagDialog.title "Izvēlēties krāsu">
+<!ENTITY scenes.label           "Scēnas">
+<!ENTITY schedule.desc      "Pievienot scenārija filmēšanas grafiku.">
+<!ENTITY schedule.label     "Darbu grafiks">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Scenārija grafiks">
+<!ENTITY scheduleID.label "Grafika ID">
+<!ENTITY scheduled.label "Ieplānots">
+<!ENTITY scratchpad.label "Piezīmju blociņš">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Pievienot scenāriju projektam.">
+<!ENTITY script.label "Scenārijs">
+<!ENTITY scriptDay.label "Scenārija diena">
+<!ENTITY scriptEditor.label "Skripta redaktors">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Formatēšanas opcijas">
+<!ENTITY scriptHeader.label "Scenārija galvene">
+<!ENTITY scriptReport.desc  "Automātiski ģenerēta scenārija atskaite.">
+<!ENTITY scriptReport.label "Scenārija atskaite">
+<!ENTITY scriptWithNotes.label  "Scenārijs ar atzīmēm">
+<!ENTITY selectCatalogType.label "Izvēlēties kataloga veidu.">
+<!ENTITY sequence.label "Sekvence">
+<!ENTITY sequences.label "Sekvences">
+<!ENTITY server.label "Serveris">
+<!ENTITY setting.label "Uzstādījums">
+<!ENTITY sharing.label "Koplietošana">
+<!ENTITY shootDay.label "Filmēšanas diena">
+<!ENTITY shootDays.label "Filmēšanas dienas">
+<!ENTITY shootingSchedule.label "Filmēšanas grafiks">
+<!ENTITY shotList.label "Kadru saraksts (Shot list)">
+<!ENTITY shotWords.label "Uzņemšanas vārdi">
+<!ENTITY shotholder.label "Dubultklikšķiniet, lai pievienotu attēlu.">
+<!ENTITY showContinuedCount.label   "Rādīt turpinājuma lappušu skaitu">
+<!ENTITY showDialogBreaks.label     "Rādīt dialogu pārtraukumus">
+<!ENTITY showFirstPageNumber.label    "Rādīt lapaspuses numuru pirmajā lapā">
+<!ENTITY showIDNumbers.label "Rādīt ID numurus">
+<!ENTITY showNotes.label "Rādīt piezīmes">
+<!ENTITY showPageNumbers.label        "Numerācija">
+<!ENTITY showProjectFileCmd.label "Rādīt projekta failu">
+<!ENTITY showSceneBreaks.label      "Rādīt scēnas pārtraukumus">
+<!ENTITY showSceneHeaders.label "Rādīt scēnas galveni">
+<!ENTITY showSceneNumbers.label       "Rādīt scēnas numerāciju">
+<!ENTITY showScript.label "Rādīt scenāriju">
+<!ENTITY showTagNames.label "Rādīt birkas uz kariņām">
+<!ENTITY showTitlePage.label "Rādīt titullapu">
+<!ENTITY showWorkdaysOnly.label "Rādīt tikai darba dienas">
+<!ENTITY signIn.label "Pierakstīties">
+<!ENTITY signOut.label "Izrakstīties">
+<!ENTITY signedOut.label "Izrakstījies">
+<!ENTITY slideshowCmd.toolbarlabel "Atskaņot">
+<!ENTITY source.label "Avots">
+<!ENTITY spellCheckCmd.label "Pārbaudīt pareizrakstību...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Ignorēt vārdu">
+<!ENTITY spellCheckNoSuggestions.label "Neviens ieteikums netika atrasts">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "Pievienot vārdnīcai">
+<!ENTITY splash.celtxCentral      "Pierakstīties Projektu Centrālē">
+<!ENTITY splash.celtxCentralDesc  "Izmantojiet projektu centrāli, lai nomainītu paroli vai atjaunotu profilu.">
+<!ENTITY splash.discussion      "Diskusija">
+<!ENTITY splash.downloadProject     "lejupielādēt projektu">
+<!ENTITY splash.downloadProjectDesc "Lejupielādēt projektu no Celtx servera">
+<!ENTITY splash.featureTour         "Programmas iespēju apskate">
+<!ENTITY splash.forums      "forumi">
+<!ENTITY splash.forumsDesc  "Pievienoties Celtx foruma diskusiju grupai">
+<!ENTITY splash.gettingStarted  "Sākt darbu">
+<!ENTITY splash.guide               "Celtx lietotāja ceļvedis">
+<!ENTITY splash.help            "Palīdzība">
+<!ENTITY splash.helpAccount     "izveidot kontu">
+<!ENTITY splash.helpAccountDesc "Konta izveide dod jums pieeju programmas servera puses funkcijām, kuras ietver projekta kopdarbības iespējas un PDF ģenerāciju.">
+<!ENTITY splash.helpDesc        "Saites kreisajā pusē izceļ atsevišķus Celtx resursus">
+<!ENTITY splash.helpOptions         "palīdzības opcijas">
+<!ENTITY splash.inbox           "Iesūtne">
+<!ENTITY splash.logIn "Pierakstīties">
+<!ENTITY splash.newProject      "Sākt jaunu projektu">
+<!ENTITY splash.newProjectDesc  "Izveidot jaunu projektu">
+<!ENTITY splash.openProject     "Atvērt eksistējošu projektu">
+<!ENTITY splash.openProjectDesc "Piekļūt vai pievienot eksistējošus projektus.">
+<!ENTITY splash.options             "Opcijas">
+<!ENTITY splash.projectCentral  "Projektu Centrāle">
+<!ENTITY splash.projects        "Projekti">
+<!ENTITY splash.recentProjects      "nesnie projekti">
+<!ENTITY splash.sampleDesc      "Lai ilustrētu dažādas Celtx iespējas, par piemēru mēs izvēlējāmies The Wizard of Oz projektu. Lai ilustrētu pēc iespējas plašāk dažādas iespējas, katrai atsevišķai scēnai tiek piedāvāti dažādu veidu dokumenti un formas. Šajā piemērā ir iekļauts scenārijs, personāži un scēnu detaļas, analītika, kā arī nedaudz aizpildīts kalendārs.">
+<!ENTITY splash.sampleProject   "parauga projekts">
+<!ENTITY splash.videoWalkthrus      "Video materiāli">
+<!ENTITY splash.videoWalkthrusDesc  "Īsi video materiāli par programmas darbību">
+<!ENTITY splash.walkthru            "Trīs minūšu ieskats">
+<!ENTITY splash.webServices     "Tīmekļa pakalpojumi">
+<!ENTITY splash.welcomePrefix     "Esiet sveicināti Celtx">
+<!ENTITY splash.welcomePrefixDesc "Media Pre-Production">
+<!ENTITY splash.wiki      "Wiki ceļvedis">
+<!ENTITY splash.wikiDesc  "Informācijas par Celtx avots">
+<!ENTITY splashScreen.label "Uzplaiksnījuma ekrāns">
+<!ENTITY stackTrace.desc        "Zemāk ir pieejama informācija, kura var būt noderīga. Lūdzu iekļaujiet to ziņojumā, ja Jūs izlemjiet ziņot par šo kļūdu.">
+<!ENTITY stageplay.desc  "Pievienot skatuves uzveduma scenāciju ar starptautisku formatējumu.">
+<!ENTITY stageplay.label    "Skatuves uzvedums">
+<!ENTITY start.label "Sākt">
+<!ENTITY startOfDay.label "Dienas sākums">
+<!ENTITY startOfShooting.label "Filmēšanas sākums">
+<!ENTITY startOfWeek.label "Nedēļas sākums">
+<!ENTITY statistics.label "Statistika">
+<!ENTITY storyboard.desc    "Izveidot sekvenci no sižeta maketa attēliem.">
+<!ENTITY storyboard.label   "Sižeta makets">
+<!ENTITY strikethrough.label "Pārsvītrojums">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioProjects.label "Celtx projekti">
+<!ENTITY subject.label "Subjekts">
+<!ENTITY summary.label "Kopsavilkums">
+<!ENTITY syncDialog.title "Sinhronizācija">
+<!ENTITY tagItemCmd.label           "Birka">
+<!ENTITY tagline.label      "Īss apraksts (Tagline)">
+<!ENTITY tags.label "Birkas">
+<!ENTITY text.label "Teksts">
+<!ENTITY textDocument.desc  "Pievienot teksta dokumentu. Var tikt izmantots uzmetumiem, īsiem satura izklāstiem vai konspektiem.">
+<!ENTITY textDocument.label "teksts">
+<!ENTITY theatreTmplActTitle "AKTS I">
+<!ENTITY theatreTmplSceneTitle "Scēna 1">
+<!ENTITY thirtyMinutes.label "30 minūtes">
+<!ENTITY threeHours.label "trīs stundas">
+<!ENTITY time.label "Laiks">
+<!ENTITY title.label        "Virsraksts">
+<!ENTITY titlePage.label "Virsraksta lapa">
+<!ENTITY toggleEditing.label "Pārslēgt rediģēšanu">
+<!ENTITY togglePaginationCmd.label    "Ieslēgt lapaspušu numerāciju">
+<!ENTITY toggleScratchpadCmd.label  "Atvērt/Aizvērt piezīmju blociņu">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Sānjosla">
+<!ENTITY toolbox.label "Instrumentu panelis">
+<!ENTITY topOfNextPage.label        "Nākamās lapas augša">
+<!ENTITY tryAgain.label "Mēģināt vēlreiz">
+<!ENTITY twoColumns.label "Divas kolonas">
+<!ENTITY twoHours.label "Divas stundas">
+<!ENTITY typeset.label "Tipogrāfija">
+<!ENTITY under14.label "Es esmu jaunāks par 14 gadiem.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Pasvītrojums">
+<!ENTITY unorderedList.label "Nesakārtots saraksts">
+<!ENTITY untitled.label "Nenosaukts">
+<!ENTITY update.label "Atjaunot">
+<!ENTITY updateInbox.label "Atjaunot Iesūtni">
+<!ENTITY uploadDialog.title         "Augšuplādēt Projektu">
+<!ENTITY uploadProjectCmd.label "Augšuplādēt Projektu...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Augšuplādēt">
+<!ENTITY uppercaseCmd.label "Lielie burti">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Lietotāja vārds">
+<!ENTITY video.label "Video">
+<!ENTITY videoTutorialCmd.label "Video pamācība">
+<!ENTITY viewProjectOnline.label "Apskatīt projektu tiešsaistē">
+<!ENTITY wardrobeSheet.desc     "Pievienot aprakstu jaunam garderobes kostīmam.">
+<!ENTITY wardrobeSheet.existing  "Izmainīt aprakstu kostīmam no sekojošā garderobes saraksta.">
+<!ENTITY wardrobeSheet.label    "Garderobe">
+<!ENTITY wardrobeSheet.select   "Izvēlēties garderobi">
+<!ENTITY webPanel.desc              "Celtx tīmekļa pakalpojumi.">
+<!ENTITY webPanel.label             "Tīmekļa pakalpojumi">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Izveidot Celtx kontu">
+<!ENTITY webPanelIntro.text1 "Lai maksimāli izmantotu Celtx iespējas, reģistrējieties un lietojiet bezmaksas tīmekļa pakalpojumus.">
+<!ENTITY webPanelIntro.text2 "*Glabājiet* savu projektu rezerves kopijas uz attālināta, droša Celtx servera. Tas Jums palīdzēs saglabāt rezerves kopiju zādzības vai arī cietā diska bojājuma gadījumā.">
+<!ENTITY webPanelIntro.text3 "*Sadarbojieties* ar komandas biedriem, izmantojot projektu koplietošanas iespējas.">
+<!ENTITY webPanelIntro.text4 "*Publicējiet* savu projektu Projekta centrālē, lai saņemtu recenzijas, komentārus, kā arī lai pievienotos mūsu augošajai vispasaules mēdiju veidotāju kopienai.">
+<!ENTITY webPanelIntro.text5 "Apskatiet savu Celtx projektu *iPhone* optimizētā formātā.">
+<!ENTITY wiz.clickFinish "Spiediet 'Pabeigt' pogu lai pabeigtu šo ceļvedi.">
+<!ENTITY wiz.clickNext "Spiediet 'Turpināt' pogu lai sāktu darbu.">
+<!ENTITY workweek.label "Darba nedēļa">
+<!ENTITY writer.label "Autors">
+<!ENTITY zoom.label "Tālummaiņa">

@@ -1,0 +1,392 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys -->
+
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+<!ENTITY mainWindow.title "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+
+<!ENTITY tabCmd.label "Ny fane">
+<!ENTITY tabCmd.accesskey "f">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Åpne adresse …">
+<!ENTITY openLocationCmd.accesskey "d">
+<!ENTITY openFileCmd.label "Åpne fil …">
+<!ENTITY openFileCmd.accesskey "Å">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Sideoppsett …">
+<!ENTITY printSetupCmd.accesskey "o">
+<!ENTITY printPreviewCmd.label "Forhåndsvis side">
+<!ENTITY printPreviewCmd.accesskey "v">
+<!ENTITY printCmd.label "Skriv ut …">
+<!ENTITY printCmd.accesskey "u">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Importer …">
+<!ENTITY import.accesskey "I">
+
+<!ENTITY goOfflineCmd.label "Arbeid frakoblet">
+<!ENTITY goOfflineCmd.accesskey "r">
+
+<!ENTITY navbarCmd.label "Navigasjon">
+<!ENTITY navbarCmd.accesskey "N">
+<!ENTITY personalbarCmd.label "Bokmerker">
+<!ENTITY personalbarCmd.accesskey "B">
+<!ENTITY bookmarksToolbarItem.label "Elementer i bokmerkelinje">
+<!ENTITY taskbarCmd.label "Statuslinje">
+<!ENTITY taskbarCmd.accesskey "a">
+
+<!ENTITY pageSourceCmd.label "Kildekode">
+<!ENTITY pageSourceCmd.accesskey "K">
+<!ENTITY pageSourceCmd.commandkey "u">
+<!ENTITY pageInfoCmd.label "Sideinformasjon">
+<!ENTITY pageInfoCmd.accesskey "d">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "Fullskjerm">
+<!ENTITY fullScreenCmd.accesskey "F">
+
+<!ENTITY fullScreenMinimize.tooltip "Minimer">
+<!ENTITY fullScreenRestore.tooltip "Gjenopprett">
+<!ENTITY fullScreenClose.tooltip "Lukk">
+<!ENTITY fullScreenAutohide.label "Skjul verktøylinjer">
+<!ENTITY fullScreenAutohide.accesskey "S">
+<!ENTITY fullScreenExit.label "Avslutt fullskjermmodus">
+<!ENTITY fullScreenExit.accesskey "v">
+
+<!ENTITY closeWindow.label "Lukk vindu">
+<!ENTITY closeWindow.accesskey "L">
+
+<!ENTITY bookmarksMenu.label "Bokmerker">
+<!ENTITY bookmarksMenu.accesskey "B">
+<!ENTITY bookmarkThisPageCmd.label "Legg til bokmerke …">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Abonner på denne siden">
+<!ENTITY subscribeToPageMenuitem.label "Abonner på denne siden …">
+<!ENTITY addCurPagesCmd.label "Bokmerk alle faner …">
+<!ENTITY organizeBookmarks.label "Organiser bokmerker …">
+<!ENTITY bookmarkAllCmd.label "Bokmerk alle faner …">
+
+<!ENTITY backCmd.label                "Tilbake">
+<!ENTITY backCmd.accesskey            "T">
+<!ENTITY backButton.tooltip           "Gå tilbake en side">
+<!ENTITY forwardCmd.label             "Frem">
+<!ENTITY forwardCmd.accesskey         "F">
+<!ENTITY forwardButton.tooltip        "Gå frem en side">
+<!ENTITY backForwardMenu.tooltip      "Nylig brukte sider">
+<!ENTITY reloadCmd.label              "Oppdater">
+<!ENTITY reloadCmd.accesskey          "O">
+<!ENTITY reloadButton.tooltip         "Vis nyeste innhold i aktiv side">
+<!ENTITY stopCmd.label                "Stopp">
+<!ENTITY stopCmd.accesskey            "S">
+<!ENTITY stopCmd.macCommandKey        ".">
+<!ENTITY stopButton.tooltip           "Stopp lasting av denne siden">
+<!ENTITY goEndCap.tooltip             "Gå til adressen i adresselinjen">
+<!ENTITY printButton.label            "Skriv ut">
+<!ENTITY printButton.tooltip          "Skriv ut denne siden">
+
+<!ENTITY locationItem.title           "Adresse">
+<!ENTITY searchItem.title             "Søk">
+<!ENTITY throbberItem.title           "Fremdriftsindikator">
+<!ENTITY bookmarksItem.title          "Bokmerker">
+
+<!-- Toolbar items -->
+<!ENTITY  homeButton.label            "Startside">
+
+<!ENTITY bookmarksButton.label          "Bokmerker">
+<!ENTITY bookmarksButton.tooltip        "Viser bokmerkene dine">
+<!ENTITY bookmarksSidebarCmd.accesskey  "B">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+
+<!ENTITY historyButton.label            "Historikk">
+<!ENTITY historyButton.tooltip          "Viser sider du har besøkt i det siste">
+<!ENTITY historySidebarCmd.accesskey    "h">
+<!ENTITY historySidebarCmd.commandKey   "h">
+
+<!ENTITY toolsMenu.label              "Verktøy">
+<!ENTITY toolsMenu.accesskey          "e">
+
+<!ENTITY keywordfield.label           "Lag nøkkelord for dette søket …">
+<!ENTITY keywordfield.accesskey       "n">
+<!ENTITY search.label                 "Søk på Internett">
+<!ENTITY search.accesskey             "S">
+<!ENTITY downloads.label              "Nedlastinger">
+<!ENTITY downloads.tooltip            "Viser fremdriften til aktive nedlastinger">
+<!ENTITY downloads.accesskey          "N">
+<!ENTITY downloads.commandkey         "j">
+<!ENTITY downloadsUnix.commandkey     "y">
+<!ENTITY addons.label                 "Utvidelser">
+<!ENTITY addons.tooltip               "Behandle installerte utvidelser">
+<!ENTITY addons.accesskey             "U">
+
+<!ENTITY errorConsoleCmd.label        "Feilmeldinger">
+<!ENTITY errorConsoleCmd.accesskey    "F">
+<!ENTITY errorConsoleCmd.commandkey   "j">
+
+<!ENTITY fileMenu.label         "Fil">
+<!ENTITY fileMenu.accesskey       "F">
+<!ENTITY newNavigatorCmd.label        "Nytt vindu">
+<!ENTITY newNavigatorCmd.key        "N">
+<!ENTITY newNavigatorCmd.accesskey      "N">
+
+<!ENTITY editMenu.label         "Rediger">
+<!ENTITY editMenu.accesskey       "R">
+<!ENTITY undoCmd.label            "Angre">
+<!ENTITY undoCmd.key            "Z">
+<!ENTITY undoCmd.accesskey          "A">
+<!ENTITY redoCmd.label            "Gjenta">
+<!ENTITY redoCmd.key            "Y">
+<!ENTITY redoCmd.accesskey          "G">
+<!ENTITY cutCmd.label           "Klipp ut">
+<!ENTITY cutCmd.key             "X">
+<!ENTITY cutCmd.accesskey         "u">
+<!ENTITY copyCmd.label            "Kopier">
+<!ENTITY copyCmd.key            "C">
+<!ENTITY copyCmd.accesskey          "K">
+<!ENTITY pasteCmd.label           "Lim inn">
+<!ENTITY pasteCmd.key           "V">
+<!ENTITY pasteCmd.accesskey         "L">
+<!ENTITY deleteCmd.label          "Slett">
+<!ENTITY deleteCmd.key            "D">
+<!ENTITY deleteCmd.accesskey        "t">
+<!ENTITY selectAllCmd.label         "Merk alt">
+<!ENTITY selectAllCmd.key         "A">
+<!ENTITY selectAllCmd.accesskey       "M">
+<!ENTITY preferencesCmd.label       "Innstillinger …">
+<!ENTITY preferencesCmd.accesskey     "I">
+<!ENTITY preferencesCmdUnix.label       "Innstillinger">
+<!ENTITY preferencesCmdUnix.accesskey     "I">
+
+<!ENTITY clearPrivateDataCmd.label            "Slett private data">
+<!ENTITY clearPrivateDataCmd.accesskey        "e">
+
+<!ENTITY viewMenu.label         "Vis">
+<!ENTITY viewMenu.accesskey       "V">
+<!ENTITY viewToolbarsMenu.label       "Verktøylinjer">
+<!ENTITY viewToolbarsMenu.accesskey     "V">
+<!ENTITY viewSidebarMenu.label "Sidestolpe">
+<!ENTITY viewSidebarMenu.accesskey "d">
+<!ENTITY viewCustomizeToolbar.label       "Tilpass …">
+<!ENTITY viewCustomizeToolbar.accesskey     "T">
+
+<!ENTITY historyMenu.label "Historikk">
+<!ENTITY historyMenu.accesskey "s">
+<!ENTITY historyUndoMenu.label "Nylig lukkede faner">
+
+<!ENTITY historyHomeCmd.label "Hjem">
+<!ENTITY showAllHistoryCmd2.label "Vis all historikk">
+<!ENTITY showAllHistoryCmd.commandkey "h">
+
+<!ENTITY openCmd.commandkey           "l">
+<!ENTITY urlbar.emptyText             "Søk i bokmerker og historikk">
+<!ENTITY urlbar.accesskey             "d">
+
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+<!ENTITY searchFocus.commandkey       "k">
+<!ENTITY searchFocus.commandkey2      "e">
+<!ENTITY searchFocusUnix.commandkey   "j">
+
+<!ENTITY openLinkCmd.label            "Åpne lenke i nytt vindu">
+<!ENTITY openLinkCmd.accesskey        "Å">
+<!ENTITY openLinkCmdInTab.label       "Åpne lenke i ny fane">
+<!ENTITY openLinkCmdInTab.accesskey   "n">
+<!ENTITY openFrameCmd.label           "Åpne ramme i nytt vindu">
+<!ENTITY openFrameCmd.accesskey       "Å">
+<!ENTITY openFrameCmdInTab.label      "Åpne ramme i ny fane">
+<!ENTITY openFrameCmdInTab.accesskey  "r">
+<!ENTITY showOnlyThisFrameCmd.label     "Vis bare denne rammen">
+<!ENTITY showOnlyThisFrameCmd.accesskey "b">
+<!ENTITY reloadCmd.commandkey         "r">
+<!ENTITY reloadFrameCmd.label         "Oppdater ramme">
+<!ENTITY reloadFrameCmd.accesskey     "o">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Vis kildekode for valgt tekst">
+<!ENTITY viewPartialSourceForMathMLCmd.label    "Vis MathML-kildekode">
+<!ENTITY viewPartialSourceCmd.accesskey "k">
+<!ENTITY viewPageSourceCmd.label      "Vis kildekode">
+<!ENTITY viewPageSourceCmd.accesskey  "k">
+<!ENTITY viewFrameSourceCmd.label     "Vis kildekode for rammen">
+<!ENTITY viewFrameSourceCmd.accesskey "k">
+<!ENTITY viewPageInfoCmd.label        "Vis informasjon om siden">
+<!ENTITY viewPageInfoCmd.accesskey    "V">
+<!ENTITY viewFrameInfoCmd.label       "Vis informasjon om rammen">
+<!ENTITY viewFrameInfoCmd.accesskey   "V">
+<!ENTITY showImageCmd.label           "Last inn bilde">
+<!ENTITY showImageCmd.accesskey       "L">
+<!ENTITY viewImageCmd.label           "Vis bilde">
+<!ENTITY viewImageCmd.accesskey       "V">
+<!ENTITY viewBGImageCmd.label         "Vis bakgrunnsbilde">
+<!ENTITY viewBGImageCmd.accesskey     "b">
+<!ENTITY setDesktopBackgroundCmd.label      "Sett som skrivebordsbakgrunn …">
+<!ENTITY setDesktopBackgroundCmd.accesskey  "m">
+<!ENTITY bookmarkPageCmd2.label       "Legg til bokmerke …">
+<!ENTITY bookmarkPageCmd2.accesskey   "L">
+<!ENTITY bookmarkThisLinkCmd.label      "Legg til bokmerke for lenke …">
+<!ENTITY bookmarkThisLinkCmd.accesskey  "L">
+<!ENTITY bookmarkThisFrameCmd.label      "Legg til bokmerke for ramme …">
+<!ENTITY bookmarkThisFrameCmd.accesskey  "L">
+<!ENTITY sendPageCmd.label            "Send lenke …">
+<!ENTITY sendPageCmd.accesskey        "S">
+<!ENTITY savePageCmd.label            "Lagre side som …">
+<!ENTITY savePageCmd.accesskey        "a">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2       "r">
+<!ENTITY savePageCmd.commandkey       "s">
+<!ENTITY saveFrameCmd.label           "Lagre ramme som …">
+<!ENTITY saveFrameCmd.accesskey       "a">
+<!ENTITY printFrameCmd.label          "Skriv ut ramme …">
+<!ENTITY printFrameCmd.accesskey      "k">
+<!ENTITY saveLinkCmd.label            "Lagre lenke som …">
+<!ENTITY saveLinkCmd.accesskey        "a">
+<!ENTITY sendLinkCmd.label            "Send lenke …">
+<!ENTITY sendLinkCmd.accesskey        "S">
+<!ENTITY saveImageCmd.label           "Lagre bilde som …">
+<!ENTITY saveImageCmd.accesskey       "d">
+<!ENTITY sendImageCmd.label           "Send bilde …">
+<!ENTITY sendImageCmd.accesskey       "i">
+<!ENTITY copyLinkCmd.label            "Kopier lenkemål">
+<!ENTITY copyLinkCmd.accesskey        "K">
+<!ENTITY copyLinkTextCmd.label        "Kopier lenketekst">
+<!ENTITY copyLinkTextCmd.accesskey    "r">
+<!ENTITY copyImageCmd.label           "Kopier bildeadresse">
+<!ENTITY copyImageCmd.accesskey       "o">
+<!ENTITY copyImageContentsCmd.label   "Kopier bilde">
+<!ENTITY copyImageContentsCmd.accesskey  "b">
+<!ENTITY blockImageCmd.accesskey       "r">
+<!ENTITY metadataCmd.label            "Egenskaper">
+<!ENTITY metadataCmd.accesskey        "E">
+<!ENTITY copyEmailCmd.label           "Kopier e-postadresse">
+<!ENTITY copyEmailCmd.accesskey       "o">
+<!ENTITY thisFrameMenu.label              "Denne rammen">
+<!ENTITY thisFrameMenu.accesskey          "D">
+
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+<!ENTITY fullZoomEnlargeCmd.label       "Større skrift">
+<!ENTITY fullZoomEnlargeCmd.accesskey   "S">
+<!ENTITY fullZoomEnlargeCmd.commandkey  "+">
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "="> <!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label        "Mindre skrift">
+<!ENTITY fullZoomReduceCmd.accesskey    "M">
+<!ENTITY fullZoomReduceCmd.commandkey   "-">
+<!ENTITY fullZoomReduceCmd.commandkey2  "">
+
+<!ENTITY fullZoomResetCmd.label         "Tilbakestill">
+<!ENTITY fullZoomResetCmd.accesskey     "T">
+<!ENTITY fullZoomResetCmd.commandkey    "0">
+<!ENTITY fullZoomResetCmd.commandkey2   "">
+
+<!ENTITY fullZoomToggleCmd.label        "Forstørr bare tekst">
+<!ENTITY fullZoomToggleCmd.accesskey    "o">
+<!ENTITY fullZoom.label                 "Skalering">
+<!ENTITY fullZoom.accesskey             "r">
+
+<!ENTITY newTabButton.tooltip           "Åpner en ny fane">
+<!ENTITY newWindowButton.tooltip        "Åpner et nytt vindu">
+<!ENTITY sidebarCloseButton.tooltip     "Lukk sidestolpen">
+
+<!ENTITY cutButton.tooltip              "Klipp ut">
+<!ENTITY copyButton.tooltip             "Kopier">
+<!ENTITY pasteButton.tooltip            "Lim inn">
+
+<!ENTITY quitApplicationCmdWin.label       "Avslutt">
+<!ENTITY quitApplicationCmdWin.accesskey   "t">
+<!ENTITY goBackCmd.commandKey "Ø">
+<!ENTITY goForwardCmd.commandKey "Å">
+<!ENTITY quitApplicationCmd.label       "Avslutt">
+<!ENTITY quitApplicationCmd.accesskey   "t">
+<!ENTITY quitApplicationCmdMac.label    "Avslutt">
+<!ENTITY quitApplicationCmdMac.key      "Q">
+
+<!ENTITY closeCmd.label                 "Lukk">
+<!ENTITY closeCmd.key                   "W">
+<!ENTITY closeCmd.accesskey             "L">
+
+<!ENTITY pageStyleMenu.label "Sidestil">
+<!ENTITY pageStyleMenu.accesskey "e">
+<!ENTITY pageStyleNoStyle.label "Ingen">
+<!ENTITY pageStyleNoStyle.accesskey "I">
+<!ENTITY pageStylePersistentOnly.label "Vanlig">
+<!ENTITY pageStylePersistentOnly.accesskey "V">
+
+<!ENTITY pageReportIcon.tooltip            "Endre innstillinger for sprettoppvindublokkering for dette nettstedet">
+
+<!ENTITY allowPopups.accesskey "p">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label "Innstillinger for sprettoppvindublokkering …">
+<!ENTITY editPopupSettings.label "Innstillinger for sprettoppvindublokkering …">
+<!ENTITY editPopupSettings.accesskey "n">
+<!ENTITY dontShowMessage.accesskey "I">
+
+<!ENTITY bidiSwitchPageDirectionItem.label        "Bytt tekstretning på siden">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey    "r">
+<!ENTITY bidiSwitchTextDirectionItem.label        "Bytt tekstretning">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey    "B">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey   "X">
+
+<!ENTITY findOnCmd.label     "Søk på denne siden …">
+<!ENTITY findOnCmd.accesskey "S">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label  "Søk igjen">
+<!ENTITY findAgainCmd.accesskey "ø">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Legg til ordbøker …">
+<!ENTITY spellAddDictionaries.accesskey "L">
+
+<!ENTITY editBookmark.done.label                     "Ferdig">
+<!ENTITY editBookmark.cancel.label                   "Avbryt">
+<!ENTITY editBookmark.removeBookmark.label           "Slett bokmerke">
+<!ENTITY editBookmark.removeBookmark.accessKey       "S">
+<!ENTITY editBookmark.undo.label                     "Angre">
+<!ENTITY editBookmark.undo.accessKey                 "A">
+<!ENTITY editBookmark.edit.label                     "Rediger …">
+<!ENTITY editBookmark.edit.accessKey                 "R">
+
+<!ENTITY identity.unverifiedsite2 "Dette nettstedet har ingen identitetsinformasjon.">
+<!ENTITY identity.connectedTo "Du er tilkoblet">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "som tilhører">
+
+<!ENTITY identity.moreInfoLinkText "Mer informasjon …">
+
+<!ENTITY downloadMonitor2.tooltip "Trykk for å åpne nedlastingsvinduet">

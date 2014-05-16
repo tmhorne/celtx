@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % bindingsDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%bindingsDTD;
+]>
+
+<bindings id="media-bindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <binding id="media-view"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistbox">
+    <handlers>
+      <handler event="media-item-change">
+        var h = this.getAttribute('onitemchange');
+        if (h) {
+          var f = new Function('item', h);
+          f(event.originalTarget);
+        }
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="editable-label">
+    <content>
+      <xul:stack flex="1">
+        <xul:description anonid="lbl"
+                         class="editable"
+                         flex="1"
+                         crop="end"
+                         xbl:inherits="xbl:text=value"/>
+        <xul:textbox anonid="tbox"
+                     hidden="true"
+                     flex="1"
+                     xbl:inherits="multiline,rows"/>
+      </xul:stack>
+    </content>
+    <implementation>
+      <field name="modified">false</field>
+      <field name="editing">false</field>
+      <field name="_value"/>
+      <property name="value" readonly="true" onget="return this._value"/>
+      <property name="textBox" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, 'anonid', 'tbox');
+        </getter>
+      </property>
+      <property name="textLabel" readonly="true">
+        <getter>
+          return document.getAnonymousElementByAttribute(this, 'anonid', 'lbl');
+        </getter>
+      </property>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this._value = this.getAttribute('value');
+        </body>
+      </method>
+      <method name="setEditable">
+        <parameter name="editable"/>
+        <body>
+        <![CDATA[
+        var txt = this.textBox;
+        if (editable) {
+          txt.hidden = false;
+          txt.value = this.value;
+          txt.select();
+          txt.focus();
+          txt.addEventListener('blur', this.fieldChange, true);
+          txt.addEventListener('keypress', this.fieldKeyDown, false);
+          this.editing = true;
+        }
+        else {
+          if (this.getAttribute("multiline") == "true" &&
+              this.textLabel.hasChildNodes())
+            this.textLabel.firstChild.nodeValue = this.value;
+          else
+            this.textLabel.value = this.value;
+          txt.removeEventListener('blur', this.fieldChange, true);
+          txt.removeEventListener('keypress', this.fieldKeyDown, false);
+          this.focus();
+          // If we do txt.blur(), we lose the cursor completely, so it's
+          // better to just change the focus before hiding the editbox.
+          txt.hidden = true;
+          this.editing = false;
+        }
+        ]]>
+        </body>
+      </method>
+      <method name="fieldChange">
+        <body>
+          var o = this.parentNode.parentNode;
+          o.setValue(this.value);
+        </body>
+      </method>
+      <method name="fieldKeyDown">
+        <parameter name="evt"/>
+        <body>
+        <![CDATA[
+          // this == textbox
+          var o = this.parentNode.parentNode;
+          if (evt.keyCode == KeyEvent.DOM_VK_ESCAPE) {
+            o.setValue(o.value);
+          }
+          else if (evt.keyCode == KeyEvent.DOM_VK_RETURN) {
+            o.setValue(this.value);
+          }
+          evt.preventBubble();
+        ]]>
+        </body>
+      </method>
+      <method name="setValue">
+        <parameter name="val"/>
+        <body>
+          this._value = val;
+          this.setEditable(false);
+          var e = document.createEvent('Events');
+          e.initEvent('editlabelchange', false, true);
+          this.dispatchEvent(e);
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="click">
+        // event.preventBubble();
+        if (! this.editing) this.setEditable(true);
+      </handler>
+      <handler event="dblclick">
+        event.stopPropagation();
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <!-- A 'tied' text field -->
+  <binding id="text-field">
+    <implementation>
+      <field name="tb"/>
+      <field name="dirty"/>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this.tb = document.getAnonymousElementByAttribute(this, 'anonid', 'tb');
+          this.dirty = false;
+        </body>
+      </method>
+      <method name="change">
+        <body>
+        <![CDATA[
+          dump("change: " + this.tb.value + "\n");
+          try {
+            var rs   = getRDFService();
+            var res  = rs.GetResource(this.getAttribute('res'));
+            var prop = rs.GetResource(this.getAttribute('property'));
+
+            var ds, curval;
+            var newval = rs.GetLiteral(this.tb.value);
+            var src = this.parentNode.database.GetDataSources();
+            while (src.hasMoreElements()) {
+              ds = src.getNext();
+              ds = ds.QueryInterface(Components.interfaces.nsIRDFDataSource);
+              if (ds.URI == 'rdf:localstore') continue;
+              ds.beginUpdateBatch();
+              curval = ds.GetTarget(res, prop, true);
+              if (curval) {
+                ds.Change(res, prop, curval, newval);
+              }
+              else {
+                ds.Assert(res, prop, newval, true);
+              }
+              ds.endUpdateBatch();
+            }
+            this.dirty = false;
+          }
+          catch (ex) {
+            dump("text-field: change: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+      <method name="beforeChange">
+        <body>
+          if (this.dirty) this.change();
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="change" action="this.change()"/>
+      <handler event="input"  action="if (! this.dirty) this.dirty = true"/>
+    </handlers>
+  </binding>
+
+
+  <binding id="title-box" extends="#text-field">
+    <content>
+      <xul:vbox xbl:inherits="flex">
+        <xul:label value="&title.label;"/>
+        <xul:textbox anonid="tb" xbl:inherits="value"/>
+      </xul:vbox>
+    </content>
+  </binding>
+
+
+  <binding id="desc-box" extends="#text-field">
+    <content>
+      <xul:vbox>
+        <xul:label value="&description.label;"/>
+        <xul:textbox anonid="tb" multiline="true" xbl:inherits="value,width,rows"/>
+      </xul:vbox>
+    </content>
+  </binding>
+
+
+  <binding id="autosave-textbox"
+           extends="chrome://global/content/bindings/textbox.xml#textbox">
+    <implementation>
+      <field name="_modified"/>
+      <field name="_orig"/>
+      <property name="modified" readonly="true" onget="return this._modified"/>
+      <method name="assign">
+        <parameter name="val"/>
+        <body>
+          this.value = val;
+          this._orig = val;
+          this._modified = false;
+        </body>
+      </method>
+      <method name="fieldChange">
+        <body>
+          if (! this._modified) return;
+          dump("fieldChange: modified\n");
+          this._modified = false;
+          var h = this.getAttribute('onsave');
+          if (h) {
+            var f = new Function(h);
+            f();
+          }
+        </body>
+      </method>
+      <method name="cancelEdit">
+        <body>
+          if (! this._modified) return;
+          this.assign(this._orig);
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="input">
+        if (! this._modified) this._modified = true;
+      </handler>
+      <handler event="blur" phase="capturing">
+        this.removeAttribute('focused');  // Copied from #textbox
+        this.fieldChange();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN">
+        this.inputField.blur();
+      </handler>
+      <handler event="keypress" keycode="VK_ESCAPE">
+        this.cancelEdit();
+        this.inputField.blur();
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <!-- Largely a duplicate of autosave-textbox above, but XBL doesn't yet
+       allow multiple inheritance -->
+  <binding id="autosave-textarea"
+           extends="chrome://global/content/bindings/textbox.xml#textarea">
+    <implementation>
+      <field name="_modified"/>
+      <field name="_orig"/>
+      <property name="modified" readonly="true" onget="return this._modified"/>
+      <method name="assign">
+        <parameter name="val"/>
+        <body>
+          this.value = val;
+          this._orig = val;
+          this._modified = false;
+        </body>
+      </method>
+      <method name="fieldChange">
+        <body>
+          if (! this._modified) return;
+          dump("fieldChange: modified\n");
+          this._modified = false;
+          var h = this.getAttribute('onsave');
+          if (h) {
+            var f = new Function(h);
+            f();
+          }
+        </body>
+      </method>
+      <method name="cancelEdit">
+        <body>
+          if (! this._modified) return;
+          this.assign(this._orig);
+        </body>
+      </method>
+    </implementation>
+    <handlers>
+      <handler event="input">
+        if (! this._modified) this._modified = true;
+      </handler>
+      <handler event="blur" phase="capturing">
+        this.removeAttribute('focused');  // Copied from #textbox
+        this.fieldChange();
+      </handler>
+<!--
+      <handler event="keypress" keycode="VK_RETURN">
+        event.preventDefault();
+        this.inputField.blur();
+      </handler>
+-->
+      <handler event="keypress" keycode="VK_ESCAPE">
+        this.cancelEdit();
+        this.inputField.blur();
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="media-item-video"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:vbox class="media-box"
+                flex="1"
+                align="center"
+                pack="start">
+        <xul:stack flex="1">
+          <xul:hbox pack="center">
+            <xul:image src="chrome://celtx/skin/video.png"
+                       class="mediaitem-icon"/>
+          </xul:hbox>
+          <xul:vbox pack="start"
+                    align="end">
+            <xul:toolbar class="hoveronly"
+                         style="background-color: #D0D0D0;">
+              <xul:toolbarbutton anonid="removebutton"
+                                 class="library-toolbar-button
+                                        library-remove-button"
+                                 style="background-color: #D0D0D0;"/>
+            </xul:toolbar>
+          </xul:vbox>
+        </xul:stack>
+        <xul:hbox>
+          <xul:editlabel anonid="item-label"
+                         xbl:inherits="value=title"/>
+        </xul:hbox>
+      </xul:vbox>
+    </content>  
+    <implementation>
+      <field name="eventPrefix">"media-item-"</field>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          <![CDATA[
+          var removebutton = document.getAnonymousElementByAttribute(this,
+            "anonid", "removebutton");
+          var self = this;
+          this._listener = {
+            handleEvent: function (event) {
+              self.removeSelf();
+            }
+          };
+          removebutton.addEventListener("command", this._listener, false);
+          ]]>
+        </body>
+      </method>
+      <method name="removeSelf">
+        <body>
+          var event = document.createEvent("Events");
+          event.initEvent("remove", true, true);
+          this.dispatchEvent(event);
+        </body>
+      </method>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+    <handlers>
+      <handler event="editlabelchange">
+        event.preventBubble();
+        var e = document.createEvent('HTMLEvents');
+        e.initEvent('change', false, true);
+        this.dispatchEvent(e);
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="media-item-audio"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:vbox class="media-box"
+                flex="1"
+                align="center"
+                pack="start">
+        <xul:stack flex="1">
+          <xul:hbox pack="center">
+            <xul:image src="chrome://celtx/skin/audio.png"
+                       class="mediaitem-icon"/>
+          </xul:hbox>
+          <xul:vbox pack="start"
+                    align="end">
+            <xul:toolbar class="hoveronly"
+                         style="background-color: #D0D0D0;">
+              <xul:toolbarbutton anonid="removebutton"
+                                 class="library-toolbar-button
+                                        library-remove-button"
+                                 style="background-color: #D0D0D0;"/>
+            </xul:toolbar>
+          </xul:vbox>
+        </xul:stack>
+        <xul:hbox>
+          <xul:editlabel anonid="item-label" xbl:inherits="value=title"/>
+        </xul:hbox>
+      </xul:vbox>
+    </content>  
+    <implementation>
+      <field name="eventPrefix">"media-item-"</field>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          <![CDATA[
+          var removebutton = document.getAnonymousElementByAttribute(this,
+            "anonid", "removebutton");
+          var self = this;
+          this._listener = {
+            handleEvent: function (event) {
+              self.removeSelf();
+            }
+          };
+          removebutton.addEventListener("command", this._listener, false);
+          ]]>
+        </body>
+      </method>
+      <method name="removeSelf">
+        <body>
+          var event = document.createEvent("Events");
+          event.initEvent("remove", true, true);
+          this.dispatchEvent(event);
+        </body>
+      </method>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+    <handlers>
+      <handler event="editlabelchange">
+        event.preventBubble();
+        var e = document.createEvent('HTMLEvents');
+        e.initEvent('change', false, true);
+        this.dispatchEvent(e);
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="media-item-image"
+           extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <content>
+      <xul:vbox class="media-box"
+                pack="start"
+                align="center"
+                flex="1">
+        <xul:stack flex="1">
+          <xul:imagepreview anonid="img"
+                            align="center"/>
+          <xul:vbox pack="start"
+                    align="end">
+            <xul:toolbar class="hoveronly"
+                         style="background-color: #D0D0D0;">
+              <xul:toolbarbutton anonid="removebutton"
+                                 class="library-toolbar-button
+                                        library-remove-button"
+                                 style="background-color: #D0D0D0;"/>
+            </xul:toolbar>
+          </xul:vbox>
+        </xul:stack>
+        <xul:hbox>
+          <xul:editlabel anonid="item-label"
+                         xbl:inherits="value=title"/>
+        </xul:hbox>
+      </xul:vbox>
+    </content>  
+    <implementation>
+      <field name="eventPrefix">"media-item-"</field>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          <![CDATA[
+          try {
+          var removebutton = document.getAnonymousElementByAttribute(this,
+            "anonid", "removebutton");
+          var self = this;
+          this._listener = {
+            handleEvent: function (event) {
+              self.removeSelf();
+            }
+          };
+          removebutton.addEventListener("command", this._listener, false);
+          var rdfsvc = top.getRDFService();
+          var res = rdfsvc.GetResource(this.id);
+          var file = top.gProject.localFileFor(res);
+          if (! file || ! file.exists()) {
+            dump("*** media-item-image.init: No file for image\n");
+            return;
+          }
+          this.setImage(top.fileToFileURL(file));
+          }
+          catch (ex) {
+            dump("*** media-item-image.init: " + ex + "\n");
+          }
+          ]]>
+        </body>
+      </method>
+      <method name="setImage">
+        <parameter name="url"/>
+        <body>
+          try {
+            var img = document.getAnonymousElementByAttribute(this, 'anonid', 'img');
+            img.src = url;
+          }
+          catch (ex) {
+            dump("setImage: " + ex + "\n");
+          }
+        </body>
+      </method>
+      <method name="removeSelf">
+        <body>
+          var event = document.createEvent("Events");
+          event.initEvent("remove", true, true);
+          this.dispatchEvent(event);
+        </body>
+      </method>
+      <property name="title" readonly="true">
+        <getter>
+          var lbl =
+            document.getAnonymousElementByAttribute(this, 'anonid', 'item-label');
+          return lbl.value;
+        </getter>
+      </property>
+    </implementation>
+    <handlers>
+      <handler event="editlabelchange">
+        event.preventBubble();
+        var e = document.createEvent('HTMLEvents');
+        e.initEvent('change', false, true);
+        this.dispatchEvent(e);
+      </handler>
+    </handlers>
+  </binding>
+
+
+  <binding id="media-item-downloading"
+           extends="chrome://mozapps/content/shared/richview.xml#richview-item">
+    <content>
+      <xul:hbox class="media-box" flex="1">
+        <xul:vbox pack="start">
+          <xul:image src="chrome://celtx/skin/downloading.png"
+                     class="mediaitem-icon"/>
+        </xul:vbox>
+        <xul:vbox flex="1">
+          <xul:hbox>
+            <xul:progressmeter class="media-download-meter"
+                               xbl:inherits="value=progress"/>
+            <xul:label value="Cancel"/>
+          </xul:hbox>
+          <xul:label value="Adding file..."/>
+        </xul:vbox>
+      </xul:hbox>
+    </content>  
+    <implementation>
+      <field name="eventPrefix">"media-item-"</field>
+      <constructor>
+        dump("media-item-downloading ctor\n");
+      </constructor>
+    </implementation>
+  </binding>
+
+
+  <binding id="imagepreview">
+    <content>
+      <xul:vbox collapsed="true">
+        <html:img class="thumbnail"/>
+      </xul:vbox>
+    </content>
+    <implementation>
+      <field name="img"/>
+      <field name="box"/>
+      <property name="src">
+        <getter>
+          return this.getAttribute("src");
+        </getter>
+        <setter>
+          this.setAttribute("src", val);
+          this.init();
+        </setter>
+      </property>
+      <field name="thumbHeight">75</field>
+      <field name="thumbWidth">75</field>
+      <constructor>
+        this.init();
+      </constructor>
+      <method name="init">
+        <body>
+          this.box = document.getAnonymousNodes(this)[0];
+          this.img = this.box.firstChild;
+
+          var self = this;
+          this.loadCallback = function (event) {
+            // This callback seems to get called when the item is being
+            // removed from the document as well. I'm not sure why, but it
+            // results in this XBL binding no longer being valid.
+            if ("loaded" in self)
+              self.loaded();
+          };
+
+          if (this.src)
+            this.img.addEventListener('load', this.loadCallback, true);
+
+          this.img.src = this.src;
+        </body>
+      </method>
+      <method name="loaded">
+        <body>
+        <![CDATA[
+          this.img.removeEventListener('load', this.loadCallback, true);
+          var actualWidth  = this.img.naturalWidth;
+          var actualHeight = this.img.naturalHeight;
+          if (actualWidth == 0 || actualHeight == 0) return;
+
+          var width  = actualWidth;
+          var height = actualHeight;
+
+          if (actualWidth < this.thumbWidth) {
+            width  = this.thumbWidth;
+            height = actualHeight * (this.thumbWidth / actualWidth);
+          }
+          if (height > this.thumbHeight) {
+            height = this.thumbHeight;
+            width  = actualWidth * (this.thumbHeight / actualHeight);
+          }
+
+          this.img.width  = Math.floor(width);
+          this.img.height = Math.floor(height);
+          this.box.collapsed = false;
+        ]]>
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+</bindings>
+

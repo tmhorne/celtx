@@ -1,0 +1,18 @@
+<!ENTITY untitledTab "(Neimenovan)">
+<!ENTITY newTab.label "Nov zavihek">
+<!ENTITY newTab.accesskey "N">
+<!ENTITY closeTab.label "Zapri zavihek">
+<!ENTITY closeTab.accesskey "z">
+<!ENTITY closeOtherTabs.accesskey "d">
+<!ENTITY closeOtherTabs.label "Zapri druge zavihke">
+<!ENTITY reloadAllTabs.label "Ponovno naloži vse zavihke">
+<!ENTITY reloadAllTabs.accesskey "A">
+<!ENTITY reloadTab.label "Ponovno naloži zavihek">
+<!ENTITY reloadTab.accesskey "o">
+<!ENTITY listAllTabs.label "Naštej vse zavihke">
+<!ENTITY bookmarkAllTabs.label "Dodaj vse zavihke med zaznamke ...">
+<!ENTITY bookmarkAllTabs.accesskey "V">
+<!ENTITY bookmarkThisTab.label "Dodaj zavihek med zaznamke">
+<!ENTITY bookmarkThisTab.accesskey "Z">
+<!ENTITY undoCloseTab.label "Prekliči zapiranje zavihka">
+<!ENTITY undoCloseTab.accesskey "P">

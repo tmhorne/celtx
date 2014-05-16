@@ -1,0 +1,218 @@
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+
+body {
+  counter-reset: scenecountl scenecountr shotcount charcount pages 1;
+}
+
+.sceneheading {
+  counter-reset: shotcount;
+}
+
+@media print {
+body {
+%ifdef XP_MACOSX
+  line-height: 1.0;
+%else
+  line-height: 1.07;
+%endif
+}
+}
+
+@media screen {
+
+span.camera,
+span.lights,
+span.electrics,
+span.opticalfx {
+  color: #390;  /* green */
+}
+
+span.music,
+span.sound,
+span.soundfx {
+  color: #630;  /* brown */
+}
+
+span.cgi,
+span.construction,
+span.painting,
+span.set,
+span.setdressing,
+span.specialfx {
+  color: #03C;  /* blue */
+}
+
+span.hair,
+span.makeup,
+span.props,
+span.wardrobe,
+span.weapons {
+  color: #90F;  /* violet */
+}
+
+span.equip,
+span.mechfx,
+span.stunts {
+  color: #F60;  /* orange */
+}
+
+span.animals,
+span.equip,
+span.greenery,
+span.handler,
+span.livestock,
+span.misc,
+span.vehicles {
+  color: #F3F;  /* pink */
+}
+
+span.actor,
+span.cast,
+span.crew,
+span.extras {
+  color: #F00; /* red */
+}
+
+span.addlabour,
+span.location,
+span.prodnotes,
+span.security {
+  color: #EB0/*#FC0*/;  /* yellow */
+}
+
+
+*[active='true'] {
+  color: black;
+  background: yellow;
+}
+
+span[token='true'] {
+  background-image: url(chrome://celtx/skin/token.png);
+  background-repeat: no-repeat; 
+  background-position: center center;
+  min-height: 12px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  -moz-user-select: text;
+}
+
+span.note, span.media {
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 12px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  z-index: 1;
+  position: relative;
+  top: -8px;
+  left: -8px;
+  margin-right: -10px;
+  -moz-user-select: all;
+}
+
+span.note {
+  background-image: url(chrome://celtx/skin/note.png);
+  background-color: rgb(253, 247, 161);
+}
+
+span.media {
+  background-image: url(chrome://celtx/skin/picture.png);
+}
+
+}
+
+/*
+ * Yeah, this is ugly, but it cuts down on STYLE elements polluting
+ * the script, should we decide to revise this later. If a script
+ * goes to 40+ revisions, we'll need to extend this, but a better
+ * solution is to reset the script before it gets that far.
+ */
+body[showrevisionmarks="false"] span[revision],
+body[showrevisionmarks="1"] span[revision]:not([revision~="1"]),
+body[showrevisionmarks="2"] span[revision]:not([revision~="2"]),
+body[showrevisionmarks="3"] span[revision]:not([revision~="3"]),
+body[showrevisionmarks="4"] span[revision]:not([revision~="4"]),
+body[showrevisionmarks="5"] span[revision]:not([revision~="5"]),
+body[showrevisionmarks="6"] span[revision]:not([revision~="6"]),
+body[showrevisionmarks="7"] span[revision]:not([revision~="7"]),
+body[showrevisionmarks="8"] span[revision]:not([revision~="8"]),
+body[showrevisionmarks="9"] span[revision]:not([revision~="9"]),
+body[showrevisionmarks="10"] span[revision]:not([revision~="10"]),
+body[showrevisionmarks="11"] span[revision]:not([revision~="11"]),
+body[showrevisionmarks="12"] span[revision]:not([revision~="12"]),
+body[showrevisionmarks="13"] span[revision]:not([revision~="13"]),
+body[showrevisionmarks="14"] span[revision]:not([revision~="14"]),
+body[showrevisionmarks="15"] span[revision]:not([revision~="15"]),
+body[showrevisionmarks="16"] span[revision]:not([revision~="16"]),
+body[showrevisionmarks="17"] span[revision]:not([revision~="17"]),
+body[showrevisionmarks="18"] span[revision]:not([revision~="18"]),
+body[showrevisionmarks="19"] span[revision]:not([revision~="19"]),
+body[showrevisionmarks="20"] span[revision]:not([revision~="20"]),
+body[showrevisionmarks="21"] span[revision]:not([revision~="21"]),
+body[showrevisionmarks="22"] span[revision]:not([revision~="22"]),
+body[showrevisionmarks="23"] span[revision]:not([revision~="23"]),
+body[showrevisionmarks="24"] span[revision]:not([revision~="24"]),
+body[showrevisionmarks="25"] span[revision]:not([revision~="25"]),
+body[showrevisionmarks="26"] span[revision]:not([revision~="26"]),
+body[showrevisionmarks="27"] span[revision]:not([revision~="27"]),
+body[showrevisionmarks="28"] span[revision]:not([revision~="28"]),
+body[showrevisionmarks="29"] span[revision]:not([revision~="29"]),
+body[showrevisionmarks="30"] span[revision]:not([revision~="30"]),
+body[showrevisionmarks="31"] span[revision]:not([revision~="31"]),
+body[showrevisionmarks="32"] span[revision]:not([revision~="32"]),
+body[showrevisionmarks="33"] span[revision]:not([revision~="33"]),
+body[showrevisionmarks="34"] span[revision]:not([revision~="34"]),
+body[showrevisionmarks="35"] span[revision]:not([revision~="35"]),
+body[showrevisionmarks="36"] span[revision]:not([revision~="36"]),
+body[showrevisionmarks="37"] span[revision]:not([revision~="37"]),
+body[showrevisionmarks="38"] span[revision]:not([revision~="38"]),
+body[showrevisionmarks="39"] span[revision]:not([revision~="39"]) {
+  background-color: inherit;
+}
+
+span[revision~="colour1"] {
+  background-color: #A0FFFF; /* Blue */
+}
+span[revision~="colour2"] {
+  background-color: #FFA0FF; /* Pink */
+}
+span[revision~="colour3"] {
+  background-color: #FFFFA0; /* Yellow */
+}
+span[revision~="colour4"] {
+  background-color: #A0FFA0; /* Green */
+}
+span[revision~="colour5"] {
+  background-color: #FFD700; /* Gold */
+}
+span[revision~="colour6"] {
+  background-color: #FFAA69; /* Salmon */
+}
+span[revision~="colour7"] {
+  background-color: #FFA0A0; /* Cherry */
+}
+

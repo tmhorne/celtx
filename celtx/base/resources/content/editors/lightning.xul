@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE window [
+#include ../celtx-entities.inc
+<!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %dtd2;
+<!ENTITY % dtd3 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd3;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+
+
+
+<?xml-stylesheet href="chrome://calendar/content/calendar-view-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/skin/calendar-views.css"
+                 type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/calendar-bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/datetimepickers/minimonth.css"
+                 type="text/css"?>
+<?xml-stylesheet href="chrome://calendar/content/datetimepickers/datetimepickers.css" type="text/css"?>
+
+<?xml-stylesheet href="chrome://calendar/skin/calendar-toolbar.css"
+                 type="text/css"?>
+
+
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="lightning"
+        title="Window Title"
+        onload="loaded()">
+
+#include ../celtx-sets.inc
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_calendar"
+                  src="chrome://calendar/locale/calendar.properties"/>
+  </stringbundleset>
+
+  <commandset id="calendar_commands">
+    <command id="publish_calendar" oncommand="ltnPublishCalendar()"/>
+    <command id="import_command" oncommand="loadEventsFromFile()"/>
+    <command id="export_command" oncommand="exportEntireCalendar()"/>
+  </commandset>
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calUtils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-ui-utils.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendarCreation.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/mouseoverPreviews.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/calendar-item-editing.js"/>
+  <script type="application/x-javascript"
+          src="chrome://calendar/content/publish.js"/>
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/lightning.js"/>
+  <!-- MIA:
+       calendar-management.js
+       messenger-overlay-sidebar.js
+       calendar-views.js
+       imip-bar.js (optional?)
+  -->
+
+  <popupset>
+    <popup id="calendar-view-context-menu">
+      <menuitem id="calendar-view-context-menu-newevent"
+                label="&calendar.context.newevent.label;"
+                observes="calendar_new_event_command"
+                accesskey="&calendar.context.newevent.accesskey;"
+                key="calendar-new-event-key"/>
+      <menuitem id="calendar-view-context-menu-newtodo"
+                label="&calendar.context.newtodo.label;"
+                observes="calendar_new_todo_command"
+                accesskey="&calendar.context.newtodo.accesskey;"
+                key="calendar-new-todo-key"/>
+      <!-- These labels are set dynamically, based on the current view -->
+      <menuitem id="context_previous" label="" oncommand="moveView(-1)"
+                label-day="&calendar.prevday.button.tooltip;"
+                label-week="&calendar.prevweek.button.tooltip;"
+                label-month="&calendar.prevmonth.button.tooltip;"
+                accesskey="&goPreviousCmd.accesskey;"/>
+      <menuitem id="context_next" label="" oncommand="moveView(1)"
+                label-day="&calendar.nextday.button.tooltip;"
+                label-week="&calendar.nextweek.button.tooltip;"
+                label-month="&calendar.nextmonth.button.tooltip;"
+                accesskey="&goNextCmd.all.accesskey;"/>
+    </popup>
+    <popup id="calendar-item-context-menu">
+      <menuitem id="calendar-item-context-menu-modify-menuitem"
+                label="&calendar.context.modifyitem.label;"
+                accesskey="&calendar.context.modifyitem.accesskey;"
+                observes="calendar_modify_event_command"/>
+      <menuitem id="calendar-item-context-menu-delete-menuitem"
+                label="&calendar.context.deleteitem.label;"
+                accesskey="&calendar.context.deleteitem.accesskey;"
+                observes="calendar_delete_event_command"/>
+    </popup>
+  </popupset>
+
+  <tooltip id="itemTooltip" noautohide="true"/>
+
+  <!--
+  <toolbar id="MailToolbarPalette"
+           observes="toolbar-broadcaster"
+           iconsize="small">
+  -->
+  <toolbar id="MailToolbarPalette"
+           mode="icons"
+           iconsize="small">
+    <toolbarbutton id="calendar-new-event-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.newevent.button.label;" 
+                   tooltiptext="&calendar.newevent.button.tooltip;" 
+                   oncommand="createEventWithDialog(ltnSelectedCalendar())"/>
+    <toolbarbutton id="calendar-new-task-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.newtask.button.label;" 
+                   tooltiptext="&calendar.newtask.button.tooltip;" 
+                   oncommand="createTodoWithDialog(ltnSelectedCalendar())"/>
+    <toolbarbutton id="calendar-week-view-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.week.button.label;" 
+                   tooltiptext="&calendar.week.button.tooltip;" 
+                   oncommand="showCalendarView('week')"/>
+    <toolbarbutton id="calendar-month-view-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.month.button.label;" 
+                   tooltiptext="&calendar.month.button.tooltip;" 
+                   oncommand="showCalendarView('month')"/>
+    <toolbarbutton id="calendar-day-view-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.day.button.label;" 
+                   tooltiptext="&calendar.day.button.tooltip;" 
+                   oncommand="showCalendarView('day')"/>
+    <toolbarbutton id="calendar-go-to-today-button" 
+                   class="cal-toolbarbutton-1" 
+                   label="&calendar.today.button.label;" 
+                   tooltiptext="&calendar.today.button.tooltip;" 
+                   oncommand="goToToday()"/>
+  </toolbar>
+  <deck flex="1" id="displayDeck">
+  <deck flex="1" id="calendar-view-box">
+    <calendar-decorated-day-view id="day-view" flex="1"
+                                 context="calendar-view-context-menu"
+                                 item-context="calendar-item-context-menu"/>
+    <calendar-decorated-week-view id="week-view" flex="1"
+                                  context="calendar-view-context-menu"
+                                  item-context="calendar-item-context-menu"/>
+    <calendar-decorated-month-view id="month-view" flex="1"
+                                   context="calendar-view-context-menu"
+                                   item-context="calendar-item-context-menu"/>
+  </deck>
+  </deck>
+  <browser id="browser" src="about:blank"
+           type="content" flex="1"/>
+
+</window>

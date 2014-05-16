@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE stylesheet [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cx="http://celtx.com/NS/v1/"
+                version="1.0">
+
+  <xsl:output method="xml" version="1.0" encoding="UTF-8"/>
+
+  <xsl:variable name="base">http://my.celtx.com/res/</xsl:variable>
+
+  <xsl:variable name="projuri"   select="//cx:Project/@rdf:about"/>
+  <xsl:variable name="projns"    select="concat($projuri, '/NS/')"/>  
+
+  <xsl:variable name="compuri"   select="concat($base, generate-id(/))"/>
+  <xsl:variable name="scripturi" select="concat($base, generate-id(/rdf:RDF))"/>
+
+  <xsl:template match="rdf:RDF">
+    <rdf:RDF>
+      <xsl:apply-templates select="//cx:Project"/>
+      <xsl:call-template name="components"/>
+      <xsl:call-template name="markup"/>
+    </rdf:RDF>
+  </xsl:template>
+
+
+  <xsl:template match="cx:Project">
+    <cx:Project rdf:about="{$projuri}">
+      <xsl:call-template name="project-metadata">
+        <xsl:with-param name="elem" select="."/>
+      </xsl:call-template>
+      <cx:components rdf:resource="{$compuri}"/>
+    </cx:Project>
+  </xsl:template>
+
+
+  <xsl:template name="components">
+    <rdf:Seq rdf:about="{$compuri}">
+      <rdf:li>
+        <cx:Document rdf:about="{$scripturi}">
+          <dc:title>&script.label;</dc:title>
+          <cx:doctype rdf:resource="http://celtx.com/NS/v1/ScriptDocument"/>
+          <cx:localFile>script.html</cx:localFile>
+          <cx:auxFile>script_boneyard.html</cx:auxFile>
+        </cx:Document>
+      </rdf:li>
+      <xsl:if test="//cx:Cast">
+        <rdf:li>
+          <rdf:Seq rdf:about="{concat($compuri, 'c')}"
+                   dc:title="&characters.label;">
+            <xsl:call-template name="character-documents">
+              <xsl:with-param name="nodes" select="//cx:Cast"/>
+            </xsl:call-template>
+          </rdf:Seq>
+        </rdf:li>
+      </xsl:if>
+      <xsl:if test="//rdf:Description[contains(@rdf:about, '/scene/')]">
+        <rdf:li>
+          <rdf:Seq rdf:about="{concat($compuri, 's')}"
+                   dc:title="&scenes.label;">
+            <xsl:call-template name="scene-documents">
+              <xsl:with-param name="nodes"
+                select="//rdf:Description[contains(@rdf:about, '/scene/')]"/>
+            </xsl:call-template>
+          </rdf:Seq>
+        </rdf:li>
+      </xsl:if>
+    </rdf:Seq>
+  </xsl:template>
+
+
+  <xsl:template name="markup">
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:AdditionalLabour"/>
+      <xsl:with-param name="type">cx:AdditionalLabour</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Animals"/>
+      <xsl:with-param name="type">cx:Animals</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:AnimalHandler"/>
+      <xsl:with-param name="type">cx:AnimalHandler</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Camera"/>
+      <xsl:with-param name="type">cx:Camera</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Cast"/>
+      <xsl:with-param name="type">cx:Cast</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:CGI"/>
+      <xsl:with-param name="type">cx:CGI</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Construction"/>
+      <xsl:with-param name="type">cx:Construction</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Electrics"/>
+      <xsl:with-param name="type">cx:Electrics</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Extras"/>
+      <xsl:with-param name="type">cx:Extras</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Greenery"/>
+      <xsl:with-param name="type">cx:Greenery</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Hair"/>
+      <xsl:with-param name="type">cx:Hair</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Lights"/>
+      <xsl:with-param name="type">cx:Lights</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Livestock"/>
+      <xsl:with-param name="type">cx:Livestock</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Location"/>
+      <xsl:with-param name="type">cx:Location</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Makeup"/>
+      <xsl:with-param name="type">cx:Makeup</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:MechFX"/>
+      <xsl:with-param name="type">cx:MechFX</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Misc"/>
+      <xsl:with-param name="type">cx:Misc</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Music"/>
+      <xsl:with-param name="type">cx:Music</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:OpticalFX"/>
+      <xsl:with-param name="type">cx:OpticalFX</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Painting"/>
+      <xsl:with-param name="type">cx:Painting</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:ProductionNotes"/>
+      <xsl:with-param name="type">cx:ProductionNotes</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Props"/>
+      <xsl:with-param name="type">cx:Props</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Security"/>
+      <xsl:with-param name="type">cx:Security</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Set"/>
+      <xsl:with-param name="type">cx:Set</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:SetDressing"/>
+      <xsl:with-param name="type">cx:SetDressing</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Sound"/>
+      <xsl:with-param name="type">cx:Sound</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:SoundFX"/>
+      <xsl:with-param name="type">cx:SoundFX</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Storyboard"/>
+      <xsl:with-param name="type">cx:Storyboard</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Stunts"/>
+      <xsl:with-param name="type">cx:Stunts</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Vehicles"/>
+      <xsl:with-param name="type">cx:Vehicles</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Wardrobe"/>
+      <xsl:with-param name="type">cx:Wardrobe</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:call-template name="markup-items">
+      <xsl:with-param name="nodes" select="//cx:Weapons"/>
+      <xsl:with-param name="type">cx:Weapons</xsl:with-param>
+    </xsl:call-template>
+
+  </xsl:template>
+
+
+  <xsl:template name="project-metadata">
+    <xsl:param name="elem"/>
+    <xsl:for-each select="$elem/*|@*">
+      <xsl:call-template name="maybe-output-property">
+        <xsl:with-param name="node" select="."/>
+      </xsl:call-template>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="title-and-desc">
+    <xsl:param name="elem"/>
+    <xsl:param name="type"/>
+    <dc:title>
+      <xsl:choose>
+        <xsl:when test="@dc:title != ''">
+          <xsl:value-of select="@dc:title"/>
+        </xsl:when>
+        <xsl:when test="dc:title != ''">
+          <xsl:value-of select="dc:title"/>
+        </xsl:when>
+        <xsl:otherwise>&untitled.label;</xsl:otherwise>
+      </xsl:choose>
+    </dc:title>
+    <xsl:if test="@dc:description != '' or dc:description != ''">
+      <xsl:element name="{concat('p:', $type, '-description')}"
+                   namespace="{$projns}">
+        <xsl:value-of select="@dc:description"/>
+        <xsl:value-of select="dc:description"/>
+      </xsl:element>
+    </xsl:if>
+  </xsl:template>
+
+
+  <xsl:template name="character-documents">
+    <xsl:param name="nodes"/>
+    <xsl:for-each select="$nodes">
+      <xsl:if test="count(*[starts-with(namespace-uri(), $projuri)]|@*[starts-with(namespace-uri(), $projuri)]|dc:description|@dc:description)">
+        <rdf:li>
+          <cx:Document rdf:about="{concat($base, generate-id())}">
+            <cx:doctype rdf:resource="http://celtx.com/NS/v1/CharacterDocument"/>
+            <xsl:call-template name="title-and-desc">
+              <xsl:with-param name="elem" select="."/>
+              <xsl:with-param name="type">character</xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="document-metadata">
+              <xsl:with-param name="elem" select="."/>
+            </xsl:call-template>
+            <xsl:if test="cx:media">
+              <xsl:call-template name="document-media">
+                <xsl:with-param name="elem" select="cx:media"/>
+                <xsl:with-param name="name">character</xsl:with-param>
+              </xsl:call-template>
+            </xsl:if>
+          </cx:Document>
+        </rdf:li>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="scene-documents">
+    <xsl:param name="nodes"/>
+    <xsl:for-each select="$nodes">
+      <xsl:if test="count(*[starts-with(namespace-uri(), $projuri)]|@*[starts-with(namespace-uri(), $projuri)]|dc:description|@dc:description)">
+        <rdf:li>
+          <cx:Document rdf:about="{concat($base, generate-id())}">
+            <cx:doctype rdf:resource="http://celtx.com/NS/v1/SceneDocument"/>
+            <xsl:call-template name="title-and-desc">
+              <xsl:with-param name="elem" select="."/>
+              <xsl:with-param name="type">scene</xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="document-metadata">
+              <xsl:with-param name="elem" select="."/>
+            </xsl:call-template>
+            <xsl:if test="cx:media">
+              <xsl:call-template name="document-media">
+                <xsl:with-param name="elem" select="cx:media"/>
+                <xsl:with-param name="name">scene</xsl:with-param>
+              </xsl:call-template>
+            </xsl:if>
+          </cx:Document>
+        </rdf:li>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="document-metadata">
+    <xsl:param name="elem"/>
+    <xsl:for-each select="$elem/*|@*">
+      <xsl:call-template name="maybe-output-property">
+        <xsl:with-param name="node" select="."/>
+        <xsl:with-param name="skip-dc">1</xsl:with-param>
+      </xsl:call-template>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="document-media">
+    <xsl:param name="elem"/>
+    <xsl:param name="name"/>
+
+    <xsl:variable name="uri" select="$elem/@rdf:resource"/>
+    <xsl:variable name="elem-name" select="concat('p:', $name, '-media')"/>
+
+    <xsl:element name="{$elem-name}" namespace="{$projns}">
+      <rdf:Seq rdf:about="{concat($base, generate-id($elem))}">
+        <xsl:for-each select="//rdf:Seq[@rdf:about=$uri]/rdf:li">
+          <rdf:li>
+            <xsl:call-template name="media-resource-dupe">
+              <xsl:with-param name="uri" select="@rdf:resource"/>
+            </xsl:call-template>
+          </rdf:li>
+        </xsl:for-each>
+      </rdf:Seq>
+    </xsl:element>
+
+  </xsl:template>
+
+
+  <xsl:template name="markup-items">
+    <xsl:param name="nodes"/>
+    <xsl:param name="type"/>
+    <xsl:for-each select="$nodes">
+      <xsl:element name="{$type}">
+        <xsl:attribute name="rdf:about">
+          <xsl:value-of select="@rdf:about"/>
+        </xsl:attribute>
+        <xsl:for-each select="*|@*">
+          <xsl:call-template name="maybe-output-property">
+            <xsl:with-param name="node" select="."/>
+          </xsl:call-template>
+        </xsl:for-each>
+        <xsl:if test="cx:media">
+          <xsl:call-template name="markup-media">
+            <xsl:with-param name="elem" select="cx:media"/>
+          </xsl:call-template>
+        </xsl:if>
+      </xsl:element>
+      <rdf:Description rdf:about="{$scripturi}">
+        <cx:markup rdf:resource="{@rdf:about}"/>
+      </rdf:Description>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="markup-media">
+    <xsl:param name="elem"/>
+
+    <xsl:variable name="uri" select="$elem/@rdf:resource"/>
+
+    <xsl:for-each select="//rdf:Seq[@rdf:about=$uri]/rdf:li">
+      <cx:media>
+        <xsl:call-template name="media-resource">
+          <xsl:with-param name="uri" select="@rdf:resource"/>
+        </xsl:call-template>
+      </cx:media>
+    </xsl:for-each>
+
+  </xsl:template>
+
+
+  <xsl:template name="maybe-output-property">
+    <xsl:param name="node"/>
+    <xsl:param name="skip-dc">0</xsl:param>
+
+    <xsl:variable name="prop" select="name($node)"/>
+    <xsl:variable name="val"  select="string($node)"/>
+    <xsl:variable name="ns"   select="namespace-uri($node)"/>
+
+    <xsl:variable name="dc-prop">!dc:created!dc:source!dc:rights!dc:title!dc:description!</xsl:variable>
+    <xsl:variable name="cx-prop">!cx:author!cx:contact!cx:publishMode!cx:sharedUsers!</xsl:variable>
+
+    <xsl:choose>
+
+      <xsl:when test="$ns = 'http://purl.org/dc/elements/1.1/' and $skip-dc != 1">
+        <xsl:if test="contains($dc-prop, concat('!', $prop, '!'))">
+          <xsl:element name="{$prop}">
+            <xsl:value-of select="$val"/>
+          </xsl:element>
+        </xsl:if>
+      </xsl:when>
+
+      <xsl:when test="$ns = 'http://celtx.com/NS/v1/'">
+        <xsl:if test="contains($cx-prop, concat('!', $prop, '!'))">
+          <xsl:element name="{$prop}">
+            <xsl:value-of select="$val"/>
+          </xsl:element>
+        </xsl:if>
+      </xsl:when>
+
+      <xsl:when test="$ns = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'">
+      </xsl:when>
+
+      <xsl:when test="starts-with($ns, $projuri)">
+        <xsl:variable name="lname">
+          <xsl:call-template name="map-prop">
+            <xsl:with-param name="prop" select="local-name($node)"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:choose>
+          <xsl:when test="contains($ns, 'character')">
+            <xsl:element name="{concat('p:character-', $lname)}"
+                         namespace="{$projns}">
+              <xsl:value-of select="$val"/>
+            </xsl:element>
+          </xsl:when>
+          <xsl:when test="contains($ns, 'scenedet')">
+            <xsl:element name="{concat('p:scene-', $lname)}"
+                         namespace="{$projns}">
+              <xsl:value-of select="$val"/>
+            </xsl:element>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:when>
+
+    </xsl:choose>
+
+  </xsl:template>
+
+
+  <xsl:template name="media-resource">
+    <xsl:param name="uri"/>
+    <xsl:for-each select="//*[@rdf:about=$uri]">
+      <xsl:element name="{name()}">
+        <xsl:attribute name="rdf:about">
+          <xsl:value-of select="concat($base, generate-id())"/>
+        </xsl:attribute>
+        <dc:title><xsl:value-of select="@dc:title"/></dc:title>
+        <cx:localFile>
+          <xsl:call-template name="leaf-name">
+            <xsl:with-param name="str" select="$uri"/>
+          </xsl:call-template>
+        </cx:localFile>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="media-resource-dupe">
+    <xsl:param name="uri"/>
+    <xsl:for-each select="//*[@rdf:about=$uri]">
+      <xsl:element name="{name()}">
+        <xsl:attribute name="rdf:about">
+          <xsl:value-of select="concat($base, generate-id(), 'b')"/>
+        </xsl:attribute>
+        <dc:title><xsl:value-of select="@dc:title"/></dc:title>
+        <cx:localFile>
+          <xsl:call-template name="leaf-name">
+            <xsl:with-param name="str" select="$uri"/>
+          </xsl:call-template>
+        </cx:localFile>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+
+  <xsl:template name="leaf-name">
+    <xsl:param name="str"/>
+    <xsl:choose>
+      <xsl:when test="contains($str, '/')">
+        <xsl:call-template name="leaf-name">
+          <xsl:with-param name="str" select="substring-after($str, '/')"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$str"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="map-prop">
+    <xsl:param name="prop"/>
+
+    <xsl:choose>
+      <!-- Character -->
+      <xsl:when test="$prop = 'trait1'">traits</xsl:when>
+      <xsl:when test="$prop = 'ach_goalmotivation2'">ach_goal</xsl:when>
+      <xsl:when test="$prop = 'upbring'">habits</xsl:when>
+
+      <!-- Scene -->
+      <xsl:when test="$prop = 'scene-event'">event</xsl:when>
+      <xsl:when test="$prop = 'scene-plot'">plot</xsl:when>
+      <xsl:when test="$prop = 'scene-char'">chars</xsl:when>
+      <xsl:when test="$prop = 'scene-set'">set</xsl:when>
+      <xsl:when test="$prop = 'scene-when'">when</xsl:when>
+      <xsl:when test="$prop = 'scene-mood'">mood</xsl:when>
+
+      <xsl:otherwise><xsl:value-of select="$prop"/></xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:template>
+
+
+</xsl:stylesheet>

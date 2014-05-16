@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Parts of this liberally copied from richlistbox.xml#richlistitem.
+-->
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          id="scriptnotes">
+
+  <binding id="scriptnote"
+           extends="chrome://global/content/bindings/general.xml#basecontrol">
+    <content>
+      <xul:vbox allowevents="true"
+                flex="1">
+        <xul:hbox pack="end">
+          <xul:toolbarbutton class="library-toolbar-button
+                                    library-remove-button"
+               oncommand="this.parentNode.parentNode.parentNode.removeSelf();"/>
+        </xul:hbox>
+        <xul:textbox class="noteeditbox"
+                     multiline="true"
+                     rows="8"
+                     anonid="editbox"
+                     oninput="this.parentNode.parentNode.onInput(event);"/>
+        <xul:hbox pack="end">
+          <xul:label anonid="datelabel"
+                     xbl:inherits="value=date"/>
+        </xul:hbox>
+      </xul:vbox>
+    </content>
+    <implementation implements="nsIAccessibleProvider, nsIDOMXULSelectControlItemElement">
+      <constructor>
+      <![CDATA[
+      try {
+        this.editbox = document.getAnonymousElementByAttribute(this, "anonid",
+          "editbox");
+        // Trigger an update of content
+        this._initializing = true;
+        this.value = this.getAttribute("value");
+        this._initializing = false;
+      }
+      catch (ex) {
+        dump("*** constructor: " + ex + "\n");
+      }
+      ]]>
+      </constructor>
+
+      <destructor>
+      <![CDATA[
+        if (this.selected) {
+          this.control._setItemSelection(null);
+        }
+      ]]>
+      </destructor>
+
+      <property name="accessible">
+        <getter>
+          <![CDATA[
+            var accService = Components.classes[
+              "@mozilla.org/accessibilityService;1"]
+              .getService(Components.interfaces.nsIAccessibilityService);
+            return accService.createXULListitemAccessible(this);
+          ]]>
+        </getter>
+      </property>
+
+      <property name="selected">
+        <getter>
+          return this.getAttribute('selected') == 'true';
+        </getter>
+        <setter>
+        <![CDATA[
+          if (val)
+            this.setAttribute("selected", "true");
+          else
+            this.removeAttribute("selected");
+          return val;
+          ]]>
+        </setter>
+      </property>
+
+      <property name="date">
+        <getter>
+          return this.getAttribute("date");
+        </getter>
+        <setter>
+          if (val)
+            this.setAttribute("date", val);
+          else
+            this.removeAttribute("date");
+          var datelabel = document.getAnonymousElementByAttribute(this,
+            "anonid", "datelabel");
+          datelabel.value = val;
+          return val;
+        </setter>
+      </property>
+
+      <property name="value">
+        <getter>
+          return this.getAttribute("value");
+        </getter>
+        <setter>
+        <![CDATA[
+          if (this.value == val && ! this._initializing) return;
+
+          if (this.getAttribute("value") != val)
+            this.setAttribute("value", val);
+
+          if (this.editbox.value != val)
+            this.editbox.value = val;
+
+          try {
+            var event = document.createEvent("HTMLEvents");
+            event.initEvent("change", true, false);
+            this.dispatchEvent(event);
+          }
+          catch (ex) {
+            dump("*** set value: " + ex + "\n");
+          }
+
+          return val;
+        ]]>
+        </setter>
+      </property>
+
+      <method name="onInput">
+        <parameter name="event"/>
+        <body>
+          if (this._timer)
+            clearTimeout(this._timer);
+          var self = this;
+          function callback () {
+            self.value = self.editbox.value;
+            self._timer = null;
+          }
+          this._timer = setTimeout(callback, 500);
+        </body>
+      </method>
+
+      <method name="removeSelf">
+        <body>
+        <![CDATA[
+          var event = document.createEvent("Events");
+          event.initEvent("remove", true, true);
+          this.dispatchEvent(event);
+        ]]>
+        </body>
+      </method>
+
+      <property name="label"
+                onget="return this.value;"
+                onset="this.value = val; return val;"/>
+
+      <property name="control">
+        <getter>
+          <![CDATA[
+            var ISelCtrl = Components.interfaces.nsIDOMXULSelectControlElement;
+            var parent = this.parentNode;
+            while (parent) {
+              if (parent instanceof ISelCtrl)
+                return parent;
+              parent = parent.parentNode;
+            }
+            return null;
+          ]]>
+        </getter>
+      </property>
+    </implementation>
+
+    <handlers>
+      <handler event="click">
+        <![CDATA[
+        var listbox = this.control;
+        if ((event.target == this) && event.ctrlKey &&
+            (listbox.selectedItem == this))
+          listbox.clearSelection();
+        else
+          listbox.selectedItem = this;
+      ]]>
+      </handler>
+      <handler event="contextmenu" phase="capturing">
+        <![CDATA[
+          // This needed to be called before the contextmenu gets shown to
+          // handle someone rightclicking on an unselected item
+          if (event.target == this) {
+            var listbox = this.control;
+            if (listbox)
+              listbox.selectedItem = this;
+          }
+        ]]>
+      </handler>
+    </handlers>
+  </binding>
+
+</bindings>

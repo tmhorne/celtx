@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<bindings id="navPanelBindings"
+  xmlns="http://www.mozilla.org/xbl"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="navpanel"
+           extends="chrome://global/content/bindings/general.xml#deck">
+    <implementation implements="nsIDOMEventListener">
+
+      <field name="mPanelListeners">new Array()</field>
+
+      <method name="addPanelListener">
+        <parameter name="aListener"/>
+        <body>
+        <![CDATA[
+          for (var i = 0; i < this.mPanelListeners.length; ++i) {
+            if (this.mPanelListeners[i] == aListener)
+              return;
+          }
+          this.mPanelListeners.push(aListener);
+        ]]>
+        </body>
+      </method>
+
+      <method name="removePanelListener">
+        <parameter name="aListener"/>
+        <body>
+        <![CDATA[
+          for (var i = 0; i < this.mPanelListeners.length; ++i) {
+            if (this.mPanelListeners[i] == aListener) {
+              this.mPanelListeners.splice(i, 1);
+              return;
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="handleEvent">
+        <parameter name="aEvent"/>
+        <body>
+        <![CDATA[
+          dump("--- navpanel.handleEvent: " + aEvent.type + ", "
+            + aEvent.target + "\n");
+          if (aEvent.type != "load")
+            return;
+          if (! (aEvent.target instanceof XULDocument))
+            return;
+
+          for (var i = 0; i < this.childNodes.length; ++i) {
+            if (this.childNodes[i].contentDocument == aEvent.target) {
+              var panelevent = {
+                cancelable: false,
+                cancelled: false,
+                target: this.childNodes[i],
+                type: "PanelLoad",
+                preventDefault: function () {}
+              };
+              this.dispatchPanelEvent(panelevent);
+              this.childNodes[i].contentWindow.removeEventListener("load",
+                this, false);
+              break;
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="dispatchPanelEvent">
+        <parameter name="aEvent"/>
+        <body>
+        <![CDATA[
+          var handlerName = "on" + aEvent.type;
+          for (var i = 0; i < this.mPanelListeners.length; ++i) {
+            if (aEvent.cancelled)
+              return;
+            if (handlerName in this.mPanelListeners[i]) {
+              try {
+                this.mPanelListeners[i][handlerName](aEvent);
+              }
+              catch (ex) {
+                dump("*** " + handlerName + ": " + ex + "\n");
+              }
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="addPanel">
+        <parameter name="aURI"/>
+        <body>
+        <![CDATA[
+          dump("--- navpanel.addPanel: " + aURI + "\n");
+          var f = document.createElementNS(
+            "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+            "iframe");
+          f.setAttribute("flex", "1");
+          this.appendChild(f);
+          f.contentWindow.addEventListener("load", this, false);
+          f.setAttribute("src", aURI);
+          return f;
+        ]]>
+        </body>
+      </method>
+
+      <method name="removePanel">
+        <parameter name="aPanel"/>
+        <body>
+          this.removeChild(aPanel);
+        </body>
+      </method>
+
+    </implementation>
+  </binding>
+</bindings>

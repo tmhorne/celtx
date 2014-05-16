@@ -1,0 +1,965 @@
+<!ENTITY celtxServices.label "Celtx Services">
+<!ENTITY celtxServices.toolbarlabel "Services">
+<!ENTITY celtxServices.tooltiptext "&celtxServices.label;">
+
+<!ENTITY email.label "Email">
+
+<!ENTITY export.label "Export">
+<!ENTITY exportSketch.label "Export Sketch">
+<!ENTITY chapter.label "Chapter">
+<!ENTITY chapters.label "Chapters">
+<!ENTITY chapter.toolbarlabel "Ch">
+<!ENTITY editor.label "Editor">
+<!ENTITY showContents.label "Show Contents">
+<!ENTITY exportCatalog.label "Export Catalog">
+<!ENTITY novel.desc "Add a novel, with index cards and annotations.">
+<!ENTITY novel.label "Novel">
+<!ENTITY showBreakdownInScript.label "Show Breakdown in Script">
+<!ENTITY showDialogNumbers.label "Show Dialog Numbers">
+
+<!ENTITY timer.settings.label "Settings">
+<!ENTITY timer.autostart.label "Start the session when the script opens.">
+<!ENTITY timer.schedule.label "Schedule">
+<!ENTITY timer.useSchedule.label "Use scheduled breaks">
+<!ENTITY timer.workMinutes.label "Work (minutes):">
+<!ENTITY timer.breakMinutes.label "Break (minutes):">
+<!ENTITY timer.alertType.label "Type of alert when break starts/ends">
+<!ENTITY timer.showDialog.label "Show a dialog">
+<!ENTITY timer.endSession.label "End Session">
+<!ENTITY timer.flashTimer.label "Flash the timer">
+<!ENTITY timer.resetSession.label "Reset Session">
+<!ENTITY timer.settingsCmd.label "&timer.settings.label;...">
+<!ENTITY timer.sessionSummary.label "Reports">
+<!ENTITY timer.sessionSummaryCmd.label "&timer.sessionSummary.label;...">
+<!ENTITY timer.sessionStartTime.label "Session Start Time:">
+<!ENTITY timer.totalWritingTime.label "Total Writing Time:">
+<!ENTITY timer.totalBreakTime.label "Total Break Time:">
+<!ENTITY timer.totalTime.label "Total Time:">
+<!ENTITY timer.wordsWritten.label "Words Written">
+
+<!ENTITY timer.allSessions.label "All Sessions">
+<!ENTITY timer.sessionDetail.label "Session Detail">
+<!ENTITY timer.scriptSummary.label "Script Summary">
+<!ENTITY timer.writingGoals.label "Writing Goals">
+<!ENTITY timer.twitter.label "Twitter">
+
+<!ENTITY timer.sessionReport.label "Session Report">
+<!ENTITY timer.totalSessionTime.header "Total Session Time">
+<!ENTITY timer.totalSessionTime.label "Total session time">
+<!ENTITY timer.totalWordsWritten.header "Total Words Written">
+<!ENTITY timer.totalWordsWritten.label "Total words written">
+<!ENTITY timer.noSessionsToDisplay.label "There are no sessions to display.">
+<!ENTITY timer.sessionNo.label "Session #">
+<!ENTITY timer.date.label "Date">
+
+<!ENTITY timer.tweetThis.label "Tweet This!">
+<!ENTITY timer.startDate.label "Start date">
+<!ENTITY timer.startTime.label "Start time">
+<!ENTITY timer.endTime.label "End time">
+<!ENTITY timer.breakTime.label "Break time">
+
+<!ENTITY timer.sessionStartWords.label "Words at start of session">
+<!ENTITY timer.sessionEndWords.label "Words at end of session">
+<!ENTITY timer.newWords.header "New Words">
+<!ENTITY timer.noNewWords.label "No increase in the number of words.">
+<!ENTITY timer.newDialog.header "New Dialog">
+<!ENTITY timer.noNewDialog.label "No increase in amount of dialog.">
+<!ENTITY timer.newCharacters.header "New Characters">
+<!ENTITY timer.noNewCharacters.label "No new characters added.">
+<!ENTITY timer.newPages.header "New Pages">
+<!ENTITY timer.newScenes.header "New Scenes">
+<!ENTITY timer.newPanels.header "New Panels">
+<!ENTITY timer.shotWords.header "Shot Words">
+<!ENTITY timer.actionWords.header "Action Words">
+<!ENTITY timer.dialogWords.header "Dialog Words">
+<!ENTITY timer.soundVoiceMusicWords.header "Sound/Voice/Music Words">
+<!ENTITY timer.stageDirWords.header "Stage Direction Words">
+
+<!ENTITY timer.name.label "Name">
+<!ENTITY timer.words.label "Words">
+<!ENTITY timer.percentage.label "Percentage">
+
+<!ENTITY timer.summaryReport.label "Summary Report">
+<!ENTITY timer.contributionsByAuthor.label "Contributions by Author">
+<!ENTITY timer.weekdaySessions.label "Sessions by Day of Week">
+<!ENTITY timer.weekdayWords.label "Words by Day of Week">
+<!ENTITY timer.numberOfSessions.label "Number of sessions">
+<!ENTITY timer.longest.label "Longest">
+<!ENTITY timer.shortest.label "Shortest">
+<!ENTITY timer.averageDuration.label "Average duration">
+<!ENTITY timer.mostWords.label "Most words">
+<!ENTITY timer.leastWords.label "Least words">
+<!ENTITY timer.averageWords.label "Average words">
+<!ENTITY timer.wordCounts.header "Word Counts">
+<!ENTITY timer.element.label "Element">
+<!ENTITY timer.totalWords.header "Total Words">
+<!ENTITY timer.totalDialogWords.header "Total Dialog Words">
+<!ENTITY timer.character.label "Character">
+<!ENTITY timer.weekday.label "Weekday">
+<!ENTITY timer.sessions.label "Sessions">
+<!ENTITY timer.pctOfTotal.label "&#37; of Total">
+<!ENTITY timer.author.label "Author">
+
+<!ENTITY timer.writingGoalReport.label "Writing Goal Report">
+<!ENTITY timer.goalSession.header "Session Goal">
+<!ENTITY timer.goalSession.label "Session goal">
+<!ENTITY timer.goalDaily.header "Daily Goal">
+<!ENTITY timer.goalDaily.label "Daily goal">
+<!ENTITY timer.goalScript.header "Script Goal">
+<!ENTITY timer.goalScript.label "Script goal">
+<!ENTITY timer.wordGoal.label "Word goal">
+
+<!ENTITY timer.message.label "Message">
+<!ENTITY timer.tags.label "Tags">
+<!ENTITY timer.mostRecentSession.label "Most recent session">
+
+<!ENTITY timer.alertDialog.title "Session Timer">
+<!ENTITY timer.timerMenu.tooltip "Click for Options">
+
+<!ENTITY fullscreen.foregroundColour.tooltip "Foreground Colour">
+<!ENTITY fullscreen.backgroundColour.tooltip "Background Colour">
+<!ENTITY fullscreen.fullscreen.tooltip "Fullscreen">
+
+<!ENTITY bbc.options.label "BBC Options">
+<!ENTITY bbc.showTitle.label "Title of Show">
+<!ENTITY bbc.sketchTitle.label "Title of Sketch">
+<!ENTITY editText.title "Edit Text">
+<!ENTITY sketch.fillColour.tooltip "Fill Colour">
+<!ENTITY sketch.group.tooltip "Group">
+<!ENTITY sketch.lower.tooltip "Lower">
+<!ENTITY sketch.lowerToBottom.tooltip "Lower to Bottom">
+<!ENTITY sketch.raise.tooltip "Raise">
+<!ENTITY sketch.raiseToTop.tooltip "Raise to Top">
+<!ENTITY sketch.strokeColour.tooltip "Stroke Colour">
+<!ENTITY sketch.ungroup.tooltip "Ungroup">
+
+<!ENTITY custom.label "Custom">
+<!ENTITY saveAsPreset.label "Save as Preset">
+<!ENTITY sceneLocking.title "Scene Locking">
+<!ENTITY sceneNumbering.label "Scene Numbering">
+<!ENTITY scenenumber.after.label "After">
+<!ENTITY scenenumber.before.label "Before">
+<!ENTITY scenenumber.example.label "Example">
+<!ENTITY scenenumber.letter.label "Letter">
+<!ENTITY scenenumber.number.label "Number">
+<!ENTITY scenenumber.position.label "Position">
+<!ENTITY scenenumber.prefix.label "Prefix">
+<!ENTITY scenenumbers.resetAll.label "Reset All Numbers">
+<!ENTITY scenenumber.suffix.label "Suffix">
+<!ENTITY scenenumber.type.label "Type">
+<!ENTITY style.label "Style">
+
+<!ENTITY project.film.label "Филм">
+<!ENTITY project.av.label "А/В">
+<!ENTITY project.theatre.label "Театар">
+<!ENTITY project.audioplay.label "&audioplay.label;">
+<!ENTITY project.storyboard.label "&storyboard.label;">
+<!ENTITY project.comic.label "&comicBook.label;">
+<!ENTITY project.text.label "&text.label;">
+<!ENTITY project.novel.label "&novel.label;">
+
+<!ENTITY addImage.label "Add Image">
+<!ENTITY addPaletteObjects.label "Get Art Packs">
+<!ENTITY addShot.label "Add Shot">
+<!ENTITY bbcCueStyle.label "BBC Cue">
+<!ENTITY bbcSceneStyle.label "BBC Scene">
+<!ENTITY bdc.cameras "Cameras">
+<!ENTITY chat.label "Chat">
+<!ENTITY colour.blue "Blue">
+<!ENTITY colour.cherry "Cherry">
+<!ENTITY colour.gold "Gold">
+<!ENTITY colour.green "Green">
+<!ENTITY colour.pink "Pink">
+<!ENTITY colour.salmon "Salmon">
+<!ENTITY colour.white "White">
+<!ENTITY colour.yellow "Yellow">
+<!ENTITY currentRevision.label "Current Revision">
+<!ENTITY createNewRevision.tooltip "Create New Revision">
+<!ENTITY default.label "Default">
+<!ENTITY enableSceneLocking.label "Lock Scenes">
+<!ENTITY fixNumbers.label "Fix">
+<!ENTITY furniture.label "Намештај">
+<!ENTITY hollywood.label "Hollywood">
+<!ENTITY light.flood.label "Flood">
+<!ENTITY light.spot.label "Спот">
+<!ENTITY linesBetweenScenes.label "Lines between scenes">
+<!ENTITY man.label "Man">
+<!ENTITY numbers.bothNos "Both #s">
+<!ENTITY numbers.leftNo "Left #">
+<!ENTITY numbers.none "None">
+<!ENTITY numbers.rightNo "Right #">
+<!ENTITY omitScene.label "Omit Scene">
+<!ENTITY palette.label "Palette">
+<!ENTITY palettes.label "Palettes">
+<!ENTITY paletteTree.tooltip "Узми и спусти у скицу">
+<!ENTITY people.label "Људи">
+<!ENTITY person.label "Особе">
+<!ENTITY preventEditing.label "Text Lock">
+<!ENTITY resetRevisionMode.label "Reset Revision Mode">
+<!ENTITY revisionColour.desc "This will be used as the default revision colour for any edits made to the script.">
+<!ENTITY revisionColour.label "Revision Colour">
+<!ENTITY revisionMarks.all "All Marks">
+<!ENTITY revisionMarks.current "Current Marks">
+<!ENTITY revisionMarks.hide "Hide Marks">
+<!ENTITY revisionMarks.mark.label "Mark">
+<!ENTITY revisionMarks.unmark.label "Unmark">
+<!ENTITY revisionMode.label "Revision Mode">
+<!ENTITY revisionName.label "Revision Name">
+<!ENTITY revisionOptions.title "Revision Options">
+<!ENTITY shotSetup.label "Sketch">
+<!ENTITY shotSetup.desc "Add a sketch to your project.">
+<!ENTITY showScriptHeader.label "Show Script Header">
+<!ENTITY standard.label "Standard">
+<!ENTITY startNewRevision.label "Start a New Revision">
+<!ENTITY storyboard.showImages.label "Show Images">
+<!ENTITY storyboard.showSetups.label "Show Sketches">
+<!ENTITY storyboard.showBoth.label "Show Both">
+<!ENTITY woman.label "Woman">
+
+<!ENTITY light.bank.label "Banklight">
+<!ENTITY bathtub.label "Bath Tub">
+<!ENTITY boy.label "Boy">
+<!ENTITY car.label "Car">
+<!ENTITY chair.label "Chair">
+<!ENTITY coffeetable.label "Coffee Table">
+<!ENTITY couch.label "Couch">
+<!ENTITY crowd.label "Crowd">
+<!ENTITY endtable.label "End Table">
+<!ENTITY girl.label "Girl">
+<!ENTITY group.label "Group"> <!-- Group of people -->
+<!ENTITY house.label "House">
+<!ENTITY building.label "Building"> <!-- e.g., office building -->
+<!ENTITY pickuptruck.label "Pickup Truck">
+<!ENTITY sink.label "Sink"> <!-- Kitchen sink -->
+<!ENTITY spotlight.label "Spotlight">
+<!ENTITY street.label "Street">
+<!ENTITY toilet.label "Toilet">
+<!ENTITY tree.label "Tree">
+<!ENTITY van.label "Van">
+<!ENTITY videocamera.label "Video Camera">
+
+<!ENTITY createTemplate.label "Create Template">
+<!ENTITY fetchingList.label "Fetching list">
+<!ENTITY getCeltxTools.label "Get Celtx Tools">
+<!ENTITY myStudio.label "My Celtx">
+<!ENTITY openFromStudio.label "Open from Celtx">
+<!ENTITY owner.label "Owner">
+<!ENTITY personal.label "Personal">
+<!ENTITY saveCommentCheckbox.label "Ask me for a comment when saving to Celtx.">
+<!ENTITY saveToStudio.label "Save to Celtx">
+<!ENTITY savedBy.label "Saved By">
+<!ENTITY studio.label "Celtx">
+<!ENTITY studioAuthDialog.title "Celtx Authentication">
+<!ENTITY studioAuthDialog.desc "Celtx Login">
+<!ENTITY studioProjects.label "Celtx Projects">
+<!ENTITY toolbox.label "Toolbox">
+
+<!ENTITY access.label "Приступити">
+<!ENTITY actorProfile.desc      "Унеси опис глумца.">
+<!ENTITY actorProfile.label     "Глумац">
+<!ENTITY adaptTo.label "Измјене">
+<!ENTITY add.label    "Унеси">
+<!ENTITY addCardCmd.label "Унеси картицу">
+<!ENTITY addCmd.label "Унеси">
+<!ENTITY addDocumentDialog.itemDetailsGroupLabel "Детаљи документа">
+<!ENTITY addDocumentDialog.selectItemGroupLabel "Изабери документ">
+<!ENTITY addFolder.label "Унеси фолдер...">
+<!ENTITY addFolderCmd.label "Унеси фолдер">
+<!ENTITY addImages.label "Додаj слику">
+<!ENTITY addItem.label "Унеси документ...">
+<!ENTITY addItemCmd.label "Унеси документ">
+<!ENTITY addNote.label "Унеси забиљешку">
+<!ENTITY addSequenceCmd.toolbarlabel "Унеси секвенцу">
+<!ENTITY advanced.label       "Напредно">
+<!ENTITY alignCenter.label "Унос на центру">
+<!ENTITY alignJustified.label "Унос нормално">
+<!ENTITY alignLeft.label "Унос лијево">
+<!ENTITY alignRight.label "унос десно">
+<!ENTITY allShootDays.label "Сви снимајући дани">
+<!ENTITY allUppercase.label "Сви">
+<!ENTITY american.label "Амерички">
+<!ENTITY appName "Celtx">
+<!ENTITY appliesToPDFOnly.label  "Доступно у опцији само за PDF формат.">
+<!ENTITY audioplay.desc "Унеси аудио сценарио у пројект.">
+<!ENTITY audioplay.label "Аудио сценарио">
+<!ENTITY authDialog.description  "Логирање на Celtx-ов сајт">
+<!ENTITY authDialog.title "Celtx Автентикација">
+<!ENTITY author.label "Аутор">
+<!ENTITY autoCharContinueds.label   "Прикажи дијалог ликова">
+<!ENTITY autoSaveProject.label "Аутоматски сачувај пројект">
+<!ENTITY autoparenthesize.label " Аутоматско уношење диалога за ликове и глумце'('">
+<!ENTITY avScript.desc "Унеси аудио-визуелни сценарио у  пројект.">
+<!ENTITY avScript.label "А/В сценарио">
+<!ENTITY basedOn.label "Базирано на">
+<!ENTITY bdc.actor        "Глумац">
+<!ENTITY bdc.addlabour    "Додатна обрада">
+<!ENTITY bdc.animals      "Животиње">
+<!ENTITY bdc.camera       "Камера">
+<!ENTITY bdc.cast         "Лик">
+<!ENTITY bdc.cgi          "Компјутерска графика">
+<!ENTITY bdc.construction "Сцена(сценографија)">
+<!ENTITY bdc.crew         "Екипа;">
+<!ENTITY bdc.electrics    "Електроника">
+<!ENTITY bdc.equip        "Специјална опрема">
+<!ENTITY bdc.extras       "Статисти">
+<!ENTITY bdc.greenery     "Расветљивачи">
+<!ENTITY bdc.hair         "Коса">
+<!ENTITY bdc.handler      "Дресер животиња">
+<!ENTITY bdc.lights       "Светло">
+<!ENTITY bdc.livestock    "Живи инвентар">
+<!ENTITY bdc.location     "Локација">
+<!ENTITY bdc.makeup       "Шминка">
+<!ENTITY bdc.mechfx       "Механички ефекти">
+<!ENTITY bdc.misc         "Разно">
+<!ENTITY bdc.music        "Музика">
+<!ENTITY bdc.opticalfx    "Оптички ефекти">
+<!ENTITY bdc.painting     "Сликари">
+<!ENTITY bdc.prodnotes    "Продукциске забиљешке">
+<!ENTITY bdc.props        "Реквизити">
+<!ENTITY bdc.security     "Обезбеђење">
+<!ENTITY bdc.set          "Сцена">
+<!ENTITY bdc.setdressing  "Сценски дизајнери">
+<!ENTITY bdc.sound        "Звук">
+<!ENTITY bdc.soundfx      "Звучни ефекти">
+<!ENTITY bdc.specialfx    "Специјални ефекти">
+<!ENTITY bdc.storyboard   "Сториборд">
+<!ENTITY bdc.stunts       "Каскадери">
+<!ENTITY bdc.vehicles     "Возила">
+<!ENTITY bdc.wardrobe     "Гардероба">
+<!ENTITY bdc.weapons      "Оружије">
+<!ENTITY bold.commandkey "b">
+<!ENTITY bold.label "Подебљан">
+<!ENTITY bookmark.desc      "Додати web link.">
+<!ENTITY bookmark.label     "Обиљежити">
+<!ENTITY both.label   "оба">
+<!ENTITY bottomOfPage.label         "На крај странице">
+<!ENTITY brandFullName "&appName;">
+<!ENTITY brandShortName "&appName;">
+<!ENTITY breakdown.desc     "Додатне информације за обраду сценариа.">
+<!ENTITY breakdown.label    "Додатна обрада">
+<!ENTITY breakdownReport.label "Извештај обраде">
+<!ENTITY brokenSceneEventWarning.label "У овом случају вршите преписку и обраду сцене која више не постоји.">
+<!ENTITY browseCmd.label      "Погледај">
+<!ENTITY byline.label "Написао">
+<!ENTITY calendar.desc      "Додај календар у пројект.">
+<!ENTITY calendar.label     "Календар">
+<!ENTITY callSheet.label "Врста">
+<!ENTITY cast.label "Глумачки састав">
+<!ENTITY castOfCharacters.label "Распоред улога">
+<!ENTITY catalog.desc "Унеси продукциски каталог у пројект.">
+<!ENTITY catalog.label  "Каталог">
+<!ENTITY catalogAddItem.tooltip "Унеси тип предмета у каталог">
+<!ENTITY catalogDeleteItem.tooltip "Избриши тип предмета у каталогу">
+<!ENTITY categories.label "Категорије">
+<!ENTITY category.label     "Категорија">
+<!ENTITY celtxAccountCmd.accessKey "C">
+<!ENTITY celtxAccountCmd.label "&appName; Члан...">
+<!ENTITY celtxError.title       "Celtx грешка">
+<!ENTITY celtxTagline.label "Већ се налази у причи.">
+<!ENTITY celtxWikiCmd.label "&appName; Wiki">
+<!ENTITY charOutline.desc "Општи поглед на ликове и њихов однос.">
+<!ENTITY charOutline.label "Опис ликова">
+<!ENTITY character.label        "Лик">
+<!ENTITY characterProfile.desc  "Унеси опис за нови лик.">
+<!ENTITY characterProfile.existing  "Опис ликова и глумачке подјеле.">
+<!ENTITY characterProfile.label "&character.label;">
+<!ENTITY characterProfile.select    "Избери лик">
+<!ENTITY characters.label       "Ликови">
+<!ENTITY clearCmd.label "Обриши">
+<!ENTITY colon ":">
+<!ENTITY comicBook.desc "Креирај сценарио за стрип.">
+<!ENTITY comicBook.label "Стрип">
+<!ENTITY comment.label "Коментар">
+<!ENTITY completed.label "Завршено">
+<!ENTITY contact.label "Контакт">
+<!ENTITY contactInformation.label "Контакт информација">
+<!ENTITY contactName.label "Име контакт">
+<!ENTITY contacts.label "Контакти">
+<!ENTITY contacts.title "&contacts.label;">
+<!ENTITY contactsCmd.label "&contacts.label;">
+<!ENTITY contactsCmd.tooltip "&contacts.label;">
+<!ENTITY continue.label "Настави">
+<!ENTITY copyProject.title    "Копирај пројект">
+<!ENTITY copyProjectCmd.label "Копирај у пројект">
+<!ENTITY copyright.label "Ауторско право">
+<!ENTITY create.label "Направи">
+<!ENTITY createAccount.label "Направи чланство и рачун">
+<!ENTITY createCatalogFromSelection.label "Направи каталог селекције">
+<!ENTITY createProject.label  "Направи пројект">
+<!ENTITY createProject.title  "Направи пројект">
+<!ENTITY createdCol.label  "Аутор">
+<!ENTITY creatorCol.label  "Аутор">
+<!ENTITY crew.desc "Направи документ екипе.">
+<!ENTITY crew.label "Екипа">
+<!ENTITY cx "&ns_cx;">
+<!ENTITY date.label "Датум">
+<!ENTITY datePicker.label "Избор датума">
+<!ENTITY daynightHeader.label "Дан/Ноћ">
+<!ENTITY daynightWarning.label "Локација и мјесто у сцени нису добро изабрани у подјели дан/ноћ. Да би исправили грешку промјените локацију и мјесто у сценариу или промјени листу дан/ноћ у диалозима сценариа.">
+<!ENTITY daynightWords.label "ДАН/НОЋ диалог">
+<!ENTITY dayoff.label "Дан Искључи">
+<!ENTITY daysOff.label "Дани Искључени">
+<!ENTITY decreaseDelayCmd.tooltip "Умањити страницу.">
+<!ENTITY decreaseFontSizeCmd.tooltip "Смањити величину фонта">
+<!ENTITY decreaseIndentCmd.label "Повећај страницу">
+<!ENTITY decreaseIndentCmd.tooltip "&decreaseIndentCmd.label;">
+<!ENTITY defaultSceneLength.label "Стандардна дужина сцене">
+<!ENTITY delayLabel.tooltip "Погледај (секунде) помоћу слика">
+<!ENTITY deleteCardCmd.label "Избриши картицу">
+<!ENTITY deleteItem.label "Избриши предмет">
+<!ENTITY deleteItemCmd.label        "Избриши">
+<!ENTITY department.label   "Дио">
+<!ENTITY description.label  "Опис">
+<!ENTITY details.label          "Детаљи">
+<!ENTITY dialog.label           "Дијалог">
+<!ENTITY director.label "Режисер">
+<!ENTITY disabled.label "Искључено">
+<!ENTITY displayMedia.label "Прикажи медиске датотеке и средства">
+<!ENTITY downloadProjectCmd.label "Снимни Пројект...">
+<!ENTITY downloadProjectCmd.toolbarlabel "Снимање">
+<!ENTITY downloadingPDF.label       "Конвертуј у PDF формат...">
+<!ENTITY dragToSchedule.tooltip "Узми и спусти у распоред.">
+<!ENTITY dualDialogCmd.label "Дупли дијалог">
+<!ENTITY dualDialogCmd.tooltip "Дупли дијалог">
+<!ENTITY duplicate.label "Направи дупликат">
+<!ENTITY duplicateItemCmd.label "Направи дупликат у предмету">
+<!ENTITY edit.label "Уреди">
+<!ENTITY editDates.label "Уреди датум">
+<!ENTITY editProfile.label "Уреди профил">
+<!ENTITY editSceneDialog.title "Уреди сцене">
+<!ENTITY editTitlePageCmd.label "Уреди главну страну...">
+<!ENTITY editlabel.tooltip "Кликни за промјене">
+<!ENTITY eighths.label "Осминки">
+<!ENTITY eighthsSuffix.label "8-ки">
+<!ENTITY element.label          "Елемент">
+<!ENTITY elements.label         "Елементи">
+<!ENTITY ellipsis "...">
+<!ENTITY enableStats.desc  "На тај начин штитимо активне чланове Celtx-а.У овом процесу се не преносе никакви лични идентификациони поодатци, нити податци о пројекту.">
+<!ENTITY enableStats.label    "Дозволи Celtx-у да испрати PING на Celtx-овом серверу за стартовање.">
+<!ENTITY enabled.label "укључено">
+<!ENTITY end.label "Крај">
+<!ENTITY endOfShooting.label "Крај снимања">
+<!ENTITY enterEmbedTagPrompt.label "Унеси EMBED или OBJECT за фразу:">
+<!ENTITY eventDetails.label "Детаљи настанка">
+<!ENTITY every15Minutes.label "Сваких 15 минута">
+<!ENTITY every30Minutes.label "Сваких пола сата">
+<!ENTITY every5Minutes.label "Сваких 5 минута">
+<!ENTITY everyHour.label "Сваки сат">
+<!ENTITY everyMinute.label "сваке минуте">
+<!ENTITY exportList "Излазна листа">
+<!ENTITY exportScriptCmd.accesskey "E">
+<!ENTITY exportScriptCmd.label      "Изнеси скрипту">
+<!ENTITY externalFile.desc  "Унеси датотеку у пројект.">
+<!ENTITY externalFile.label "Датотека">
+<!ENTITY fileLocation "&location.label;">
+<!ENTITY filmScript.desc    "Унеси сценарио.">
+<!ENTITY filmScript.label   "Сценарио">
+<!ENTITY filter.label "Филтер">
+<!ENTITY findAllCharacters.label "Унеси ликове у каталог">
+<!ENTITY findCmd.accesskey "F">
+<!ENTITY findCmd.label "Пронађи...">
+<!ENTITY findPreviousCmd.label "Пронађи предходно">
+<!ENTITY findTab.label "Пронађи">
+<!ENTITY folder.label "Фолдер">
+<!ENTITY forceOverwrite.label "Све препиши ако је верзија на серверу различита, нова">
+<!ENTITY form.actorLink "URL адреса за глумце">
+<!ENTITY form.actorProfile "Глумац профил">
+<!ENTITY form.address "Адреса">
+<!ENTITY form.affectEvent "Како се овај дио односи наспрам цијелог дјела?">
+<!ENTITY form.age "Године">
+<!ENTITY form.alternate "Алтернативно име">
+<!ENTITY form.antag "Антагонист">
+<!ENTITY form.antagWho "Антагонисти у сцени?">
+<!ENTITY form.availability "Могучност за учествовање">
+<!ENTITY form.bestFriend "Најбољи пријатељ">
+<!ENTITY form.borrow "Позајми">
+<!ENTITY form.build "Изгради">
+<!ENTITY form.buy "Купи">
+<!ENTITY form.catalyst "катализатор">
+<!ENTITY form.cell "Мобилни телефон #">
+<!ENTITY form.centralEvent "Која су централна дешавања у овој сцени?">
+<!ENTITY form.charBackground "Позадина ликова">
+<!ENTITY form.charGoal "Шта је циљ тог лика?">
+<!ENTITY form.charPlan "Какав је карактерни план у архиви тог лика?">
+<!ENTITY form.charTraits "Карактерисичне црте лика">
+<!ENTITY form.character "&character.label;">
+<!ENTITY form.characterProfile "Лик">
+<!ENTITY form.charactersUsed "Ликови који учествују">
+<!ENTITY form.color "Боја">
+<!ENTITY form.comicRelief "комичан лик">
+<!ENTITY form.comments "Коментари">
+<!ENTITY form.confidante "поуздан">
+<!ENTITY form.contactInfo "Контакт информација">
+<!ENTITY form.cost "Коштање">
+<!ENTITY form.crewLink "URL">
+<!ENTITY form.crewProfile "Екипа">
+<!ENTITY form.dateAvail "Слободни дани">
+<!ENTITY form.dateNeed "Потребни дани">
+<!ENTITY form.dateReturn " Надокнађени дани">
+<!ENTITY form.description "Опис">
+<!ENTITY form.details "Детаљи">
+<!ENTITY form.dislikes "Мане">
+<!ENTITY form.distFeatures "Карактеристичне ознаке">
+<!ENTITY form.dob "Датум рођења">
+<!ENTITY form.dress "Одјећа">
+<!ENTITY form.education "Образовање">
+<!ENTITY form.elevator "Лифт">
+<!ENTITY form.email "Email Адреса">
+<!ENTITY form.endDate "Датум завршетка">
+<!ENTITY form.era "Доб старости">
+<!ENTITY form.eyes "Очи">
+<!ENTITY form.facilityInfo "Информације о глумачким могућностима">
+<!ENTITY form.familyBack "Опис фамилијарног поријекла">
+<!ENTITY form.fullName "Пуно име лика">
+<!ENTITY form.generic "Пол">
+<!ENTITY form.genericForm "Општа форма">
+<!ENTITY form.habits "Навике/Обичаји">
+<!ENTITY form.hair "Коса">
+<!ENTITY form.hat "Капа">
+<!ENTITY form.height "Висина">
+<!ENTITY form.inScenes "На сцени">
+<!ENTITY form.jacket "Јакна">
+<!ENTITY form.jobTitle "Наслов">
+<!ENTITY form.keyCharTraits "Кључне особине лика">
+<!ENTITY form.lightSources "Извори свјетла">
+<!ENTITY form.likes "Предности лика">
+<!ENTITY form.locationMap "Локациона мапа">
+<!ENTITY form.locationProfile "Локација">
+<!ENTITY form.loveInterest "Полна наклоност">
+<!ENTITY form.media "Средства">
+<!ENTITY form.mentor "Ментор">
+<!ENTITY form.motiv "Мотивација">
+<!ENTITY form.name "&name.label;">
+<!ENTITY form.no "Не">
+<!ENTITY form.noise "Проблеми са шумом">
+<!ENTITY form.other "Друго">
+<!ENTITY form.pants "Пантолоне, хлаче">
+<!ENTITY form.parking "Информације за паркирање">
+<!ENTITY form.partner "Партнер">
+<!ENTITY form.person "Идентитет, личност, особеност">
+<!ENTITY form.phone "Телефон #">
+<!ENTITY form.physicalDesc "Детаљан физички опис">
+<!ENTITY form.powerCapa "Могућности прикључка и оптерећења струје">
+<!ENTITY form.princFunction "Која је основнаа функција овог лика?">
+<!ENTITY form.procure "Начин и процедура">
+<!ENTITY form.propProfile "Реквизита">
+<!ENTITY form.protag "протагонист">
+<!ENTITY form.protagAntag "Протагонист/Антагонист">
+<!ENTITY form.protagWho "Ко је протагонист у овој сцени?">
+<!ENTITY form.rent "Изнајмљивање">
+<!ENTITY form.rentalCost "Цјена изнајмљивања">
+<!ENTITY form.role "Улога">
+<!ENTITY form.scene "&scene.label;">
+<!ENTITY form.sceneAntagAchieve "Како антагонист долази до свог циља ?">
+<!ENTITY form.sceneAntagGoal "Који је циљ антагониста у овој сцени?">
+<!ENTITY form.sceneChars "Који ликови учествују у овој сцени?">
+<!ENTITY form.sceneDetails "Детаљи  сцене">
+<!ENTITY form.sceneMood "Каква је атмосфера у овој сцени?">
+<!ENTITY form.sceneProtagAchieve "Како протагонист долази до свог циља?">
+<!ENTITY form.sceneProtagGoal "Који је циљ протагониста у овој сцени?">
+<!ENTITY form.sceneSetting "Какве су декорације и поставка ове сцене?">
+<!ENTITY form.sceneWhen "Кога се тиче ова сцена,и ко је прави?">
+<!ENTITY form.scenesUsed "Сценска декорација и сет употребљена у сцени">
+<!ENTITY form.scoutSelect "Прегледање и избор">
+<!ENTITY form.scoutedFor "Преглед одређених сцена">
+<!ENTITY form.scriptName "Име сценариа">
+<!ENTITY form.selectedFor "Изабрано за сцене">
+<!ENTITY form.sex "Пол">
+<!ENTITY form.shirt "Маица,кошуља">
+<!ENTITY form.shoes "Обућа, ципеле">
+<!ENTITY form.size "Величина">
+<!ENTITY form.squareFoot "Размјер у квадратним метрима(квадратура)">
+<!ENTITY form.startDate "Датум почетка">
+<!ENTITY form.wardProfile "&bdc.wardrobe;">
+<!ENTITY form.wardrobeSizes "Величина конфекциске гардеробе">
+<!ENTITY form.washroom "Локација тоалета">
+<!ENTITY form.weight "Тежина">
+<!ENTITY form.wornBy "Ношено од">
+<!ENTITY form.yes "Да">
+<!ENTITY format.label         "Формат">
+<!ENTITY formatAct.label      "Секвенца">
+<!ENTITY formatAction.label   "Дејство">
+<!ENTITY formatBalloon.label  "Балон">
+<!ENTITY formatBalloonType.label "Тип балона">
+<!ENTITY formatCaption.label  "Натпис">
+<!ENTITY formatCaption.shortlabel "&formatCaption.label;">
+<!ENTITY formatChar.label     "&character.label;">
+<!ENTITY formatDialog.label   "&dialog.label;">
+<!ENTITY formatHeading.label  "Наслов сцене">
+<!ENTITY formatMusic.label    "Музика">
+<!ENTITY formatPage.label     "Страна">
+<!ENTITY formatPage.shortlabel "Стр.">
+<!ENTITY formatPanel.label    "Панел">
+<!ENTITY formatPanel.shortlabel "Панел">
+<!ENTITY formatParen.label    "У загради">
+<!ENTITY formatProductionNote.label "Продукциска биљешка">
+<!ENTITY formatShot.label     "Кадар">
+<!ENTITY formatSound.label    "Звук">
+<!ENTITY formatStagedir.label "Режија сцене">
+<!ENTITY formatText.label     "&text.label;">
+<!ENTITY formatTitle.label    "&title.label;">
+<!ENTITY formatTrans.label    "Превод">
+<!ENTITY formatVoice.label    "Глас">
+<!ENTITY fourHours.label "4 сатa">
+<!ENTITY freeAndSecure.label "Слободно и безбедно">
+<!ENTITY general.label "Општи">
+<!ENTITY generatePDFCmd.label "Генерирај PDF...">
+<!ENTITY generateReportCmd.label "Генерирај извештај">
+<!ENTITY generateReportCmd.toolbarlabel "Извештај">
+<!ENTITY getProjDialog.caption "Доступни проекти">
+<!ENTITY getProjDialog.title   "Симни пројект">
+<!ENTITY gotoItemCmd.label          "Иди на">
+<!ENTITY helpAboutCmd.accessKey "A">
+<!ENTITY helpAboutCmd.label "За &appName;">
+<!ENTITY helpReportBugCmd.accessKey "R">
+<!ENTITY helpReportBugCmd.label "Пријави грешку">
+<!ENTITY helpSupportCmd.accessKey "O">
+<!ENTITY helpSupportCmd.label "Online Подршка">
+<!ENTITY icons.label "Иконе">
+<!ENTITY iconsAndText.label "Иконе и текст">
+<!ENTITY image.label "Слика">
+<!ENTITY images.label "Слике">
+<!ENTITY importScriptCmd.accesskey "I">
+<!ENTITY importScriptCmd.label "Унеси сценарио">
+<!ENTITY importScriptCmd.toolbarLabel "Унеси">
+<!ENTITY includeInWorkweek.label "Укључи га да ради викендом">
+<!ENTITY includeTitlePage.label   "Укључи насловну страницу">
+<!ENTITY increaseDelayCmd.tooltip "Повећај кашњење.">
+<!ENTITY increaseFontSizeCmd.tooltip "Повећај величину фонта">
+<!ENTITY increaseIndentCmd.label "Повећај страницу">
+<!ENTITY increaseIndentCmd.tooltip "&increaseIndentCmd.label;">
+<!ENTITY indexCardTitle.label "Heading Индекс Карта">
+<!ENTITY indexCards.label "Индекс Карта">
+<!ENTITY inlineSpellCheckCmd.label "Провјера правописа">
+<!ENTITY insertNoteCmd.toolbarLabel "Биљешка...">
+<!ENTITY international.label "Међународни">
+<!ENTITY intextHeader.label "ЕНТЕРИЈЕР/ЕКСТЕРИЈЕР">
+<!ENTITY intextWarning.label "Наслов сцене не почиње са уобичајним ознакама ЕНТ/ЕКС ријечи. Да би ријешили проблем, промјените  наслов  сцене у сценариу или промјените у ЕНТ/ЕКС листи и табели сценариа за дијалог.">
+<!ENTITY intextWords.label "ЕНТ/ЕКС ријечи">
+<!ENTITY invalidLogin.label   "Нетачно корисничко име или лозинка.">
+<!ENTITY italic.commandkey "i">
+<!ENTITY italic.label "Закошено">
+<!ENTITY item.label         "Предмет">
+<!ENTITY language.label "Језик">
+<!ENTITY left.label   "Лево">
+<!ENTITY linesPerPage.label "Редови у страницама">
+<!ENTITY list.label "Листа...">
+<!ENTITY location.desc  "Додај опис локација.">
+<!ENTITY location.label "Локација">
+<!ENTITY loginOnStartup.label "Пријави старт">
+<!ENTITY lowercaseCmd.label "Мала слова">
+<!ENTITY lowercaseCmd.tooltip "&lowercaseCmd.label;">
+<!ENTITY media.label "Медиске датотеке">
+<!ENTITY mediaViewer.title "Преглед медиских датотека">
+<!ENTITY modified.label "Промјењено и спремљено">
+<!ENTITY modifiedCol.label "Промјењено">
+<!ENTITY moveDownCmd.label          "Помјери надоле">
+<!ENTITY moveUpCmd.label            "Помјери нагоре">
+<!ENTITY moving.label "Премјештено">
+<!ENTITY name.label         "Име">
+<!ENTITY network.label "Мрежа">
+<!ENTITY never.label "Никада">
+<!ENTITY newMarkupItem.label        "&lt;Нов ...&gt;">
+<!ENTITY newProjectCmd.label "Нови Пројект...">
+<!ENTITY newProjectCmd.toolbarlabel "Нов">
+<!ENTITY noFileSelected.label   "&lt;није изабрана датотека&gt;">
+<!ENTITY noImageSelected.label "Није изабрана слика">
+<!ENTITY noScriptSelected.label "Није изабран сценарио">
+<!ENTITY none.label "Без икона или текста">
+<!ENTITY noteDialog.title   "Промјени белешку">
+<!ENTITY notes.label "Белешка">
+<!ENTITY ns_cx "http://celtx.com/NS/v1/">
+<!ENTITY ns_dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY ns_rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY ns_rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY numberOfCharacters.label "Број лика">
+<!ENTITY numberOfScenes.label "Број сцене">
+<!ENTITY oneHour.label "1 сат">
+<!ENTITY oneLineSchedule.label "Распоред у једној линији">
+<!ENTITY open.label "Отвори">
+<!ENTITY openItemCmd.label "Отвори предмет">
+<!ENTITY openProjectCmd.label "Отвори пројект...">
+<!ENTITY openProjectCmd.toolbarlabel "Отвори">
+<!ENTITY openProjectFolder.label "Отвори мапу пројекта">
+<!ENTITY openRecentCmd.label "Отвори недавно рађен пројект">
+<!ENTITY options.label "Опције">
+<!ENTITY orderedList.label "Упоредна листа">
+<!ENTITY outline.desc       "Додај структурни план.">
+<!ENTITY outline.label      "План">
+<!ENTITY over14.label "Имам 14 година или више.">
+<!ENTITY pageAndSceneNumbering.label  "Означавање страница и сцена">
+<!ENTITY paperSize.label              "Велићина папира">
+<!ENTITY password.label "Лозинка">
+<!ENTITY passwordAgain.label "Унесите поново лозинку">
+<!ENTITY pdf.label "PDF">
+<!ENTITY pdfDownloadDialog.title    "Конвертуј у PDF формат">
+<!ENTITY pdfErrorHeader "Упс!">
+<!ENTITY pdfErrorText1 "Треба бити прикључен на интернет да би користио ову напредну опцију.">
+<!ENTITY pdfErrorText2 "Безбједно и приватно, ова напредна Celtx веб услуга аутоматски форматира ваш сценарио у индустриски стандард, Сценарио, Театар, Аудио сценарио или Дупли дијалог (AV).">
+<!ENTITY pdfOptions.title           "PDF Опције">
+<!ENTITY pdfOptionsCmd.label "Допуњавања и продужавања">
+<!ENTITY pdfWarningHeader "Здраво!">
+<!ENTITY pdfWarningText " Безбједно и приватно, ова напредна Celtx веб услуга аутоматски форматира ваш сценарио у индустриски стандард, Сценарио, Театар, Аудио сценарио или Дупли дијалог (AV).">
+<!ENTITY picklist.label "Изборна листа">
+<!ENTITY principalFunction.label "Принципијелна функција">
+<!ENTITY printBackgroundColour.label "Боја позадине">
+<!ENTITY printCardBorders.label "Величина границе на листу">
+<!ENTITY printCardsDialog.title "Величина листа диалога">
+<!ENTITY printStoryboardDialog.title "Величина позадинске приче">
+<!ENTITY privacy.label "Приватност">
+<!ENTITY producer.label "Продуцент">
+<!ENTITY productionItems.label "Продукциски предмети">
+<!ENTITY progressDialog.title "Напредак">
+<!ENTITY project.label "Пројект">
+<!ENTITY projectItems.label   "Нови пројекти садржи">
+<!ENTITY projectLibrary.label "Архива пројеката">
+<!ENTITY projectProperties.label "Могућности пројекта">
+<!ENTITY projectPropertiesCmd.label "&projectProperties.label;...">
+<!ENTITY projectTemplates.label "Предлози израђених пројекта">
+<!ENTITY propSheet.desc         "Додати опис за нову реквизиту.">
+<!ENTITY propSheet.existing  "Исто тако можеш да опишеш постојече реквизите листом надоле.">
+<!ENTITY propSheet.label        "Реквизити">
+<!ENTITY propSheet.select       "Избери реквизит">
+<!ENTITY properties.label "Карактеристике">
+<!ENTITY publishDialog.findUsers    "Пронађи Чланове">
+<!ENTITY publishDialog.ownerLabel   "Власник пројекта">
+<!ENTITY publishDialog.privateDesc "Приватно: Ограничи му приступ до мене">
+<!ENTITY publishDialog.privateLabel "Приватно">
+<!ENTITY publishDialog.publicDesc "Јавно: Објави пројект у централи пројеката">
+<!ENTITY publishDialog.publicLabel  "Јавно">
+<!ENTITY publishDialog.serverLabel  "&server.label;">
+<!ENTITY publishDialog.sharedDesc "Подјељен: Подјели пројект са избраним корисницима">
+<!ENTITY publishDialog.sharedLabel  "Подјељено са">
+<!ENTITY publishDialog.title        "Објави пројект">
+<!ENTITY publishDialog.userList     "Листа чланова">
+<!ENTITY publishMode.label "Начин објављивање">
+<!ENTITY recent.label "Недавни">
+<!ENTITY recentProjects.label "Недавни пројекти">
+<!ENTITY recoverPassword.label "Врати лозинку">
+<!ENTITY recycleCmd.label           "Пошаљи у скице пројекта">
+<!ENTITY regWiz.aboutThis "Ако се једном учланите, аутоматски ћете бити прикључени на радну сесију.">
+<!ENTITY regWiz.accountInstructions "Изберете корисничко име и лозинку за ваше &appName; чланство. (Забележете: корисничка имена и лозинке се разликују у велики и мали словима.)">
+<!ENTITY regWiz.accountLabel "Кориснички профил (3/5)">
+<!ENTITY regWiz.bullet1 "Резервне копије">
+<!ENTITY regWiz.bullet2 "Сарадња радног простора">
+<!ENTITY regWiz.bullet3 "Објављивање у Централи пројеката">
+<!ENTITY regWiz.bullet4 "Прегледај пројект у iPhone ">
+<!ENTITY regWiz.checkLabel "Проверавање информација о профилу">
+<!ENTITY regWiz.clickFinish "Хвала ђто сте се прикључили скупини &appName;.">
+<!ENTITY regWiz.clickFinish1 "Сада када сте пријављени у скупину &appName; имате веома лак приступ до наших безплатних online функција">
+<!ENTITY regWiz.clickFinish2 "Пробајте Download-оват/Upload опције да направите безбедну резервну копију вашег пројекта, или ако познајете неког друга који је &appName; члан искористите опције Подјела  да радите на заједничком пројект.">
+<!ENTITY regWiz.clickNext "Све је правилно постављено! Изберите 'Напријед' да би завршили регистрацију.">
+<!ENTITY regWiz.conclusion "Закључак (5/5)">
+<!ENTITY regWiz.confirmIntro "Послиједње сте унијели:">
+<!ENTITY regWiz.confirmLabel "Потврди и настави (4/5)">
+<!ENTITY regWiz.createNewAccountLabel  "Направи ново чланство.">
+<!ENTITY regWiz.createYourAccountLabel "Направи свој рачун &appName; Чланство! (1/5)">
+<!ENTITY regWiz.emailLabel "Email:">
+<!ENTITY regWiz.finish "Крај">
+<!ENTITY regWiz.identityInstructions "Унеси своје име, организацију, и email адреса.">
+<!ENTITY regWiz.identityLabel "Идентитет (2/5)">
+<!ENTITY regWiz.intro "Креирај чланство на &appName; Остварите приступ и добијте одређене безплатне web услуге:">
+<!ENTITY regWiz.loginSuccessfulLabel  "Захваљујемо, сада сте пријављени на &appName;.">
+<!ENTITY regWiz.newOrExistingLabel  "Направите ново чланство или искористите постојеће:">
+<!ENTITY regWiz.noteCaseSensitive "&appName; Корисничко име и лозинка чланства се разликују у великим и малим словима.">
+<!ENTITY regWiz.notePassword "Ваша лозинка мора да буде барем 5 слова или знакова дуга.">
+<!ENTITY regWiz.noteUsername "Ваше корисничко име мора да буде барем 3 слова или знака дуго, и може да садржи само слова и бројеве.">
+<!ENTITY regWiz.orgLabel   "Организација:">
+<!ENTITY regWiz.title " Помоћ за регистрацију Celtx-а ">
+<!ENTITY regWiz.uidLabel   "&appName; Корисничко име:">
+<!ENTITY regWiz.useExistingAccountLabel  "Искористите постојеће чланство.">
+<!ENTITY regWiz.warn "Потребно је да направите &appName; чланства да би имали приступ ове услуге.">
+<!ENTITY remove.label "Одстрани">
+<!ENTITY removeCmd.label "Одстрани">
+<!ENTITY removeMarkupCmd.label "Одстрани маркер">
+<!ENTITY rename.label "Промјени име">
+<!ENTITY renameItem.label "Промјени име предмета...">
+<!ENTITY replaceCmd.label "Замјени...">
+<!ENTITY reportThisBug.label    "Пријави грешку">
+<!ENTITY reportThisBug.tooltip  "Пошаљи анониман извјештај о грешци.">
+<!ENTITY reports.label "Извјештаји">
+<!ENTITY right.label  "Десно">
+<!ENTITY sampleProjects.label "Примјерак пројекта">
+<!ENTITY samples.label "Примјерци">
+<!ENTITY saveAsHTML.label "Сачувај као HTML">
+<!ENTITY saveAsTemplate.label "Сачувај као шаблон">
+<!ENTITY savePDFCmd.label "Сачувај PDF">
+<!ENTITY savePDFCmd.tooltip "Сачувај PDF">
+<!ENTITY saveProjectAsCmd.label "Сачувај пројект као...">
+<!ENTITY saveProjectCmd.label "Сачувај пројект">
+<!ENTITY saveProjectCmd.toolbarlabel "Сачувај">
+<!ENTITY scene.label "Сцена">
+<!ENTITY sceneBreakdown.label "Детаљи сцене">
+<!ENTITY sceneBreakdownWithDesc.label "Детаљи сцене са описом">
+<!ENTITY sceneDetails.desc      "Додај опис за нову сцену.">
+<!ENTITY sceneDetails.existing  "Можете да додате у постојећу сцену листом надоле.">
+<!ENTITY sceneDetails.label     "Детаљи за сцене">
+<!ENTITY sceneDetails.select    "Одбери сцену">
+<!ENTITY scenePageBreaks.label "Пауза на страници па сцена">
+<!ENTITY sceneSummary.label "Анализа и експликација за сцене">
+<!ENTITY sceneTag.label "Ознака сцене">
+<!ENTITY sceneTagDialog.title "Одабери боју">
+<!ENTITY scenes.label           "Сцене">
+<!ENTITY schedule.desc      "Додај распоред снимања за сценарио.">
+<!ENTITY schedule.label     "Продукциски распоред">
+<!ENTITY scheduleCmd.toolbarlabel   "&schedule.label;">
+<!ENTITY scheduleCmd.tooltip        "Планирање сценариа">
+<!ENTITY scheduleID.label "Распоред ID">
+<!ENTITY scheduled.label "Распоређено">
+<!ENTITY scratchpad.label "Забиљешке">
+<!ENTITY script.accesskey "S">
+<!ENTITY script.desc "Додај сценарио у пројект.">
+<!ENTITY script.label "Сценарио">
+<!ENTITY scriptDay.label "Сценариски Дан">
+<!ENTITY scriptEditor.label "Уреди сценарио">
+<!ENTITY scriptFormatCmd.accesskey "F">
+<!ENTITY scriptFormatCmd.label "Опције за форматирање">
+<!ENTITY scriptHeader.label "Заглавље сценариа">
+<!ENTITY scriptReport.desc  "Аутоматски генериран извештај за сценарио.">
+<!ENTITY scriptReport.label "Извештај за сценарио">
+<!ENTITY scriptWithNotes.label  "Сценарио са биљешкама">
+<!ENTITY selectCatalogType.label "Избери тип у каталогу.">
+<!ENTITY sequence.label "Секвенца">
+<!ENTITY sequences.label "Секвенце">
+<!ENTITY server.label "Сервер">
+<!ENTITY setting.label "Подешавање">
+<!ENTITY sharing.label "Подјела">
+<!ENTITY shootDay.label "Снимајући дани">
+<!ENTITY shootDays.label "Дани за снимање">
+<!ENTITY shootingSchedule.label "Распоред  снимања">
+<!ENTITY shotList.label "Списак учесника">
+<!ENTITY shotWords.label "Заглавље кадра">
+<!ENTITY shotholder.label "Двапут кликните да додате слику.">
+<!ENTITY showContinuedCount.label   "Покажи непрекидно бројање страница">
+<!ENTITY showDialogBreaks.label     "Покажи паузе у дијалогу">
+<!ENTITY showFirstPageNumber.label    "Укључи и прву страну у бројање страница">
+<!ENTITY showIDNumbers.label "Покажи ID бројева">
+<!ENTITY showNotes.label "Покажи белешке">
+<!ENTITY showPageNumbers.label        "Покажи ознаке страница">
+<!ENTITY showProjectFileCmd.label "Покажи датотеке пројекта">
+<!ENTITY showSceneBreaks.label      "Покажи паузе у сценама">
+<!ENTITY showSceneHeaders.label "Покажи наслове у сценама">
+<!ENTITY showSceneNumbers.label       "Број сцена">
+<!ENTITY showScript.label "Покажи сценарио">
+<!ENTITY showTagNames.label "Покажи имена у картицама">
+<!ENTITY showTitlePage.label "Покажи насловну страну">
+<!ENTITY showWorkdaysOnly.label "Покажи радне дане">
+<!ENTITY signIn.label "Пријави се">
+<!ENTITY signOut.label "Одјави се">
+<!ENTITY signedOut.label "Одјављен">
+<!ENTITY slideshowCmd.toolbarlabel "Пусти приказ">
+<!ENTITY source.label "Извор">
+<!ENTITY spellCheckAddToDictionary.accesskey "n">
+<!ENTITY spellCheckAddToDictionary.label "Додај у ријечник">
+<!ENTITY spellCheckCmd.label "Провјера правописа...">
+<!ENTITY spellCheckIgnoreWord.accesskey "I">
+<!ENTITY spellCheckIgnoreWord.label "Игнорирај провјеру">
+<!ENTITY spellCheckNoSuggestions.label "Без предлога о провјери">
+<!ENTITY splash.celtxCentral      "Пријава у централи пројеката">
+<!ENTITY splash.celtxCentralDesc  "Користите централу пројеката за промјену лозинке или  промјените профил">
+<!ENTITY splash.discussion      "Дискусија">
+<!ENTITY splash.downloadProject     "Симни пројект">
+<!ENTITY splash.downloadProjectDesc "Симни пројект на celtx-ов сервер">
+<!ENTITY splash.featureTour         "Разгледај могућности програма">
+<!ENTITY splash.forums      "форуми">
+<!ENTITY splash.forumsDesc  "Придружи се дискусији на celtx-ов форум">
+<!ENTITY splash.gettingStarted  "Почетак">
+<!ENTITY splash.guide               "Сeltx-ов водич за кориснике">
+<!ENTITY splash.help            "Помоћ">
+<!ENTITY splash.helpAccount     "Направи чланство">
+<!ENTITY splash.helpAccountDesc "Креирање чланство ти даје приступ серверу и опцији да направиш и издаш PDF формат">
+<!ENTITY splash.helpDesc        "Линкови лијево подударају се са  celtx-овим избором">
+<!ENTITY splash.helpOptions         "помоћ опције">
+<!ENTITY splash.inbox           "Улаз">
+<!ENTITY splash.logIn "Пријави се">
+<!ENTITY splash.newProject      "Започни нов пројект">
+<!ENTITY splash.newProjectDesc  "Направи нов пројект">
+<!ENTITY splash.openProject     "Отвори постојећи пројект">
+<!ENTITY splash.openProjectDesc "Приступи или додај постојеће пројекте.">
+<!ENTITY splash.options             "Опције">
+<!ENTITY splash.projectCentral  "Централа  пројеката">
+<!ENTITY splash.projects        "Пројекти">
+<!ENTITY splash.recentProjects      "Недавни пројекти">
+<!ENTITY splash.sampleDesc      "Пројект“Чаробњак из Оза“ нуди илустрацију посебних опција у celtx-овом програму. Различита документа се користе да покажете потребе продуције за једну сцену. У овај приказ је укључен и примјерак сценариа, ликови и форма детаља у сцени, опште информације, и неколико информација о распореду.">
+<!ENTITY splash.sampleProject   "Примјер пројекта">
+<!ENTITY splash.videoWalkthrus      "Видео помоћ">
+<!ENTITY splash.videoWalkthrusDesc  "Кратка видео лекција за почетнике">
+<!ENTITY splash.walkthru            "Кратки увод у Сeltx, 3-минуте видеа">
+<!ENTITY splash.webServices     "web услуге">
+<!ENTITY splash.welcomePrefix     "Добродошли у Celtx">
+<!ENTITY splash.welcomePrefixDesc "Медијска Пред-продукција">
+<!ENTITY splash.wiki      "wiki водич">
+<!ENTITY splash.wikiDesc  "Мјесто како да научите celtx">
+<!ENTITY splashScreen.label "Почетна страница">
+<!ENTITY stackTrace.desc        "Доле су информације које могу да буду корисне. Укључите их ако желите да пријавите грешку.">
+<!ENTITY stageplay.desc  "Додај сценарио за позоришну претставу у међународном формату.">
+<!ENTITY stageplay.label    "Позоришна претстава">
+<!ENTITY start.label "Старт">
+<!ENTITY startOfDay.label "Почетак дана">
+<!ENTITY startOfShooting.label "Почетак снимања">
+<!ENTITY startOfWeek.label "Почетак недеље">
+<!ENTITY statistics.label "Статистика">
+<!ENTITY storyboard.desc    "Организирај сториборд у сликама као сниматељске секвенце.">
+<!ENTITY storyboard.label   "Сториборд">
+<!ENTITY strikethrough.label "Прецртано">
+<!ENTITY stripboard.label "Stripboard">
+<!ENTITY subject.label "Тема">
+<!ENTITY summary.label "Радна анализа">
+<!ENTITY syncDialog.title "Синхронизирање">
+<!ENTITY tagItemCmd.label           "Означи">
+<!ENTITY tagline.label      "Парола">
+<!ENTITY tags.label "Означити">
+<!ENTITY text.label "Текст">
+<!ENTITY textDocument.desc  "Додај текст документа. Корисно за кратак опис, третман или синопсис.">
+<!ENTITY textDocument.label "Текст">
+<!ENTITY theatreTmplActTitle "Кадар I">
+<!ENTITY theatreTmplSceneTitle "Сцена 1">
+<!ENTITY thirtyMinutes.label "30 минута">
+<!ENTITY threeHours.label "3 сата">
+<!ENTITY time.label "Вријеме">
+<!ENTITY title.label        "Наслов">
+<!ENTITY titlePage.label "Насловна страна">
+<!ENTITY toggleEditing.label "Укључи/искључи промјене синопсиса">
+<!ENTITY togglePaginationCmd.label    "Укључи нумерисање страница">
+<!ENTITY toggleScratchpadCmd.label  "Отвори/Затвори Биљежницу">
+<!ENTITY toggleSidebarCmd.accesskey "S">
+<!ENTITY toggleSidebarCmd.label "Странична ознака">
+<!ENTITY topOfNextPage.label        "Почетак сљедеће стране">
+<!ENTITY tryAgain.label "Покушај поново">
+<!ENTITY twoColumns.label "Две колоне">
+<!ENTITY twoHours.label "2 сата">
+<!ENTITY typeset.label "Печат серверска поставка">
+<!ENTITY under14.label "Имам мање од 14 година.">
+<!ENTITY underline.commandkey "u">
+<!ENTITY underline.label "Подцртан">
+<!ENTITY unorderedList.label "Неозначен списак">
+<!ENTITY untitled.label "Неименован">
+<!ENTITY update.label "Обнова података">
+<!ENTITY updateInbox.label "Обнови податке у улазном сандучету">
+<!ENTITY uploadDialog.title         "Обнови и унеси пројект">
+<!ENTITY uploadProjectCmd.label "Обнови и унеси пројект...">
+<!ENTITY uploadProjectCmd.toolbarlabel "Обнови и унеси">
+<!ENTITY uppercaseCmd.label "Велика слова">
+<!ENTITY uppercaseCmd.tooltip "&uppercaseCmd.label;">
+<!ENTITY username.label "Корисничко име">
+<!ENTITY video.label "Видео">
+<!ENTITY videoTutorialCmd.label "Видео лекција">
+<!ENTITY viewProjectOnline.label "Прегледај пројектот online">
+<!ENTITY wardrobeSheet.desc     "Додај опис за нов предмет у гардероби.">
+<!ENTITY wardrobeSheet.existing  "Исто тако можете да опишете постојећи предмет у листи гардеробе доле.">
+<!ENTITY wardrobeSheet.label    "Гардероба">
+<!ENTITY wardrobeSheet.select   "Изабери гардеробу">
+<!ENTITY webPanel.desc              "Celtx веб услуге.">
+<!ENTITY webPanel.label             "Услуге">
+<!ENTITY webPanelCmd.toolbarlabel   "&webPanel.label;">
+<!ENTITY webPanelIntro.createAnAccount "Постани члан CELTX-a">
+<!ENTITY webPanelIntro.text1 "Најаве за бесплатне web услуге.">
+<!ENTITY webPanelIntro.text2 "*Направи резервну копију* за твој комплетан пројекат аутоматски, на безбједном Celtx серверу у случају крађе, или спремите на ваш тврди диск(Хард Диск).">
+<!ENTITY webPanelIntro.text3 "*Координација* са тимским члановима подјелите пројект и направите мјеста за рад.">
+<!ENTITY webPanelIntro.text4 "*Објављивање* Ваш појект биће објављен у Централи за рецензије и коментаре, придружите се огромној популацији media аутора.">
+<!ENTITY webPanelIntro.text5 "Прегледај твој Celtx пројект у формату за *iPhone*.">
+<!ENTITY wiz.clickFinish "Кликни на 'Крај' да завршите цјеновник.">
+<!ENTITY wiz.clickNext "Кликни на 'Напријед' за даље.">
+<!ENTITY workweek.label "Радна недеља">
+<!ENTITY writer.label "Писац">
+<!ENTITY zoom.label "Повећај">

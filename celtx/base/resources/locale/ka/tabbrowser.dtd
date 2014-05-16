@@ -1,0 +1,18 @@
+<!ENTITY  untitledTab            "(უსახელო)">
+<!ENTITY  newTab.label           "ახალი დაფა">
+<!ENTITY  newTab.accesskey       "N">
+<!ENTITY  closeTab.label         "დაფის დახურვა">
+<!ENTITY  closeTab.accesskey         "c">
+<!ENTITY  closeOtherTabs.accesskey  "o">
+<!ENTITY  closeOtherTabs.label   "სხვა დაფების დახურვა">
+<!ENTITY  reloadAllTabs.label    "ყველა დაფის განახლება">
+<!ENTITY  reloadAllTabs.accesskey         "A">
+<!ENTITY  reloadTab.label        "დაფის განახლება">
+<!ENTITY  reloadTab.accesskey         "r">
+<!ENTITY  listAllTabs.label      "ყველა დაფის სია">
+<!ENTITY  bookmarkAllTabs.label       "ყველა დაფის სანიშნეებში შეტანა…">
+<!ENTITY  bookmarkAllTabs.accesskey   "T">
+<!ENTITY  bookmarkThisTab.label        "ამ დაფის სანიშნეებში შეტანა…">
+<!ENTITY  bookmarkThisTab.accesskey    "B">
+<!ENTITY  undoCloseTab.label          "დაფის ხელახლა გახსნა">
+<!ENTITY  undoCloseTab.accesskey      "U">

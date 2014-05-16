@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+body {
+  font-family: arial, helvetica;
+  font-size: 12px;
+}
+.previewBlurb {
+  margin: 50px auto;
+  background-color: lightgrey;
+  border: 3px double grey;
+  width: 450px;
+  padding: 0px 0px 0px 15px;
+  line-height: 16px;
+}
+input { 
+  float: right;
+  margin: 0px 15px 10px 0px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="previewBlurb">
+      <p>
+        <b>&pdfErrorHeader;</b>
+        <br />
+        &pdfErrorText1;
+      </p>
+      <p>
+        &pdfErrorText2;
+      </p>
+      <p>
+        <input type="button" value="&tryAgain.label;"
+               onclick="window.parent.gPDFController.cmdGeneratePreview()" />
+      </p>
+      <br style="clear:both;" />
+    </div>
+  </body>
+</html>

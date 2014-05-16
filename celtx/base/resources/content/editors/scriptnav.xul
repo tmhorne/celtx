@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://celtx/skin/toolbar.css" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="scriptnav"
+        onload="loaded()">
+
+#include ../celtx-scripts.inc
+  <script type="application/x-javascript"
+          src="chrome://celtx/content/editors/scriptnav.js"/>
+
+  <commandset id="scriptnavcommandset">
+    <command id="cmd-treeitem-down"
+             oncommand="goDoCommand('cmd-treeitem-down')"
+             disabled="true"/>
+    <command id="cmd-treeitem-up"
+             oncommand="goDoCommand('cmd-treeitem-up')"
+             disabled="true"/>
+    <command id="cmd-treeitem-recycle"
+             oncommand="goDoCommand('cmd-treeitem-recycle')"
+             disabled="true"/>
+    <command id="cmd-treeitem-delete"
+             oncommand="goDoCommand('cmd-treeitem-delete')"
+             disabled="true"/>
+    <command id="cmd-treeitem-goto"
+             oncommand="goDoCommand('cmd-treeitem-goto')"/>
+  </commandset>
+
+  <popup id="tree-popup"
+         onpopupshowing="updateTreeCommands()">
+    <menuitem id="tree-goto-item"
+              label="&gotoItemCmd.label;"
+              command="cmd-treeitem-goto"/>
+    <menuseparator/>
+    <menuitem id="tree-recycle-item"
+              class="menuitem-iconic"
+              label="&recycleCmd.label;"
+              image="chrome://celtx/skin/recycle-16.png"
+              command="cmd-treeitem-recycle"/>
+    <menuitem id="tree-delete-item"
+              class="menuitem-iconic nav-item-delete-menuitem"
+              label="&deleteItemCmd.label;"
+              command="cmd-treeitem-delete"/>
+  </popup>
+
+  <deck id="scriptnavdeck"
+        flex="1">
+  <vbox id="scenenav"
+        flex="1">
+  <vbox class="celtxtoolbar"
+        flex="1">
+    <hbox class="panelheader" align="center">
+      <label id="scenenavheader"
+             value="&scenes.label;"/>
+    </hbox>
+    <toolbar class="celtxtoolbar">
+      <toolbarbutton class="library-toolbar-button"
+                     id="nav-item-down-button"
+                     command="cmd-treeitem-down"
+                     tooltiptext="&moveDownCmd.label;"/>
+      <toolbarbutton class="library-toolbar-button"
+                     id="nav-item-up-button"
+                     command="cmd-treeitem-up"
+                     tooltiptext="&moveUpCmd.label;"/>
+      <toolbarbutton id="titletogglebutton"
+                     class="library-toolbar-button toggle-editing-button"
+                     oncommand="toggleTitles();"/>
+      <toolbarspacer flex="1"/>
+      <toolbarbutton class="library-toolbar-button"
+                     id="nav-item-delete-button"
+                     command="cmd-treeitem-delete"
+                     tooltiptext="&deleteItemCmd.label;"/>
+    </toolbar>
+    <tree id="scene-tree"
+          flex="1"
+          hidecolumnpicker="true"
+          seltype="single"
+          context="tree-popup"
+          flags="dont-build-content"
+          datasources="rdf:null"
+          ref=""
+          onselect="onSceneSelect(event)"
+          ondblclick="goDoCommand('cmd-treeitem-goto')"
+          ondraggesture="gWindow.sceneTreeView.dragGesture(event)">
+      <treecols>
+        <treecol id="expand-col"
+                 primary="true"/>
+        <treecol id="ordinal-col"
+                 label="#"
+                 width="40"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="title-col"
+                 label="&title.label;"
+                 flex="1"/>
+        <treecol id="alttitle-col"
+                 label="&indexCardTitle.label;"
+                 hidden="true"
+                 flex="1"/>
+      </treecols>
+      <template>
+        <rule>
+          <conditions>
+            <content uri="?uri"/>
+            <member container="?uri"
+                    child="?scene"/>
+          </conditions>
+          <bindings>
+            <binding subject="?scene"
+                     predicate="&ns_dc;title"
+                     object="?title"/>
+            <binding subject="?scene"
+                     predicate="&ns_cx;ordinal"
+                     object="?ord"/>
+            <binding subject="?scene"
+                     predicate="&ns_cx;colour"
+                     object="?colour"/>
+            <binding subject="?scene"
+                     predicate="&ns_cx;alttitle"
+                     object="?alttitle"/>
+          </bindings>
+          <action>
+            <treechildren>
+              <treeitem uri="?scene">
+                <treerow properties="?colour">
+                  <treecell/>
+                  <treecell label="?ord"/>
+                  <treecell label="?title"/>
+                  <treecell label="?alttitle"/>
+                </treerow>
+              </treeitem>
+            </treechildren>
+          </action>
+        </rule>
+      </template>
+    </tree>
+  </vbox>
+  </vbox>
+  <vbox id="reportnav"
+        class="celtxtoolbar"
+        flex="1">
+    <hbox class="panelheader" align="center">
+      <label value="&reports.label;"/>
+    </hbox>
+
+    <tree id="report-tree"
+          flex="1"
+          seltype="single"
+          onselect="goDoCommand('cmd-report-changed')"
+          hidecolumnpicker="true">
+      <treecols>
+        <treecol id="report-type-col"
+                 hideheader="true"
+                 flex="1"/>
+      </treecols>
+      <treechildren>
+        <treeitem>
+          <treerow>
+            <treecell label="&dialog.label;"
+                      tooltiptext="&dialog.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&elements.label;"
+                      tooltiptext="&elements.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&scriptWithNotes.label;"
+                      tooltiptext="&scriptWithNotes.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&sceneBreakdown.label;"
+                      tooltiptext="&sceneBreakdown.label;"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell label="&sceneBreakdownWithDesc.label;"
+                      tooltiptext="&sceneBreakdownWithDesc.label;"/>
+          </treerow>
+        </treeitem>
+      </treechildren>
+    </tree>
+  </vbox>
+  </deck>
+
+</window>
+

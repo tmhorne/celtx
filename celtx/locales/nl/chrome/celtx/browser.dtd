@@ -1,0 +1,392 @@
+<!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+
+<!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+<!ENTITY mainWindow.title "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+<!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+
+<!ENTITY tabCmd.label "Nieuw tabblad">
+<!ENTITY tabCmd.accesskey "t">
+<!ENTITY tabCmd.commandkey "t">
+<!ENTITY openLocationCmd.label "Locatie openen…">
+<!ENTITY openLocationCmd.accesskey "L">
+<!ENTITY openFileCmd.label "Bestand openen…">
+<!ENTITY openFileCmd.accesskey "o">
+<!ENTITY openFileCmd.commandkey "o">
+<!ENTITY printSetupCmd.label "Pagina-instellingen…">
+<!ENTITY printSetupCmd.accesskey "i">
+<!ENTITY printPreviewCmd.label "Afdrukvoorbeeld">
+<!ENTITY printPreviewCmd.accesskey "v">
+<!ENTITY printCmd.label "Afdrukken…">
+<!ENTITY printCmd.accesskey "d">
+<!ENTITY printCmd.commandkey "p">
+<!ENTITY import.label "Importeren…">
+<!ENTITY import.accesskey "m">
+
+<!ENTITY goOfflineCmd.label "Offline werken">
+<!ENTITY goOfflineCmd.accesskey "f">
+
+<!ENTITY navbarCmd.label "Navigatiewerkbalk">
+<!ENTITY navbarCmd.accesskey "N">
+<!ENTITY personalbarCmd.label "Bladwijzerwerkbalk">
+<!ENTITY personalbarCmd.accesskey "B">
+<!ENTITY bookmarksToolbarItem.label "Bladwijzerwerkbalkitems">
+<!ENTITY taskbarCmd.label "Statusbalk">
+<!ENTITY taskbarCmd.accesskey "b">
+
+<!ENTITY pageSourceCmd.label "Paginabron">
+<!ENTITY pageSourceCmd.accesskey "r">
+<!ENTITY pageSourceCmd.commandkey "u">
+<!ENTITY pageInfoCmd.label "Pagina-info">
+<!ENTITY pageInfoCmd.accesskey "i">
+<!ENTITY pageInfoCmd.commandkey "i">
+<!ENTITY fullScreenCmd.label "Volledig scherm">
+<!ENTITY fullScreenCmd.accesskey "d">
+
+<!ENTITY fullScreenMinimize.tooltip "Minimaliseren">
+<!ENTITY fullScreenRestore.tooltip "Herstellen">
+<!ENTITY fullScreenClose.tooltip "Sluiten">
+<!ENTITY fullScreenAutohide.label "Werkbalken verbergen">
+<!ENTITY fullScreenAutohide.accesskey "W">
+<!ENTITY fullScreenExit.label "Volledig-schermmodus verlaten">
+<!ENTITY fullScreenExit.accesskey "d">
+
+<!ENTITY closeWindow.label "Venster sluiten">
+<!ENTITY closeWindow.accesskey "e">
+
+<!ENTITY bookmarksMenu.label "Bladwijzers">
+<!ENTITY bookmarksMenu.accesskey "a">
+<!ENTITY bookmarkThisPageCmd.label "Bladwijzer voor deze pagina maken">
+<!ENTITY bookmarkThisPageCmd.commandkey "d">
+<!ENTITY subscribeToPageMenupopup.label "Abonneren op deze pagina">
+<!ENTITY subscribeToPageMenuitem.label "Abonneren op deze pagina…">
+<!ENTITY addCurPagesCmd.label "Bladwijzer voor alle tabbladen maken…">
+<!ENTITY organizeBookmarks.label "Bladwijzers organiseren…">
+<!ENTITY bookmarkAllCmd.label "Bladwijzer voor alle tabbladen maken…">
+
+<!ENTITY backCmd.label                "Terug">
+<!ENTITY backCmd.accesskey            "T">
+<!ENTITY backButton.tooltip           "Een pagina terug gaan">
+<!ENTITY forwardCmd.label             "Vooruit">
+<!ENTITY forwardCmd.accesskey         "V">
+<!ENTITY forwardButton.tooltip        "Een pagina vooruit gaan">
+<!ENTITY backForwardMenu.tooltip      "Recente pagina’s">
+<!ENTITY reloadCmd.label              "Vernieuwen">
+<!ENTITY reloadCmd.accesskey          "n">
+<!ENTITY reloadButton.tooltip         "Huidige pagina vernieuwen">
+<!ENTITY stopCmd.label                "Stoppen">
+<!ENTITY stopCmd.accesskey            "S">
+<!ENTITY stopCmd.macCommandKey        ".">
+<!ENTITY stopButton.tooltip           "Het laden van deze pagina stoppen">
+<!ENTITY goEndCap.tooltip             "Naar het adres in de locatiebalk gaan">
+<!ENTITY printButton.label            "Afdrukken">
+<!ENTITY printButton.tooltip          "Deze pagina afdrukken">
+
+<!ENTITY locationItem.title           "Locatie">
+<!ENTITY searchItem.title             "Zoeken">
+<!ENTITY throbberItem.title           "Activiteitsindicator">
+<!ENTITY bookmarksItem.title          "Bladwijzers">
+
+<!-- Toolbar items --> 
+<!ENTITY  homeButton.label            "Startpagina">
+
+<!ENTITY bookmarksButton.label          "Bladwijzers">
+<!ENTITY bookmarksButton.tooltip        "Uw bladwijzers weergeven">
+<!ENTITY bookmarksSidebarCmd.accesskey  "B">
+<!ENTITY bookmarksSidebarCmd.commandkey "b">
+<!ENTITY bookmarksSidebarWinCmd.commandkey "i">
+
+<!ENTITY historyButton.label            "Geschiedenis">
+<!ENTITY historyButton.tooltip          "Pagina’s die u recentelijk hebt bekeken weergeven">
+<!ENTITY historySidebarCmd.accesskey    "G">
+<!ENTITY historySidebarCmd.commandKey   "h">
+
+<!ENTITY toolsMenu.label              "Extra">
+<!ENTITY toolsMenu.accesskey          "x">
+
+<!ENTITY keywordfield.label           "Sleutelwoord voor deze zoektocht toevoegen…">
+<!ENTITY keywordfield.accesskey       "S">
+<!ENTITY search.label                 "Zoeken op het web">
+<!ENTITY search.accesskey             "Z">
+<!ENTITY downloads.label              "Downloads">
+<!ENTITY downloads.tooltip            "De voortgang van lopende downloads weergeven">
+<!ENTITY downloads.accesskey          "D">
+<!ENTITY downloads.commandkey         "j">
+<!ENTITY downloadsUnix.commandkey     "y">
+<!ENTITY addons.label                 "Add-ons">
+<!ENTITY addons.tooltip               "Geïnstalleerde add-ons tonen en beheren">
+<!ENTITY addons.accesskey             "a">
+
+<!ENTITY errorConsoleCmd.label        "Foutconsole">
+<!ENTITY errorConsoleCmd.accesskey    "F">
+<!ENTITY errorConsoleCmd.commandkey   "j">
+
+<!ENTITY fileMenu.label         "Bestand"> 
+<!ENTITY fileMenu.accesskey       "B">
+<!ENTITY newNavigatorCmd.label        "Nieuw venster">
+<!ENTITY newNavigatorCmd.key        "N">
+<!ENTITY newNavigatorCmd.accesskey      "N">
+
+<!ENTITY editMenu.label         "Bewerken"> 
+<!ENTITY editMenu.accesskey       "w"> 
+<!ENTITY undoCmd.label            "Ongedaan maken">  
+<!ENTITY undoCmd.key            "Z">  
+<!ENTITY undoCmd.accesskey          "O"> 
+<!ENTITY redoCmd.label            "Opnieuw uitvoeren">  
+<!ENTITY redoCmd.key            "Y">  
+<!ENTITY redoCmd.accesskey          "u"> 
+<!ENTITY cutCmd.label           "Knippen">  
+<!ENTITY cutCmd.key             "X">  
+<!ENTITY cutCmd.accesskey         "n"> 
+<!ENTITY copyCmd.label            "Kopiëren">  
+<!ENTITY copyCmd.key            "C">  
+<!ENTITY copyCmd.accesskey          "K"> 
+<!ENTITY pasteCmd.label           "Plakken">  
+<!ENTITY pasteCmd.key           "V">  
+<!ENTITY pasteCmd.accesskey         "P"> 
+<!ENTITY deleteCmd.label          "Verwijderen">  
+<!ENTITY deleteCmd.key            "d">  
+<!ENTITY deleteCmd.accesskey        "V"> 
+<!ENTITY selectAllCmd.label         "Alles selecteren">  
+<!ENTITY selectAllCmd.key         "A">  
+<!ENTITY selectAllCmd.accesskey       "A"> 
+<!ENTITY preferencesCmd.label       "Opties…">
+<!ENTITY preferencesCmd.accesskey     "O"> 
+<!ENTITY preferencesCmdUnix.label       "Voorkeuren…">
+<!ENTITY preferencesCmdUnix.accesskey     "V">
+
+<!ENTITY clearPrivateDataCmd.label            "Privégegevens opruimen">
+<!ENTITY clearPrivateDataCmd.accesskey        "P">
+
+<!ENTITY viewMenu.label         "Beeld"> 
+<!ENTITY viewMenu.accesskey       "l"> 
+<!ENTITY viewToolbarsMenu.label       "Werkbalken"> 
+<!ENTITY viewToolbarsMenu.accesskey     "W"> 
+<!ENTITY viewSidebarMenu.label "Zijbalk">
+<!ENTITY viewSidebarMenu.accesskey "Z">
+<!ENTITY viewCustomizeToolbar.label       "Aanpassen…"> 
+<!ENTITY viewCustomizeToolbar.accesskey     "A"> 
+
+<!ENTITY historyMenu.label "Geschiedenis">
+<!ENTITY historyMenu.accesskey "G">
+<!ENTITY historyUndoMenu.label "Onlangs gesloten tabbladen">
+
+<!ENTITY historyHomeCmd.label "Startpagina">
+<!ENTITY showAllHistoryCmd2.label "Alle geschiedenis tonen">
+<!ENTITY showAllHistoryCmd.commandkey "h">
+
+<!ENTITY openCmd.commandkey           "l">
+<!ENTITY urlbar.emptyText             "Bladwijzers en geschiedenis doorzoeken">
+<!ENTITY urlbar.accesskey             "D">
+
+<!-- 
+  Comment duplicated from browser-sets.inc:
+
+  Search Command Key Logic works like this:
+  
+  Unix: Ctrl+J (0.8, 0.9 support)
+        Ctrl+K (cross platform binding)
+  Mac:  Ctrl+K (cross platform binding)
+  Win:  Ctrl+K (cross platform binding)
+        Ctrl+E (IE compat) 
+
+  We support Ctrl+K on all platforms now and advertise it in the menu since it is
+  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+  for people to switch to Linux.
+
+  Do *not* tamper with these values without talking to ben@mozilla.org
+  
+ -->
+<!ENTITY searchFocus.commandkey       "k">
+<!ENTITY searchFocus.commandkey2      "e">
+<!ENTITY searchFocusUnix.commandkey   "j">
+
+<!ENTITY openLinkCmd.label            "Koppeling openen in nieuw venster">
+<!ENTITY openLinkCmd.accesskey        "v">
+<!ENTITY openLinkCmdInTab.label       "Koppeling openen in nieuw tabblad">
+<!ENTITY openLinkCmdInTab.accesskey   "t">
+<!ENTITY openFrameCmd.label           "Deelvenster openen in nieuw venster">
+<!ENTITY openFrameCmd.accesskey       "v">
+<!ENTITY openFrameCmdInTab.label      "Deelvenster openen in nieuw tabblad">
+<!ENTITY openFrameCmdInTab.accesskey  "t">
+<!ENTITY showOnlyThisFrameCmd.label     "Alleen dit deelvenster tonen">
+<!ENTITY showOnlyThisFrameCmd.accesskey "d">
+<!ENTITY reloadCmd.commandkey         "r">
+<!ENTITY reloadFrameCmd.label         "Deelvenster vernieuwen">
+<!ENTITY reloadFrameCmd.accesskey     "n">
+<!ENTITY viewPartialSourceForSelectionCmd.label "Bron van selectie bekijken">
+<!ENTITY viewPartialSourceForMathMLCmd.label    "MathML-bron bekijken">
+<!ENTITY viewPartialSourceCmd.accesskey "B">
+<!ENTITY viewPageSourceCmd.label      "Paginabron bekijken">
+<!ENTITY viewPageSourceCmd.accesskey  "b">
+<!ENTITY viewFrameSourceCmd.label     "Deelvensterbron bekijken">
+<!ENTITY viewFrameSourceCmd.accesskey "b">
+<!ENTITY viewPageInfoCmd.label        "Pagina-info bekijken">
+<!ENTITY viewPageInfoCmd.accesskey    "i">
+<!ENTITY viewFrameInfoCmd.label       "Deelvensterinfo bekijken">
+<!ENTITY viewFrameInfoCmd.accesskey   "i">
+<!ENTITY showImageCmd.label           "Afbeelding tonen">
+<!ENTITY showImageCmd.accesskey       "t">
+<!ENTITY viewImageCmd.label           "Afbeelding bekijken">
+<!ENTITY viewImageCmd.accesskey       "f">
+<!ENTITY viewBGImageCmd.label         "Achtergrondafbeelding bekijken">
+<!ENTITY viewBGImageCmd.accesskey     "h">
+<!ENTITY setDesktopBackgroundCmd.label      "Als bureaubladachtergrond instellen…">
+<!ENTITY setDesktopBackgroundCmd.accesskey  "c">
+<!ENTITY bookmarkPageCmd2.label        "Bladwijzer voor deze pagina maken">
+<!ENTITY bookmarkPageCmd2.accesskey    "m">
+<!ENTITY bookmarkThisLinkCmd.label     "Bladwijzer voor deze koppeling maken">
+<!ENTITY bookmarkThisLinkCmd.accesskey "m">
+<!ENTITY bookmarkThisFrameCmd.label    "Bladwijzer voor dit deelvenster maken">
+<!ENTITY bookmarkThisFrameCmd.accesskey "m">
+<!ENTITY sendPageCmd.label            "Koppeling versturen…">
+<!ENTITY sendPageCmd.accesskey        "u">
+<!ENTITY savePageCmd.label            "Pagina opslaan als…">
+<!ENTITY savePageCmd.accesskey        "p">
+<!-- alternate for content area context menu -->
+<!ENTITY savePageCmd.accesskey2       "p">
+<!ENTITY savePageCmd.commandkey       "s">
+<!ENTITY saveFrameCmd.label           "Deelvenster opslaan als…">
+<!ENTITY saveFrameCmd.accesskey       "r">
+<!ENTITY printFrameCmd.label          "Deelvenster afdrukken…">
+<!ENTITY printFrameCmd.accesskey      "a">
+<!ENTITY saveLinkCmd.label            "Koppeling opslaan als…">
+<!ENTITY saveLinkCmd.accesskey        "l">
+<!ENTITY sendLinkCmd.label            "Koppeling versturen…">
+<!ENTITY sendLinkCmd.accesskey        "u">
+<!ENTITY saveImageCmd.label           "Afbeelding opslaan als…">
+<!ENTITY saveImageCmd.accesskey       "n">
+<!ENTITY sendImageCmd.label           "Afbeelding versturen…">
+<!ENTITY sendImageCmd.accesskey       "s">
+<!ENTITY copyLinkCmd.label            "Koppelingslocatie kopiëren">
+<!ENTITY copyLinkCmd.accesskey        "p">
+<!ENTITY copyLinkTextCmd.label        "Koppelingstekst kopiëren">
+<!ENTITY copyLinkTextCmd.accesskey    "k">
+<!ENTITY copyImageCmd.label           "Afbeeldingslocatie kopiëren">
+<!ENTITY copyImageCmd.accesskey       "o">
+<!ENTITY copyImageContentsCmd.label   "Afbeelding kopiëren">
+<!ENTITY copyImageContentsCmd.accesskey  "k">
+<!ENTITY blockImageCmd.accesskey       "b">
+<!ENTITY metadataCmd.label            "Eigenschappen">
+<!ENTITY metadataCmd.accesskey        "E">
+<!ENTITY copyEmailCmd.label           "E-mailadres kopiëren">
+<!ENTITY copyEmailCmd.accesskey       "m">
+<!ENTITY thisFrameMenu.label              "Dit deelvenster">
+<!ENTITY thisFrameMenu.accesskey          "D">
+
+<!-- LOCALIZATION NOTE :
+fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+If shift key is needed with your locale popular keyboard for them,
+you can use these alternative items. Otherwise, their values should be empty.  -->
+
+<!ENTITY fullZoomEnlargeCmd.label       "Inzoomen">
+<!ENTITY fullZoomEnlargeCmd.accesskey   "I">
+<!ENTITY fullZoomEnlargeCmd.commandkey  "+">
+<!ENTITY fullZoomEnlargeCmd.commandkey2 "="> <!-- + is above this key on many keyboards -->
+<!ENTITY fullZoomEnlargeCmd.commandkey3 "">
+
+<!ENTITY fullZoomReduceCmd.label        "Uitzoomen">
+<!ENTITY fullZoomReduceCmd.accesskey    "U">
+<!ENTITY fullZoomReduceCmd.commandkey   "-">
+<!ENTITY fullZoomReduceCmd.commandkey2  "">
+
+<!ENTITY fullZoomResetCmd.label         "Herinitialiseren">
+<!ENTITY fullZoomResetCmd.accesskey     "H">
+<!ENTITY fullZoomResetCmd.commandkey    "0">
+<!ENTITY fullZoomResetCmd.commandkey2   "">
+
+<!ENTITY fullZoomToggleCmd.label        "Alleen tekst zoomen">
+<!ENTITY fullZoomToggleCmd.accesskey    "t">
+<!ENTITY fullZoom.label                 "Zoomen">
+<!ENTITY fullZoom.accesskey             "o">
+
+<!ENTITY newTabButton.tooltip           "Een nieuw tabblad openen">
+<!ENTITY newWindowButton.tooltip        "Een nieuw venster openen">
+<!ENTITY sidebarCloseButton.tooltip     "Zijbalk sluiten">
+
+<!ENTITY cutButton.tooltip              "Knippen">
+<!ENTITY copyButton.tooltip             "Kopiëren">
+<!ENTITY pasteButton.tooltip            "Plakken">
+
+<!ENTITY quitApplicationCmdWin.label       "Afsluiten">
+<!ENTITY quitApplicationCmdWin.accesskey   "A">
+<!ENTITY goBackCmd.commandKey "[">
+<!ENTITY goForwardCmd.commandKey "]">
+<!ENTITY quitApplicationCmd.label       "Afsluiten"> 
+<!ENTITY quitApplicationCmd.accesskey   "A">
+<!ENTITY quitApplicationCmdMac.label    "Afsluiten">
+<!ENTITY quitApplicationCmdMac.key      "Q">
+
+<!ENTITY closeCmd.label                 "Sluiten">  
+<!ENTITY closeCmd.key                   "W">  
+<!ENTITY closeCmd.accesskey             "S">
+
+<!ENTITY pageStyleMenu.label "Paginastijl">
+<!ENTITY pageStyleMenu.accesskey "P">
+<!ENTITY pageStyleNoStyle.label "Geen stijl">
+<!ENTITY pageStyleNoStyle.accesskey "G">
+<!ENTITY pageStylePersistentOnly.label "Basisstijl">
+<!ENTITY pageStylePersistentOnly.accesskey "B">
+
+<!ENTITY pageReportIcon.tooltip            "Pop-upinstellingen voor deze website wijzigen">
+
+<!ENTITY allowPopups.accesskey "P">
+<!-- On Windows we use the term "Options" to describe settings, but
+     on Linux and Mac OS X we use "Preferences" - carry that distinction
+     over into this string, which is used in the "popup blocked" info bar . -->
+<!ENTITY editPopupSettingsUnix.label "Pop-upblokkeringsvoorkeuren bewerken…">
+<!ENTITY editPopupSettings.label "Pop-upblokkeringsopties bewerken…">
+<!ENTITY editPopupSettings.accesskey "b">
+<!ENTITY dontShowMessage.accesskey "n">
+
+<!ENTITY bidiSwitchPageDirectionItem.label        "Paginarichting omkeren">
+<!ENTITY bidiSwitchPageDirectionItem.accesskey    "g">
+<!ENTITY bidiSwitchTextDirectionItem.label        "Tekstrichting omkeren">
+<!ENTITY bidiSwitchTextDirectionItem.accesskey    "t">
+<!ENTITY bidiSwitchTextDirectionItem.commandkey   "X">
+
+<!ENTITY findOnCmd.label "Zoeken in deze pagina…">
+<!ENTITY findOnCmd.accesskey "Z">
+<!ENTITY findOnCmd.commandkey "f">
+<!ENTITY findAgainCmd.label "Opnieuw zoeken">
+<!ENTITY findAgainCmd.accesskey "w">
+<!ENTITY findAgainCmd.commandkey "g">
+<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+
+<!ENTITY spellAddDictionaries.label "Woordenboeken toevoegen…">
+<!ENTITY spellAddDictionaries.accesskey "W">
+
+<!ENTITY editBookmark.done.label                     "Klaar">
+<!ENTITY editBookmark.cancel.label                   "Annuleren">
+<!ENTITY editBookmark.removeBookmark.label           "Bladwijzer verwijderen">
+<!ENTITY editBookmark.removeBookmark.accessKey       "v">
+<!ENTITY editBookmark.undo.label                     "Ongedaan maken">
+<!ENTITY editBookmark.undo.accessKey                 "O">
+<!ENTITY editBookmark.edit.label                     "Bewerken…">
+<!ENTITY editBookmark.edit.accessKey                 "B">
+
+<!ENTITY identity.unverifiedsite2 "Deze website verstrekt geen identiteitsinformatie.">
+<!ENTITY identity.connectedTo "U bent verbonden met">
+<!-- Localization note (identity.runBy) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity.runBy "welke wordt beheerd door">
+
+<!ENTITY identity.moreInfoLinkText "Meer informatie…">
+
+<!ENTITY downloadMonitor2.tooltip "Klik om het downloadvenster te openen">

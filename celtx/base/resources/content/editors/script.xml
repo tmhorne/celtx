@@ -1,0 +1,2786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE bindings [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd" >
+%celtxDTD;
+]>
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          id="scriptbindings">
+
+  <binding id="scripteditor">
+    <content>
+      <xul:editor editortype="html"
+                  flex="1"
+                  xbl:inherits="type,context,tooltip"/>
+    </content>
+    <implementation implements="nsIScriptEditor">
+
+
+      <field name="editorElement"/>
+
+
+      <field name="popup"/>
+
+
+      <field name="scriptMode"/>
+
+
+      <constructor>
+        <![CDATA[
+        this.editorElement = document.getAnonymousNodes(this)[0];
+        this._lockedModificationCount = 0;
+        ]]>
+      </constructor>
+
+
+      <property name="editor" readonly="true">
+        <getter>
+          <![CDATA[
+          try {
+            return this.editorElement.getHTMLEditor(
+              this.editorElement.contentWindow);
+          }
+          catch (ex) {
+            dump("*** scripteditor.editor: " + ex + "\n");
+            printStackTrace();
+            return null;
+          }
+          ]]>
+        </getter>
+      </property>
+
+
+      <property name="title">
+        <getter>
+          return this.contentDocument.title;
+        </getter>
+        <setter>
+          if (this.isLocked) {
+            this.contentDocument.title = val;
+          }
+          else {
+            this.editor.setDocumentTitle(val);
+          }
+        </setter>
+      </property>
+
+
+      <property name="selection" readonly="true">
+        <getter>
+          return this.isLocked ? this.contentWindow.getSelection()
+                               : this.editor.selection;
+        </getter>
+      </property>
+
+
+      <property name="selectionController" readonly="true">
+        <getter>
+          if (this.isLocked)
+            return this._selctrl;
+          else
+            return this.editor.selectionController;
+        </getter>
+      </property>
+
+
+      <property name="contentDocument" readonly="true">
+        <getter>
+          return this.editorElement.contentDocument;
+        </getter>
+      </property>
+
+
+      <property name="contentWindow" readonly="true">
+        <getter>
+          return this.editorElement.contentWindow;
+        </getter>
+      </property>
+
+
+      <property name="docShell" readonly="true">
+        <getter>
+          return this.editorElement.docShell;
+        </getter>
+      </property>
+
+
+      <method name="getMetaValue">
+        <parameter name="name" />
+        <body>
+        <![CDATA[
+          if (! this.contentDocument)
+            return null;
+
+          var head = this.contentDocument.documentElement.firstChild;
+          var metas = head.getElementsByTagName("meta");
+          for (var i = 0; i < metas.length; ++i) {
+            if (metas[i].name == name)
+              return metas[i].content;
+          }
+
+          return null;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="setMetaValue">
+        <parameter name="name" />
+        <parameter name="value" />
+        <body>
+        <![CDATA[
+          if (! this.contentDocument)
+            return;
+
+          var head = this.contentDocument.documentElement.firstChild;
+          var metas = head.getElementsByTagName("meta");
+          for (var i = 0; i < metas.length; ++i) {
+            if (metas[i].name == name) {
+              if (metas[i].content != value) {
+                metas[i].content = value;
+                this.incrementModificationCount(1);
+              }
+              return;
+            }
+          }
+
+          var meta = this.contentDocument.createElement("meta");
+          meta.setAttribute("name", name);
+          meta.setAttribute("content", value);
+          head.appendChild(meta);
+          this.incrementModificationCount(1);
+        ]]>
+        </body>
+      </method>
+
+
+      <property name="isLocked" readonly="true">
+        <getter>
+        <![CDATA[
+          return this.getMetaValue("CX.locked") == "true";
+        ]]>
+        </getter>
+      </property>
+
+
+      <property name="scenesLocked">
+        <getter>
+        <![CDATA[
+          return this.getMetaValue("CX.scenesLocked") == "true";
+        ]]>
+        </getter>
+        <setter>
+        <![CDATA[
+          return this.setMetaValue("CX.scenesLocked", val ? "true" : "false");
+        ]]>
+        </setter>
+      </property>
+
+
+      <property name="revisionNumber" readonly="true">
+        <getter>
+        <![CDATA[
+          var revnum = this.getMetaValue("CX.revisionNumber");
+          return revnum ? Number(revnum) : 0;
+        ]]>
+        </getter>
+      </property>
+
+
+      <property name="modificationCount" readonly="true">
+        <getter>
+          if (this.isLocked)
+            return this._lockedModificationCount;
+          else
+            return this.editor.getModificationCount();
+        </getter>
+      </property>
+
+
+      <method name="incrementModificationCount">
+        <parameter name="val"/>
+        <body>
+          if (this.isLocked)
+            this._lockedModificationCount += val;
+          else
+            this.editor.incrementModificationCount(val);
+        </body>
+      </method>
+
+
+      <method name="resetModificationCount">
+        <body>
+          if (this.isLocked)
+            this._lockedModificationCount = 0;
+          else
+            this.editor.resetModificationCount();
+        </body>
+      </method>
+
+
+      <method name="beginTransaction">
+        <body>
+          this.editor.beginTransaction();
+        </body>
+      </method>
+
+
+      <method name="endTransaction">
+        <body>
+          this.editor.endTransaction();
+        </body>
+      </method>
+
+
+      <property name="sceneCount" readonly="true">
+        <getter>
+        <![CDATA[
+          var xpath = new XPathEvaluator();
+          var rv = xpath.evaluate('count(//p[@class="sceneheading"])',
+                                  this.contentDocument,
+                                  null,
+                                  XPathResult.NUMBER_TYPE,
+                                  null);
+          return rv.numberValue;
+        ]]>
+        </getter>
+      </property>
+
+
+      <property name="actCount" readonly="true">
+        <getter>
+        <![CDATA[
+          var xpath = new XPathEvaluator();
+          var rv = xpath.evaluate('count(//p[@class="act"])',
+                                  this.contentDocument,
+                                  null,
+                                  XPathResult.NUMBER_TYPE,
+                                  null);
+          return rv.numberValue;
+        ]]>
+        </getter>
+      </property>
+
+
+      <property name="wordCount" readonly="true">
+        <getter>
+          if (this.isLocked)
+            return 0;
+
+          var pted = this.editor.QueryInterface(
+            Components.interfaces.nsIPlaintextEditor);
+          return pted.getWordCount();
+        </getter>
+      </property>
+
+
+      <property name="selectionWordCount" readonly="true">
+        <getter>
+          if (this.isLocked)
+            return 0;
+
+          var sel = this.selection;
+          if (sel.isCollapsed)
+            return 0;
+          var pted = this.editor.QueryInterface(
+            Components.interfaces.nsIPlaintextEditor);
+          return pted.getSelectionWordCount(sel);
+        </getter>
+      </property>
+
+
+      <property name="scrollY">
+        <getter>
+          return this.editorElement.contentWindow.scrollY;
+        </getter>
+        <setter>
+          var cw = this.editorElement.contentWindow;
+          cw.scrollTo(cw.scrollX, val);
+          return val;
+        </setter>
+      </property>
+
+
+      <method name="deleteSelection">
+        <body>
+        <![CDATA[
+          this.editor.beginTransaction();
+          try {
+            var left = this.selection.getRangeAt(0).startContainer;
+            var right = this.selection.getRangeAt(0).endContainer;
+            var leftp = this.editor.getElementOrParentByTagName("p", left);
+            var rightp = this.editor.getElementOrParentByTagName("p", right);
+            var class = leftp.className;
+            this.editor.deleteSelection(0);
+            if (rightp && rightp.parentNode && rightp.className != class)
+              this.setParagraphFormat(rightp, class);
+          }
+          catch (ex) {
+            dump("*** deleteSelection: " + ex + "\n");
+          }
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Cursor management methods -->
+
+
+      <property name="currentParagraph" readonly="true">
+        <getter>
+        <![CDATA[
+          var node = this.selection.focusNode;
+          if (node instanceof Components.interfaces.nsIDOMHTMLBodyElement) {
+            var offset = this.selection.focusOffset;
+            var children = node.childNodes;
+            if (offset >= children.length)
+              node = node.lastChild;
+            else
+              node = children[offset];
+            while (node instanceof Components.interfaces.nsIDOMText) {
+              if (node.nodeValue.match(/\S+/))
+                break;
+              else
+                node = node.previousSibling;
+            }
+          }
+          if (! node)
+            return null;
+
+          if (! this.isLocked)
+            return this.editor.getElementOrParentByTagName("p", node);
+
+          var IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+          while (node && ! (node instanceof IPara))
+            node = node.parentNode;
+
+          return node;
+        ]]>
+        </getter>
+      </property>
+
+
+      <property name="isTextSelected" readonly="true">
+        <getter>
+        <![CDATA[
+          var sel = this.editor.selection;
+          if (sel.isCollapsed) return false;
+          var node = this.editor.getSelectionContainer();
+          if (node && (node.className == 'note' || node.className == 'media'))
+            return false;
+          return true;
+        ]]>
+        </getter>
+      </property>
+
+
+      <method name="atStartOfParagraph">
+        <parameter name="cursor"/>
+        <body>
+        <![CDATA[
+          const IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+          const IBR   = Components.interfaces.nsIDOMHTMLBRElement;
+          const IText = Components.interfaces.nsIDOMText;
+          var block = this.currentParagraph;
+          if (! block)
+            return false;
+
+          if (cursor.anchorOffset != 0)
+            return false;
+
+          var node = cursor.anchorNode;
+          while (! (node instanceof IPara)) {
+            if (node.previousSibling)
+              return false;
+            node = node.parentNode;
+          }
+          dump("    (true)\n");
+          return true;
+
+          if (node instanceof IPara) {
+            return cursor.anchorOffset == 0 ||
+              (cursor.anchorOffset == 1 && node.firstChild instanceof IBR);
+          }
+          else if (node instanceof IText) {
+            var offset = cursor.anchorOffset;
+            // Special test for parentheticals needed? Could interfere with
+            // the selection-extending behaviour of the VK_BACK handler.
+            if (offset > 0)
+              return false;
+
+            // Skip any preceding white space text nodes
+            while (node.previousSibling &&
+                   node.previousSibling instanceof IText) {
+              // if (node.previousSibling.nodeValue.match(/\S/))
+              if (node.previousSibling.nodeValue.length > 0)
+                return false;
+              node = node.previousSibling;
+            }
+            // Skip a single leading BR element
+            if (node.previousSibling && node.previousSibling instanceof IBR)
+              node = node.previousSIbling;
+            // Skip any preceding white space text nodes
+            while (node.previousSibling &&
+                   node.previousSibling instanceof IText) {
+              // if (node.previousSibling.nodeValue.match(/\S/))
+              if (node.previousSibling.nodeValue.length > 0)
+                return false;
+              node = node.previousSibling;
+            }
+          }
+          while (! (node instanceof IPara)) {
+            if (! (node.parentNode && node == node.parentNode.firstChild))
+              return false;
+            node = node.parentNode;
+          }
+
+          return true;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="atEndOfParagraph">
+        <parameter name="cursor"/>
+        <body>
+        <![CDATA[
+          const IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+          const IBR   = Components.interfaces.nsIDOMHTMLBRElement;
+          const IText = Components.interfaces.nsIDOMText;
+          var block = this.currentParagraph;
+          if (! block)
+            return false;
+
+          // There are two special cases checked for parenthetical:
+          // 1. The closing bracket is in the same text node
+          // 2. The closing bracket is in its own text node
+          var node = cursor.anchorNode;
+          var offset = cursor.anchorOffset;
+          if (node instanceof IText) {
+            if (offset < node.nodeValue.length) {
+              if (offset != node.nodeValue.length - 1 ||
+                  node.nodeValue.substring(node.nodeValue.length - 1) != ")")
+                return false;
+              var para = node.parentNode;
+              while (para && ! (para instanceof IPara))
+                para = para.parentNode;
+              if (para && para.className != "parenthetical" &&
+                  (this.scriptMode != "radio" || para.className != "action"))
+                return false;
+            }
+            while (node && ! (node instanceof IPara)) {
+              // Add one to the offset, because the cursor is after the node
+              offset = offsetInParent(node) + 1;
+              node = node.parentNode;
+            }
+            if (! node)
+              return false;
+          }
+
+          if (! (node instanceof IPara))
+            return false;
+
+          if (offset >= node.childNodes.length)
+            return true;
+
+          // TODO: Figure out why production notes end up being:
+          // text('(')text('production note')text('')text(')')
+          while (node.childNodes[offset] instanceof IText &&
+                 node.childNodes[offset].nodeValue == "")
+            ++offset;
+
+          // Parenthetical special case
+          if ((node.className == "parenthetical" ||
+              (node.className == "action" && this.scriptMode == "radio")) &&
+              node.childNodes[offset] instanceof IText &&
+              node.childNodes[offset].nodeValue == ")")
+            return true;
+
+          node = node.childNodes[offset];
+          if (node && (node instanceof IBR))
+            node = node.nextSibling;
+          if (node && (node instanceof IText) && node.nodeValue == "\n")
+            node = node.nextSibling;
+
+          // truth value
+          return ! node;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="maybeScroll">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          var node = this.editor.getSelectionContainer();
+          var win  = this.editorElement.contentWindow;
+          var doc  = this.contentDocument;
+
+          var y  = doc.getBoxObjectFor(node).y;
+          var yo = win.pageYOffset;
+          var h  = win.innerHeight;
+          // dump("  h: " + h + ", y: " + y + ", yo: " + yo + "\n");
+          if (y >= yo + (h * 0.9)) {
+            // dump("  scrolling\n");
+            win.scrollTo(0, y - h / 2);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="cursorToScene">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+        try {
+          var para = this.contentDocument.getElementById(id);
+          if (! para) return;
+
+          if (! this.isLocked) {
+            var sel = this.editor.selection;
+            sel.removeAllRanges();
+            var rng = this.contentDocument.createRange();
+            rng.selectNodeContents(para);
+            rng.collapse(true);
+            sel.addRange(rng);
+          }
+
+          // Ensure scene is scrolled to top of window
+          this.editorElement.contentWindow.scrollTo(0, para.offsetTop);
+        }
+        catch (ex) {
+          dump("cursorToScene: " + ex + "\n");
+        }
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Document loading -->
+
+
+      <method name="onDocumentLoad">
+        <body>
+        <![CDATA[
+          // Strip out any leading or trailing text nodes in the body,
+          // otherwise the cursor can escape the usual flow.
+          var body = this.contentDocument.body;
+          var IText = Components.interfaces.nsIDOMText;
+          while (body.lastChild instanceof IText &&
+                 body.lastChild.nodeValue.match(/^\s*$/)) {
+            body.removeChild(body.lastChild);
+          }
+          while (body.firstChild instanceof IText &&
+                 body.firstChild.nodeValue.match(/^\s*$/)) {
+            body.removeChild(body.firstChild);
+          }
+
+          this.conformToLockState();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="load">
+        <parameter name="url"/>
+        <body>
+        <![CDATA[
+          var e = this.editorElement;
+          var observer = {
+            editor: this,
+            observe: function (subject, topic, data) {
+              var eventName = null;
+              switch (topic) {
+                case "obs_documentCreated":
+                  this.editor.onDocumentLoad();
+                  eventName = "scriptload";
+                  break;
+                case "cmd_bold":
+                  eventName = "formatchanged";
+                  break;
+                default:
+                  return;
+              }
+              var event = document.createEvent("HTMLEvents");
+              event.initEvent(eventName, true, false);
+              this.editor.dispatchEvent(event);
+            }
+          };
+          var willLoadEvent = document.createEvent("HTMLEvents");
+          willLoadEvent.initEvent("scriptwillload", true, false);
+          this.dispatchEvent(willLoadEvent);
+          e.commandManager.addCommandObserver(observer,
+            "obs_documentCreated");
+          e.commandManager.addCommandObserver(observer, "cmd_bold");
+          e.setAttribute("src", url);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="reload">
+        <body>
+        <![CDATA[
+          var webnav = this.editorElement.webNavigation;
+          webnav.reload(Components.interfaces.nsIWebNavigation.LOAD_FLAGS_NONE);
+          var self = this;
+          var checkRefreshed = function () {
+            if (self.editorElement.docShell.busyFlags) {
+              setTimeout(checkRefreshed, 100);
+              return;
+            }
+            self.onDocumentLoad();
+            var event = document.createEvent("HTMLEvents");
+            event.initEvent("scriptload", true, false);
+            self.dispatchEvent(event);
+          }
+          setTimeout(checkRefreshed, 100);
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Formatting -->
+
+
+      <method name="setDefaultParagraphFormat">
+        <body>
+        <![CDATA[
+          var IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+          if (! this.currentParagraph)
+            this.editor.setParagraphFormat("P");
+
+          var ps = getPrefService().getBranch("celtx.scripteditor."
+            + this.scriptMode + ".");
+          this.setParagraphFormat(this.currentParagraph,
+            ps.getCharPref("default"));
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="setParagraphFormat">
+        <parameter name="paragraph"/>
+        <parameter name="format"/>
+        <body>
+        <![CDATA[
+          if (this.scriptMode == "radio" &&
+            (paragraph.className == "sound"
+            || paragraph.className == "voice"
+            || paragraph.className == "music")) {
+              this.removeFormatPrefix(paragraph, paragraph.className);
+          }
+          if (format == "parenthetical" ||
+            (this.scriptMode == "radio" && format == "action")) {
+            if (paragraph.className != "parenthetical" &&
+                (this.scriptMode != "radio" || paragraph.className != "action"))
+              this.parenthesize(paragraph);
+          }
+          else if (paragraph.className == "parenthetical" ||
+              (this.scriptMode == "radio" && paragraph.className == "action")) {
+            if (format != "parenthetical" &&
+                (this.scriptMode != "radio" || format != "action"))
+            this.deparenthesize(paragraph);
+          }
+          else if (paragraph.className == "act") {
+            var prev = previousElement(paragraph);
+            if (prev && prev.className == "softbreak")
+              this.editor.deleteNode(prev);
+          }
+          else if (format == "act") {
+            var prev = previousElement(paragraph);
+            // Only do it if the act isn't the first element
+            if (prev && prev.className != "softbreak") {
+              this.editor.setShouldTxnSetSelection(false);
+              var softbreak = this.contentDocument.createElement("div");
+              softbreak.className = "softbreak";
+              this.editor.insertNode(softbreak, paragraph.parentNode,
+                offsetInParent(paragraph));
+              this.editor.setShouldTxnSetSelection(true);
+            }
+          }
+          else if (this.scriptMode == "radio" &&
+              (format == "sound" || format == "voice" || format == "music")) {
+            this.insertFormatPrefix(paragraph, format);
+          }
+          var event = document.createEvent("HTMLEvents");
+          event.initEvent("formatwillchange", true, false);
+          this.editorElement.dispatchEvent(event);
+          this.editor.setAttribute(paragraph, "class", format);
+          // Send a formatchanged event only if it's the current paragraph
+          if (paragraph != this.currentParagraph)
+            return;
+          var event = document.createEvent("HTMLEvents");
+          event.initEvent("formatchanged", true, false);
+          this.editorElement.dispatchEvent(event);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="parenthesize">
+        <parameter name="block"/>
+        <body>
+        <![CDATA[
+          var ed  = this.editor;
+          var doc = this.contentDocument;
+
+          // Find last non-ws node
+          var nd, i;
+          for (i = block.childNodes.length - 1; i >= 0; i--) {
+            nd = block.childNodes[i];
+            if (nd.nodeType == nd.TEXT_NODE && nd.nodeValue.match(/\S+/) ||
+                nd.nodeType == nd.ELEMENT_NODE && nd.localName != 'BR') break;
+          }
+
+          try {
+            if (i == -1) {
+              this.insertNode(doc.createTextNode(""), block, 0);
+              i = 0;
+            }
+            ed.setShouldTxnSetSelection(false);
+            this.insertNode(doc.createTextNode(")"), block, i + 1);
+            this.insertNode(doc.createTextNode("("), block, 0);
+          }
+          catch (ex) {
+            dump("parenthesize: " + ex + "\n");
+          }
+          finally {
+            ed.setShouldTxnSetSelection(true);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="insertFormatPrefix">
+        <parameter name="paragraph"/>
+        <parameter name="format"/>
+        <body>
+        <![CDATA[
+          var text = " ";
+          switch (format) {
+            case "sound": text = gApp.getText("SoundPrefix") + text; break;
+            case "voice": text = gApp.getText("VoicePrefix") + text; break;
+            case "music": text = gApp.getText("MusicPrefix") + text; break;
+            default: return;
+          }
+          this.insertNode(this.contentDocument.createTextNode(text),
+            paragraph, 0);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="removeFormatPrefix">
+        <parameter name="paragraph"/>
+        <parameter name="format"/>
+        <body>
+        <![CDATA[
+          if (! paragraph.hasChildNodes())
+            return;
+          var text = " ";
+          switch (format) {
+            case "sound": text = gApp.getText("SoundPrefix") + text; break;
+            case "voice": text = gApp.getText("VoicePrefix") + text; break;
+            case "music": text = gApp.getText("MusicPrefix") + text; break;
+            default: return;
+          }
+          var firstnode = paragraph.firstChild;
+          if ((firstnode instanceof Components.interfaces.nsIDOMText) &&
+              firstnode.nodeValue.indexOf(text) == 0) {
+            var remainder = firstnode.nodeValue.substring(text.length);
+            this.editor.beginTransaction();
+            try {
+              this.editor.deleteNode(firstnode);
+              if (remainder)
+                this.insertNode(this.contentDocument.createTextNode(remainder),
+                  paragraph, 0);
+            }
+            catch (ex) {
+              dump("*** removeFormatPrefix: " + ex + "\n");
+            }
+            this.editor.endTransaction();
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="deparenthesize">
+        <parameter name="block"/>
+        <body>
+        <![CDATA[
+          var ed  = this.editor;
+          var doc = this.contentDocument;
+
+          try {
+            ed.setShouldTxnSetSelection(false);
+
+            var nd, i, pnode;
+
+            // Leading paren
+            for (i = 0; i < block.childNodes.length; i++) {
+              nd = block.childNodes[i];
+              if (nd.nodeType == nd.TEXT_NODE && nd.nodeValue.match(/^\s*\(/)) {
+                pnode = { value: null };
+                ed.splitNode(nd, nd.nodeValue.indexOf("(") + 1, pnode);
+                if (pnode.value) ed.deleteNode(pnode.value);
+                break;
+              }
+            }
+
+            // Trailing paren
+            for (i = block.childNodes.length - 1; i >= 0; i--) {
+              nd = block.childNodes[i];
+              if (nd.nodeType == nd.TEXT_NODE && nd.nodeValue.match(/\)\s*$/)) {
+                pnode = { value: null };
+                ed.splitNode(nd, nd.nodeValue.lastIndexOf(")"), pnode);
+                if (pnode.value) ed.deleteNode(nd);
+                break;
+              }
+            }
+
+          }
+          catch (ex) {
+            dump("deparenthesize: " + ex + "\n");
+          }
+          finally {
+            ed.setShouldTxnSetSelection(true);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="toggleStyle">
+        <parameter name="style"/>
+        <body>
+        <![CDATA[
+          // Adapted from ComposerCommands.js
+          try {
+            var cmdParams = Components.classes[
+              "@mozilla.org/embedcomp/command-params;1"]
+              .createInstance(Components.interfaces.nsICommandParams);
+            var dispatcher = document.commandDispatcher;
+            var cmd = 'cmd_' + style;
+            var ctl = dispatcher.getControllerForCommand(cmd);
+            if (ctl && ctl.isCommandEnabled(cmd)) {
+              if (ctl instanceof Components.interfaces.nsICommandController) {
+                ctl.doCommandWithParams(cmd, cmdParams);
+                if (cmdParams)
+                  ctl.getCommandStateWithParams(cmd, cmdParams);
+              }
+              else
+                ctl.doCommand(cmd);
+            }
+            else {
+              if (ctl)
+                dump("*** toggleStyle: " + cmd + " not enabled\n");
+              else
+                dump("*** toggleStyle: No controller for " + cmd + "\n");
+            }
+          }
+          catch (ex) {
+            dump("*** toggleStyle: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="markup">
+        <parameter name="type"/>
+        <parameter name="ref"/>
+        <body>
+        <![CDATA[
+          if (this.selection.isCollapsed) {
+            dump("*** script.xml::markup called for empty selection\n");
+            return;
+          }
+          var editor = this.editor;
+
+          if (! this.isLocked) {
+            editor.beginTransaction();
+            try {
+              // We need to preserve all the notes/media in between, because
+              // they lose their class attributes (and get a ref attribute)
+              // as a result of this
+              var notes = new Array();
+              var media = new Array();
+              for (var i = 0; i < this.selection.rangeCount; ++i) {
+                var range = this.selection.getRangeAt(i);
+                var start = range.startContainer;
+                if (start.hasChildNodes() &&
+                    range.startOffset < start.childNodes.length)
+                  start = start.childNodes[range.startOffset];
+                var iter = Components.classes["@celtx.com/dom/iterator;1"]
+                  .createInstance(Components.interfaces.celtxINodeIterator);
+                iter.init(start, range);
+                var node = null;
+                while ((node = iter.nextNode()) != null) {
+                  if (node.nodeName.toLowerCase() == "span") {
+                    if (node.getAttribute("class") == "note")
+                      notes.push(node);
+                    else if (node.getAttribute("class") == "media")
+                      media.push(node);
+                  }
+                }
+              }
+              var span = getAtom("span");
+              editor.setInlineProperty(span, "class", type);
+              editor.setInlineProperty(span, "ref", ref);
+
+              for (var i = 0; i < notes.length; ++i) {
+                var span = notes[i];
+                editor.setAttribute(span, "class", "note");
+                editor.removeAttribute(span, "ref");
+              }
+              for (var i = 0; i < media.length; ++i) {
+                var span = media[i];
+                editor.setAttribute(span, "class", "media");
+                editor.removeAttribute(span, "ref");
+              }
+            }
+            catch (ex) {
+              dump("*** scripteditor.markup: " + ex + "\n");
+            }
+            editor.endTransaction();
+          }
+          else {
+            try {
+              var range = this.selection.getRangeAt(0);
+              var IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+              var startpara = range.startContainer;
+              var endpara = range.endContainer;
+              while (startpara && ! (startpara instanceof IPara))
+                startpara = startpara.parentNode;
+              while (endpara && ! (endpara instanceof IPara))
+                endpara = endpara.parentNode;
+
+              if (! startpara)
+                throw new Error("Could not locate start paragraph");
+              if (! endpara)
+                throw new Error("Could not locate end paragraph");
+
+              if (startpara == endpara) {
+                var span = this.contentDocument.createElement("span");
+                span.setAttribute("class", type);
+                span.setAttribute("ref", ref);
+                range.surroundContents(span);
+              }
+              else {
+                var startrange = range.cloneRange();
+                startrange.setEndBefore(startpara.lastChild);
+
+                var endrange = range.cloneRange();
+                endrange.setStart(endpara, 0);
+
+                var midparas = [];
+                var nextpara = nextElement(startpara);
+                while (nextpara && nextpara != endpara) {
+                  if (nextpara instanceof IPara)
+                    midparas.push(nextpara);
+                  nextpara = nextElement(nextpara);
+                }
+
+                var startspan = this.contentDocument.createElement("span");
+                startspan.setAttribute("class", type);
+                startspan.setAttribute("ref", ref);
+                startrange.surroundContents(startspan);
+
+                var endspan = this.contentDocument.createElement("span");
+                endspan.setAttribute("class", type);
+                endspan.setAttribute("ref", ref);
+                endrange.surroundContents(endspan);
+
+                for (var i = 0; i < midparas.length; ++i) {
+                  var midrange = this.contentDocument.createRange();
+                  midrange.setStart(midparas[i], 0);
+                  midrange.setEndBefore(midparas[i].lastChild);
+
+                  var midspan = this.contentDocument.createElement("span");
+                  midspan.setAttribute("class", type);
+                  midspan.setAttribute("ref", ref);
+                  midrange.surroundContents(midspan);
+                }
+              }
+              this.incrementModificationCount(1);
+            }
+            catch (ex) {
+              dump("*** scripteditor[locked].markup: " + ex + "\n");
+            }
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="unmarkupSpan">
+        <parameter name="span"/>
+        <body>
+        <![CDATA[
+          if (! this.isLocked) {
+            var offset = offsetInParent(span);
+            while (span.hasChildNodes())
+              this.editor.insertNode(span.firstChild, span.parentNode, offset++);
+            this.editor.deleteNode(span);
+          }
+          else {
+            while (span.hasChildNodes())
+              span.parentNode.insertBefore(span.firstChild, span);
+            span.parentNode.removeChild(span);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="unmarkup">
+        <body>
+        <![CDATA[
+          if (! this.isLocked)
+            this.editor.beginTransaction();
+          try {
+            var sel = this.selection;
+            var str = "//span[@ref]";
+            var xpath = new XPathEvaluator();
+            var result = xpath.evaluate(str, this.contentDocument.body,
+              null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+            var spans = [];
+            var span = null;
+            var foundStart = false;
+            while ((span = result.iterateNext()) != null) {
+              if (sel.containsNode(span, true)) {
+                foundStart = true;
+                spans.push(span);
+              }
+              else if (foundStart)
+                // Past the end of the selection
+                break;
+            }
+            // Shifting around DOM nodes without the editor fix-up causes
+            // the selection to look weird.
+            if (this.isLocked)
+              sel.collapseToStart();
+            for (var i = 0; i < spans.length; ++i)
+              this.unmarkupSpan(spans[i]);
+          }
+          catch (ex) {
+            dump("*** scripteditor.unmarkup: " + ex + "\n");
+          }
+          if (! this.isLocked)
+            this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- DOM Interrogation -->
+
+
+      <method name="sceneContaining">
+        <parameter name="para"/>
+        <body>
+        <![CDATA[
+          if (! para) return;
+
+          try {
+            var xpath = new XPathEvaluator();
+            var str = "(self::p[@class='sceneheading']" + 
+                      "| preceding-sibling::p[@class='sceneheading'])[last()]";
+            var rv = xpath.evaluate(str, para, null,
+                                    XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+            return rv.singleNodeValue;
+          }
+          catch (ex) {
+            dump("*** sceneContaining: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="rangeOfScene">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var doc = this.contentDocument;
+          var startNode = doc.getElementById(id);
+          if (! startNode) {
+            dump("*** rangeOfScene: No scene with id " + id + "\n");
+            return;
+          }
+
+          var rng = doc.createRange();
+          rng.setStartBefore(startNode);
+
+          var node = startNode.nextSibling;
+          while (node) {
+            if (node.nodeType == Node.ELEMENT_NODE &&
+                (node.className == 'sceneheading' ||
+                 node.className == 'act')) break;
+            node = node.nextSibling;
+          }
+          if (node) {
+            rng.setEndBefore(node);
+          }
+          else {
+            // Hit end of document
+            rng.setEndAfter(doc.body.lastChild);
+          }
+
+          return rng;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="scenePosition">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var xpath = new XPathEvaluator();
+          var xset  = xpath.evaluate('//p[@class="sceneheading"]',
+                                     this.contentDocument,
+                                     null,
+                                     XPathResult.ORDERED_NODE_ITERATOR_TYPE,
+                                     null);
+          var i = 0;
+          var elem;
+          while (elem = xset.iterateNext()) {
+            i++;
+            if (elem.id == id) return i;
+          }
+          return 0;  // Not found
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="sceneAt">
+        <parameter name="pos"/>
+        <body>
+        <![CDATA[
+          if (pos < 1 || pos > this.sceneCount) return;
+          var xpath = new XPathEvaluator();
+          var rv = xpath.evaluate('//p[@class="sceneheading"][' + pos + ']',
+                                  this.contentDocument,
+                                  null,
+                                  XPathResult.FIRST_ORDERED_NODE_TYPE,
+                                  null);
+          return rv.singleNodeValue;
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Act Manipulation -->
+
+      <method name="rangeOfAct">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var doc = this.contentDocument;
+          var startNode = doc.getElementById(id);
+          if (! startNode) {
+            dump("*** rangeOfAct: No act with id " + id + "\n");
+            return;
+          }
+
+          var rng = doc.createRange();
+          rng.setStartBefore(startNode);
+
+          var node = startNode.nextSibling;
+          while (node) {
+            if (node.nodeType == Node.ELEMENT_NODE && node.className == 'act')
+              break;
+            node = node.nextSibling;
+          }
+          if (node) {
+            rng.setEndBefore(node);
+          }
+          else {
+            // Hit end of document
+            rng.setEndAfter(doc.body.lastChild);
+          }
+
+          return rng;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="actPosition">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var xpath = new XPathEvaluator();
+          var xset  = xpath.evaluate('//p[@class="act"]',
+                                     this.contentDocument,
+                                     null,
+                                     XPathResult.ORDERED_NODE_ITERATOR_TYPE,
+                                     null);
+          var i = 0;
+          var elem;
+          while (elem = xset.iterateNext()) {
+            i++;
+            if (elem.id == id) return i;
+          }
+          return 0;  // Not found
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="actAt">
+        <parameter name="pos"/>
+        <body>
+        <![CDATA[
+          if (pos < 1 || pos > this.actCount) return;
+          var xpath = new XPathEvaluator();
+          var rv = xpath.evaluate('//p[@class="act"][' + pos + ']',
+                                  this.contentDocument,
+                                  null,
+                                  XPathResult.FIRST_ORDERED_NODE_TYPE,
+                                  null);
+          return rv.singleNodeValue;
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- DOM Manipulation -->
+
+
+      <!-- insertNode in the HTML editor doesn't check its arguments and
+           can crash if parent is null (haven't tested node) -->
+      <method name="insertNode">
+        <parameter name="node"/>
+        <parameter name="parent"/>
+        <parameter name="pos"/>
+        <body>
+          <![CDATA[
+          if (node && parent)
+            this.editor.insertNode(node, parent, pos);
+          else if (! node)
+            throw "node is null";
+          else
+            throw "parent is null";
+          ]]>
+        </body>
+      </method>
+
+
+      <method name="insertNote">
+        <parameter name="note"/>
+        <body>
+        <![CDATA[
+          try {
+            var noteElem;
+            if (this.isLocked)
+              noteElem = this.contentDocument.createElement('span');
+            else
+              noteElem = this.editor.createElementWithDefaults('span');
+            noteElem.className = 'note';
+            noteElem.setAttribute('text', note.text);
+            noteElem.setAttribute('id', note.id);
+            noteElem.setAttribute('date', note.date.toLocaleString());
+
+            if (this.isLocked) {
+              var IText = Components.interfaces.nsIDOMText;
+              var IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+              var IBR = Components.interfaces.nsIDOMHTMLBRElement;
+              var node = this.selection.focusNode;
+              var offset = this.selection.focusOffset;
+              if (! (node instanceof IText)) {
+                if (node.hasChildNodes() &&
+                    offset < node.childNodes.length &&
+                    node.childNodes[offset] instanceof IText) {
+                  node = node.childNodes[offset];
+                  offset = 0;
+                }
+              }
+              if (node instanceof IPara) {
+                node = node.lastChild;
+                // Skip a trailing newline
+                if (node instanceof IText && node.nodeValue == "\n")
+                  node = node.previousSibling;
+              }
+              else if (node instanceof IText) {
+                if (offset > 0) {
+                  var pretext = this.contentDocument.createTextNode(
+                    node.nodeValue.substring(0, offset));
+                  node.parentNode.insertBefore(pretext, node);
+                  node.nodeValue = node.nodeValue.substring(offset);
+                }
+              }
+              else {
+                throw new Error("Selection does not correspond to a text node ("
+                  + node.nodeName + ")");
+              }
+              node.parentNode.insertBefore(noteElem, node);
+              this.incrementModificationCount(1);
+            }
+            else
+              this.editor.insertElementAtSelection(noteElem, false);
+          }
+          catch (ex) {
+            dump("*** insertNote: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="insertMedia">
+        <parameter name="media"/>
+        <body>
+        <![CDATA[
+          try {
+            var noteElem;
+            if (this.isLocked)
+              noteElem = this.contentDocument.createElement('span');
+            else
+              noteElem = this.editor.createElementWithDefaults('span');
+            noteElem.className = 'media';
+            noteElem.setAttribute('id', media.id);
+            noteElem.setAttribute('mediares', media.mediares);
+
+            if (this.isLocked) {
+              var IText = Components.interfaces.nsIDOMText;
+              var IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+              var IBR = Components.interfaces.nsIDOMHTMLBRElement;
+              var node = this.selection.focusNode;
+              var offset = this.selection.focusOffset;
+              if (! (node instanceof IText)) {
+                if (node.hasChildNodes() &&
+                    offset < node.childNodes.length &&
+                    node.childNodes[offset] instanceof IText) {
+                  node = node.childNodes[offset];
+                  offset = 0;
+                }
+              }
+              if (node instanceof IPara) {
+                node = node.lastChild;
+                // Skip a trailing newline
+                if (node instanceof IText && node.nodeValue == "\n")
+                  node = node.previousSibling;
+              }
+              else if (node instanceof IText) {
+                if (offset > 0) {
+                  var pretext = this.contentDocument.createTextNode(
+                    node.nodeValue.substring(0, offset));
+                  node.parentNode.insertBefore(pretext, node);
+                  node.nodeValue = node.nodeValue.substring(offset);
+                }
+              }
+              else {
+                throw new Error("Selection does not correspond to a text node ("
+                  + node.nodeName + ")");
+              }
+              node.parentNode.insertBefore(noteElem, node);
+              this.incrementModificationCount(1);
+            }
+            else
+              this.editor.insertElementAtSelection(noteElem, false);
+          }
+          catch (ex) {
+            dump("*** insertMedia: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="removeNote">
+        <parameter name="note"/>
+        <body>
+        <![CDATA[
+          if (! note) return;
+          if (this.isLocked) {
+            note.parentNode.removeChild(note);
+            this.incrementModificationCount(1);
+          }
+          else
+            this.editor.deleteNode(note);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="removeMedia">
+        <parameter name="media"/>
+        <body>
+        <![CDATA[
+          if (! media) return;
+          if (this.isLocked) {
+            media.parentNode.removeChild(media);
+            this.incrementModificationCount(1);
+          }
+          else
+            this.editor.deleteNode(media);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="createScene">
+        <parameter name="slugline"/>
+        <parameter name="pos"/>
+        <body>
+        <![CDATA[
+          var para = null;
+          var ref = this.sceneAt(pos);
+          if (ref) {
+            ref = previousElement(ref);
+          }
+          else {
+            ref = this.contentDocument.body.lastChild;
+            if (ref && ! (ref instanceof Components.interfaces.nsIDOMElement))
+              ref = previousElement(ref);
+          }
+          try {
+            this.editor.setShouldTxnSetSelection(false);
+            this.editor.beginTransaction();
+
+            if (ref)
+              this.editor.setCaretAfterElement(ref);
+            this.editor.setParagraphFormat("P");
+            para = this.currentParagraph;
+            if (! para)
+              throw "Failed to get the new scene paragraph";
+            this.setParagraphFormat(para, "sceneheading");
+            if (slugline)
+              this.replaceParagraphContents(para, slugline);
+            else
+              this.replaceParagraphContents(para, "");
+          }
+          catch (ex) {
+            dump("*** createScene: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+            this.editor.setShouldTxnSetSelection(true);
+          }
+          return para;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="deleteScene">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var range = this.rangeOfScene(id);
+          if (! range) return false;
+
+          var rv     = false;
+
+          try {
+            this.editor.setShouldTxnSetSelection(false);
+            this.editor.beginTransaction();
+            range.deleteContents();
+            this.incrementModificationCount(1);
+            rv = true;
+          }
+          catch (ex) {
+            dump("deleteScene: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+            this.editor.setShouldTxnSetSelection(true);
+          }
+          return rv;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="omitScene">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          // The XMLSerializer turns span tags with no child nodes into
+          // empty <span/> tags, which are valid XML but not valid HTML,
+          // resulting in them being treated as open <span> tags when
+          // read back in. This turns them into <span></span> pairs.
+          function fixEmptySpans (str) {
+            return str.replace(/(<SPAN [^>]+)\/>/g, "$1></SPAN>");
+          }
+
+          var scenepara = this.contentDocument.getElementById(id);
+          if (! scenepara)
+            throw new Error("Scene " + id + " not found");
+          var rng = this.rangeOfScene(id);
+          rng.setStartAfter(scenepara);
+          var xmlserializer = Components.classes[
+            "@mozilla.org/xmlextras/xmlserializer;1"]
+            .createInstance(Components.interfaces.nsIDOMSerializer);
+          var scenecontents = xmlserializer.serializeToString(
+            rng.cloneContents());
+          scenecontents = fixEmptySpans(scenecontents);
+          var headingrng = this.contentDocument.createRange();
+          headingrng.selectNodeContents(scenepara);
+          var headingcontents = xmlserializer.serializeToString(
+            headingrng.cloneContents());
+          headingcontents = fixEmptySpans(headingcontents);
+          this.editor.beginTransaction();
+          try {
+            this.editor.setAttribute(scenepara, "scenecontents",
+              scenecontents);
+            this.editor.setAttribute(scenepara, "headingcontents",
+              headingcontents);
+            this.editor.setAttribute(scenepara, "headingtext",
+              headingrng.toString());
+            // Should omitted scenes also get an updated revision mark?
+
+            this.editor.insertNode(
+              this.contentDocument.createTextNode("OMIT"),
+              scenepara, 0);
+            rng.setStart(scenepara, 1);
+            this.editor.selection.removeAllRanges();
+            this.editor.selection.addRange(rng);
+            this.editor.deleteSelection(0);
+            this.editor.setAttribute(scenepara, "omit", "true");
+          }
+          catch (ex) {
+            celtxBugAlert(ex, Components.stack, ex);
+          }
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="unomitScene">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var scenepara = this.contentDocument.getElementById(id);
+          if (! scenepara)
+            throw new Error("Scene " + id + " not found");
+
+          if (! scenepara.hasAttribute("omit"))
+            throw new Error("Scene " + id + " is not omitted");
+
+          var scenecontents = scenepara.getAttribute("scenecontents");
+          var headingcontents = scenepara.getAttribute("headingcontents");
+
+          this.editor.beginTransaction();
+          try {
+            // This MUST come first.
+            this.editor.removeAttribute(scenepara, "omit");
+            // Leave a single BR in the scene so we don't run into problems
+            // with it disappearing on us. This happens if the cursor isn't
+            // in the scene at the time it's omitted (e.g., when the script
+            // is being totally reset).
+            var tmpbr = this.contentDocument.createElement("br");
+            scenepara.appendChild(tmpbr);
+            while (tmpbr.previousSibling)
+              this.editor.deleteNode(tmpbr.previousSibling);
+            var tmppara = this.contentDocument.createElement("p");
+            tmppara.innerHTML = headingcontents;
+            var idx = 0;
+            while (tmppara.hasChildNodes())
+              this.editor.insertNode(tmppara.firstChild, scenepara, idx++);
+
+            var rng = this.contentDocument.createRange();
+            rng.setStartAfter(scenepara);
+            rng.setEndAfter(scenepara);
+            this.editor.selection.removeAllRanges();
+            this.editor.selection.addRange(rng);
+            this.editor.insertHTML(scenecontents);
+            tmpbr.parentNode.removeChild(tmpbr);
+
+            this.editor.selection.collapse(scenepara, 0);
+            this.editor.removeAttribute(scenepara, "scenecontents");
+            this.editor.removeAttribute(scenepara, "headingcontents");
+            this.editor.removeAttribute(scenepara, "headingtext");
+          }
+          catch (ex) {
+            celtxBugAlert(ex, Components.stack, ex);
+          }
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="deleteAct">
+        <parameter name="id"/>
+        <body>
+        <![CDATA[
+          var range = this.rangeOfAct(id);
+          if (! range) return false;
+
+          var rv     = false;
+
+          try {
+            this.editor.setShouldTxnSetSelection(false);
+            this.editor.beginTransaction();
+            range.deleteContents();
+            rv = true
+          }
+          catch (ex) {
+            dump("*** deleteAct: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+            this.editor.setShouldTxnSetSelection(true);
+          }
+          return rv;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="moveAct">
+        <parameter name="oldPos"/>
+        <parameter name="newPos"/>
+        <body>
+        <![CDATA[
+          dump("moveAct: " + oldPos + " -> " + newPos + "\n");
+          if (newPos < 1 || newPos > this.actCount || newPos == oldPos) return;
+
+          var source = this.actAt(oldPos);
+          var target = this.actAt(newPos);
+          if (! source || ! target) return;
+
+          var sourceRange = this.rangeOfAct(source.id);
+          if (! sourceRange) return;
+
+          var frag = sourceRange.cloneContents();
+
+          var setSel = this.editor.shouldTxnSetSelection()
+
+          try {
+            this.editor.setShouldTxnSetSelection(false);
+            this.editor.beginTransaction();
+
+            sourceRange.deleteContents();
+
+            var targetRange = this.rangeOfAct(target.id);
+            var insPos = newPos > oldPos  ? targetRange.endOffset
+                                          : targetRange.startOffset;
+            this.insertNode(frag, this.contentDocument.body, insPos);
+          }
+          catch (ex) {
+            dump("*** moveAct: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+            this.editor.setShouldTxnSetSelection(setSel);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="moveScene">
+        <parameter name="oldPos"/>
+        <parameter name="newPos"/>
+        <body>
+        <![CDATA[
+          dump("moveScene: " + oldPos + " -> " + newPos + "\n");
+          if (newPos < 1 || newPos > this.sceneCount || newPos == oldPos) return;
+
+          var source = this.sceneAt(oldPos);
+          var target = this.sceneAt(newPos);
+          if (! source || ! target) return;
+
+          var sourceRange = this.rangeOfScene(source.id);
+          if (! sourceRange) return;
+
+          var frag = sourceRange.cloneContents();
+
+          var setSel = this.editor.shouldTxnSetSelection()
+
+          try {
+            this.editor.setShouldTxnSetSelection(false);
+            this.editor.beginTransaction();
+
+            sourceRange.deleteContents();
+
+            var targetRange = this.rangeOfScene(target.id);
+            var insPos = newPos > oldPos  ? targetRange.endOffset
+                                          : targetRange.startOffset;
+            this.insertNode(frag, this.contentDocument.body, insPos);
+          }
+          catch (ex) {
+            dump("moveScene: " + ex + "\n");
+          }
+          finally {
+            this.editor.endTransaction();
+            this.editor.setShouldTxnSetSelection(setSel);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="replaceParagraphContents">
+        <parameter name="paragraph"/>
+        <parameter name="str"/>
+        <body>
+        <![CDATA[
+          if (! paragraph) return;
+          var IBR = Components.interfaces.nsIDOMHTMLBRElement;
+
+          this.editor.beginTransaction();
+
+          var doc = this.contentDocument;
+          if (paragraph.hasChildNodes()) {
+            var br = paragraph.lastChild;
+            if (! (br instanceof IBR)) {
+              br = this.editor.createElementWithDefaults("BR");
+              this.insertNode(br, paragraph, paragraph.childNodes.length);
+            }
+            while (paragraph.childNodes.length > 1) {
+              this.editor.deleteNode(paragraph.firstChild);
+            }
+          }
+          this.insertNode(doc.createTextNode(str), paragraph, 0);
+
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Keep these methods synchronised with outliner.xml -->
+      <method name="setSelectionCase">
+        <parameter name="selection"/>
+        <parameter name="toUpper"/>
+        <body>
+        <![CDATA[
+          var ed = this.editor;
+          var editorsel = ed.selection;
+          if (editorsel.isCollapsed)
+            return;
+
+          var textVisitor = {
+            range: null,
+            toUpper: toUpper,
+            visitLeaf: function (leaf) {
+              const TEXT_NODE = Components.interfaces.nsIDOMNode.TEXT_NODE;
+              if (leaf.nodeType != TEXT_NODE) {
+                return;
+              }
+              var str = leaf.nodeValue;
+              var start = 0;
+              var end = str.length;
+              if (leaf == this.range.startContainer)
+                start = this.range.startOffset;
+              if (leaf == this.range.endContainer)
+                end = this.range.endOffset;
+              var head = str.substring(0, start);
+              var mid = str.substring(start, end);
+              var tail = str.substring(end, str.length);
+              if (this.toUpper)
+                leaf.nodeValue = head + mid.toUpperCase() + tail;
+              else
+                leaf.nodeValue = head + mid.toLowerCase() + tail;
+            }
+          };
+
+          ed.setShouldTxnSetSelection(false);
+          var walker = new RangeLeafWalker(textVisitor);
+          var ranges = editorsel.rangeCount;
+          for (var i = 0; i < ranges; i++) {
+            textVisitor.range = editorsel.getRangeAt(i);
+            var startContainer = textVisitor.range.startContainer;
+            var startOffset = textVisitor.range.startOffset;
+            var endContainer = textVisitor.range.endContainer;
+            var endOffset = textVisitor.range.endOffset;
+            editorsel.removeRange(textVisitor.range);
+            try {
+              walker.traverse(textVisitor.range);
+            }
+            catch (ex) {
+              dump("*** setSelectionCase: " + ex + "\n");
+            }
+            var range = this.contentDocument.createRange();
+            range.setStart(startContainer, startOffset);
+            range.setEnd(endContainer, endOffset);
+            editorsel.addRange(range);
+          }
+          ed.setShouldTxnSetSelection(true);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="setSelectionToLowerCase">
+        <body>
+          var tx = new DOMModificationTransaction(this.contentDocument);
+          tx.beginRecording();
+          this.setSelectionCase(this.editor.selection, false);
+          tx.endRecording();
+          this.editor.transactionManager.doTransaction(tx);
+        </body>
+      </method>
+
+
+      <method name="setSelectionToUpperCase">
+        <body>
+          var tx = new DOMModificationTransaction(this.contentDocument);
+          tx.beginRecording();
+          this.setSelectionCase(this.editor.selection, true);
+          tx.endRecording();
+          this.editor.transactionManager.doTransaction(tx);
+        </body>
+      </method>
+
+
+      <method name="splitParagraph">
+        <parameter name="node"/>
+        <parameter name="offset"/>
+        <body>
+          <![CDATA[
+            const IBody = Components.interfaces.nsIDOMHTMLBodyElement;
+            const IDiv = Components.interfaces.nsIDOMHTMLDivElement;
+            const IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+            var newLeft = { value: null };
+            while (node && ! (node instanceof IBody)
+                && ! (node instanceof IDiv)) {
+              this.editor.splitNode(node, offset, newLeft);
+              if (node instanceof IPara) {
+                var newline = this.contentDocument.createTextNode("\n");
+                this.insertNode(newline, newLeft.value, offset);
+                var br = this.editor.createElementWithDefaults("BR");
+                this.insertNode(br, newLeft.value, offset);
+              }
+              offset = offsetInParent(node);
+              node = node.parentNode;
+            }
+            return newLeft.value;
+          ]]>
+        </body>
+      </method>
+
+
+      <!-- Importing -->
+
+
+      <method name="beginSceneImport">
+        <body>
+        <![CDATA[
+          // Remove any blank sceneheadings
+          var xpath = new XPathEvaluator();
+          var list  = [];
+          var xset, e;
+          var str = '//p[@class="sceneheading" ' +
+                    'and normalize-space(string(.)) = ""]';
+          try {
+            xset = xpath.evaluate(str, this.contentDocument, null, 0, null);
+            while (e = xset.iterateNext()) list.push(e);
+            // Don't delete them right away or we get a bogus empty document
+            // state in the editor, even after importing, if the initial
+            // script is empty.
+            this._blankNodesToRemove = list;
+          }
+          catch (ex) {
+            dump("beginSceneImport: " + ex + "\n");
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="endSceneImport">
+        <body>
+        <![CDATA[
+          this.editor.beginTransaction();
+          var list = this._blankNodesToRemove;
+          for (var i = 0; i < list.length; i++) {
+            this.editor.deleteNode(list[i]);
+          }
+          this._blankNodesToRemove = null;
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="importScene">
+        <parameter name="scene"/>
+        <body>
+        <![CDATA[
+          if (! scene) return;
+
+          try {
+            var doc = this.contentDocument;
+            var imp, i;
+
+            this.editor.beginTransaction();
+
+            for (i = 0; i < scene.childNodes.length; i++) {
+              imp = doc.importNode(scene.childNodes[i], true);
+              this.insertNode(imp, doc.body, doc.body.childNodes.length);
+            }
+
+            this.editor.endTransaction();
+          }
+          catch (ex) {
+            dump("*** importScene: " + ex + "\n");
+            throw ex;
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="insertHardBreak">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          var sel = this.selection;
+          if (! sel.isCollapsed)
+            sel.collapseToEnd();
+
+          var para = this.currentParagraph;
+          if (! para) {
+            this.setDefaultParagraphFormat();
+            para = this.currentParagraph;
+          }
+
+          this.editor.beginTransaction();
+          this.editor.setShouldTxnSetSelection(false);
+          if (this.atEndOfParagraph(sel)) {
+            this.editor.setCaretAfterElement(para);
+            this.editor.setParagraphFormat("P");
+            this.setParagraphFormat(this.currentParagraph, para.className);
+            para = this.currentParagraph;
+          }
+          else {
+            para = this.splitParagraph(sel.anchorNode, sel.anchorOffset);
+            para = nextElement(para);
+          }
+          var hardbreak = this.contentDocument.createElement("div");
+          hardbreak.className = "hardbreak";
+          hardbreak.appendChild(this.contentDocument.createTextNode(" "));
+          this.insertNode(hardbreak, para.parentNode, offsetInParent(para));
+          sel.collapse(para, 0);
+          this.editor.setShouldTxnSetSelection(true);
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <!-- Keyboard Event Handlers -->
+
+
+      <method name="handleTab">
+        <parameter name="reversed"/>
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          if (! this.editor.selection.isCollapsed)
+            return;
+
+          var para = this.currentParagraph;
+          if (! para) {
+            this.setDefaultParagraphFormat();
+            para = this.currentParagraph;
+          }
+
+          this.editor.beginTransaction();
+          var style = para.className;
+          if (! style || style == "")
+            style = "text";
+          var ps = getPrefService();
+          if (reversed)
+            ps = ps.getBranch("celtx.scripteditor." + this.scriptMode
+              + ".shifttab.");
+          else
+            ps = ps.getBranch("celtx.scripteditor." + this.scriptMode
+              + ".tab.");
+          var nextStyle = null;
+          try {
+            nextStyle = ps.getCharPref(style);
+          }
+          catch (ex) {
+            nextStyle = ps.getCharPref("default");
+          }
+          this.setParagraphFormat(this.currentParagraph, nextStyle);
+          this.editor.endTransaction();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="handleEnter">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          var ed = this.editor;
+          var sel = ed.selection;
+          if (! sel.isCollapsed)
+            sel.collapseToEnd();
+
+          var para = this.currentParagraph;
+          if (! para) {
+            this.setDefaultParagraphFormat();
+            para = this.currentParagraph;
+          }
+          var style = para.className;
+          if (! style || style == "")
+            style = "text";
+          var ps = getPrefService();
+          var prefname = null;
+          var parastr = stringify(para);
+          var isBlank = parastr == "" ||
+            style == "sound" && parastr == gApp.getText("SoundPrefix") ||
+            style == "music" && parastr == gApp.getText("MusicPrefix") ||
+            style == "voice" && parastr == gApp.getText("VoicePrefix");
+          var ignoreBlank = false;
+          if (isBlank) {
+            var oldps = ps;
+            ps = ps.getBranch("celtx.scripteditor." + this.scriptMode
+              + ".blankenter.");
+            try {
+              ps.getCharPref(style);
+            }
+            catch (ex) {
+              ps = oldps.getBranch("celtx.scripteditor." + this.scriptMode
+                + ".enter.");
+              ignoreBlank = true;
+            }
+          }
+          else {
+            ps = ps.getBranch("celtx.scripteditor." + this.scriptMode
+              + ".enter.");
+          }
+          var nextStyle = null;
+          try {
+            nextStyle = ps.getCharPref(style);
+          }
+          catch (ex) {
+            nextStyle = ps.getCharPref("default");
+          }
+
+          ed.beginTransaction();
+          ed.setShouldTxnSetSelection(false);
+
+          if (isBlank) {
+            // Create a new paragraph if the style does not change, e.g.,
+            // for text -> text
+            if (style == nextStyle || ignoreBlank) {
+              ed.setCaretAfterElement(para);
+              ed.setParagraphFormat("P");
+              para = this.currentParagraph;
+              this.setParagraphFormat(para, nextStyle);
+            }
+            else {
+              this.setParagraphFormat(para, nextStyle);
+              switch (nextStyle) {
+                case "sound":
+                case "voice":
+                case "music":
+                  ed.selection.collapse(para, 1);
+                  break;
+              }
+            }
+          }
+          else {
+            try {
+              if (this.atStartOfParagraph(sel)) {
+                if (! para.parentNode) {
+                  // This is triggered like so:
+                  // 1. Open a new script.
+                  // 2. Type i to trigger the heading auto-complete.
+                  // 3. Press and hold backspace for a few seconds.
+                  // 4. Press and hold enter for a few seconds.
+                  // 5. When it got to the second insertNode, CRASH!
+                  throw "no parent node for " + para.nodeName;
+                }
+                if (style == "parenthetical" || (this.scriptMode == "radio"
+                    && style == "action")) {
+                  throw "ignoring CR at start of parenthetical\n";
+                }
+                var offset = offsetInParent(para);
+                var prev = ed.createElementWithDefaults("P");
+                var br = ed.createElementWithDefaults("BR");
+                this.insertNode(br, prev, 0);
+                this.setParagraphFormat(prev, style);
+                this.insertNode(prev, para.parentNode, offset);
+              }
+              // Cheap trick to avoid breaking parentheticals before the
+              // closing parenthesis.
+              else if (this.atEndOfParagraph(sel)) {
+                if (style == "parenthetical" || (this.scriptMode == "radio"
+                    && style == "action")) {
+                  // Find last non-ws node
+                  var nd, i;
+                  for (i = para.childNodes.length - 1; i >= 0; i--) {
+                    nd = para.childNodes[i];
+                    if (nd.nodeType == nd.TEXT_NODE && nd.nodeValue.match(/\S+/)) {
+                      break;
+                    }
+                  }
+                  if (! nd) throw "no text nodes in parenthetical";
+                  sel.removeAllRanges();
+                  var rng = ed.document.createRange();
+                  rng.selectNode(nd);
+                  rng.collapse(false);
+                  sel.addRange(rng);
+                }
+
+                ed.setCaretAfterElement(this.currentParagraph);
+                ed.setParagraphFormat("P");
+                para = this.currentParagraph;
+                this.setParagraphFormat(para, nextStyle);
+              }
+              else {
+                var left = this.splitParagraph(sel.anchorNode,
+                  sel.anchorOffset);
+                var right = nextElement(left);
+                this.setParagraphFormat(right, nextStyle);
+              }
+            }
+            catch (ex) {
+              dump("*** handleEnter: " + ex + "\n");
+            }
+            if (nextStyle == "parenthetical" ||
+                (this.scriptMode == "radio" && nextStyle == "action"))
+              ed.selection.collapse(para, 1);
+            else
+              ed.selection.collapse(para, 0);
+          }
+
+          ed.setShouldTxnSetSelection(true);
+          ed.endTransaction();
+
+          this.maybeScroll();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="handleBackspace">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return true;
+
+          const IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+          const IBR = Components.interfaces.nsIDOMHTMLBRElement;
+          const IElement = Components.interfaces.nsIDOMElement;
+          const IText = Components.interfaces.nsIDOMText;
+          var abortEvent = false;
+          this.editor.beginTransaction();
+          try {
+            var sel = this.editor.selection;
+            // Check for <P><BR/>|</P> border case
+            if (sel.isCollapsed && sel.anchorNode instanceof IPara) {
+              if (sel.anchorOffset == 1 &&
+                  sel.anchorNode.firstChild instanceof IBR)
+                sel.collapse(sel.anchorNode, 0);
+            }
+            if (sel.isCollapsed && this.atStartOfParagraph(sel)) {
+              /*
+               * 1. Find the paragraph enclosing the cursor.
+               * 2. Find the previous sibling paragraph.
+               * 3. Get the last non-BR node of the paragraph.
+               * 4. If the last node is a text node, extend the selection
+               *    backwards to the end of the text node, otherwise extend
+               *    the selection backward to immediately after the node.
+               *    EXCEPT: If there is only a BR node, just delete the
+               *    previous paragraph without joining, don't muck with
+               *    the selection.
+               */
+              var node = sel.anchorNode;
+              node = this.editor.getElementOrParentByTagName("p", node);
+
+              var prev = node ? previousElement(node) : null;
+              while (prev && ! (prev instanceof IPara))
+                prev = previousElement(prev);
+              if (prev) {
+                var index = prev.childNodes.length;
+                var last = prev.lastChild;
+                if (last && (last instanceof IText) && last.nodeValue == "\n") {
+                  --index;
+                  last = last.previousSibling;
+                }
+                if (last && (last instanceof IBR)) {
+                  --index;
+                  last = last.previousSibling;
+                }
+                // This *should* be the case, but maybe it ends with a note
+                // or a span tag.
+                if (last instanceof IText) {
+                  sel.extend(last, last.nodeValue.length);
+                }
+                else if (index == 0) {
+                  this.editor.deleteNode(prev);
+                  abortEvent = true;
+                }
+                else {
+                  sel.extend(prev, index);
+                }
+              }
+              else {
+                abortEvent = true;
+              }
+            }
+            if (! sel.isCollapsed) {
+              // Match the current paragraph's format to the previous one
+              var startRange = sel.getRangeAt(0);
+              var endRange = sel.getRangeAt(sel.rangeCount - 1);
+              var node = startRange.startContainer;
+              var ps = getPrefService().getBranch("celtx.scripteditor."
+                + this.scriptMode + ".");
+              var style = ps.getCharPref("default");
+              node = this.editor.getElementOrParentByTagName("p", node);
+              if (node) {
+                style = node.className;
+                node = endRange.endContainer;
+                node = this.editor.getElementOrParentByTagName("p", node);
+                if (node)
+                  this.editor.setAttribute(node, "class", style);
+              }
+              this.editor.deleteSelection(0);
+              if (! this.currentParagraph) {
+                this.editor.setParagraphFormat("P");
+                this.setParagraphFormat(this.currentParagraph, style);
+              }
+              abortEvent = true;
+            }
+          }
+          catch (ex) {
+            dump("*** handle VK_BACK: " + ex + "\n");
+          }
+          this.editor.endTransaction();
+          return abortEvent;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="handleDelete">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return true;
+
+          var abortEvent = false;
+          var body = this.contentDocument.body;
+          this.editor.beginTransaction();
+          try {
+            var sel = this.editor.selection;
+            if (sel.isCollapsed && this.atEndOfParagraph(sel)) {
+              const IElement = Components.interfaces.nsIDOMElement;
+              var node = sel.anchorNode;
+              node = this.editor.getElementOrParentByTagName("p", node);
+              var next = node ? node.nextSibling : null;
+              while (next && ! (next instanceof IElement))
+                next = next.nextSibling;
+              if (next) {
+                if (! stringify(next).match(/\S/)) {
+                  this.editor.deleteNode(next);
+                  abortEvent = true;
+                }
+                else if (! stringify(node).match(/\S/)) {
+                  sel.collapse(next, 0);
+                  this.editor.deleteNode(node);
+                  abortEvent = true;
+                }
+                else {
+                  sel.extend(next, 0);
+                }
+              }
+              else
+                abortEvent = true;
+            }
+            if (! sel.isCollapsed) {
+              const IPara = Components.interfaces.nsIDOMHTMLParagraphElement;
+              var startRange = sel.getRangeAt(0);
+              var endRange = sel.getRangeAt(sel.rangeCount - 1);
+              var node = startRange.startContainer;
+              var ps = getPrefService().getBranch("celtx.scripteditor."
+                + this.scriptMode + ".");
+              var style = ps.getCharPref("default");
+              node = this.editor.getElementOrParentByTagName("p", node);
+              if (node) {
+                style = node.className;
+                node = endRange.endContainer;
+                node = this.editor.getElementOrParentByTagName("p", node);
+                if (node)
+                  this.editor.setAttribute(node, "class", style);
+              }
+              this.editor.deleteSelection(0);
+              if (! this.currentParagraph) {
+                this.editor.setParagraphFormat("P");
+                this.setParagraphFormat(this.currentParagraph, style);
+              }
+              abortEvent = true;
+            }
+          }
+          catch (ex) {
+            dump("*** handle VK_DELETE: " + ex + "\n");
+          }
+          this.editor.endTransaction();
+          return abortEvent;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="handleCtrlEnter">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          this.editor.beginTransaction();
+          if (! this.editor.selection.isCollapsed)
+            this.editor.selection.collapseToEnd();
+          if (! this.currentParagraph)
+            this.setDefaultParagraphFormat();
+          this.editor.setCaretAfterElement(this.currentParagraph);
+          this.editor.setParagraphFormat("P");
+          this.setParagraphFormat(this.currentParagraph, "sceneheading");
+          this.editor.endTransaction();
+
+          this.maybeScroll();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="handleShiftEnter">
+        <body>
+        <![CDATA[
+          if (this.isLocked)
+            return;
+
+          this.editor.QueryInterface(Components.interfaces.nsIPlaintextEditor)
+            .insertLineBreak();
+
+          this.maybeScroll();
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="debugDump">
+        <body>
+          try {
+            var str = this.editor.outputToString('text/html', 2);
+            dump("\n==================================================\n" +
+                 str +
+                 "\n==================================================\n");
+          } catch (ex) { dump("dump: " + ex + "\n"); }
+        </body>
+      </method>
+
+
+      <method name="supportsFormat">
+        <parameter name="aFormat"/>
+        <body>
+        <![CDATA[
+          try {
+            var ILit = Components.interfaces.nsIRDFLiteral;
+            var rdfsvc = getRDFService();
+            var schemads = rdfsvc.GetDataSourceBlocking(Cx.SCHEMA_URL);
+            var elemarc = rdfsvc.GetResource(Cx.NS_CX + "element");
+            var ps = getPrefService().getBranch("celtx.scripteditor.");
+            var formats = ps.getCharPref(this.scriptMode + ".formats");
+            formats = formats.split(/\s*,\s*/);
+            for (var i = 0; i < formats.length; ++i) {
+              var format = rdfsvc.GetResource(Cx.NS_CX + "Formats/"
+                + formats[i]);
+              var element = schemads.GetTarget(format, elemarc, true);
+              if (element) {
+                if (element.QueryInterface(ILit).Value == aFormat)
+                  return true;
+              }
+              else if (! aFormat)
+                return true;
+            }
+          }
+          catch (ex) {
+            dump("*** script.supportsFormat: " + ex + "\n");
+          }
+          return false;
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="getFormatByIndex">
+        <parameter name="aIndex"/>
+        <body>
+        <![CDATA[
+          try {
+            var rdfsvc = getRDFService();
+            var schemads = rdfsvc.GetDataSourceBlocking(Cx.SCHEMA_URL);
+            var elemarc = rdfsvc.GetResource(Cx.NS_CX + "element");
+            var ps = getPrefService().getBranch("celtx.scripteditor.");
+            var formats = ps.getCharPref(this.scriptMode + ".formats");
+            formats = formats.split(/\s*,\s*/);
+            if (aIndex >= formats.length)
+              return "";
+            var format = rdfsvc.GetResource(Cx.NS_CX + "Formats/"
+              + formats[aIndex]);
+            return getRDFString(schemads, format, elemarc);
+          }
+          catch (ex) {
+            dump("*** scripteditor.getFormatByIndex: " + aIndex + "\n");
+            return "";
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="setIsLocked">
+        <parameter name="isLocked" />
+        <body>
+        <![CDATA[
+          this.setMetaValue("CX.locked", isLocked);
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="lockScript">
+        <body>
+          if (this.isLocked)
+            return;
+
+          var obs = getObserverService();
+          obs.notifyObservers(this, "celtx:script:will-change-lock",
+            "locked");
+
+          this._selctrl = this.editor.selectionController;
+          this.editorElement.editingSession.tearDownEditorOnWindow(
+            this.contentWindow);
+          this.setIsLocked(true);
+
+          obs.notifyObservers(this, "celtx:script:did-change-lock",
+            "locked");
+        </body>
+      </method>
+
+
+      <method name="unlockScript">
+        <body>
+          if (! this.isLocked)
+            return;
+
+          var obs = getObserverService();
+          obs.notifyObservers(this, "celtx:script:will-change-lock",
+            "unlocked");
+
+          this._unlocking = true;
+          this.editorElement.makeEditable(this.editorElement.editortype,
+            false);
+          this.setIsLocked(false);
+          this._unlocking = false;
+
+          obs.notifyObservers(this, "celtx:script:did-change-lock",
+            "unlocked");
+        </body>
+      </method>
+
+
+      <method name="conformToLockState">
+        <body>
+        <![CDATA[
+          if (this.isLocked && ! this._unlocking) {
+            this._selctrl = this.editor.selectionController;
+            this.editorElement.editingSession.tearDownEditorOnWindow(
+              this.contentWindow);
+          }
+        ]]>
+        </body>
+      </method>
+
+
+      <method name="incrementRevisionNumber">
+        <body>
+          this.setRevisionNumber(this.revisionNumber + 1);
+        </body>
+      </method>
+
+
+      <method name="setRevisionNumber">
+        <parameter name="revision" />
+        <body>
+        <![CDATA[
+          if (revision < 0)
+            throw Components.results.NS_ERROR_INVALID_ARG;
+
+          this.setMetaValue("CX.revisionNumber", revision);
+        ]]>
+        </body>
+      </method>
+    </implementation>
+
+
+    <handlers>
+      <handler event="keypress" keycode="VK_TAB" modifiers="shift">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        this.handleTab(true);
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_TAB">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        this.handleTab(false);
+        event.preventDefault();
+      </handler>
+
+      <handler event="keypress" keycode="VK_RETURN" modifiers="accel">
+        this.handleCtrlEnter();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN" modifiers="shift">
+        this.handleShiftEnter();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN" modifiers="alt">
+        this.insertHardBreak();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_RETURN">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        this.handleEnter();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_ENTER" modifiers="accel">
+        this.handleCtrlEnter();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_ENTER" modifiers="shift">
+        this.handleShiftEnter();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_ENTER" modifiers="alt">
+        this.insertHardBreak();
+        event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_ENTER">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        this.handleEnter();
+        event.preventDefault();
+      </handler>
+
+      <handler event="keypress" keycode="VK_DELETE">
+        if (this.handleDelete())
+          event.preventDefault();
+      </handler>
+      <handler event="keypress" keycode="VK_BACK">
+        if (this.handleBackspace())
+          event.preventDefault();
+      </handler>
+
+      <handler event="keypress" charcode="(" modifiers="shift">
+        <![CDATA[
+        var para = this.currentParagraph;
+        if (para && para.className == "dialog" &&
+            this.atStartOfParagraph(this.selection)) {
+          var branch = "celtx.scripteditor." + this.scriptMode + ".";
+          var ps = getPrefService().getBranch(branch);
+          try {
+            if (ps.getBoolPref("autoparenthesize")) {
+              this.setParagraphFormat(para, "parenthetical");
+              event.preventDefault();
+            }
+          }
+          catch (ex) {
+            dump("*** autoparenthesize: " + ex + "\n");
+          }
+        }
+        ]]>
+      </handler>
+
+      <!-- Events of potential interest to popups -->
+      <handler event="keypress" keycode="VK_UP">
+        if (this.popup) this.popup.keyPressed(event);
+      </handler>
+      <handler event="keypress" keycode="VK_DOWN">
+        if (this.popup) this.popup.keyPressed(event);
+      </handler>
+      <handler event="keypress" keycode="VK_UP" modifiers="control">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        if (! this.currentParagraph) return;
+        var scene = this.sceneContaining(this.currentParagraph);
+        if (! scene) return;
+        var prevscene = this.sceneAt(this.scenePosition(scene.id) - 1);
+        if (! prevscene) return;
+        this.cursorToScene(prevscene.id);
+      </handler>
+      <handler event="keypress" keycode="VK_DOWN" modifiers="control">
+        if (this.popup) {
+          this.popup.keyPressed(event);
+          return;
+        }
+        if (! this.currentParagraph) return;
+        var scene = this.sceneContaining(this.currentParagraph);
+        if (! scene) return;
+        var nextscene = this.sceneAt(this.scenePosition(scene.id) + 1);
+        if (! nextscene) return;
+        this.cursorToScene(nextscene.id);
+      </handler>
+      <handler event="keypress" keycode="VK_RIGHT">
+        if (this.popup) this.popup.keyPressed(event);
+      </handler>
+      <handler event="keypress" keycode="VK_LEFT">
+        if (this.popup) this.popup.keyPressed(event);
+      </handler>
+      <handler event="keypress" keycode="VK_ESCAPE">
+        if (this.popup) this.popup.keyPressed(event);
+      </handler>
+      <handler event="keypress" keycode="VK_F3">
+        this.debugDump();
+      </handler>
+      <handler event="keypress" keycode="VK_F4">
+        showRangeUnderNode(this.selection.getRangeAt(0),
+                           this.contentDocument.body);
+      </handler>
+
+      <!-- Formatting events -->
+      <handler event="keypress" key="1" modifiers="accel">
+        var format = this.getFormatByIndex(0);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="2" modifiers="accel">
+        var format = this.getFormatByIndex(1);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="3" modifiers="accel">
+        var format = this.getFormatByIndex(2);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="4" modifiers="accel">
+        var format = this.getFormatByIndex(3);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="5" modifiers="accel">
+        var format = this.getFormatByIndex(4);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="6" modifiers="accel">
+        var format = this.getFormatByIndex(5);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="7" modifiers="accel">
+        var format = this.getFormatByIndex(6);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="8" modifiers="accel">
+        var format = this.getFormatByIndex(7);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="9" modifiers="accel">
+        var format = this.getFormatByIndex(8);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+      <handler event="keypress" key="0" modifiers="accel">
+        var format = this.getFormatByIndex(9);
+        if (this.supportsFormat(format)) {
+          this.setParagraphFormat(this.currentParagraph, format);
+          // Avoid system beeps from trying to interpret this as a menu shortcut
+          event.preventDefault();
+        }
+      </handler>
+    </handlers>
+  </binding>
+
+</bindings>
+

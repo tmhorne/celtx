@@ -1,0 +1,312 @@
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Tabstrip */
+.tabeditor-tabs {
+  -moz-appearance: -moz-win-browsertabbar-toolbox;
+  background: -moz-dialog url("chrome://celtx/skin/tabeditor/tabbrowser-tabs-bkgnd.png") repeat-x;
+}
+
+.tabs-container:not([overflow="true"]) {
+  -moz-padding-start: 3px;
+}
+
+/* Tabs */
+.tabeditor-tab {
+  -moz-appearance: none;
+  background: url("chrome://celtx/skin/tabeditor/tab-bkgnd.png") repeat-x;
+  margin: 3px 0px 4px;
+  padding: 0px 1px 1px 0px;
+  border: 2px solid;
+  border-right-width: 1px;
+  border-bottom: none;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
+  -moz-border-right-colors: rgba(0,0,0,.1);
+  -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);
+}
+
+.tabeditor-tab:hover,
+.tabeditor-tab[selected="true"] {
+  border-width: 1px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-top-colors: ThreeDShadow;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow;
+}
+
+.tabeditor-tab:not([selected="true"]):hover {
+  margin: 2px 0px 4px;
+  padding: 2px 1px 1px;
+  background-image: url("chrome://celtx/skin/tabeditor/tab-hover-bkgnd.png");
+}
+
+.tabeditor-tab[selected="true"] {
+  margin: 2px 0px 3px;
+  padding: 1px;
+  background-image: url("chrome://celtx/skin/tabeditor/tab-active-bkgnd.png");
+  background-color: -moz-dialog;
+  font-weight: bold;
+}
+
+.tabeditor-tab[busy] > .tab-icon-image {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png") !important;
+}
+
+.tab-icon-image {
+  margin-top: 1px;
+  -moz-margin-start: 7px;
+  -moz-margin-end: 3px;
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.tabs-bottom {
+  height: 4px;
+  margin: 0px;
+  background: -moz-dialog url("chrome://celtx/skin/tabeditor/tabstrip-bottom.png") repeat;
+  border-top: 1px solid threedshadow;
+  border-bottom: 1px solid threedshadow;
+}
+
+tabpanels {
+  -moz-appearance: none;
+}
+
+/* tabeditor-tab focus ring */
+.tab-text {
+  border: 1px dotted transparent;
+}
+
+.tabeditor-tab[selected="true"]:focus > .tab-text {
+  border: 1px dotted -moz-DialogText;
+}
+
+/* Tab DnD indicator */
+.tab-drop-indicator-bar {
+  height: 11px;
+  margin-top: -11px;
+  position: relative;
+  /* set -moz-margin-start to -1/2 indicator width: */
+  -moz-margin-start: -5px;
+}
+
+.tab-drop-indicator {
+  height: 11px;
+  width: 11px;
+  margin-bottom: -5px;
+  position: relative;
+  background: url('chrome://celtx/skin/tabeditor/tabDragIndicator.png') 50% 50% no-repeat;
+}
+
+/* Tab close button */
+.tab-close-button > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  margin-top: 1px;
+}
+
+.tab-close-button {
+  -moz-appearance: none;
+  -moz-image-region: rect(0px, 56px, 14px, 42px);
+  -moz-margin-end: 6px;
+  border: none;
+  padding: 0px;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+}
+
+.tab-close-button:hover,
+.tabeditor-tab[selected="true"] > .tab-close-button:hover {
+  -moz-image-region: rect(0px, 28px, 14px, 14px);
+}
+
+.tab-close-button:hover:active,
+.tabeditor-tab[selected="true"] > .tab-close-button:hover:active {
+  -moz-image-region: rect(0px, 42px, 14px, 28px);
+}
+
+.tabeditor-tab[selected="true"] > .tab-close-button {
+  -moz-image-region: rect(0px, 14px, 14px, 0px);
+  /* Make this button focusable so clicking on it will not focus the tab while
+     it's getting closed */
+  -moz-user-focus: normal;
+}
+
+.tab-close-button:focus {
+  outline: none !important;
+}
+
+/* Tab scrollbox arrow and all-tabs buttons */
+.tabeditor-arrowscrollbox > .scrollbutton-up,
+.tabeditor-arrowscrollbox > .scrollbutton-down,
+.tabs-alltabs-button {
+  -moz-appearance: none;
+  width: 18px;
+  margin: 3px 0px 4px;
+  padding: 0px;
+  border: 2px solid;
+  border-right-width: 1px;
+  border-bottom: none;
+  -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);
+  background: url("chrome://celtx/skin/tabeditor/tab-bkgnd.png") repeat-x;
+  -moz-image-region: rect(0, 11px, 14px, 0);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover,
+.tabeditor-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover,
+.tabs-alltabs-button:hover {
+  border-top-width: 1px;
+  padding-top: 1px;
+  -moz-border-top-colors: ThreeDShadow;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow transparent;
+  background-image: url("chrome://celtx/skin/tabeditor/tab-hover-bkgnd.png");
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover,
+.tabeditor-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover {
+  -moz-image-region: rect(0, 22px, 14px, 11px);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up[disabled="true"],
+.tabeditor-arrowscrollbox > .scrollbutton-down[disabled="true"] {
+  opacity: .4;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover:active,
+.tabeditor-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0, 44px, 14px, 33px);
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up {
+  border-left-style: none;
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-start.png");
+  -moz-border-radius-topright: 2px;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up[chromedir="rtl"] {
+  border-left-style: solid;
+  border-right-style: none;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 0px;
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-end.png");
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-up > .toolbarbutton-icon {    
+  margin: 5px 0px 1px 0px;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down,
+.tabs-alltabs-button {
+  border-right-style: none;
+  -moz-border-radius-topleft: 2px;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down {
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-end.png");
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down[chromedir="rtl"],
+.tabs-container > stack[chromedir="rtl"] > .tabs-alltabs-button {
+  border-left-style: none;
+  border-right-style: solid;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 2px;
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down[chromedir="rtl"] {
+  list-style-image: url("chrome://celtx/skin/tabeditor/tab-arrow-start.png");
+}
+
+.tabeditor-arrowscrollbox > .scrollbutton-down > .toolbarbutton-icon {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  -moz-margin-end: 2px;
+}
+
+.tabs-alltabs-button > .toolbarbutton-text,
+.tabs-alltabs-button > .toolbarbutton-icon {
+  display: none;
+}
+
+.tabs-alltabs-button > .toolbarbutton-menu-dropmarker {
+  margin: 2px 1px 2px 0px;
+}
+
+.tabs-alltabs-box-animate {
+  margin-top: 2px;
+  margin-bottom: 4px;
+  width: 18px !important;
+  background-image: url("chrome://celtx/skin/tabeditor/alltabs-box-overflow-end-bkgnd-animate.png");
+  background-repeat: no-repeat;
+  opacity: 0.0;
+}
+
+stack[chromedir="rtl"] > hbox > .tabs-alltabs-box-animate {
+  background-image: url("chrome://celtx/skin/tabeditor/alltabs-box-overflow-start-bkgnd-animate.png");
+}
+
+/* All tabs menupopup */
+.alltabs-item > .menu-iconic-left > .menu-iconic-icon {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.alltabs-item[selected="true"] {
+  font-weight: bold;
+}
+
+.alltabs-item[busy] > .menu-iconic-left > .menu-iconic-icon {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+}
+
+/* Tabstrip close button */
+.tabs-closebutton {
+  -moz-appearance: none;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0px, 14px, 14px, 0px);
+  padding: 4px 2px;
+  margin: 0px;
+  border: none;
+}
+
+.tabs-closebutton > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  -moz-padding-end: 2px !important;
+  -moz-padding-start: 2px !important;
+}
+
+.tabs-closebutton:hover {
+  -moz-image-region: rect(0px, 28px, 14px, 14px);
+}
+
+.tabs-closebutton:hover:active {
+  -moz-image-region: rect(0px, 42px, 14px, 28px);
+}
+
+.tabs-container > .tabs-closebutton {
+  margin: 3px 0px 3px;
+  padding: 4px 2px 2px;
+  background: -moz-dialog url("chrome://celtx/skin/tabeditor/tab-active-bkgnd.png") repeat-x;
+  border-left: 1px solid threedshadow;
+  border-top: 1px solid threedshadow;
+  -moz-border-radius-topleft: 2px;
+}
+
+.tabs-container > .tabs-closebutton[chromedir="rtl"] {
+  border-left: none;
+  border-right: 1px solid threedshadow;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 2px;
+}
+
+#sidebar-box .tabs-closebutton {
+  list-style-image: url("chrome://global/skin/icons/closeSidebar.png");
+  margin-bottom: 0px !important;
+  padding: 0px 2px 0px 2px !important;
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+<!ENTITY % celtxDTD SYSTEM "chrome://celtx/locale/celtx.dtd">
+%celtxDTD;
+]>
+
+<?xml-stylesheet href="chrome://celtx/skin/" type="text/css"?>
+
+<overlay id="paneScriptOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <prefpane id="paneScript"
+            onpaneload="loadPrefPaneScript('script');">
+    <preferences>
+      <preference id="celtx.scripteditor.intexts"
+                  name="celtx.scripteditor.intexts"
+                  type="string"/>
+      <preference id="celtx.scripteditor.daynights"
+                  name="celtx.scripteditor.daynights"
+                  type="string"/>
+      <preference id="celtx.scripteditor.shots"
+                  name="celtx.scripteditor.shots"
+                  type="string"/>
+    </preferences>
+    <hbox flex="1">
+      <vbox flex="1">
+        <label value="&intextWords.label;&colon;"/>
+        <hbox align="center">
+          <textbox id="intextbox"
+                   flex="1"
+                   oninput="validate()"/>
+          <button id="intextadd"
+                  label="&addCmd.label;"
+                  oncommand="addIntExt()"/>
+        </hbox>
+        <listbox id="intextlist"
+                 flex="1"
+                 onselect="validate()"/>
+        <hbox pack="end">
+          <button id="intextremove"
+                  label="&removeCmd.label;"
+                  oncommand="removeIntExt()"/>
+        </hbox>
+      </vbox>
+      <vbox flex="1">
+        <label value="&daynightWords.label;&colon;"/>
+        <hbox align="center">
+          <textbox id="daynightbox"
+                   flex="1"
+                   oninput="validate()"/>
+          <button id="daynightadd"
+                  label="&addCmd.label;"
+                  oncommand="addDayNight()"/>
+        </hbox>
+        <listbox id="daynightlist"
+                 flex="1"
+                 onselect="validate()"/>
+        <hbox pack="end">
+          <button id="daynightremove"
+                  label="&removeCmd.label;"
+                  oncommand="removeDayNight()"/>
+        </hbox>
+      </vbox>
+      <vbox flex="1">
+        <label value="&shotWords.label;&colon;"/>
+        <hbox align="center">
+          <textbox id="shotbox"
+                   style="text-transform: uppercase;"
+                   flex="1"
+                   oninput="validate()"/>
+          <button id="shotadd"
+                  label="&addCmd.label;"
+                  oncommand="addShot()"/>
+        </hbox>
+        <listbox id="shotlist"
+                 flex="1"
+                 onselect="validate()"/>
+        <hbox pack="end">
+          <button id="shotremove"
+                  label="&removeCmd.label;"
+                  oncommand="removeShot()"/>
+        </hbox>
+      </vbox>
+    </hbox>
+  </prefpane>
+
+</overlay>

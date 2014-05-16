@@ -1,0 +1,7 @@
+# This file specifies the build flags for Celtx.  You can use it by adding:
+#  . $topsrcdir/celtx/config/mozconfig
+# to the top of your mozconfig file.
+
+mk_add_options MOZ_CO_PROJECT=browser,calendar
+ac_add_options --enable-application=celtx
+

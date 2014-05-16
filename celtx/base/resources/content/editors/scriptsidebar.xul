@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* ***** BEGIN LICENCE BLOCK *****
+ * Version: MPL 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is Celtx Script Manager.
+ * 
+ * The Initial Developer of the Original Code is 4067479 Canada Inc.
+ * t/a CELTX.
+ * 
+ * Portions created by Celtx are Copyright (C) 4067479 Canada Inc. All
+ * Rights Reserved.
+ * 
+ * Contributor(s):
+ *
+ ***** END LICENCE BLOCK ***** */
+-->
+
+<!DOCTYPE overlay [
+#include ../celtx-entities.inc
+]>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         id="sidebar-overlay">
+
+  <commandset id="scriptcommandset">
+    <command id="cmd-sidebar-add-item"
+             oncommand="goDoCommand('cmd-sidebar-add-item')"
+             disabled="true"/>
+    <command id="cmd-sidebar-remove-item"
+             oncommand="goDoCommand('cmd-sidebar-remove-item')"
+             disabled="true"/>
+    <command id="cmd-sidebar-find-chars"
+             oncommand="goDoCommand('cmd-sidebar-find-chars')"/>
+  </commandset>
+
+  <vbox id="sidebar">
+    <hbox class="plaintabbar">
+      <tabs id="sidebartabs"
+            class="tabs-top"
+            flex="1"
+            onselect="gPanel.changeSidebar(
+              this.selectedItem.getAttribute('value'));">
+        <tab label="&notes.label;"
+             tooltiptext="&notes.label;"
+             value="sidebarnotes"
+             flex="1"
+             minwidth="50"
+             crop="end"/>
+        <tab label="&media.label;"
+             tooltiptext="&media.label;"
+             value="sidebarmedia"
+             minwidth="50"
+             flex="1"
+             crop="end"/>
+        <tab label="&breakdown.label;"
+             tooltiptext="&breakdown.label;"
+             value="sidebaritems"
+             minwidth="50"
+             flex="1"
+             crop="end"/>
+      </tabs>
+    </hbox>
+
+    <separator class="thin"/>
+    <hbox class="panelheader" align="center">
+      <label id="sidebarscenelabel"
+             flex="1"
+             style="font-size: 9pt;"
+             crop="end"/>
+    </hbox>
+    <separator class="groove"/>
+
+    <deck id="sidebardeck"
+          flex="1">
+      <vbox id="sidebarnotes"
+            flex="1">
+        <toolbar>
+          <toolbarbutton class="library-toolbar-button
+                                library-add-button"
+                         orient="horizontal"
+                         label="&addNote.label;"
+                         oncommand="gPanel.insertNote();"/>
+        </toolbar>
+        <richlistbox id="noteslist"
+                     flex="1"
+                     onchange="gPanel.noteChanged(event)"
+                     onselect="gPanel.noteSelected(event)"/>
+      </vbox>
+
+      <vbox id="sidebarmedia"
+            flex="1">
+        <toolbar class="celtxtoolbar">
+          <toolbarbutton class="library-toolbar-button
+                                library-add-button"
+                         oncommand="gPanel.insertMedia();"
+                         tooltiptext="&addItem.label;"/>
+          <toolbarbutton class="library-toolbar-button
+                                library-remove-button"
+                         oncommand="gPanel.removeMedia();"
+                         tooltiptext="&deleteItem.label;"/>
+          <toolbarseparator/>
+          <toolbaritem align="center"
+                       flex="1">
+            <textbox id="gistextbox"
+                     flex="1"/>
+          </toolbaritem>
+          <toolbarbutton id="gis-button"
+                         oncommand="gPanel.cmdGisSearch();"/>
+        </toolbar>
+        <mediaview id="medialist"
+                   flex="1"
+                   onselect="gPanel.mediaSelected(event)"
+                   onchange="gPanel.mediaTitleChanged(event)"
+                   ondblclick="gPanel.mediaDoubleClicked(event)"
+                   ondragover="gPanel.mediaDragOver(event)"
+                   ondragdrop="gPanel.mediaDragDrop(event)"/>
+      </vbox>
+
+      <vbox id="sidebaritems"
+            flex="1">
+        <toolbar id="sidebartoolbar"
+                 hidden="true">
+          <toolbarbutton id="sidebaraddbutton"
+                         orient="horizontal"
+                         label="&addItemCmd.label;"
+                         image="chrome://celtx/skin/arrow_down.gif"
+                         command="cmd-sidebar-add-item"/>
+        </toolbar>
+        <groupbox id="sidebaradditembox"
+                  flex="1">
+          <listbox id="sidebardeptlist"
+                   flex="1"
+                   rows="5"
+                   datasources="chrome://celtx/content/schema.rdf"
+                   ref="chrome://celtx/content/schema.rdf#default-markup"
+                   onselect="gPanel.deptSelected()">
+            <template>
+              <rule>
+                <conditions>
+                  <content uri="?uri"/>
+                  <member container="?uri"
+                          child="?category"/>
+                  <triple subject="?category"
+                          predicate="&ns_rdfs;label"
+                          object="?title"/>
+                  <!-- This lets us omit Scene Details from the list
+                       since it has no cx:element -->
+                  <triple subject="?category"
+                          predicate="&ns_cx;element"
+                          object="?element"/>
+                </conditions>
+                <action>
+                  <listitem uri="?category"
+                            label="?title"
+                            value="?category"/>
+                </action>
+              </rule>
+            </template>
+          </listbox>
+          <menulist id="sidebaritembox"
+                    editable="true"
+                    oninput="gPanel.validateAddItem();"
+                    onkeyup="gPanel.addItemKeyup(event);"
+                    oncommand="gPanel.validateAddItem();">
+            <menupopup id="sidebaritempopup"
+                       datasources="rdf:null"
+                       ref=""
+                       sortDirection="ascending"
+                       sortResource="?title">
+              <template>
+                <rule>
+                  <conditions>
+                    <content uri="?uri"/>
+                    <triple subject="?item"
+                            predicate="&ns_rdf;type"
+                            object="?uri"/>
+                    <triple subject="?item"
+                            predicate="&ns_dc;title"
+                            object="?title"/>
+                  </conditions>
+                  <action>
+                    <menuitem uri="?item"
+                              label="?title"
+                              value="?item"/>
+                  </action>
+                </rule>
+              </template>
+            </menupopup>
+          </menulist>
+          <hbox>
+            <button label="&remove.label;"
+                    command="cmd-unmarkup"/>
+            <spacer flex="1"/>
+            <button id="sidebaradditembutton"
+                    label="&add.label;"
+                    default="true"
+                    oncommand="gPanel.addItem()"/>
+          </hbox>
+        </groupbox>
+        <splitter collapse="after">
+          <grippy/>
+        </splitter>
+        <vbox flex="2">
+        <tree id="sidebaritemtree"
+              flex="1"
+              hidecolumnpicker="true"
+              context="_child"
+              onselect="gPanel.treeItemSelected();"
+              ondblclick="gPanel.treeItemDoubleClicked();"
+              flags="dont-build-content"
+              ref=""
+              datasources="chrome://celtx/content/schema.rdf">
+          <menupopup>
+            <menuitem label="&open.label;"
+                      oncommand="gPanel.treeItemDoubleClicked();"/>
+            <menuitem id="sidebarrenameitem"
+                      label="&renameItem.label;"
+                      oncommand="gPanel.renameItem();"/>
+            <menuseparator/>
+            <menuitem id="sidebarremoveitem"
+                      label="&remove.label;"
+                      oncommand="gPanel.removeItem();"/>
+          </menupopup>
+          <treecols>
+            <treecol label="&name.label;"
+                     primary="true"
+                     sort="?title"
+                     sortDirection="ascending"
+                     sortActive="true"
+                     flex="1"/>
+          </treecols>
+          <!--
+          <treechildren/>
+          -->
+          <template>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?item"/>
+                <triple subject="?item"
+                        predicate="&ns_cx;department"
+                        object="?dept"/>
+                <triple subject="?dept"
+                        predicate="&ns_rdfs;label"
+                        object="?title"/>
+              </conditions>
+              <bindings>
+                <binding subject="?item"
+                         predicate="&ns_cx;size"
+                         object="?size"/>
+              </bindings>
+              <action>
+                <treechildren>
+                  <treeitem uri="?item">
+                    <treerow>
+                      <treecell label="?title (?size^)"/>
+                    </treerow>
+                    <treechildren/>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+            <rule>
+              <conditions>
+                <content uri="?uri"/>
+                <member container="?uri"
+                        child="?item"/>
+                <triple subject="?item"
+                        predicate="&ns_dc;title"
+                        object="?title"/>
+              </conditions>
+              <action>
+                <treechildren>
+                  <treeitem uri="?item">
+                    <treerow>
+                      <treecell label="?title"/>
+                    </treerow>
+                    <treechildren/>
+                  </treeitem>
+                </treechildren>
+              </action>
+            </rule>
+          </template>
+        </tree>
+        </vbox>
+      </vbox>
+    </deck>
+  </vbox>
+
+</overlay>

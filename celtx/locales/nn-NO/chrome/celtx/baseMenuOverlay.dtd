@@ -1,0 +1,48 @@
+<!ENTITY minimizeWindow.key       "m">
+<!ENTITY minimizeWindow.label     "Minimer">
+<!ENTITY bringAllToFront.label    "Send alle til framgrunnen">
+<!ENTITY zoomWindow.label         "Forstørring">
+<!ENTITY windowMenu.label         "Vindauge">
+
+<!ENTITY helpMenu.label           "Hjelp"> 
+<!ENTITY helpMenu.accesskey       "H"> 
+<!-- LOCALIZATION NOTE some localizations of Windows (ex:french, german) use "?"
+                       for the help button in the menubar but Gnome does not.   -->
+<!ENTITY helpMenuWin.label        "Hjelp"> 
+<!ENTITY helpMenuWin.accesskey    "H">
+<!ENTITY aboutCmd.label           "Om &brandFullName;">
+<!ENTITY aboutCmd.accesskey       "O">
+<!ENTITY helpContents.label       "Innhald">
+<!ENTITY helpContents.accesskey   "n">
+<!ENTITY helpContentsMac.label    "&brandShortName; Hjelp">
+<!ENTITY helpForIEUsers.label     "For brukarar av Internet Explorer">
+<!ENTITY helpForIEUsers.accesskey "F">
+<!ENTITY openHelp.commandkey      "VK_F1">
+<!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+                       are all the necessary keys to hit OS X's open-help 
+                       keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+<!ENTITY openHelpMac.commandkey           "VK_HELP">
+<!ENTITY openHelpMac.modifiers            "accel,shift">
+<!ENTITY openHelpMac.frontendCommandkey   "?">
+<!ENTITY openHelpMac.frontendModifiers    "accel">
+
+<!ENTITY helpReleaseNotes.label         "Merknader til utgjevinga">
+<!ENTITY helpReleaseNotes.accesskey     "M">
+<!ENTITY updateCmd.label                "Sjå etter oppdateringar …">
+<!ENTITY updateCmd.accesskey            "S">
+
+<!ENTITY preferencesCmdMac.label        "Innstillingar …">
+<!ENTITY preferencesCmdMac.commandkey   ",">
+<!ENTITY preferencesCmdMac.modifiers    "accel">
+
+<!ENTITY servicesMenuMac.label          "Tenester">
+
+<!ENTITY hideThisAppCmdMac.label        "Skjul &brandShortName;">
+<!ENTITY hideThisAppCmdMac.commandkey   "H">
+<!ENTITY hideThisAppCmdMac.modifiers    "accel">
+
+<!ENTITY hideOtherAppsCmdMac.label      "Skjul andre">
+<!ENTITY hideOtherAppsCmdMac.commandkey "H">
+<!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+
+<!ENTITY showAllAppsCmdMac.label        "Vis alle">
